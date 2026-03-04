@@ -35,14 +35,40 @@ const siteUrl = "https://backyardsaunapro.com";
       <a href="/" class="text-xl font-bold tracking-tight hover:text-amber-400 transition-colors">
         Backyard Sauna Pro
       </a>
+      <!-- Desktop nav -->
       <nav class="hidden md:flex gap-6 text-sm text-stone-300">
         <a href="/reviews" class="hover:text-white transition-colors">Reviews</a>
         <a href="/guides" class="hover:text-white transition-colors">Guides</a>
+        <a href="/brands" class="hover:text-white transition-colors">Brands</a>
         <a href="/best-saunas" class="hover:text-white transition-colors">Best Picks</a>
         <a href="/about" class="hover:text-white transition-colors">About</a>
       </nav>
+      <!-- Mobile hamburger -->
+      <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+        <span class="block w-6 h-0.5 bg-stone-300"></span>
+        <span class="block w-6 h-0.5 bg-stone-300"></span>
+        <span class="block w-6 h-0.5 bg-stone-300"></span>
+      </button>
     </div>
+    <!-- Mobile nav drawer -->
+    <nav id="mobile-menu" class="hidden md:hidden flex-col gap-0 mt-3 border-t border-stone-700 pt-3">
+      <a href="/reviews" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Reviews</a>
+      <a href="/guides" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Guides</a>
+      <a href="/brands" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Brands</a>
+      <a href="/best-saunas" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Best Picks</a>
+      <a href="/about" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">About</a>
+    </nav>
   </header>
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+      });
+    }
+  </script>
 
   <!-- Main -->
   <main class="max-w-5xl mx-auto px-6 py-10">
@@ -52,8 +78,17 @@ const siteUrl = "https://backyardsaunapro.com";
   <!-- Footer -->
   <footer class="bg-stone-900 text-stone-400 text-sm py-8 px-6 mt-16">
     <div class="max-w-5xl mx-auto">
+      <nav class="flex flex-wrap gap-x-6 gap-y-2 mb-5 text-stone-300">
+        <a href="/reviews" class="hover:text-white transition-colors">Reviews</a>
+        <a href="/guides" class="hover:text-white transition-colors">Guides</a>
+        <a href="/brands" class="hover:text-white transition-colors">Brands</a>
+        <a href="/best-saunas" class="hover:text-white transition-colors">Best Picks</a>
+        <a href="/best-barrel-saunas" class="hover:text-white transition-colors">Barrel Saunas</a>
+        <a href="/best-infrared-saunas" class="hover:text-white transition-colors">Infrared Saunas</a>
+        <a href="/about" class="hover:text-white transition-colors">About</a>
+      </nav>
       <p class="mb-2">
-        <strong class="text-stone-300">Affiliate Disclosure:</strong> BackyardSaunaPro.com is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.
+        <strong class="text-stone-300">Affiliate Disclosure:</strong> BackyardSaunaPro.com is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate I earn from qualifying purchases.
       </p>
       <p>© {new Date().getFullYear()} Backyard Sauna Pro · <a href="/privacy" class="underline hover:text-white">Privacy Policy</a></p>
     </div>
