@@ -11,7 +11,7 @@ const picks = [
     rating: "4.5/5",
     tag: "BEST OVERALL FOR COLD",
     tagColor: "bg-amber-100 text-amber-800",
-    cold_rating: "★★★★★",
+    cold_rating: "",
     why_cold: "The barrel shape is a natural cold-weather advantage — it sheds snow and concentrates heat at sitting level. Cedar handles freeze-thaw cycles better than most materials.",
     pros: ["Barrel shape sheds snow naturally", "Cedar stays stable in extreme temps", "Heat-up time under 45 min", "Strong 4-person capacity"],
     cons: ["Heater sold separately", "Assembly takes 4–6 hours"]
@@ -24,7 +24,7 @@ const picks = [
     rating: "4.4/5",
     tag: "BEST LARGE CAPACITY",
     tagColor: "bg-blue-100 text-blue-800",
-    cold_rating: "★★★★★",
+    cold_rating: "",
     why_cold: "More thermal mass means better heat retention once up to temperature. Stainless steel bands and hardware resist corrosion in wet, icy conditions.",
     pros: ["Large capacity holds heat well", "Stainless steel hardware", "Polished cedar construction", "Great for families"],
     cons: ["High price", "Needs significant space"]
@@ -37,7 +37,7 @@ const picks = [
     rating: "4.3/5",
     tag: "BEST INDOOR/COLD GARAGE",
     tagColor: "bg-green-100 text-green-800",
-    cold_rating: "★★★★☆",
+    cold_rating: "",
     why_cold: "Infrared heats your body directly — even in a cold unheated garage, it warms you up fast. Best option if you don't have an insulated outdoor structure.",
     pros: ["Works in unheated spaces", "15-min heat-up time", "No frozen pipes or wood issues", "Plug-in 120V"],
     cons: ["No steam (löyly)", "Indoor/covered use only"]
@@ -62,7 +62,7 @@ const picks = [
     </header>
 
     <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-blue-900 mb-2">❄️ What Makes a Sauna Good for Cold Climates?</h2>
+      <h2 class="font-bold text-blue-900 mb-2"> What Makes a Sauna Good for Cold Climates?</h2>
       <ul class="text-sm text-blue-800 space-y-2">
         <li> <strong>Insulation:</strong> Thick walls (at least 40mm) retain heat even when it's -20°F outside</li>
         <li> <strong>Wood species:</strong> Cedar handles freeze-thaw cycles without cracking or warping</li>
@@ -83,7 +83,7 @@ const picks = [
           </div>
           <h3 class="text-xl font-bold text-stone-900 mb-2">{pick.name}</h3>
           <p class="text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
-            ❄️ <strong>Why it works in cold:</strong> {pick.why_cold}
+             <strong>Why it works in cold:</strong> {pick.why_cold}
           </p>
           <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
             <div>
@@ -92,7 +92,7 @@ const picks = [
             </div>
             <div>
               <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
-              {pick.cons.map(c => <p class="text-stone-600">⚠️ {c}</p>)}
+              {pick.cons.map(c => <p class="text-stone-600"> {c}</p>)}
             </div>
           </div>
           <p class="text-xs text-stone-400 mb-2">Rating: {pick.rating}</p>

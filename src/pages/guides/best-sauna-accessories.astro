@@ -67,7 +67,7 @@ const accessories = [
     {accessories.map(section => (
       <section class="mb-10">
         <h2 class="text-xl font-bold mb-4 text-stone-900 border-b border-stone-200 pb-2">
-          {section.category === "Essential" ? "" : section.category === "Comfort" ? "😌" : section.category === "Health & Wellness" ? "🌿" : ""} {section.category}
+          {section.category === "Essential" ? "" : section.category === "Comfort" ? "" : section.category === "Health & Wellness" ? "" : ""} {section.category}
         </h2>
         <div class="space-y-5">
           {section.items.map(item => (
@@ -85,10 +85,10 @@ const accessories = [
       <h2 class="text-2xl font-bold mb-4 text-stone-900">What You Don't Need (Yet)</h2>
       <p class="text-stone-600 mb-4">Save money on your first year by skipping these until you know you'll use them:</p>
       <ul class="text-stone-600 text-sm space-y-2">
-        <li>❌ <strong>Expensive sauna hat</strong> — a cheap wool hat from a thrift store works fine</li>
-        <li>❌ <strong>Sauna infusion oils</strong> — regular eucalyptus concentrate does the same thing for less</li>
-        <li>❌ <strong>Smart controls</strong> — schedule via a simple timer outlet if your heater doesn't have one</li>
-        <li>❌ <strong>Cold plunge tub</strong> — start with a cold shower; get the tub once you're hooked</li>
+        <li> <strong>Expensive sauna hat</strong> — a cheap wool hat from a thrift store works fine</li>
+        <li> <strong>Sauna infusion oils</strong> — regular eucalyptus concentrate does the same thing for less</li>
+        <li> <strong>Smart controls</strong> — schedule via a simple timer outlet if your heater doesn't have one</li>
+        <li> <strong>Cold plunge tub</strong> — start with a cold shower; get the tub once you're hooked</li>
       </ul>
     </section>
 
