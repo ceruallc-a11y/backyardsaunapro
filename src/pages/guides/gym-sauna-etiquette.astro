@@ -1,0 +1,114 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is proper etiquette in a gym sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sit on a towel (never bare skin on the bench), keep conversation quiet or skip it, no phone calls or loud audio, shower before entering, respect temperature — ask before adding water if others are present. Most gym saunas are dry-only (no water on the rocks) unless posted otherwise. Leave when others enter if it is crowded rather than crowding the space."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should you wear in a gym sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A towel or light cotton shorts and a t-shirt. Most gyms require you to be covered — check the gym's posted rules. Swimsuits work but synthetic fabrics trap heat uncomfortably. Avoid wearing shoes. Bring a separate towel to sit on even if wearing clothing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you use your phone in a gym sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally not recommended and many gym saunas prohibit it. Phones can overheat at sauna temperatures. More importantly, other users expect the sauna to be a quiet, phone-free space. Texting silently is usually tolerated; taking calls or playing audio without headphones is not."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Gym Sauna Etiquette: What to Do and What to Avoid"
+  description="Unwritten rules of gym sauna etiquette — what to wear, how long to stay, phone policy, adding water, and how to handle crowded saunas."
+  canonical="/guides/gym-sauna-etiquette"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Gym Sauna Etiquette: The Unwritten Rules</h1>
+    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Clean sauna interior" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">Gym saunas are shared spaces with their own social rules, most of which nobody explains when you join. Get them wrong and you will annoy regulars; get them right and the sauna becomes one of the best parts of your membership. Here is what you need to know.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Basics</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Shower before you go in</h3>
+    <p class="text-stone-700 mb-4">This is the most important rule and the most commonly skipped one. Post-workout sweat, sunscreen, lotion, and gym equipment grime all go into a shared enclosed space when you skip the pre-sauna shower. Takes two minutes, makes a significant difference to the person sitting next to you.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Sit on a towel</h3>
+    <p class="text-stone-700 mb-4">Always. Sitting bare skin directly on the wood bench leaves sweat soaked in, which the next person sits on. Bring a towel large enough to cover where you are sitting. Most gyms have a stack near the door — if yours does not, bring your own.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">No phone calls</h3>
+    <p class="text-stone-700 mb-4">The sauna is one of the few places in a gym where people expect quiet. Taking a call is universally considered rude. Texting is generally tolerated if you keep the brightness low and stay quiet. Playing audio without headphones is not okay. Beyond social norms, your phone will not enjoy sauna temperatures.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Ask before adding water</h3>
+    <p class="text-stone-700 mb-6">If the sauna has a bucket and ladle and other people are present, ask before pouring water on the rocks. Some people want steam (loyly), others do not. Many gym saunas are posted as dry-only — check the posted rules before touching the bucket. Adding water without asking is one of the most common sources of sauna conflict.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Time and Space</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Don't monopolize the space</h3>
+    <p class="text-stone-700 mb-4">Standard sessions run 15-20 minutes. If the sauna is empty, stay as long as you want. If people are waiting outside, wrap up your session. Spreading belongings across multiple bench spaces when others are present is poor form.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Upper bench is hotter</h3>
+    <p class="text-stone-700 mb-4">Heat rises. The upper bench can be 20-30 degrees hotter than the lower bench in a two-tier sauna. New users generally start lower; regulars sit higher. If someone asks to sit on the upper bench, move to accommodate if you are only using the lower.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Close the door fully</h3>
+    <p class="text-stone-700 mb-6">Every time you enter or exit. Heat escapes fast through a partially open door and ruins the session for everyone inside. Enter, close the door, then find your spot.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Wear</h2>
+    <p class="text-stone-700 mb-4">Most gyms in North America require you to be covered. Light cotton shorts or a swimsuit works. Towels are fine and common. Avoid:</p>
+    <ul class="space-y-1 text-stone-700 mb-6 ml-4 text-sm">
+      <li>Synthetic workout clothes that trap heat and smell</li>
+      <li>Shoes or sandals (most saunas are barefoot zones)</li>
+      <li>Jewelry that heats up against skin</li>
+      <li>Heavy layers that are uncomfortable to sit in</li>
+    </ul>
+    <p class="text-stone-700 mb-6">If you are looking to build a home sauna and skip the gym entirely, our <a href="/guides/best-home-sauna" class="text-amber-700 hover:underline">best home sauna guide</a> has options for every budget.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What is proper etiquette in a gym sauna?</h3>
+        <p class="text-stone-700">Shower first, sit on a towel, no calls, ask before adding water, close the door, respect the time limit when others are waiting.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What should you wear in a gym sauna?</h3>
+        <p class="text-stone-700">A towel or light cotton clothing. Most gyms require coverage. Bring a separate towel to sit on regardless.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you use your phone in a gym sauna?</h3>
+        <p class="text-stone-700">Silent texting is usually tolerated. Calls and audio are not. Many gyms post no-phone rules.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-etiquette" class="text-amber-700 hover:underline">Full Sauna Etiquette Guide</a></li>
+        <li><a href="/guides/how-long-to-stay-in-sauna" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
+        <li><a href="/guides/sauna-after-workout" class="text-amber-700 hover:underline">Sauna After Workout</a></li>
+        <li><a href="/guides/best-home-sauna" class="text-amber-700 hover:underline">Best Home Sauna</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
