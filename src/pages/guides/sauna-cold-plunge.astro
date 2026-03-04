@@ -1,0 +1,146 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should you do cold plunge before or after sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After. The traditional sequence is sauna first, cold plunge or cold shower second. The heat opens blood vessels and raises core temperature; the cold causes rapid vasoconstriction and activates the sympathetic nervous system. Doing cold before sauna just makes it harder to heat up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How cold should a cold plunge be for sauna use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most cold plunge users target 50-59°F (10-15°C) for the contrast therapy effect. Beginners often start at 60-65°F and work down. Below 50°F is more extreme and not necessary for most health benefits — the cardiovascular response plateaus at moderate cold exposure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long should you stay in a cold plunge after sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1 to 3 minutes is typical for a post-sauna cold plunge. The initial shock of cold water produces the main cardiovascular response in the first 30-60 seconds. Staying longer produces additional cold adaptation but isn't necessary to get the primary benefit."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Sauna and Cold Plunge: How to Do Contrast Therapy Right"
+  description="How to combine sauna and cold plunge for maximum benefit. Timing, temperature, how long to stay in each, and what the research shows."
+  canonical="/guides/sauna-cold-plunge"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna and Cold Plunge: How to Do Contrast Therapy Right</h1>
+    <p class="text-stone-500 mb-8">Updated March 2025 &mdash; Backyard Sauna Pro</p>
+
+    <p class="text-lg text-stone-700 mb-4">Hot-cold contrast therapy has been part of Finnish and Scandinavian sauna culture for centuries. The combination of intense heat followed by cold exposure does something that neither alone achieves — a full-body reset that leaves most people feeling more alert, less tense, and physically lighter than when they started.</p>
+
+    <p class="text-stone-700 mb-8">This guide covers the sequence, temperatures, timing, and science behind why it works.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Basic Protocol</h2>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
+      <ol class="space-y-3 text-stone-700">
+        <li><span class="font-bold text-stone-900">1. Heat up (15-20 min).</span> Enter the sauna at 170-185°F. Sit at upper bench level. Add water to rocks as desired. Exit when you feel comfortably hot and starting to sweat heavily.</li>
+        <li><span class="font-bold text-stone-900">2. Cool down (1-3 min).</span> Cold plunge, cold shower, or step outside in cold air. The colder and more sudden the transition, the stronger the response — but don't push into pain.</li>
+        <li><span class="font-bold text-stone-900">3. Rest (5-10 min).</span> Sit or lie down at room temperature. Let your heart rate normalize. This is the recovery phase — don't skip it.</li>
+        <li><span class="font-bold text-stone-900">4. Repeat 2-3 rounds.</span> Total sauna time across all rounds: 30-60 minutes. Total session time with cool-downs and rest: 60-90 minutes.</li>
+      </ol>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Why It Works</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Cardiovascular training</h3>
+    <p class="text-stone-700 mb-4">The heat-cold cycle forces your cardiovascular system to repeatedly expand and contract blood vessels. Heat causes vasodilation — blood rushes to the skin and extremities to dissipate heat. Cold causes vasoconstriction — blood pulls back to protect core organs. This repeated expansion and contraction is essentially a workout for your vascular system, improving arterial flexibility and blood pressure regulation over time.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Norepinephrine spike</h3>
+    <p class="text-stone-700 mb-4">Cold water immersion produces a sharp spike in norepinephrine — by some estimates 200-300% above baseline in the first 30 seconds. Norepinephrine is responsible for the heightened alertness, elevated mood, and reduced pain perception that most people feel after a cold plunge. This effect lasts for hours after the plunge itself.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Inflammation reduction</h3>
+    <p class="text-stone-700 mb-4">The cold exposure after exercise or sauna reduces systemic inflammatory markers. This is the mechanism behind the post-workout cold plunge favored by athletes — it's not a myth, the anti-inflammatory effect is real and measurable in blood markers for several hours afterward.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Sleep quality</h3>
+    <p class="text-stone-700 mb-4">The body temperature curve matters for sleep. After the contrast protocol, your core temperature drops more deeply than normal as your body compensates for the thermal stress. This deeper temperature drop in the evening accelerates sleep onset and improves sleep quality more than sauna alone.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cold Plunge Options</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Cold shower</h3>
+    <p class="text-stone-700 mb-4">The most accessible option. Not quite the same physiological impact as full immersion since your face and head (heat-sensitive areas) are often not submerged, but it works well and you probably already have one. Commit to 60-90 seconds of fully cold water after each round.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Stock tank cold plunge</h3>
+    <p class="text-stone-700 mb-4">A galvanized steel stock tank (100-150 gallons) is the most popular DIY cold plunge setup. Costs $150-$300 and pairs naturally with a backyard sauna. In winter you can leave it outdoors and let cold air maintain the temperature. In warmer months you add ice or a small chiller to keep it cold.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Purpose-built cold plunge</h3>
+    <p class="text-stone-700 mb-4">Commercial cold plunge tubs with built-in chillers run $3,000-$10,000+. They maintain precise temperatures year-round without ice or manual cooling. An upgrade that makes daily cold plunge much easier to sustain as a habit.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Natural water</h3>
+    <p class="text-stone-700 mb-4">A lake, river, or ocean in the right season is the traditional option. Jumping into a frozen lake after a Finnish sauna is not a marketing story — people genuinely do it, and the shock and subsequent euphoria are real. Not available to everyone, but worth experiencing if you ever have access.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cold Plunge Temperatures</h2>
+    <div class="overflow-x-auto mb-6">
+      <table class="text-sm w-full">
+        <thead>
+          <tr class="text-left text-stone-500 border-b border-stone-200">
+            <th class="pb-2 pr-6">Temperature</th>
+            <th class="pb-2 pr-6">Experience Level</th>
+            <th class="pb-2">Notes</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700">
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">60-65°F (15-18°C)</td>
+            <td class="py-2 pr-6">Beginner</td>
+            <td class="py-2">Good starting point, still effective</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">50-59°F (10-15°C)</td>
+            <td class="py-2 pr-6">Intermediate</td>
+            <td class="py-2">Standard cold plunge range, strong response</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-6">Below 50°F (&lt;10°C)</td>
+            <td class="py-2 pr-6">Experienced</td>
+            <td class="py-2">Intense, benefits plateau here for most people</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Should you do cold plunge before or after sauna?</h3>
+        <p class="text-stone-700">After. Heat first, cold second. That's the traditional sequence and the one the research supports.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How cold should the cold plunge be?</h3>
+        <p class="text-stone-700">50-59°F is the standard target range. Beginners start at 60-65°F. Below 50°F is more extreme and not necessary for most benefits.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How long should you stay in a cold plunge after sauna?</h3>
+        <p class="text-stone-700">1 to 3 minutes is typical. The main cardiovascular response happens in the first 30-60 seconds. Staying longer adds cold adaptation but isn't required.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-health-benefits" class="text-amber-700 hover:underline">Sauna Health Benefits: What Science Says</a></li>
+        <li><a href="/guides/sauna-after-workout" class="text-amber-700 hover:underline">Sauna After Workout</a></li>
+        <li><a href="/guides/how-long-to-stay-in-sauna" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
+        <li><a href="/guides/outdoor-sauna-winter" class="text-amber-700 hover:underline">Outdoor Sauna in Winter</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
