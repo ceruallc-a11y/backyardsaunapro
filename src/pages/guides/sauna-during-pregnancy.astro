@@ -1,0 +1,108 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is sauna safe during pregnancy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most medical guidelines advise against sauna use during pregnancy, particularly in the first trimester. The concern is hyperthermia — core body temperature above 102°F (39°C) has been associated with neural tube defects in early pregnancy and other fetal complications. Traditional saunas at 160-185°F can raise core temperature above this threshold within 10-15 minutes. Pregnant women should consult their OB or midwife before using a sauna."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you use an infrared sauna while pregnant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Infrared saunas run at lower temperatures (120-140°F) than traditional saunas, but the same hyperthermia concerns apply because they penetrate heat deeper into tissue. Most guidelines advise against infrared sauna use during pregnancy as well, especially in the first trimester. Always consult your doctor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the risks of sauna during pregnancy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The primary risk is hyperthermia — elevated core body temperature. In early pregnancy (first trimester), hyperthermia above 102°F has been linked to neural tube defects and miscarriage risk in some studies. Later in pregnancy, overheating can cause dehydration and blood pressure changes that reduce blood flow to the fetus. Dizziness and fainting in a hot enclosed space also pose physical risks."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Sauna During Pregnancy: Is It Safe? What Doctors Say"
+  description="Is sauna safe when pregnant? What the medical guidelines say about hyperthermia risk, first trimester concerns, infrared saunas, and when to avoid heat entirely."
+  canonical="/guides/sauna-during-pregnancy"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna During Pregnancy: Is It Safe?</h1>
+    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Medical disclaimer:</strong> This page is for informational purposes only and does not constitute medical advice. Always consult your OB-GYN or midwife before using a sauna during pregnancy.
+    </div>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-forest-view.jpg" alt="Sauna interior" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">The short version: most medical guidelines advise against sauna use during pregnancy, particularly in the first trimester. The concern is not the sauna itself — it is hyperthermia. Here is why, what the evidence shows, and what the official guidance says.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Hyperthermia Risk</h2>
+    <p class="text-stone-700 mb-4">A traditional sauna runs 160-185°F. At these temperatures, core body temperature rises — typically reaching 100-102°F within 10-15 minutes for most people. This is the threshold where fetal risk becomes a concern.</p>
+    <p class="text-stone-700 mb-6">Multiple studies have found that sustained core temperatures above 102°F (39°C) during the first trimester are associated with increased risk of neural tube defects. The developing nervous system is particularly sensitive to heat in weeks 3-8 of pregnancy. Later in pregnancy, overheating increases dehydration risk and can cause blood pressure changes that reduce placental blood flow.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Medical Organizations Say</h2>
+    <p class="text-stone-700 mb-4">The American College of Obstetricians and Gynecologists (ACOG) advises pregnant women to avoid activities that raise core body temperature above 102°F, including hot tubs, saunas, and steam rooms — especially in the first trimester.</p>
+    <p class="text-stone-700 mb-6">Nordic countries, where sauna culture is deeply embedded, have studied this question extensively. Finnish guidelines allow brief, lower-temperature sauna use in later pregnancy for women who have an established sauna habit and no complications — but they are explicit that this is at the discretion of the treating physician and not a general recommendation.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Infrared Saunas During Pregnancy</h2>
+    <p class="text-stone-700 mb-6">Infrared saunas run at lower air temperatures (120-140°F) than traditional saunas. Some people assume this makes them safer in pregnancy. This reasoning is incomplete — infrared radiation penetrates tissue more deeply than convected air heat, and the core body temperature rise can be similar or greater. Most maternal-fetal medicine guidelines make no distinction between infrared and traditional saunas. The same avoidance recommendation applies, especially in the first trimester.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">When It May Be Acceptable</h2>
+    <p class="text-stone-700 mb-4">Some physicians in Scandinavian countries permit brief (5-10 minute) moderate-temperature sauna use in the second and third trimesters for patients with no complications who have been regular sauna users before pregnancy. The logic is that habituated users are more efficient at thermoregulation and are less likely to reach dangerous core temperatures in a short session.</p>
+    <p class="text-stone-700 mb-6">This is not a general recommendation, and it requires explicit sign-off from a physician who knows the patient's specific situation. First trimester is not included in any of these exceptions.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Practical Bottom Line</h2>
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
+      <ul class="space-y-2 text-stone-700 text-sm">
+        <li><span class="font-semibold">First trimester:</span> Avoid entirely. Neural tube development is most vulnerable during weeks 3-8.</li>
+        <li><span class="font-semibold">Second and third trimesters:</span> Still not recommended without explicit physician approval. Individual risk factors vary significantly.</li>
+        <li><span class="font-semibold">Infrared sauna:</span> Same restrictions apply — do not assume lower air temperature means lower risk.</li>
+        <li><span class="font-semibold">After delivery:</span> Most women can return to normal sauna use once cleared by their doctor, typically 4-6 weeks postpartum.</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Is sauna safe during pregnancy?</h3>
+        <p class="text-stone-700">Most guidelines advise against it, especially in the first trimester. Core temperature above 102°F is associated with fetal risks. Consult your OB or midwife.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you use an infrared sauna while pregnant?</h3>
+        <p class="text-stone-700">Same restrictions as traditional sauna apply. Lower air temperature does not mean lower core temperature rise.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What are the risks of sauna during pregnancy?</h3>
+        <p class="text-stone-700">Hyperthermia is the primary concern, linked to neural tube defects in the first trimester. Later risks include dehydration, blood pressure changes, and reduced fetal blood flow.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-health-benefits" class="text-amber-700 hover:underline">Sauna Health Benefits</a></li>
+        <li><a href="/guides/how-long-to-stay-in-sauna" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
+        <li><a href="/guides/sauna-for-back-pain" class="text-amber-700 hover:underline">Sauna for Back Pain</a></li>
+        <li><a href="/guides/best-home-sauna" class="text-amber-700 hover:underline">Best Home Sauna</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
