@@ -1,0 +1,178 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+
+const picks = [
+  {
+    rank: 1,
+    asin: "B017WJV8SO",
+    name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
+    price: "~$2,199",
+    rating: "4.5/5",
+    tag: "BEST OVERALL",
+    tagColor: "bg-amber-100 text-amber-800",
+    type: "Traditional Barrel",
+    wood: "Canadian Red Cedar",
+    summary: "The Pinnacle is the most popular choice in this category for good reason. Cedar construction, solid hardware, and a genuine Finnish sauna experience. Rated for 4 people, it comfortably seats 2-3 adults with room to move. For serious sauna users, it's the standard.",
+    pros: ["Premium Canadian red cedar", "Well-documented assembly process", "Excellent heat retention", "Strong resale value"],
+    cons: ["Heater sold separately (~$400-600)", "Needs 240V electrical", "4 adults is snug — better for 2-3"]
+  },
+  {
+    rank: 2,
+    asin: "B0DPG3R7PR",
+    name: "AURGOD Outdoor Barrel Sauna with Wood Stove",
+    price: "~$1,899",
+    rating: "4.3/5",
+    tag: "BEST WOOD-BURNING BUNDLE",
+    tagColor: "bg-green-100 text-green-800",
+    type: "Traditional Barrel",
+    wood: "Canadian Hemlock",
+    summary: "This is the rare option that includes the wood-burning stove and chimney kit in the box. No electrician required. Just install, connect the flue, source firewood, and you're running. The triple waterproof system is a practical touch for year-round outdoor use.",
+    pros: ["Wood stove and chimney kit included", "No electrician needed", "Triple waterproof exterior", "More affordable than comparable kits"],
+    cons: ["Hemlock, not cedar (less aromatic)", "Wood sourcing is ongoing work", "Less brand reputation than Almost Heaven"]
+  },
+  {
+    rank: 3,
+    asin: "B003Z11AXM",
+    name: "Almost Heaven 6-Person Barrel Sauna",
+    price: "~$3,499",
+    rating: "4.4/5",
+    tag: "BEST FOR ACTUAL 4 PEOPLE",
+    tagColor: "bg-blue-100 text-blue-800",
+    type: "Traditional Barrel",
+    wood: "Canadian Red Cedar",
+    summary: "If you genuinely plan to use this sauna with 3-4 other people on a regular basis, buy this one. A 4-person rated sauna with 4 adults inside feels like a crowded elevator. The 6-person gives everyone real bench space and breathing room. The extra cost is worth it.",
+    pros: ["Comfortable for 4 actual people", "Same Almost Heaven quality as Pinnacle", "Cedar barrel design for even heat", "More interior height than competitors"],
+    cons: ["Higher price point", "Larger footprint needed", "Heater and electrical still separate"]
+  }
+];
+---
+<Base
+  title="Best 4-Person Outdoor Saunas (2025) — Top Picks Reviewed"
+  description="The best 4-person outdoor saunas for your backyard. Real picks, honest sizing advice, and everything you need to know before you buy."
+  canonical="/guides/best-4-person-outdoor-sauna"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best 4-Person Outdoor Saunas (2025)
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 8 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        A "4-person" sauna on paper seats 4 adults the way a compact car fits 5 — technically true, not actually comfortable. This guide covers the best options in this category and tells you what the specs don't.
+      </p>
+    </header>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-3">Quick Picks</h2>
+      <div class="space-y-2 text-sm">
+        {[
+          ["Best Overall", "Almost Heaven Pinnacle", "~$2,199"],
+          ["Best Wood-Burning Bundle", "AURGOD Barrel with Stove", "~$1,899"],
+          ["Best for Real 4-Person Use", "Almost Heaven 6-Person", "~$3,499"],
+        ].map(([label, name, price]) => (
+          <div class="flex justify-between items-center bg-white rounded-lg px-4 py-2">
+            <span class="text-amber-700 font-semibold text-xs uppercase tracking-wide w-36">{label}</span>
+            <span class="text-stone-700 font-medium flex-1 mx-3">{name}</span>
+            <span class="text-stone-500 font-semibold">{price}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-2">The Honest Truth About "4-Person" Ratings</h2>
+      <p class="text-stone-600 text-sm mt-1">Manufacturers rate capacity based on how many people can physically fit on the bench. That's not the same as how many people can comfortably relax for 15-20 minutes. A 4-person barrel sauna is ideal for 2 adults who want real space. If you have a regular group of 3-4, size up to a 6-person. You'll thank yourself later.</p>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Top Picks</h2>
+
+    <div class="space-y-8">
+      {picks.map((pick) => (
+        <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
+          <div class="bg-stone-50 border-b border-stone-200 px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-stone-400 font-bold text-lg">#{pick.rank}</span>
+              <h3 class="text-lg font-bold text-stone-900">{pick.name}</h3>
+            </div>
+            <span class={`text-xs font-bold px-3 py-1 rounded-full ${pick.tagColor}`}>{pick.tag}</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-6 mb-4 text-sm text-stone-500">
+              <span>Type: <strong class="text-stone-700">{pick.type}</strong></span>
+              <span>Wood: <strong class="text-stone-700">{pick.wood}</strong></span>
+              <span>Rating: <strong class="text-stone-700">{pick.rating}</strong></span>
+            </div>
+            <p class="text-stone-600 mb-4">{pick.summary}</p>
+            <div class="grid grid-cols-2 gap-4 mb-5 text-sm">
+              <div>
+                <p class="font-semibold text-green-700 mb-2">Pros</p>
+                <ul class="space-y-1">
+                  {pick.pros.map(p => <li class="flex items-start gap-2 text-stone-600"><span class="text-green-500 mt-0.5">+</span>{p}</li>)}
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-red-600 mb-2">Cons</p>
+                <ul class="space-y-1">
+                  {pick.cons.map(c => <li class="flex items-start gap-2 text-stone-600"><span class="text-red-400 mt-0.5">-</span>{c}</li>)}
+                </ul>
+              </div>
+            </div>
+            <AmazonButton asin={pick.asin} price={pick.price} />
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-bold mt-12 mb-6 text-stone-900">What to Know Before You Buy</h2>
+
+    <div class="space-y-6">
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Cedar vs Hemlock</h3>
+        <p class="text-stone-600 text-sm">Cedar smells better and naturally resists moisture and bugs. It's the premium choice. Hemlock is structurally solid and more affordable, but it doesn't have that signature cedar scent and requires more maintenance over time.</p>
+        <p class="text-stone-600 text-sm mt-3">For outdoor use, cedar holds up better in wet climates. If you're in a dry region, hemlock is perfectly fine. Both will last 15-20 years with basic maintenance.</p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Budget for the Full Install</h3>
+        <p class="text-stone-600 text-sm">The kit is just the start. A realistic 4-person barrel sauna budget looks like this:</p>
+        <div class="mt-3 space-y-2 text-sm">
+          {[
+            ["Sauna kit", "$1,899 - $3,499"],
+            ["Electric heater (if not included)", "$400 - $700"],
+            ["240V electrical install", "$300 - $800"],
+            ["Foundation (gravel or pavers)", "$200 - $600"],
+            ["Accessories", "$100 - $200"],
+            ["Total installed", "$2,900 - $5,800"],
+          ].map(([item, cost]) => (
+            <div class="flex justify-between border-b border-stone-100 pb-2">
+              <span class="text-stone-600">{item}</span>
+              <span class="font-semibold text-amber-700">{cost}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Barrel vs Cabin Style</h3>
+        <p class="text-stone-600 text-sm">Barrel saunas heat faster and use less energy because the curved shape minimizes dead air space near the ceiling. A cabin sauna at the same cubic footage takes longer to heat and costs more to run.</p>
+        <p class="text-stone-600 text-sm mt-3">For outdoor use, barrel saunas also shed rain and snow more effectively. They look great in a backyard setting. Cabin saunas give you more interior headroom but cost more to build and heat.</p>
+      </div>
+
+    </div>
+
+    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
+      <h3 class="font-bold text-stone-900 mb-3">Related guides</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/best-2-person-outdoor-sauna" class="text-amber-700 hover:underline font-medium">Best 2-Person Outdoor Saunas</a></li>
+        <li><a href="/guides/best-saunas-under-5000" class="text-amber-700 hover:underline font-medium">Best Saunas Under $5,000</a></li>
+        <li><a href="/guides/barrel-sauna-vs-cabin-sauna" class="text-amber-700 hover:underline font-medium">Barrel Sauna vs Cabin Sauna: Which Is Right for You?</a></li>
+        <li><a href="/guides/outdoor-sauna-cost" class="text-amber-700 hover:underline font-medium">Full Outdoor Sauna Cost Breakdown</a></li>
+        <li><a href="/guides/best-electric-sauna-heaters" class="text-amber-700 hover:underline font-medium">Best Electric Sauna Heaters</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
