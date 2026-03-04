@@ -1,0 +1,194 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+
+const picks = [
+  {
+    rank: 1,
+    asin: "B01FY6PZYU",
+    name: "Harvia M3 Wood-Burning Sauna Heater",
+    price: "~$799",
+    rating: "4.6/5",
+    tag: "BEST OVERALL",
+    tagColor: "bg-amber-100 text-amber-800",
+    capacity: "212-459 cu ft",
+    output: "16.5kW",
+    summary: "The M3 is the gold standard for home wood-burning saunas. Harvia has been making these in Finland since 1950, and this model has been refined to near-perfection. It heats fast, holds temperature well, and the stainless steel construction will outlast almost anything else in your backyard.",
+    pros: ["Made in Finland, proven 70+ year brand", "Heats 212-459 cu ft efficiently", "Stainless steel with graphite finish", "Simple to use, nothing to break"],
+    cons: ["Chimney and installation cost extra", "Wood sourcing is ongoing", "No thermostat control like electric"]
+  },
+  {
+    rank: 2,
+    asin: "B096T61VPY",
+    name: "HUUM Hive Wood 13kW Sauna Stove",
+    price: "~$1,299",
+    rating: "4.5/5",
+    tag: "BEST PREMIUM",
+    tagColor: "bg-purple-100 text-purple-800",
+    capacity: "210-460 cu ft",
+    output: "13kW",
+    summary: "The Hive looks like modern art and performs like a workhorse. Estonian design, 198 lbs of olivine stones included, and that distinctive round basket that radiates heat evenly in all directions. If your sauna is going to be a showpiece, this is the heater.",
+    pros: ["198 lbs of olivine stones included", "Stunning open-top design", "Even heat radiation from stone basket", "Premium Estonian craftsmanship"],
+    cons: ["More expensive than Harvia", "Heavier to install", "Open stone basket requires care around children"]
+  },
+  {
+    rank: 3,
+    asin: "B01FY9T0B6",
+    name: "Harvia Legend 240SL Wood-Burning Heater",
+    price: "~$1,099",
+    rating: "4.5/5",
+    tag: "BEST LARGE CAPACITY",
+    tagColor: "bg-blue-100 text-blue-800",
+    capacity: "Up to 600 cu ft",
+    output: "20kW",
+    summary: "For larger sauna rooms, the Legend is the move. Twenty kilowatts gets a big space to temperature fast. The side-loading door on the SL variant means you can feed wood without bending. Built for the long term, this heater will outlast the sauna itself.",
+    pros: ["20kW for large rooms up to 600 cu ft", "Side-loading door for easy wood feeding", "Classic Finnish design, built to last", "Handles heavy use sessions"],
+    cons: ["Overkill for small rooms", "Requires more wood per session", "Premium price point"]
+  }
+];
+---
+<Base
+  title="Best Wood-Burning Sauna Heaters (2025) — Top Stoves Reviewed"
+  description="The best wood-burning sauna heaters for home use. Honest reviews of Harvia, HUUM, and more. Know what to buy before you build."
+  canonical="/guides/best-wood-burning-sauna-heaters"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best Wood-Burning Sauna Heaters (2025)
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 9 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        Wood-burning is the original sauna experience. The crackle of the fire, the smell of birch smoke, the ritual of feeding logs between rounds. Electric is convenient. Wood is an experience. If you're building an outdoor sauna and want to do it right, this guide covers the best stoves you can buy today.
+      </p>
+    </header>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-3">Quick Picks</h2>
+      <div class="space-y-2 text-sm">
+        {[
+          ["Best Overall", "Harvia M3", "~$799"],
+          ["Best Premium", "HUUM Hive Wood 13kW", "~$1,299"],
+          ["Best Large Room", "Harvia Legend 240SL", "~$1,099"],
+        ].map(([label, name, price]) => (
+          <div class="flex justify-between items-center bg-white rounded-lg px-4 py-2">
+            <span class="text-amber-700 font-semibold text-xs uppercase tracking-wide w-32">{label}</span>
+            <span class="text-stone-700 font-medium flex-1 mx-3">{name}</span>
+            <span class="text-stone-500 font-semibold">{price}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-3">Wood vs Electric: The Real Difference</h2>
+      <div class="grid grid-cols-2 gap-4 text-sm">
+        <div>
+          <p class="font-semibold text-amber-700 mb-2">Wood-Burning</p>
+          <ul class="space-y-1 text-stone-600">
+            <li>+ Traditional Finnish experience</li>
+            <li>+ No electricity needed</li>
+            <li>+ Higher peak temperatures</li>
+            <li>+ Ritual, atmosphere, ambiance</li>
+            <li>- Requires chimney installation</li>
+            <li>- Ongoing wood cost and sourcing</li>
+            <li>- Longer heat-up time (45-90 min)</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-blue-700 mb-2">Electric</p>
+          <ul class="space-y-1 text-stone-600">
+            <li>+ Set-and-forget thermostat</li>
+            <li>+ Faster heat-up (30-45 min)</li>
+            <li>+ Easier to install indoors</li>
+            <li>+ No chimney required</li>
+            <li>- Monthly electricity cost</li>
+            <li>- Less authentic feel</li>
+            <li>- Requires 240V circuit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">The Top Wood-Burning Heaters</h2>
+
+    <div class="space-y-8">
+      {picks.map((pick) => (
+        <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
+          <div class="bg-stone-50 border-b border-stone-200 px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-stone-400 font-bold text-lg">#{pick.rank}</span>
+              <h3 class="text-lg font-bold text-stone-900">{pick.name}</h3>
+            </div>
+            <span class={`text-xs font-bold px-3 py-1 rounded-full ${pick.tagColor}`}>{pick.tag}</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-6 mb-4 text-sm text-stone-500">
+              <span>Capacity: <strong class="text-stone-700">{pick.capacity}</strong></span>
+              <span>Output: <strong class="text-stone-700">{pick.output}</strong></span>
+              <span>Rating: <strong class="text-stone-700">{pick.rating}</strong></span>
+            </div>
+            <p class="text-stone-600 mb-4">{pick.summary}</p>
+            <div class="grid grid-cols-2 gap-4 mb-5 text-sm">
+              <div>
+                <p class="font-semibold text-green-700 mb-2">Pros</p>
+                <ul class="space-y-1">
+                  {pick.pros.map(p => <li class="flex items-start gap-2 text-stone-600"><span class="text-green-500 mt-0.5">+</span>{p}</li>)}
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-red-600 mb-2">Cons</p>
+                <ul class="space-y-1">
+                  {pick.cons.map(c => <li class="flex items-start gap-2 text-stone-600"><span class="text-red-400 mt-0.5">-</span>{c}</li>)}
+                </ul>
+              </div>
+            </div>
+            <AmazonButton asin={pick.asin} price={pick.price} />
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-bold mt-12 mb-6 text-stone-900">What to Know Before You Buy</h2>
+
+    <div class="space-y-6">
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Size Your Heater Correctly</h3>
+        <p class="text-stone-600 text-sm">Wood heaters are sized by cubic footage, not square footage. Measure your sauna's length, width, and ceiling height. Multiply all three. That's your cubic footage.</p>
+        <p class="text-stone-600 text-sm mt-3">Add 20% if your walls aren't well insulated. Outdoor saunas lose heat faster than indoor ones. An undersized heater will struggle to reach temperature on cold days. It's better to have too much power than not enough.</p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Chimney Installation is Not Optional</h3>
+        <p class="text-stone-600 text-sm">Every wood-burning heater needs a proper chimney. This isn't a DIY shortcut situation. A bad chimney installation is a fire hazard. Budget $500-$1,500 for a quality chimney kit and professional installation if you're not experienced.</p>
+        <p class="text-stone-600 text-sm mt-3">For outdoor barrel saunas, chimney kits are typically sold separately from the stove. Make sure you know what clearances are required before you install.</p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Wood Type Matters</h3>
+        <p class="text-stone-600 text-sm">Hardwoods burn hotter and longer. Birch, oak, alder, and ash are ideal. Birch is the traditional Finnish choice. It burns clean and doesn't produce excessive smoke.</p>
+        <p class="text-stone-600 text-sm mt-3">Avoid softwoods like pine and cedar in the firebox. They produce creosote, which builds up in the chimney and creates a fire risk. Save the cedar for your benches and walls.</p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Harvia vs HUUM: Which Brand?</h3>
+        <p class="text-stone-600 text-sm">Harvia is the safe choice. It's the most popular sauna brand in Finland, with decades of reliability data. Parts are widely available. The M3 and Legend have been refined over many generations.</p>
+        <p class="text-stone-600 text-sm mt-3">HUUM is the design-forward option. Estonian-made, striking aesthetics, and excellent stone mass. If you want a heater that looks as good as it works, HUUM delivers. Both brands are excellent. It really comes down to budget and aesthetics.</p>
+      </div>
+
+    </div>
+
+    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
+      <h3 class="font-bold text-stone-900 mb-2">More buying guides</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/best-electric-sauna-heaters" class="text-amber-700 hover:underline font-medium">Best Electric Sauna Heaters (If You Want the Easy Route)</a></li>
+        <li><a href="/guides/electric-vs-wood-fired-sauna" class="text-amber-700 hover:underline font-medium">Electric vs Wood-Fired Sauna: Full Comparison</a></li>
+        <li><a href="/guides/sauna-electrical-requirements" class="text-amber-700 hover:underline font-medium">Sauna Electrical Requirements Guide</a></li>
+        <li><a href="/guides/best-2-person-outdoor-sauna" class="text-amber-700 hover:underline font-medium">Best 2-Person Outdoor Saunas</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
