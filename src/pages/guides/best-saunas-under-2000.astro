@@ -1,0 +1,122 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+
+const picks = [
+  {
+    rank: 1,
+    asin: "B00A2F99F0",
+    name: "Dynamic Saunas Barcelona 1-2 Person Far Infrared",
+    price: "~$899",
+    rating: "4.4/5",
+    type: "Infrared / Indoor",
+    tag: "BEST UNDER $1K",
+    tagColor: "bg-green-100 text-green-800",
+    summary: "The best-value infrared sauna we've tested. Heats in 15 minutes, low-EMF panels, 120V plug-in, Canadian hemlock construction. Perfect for first-time buyers.",
+    pros: ["15-min heat-up", "Plugs into standard outlet", "Low EMF certified", "Easy assembly"],
+    cons: ["1-2 person only", "No steam option", "Indoor/covered use"]
+  },
+  {
+    rank: 2,
+    asin: "B084GY5CHB",
+    name: "SereneLife Portable Steam Sauna Tent",
+    price: "~$149",
+    rating: "4.2/5",
+    type: "Portable Steam",
+    tag: "BEST ULTRA-BUDGET",
+    tagColor: "bg-blue-100 text-blue-800",
+    summary: "Not a real sauna experience — but at $149, it's a legitimate way to try sauna before committing to a full kit. Sets up in minutes and packs away in a closet.",
+    pros: ["Under $150", "No installation", "Setup in 10 min", "Includes steamer"],
+    cons: ["Not a permanent sauna", "Plastic materials", "Limited session time"]
+  },
+  {
+    rank: 3,
+    asin: "B0B7TRM95Y",
+    name: "Harvia KIP-60W Sauna Heater (heater only)",
+    price: "~$579",
+    rating: "4.6/5",
+    type: "Heater Component",
+    tag: "BEST HEATER UPGRADE",
+    tagColor: "bg-amber-100 text-amber-800",
+    summary: "If you already have or are building a sauna room, this Harvia heater is the best investment under $1K. Finnish-made, bulletproof reliability, heats up to 300 cu ft.",
+    pros: ["Finnish quality", "Digital Xenio controls included", "Sauna stones included", "Wet or dry use"],
+    cons: ["Heater only — no sauna room", "Requires 240V/40A circuit"]
+  }
+];
+---
+<Base
+  title="Best Backyard Saunas Under $2,000 (2025) — Real Value Picks"
+  description="The best outdoor saunas under $2,000 in 2025. Honest picks for every budget — from portable options under $200 to full infrared saunas under $1,000."
+  canonical="/guides/best-saunas-under-2000"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best Backyard Saunas Under $2,000 (2025)
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 8 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        A quality sauna doesn't have to cost $5,000. Here's what you can actually get for under $2,000 — and what to expect at each price point.
+      </p>
+    </header>
+
+    <div class="bg-stone-100 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-3">What to Expect at Each Price Point</h2>
+      <div class="space-y-2 text-sm text-stone-700">
+        <p>💸 <strong>Under $200:</strong> Portable steam tents. Not a real sauna, but a legitimate starter experience.</p>
+        <p>💰 <strong>$500–$1,000:</strong> Solid 1-2 person infrared saunas. Real benefits, real heat, plug-in easy.</p>
+        <p>💵 <strong>$1,000–$2,000:</strong> Better infrared options with more features, or heater components for DIY builds.</p>
+        <p>🏆 <strong>$2,000+:</strong> Where traditional barrel saunas and premium infrared begin. Our top picks overall.</p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6 text-stone-900">Our Top Picks Under $2,000</h2>
+
+    <div class="space-y-8">
+      {picks.map(pick => (
+        <div class="bg-white border border-stone-200 rounded-xl shadow-sm p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>
+            <span class="text-xs text-stone-400">{pick.type}</span>
+          </div>
+          <h3 class="text-xl font-bold text-stone-900 mb-2">{pick.name}</h3>
+          <p class="text-stone-600 text-sm mb-4">{pick.summary}</p>
+          <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
+            <div>
+              <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
+              {pick.pros.map(p => <p class="text-stone-600">✅ {p}</p>)}
+            </div>
+            <div>
+              <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
+              {pick.cons.map(c => <p class="text-stone-600">⚠️ {c}</p>)}
+            </div>
+          </div>
+          <p class="text-xs text-stone-400 mb-2">Rating: {pick.rating}</p>
+          <AmazonButton asin={pick.asin} price={pick.price} />
+        </div>
+      ))}
+    </div>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">Is a Sub-$2,000 Sauna Worth It?</h2>
+      <p class="text-stone-600 mb-4">
+        Honestly — yes, with the right expectations. A $900 infrared sauna gives you real health benefits, real sweat sessions, and years of use. It's not the same experience as a $4,000 traditional cedar barrel sauna, but for most people trying sauna for the first time, it's the right starting point.
+      </p>
+      <p class="text-stone-600 mb-4">
+        The mistake people make is buying a cheap portable steam tent expecting it to replicate a Finnish sauna. It won't. If that's what you want, save up for the real thing. But if you want the core health benefits — cardiovascular, muscle recovery, stress relief — an infrared unit under $1,000 delivers them.
+      </p>
+      <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-900">
+        💡 <strong>Our recommendation:</strong> If your budget is truly under $2,000 and you want a real sauna experience, the Dynamic Saunas Barcelona at ~$899 is the move. It's the lowest price point where you get a genuinely good sauna — not a compromise.
+      </div>
+    </section>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
+      <h3 class="text-xl font-bold mb-2">Ready to Go Premium?</h3>
+      <p class="text-stone-300 mb-4">See our best overall picks across all budgets — including the saunas worth saving up for.</p>
+      <a href="/best-saunas" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+        See All Best Saunas →
+      </a>
+    </div>
+  </article>
+</Base>

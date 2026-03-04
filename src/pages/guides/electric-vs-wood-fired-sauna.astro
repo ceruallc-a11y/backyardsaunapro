@@ -1,0 +1,129 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+---
+<Base
+  title="Electric vs Wood-Fired Sauna: Which Is Better for Your Backyard?"
+  description="Electric sauna heater vs wood-burning stove — honest comparison of cost, heat quality, maintenance, convenience, and which is right for your situation."
+  canonical="/guides/electric-vs-wood-fired-sauna"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Electric vs Wood-Fired Sauna: Which Is Better?
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 9 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        This is one of the most debated questions in the sauna world. Electric is convenient; wood-fired is authentic. But the right answer depends heavily on your situation, budget, and what you want out of the experience.
+      </p>
+    </header>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-2">Quick Verdict</h2>
+      <p class="text-sm text-stone-700">
+        <strong>Electric</strong> wins for convenience, control, and urban/suburban installs. <strong>Wood-fired</strong> wins for the authentic experience, off-grid capability, and that irreplaceable wood-smoke ambiance. Neither is objectively better — it depends on you.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-8 mb-6 text-stone-900">Side-by-Side Comparison</h2>
+
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-stone-800 text-white">
+            <th class="text-left p-3">Factor</th>
+            <th class="text-left p-3">Electric</th>
+            <th class="text-left p-3">Wood-Fired</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            ["Heat-up Time", "30–45 min", "45–90 min"],
+            ["Temperature Control", "Precise digital control", "Manual — takes practice"],
+            ["Installation", "Electrician needed for 240V", "Chimney/flue required"],
+            ["Operating Cost", "$1–2 per session (electricity)", "Cost of firewood (varies)"],
+            ["Maintenance", "Very low — occasional rock replacement", "Regular ash cleanup, chimney inspection"],
+            ["Experience", "Consistent, reliable", "Ritualistic, unpredictable (in a good way)"],
+            ["Off-Grid Capable", "No", "Yes"],
+            ["Steam (löyly)", "Yes — pour water on rocks", "Yes — superior steam quality"],
+            ["Smell", "None", "Wood smoke aroma"],
+            ["HOA/Code Issues", "Rarely", "Sometimes (smoke/fire restrictions)"],
+            ["Upfront Cost", "$400–$1,500 (heater)", "$300–$2,000 (stove + flue)"],
+          ].map(([factor, elec, wood], i) => (
+            <tr class={i % 2 === 0 ? "bg-white" : "bg-stone-50"}>
+              <td class="p-3 font-medium text-stone-700 border-b border-stone-200">{factor}</td>
+              <td class="p-3 text-stone-600 border-b border-stone-200">{elec}</td>
+              <td class="p-3 text-stone-600 border-b border-stone-200">{wood}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">The Case for Electric</h2>
+    <p class="text-stone-600 mb-4">Electric sauna heaters are the dominant choice for a reason. You set the temperature, walk away, and come back to a perfectly heated sauna. No fire-building ritual, no ash cleanup, no waiting for the wood to catch. For most suburban homeowners who want to sauna 3–4 times a week, electric is the pragmatic choice.</p>
+    <p class="text-stone-600 mb-4">Modern digital controls let you schedule your sauna via an app, set precise temperatures, and get alerts when it's ready. You can't do any of that with wood.</p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">The Case for Wood-Fired</h2>
+    <p class="text-stone-600 mb-4">Ask any Finnish sauna purist and they'll tell you: wood-fired is the real thing. Building the fire is part of the ritual. The smell of wood smoke, the crackling sound, the radiant heat from a wood stove — it creates an experience that electric simply can't replicate.</p>
+    <p class="text-stone-600 mb-4">The steam quality is also noticeably different. Water poured on a wood-fired sauna stove produces a softer, silkier steam (called <em>löyly</em>) that many sauna enthusiasts swear is superior to electric-generated steam.</p>
+    <p class="text-stone-600 mb-4">And if you have a rural property with abundant firewood, your operating costs approach zero.</p>
+
+    <div class="grid md:grid-cols-2 gap-4 my-8">
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+        <h3 class="font-bold text-blue-900 mb-2">Choose Electric If…</h3>
+        <ul class="text-sm text-blue-800 space-y-1">
+          <li>✓ You're in a suburban/urban area</li>
+          <li>✓ You want maximum convenience</li>
+          <li>✓ You sauna frequently (3+ times/week)</li>
+          <li>✓ HOA or fire codes limit wood burning</li>
+          <li>✓ You want to pre-schedule sessions</li>
+        </ul>
+      </div>
+      <div class="bg-orange-50 border border-orange-200 rounded-lg p-5">
+        <h3 class="font-bold text-orange-900 mb-2">Choose Wood-Fired If…</h3>
+        <ul class="text-sm text-orange-800 space-y-1">
+          <li>✓ You want the authentic experience</li>
+          <li>✓ You have rural property with firewood</li>
+          <li>✓ You're off-grid or want to be</li>
+          <li>✓ No 240V service available</li>
+          <li>✓ The ritual matters to you</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Our Top Electric Heater Pick</h2>
+    <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm mb-8">
+      <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded">BEST ELECTRIC</span>
+      <h3 class="font-semibold text-stone-900 mt-2 mb-1">Harvia KIP-60W with Xenio Digital Controls</h3>
+      <p class="text-stone-600 text-sm mb-3">Finnish-made, 6kW, handles up to 300 cubic feet. Includes sauna stones and digital wall controller. The most reliable electric heater we recommend.</p>
+      <AmazonButton asin="B0B7TRM95Y" price="~$579" />
+    </div>
+
+    <section class="mt-4">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">FAQs</h2>
+      <div class="space-y-4">
+        {[
+          ["Can I convert from electric to wood-fired later?", "Yes, but it's not trivial. You'll need to add a proper chimney/flue system and potentially enlarge the heater opening. Better to decide upfront."],
+          ["Is wood-fired sauna legal everywhere?", "No. Some municipalities, HOAs, and fire districts restrict wood-burning appliances — especially during fire season or in dense neighborhoods. Check before you buy a wood stove."],
+          ["Which gets hotter?", "Both can reach 190°F+. Wood stoves often produce a more intense dry heat; electric is more consistent. In practice, temperature ceiling isn't a real differentiator."],
+          ["Is wood-fired more dangerous?", "Only if improperly installed. A correctly installed wood stove with proper clearances and a code-compliant chimney is very safe. Don't DIY the flue without understanding the requirements."],
+        ].map(([q, a]) => (
+          <div class="border-b border-stone-200 pb-4">
+            <h3 class="font-semibold text-stone-800 mb-1">{q}</h3>
+            <p class="text-stone-600 text-sm">{a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
+      <h3 class="text-xl font-bold mb-2">Ready to See Our Full Heater Rankings?</h3>
+      <p class="text-stone-300 mb-4">We've tested and ranked the best electric sauna heaters across every price point.</p>
+      <a href="/guides/best-electric-sauna-heaters" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+        Best Electric Sauna Heaters →
+      </a>
+    </div>
+  </article>
+</Base>
