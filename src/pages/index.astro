@@ -5,75 +5,84 @@ import AmazonButton from '../components/AmazonButton.astro';
 const featuredPicks = [
   {
     asin: "B017WJV8SO",
-    name: "Almost Heaven Pinnacle 2-Person Barrel Sauna",
-    price: "$2,199",
+    name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
+    price: "~$2,199",
     rating: "4.5/5",
-    blurb: "Our top pick for most homeowners. Cedar construction, easy assembly, and impressive heat retention.",
+    blurb: "The most popular outdoor barrel sauna on Amazon. Canadian red cedar, solid hardware, and a genuine Finnish experience. Our top pick for most homeowners.",
     tag: "BEST OVERALL"
   },
   {
     asin: "B00A2F99F0",
-    name: "Dynamic Saunas Barcelona 1-2 Person Far Infrared Sauna",
-    price: "$899",
+    name: "Dynamic Saunas Barcelona Far Infrared",
+    price: "~$899",
     rating: "4.4/5",
-    blurb: "Best budget-friendly infrared option. Heats in 15 minutes, low EMF panels, compact footprint.",
-    tag: "BEST BUDGET"
+    blurb: "Plugs into a standard outlet. Heats in 15 minutes. Low-EMF carbon panels. The easiest way to get a real sauna experience without the installation complexity.",
+    tag: "BEST VALUE"
   },
   {
-    asin: "B017WJV8SO",
-    name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
-    price: "$4,800",
-    rating: "4.8/5",
-    blurb: "Premium Canadian white cedar, built for decades. Worth every penny if you're serious about sauna.",
-    tag: "BEST PREMIUM"
+    asin: "B003Z11AXM",
+    name: "Almost Heaven 6-Person Barrel Sauna",
+    price: "~$3,499",
+    rating: "4.4/5",
+    blurb: "For families and serious sauna users. Enough room to actually lie down. The same Almost Heaven quality in a size that fits real groups.",
+    tag: "BEST LARGE"
   }
 ];
 ---
 <Base
-  title="Backyard Sauna Pro — Best Outdoor Saunas Reviewed"
-  description="Expert reviews and buying guides for backyard saunas. Find the best outdoor sauna for your home and budget."
+  title="Backyard Sauna Pro — Best Outdoor Saunas Reviewed (2025)"
+  description="Honest reviews and buying guides for backyard saunas. Find the best outdoor sauna for your home, space, and budget."
   canonical="/"
 >
   <!-- Hero -->
   <section class="text-center py-12">
-    <h1 class="text-4xl md:text-5xl font-bold text-stone-900 mb-4">
-      Find Your Perfect Backyard Sauna
+    <h1 class="text-4xl md:text-5xl font-bold text-stone-900 mb-4 leading-tight">
+      Find the Right Backyard Sauna
     </h1>
     <p class="text-lg text-stone-600 max-w-2xl mx-auto mb-8">
-      Honest, in-depth reviews and expert buying guides to help you choose the best outdoor sauna for your home, budget, and lifestyle.
+      Honest reviews, real cost breakdowns, and practical guides. No fluff. Just what you need to make a good decision.
     </p>
-    <a href="/best-saunas" class="inline-block bg-stone-900 hover:bg-stone-700 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
-      See Our Top Picks →
-    </a>
+    <div class="flex flex-wrap justify-center gap-3">
+      <a href="/best-saunas" class="inline-block bg-stone-900 hover:bg-stone-700 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
+        See Top Picks →
+      </a>
+      <a href="/guides/outdoor-sauna-cost" class="inline-block bg-amber-50 hover:bg-amber-100 text-stone-900 border border-amber-300 font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
+        What Does It Cost?
+      </a>
+    </div>
   </section>
 
   <!-- Featured Picks -->
   <section class="mt-12">
-    <h2 class="text-2xl font-bold mb-6 text-stone-900">🏆 Our Top Picks for 2025</h2>
+    <h2 class="text-2xl font-bold mb-2 text-stone-900">Our Top Picks for 2025</h2>
+    <p class="text-stone-500 text-sm mb-6">Quick overview. <a href="/best-saunas" class="text-amber-700 hover:underline">Full reviews here.</a></p>
     <div class="grid md:grid-cols-3 gap-6">
       {featuredPicks.map(pick => (
-        <div class="bg-white rounded-xl shadow p-6 border border-stone-200 flex flex-col">
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-stone-200 flex flex-col">
           <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded w-fit mb-3">{pick.tag}</span>
           <h3 class="font-semibold text-stone-900 mb-2 leading-snug">{pick.name}</h3>
           <p class="text-sm text-stone-600 flex-grow mb-3">{pick.blurb}</p>
-          <p class="text-xs text-stone-400 mb-2">Rating: {pick.rating}</p>
+          <p class="text-xs text-stone-400 mb-3">Rating: {pick.rating}</p>
           <AmazonButton asin={pick.asin} price={pick.price} />
         </div>
       ))}
     </div>
   </section>
 
-  <!-- Content Sections -->
+  <!-- Buying Guides -->
   <section class="mt-16">
-    <h2 class="text-2xl font-bold mb-6 text-stone-900">📚 Buying Guides</h2>
+    <h2 class="text-2xl font-bold mb-6 text-stone-900">Buying Guides</h2>
     <div class="grid md:grid-cols-2 gap-4">
       {[
-        ["/guides/infrared-vs-traditional-sauna", "Infrared vs Traditional Sauna", "The real differences, explained without the jargon."],
-        ["/guides/best-electric-sauna-heaters", "Best Electric Sauna Heaters (2025)", "Ranked by quality, value, and cold-climate performance."],
+        ["/guides/best-saunas-under-5000", "Best Saunas Under $5,000", "Top picks at the sweet-spot price range."],
+        ["/guides/best-saunas-under-2000", "Best Saunas Under $2,000", "Real value at every sub-$2k price point."],
+        ["/guides/best-4-person-outdoor-sauna", "Best 4-Person Outdoor Saunas", "What '4-person' actually means and the best options."],
+        ["/guides/best-2-person-outdoor-sauna", "Best 2-Person Outdoor Saunas", "Top picks for couples and smaller yards."],
+        ["/guides/best-sauna-for-small-backyard", "Best Sauna for a Small Backyard", "Compact options and space-saving strategies."],
+        ["/guides/best-electric-sauna-heaters", "Best Electric Sauna Heaters", "Ranked from budget to premium."],
+        ["/guides/best-wood-burning-sauna-heaters", "Best Wood-Burning Sauna Heaters", "Harvia, HUUM, and the top stoves reviewed."],
         ["/guides/best-barrel-saunas-cold-climates", "Best Barrel Saunas for Cold Climates", "Winter-ready picks that handle extreme temps."],
-        ["/guides/best-saunas-under-2000", "Best Saunas Under $2,000", "Real value options at every sub-$2k price point."],
-        ["/guides/best-2-person-outdoor-sauna", "Best 2-Person Outdoor Sauna Kits", "Top picks for couples and smaller yards."],
-        ["/guides/best-sauna-accessories", "Best Sauna Accessories for Beginners", "Everything you need for day one — prioritized."],
+        ["/guides/best-sauna-accessories", "Best Sauna Accessories", "Everything you need for day one."],
       ].map(([href, title, desc]) => (
         <a href={href} class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
           <p class="font-semibold text-stone-900 text-sm">{title}</p>
@@ -83,16 +92,18 @@ const featuredPicks = [
     </div>
   </section>
 
+  <!-- Planning & Installation -->
   <section class="mt-10">
-    <h2 class="text-2xl font-bold mb-6 text-stone-900">🔧 Planning & Installation</h2>
+    <h2 class="text-2xl font-bold mb-6 text-stone-900">Planning & Installation</h2>
     <div class="grid md:grid-cols-2 gap-4">
       {[
+        ["/guides/outdoor-sauna-cost", "How Much Does an Outdoor Sauna Cost?", "Full cost breakdown including electrical, foundation, and accessories."],
         ["/guides/how-much-space-for-backyard-sauna", "How Much Space Do You Need?", "Dimensions, clearances, and footprint planning."],
-        ["/guides/best-location-backyard-sauna", "Best Location for a Backyard Sauna", "Drainage, privacy, sun exposure, and more."],
+        ["/guides/best-location-backyard-sauna", "Best Location for a Backyard Sauna", "Drainage, privacy, sun exposure, and codes."],
         ["/guides/sauna-foundation-guide", "Sauna Foundation Guide", "Concrete, gravel, timber — all options compared."],
         ["/guides/sauna-electrical-requirements", "Sauna Electrical Requirements", "Circuit sizes, costs, and permit requirements."],
         ["/guides/how-to-assemble-barrel-sauna", "How to Assemble a Barrel Sauna", "Step-by-step from unboxing to first heat."],
-        ["/guides/sauna-maintenance-guide", "Sauna Maintenance Guide", "Keep your sauna lasting 20–40 years."],
+        ["/guides/sauna-maintenance-guide", "Sauna Maintenance Guide", "Keep your sauna lasting 20-40 years."],
       ].map(([href, title, desc]) => (
         <a href={href} class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
           <p class="font-semibold text-stone-900 text-sm">{title}</p>
@@ -102,12 +113,15 @@ const featuredPicks = [
     </div>
   </section>
 
+  <!-- Comparisons & Health -->
   <section class="mt-10">
-    <h2 class="text-2xl font-bold mb-6 text-stone-900">⚖️ Comparisons</h2>
+    <h2 class="text-2xl font-bold mb-6 text-stone-900">Comparisons & Research</h2>
     <div class="grid md:grid-cols-2 gap-4">
       {[
+        ["/guides/infrared-vs-traditional-sauna", "Infrared vs Traditional Sauna", "The real differences in heat, cost, and installation."],
         ["/guides/barrel-sauna-vs-cabin-sauna", "Barrel Sauna vs Cabin Sauna", "Heat efficiency, cost, and which to choose."],
-        ["/guides/electric-vs-wood-fired-sauna", "Electric vs Wood-Fired Sauna", "Convenience vs authenticity — the honest comparison."],
+        ["/guides/electric-vs-wood-fired-sauna", "Electric vs Wood-Fired Sauna", "Convenience vs authenticity — the honest take."],
+        ["/guides/sauna-health-benefits", "Sauna Health Benefits: What Science Says", "Cardiovascular, recovery, sleep — the evidence."],
       ].map(([href, title, desc]) => (
         <a href={href} class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
           <p class="font-semibold text-stone-900 text-sm">{title}</p>
@@ -117,11 +131,27 @@ const featuredPicks = [
     </div>
   </section>
 
-  <!-- Trust signals -->
+  <!-- Reviews -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold mb-6 text-stone-900">In-Depth Reviews</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      {[
+        ["/reviews/almost-heaven-pinnacle-review", "Almost Heaven Pinnacle Barrel Sauna Review", "The best-selling outdoor barrel sauna — is it worth it?"],
+        ["/reviews/harvia-kip-60b-review", "Harvia KIP 60B Electric Heater Review", "The most popular sauna heater in Finland, tested."],
+      ].map(([href, title, desc]) => (
+        <a href={href} class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
+          <p class="font-semibold text-stone-900 text-sm">{title}</p>
+          <p class="text-xs text-stone-500 mt-1">{desc}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Why trust us -->
   <section class="mt-16 bg-stone-100 rounded-xl p-8 text-center">
-    <h2 class="text-xl font-bold mb-2 text-stone-900">Why Trust Us?</h2>
-    <p class="text-stone-600 max-w-2xl mx-auto">
-      We research every sauna we recommend — specs, real customer reviews, manufacturer reputation, and long-term durability. We only recommend products we'd genuinely buy ourselves. Our affiliate links support this site at no extra cost to you.
+    <h2 class="text-xl font-bold mb-3 text-stone-900">How We Review Saunas</h2>
+    <p class="text-stone-600 max-w-2xl mx-auto text-sm">
+      We research every sauna we recommend — specifications, customer reviews, manufacturer reputation, and real-world durability. We give you the full cost picture, not just the kit price. Our affiliate links support this site at no extra cost to you.
     </p>
   </section>
 </Base>
