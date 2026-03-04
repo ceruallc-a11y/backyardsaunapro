@@ -1,0 +1,119 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best wood for a sauna room?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cedar is the most popular choice for sauna interiors in North America. It resists moisture and decay, smells pleasant when heated, and stays relatively cool to the touch. Hemlock is a good budget alternative. For a more Scandinavian look, spruce or pine are traditional in Finnish saunas. Avoid hardwoods like oak or cherry — they absorb too much heat and can burn skin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How big should a home sauna room be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 4x6 foot interior works for one to two people. A 6x8 foot room comfortably fits three to four. Ceiling height of 7 feet is standard — enough headroom without wasting heat in dead air above the benches. Taller ceilings require more powerful heaters and longer preheat times."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you add a sauna to an existing room?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Indoor sauna kits are designed to be installed inside existing spaces — basements, spare bedrooms, garages, bathrooms. The main requirements are a dedicated 240V electrical circuit for the heater, proper ventilation, and a moisture barrier to protect surrounding walls. No plumbing is needed for a traditional dry sauna."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Sauna Room Ideas: Design, Layout, and Material Inspiration (2025)"
+  description="Sauna room design ideas for home builds, from compact indoor kits to custom outdoor rooms. Materials, layouts, lighting, and what makes a sauna feel great."
+  canonical="/guides/sauna-room-ideas"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Room Ideas (2025): Design, Layout, and Materials</h1>
+    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-forest-view.jpg" alt="Sauna room with wood interior and window view" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">A sauna room does not need to be complicated. The best ones are simple: good wood, a capable heater, enough bench space, and a view or some natural light if you can manage it. Here are the ideas and decisions that make the biggest difference.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Indoor Sauna Room Ideas</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Basement sauna</h3>
+    <p class="text-stone-700 mb-4">The most common location for a home sauna addition. Basements are already temperature-controlled, below grade keeps exterior wall insulation requirements modest, and there is usually panel capacity for a 240V circuit. A 6x8 foot corner in a finished basement converts to a 3-4 person sauna that blends into the home. Use a pre-built kit or frame it out — either way, insulate all exterior walls well since basement concrete bleeds cold year-round. See our guide on <a href="/guides/best-indoor-sauna-kits" class="text-amber-700 hover:underline">best indoor sauna kits</a> for pre-built options.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Bathroom sauna conversion</h3>
+    <p class="text-stone-700 mb-4">A large master bath with unused square footage is a natural candidate. The plumbing is already there for a post-sauna shower, and the space is already moisture-tolerant. The constraint is usually ceiling height — standard 8-foot ceilings work, but the sauna box itself needs to be framed carefully to maintain enough headroom on the upper bench while keeping the heater zone manageable.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Garage sauna</h3>
+    <p class="text-stone-700 mb-6">Garages tolerate the mess of construction and the humidity of sauna use well. Usually easy to run a 240V circuit from the panel. Insulation requirements are higher since garage walls and ceilings are poorly insulated by default. A well-insulated garage sauna heats up fast and holds temperature well once built correctly.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">
+      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Outdoor sauna cabin in backyard" class="w-full object-cover max-h-64 rounded-xl mb-4" loading="lazy" width="1200" height="800" />
+      Outdoor Sauna Room Ideas
+    </h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Barrel sauna</h3>
+    <p class="text-stone-700 mb-4">The most popular outdoor option. Cedar barrel saunas heat fast (round interior is efficient), look good in a backyard, and install in a day. Add a cedar deck or gravel pad for drainage and the setup looks intentional. The main aesthetic decision is placement — partially screened by trees or a privacy fence, or positioned as a backyard focal point. See our <a href="/guides/best-barrel-sauna-kits" class="text-amber-700 hover:underline">barrel sauna kit guide</a> for top options.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Cabin-style sauna</h3>
+    <p class="text-stone-700 mb-4">A purpose-built outdoor structure with a changing room anteroom, proper insulated walls, and a dedicated heater. This is the most authentic experience and the most permanent investment. Budget $8,000-$20,000+ for a custom build. The changing room is worth the extra footprint — having a dry space to cool down between rounds makes the whole experience significantly better.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Backyard shed conversion</h3>
+    <p class="text-stone-700 mb-6">An existing shed or outbuilding can convert to a sauna for less than a new barrel kit. The key requirements: proper insulation on all walls and ceiling, vapor barrier, a suitable heater (electric is easiest), and a dedicated circuit. Sheds with windows need the windows sealed or replaced — light is fine, air gaps are not. Read our <a href="/guides/how-to-build-a-sauna" class="text-amber-700 hover:underline">how to build a sauna guide</a> for a full construction walkthrough.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Design Details That Matter</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Wood selection</h3>
+    <p class="text-stone-700 mb-4">Cedar is the standard for a reason — it handles moisture, resists decay, and the scent when heated is part of the experience. Hemlock costs less and works nearly as well. For walls and benches, use clear grade lumber with no knots that could overheat and burn skin. See our <a href="/guides/cedar-vs-hemlock-sauna" class="text-amber-700 hover:underline">cedar vs hemlock comparison</a> for the full breakdown.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Bench layout</h3>
+    <p class="text-stone-700 mb-4">Two-tier benching is standard. The upper bench is hotter (heat rises), lower bench is for entry-level heat or sitting while the upper bench is in use. Bench depth of 18-20 inches lets one person sit comfortably; 24 inches allows lying down. Bench height: upper at 42-48 inches off the floor, lower at 18-22 inches.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Lighting</h3>
+    <p class="text-stone-700 mb-4">Dim, warm light makes a sauna feel better. Recessed sauna-rated fixtures in the ceiling or behind the upper bench create indirect, even light without glare. Avoid standard recessed cans — they need to be vapor-rated for the heat and humidity. Some barrel saunas have small windows that provide natural light during daytime sessions, which many people prefer.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Ventilation</h3>
+    <p class="text-stone-700 mb-6">Fresh air intake low on the wall (4-6 inches off the floor, near the heater), exhaust vent high near the ceiling. This creates a natural convection loop and prevents dead air. Essential for both comfort and safety. See our <a href="/guides/sauna-ventilation" class="text-amber-700 hover:underline">sauna ventilation guide</a> for full detail.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What is the best wood for a sauna room?</h3>
+        <p class="text-stone-700">Cedar for North American builds — moisture-resistant, pleasant scent, stays cool to the touch. Hemlock is a solid budget alternative. Avoid hardwoods.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How big should a home sauna be?</h3>
+        <p class="text-stone-700">4x6 feet for 1-2 people. 6x8 feet for 3-4. Ceiling at 7 feet. Size up if you can — the incremental cost is modest and the comfort difference is significant.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you add a sauna to an existing room?</h3>
+        <p class="text-stone-700">Yes. Indoor kits fit in basements, garages, and spare rooms. Main requirements: a 240V circuit, insulated walls, moisture barrier, and ventilation.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/how-to-build-a-sauna" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
+        <li><a href="/guides/best-indoor-sauna-kits" class="text-amber-700 hover:underline">Best Indoor Sauna Kits</a></li>
+        <li><a href="/guides/best-barrel-sauna-kits" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
+        <li><a href="/guides/cedar-vs-hemlock-sauna" class="text-amber-700 hover:underline">Cedar vs Hemlock Sauna</a></li>
+        <li><a href="/guides/sauna-ventilation" class="text-amber-700 hover:underline">Sauna Ventilation Guide</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>

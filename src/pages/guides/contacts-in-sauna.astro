@@ -1,0 +1,97 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you wear contact lenses in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technically you can, but it is not recommended. Sauna heat and low humidity cause soft contact lenses to dry out quickly, which causes discomfort and can irritate the cornea. Extended wear increases the risk. If you do keep them in, close your eyes often and keep sessions short. Removing contacts before a sauna session is the safer choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will a sauna damage contact lenses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Soft contact lenses can dehydrate and change shape in the dry heat of a traditional sauna. This makes them uncomfortable to wear and can temporarily distort vision. The lenses themselves are usually not permanently damaged, but the discomfort and eye irritation risk is real. Hard (RGP) lenses are more heat-stable but can also dry out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do if I need vision correction in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Remove contacts before entering and leave glasses outside. Most people find that slight blurriness in the sauna is not a practical problem — you are sitting still in a small room, not driving or reading. If you regularly use a sauna and rely on vision correction, prescription swimming goggles are an option, though unusual."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Can You Wear Contact Lenses in a Sauna? What Optometrists Say"
+  description="Whether it's safe to wear contacts in a sauna, what the heat does to soft and hard lenses, and what to do instead."
+  canonical="/guides/contacts-in-sauna"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Can You Wear Contact Lenses in a Sauna?</h1>
+    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Sauna interior" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">The short answer is: remove them. You can get away with keeping contacts in for a short session, but there are real reasons most optometrists advise against it.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Happens to Contacts in a Sauna</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Soft lenses dehydrate</h3>
+    <p class="text-stone-700 mb-4">A traditional sauna runs 160-185°F with relatively low humidity (10-20%). Soft contact lenses are mostly water. In dry heat, they lose moisture faster than your tear film can replenish it. The lens shrinks slightly, tightens on the eye, and causes discomfort ranging from mild dryness to a gritty scratching sensation. The longer you stay in, the worse it gets.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Corneal irritation risk</h3>
+    <p class="text-stone-700 mb-4">A dried-out lens that has changed shape sits differently on the cornea. This can cause micro-abrasions on the corneal surface, which are painful and take a few days to heal. It also increases the chance of the lens sticking and being difficult to remove. For most people this risk is low for a short session, but rises with longer exposure.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Hard lenses (RGP)</h3>
+    <p class="text-stone-700 mb-6">Rigid gas-permeable lenses are more heat-stable than soft lenses and do not dehydrate the same way. The risk is lower but not zero — your eyes still dry out in sauna heat, and a rigid lens on a dry eye surface is uncomfortable. Most people with RGP lenses also report it's better to remove them.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What About Steam Rooms?</h2>
+    <p class="text-stone-700 mb-6">Different problem. Steam rooms are high humidity (nearly 100%), so lens dehydration is less of an issue. But the warm mist can carry bacteria and fungi, and contacts act as a trap for microorganisms. The infection risk in a steam room is the bigger concern. Optometrists generally say no contacts in steam rooms more firmly than saunas. See our <a href="/guides/sauna-vs-steam-room" class="text-amber-700 hover:underline">sauna vs steam room comparison</a> for more on the differences.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Practical Reality</h2>
+    <p class="text-stone-700 mb-4">Many people wear contacts in saunas without incident, especially in short sessions. The risk is real but not catastrophic for most healthy eyes. What typically happens is just significant discomfort by the end — the eyes feel dry, gritty, and take a few hours to recover.</p>
+    <p class="text-stone-700 mb-6">The simple answer: remove them before you go in. Leave your glasses outside. In a sauna you are sitting in a small room — you do not need sharp vision. The slight blur is not a practical problem for 15-20 minutes.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you wear contact lenses in a sauna?</h3>
+        <p class="text-stone-700">You can, but it is not recommended. Soft lenses dehydrate in dry heat, causing discomfort and mild corneal irritation risk. Removing them before a session is the sensible call.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Will a sauna damage contact lenses?</h3>
+        <p class="text-stone-700">The lenses themselves are usually fine, but they may temporarily change shape from dehydration. The main risk is eye irritation and discomfort, not permanent lens damage.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What should I do if I need vision correction in a sauna?</h3>
+        <p class="text-stone-700">Remove contacts, leave glasses outside. The blurriness in a small, stationary environment is rarely a problem for 15-20 minutes.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/headphones-in-sauna" class="text-amber-700 hover:underline">Can You Wear Headphones in a Sauna?</a></li>
+        <li><a href="/guides/sauna-etiquette" class="text-amber-700 hover:underline">Sauna Etiquette Guide</a></li>
+        <li><a href="/guides/sauna-vs-steam-room" class="text-amber-700 hover:underline">Sauna vs Steam Room</a></li>
+        <li><a href="/guides/how-long-to-stay-in-sauna" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
