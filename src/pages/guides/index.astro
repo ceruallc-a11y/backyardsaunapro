@@ -1,0 +1,62 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const guides = [
+  {
+    category: "Buying Guides",
+    emoji: "📚",
+    items: [
+      { href: "/guides/infrared-vs-traditional-sauna", title: "Infrared vs Traditional Sauna", desc: "The real differences in heat, cost, and installation." },
+      { href: "/guides/best-electric-sauna-heaters", title: "Best Electric Sauna Heaters (2025)", desc: "Ranked picks from budget to premium." },
+      { href: "/guides/best-barrel-saunas-cold-climates", title: "Best Barrel Saunas for Cold Climates", desc: "Winter-ready picks that handle extreme temps." },
+      { href: "/guides/best-saunas-under-2000", title: "Best Saunas Under $2,000", desc: "Real value at every sub-$2k price point." },
+      { href: "/guides/best-2-person-outdoor-sauna", title: "Best 2-Person Outdoor Sauna Kits", desc: "Top picks for couples and smaller yards." },
+      { href: "/guides/best-sauna-accessories", title: "Best Sauna Accessories for Beginners", desc: "Everything you need for day one." },
+    ]
+  },
+  {
+    category: "Planning & Installation",
+    emoji: "🔧",
+    items: [
+      { href: "/guides/how-much-space-for-backyard-sauna", title: "How Much Space Do You Need?", desc: "Dimensions, clearances, and footprint planning." },
+      { href: "/guides/best-location-backyard-sauna", title: "Best Location for a Backyard Sauna", desc: "Drainage, privacy, sun exposure, and codes." },
+      { href: "/guides/sauna-foundation-guide", title: "Sauna Foundation Guide", desc: "Concrete, gravel, timber — all options compared." },
+      { href: "/guides/sauna-electrical-requirements", title: "Sauna Electrical Requirements", desc: "Circuit sizes, costs, and permit requirements." },
+      { href: "/guides/how-to-assemble-barrel-sauna", title: "How to Assemble a Barrel Sauna", desc: "Step-by-step from unboxing to first heat." },
+      { href: "/guides/sauna-maintenance-guide", title: "Sauna Maintenance Guide", desc: "Keep your sauna lasting 20–40 years." },
+    ]
+  },
+  {
+    category: "Comparisons",
+    emoji: "⚖️",
+    items: [
+      { href: "/guides/barrel-sauna-vs-cabin-sauna", title: "Barrel Sauna vs Cabin Sauna", desc: "Heat efficiency, cost, and which to choose." },
+      { href: "/guides/electric-vs-wood-fired-sauna", title: "Electric vs Wood-Fired Sauna", desc: "Convenience vs authenticity — the honest take." },
+    ]
+  }
+];
+---
+<Base
+  title="Sauna Guides — Backyard Sauna Pro"
+  description="All sauna buying guides, planning guides, installation guides, and comparisons from Backyard Sauna Pro."
+  canonical="/guides"
+>
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-2">Sauna Guides</h1>
+    <p class="text-stone-500 mb-10">Everything you need to buy, plan, install, and maintain a backyard sauna.</p>
+
+    {guides.map(section => (
+      <section class="mb-10">
+        <h2 class="text-xl font-bold text-stone-900 mb-4">{section.emoji} {section.category}</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          {section.items.map(item => (
+            <a href={item.href} class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
+              <p class="font-semibold text-stone-900 text-sm">{item.title}</p>
+              <p class="text-xs text-stone-500 mt-1">{item.desc}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>
