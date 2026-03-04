@@ -1,0 +1,108 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What should you wear in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In a private home sauna, wear whatever is comfortable — a towel, light cotton shorts, or nothing (Finnish tradition). In a public gym sauna, most facilities require you to be covered. Light cotton or linen clothing, a swimsuit, or a wrapped towel are all acceptable. Avoid synthetic fabrics — they trap heat, don't absorb sweat, and can feel uncomfortable in the hot environment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you wear a swimsuit in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A swimsuit is one of the most common choices for gym and public saunas. The main drawback is that nylon and polyester blends trap heat more than cotton and can feel clingy when wet. A swimsuit made from cotton or a natural blend is more comfortable than a typical nylon competition suit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should you bring a towel to a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, always. Even if you wear clothing, bring a separate towel to sit on. Sitting bare skin or clothing directly on the wooden bench leaves sweat soaked into the wood, which leads to bacterial growth and odors over time. A towel to sit on is standard sauna etiquette worldwide."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="What to Wear in a Sauna: Home, Gym, and Public Saunas"
+  description="What to wear in a sauna at the gym, at home, and in public facilities. What fabrics work, what to avoid, and the towel rule everyone should know."
+  canonical="/guides/what-to-wear-in-sauna"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">What to Wear in a Sauna</h1>
+    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Clean sauna interior ready for use" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">What you wear in a sauna depends on where you are. Home sauna gives you complete freedom. Gym and public saunas have rules — explicit or unwritten. Here is the full breakdown.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Home Sauna: What to Wear</h2>
+    <p class="text-stone-700 mb-4">Traditional Finnish sauna culture is nude. The logic is practical: clothing traps sweat against your body, reduces the cleansing effect of the heat, and takes longer to dry. Many home sauna owners in North America go the same way for private sessions.</p>
+    <p class="text-stone-700 mb-6">If you prefer clothing: a light cotton towel wrapped around the body or a pair of cotton shorts is ideal. The key is cotton or linen — natural fibers breathe, absorb sweat, and feel comfortable in heat. Synthetic athletic wear (polyester, nylon, spandex) is the worst choice — it traps heat, doesn't absorb, and can feel suffocating.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Gym Sauna: What to Wear</h2>
+    <p class="text-stone-700 mb-4">Most gym saunas in North America require you to be covered. The posted rules are usually near the door — read them before going in.</p>
+    <p class="text-stone-700 mb-4">Common acceptable options:</p>
+    <ul class="space-y-2 text-stone-700 mb-6 ml-4 text-sm">
+      <li><span class="font-semibold">Towel:</span> Wrapped around the waist or body. Universally accepted. Most gyms provide them.</li>
+      <li><span class="font-semibold">Swimsuit:</span> Fine, but natural fiber suits are more comfortable than nylon competition cuts.</li>
+      <li><span class="font-semibold">Light cotton shorts and t-shirt:</span> Works well, just be prepared for it to be saturated in sweat.</li>
+    </ul>
+    <p class="text-stone-700 mb-6">Regardless of what you wear, always bring a second towel to sit on. Sitting clothing or bare skin on the wooden bench without a towel is poor etiquette in any shared sauna. See our <a href="/guides/gym-sauna-etiquette" class="text-amber-700 hover:underline">gym sauna etiquette guide</a> for the full rules.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Not to Wear</h2>
+    <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-8">
+      <ul class="space-y-2 text-red-800 text-sm">
+        <li><span class="font-semibold">Synthetic athletic wear</span> — polyester, nylon, spandex trap heat and sweat badly</li>
+        <li><span class="font-semibold">Shoes</span> — most saunas are barefoot zones; footwear traps heat and is unsanitary</li>
+        <li><span class="font-semibold">Metal jewelry</span> — heats up against skin quickly and can cause burns</li>
+        <li><span class="font-semibold">Contacts</span> — dehydrate in low-humidity sauna air; see our <a href="/guides/contacts-in-sauna" class="text-amber-700 hover:underline">contacts in sauna guide</a></li>
+        <li><span class="font-semibold">Headphones / AirPods</span> — will be damaged by heat; see our <a href="/guides/headphones-in-sauna" class="text-amber-700 hover:underline">headphones in sauna guide</a></li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Towel Rule</h2>
+    <p class="text-stone-700 mb-6">Always sit on a towel. This is the single most universal rule across every sauna culture. In Finland it is considered basic hygiene. In gym saunas it is often posted as a requirement. The reason is straightforward: bare skin on wooden benches leaves sweat soaked in, and over time that creates bacteria and odor that affects everyone who uses the sauna after you. One towel folded under you takes 10 seconds and is considered basic courtesy everywhere in the world.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What should you wear in a sauna?</h3>
+        <p class="text-stone-700">At home: whatever is comfortable — towel, cotton shorts, or nothing. At a gym: a towel or swimsuit, per the posted rules. Avoid synthetic fabrics.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you wear a swimsuit in a sauna?</h3>
+        <p class="text-stone-700">Yes. A swimsuit is common in gym saunas. Cotton or natural fiber suits are more comfortable than nylon blends in the heat.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Should you bring a towel to a sauna?</h3>
+        <p class="text-stone-700">Always. Even if you wear clothing, sit on a separate towel. It is standard etiquette and protects the bench wood.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-etiquette" class="text-amber-700 hover:underline">Full Sauna Etiquette Guide</a></li>
+        <li><a href="/guides/gym-sauna-etiquette" class="text-amber-700 hover:underline">Gym Sauna Etiquette</a></li>
+        <li><a href="/guides/best-sauna-towels" class="text-amber-700 hover:underline">Best Sauna Towels</a></li>
+        <li><a href="/guides/contacts-in-sauna" class="text-amber-700 hover:underline">Can You Wear Contacts in a Sauna?</a></li>
+        <li><a href="/guides/headphones-in-sauna" class="text-amber-700 hover:underline">Can You Wear Headphones in a Sauna?</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
