@@ -1,0 +1,143 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Sauna Foundation Guide: Base Options for Outdoor Saunas (2025)"
+  description="The best foundation options for outdoor barrel and cabin saunas. Concrete pads, gravel bases, deck mounting, and what to avoid — complete guide with costs."
+  canonical="/guides/sauna-foundation-guide"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Installation Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Sauna Foundation Guide: Base Options for Outdoor Saunas
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 8 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        The foundation is the most overlooked part of a sauna build — and the one most likely to cause problems down the road. A sauna that shifts, settles, or sits in standing water will warp, rot, and become unsafe. Here's how to do it right.
+      </p>
+    </header>
+
+    <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-red-800 mb-2">⚠️ Never Do This</h2>
+      <ul class="text-sm text-red-700 space-y-1">
+        <li>❌ Place sauna directly on soil or grass — it will rot from the bottom up</li>
+        <li>❌ Use an unlevel base — even 1 inch of tilt causes door alignment problems and water pooling</li>
+        <li>❌ Skip drainage planning — trapped moisture under the sauna destroys the floor</li>
+        <li>❌ Use untreated lumber in contact with ground — it won't last 2 seasons</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-8 mb-6 text-stone-900">Foundation Options Compared</h2>
+
+    <div class="space-y-6 mb-10">
+      {[
+        {
+          name: "Poured Concrete Pad",
+          cost: "$500–$2,000 (professional pour)",
+          difficulty: "Hard — hire a pro",
+          best_for: "Permanent installs, cabin saunas, heavy loads",
+          pros: ["Most stable long-term", "Handles any weight", "Frost-resistant if properly footed", "Easy to drain"],
+          cons: ["Most expensive", "Permanent — can't relocate sauna", "Requires permits in some areas"],
+          verdict: "The gold standard for a permanent sauna. If you're spending $3,000+ on a sauna, don't cheap out on the foundation."
+        },
+        {
+          name: "Compacted Gravel Pad",
+          cost: "$150–$500 DIY",
+          difficulty: "Medium — DIY friendly",
+          best_for: "Barrel saunas, most residential installs",
+          pros: ["Excellent drainage", "DIY-friendly", "No permits needed", "Can be leveled easily", "Allows some relocation"],
+          cons: ["Can settle over time", "Needs occasional re-leveling", "Not ideal for very heavy saunas"],
+          verdict: "Our recommended option for most barrel sauna installs. Cheap, drains perfectly, easy to DIY."
+        },
+        {
+          name: "Pressure-Treated Timber Frame",
+          cost: "$200–$600 DIY",
+          difficulty: "Easy-Medium",
+          best_for: "Slightly uneven ground, raised installs",
+          pros: ["Levels uneven terrain easily", "Good airflow under sauna", "DIY friendly", "Relocatable"],
+          cons: ["Timber degrades over 15–20 years", "Must use ground-contact rated lumber", "Less stable than concrete"],
+          verdict: "Good option if your ground isn't level or you might relocate the sauna. Use 4×4 or 6×6 PT lumber only."
+        },
+        {
+          name: "Deck Mounting",
+          cost: "Varies — depends on existing deck",
+          difficulty: "Hard — requires structural assessment",
+          best_for: "Homeowners with an existing deck",
+          pros: ["Convenient if deck is already there", "Elevated = good drainage"],
+          cons: ["Deck must be structurally rated (800–1,500 lbs)", "May require reinforcement", "Fire clearance from house required"],
+          verdict: "Only viable if your deck can handle the weight. Get a structural engineer to confirm before proceeding."
+        },
+        {
+          name: "Concrete Pavers",
+          cost: "$100–$400 DIY",
+          difficulty: "Easy",
+          best_for: "Smaller saunas, temporary installs",
+          pros: ["Cheapest solid option", "Easy to level", "No permits", "Look nice"],
+          cons: ["Can shift in freeze-thaw cycles", "Not ideal for heavier saunas", "Gaps can collect debris"],
+          verdict: "Fine for smaller infrared units or as a temporary solution. Not recommended for traditional barrel saunas in cold climates."
+        },
+      ].map(opt => (
+        <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-stone-900">{opt.name}</h3>
+            <span class="text-sm font-semibold text-amber-700">{opt.cost}</span>
+          </div>
+          <p class="text-xs text-stone-400 mb-3">Difficulty: {opt.difficulty} · Best for: {opt.best_for}</p>
+          <div class="grid md:grid-cols-2 gap-3 mb-3 text-sm">
+            <div>
+              <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
+              {opt.pros.map(p => <p class="text-stone-600">✅ {p}</p>)}
+            </div>
+            <div>
+              <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
+              {opt.cons.map(c => <p class="text-stone-600">⚠️ {c}</p>)}
+            </div>
+          </div>
+          <p class="text-sm text-stone-700 bg-stone-50 rounded-lg p-3 border border-stone-200 mt-2">
+            💡 <strong>Verdict:</strong> {opt.verdict}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Step-by-Step: Building a Gravel Pad</h2>
+    <p class="text-stone-600 mb-4">This is the method we recommend for most barrel sauna installs. Here's exactly how to do it:</p>
+    <ol class="space-y-3 mb-6">
+      {[
+        ["Mark the area", "Mark out a footprint 12 inches larger than your sauna on all sides. For a standard 6×7 ft barrel sauna, that's an 8×9 ft pad."],
+        ["Excavate 4–6 inches", "Dig down 4–6 inches across the entire marked area. This removes organic material and gives room for your gravel layers."],
+        ["Add landscape fabric", "Line the excavated area with weed barrier fabric. This prevents vegetation from pushing up through the gravel over time."],
+        ["Fill with gravel base", "Add a 3-inch layer of compactable gravel (class 5 or crushed stone). Spread evenly."],
+        ["Compact thoroughly", "Use a plate compactor (rent from any hardware store) to compress the gravel. Don't skip this — it's what prevents settling."],
+        ["Top layer of pea gravel", "Add a 1–2 inch finish layer of pea gravel or crushed granite. This drains well and looks clean."],
+        ["Level carefully", "Use a long level and rake to ensure the pad is perfectly flat. Check in multiple directions. This is critical."],
+        ["Let it settle", "Wait 24–48 hours before placing the sauna. Walk the pad, check level again, adjust if needed."],
+      ].map(([step, text], i) => (
+        <li class="flex gap-3">
+          <span class="flex-shrink-0 w-7 h-7 bg-amber-400 text-stone-900 rounded-full flex items-center justify-center text-sm font-bold">{i+1}</span>
+          <div>
+            <p class="font-semibold text-stone-800">{step}</p>
+            <p class="text-stone-600 text-sm">{text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Drainage: Don't Ignore It</h2>
+    <p class="text-stone-600 mb-4">Water is the enemy of outdoor saunas. You'll be pouring water on the rocks regularly, and rain will hit the structure. Make sure:</p>
+    <ul class="list-disc pl-5 text-stone-600 text-sm space-y-1 mb-6">
+      <li>The foundation has positive drainage — water should flow away from the sauna, not pool under it</li>
+      <li>There's at least 2 inches of airspace between the sauna floor and the foundation surface</li>
+      <li>For barrel saunas with a floor drain, ensure the drain has somewhere to go</li>
+    </ul>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-10">
+      <h3 class="text-xl font-bold mb-2">Ready to Choose Your Sauna?</h3>
+      <p class="text-stone-300 mb-4">Now that the foundation is sorted, pick the right sauna for your space and budget.</p>
+      <a href="/best-saunas" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+        See Best Saunas of 2025 →
+      </a>
+    </div>
+  </article>
+</Base>
