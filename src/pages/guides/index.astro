@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 const guides = [
   {
     category: "Buying Guides",
-    emoji: "📚",
+    
     items: [
       { href: "/guides/infrared-vs-traditional-sauna", title: "Infrared vs Traditional Sauna", desc: "The real differences in heat, cost, and installation." },
       { href: "/guides/best-electric-sauna-heaters", title: "Best Electric Sauna Heaters (2025)", desc: "Ranked picks from budget to premium." },
@@ -16,7 +16,7 @@ const guides = [
   },
   {
     category: "Planning & Installation",
-    emoji: "🔧",
+    
     items: [
       { href: "/guides/how-much-space-for-backyard-sauna", title: "How Much Space Do You Need?", desc: "Dimensions, clearances, and footprint planning." },
       { href: "/guides/best-location-backyard-sauna", title: "Best Location for a Backyard Sauna", desc: "Drainage, privacy, sun exposure, and codes." },
@@ -28,7 +28,7 @@ const guides = [
   },
   {
     category: "Comparisons",
-    emoji: "⚖️",
+    
     items: [
       { href: "/guides/barrel-sauna-vs-cabin-sauna", title: "Barrel Sauna vs Cabin Sauna", desc: "Heat efficiency, cost, and which to choose." },
       { href: "/guides/electric-vs-wood-fired-sauna", title: "Electric vs Wood-Fired Sauna", desc: "Convenience vs authenticity — the honest take." },
@@ -37,7 +37,7 @@ const guides = [
   },
   {
     category: "More Buying Guides",
-    emoji: "🛒",
+    
     items: [
       { href: "/guides/best-saunas-under-5000", title: "Best Saunas Under $5,000", desc: "Top picks at the sweet-spot price range." },
       { href: "/guides/best-4-person-outdoor-sauna", title: "Best 4-Person Outdoor Saunas", desc: "What '4-person' actually means and the best options." },
@@ -49,14 +49,14 @@ const guides = [
   },
   {
     category: "Permits & Regulations",
-    emoji: "📋",
+    
     items: [
       { href: "/guides/outdoor-sauna-permits", title: "Do You Need a Permit for an Outdoor Sauna?", desc: "Building permits, zoning rules, setbacks, and HOA requirements." },
     ]
   },
   {
     category: "Health & Wellness",
-    emoji: "❤️",
+    
     items: [
       { href: "/guides/sauna-health-benefits", title: "Sauna Health Benefits: What Science Says", desc: "The evidence behind cardiovascular, recovery, and sleep benefits." },
     ]
@@ -74,7 +74,7 @@ const guides = [
 
     {guides.map(section => (
       <section class="mb-10">
-        <h2 class="text-xl font-bold text-stone-900 mb-4">{section.emoji} {section.category}</h2>
+        <h2 class="text-xl font-bold text-stone-900 mb-4">{section.category}</h2>
         <div class="grid md:grid-cols-2 gap-4">
           {section.items.map(item => (
             <a href={item.href} class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">

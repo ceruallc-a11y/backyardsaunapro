@@ -87,7 +87,7 @@ import Base from '../../layouts/Base.astro';
           <div class="grid md:grid-cols-2 gap-3 mb-3 text-sm">
             <div>
               <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
-              {opt.pros.map(p => <p class="text-stone-600">✅ {p}</p>)}
+              {opt.pros.map(p => <p class="text-stone-600"> {p}</p>)}
             </div>
             <div>
               <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
@@ -95,7 +95,7 @@ import Base from '../../layouts/Base.astro';
             </div>
           </div>
           <p class="text-sm text-stone-700 bg-stone-50 rounded-lg p-3 border border-stone-200 mt-2">
-            💡 <strong>Verdict:</strong> {opt.verdict}
+            <strong>Verdict:</strong> {opt.verdict}
           </p>
         </div>
       ))}
