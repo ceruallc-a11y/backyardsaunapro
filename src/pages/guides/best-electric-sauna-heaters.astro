@@ -1,0 +1,157 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+
+const picks = [
+  {
+    rank: 1,
+    asin: "B07BDHMJZ3",
+    name: "Harvia KIP 60B Electric Sauna Heater",
+    price: "~$579",
+    rating: "4.6/5",
+    tag: "BEST OVERALL",
+    tagColor: "bg-amber-100 text-amber-800",
+    size: "Up to 265 cu ft",
+    watts: "6kW",
+    summary: "The Harvia KIP is the most popular sauna heater in Finland — and for good reason. Rock-solid build quality, reliable controls, and even heat distribution. Our top pick for most home sauna builds.",
+    pros: ["Excellent heat distribution", "Simple, reliable controls", "Great rocks included", "Well-priced for Finnish quality"],
+    cons: ["Requires 240V/40A circuit", "Basic timer (no smart controls)"]
+  },
+  {
+    rank: 2,
+    asin: "B000N4RSFO",
+    name: "Finlandia FLB-60 Electric Sauna Heater",
+    price: "~$499",
+    rating: "4.4/5",
+    tag: "BEST VALUE",
+    tagColor: "bg-green-100 text-green-800",
+    size: "Up to 210 cu ft",
+    watts: "6kW",
+    summary: "Finlandia has been making sauna heaters since 1964. This model is a workhorse — simple, durable, and competitively priced. Perfect for first-time builders who don't want to overthink it.",
+    pros: ["Proven brand with decades of history", "Straightforward installation", "Holds heat well", "Affordable price point"],
+    cons: ["Styling is dated", "Smaller rock capacity than premium models"]
+  },
+  {
+    rank: 3,
+    asin: "B07WQHQ4BF",
+    name: "Vevor Electric Sauna Heater 9KW",
+    price: "~$299",
+    rating: "4.2/5",
+    tag: "BEST BUDGET",
+    tagColor: "bg-blue-100 text-blue-800",
+    size: "Up to 530 cu ft",
+    watts: "9kW",
+    summary: "If budget is the priority, Vevor delivers solid performance at a price that's hard to argue with. Included digital controller, adjustable temperature, and external dial make it easy to run.",
+    pros: ["Comes with digital controller", "Large capacity for the price", "Good for larger sauna rooms", "Easy temperature adjustment"],
+    cons: ["Build quality not on par with Finnish brands", "Mixed long-term reliability reports"]
+  },
+  {
+    rank: 4,
+    asin: "B005XZWMDE",
+    name: "Tylo Sense Combi 6 Electric Sauna Heater",
+    price: "~$1,299",
+    rating: "4.7/5",
+    tag: "BEST PREMIUM",
+    tagColor: "bg-purple-100 text-purple-800",
+    size: "Up to 530 cu ft",
+    watts: "6kW",
+    summary: "Swedish-made, ultra-reliable, and designed to last 20+ years. The Sense Combi also functions as a steam generator — rare in this category. If you're building a permanent sauna and want the best, this is it.",
+    pros: ["Dual function: sauna + steam", "Exceptional build quality", "Long lifespan", "Elegant design"],
+    cons: ["Premium price", "More complex installation"]
+  }
+];
+---
+<Base
+  title="Best Electric Sauna Heaters for Home Use (2025) — Tested & Ranked"
+  description="The best electric sauna heaters for backyard and home saunas in 2025. Expert picks from budget to premium, with installation tips and sizing guide."
+  canonical="/guides/best-electric-sauna-heaters"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best Electric Sauna Heaters for Home Use (2025)
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 10 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        The heater is the heart of your sauna. Get this wrong and nothing else matters. We've broken down the top electric sauna heaters by size, budget, and use case so you can make a confident call.
+      </p>
+    </header>
+
+    <div class="bg-stone-100 rounded-xl p-5 mb-10">
+      <h2 class="font-bold text-stone-800 mb-3">How to Size Your Heater</h2>
+      <p class="text-sm text-stone-600 mb-3">The general rule: <strong>1 kW per 45 cubic feet</strong> of sauna space. Add 25–30% more for glass walls, concrete, or tile (they absorb heat).</p>
+      <div class="grid grid-cols-3 gap-3 text-sm text-center">
+        {[["Small (up to 200 cu ft)", "4–5 kW"], ["Medium (200–400 cu ft)", "6–8 kW"], ["Large (400–600 cu ft)", "9–12 kW"]].map(([size, kw]) => (
+          <div class="bg-white rounded-lg p-3 border border-stone-200">
+            <p class="font-semibold text-stone-800">{kw}</p>
+            <p class="text-stone-500 text-xs mt-1">{size}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6 text-stone-900">Our Top Picks</h2>
+
+    <div class="space-y-8">
+      {picks.map(pick => (
+        <div class="bg-white border border-stone-200 rounded-xl shadow-sm p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>
+            <span class="text-xs text-stone-400">{pick.watts} · {pick.size}</span>
+          </div>
+          <h3 class="text-xl font-bold text-stone-900 mb-2">{pick.name}</h3>
+          <p class="text-stone-600 text-sm mb-4">{pick.summary}</p>
+          <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
+            <div>
+              <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
+              {pick.pros.map(p => <p class="text-stone-600">✅ {p}</p>)}
+            </div>
+            <div>
+              <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
+              {pick.cons.map(c => <p class="text-stone-600">⚠️ {c}</p>)}
+            </div>
+          </div>
+          <p class="text-xs text-stone-400 mb-2">Rating: {pick.rating}</p>
+          <AmazonButton asin={pick.asin} price={pick.price} />
+        </div>
+      ))}
+    </div>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">Installation: What You Need to Know</h2>
+      <p class="text-stone-600 mb-4">Most home sauna heaters require a dedicated <strong>240V circuit</strong> — typically 30–60A depending on the heater's wattage. This is not a DIY job unless you're comfortable with electrical work. Budget $150–$400 for an electrician to run the circuit if you don't already have one.</p>
+      <p class="text-stone-600 mb-4">
+        Always follow the manufacturer's minimum clearance requirements. Most heaters need at least 8–12 inches of clearance from walls and ceiling. Don't skip this — it's a fire safety issue.
+      </p>
+      <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-900">
+        💡 <strong>Pro tip:</strong> If you're also buying a sauna kit, check whether the kit includes a heater. Many barrel sauna kits (like Almost Heaven) are sold heater-optional. Buying the heater separately gives you more flexibility — but make sure the wattage matches your room volume.
+      </div>
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">Frequently Asked Questions</h2>
+      <div class="space-y-5">
+        {[
+          ["Can I use any electric sauna heater outdoors?", "Most electric sauna heaters are designed for use inside an insulated sauna room, not exposed to the elements. As long as your outdoor sauna is properly built and insulated, any of the heaters on this list will work."],
+          ["How long does it take to heat up?", "A properly sized electric heater will bring your sauna to temperature in 30–45 minutes. Undersized heaters take longer and may never reach ideal temperature."],
+          ["Do electric sauna heaters allow steam (löyly)?", "Yes — all the heaters on this list have rocks that you can pour water over. The Tylo Sense Combi also has a built-in steam generator for a more intense steam experience."],
+          ["What's the cost to run an electric sauna heater?", "A 6kW heater running for 1 hour costs roughly $0.75–$1.20 depending on your electricity rate. A typical 2-hour sauna session costs about $1.50–$2.50."],
+        ].map(([q, a]) => (
+          <div class="border-b border-stone-200 pb-4">
+            <h3 class="font-semibold text-stone-800 mb-1">{q}</h3>
+            <p class="text-stone-600 text-sm">{a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
+      <h3 class="text-xl font-bold mb-2">Also Shopping for a Sauna Kit?</h3>
+      <p class="text-stone-300 mb-4">See our full guide to the best backyard sauna kits to pair with your heater choice.</p>
+      <a href="/best-saunas" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+        See Best Sauna Kits →
+      </a>
+    </div>
+  </article>
+</Base>

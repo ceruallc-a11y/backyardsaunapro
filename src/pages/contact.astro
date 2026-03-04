@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Contact — Backyard Sauna Pro"
+  description="Get in touch with the Backyard Sauna Pro team."
+  canonical="/contact"
+>
+  <article class="max-w-xl mx-auto">
+    <h1 class="text-3xl font-bold text-stone-900 mb-4">Contact Us</h1>
+    <p class="text-stone-600 mb-8">Have a question, correction, or product suggestion? We'd love to hear from you.</p>
+    <form action="https://formspree.io/f/contact" method="POST" class="space-y-5">
+      <div>
+        <label class="block text-sm font-medium text-stone-700 mb-1">Name</label>
+        <input type="text" name="name" required class="w-full border border-stone-300 rounded-lg px-4 py-2 text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-stone-700 mb-1">Email</label>
+        <input type="email" name="email" required class="w-full border border-stone-300 rounded-lg px-4 py-2 text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-400" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-stone-700 mb-1">Message</label>
+        <textarea name="message" rows="5" required class="w-full border border-stone-300 rounded-lg px-4 py-2 text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-400"></textarea>
+      </div>
+      <button type="submit" class="bg-stone-900 hover:bg-stone-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+        Send Message
+      </button>
+    </form>
+  </article>
+</Base>
