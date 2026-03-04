@@ -1,0 +1,106 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Best Location for a Backyard Sauna — Placement Guide (2025)"
+  description="Where to put your backyard sauna for the best experience, safety, and longevity. Sun exposure, privacy, drainage, electrical access, and more."
+  canonical="/guides/best-location-backyard-sauna"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best Location for a Backyard Sauna
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 7 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        Where you put your sauna matters more than most people realize. The wrong spot means poor drainage, awkward electrical runs, no privacy, or a sauna that bakes in summer and freezes in winter. Here's how to pick right the first time.
+      </p>
+    </header>
+
+    <h2 class="text-2xl font-bold mt-4 mb-6 text-stone-900">The Key Factors to Consider</h2>
+
+    <div class="space-y-5 mb-10">
+      {[
+        {
+          icon: "💧",
+          title: "Drainage first",
+          body: "This is non-negotiable. Your sauna location needs positive drainage — water must flow away from it, not toward it or underneath it. Low spots in your yard, areas that stay wet after rain, or ground that slopes toward the sauna are all problems. Walk your yard after heavy rain and mark where water pools. None of those spots work.",
+        },
+        {
+          icon: "⚡",
+          title: "Proximity to your electrical panel",
+          body: "Every 50 feet of conduit run to your panel adds $50–$150 in electrical costs. A sauna that's 30 feet from the panel might cost $250 to wire. The same sauna 150 feet away might cost $800+. This isn't a reason to put it in a bad spot, but it should be part of the calculation. Check where your panel is before you finalize placement.",
+        },
+        {
+          icon: "🌲",
+          title: "Shade vs. sun",
+          body: "Some shade is good — it keeps the sauna cooler on the outside, which means the heater works more efficiently and the wood stays in better condition. But avoid placing under a tree that drops a lot of debris (leaves, needles, sap) — it clogs the gaps in barrel saunas and causes rot. Filtered afternoon shade from a fence or structure is ideal.",
+        },
+        {
+          icon: "👀",
+          title: "Privacy",
+          body: "You're going to be walking between the sauna and your house in a towel (or less). Make sure your placement gives you a natural privacy buffer from neighbors and the street. A fence line, hedge, or the back corner of the yard is ideal. Don't put it right next to the property line on a neighbor's side unless you have a privacy screen.",
+        },
+        {
+          icon: "🚶",
+          title: "Path from the house",
+          body: "You want a direct, clear path from the house to the sauna — ideally with lighting for night sessions. A 20-foot sprint across wet grass in January is fine. A 100-foot obstacle course is not. Consider lighting the path from the start.",
+        },
+        {
+          icon: "❄️",
+          title: "Wind exposure in cold climates",
+          body: "If you're in a cold climate, avoid placing the sauna on the windward side of your property where it gets blasted by prevailing winds. A natural windbreak (fence, hedge, building) on the north and west sides dramatically improves heat efficiency and makes your outdoor cooldown more comfortable.",
+        },
+        {
+          icon: "🔧",
+          title: "Maintenance access",
+          body: "Leave at least 2–3 feet of clearance on all sides for maintenance access. You'll need to treat the exterior wood periodically, inspect the foundation, and occasionally access the electrical connection. Don't box the sauna into a corner with no access.",
+        },
+        {
+          icon: "📏",
+          title: "Setbacks from structures",
+          body: "Most fire codes require 10 feet minimum from your house and other structures. Check your local code — some areas require more. Also check HOA rules if applicable. Don't assume.",
+        },
+      ].map(item => (
+        <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+          <h3 class="font-bold text-stone-900 mb-2">{item.icon} {item.title}</h3>
+          <p class="text-stone-600 text-sm">{item.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">The Ideal Spot (If You Have the Choice)</h2>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <p class="text-stone-700 text-sm leading-relaxed">
+        Back corner of the yard, away from the main house but with a clear lit path. Slightly elevated ground with natural drainage away from the structure. Some natural shade from a fence or structure on the west/south side. Close enough to the panel to keep electrical costs reasonable. Private from neighbors. Enough clearance for maintenance. A small patio or gravel area in front of the door for cooling down.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">Orientation: Which Way Should the Door Face?</h2>
+    <p class="text-stone-600 mb-4">Face the door away from prevailing winds. In most of North America, winds come predominantly from the west and northwest. Orienting the door east or south means you're not fighting the wind every time you step out.</p>
+    <p class="text-stone-600 mb-4">It also means the morning sun hits the door side, which looks great and helps dry any moisture that accumulates near the entrance.</p>
+
+    <section class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">Common Placement Mistakes</h2>
+      <ul class="space-y-2 text-stone-600 text-sm">
+        {[
+          "Placing it where the yard drains toward it (guaranteed rot)",
+          "Too far from the electrical panel (costs hundreds extra to wire)",
+          "Under a pine or fir tree (sap and debris are constant problems)",
+          "Against the property line without checking local setback rules",
+          "No path lighting — night sessions are miserable without it",
+          "No cooling area in front — you need somewhere to stand when you step out",
+        ].map(m => <li class="flex gap-2"><span class="text-red-400">✗</span>{m}</li>)}
+      </ul>
+    </section>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
+      <h3 class="text-xl font-bold mb-2">Now: How Much Space Do You Need?</h3>
+      <p class="text-stone-300 mb-4">Once you've picked your spot, make sure you have enough room for the sauna plus clearances.</p>
+      <a href="/guides/how-much-space-for-backyard-sauna" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+        Sauna Space Planning Guide →
+      </a>
+    </div>
+  </article>
+</Base>
