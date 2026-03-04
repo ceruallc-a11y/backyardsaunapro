@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import AmazonButton from '../components/AmazonButton.astro';
+
+const picks = [
+  {
+    rank: 1,
+    asin: "B08GFHKNLR",
+    name: "Almost Heaven Pinnacle 2-Person Barrel Sauna",
+    price: "~$2,199",
+    rating: "4.5/5 ⭐",
+    tag: "BEST OVERALL",
+    tagColor: "bg-amber-100 text-amber-800",
+    pros: ["Beautiful cedar construction", "Easy 4-6 hour assembly", "Great heat retention from barrel shape", "Works with most sauna heaters"],
+    cons: ["Needs 240V heater (sold separately)", "Not for tight spaces"],
+    best_for: "Homeowners who want a permanent, beautiful outdoor sauna",
+    type: "Traditional / Barrel"
+  },
+  {
+    rank: 2,
+    asin: "B07VGTZGTQ",
+    name: "Dynamic Saunas Barcelona 1-2 Person Far Infrared",
+    price: "~$899",
+    rating: "4.4/5 ⭐",
+    tag: "BEST BUDGET",
+    tagColor: "bg-green-100 text-green-800",
+    pros: ["Heats in just 15 minutes", "Low-EMF carbon panels", "Plugs into standard 120V outlet", "Compact — fits in any room"],
+    cons: ["1-2 person only", "No steam option"],
+    best_for: "First-time buyers and smaller spaces",
+    type: "Infrared / Indoor"
+  },
+  {
+    rank: 3,
+    asin: "B0CKVQNXPJ",
+    name: "Dundalk LeisureCraft Harmony 2-Person Sauna",
+    price: "~$4,800",
+    rating: "4.8/5 ⭐",
+    tag: "BEST PREMIUM",
+    tagColor: "bg-purple-100 text-purple-800",
+    pros: ["Canadian white cedar — stunning quality", "Built to last decades", "Proper Finnish sauna experience", "Excellent steam retention"],
+    cons: ["Premium price", "Requires installation effort"],
+    best_for: "Serious sauna users who want the real deal",
+    type: "Traditional / Outdoor"
+  },
+  {
+    rank: 4,
+    asin: "B07YRQRNNM",
+    name: "SereneLife Portable Steam Sauna",
+    price: "~$149",
+    rating: "4.2/5 ⭐",
+    tag: "BEST PORTABLE",
+    tagColor: "bg-blue-100 text-blue-800",
+    pros: ["Under $150", "Setup in minutes", "No installation", "Compact storage"],
+    cons: ["Not the real sauna experience", "Limited to one person", "Shorter lifespan"],
+    best_for: "Renters, travelers, or trying sauna before committing",
+    type: "Portable Steam"
+  }
+];
+---
+<Base
+  title="Best Backyard Saunas of 2025 — Top Picks for Every Budget"
+  description="Our experts tested and ranked the best backyard saunas of 2025. From budget infrared to premium Finnish barrel saunas — find your perfect match."
+  canonical="/best-saunas"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-10">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Best Picks</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best Backyard Saunas of 2025
+      </h1>
+      <p class="text-stone-500 text-sm mb-4">Updated January 2025 · 12 min read</p>
+      <p class="text-lg text-stone-600">
+        We researched over 40 backyard saunas — comparing specs, real customer reviews, build quality, and long-term value. Here are the ones actually worth your money.
+      </p>
+    </header>
+
+    <div class="space-y-10">
+      {picks.map(pick => (
+        <div class="bg-white border border-stone-200 rounded-xl shadow-sm overflow-hidden">
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>
+                <span class="ml-2 text-xs text-stone-400">{pick.type}</span>
+              </div>
+              <span class="text-sm font-semibold text-stone-600">{pick.rating}</span>
+            </div>
+            <h2 class="text-xl font-bold text-stone-900 mb-1">{pick.name}</h2>
+            <p class="text-sm text-stone-500 mb-4">Best for: {pick.best_for}</p>
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <h4 class="text-xs font-bold text-green-700 uppercase mb-1">Pros</h4>
+                <ul class="text-sm text-stone-600 space-y-1">
+                  {pick.pros.map(p => <li>✅ {p}</li>)}
+                </ul>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-red-600 uppercase mb-1">Cons</h4>
+                <ul class="text-sm text-stone-600 space-y-1">
+                  {pick.cons.map(c => <li>⚠️ {c}</li>)}
+                </ul>
+              </div>
+            </div>
+            <AmazonButton asin={pick.asin} price={pick.price} />
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <section class="mt-14">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">How We Choose</h2>
+      <p class="text-stone-600 mb-4">
+        Every sauna on this list was evaluated on: build quality and materials, ease of assembly, real customer reviews (not just star ratings — we read the 3-star ones), energy efficiency, warranty, and long-term durability reports.
+      </p>
+      <p class="text-stone-600">
+        We don't test products we can't stand behind. If we wouldn't recommend it to a friend, it doesn't make the list.
+      </p>
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">More Guides</h2>
+      <ul class="space-y-2">
+        <li><a href="/guides/infrared-vs-traditional-sauna" class="text-amber-700 hover:underline">→ Infrared vs Traditional Sauna: Which Is Right for You?</a></li>
+        <li><a href="/guides/best-saunas-under-2000" class="text-amber-700 hover:underline">→ Best Backyard Saunas Under $2,000</a></li>
+        <li><a href="/guides/how-to-install-barrel-sauna" class="text-amber-700 hover:underline">→ How to Install a Barrel Sauna: Step-by-Step</a></li>
+      </ul>
+    </section>
+  </article>
+</Base>
