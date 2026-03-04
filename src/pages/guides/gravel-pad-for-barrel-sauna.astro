@@ -1,0 +1,176 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need a concrete pad for a barrel sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A gravel pad is a common and often better alternative to concrete for barrel saunas. Gravel drains freely, is cheaper to install, and is easier to level. Concrete works too but can trap moisture against the cradle feet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How thick should gravel be under a barrel sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A minimum of 4 inches of compacted gravel is recommended. Six inches is better in areas with heavy rain or frost heave. Use crushed stone or pea gravel over a layer of landscape fabric to prevent weeds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size pad do I need for a barrel sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add at least 1 foot on each side of the sauna's footprint. For a standard 6-foot by 7-foot barrel sauna, a 8-foot by 9-foot pad gives you working room. Check your specific model's dimensions before ordering materials."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I put a barrel sauna directly on the ground?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can, but you shouldn't. Direct ground contact accelerates rot on the cradle feet and creates drainage problems. Even a simple gravel pad dramatically extends the life of the sauna."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Gravel Pad for Barrel Sauna: How to Prep Your Site the Right Way"
+  description="How to build a gravel pad for a barrel sauna. Materials, dimensions, drainage tips, and what to do before your sauna arrives."
+  canonical="/guides/gravel-pad-for-barrel-sauna"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Gravel Pad for Barrel Sauna: Site Prep Done Right</h1>
+    <p class="text-stone-500 mb-8">Updated March 2025 &mdash; Backyard Sauna Pro</p>
+
+    <p class="text-lg text-stone-700 mb-4">The most common mistake new sauna buyers make is not preparing the site before delivery day. The sauna shows up, it's heavy, and suddenly you're scrambling to level the ground while freight drivers wait. A gravel pad is the right base for most barrel saunas — cheaper than concrete, better drainage, and easier to get level.</p>
+
+    <p class="text-stone-700 mb-8">This guide covers everything: what size pad you need, what materials to buy, how to build it, and what to do if you have an uneven yard.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Why Gravel Beats Concrete for Barrel Saunas</h2>
+    <p class="text-stone-700 mb-4">Concrete feels more permanent, but for a barrel sauna it creates a problem: water pooling. When rain or condensation collects under the sauna's cradle feet on a solid concrete surface, you get standing moisture against wood. Gravel drains freely in every direction, which is exactly what you want under a structure that generates condensation daily.</p>
+    <p class="text-stone-700 mb-4">Gravel is also cheaper and faster to install. A 4-inch compacted gravel pad for a standard 6x8 foot area costs $100-$300 in materials versus $800-$1,500 for a formed and poured concrete slab. For most buyers, gravel is the right call.</p>
+    <p class="text-stone-700 mb-6">Concrete does make sense in specific cases: if you're building a permanent installation you never plan to move, have existing concrete, or want to bolt the cradles down permanently.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Size Pad Do You Need</h2>
+    <p class="text-stone-700 mb-4">Measure your sauna's actual footprint first. A standard 6-foot diameter barrel sauna sits on two cradle supports that span roughly 6 feet wide. Length varies by model — typical 4-person barrels are 7 feet long, 6-person barrels run 8-9 feet.</p>
+    <p class="text-stone-700 mb-4">Add at least 12 inches on all sides for working room and to keep the gravel from migrating out from under the cradle feet. For a 6x7 foot sauna, build a 8x9 foot pad minimum. Going to 9x10 gives you comfortable room to walk around and use the changing room entrance.</p>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
+      <h3 class="font-bold text-stone-900 mb-3">Quick Size Reference</h3>
+      <div class="overflow-x-auto">
+        <table class="text-sm w-full">
+          <thead>
+            <tr class="text-left text-stone-500 border-b border-stone-200">
+              <th class="pb-2 pr-4">Sauna Size</th>
+              <th class="pb-2 pr-4">Sauna Footprint</th>
+              <th class="pb-2">Recommended Pad</th>
+            </tr>
+          </thead>
+          <tbody class="text-stone-700 space-y-1">
+            <tr class="border-b border-stone-100">
+              <td class="py-2 pr-4">2-person barrel</td>
+              <td class="py-2 pr-4">5 ft x 6 ft</td>
+              <td class="py-2">7 ft x 8 ft</td>
+            </tr>
+            <tr class="border-b border-stone-100">
+              <td class="py-2 pr-4">4-person barrel</td>
+              <td class="py-2 pr-4">6 ft x 7 ft</td>
+              <td class="py-2">8 ft x 9 ft</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4">6-person barrel</td>
+              <td class="py-2 pr-4">6 ft x 9 ft</td>
+              <td class="py-2">9 ft x 11 ft</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Materials You Need</h2>
+
+    <ul class="space-y-3 text-stone-700 mb-8">
+      <li><span class="font-semibold text-stone-900">Crushed stone or pea gravel:</span> 4 to 6 inches deep. Crushed stone compacts better and stays put. Pea gravel drains slightly better but shifts more underfoot. Either works.</li>
+      <li><span class="font-semibold text-stone-900">Landscape fabric:</span> Lay this under the gravel to suppress weeds. Use a heavy-duty woven fabric, not the thin paper kind that degrades in two seasons.</li>
+      <li><span class="font-semibold text-stone-900">Edging or border:</span> Timber edging, pressure-treated 4x4s, or metal landscape edging keeps the gravel contained. Without it, gravel migrates out over time.</li>
+      <li><span class="font-semibold text-stone-900">Plate compactor (rented):</span> You need to compact the gravel, not just spread it. A hand tamper works for small pads but renting a plate compactor for $80-$100 is worth it for a stable result.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Step-by-Step: Building the Pad</h2>
+
+    <ol class="space-y-5 text-stone-700 mb-8">
+      <li>
+        <span class="font-bold text-stone-900">1. Mark and excavate.</span> Mark your pad area with stakes and string. Dig down 6 inches — this gives you room for 4-6 inches of gravel plus base material. Remove all sod and organic material. If the area slopes, excavate more on the high side to get a level base.
+      </li>
+      <li>
+        <span class="font-bold text-stone-900">2. Check drainage.</span> Pour a bucket of water in the low corner of your excavation. If it pools and sits for more than a few minutes, you have a drainage issue. Add a French drain or reroute before installing the pad.
+      </li>
+      <li>
+        <span class="font-bold text-stone-900">3. Lay landscape fabric.</span> Roll it out and overlap seams by 6 inches. Pin with landscape staples at corners and every 2 feet along edges.
+      </li>
+      <li>
+        <span class="font-bold text-stone-900">4. Install edging.</span> Set your border material around the perimeter. Pressure-treated 4x4s staked into the ground work well and look clean. Make sure corners are square.
+      </li>
+      <li>
+        <span class="font-bold text-stone-900">5. Add and spread gravel.</span> Dump and rake gravel to a roughly even depth. Work in 2-inch layers if using a plate compactor — compact each layer before adding the next.
+      </li>
+      <li>
+        <span class="font-bold text-stone-900">6. Compact and level.</span> Run the plate compactor over the entire surface. Check level with a 4-foot or 6-foot level. Add or remove gravel as needed and compact again. You want within a half-inch of level across the whole pad.
+      </li>
+      <li>
+        <span class="font-bold text-stone-900">7. Let it settle.</span> Ideally, let the pad sit for a day or two before placing the sauna. Walk on it, water it, and check that it's still level. This is when you catch any soft spots.
+      </li>
+    </ol>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Dealing With a Sloped Yard</h2>
+    <p class="text-stone-700 mb-4">Most backyard spaces aren't perfectly flat. A slope up to about 2 inches across the pad area is manageable by building up the low side with extra gravel. Beyond that, you have two options.</p>
+    <p class="text-stone-700 mb-4">The first option is cutting into the slope. Excavate more on the high side until you've created a level platform. This works well but creates a small retaining wall situation — use timber or concrete block on the cut side to hold the soil back.</p>
+    <p class="text-stone-700 mb-6">The second option is adjustable cradle feet. Some barrel sauna kits include adjustable leg hardware that compensates for uneven ground. Check your specific kit's specs. If yours doesn't include adjustable legs, aftermarket adjustable feet are available and easy to retrofit before assembly.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Before Delivery Day</h2>
+    <p class="text-stone-700 mb-4">Freight deliveries are curbside. The driver is not going to carry the sauna to your backyard. You need to have a plan for moving it from the truck to the pad before the delivery date. A barrel sauna ships as multiple boxes — some heavy, some awkward — so you need at least one helper and a hand truck or furniture dolly.</p>
+    <p class="text-stone-700 mb-4">Clear a path from the street to the pad site. Trim any overhanging branches, move furniture or equipment, and make sure gate widths are sufficient. Barrel sauna staves are typically bundled in lengths up to 9 feet, so a 36-inch gate clearance is usually enough, but measure to be sure.</p>
+    <p class="text-stone-700 mb-6">Have your tools ready before the sauna arrives. You'll need a rubber mallet, level, drill with bits, and the assembly instructions printed or pulled up on a tablet. Starting assembly the same day saves a second round trip of motivation.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Do I need a concrete pad for a barrel sauna?</h3>
+        <p class="text-stone-700">No. Gravel is a common and often better choice — it drains freely and is cheaper and easier to install. Concrete works but can trap moisture under the cradle feet.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How thick should gravel be under a barrel sauna?</h3>
+        <p class="text-stone-700">A minimum of 4 inches compacted. Six inches is better in rainy climates or areas with frost heave.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What size pad do I need?</h3>
+        <p class="text-stone-700">Add at least 1 foot on all sides of your sauna's footprint. For a 4-person barrel, plan for a 8x9 foot pad.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can I put a barrel sauna directly on the ground?</h3>
+        <p class="text-stone-700">Technically yes, but you shouldn't. Ground contact accelerates rot on the cradle feet and creates drainage issues. Even a simple gravel pad adds years to your sauna's life.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related Guides</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-foundation-guide" class="text-amber-700 hover:underline">Sauna Foundation Guide: Concrete vs Gravel vs Timber</a></li>
+        <li><a href="/guides/how-to-assemble-barrel-sauna" class="text-amber-700 hover:underline">How to Assemble a Barrel Sauna</a></li>
+        <li><a href="/guides/best-location-backyard-sauna" class="text-amber-700 hover:underline">Best Location for a Backyard Sauna</a></li>
+        <li><a href="/guides/outdoor-sauna-permits" class="text-amber-700 hover:underline">Do You Need a Permit for an Outdoor Sauna?</a></li>
+        <li><a href="/brands/almost-heaven-sauna-review" class="text-amber-700 hover:underline">Almost Heaven Saunas Brand Review</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
