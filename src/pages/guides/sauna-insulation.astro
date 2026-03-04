@@ -1,0 +1,121 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What insulation should I use in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For sauna walls and ceiling: foil-faced fiberglass or mineral wool with a foil vapor barrier facing the sauna interior. The foil vapor barrier is critical — it prevents moisture from migrating into the insulation and wall framing. For the floor: rigid foam insulation (polyisocyanurate or XPS) under concrete backer board works well for raised floor applications. Avoid open-cell foam or standard fiberglass without a vapor barrier in sauna applications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you need a vapor barrier in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely. A vapor barrier on the warm side of the insulation (facing the sauna interior) is not optional in a traditional sauna. Without it, moisture from steam and sweat will migrate into the wall assembly, causing mold, rot, and structural damage within a few years. Use aluminum foil vapor barrier (not standard polyethylene) — foil handles temperature cycling better."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How thick should sauna insulation be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Walls: R-13 to R-19 (3.5 to 5.5 inches of fiberglass or mineral wool). Ceiling: R-30 minimum — heat rises and the ceiling insulation has the most impact on how long the sauna takes to reach temperature. A well-insulated ceiling is the single biggest factor in preheat time."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Sauna Insulation Guide: What to Use and How to Install It"
+  description="How to insulate a sauna properly. Vapor barrier placement, insulation types, R-values, and the common mistakes that cause mold and rot."
+  canonical="/guides/sauna-insulation"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Insulation: What to Use and How to Do It Right</h1>
+    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Sauna interior wall construction" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page may contain affiliate links.
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">Sauna insulation has one job: keep heat in, and keep moisture out of the wall assembly. Get the vapor barrier wrong and you are dealing with mold and rot within 3-5 years regardless of how good the insulation is. Here is the correct approach.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Vapor Barrier Is the Critical Piece</h2>
+    <p class="text-stone-700 mb-4">In a traditional sauna, humidity swings dramatically during a session. When you pour water on the rocks, steam drives moisture toward every surface in the room. Without a vapor barrier on the warm side (interior face) of the insulation, that moisture migrates into the wall framing. Over time: mold, wood rot, structural damage.</p>
+    <p class="text-stone-700 mb-4">The vapor barrier goes between the cedar paneling and the insulation, on the room side. It faces the heat.</p>
+    <p class="text-stone-700 mb-6">Use aluminum foil vapor barrier rather than standard 6-mil polyethylene. Polyethylene degrades with temperature cycling. Foil handles repeated heat exposure much better. Overlap seams by 2-3 inches and tape with aluminum foil tape. At wall-to-floor transitions, run the foil down to the floor plate and seal the edge with acoustical sealant.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Insulation to Use</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Walls</h3>
+    <p class="text-stone-700 mb-4">R-13 to R-19. Standard fiberglass batts (faced or unfaced) work fine here — the vapor barrier does the moisture work, so the insulation just needs to provide thermal resistance. Mineral wool (Rockwool/Roxul) is a better choice in high-humidity applications because it does not lose R-value when wet and resists mold growth. More expensive but worth it in a sauna environment.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Ceiling</h3>
+    <p class="text-stone-700 mb-4">R-30 minimum. This is the most important surface to insulate well. Heat rises. A poorly insulated ceiling loses heat faster than anything else and significantly extends preheat time. If you are going to upgrade anywhere from the standard spec, do it on the ceiling.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Floor</h3>
+    <p class="text-stone-700 mb-6">If building a raised floor platform on joists: rigid foam (polyisocyanurate or XPS) on the underside of the floor joists, plus pressure-treated framing. If installing on a concrete slab: 1-2 inches of XPS rigid foam board between slab and floor boards. The floor sees the least heat but a lot of moisture from wet bathers — drainage matters more here than insulation R-value.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Installation Order</h2>
+    <ol class="space-y-3 text-stone-700 mb-8 ml-4">
+      <li><span class="font-semibold">1. Frame walls and ceiling</span> with standard 2x4 or 2x6 construction</li>
+      <li><span class="font-semibold">2. Run electrical and mechanical</span> before insulating</li>
+      <li><span class="font-semibold">3. Install insulation</span> in wall cavities and ceiling bays</li>
+      <li><span class="font-semibold">4. Install vapor barrier</span> (foil) over insulation, on the room-facing side. Overlap seams 2-3 inches, tape with foil tape</li>
+      <li><span class="font-semibold">5. Install concrete backer board or cement board</span> on walls before cedar paneling (optional but good practice for indoor builds)</li>
+      <li><span class="font-semibold">6. Install cedar paneling</span> over the vapor barrier, leaving a small air gap</li>
+      <li><span class="font-semibold">7. Leave ventilation gaps</span> — intake low near heater, exhaust high near ceiling; see our <a href="/guides/sauna-ventilation" class="text-amber-700 hover:underline">sauna ventilation guide</a></li>
+    </ol>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Common Mistakes</h2>
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
+      <ul class="space-y-3 text-stone-700 text-sm">
+        <li><span class="font-semibold">No vapor barrier:</span> The most common cause of sauna failure within 5 years. Not optional.</li>
+        <li><span class="font-semibold">Vapor barrier on wrong side:</span> Goes on the WARM side (room interior), not the cold exterior side.</li>
+        <li><span class="font-semibold">Using poly instead of foil:</span> Polyethylene degrades with heat cycling. Use foil.</li>
+        <li><span class="font-semibold">Skimping on ceiling insulation:</span> The ceiling matters more than the walls for heat retention and preheat time.</li>
+        <li><span class="font-semibold">No acoustical sealant at transitions:</span> The vapor barrier must be continuous. Gaps at floor plates, corners, and electrical penetrations are where moisture sneaks through.</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What insulation should I use in a sauna?</h3>
+        <p class="text-stone-700">Mineral wool or fiberglass batts behind an aluminum foil vapor barrier. R-13 to R-19 for walls, R-30 minimum for the ceiling.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Do you need a vapor barrier in a sauna?</h3>
+        <p class="text-stone-700">Yes. Non-negotiable. Aluminum foil vapor barrier on the warm (interior) side of the insulation. Seal seams and transitions with foil tape and acoustical sealant.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How thick should sauna insulation be?</h3>
+        <p class="text-stone-700">Walls: R-13 to R-19. Ceiling: R-30 minimum. The ceiling has the biggest impact on preheat time.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/how-to-build-a-sauna" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
+        <li><a href="/guides/sauna-ventilation" class="text-amber-700 hover:underline">Sauna Ventilation Guide</a></li>
+        <li><a href="/guides/sauna-electrical-requirements" class="text-amber-700 hover:underline">Sauna Electrical Requirements</a></li>
+        <li><a href="/guides/best-indoor-sauna-kits" class="text-amber-700 hover:underline">Best Indoor Sauna Kits</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
