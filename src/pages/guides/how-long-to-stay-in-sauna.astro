@@ -1,0 +1,138 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long should you stay in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For beginners, 5 to 10 minutes per round is appropriate. Experienced users typically stay 15 to 20 minutes per round. Multiple rounds with cool-down breaks in between is the traditional approach — most Finnish sauna sessions involve 2 to 3 rounds totaling 30 to 60 minutes of sauna time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is 30 minutes in a sauna too long?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "30 minutes in a single continuous round is on the long side for most people, especially at high temperatures. It's more common to do two 15-minute rounds with a 5-10 minute cool-down break between them. If you feel dizzy, nauseous, or your heart rate feels uncomfortable, exit immediately regardless of how long you've been in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many times a week should you use a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Research suggests 4 to 7 times per week produces the most meaningful health benefits. Finnish studies showing cardiovascular improvements tracked regular users who sauna nearly daily. Even 2 to 3 times per week shows measurable benefits compared to no sauna use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you stay in a sauna too long?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Overheating, dehydration, and heat exhaustion are real risks from staying too long. Warning signs: dizziness, headache, nausea, weakness, or a sensation that your heart is pounding. Exit immediately if any of these occur. People with cardiovascular conditions should consult a doctor about appropriate sauna duration."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="How Long Should You Stay in a Sauna? (By Experience Level)"
+  description="How long to stay in a sauna for beginners and experienced users. Session length, rounds, cool-down timing, and when to get out."
+  canonical="/guides/how-long-to-stay-in-sauna"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">How Long Should You Stay in a Sauna?</h1>
+    <p class="text-stone-500 mb-8">Updated March 2025 &mdash; Backyard Sauna Pro</p>
+
+    <p class="text-lg text-stone-700 mb-4">The most common mistake first-time sauna users make is staying in too long. More is not better. A well-timed session of the right duration produces better results than grinding through discomfort.</p>
+
+    <p class="text-stone-700 mb-8">Here's what the research and traditional Finnish sauna culture both point to.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">By Experience Level</h2>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-10">
+      <div class="bg-white border border-stone-200 rounded-xl p-4 text-center">
+        <p class="text-sm font-semibold text-stone-500 uppercase tracking-wide mb-1">Beginner</p>
+        <p class="text-3xl font-bold text-amber-600 mb-1">5-10 min</p>
+        <p class="text-stone-500 text-sm">per round, 1-2 rounds</p>
+      </div>
+      <div class="bg-white border border-amber-300 rounded-xl p-4 text-center">
+        <p class="text-sm font-semibold text-amber-700 uppercase tracking-wide mb-1">Intermediate</p>
+        <p class="text-3xl font-bold text-amber-600 mb-1">10-15 min</p>
+        <p class="text-stone-500 text-sm">per round, 2-3 rounds</p>
+      </div>
+      <div class="bg-white border border-stone-200 rounded-xl p-4 text-center">
+        <p class="text-sm font-semibold text-stone-500 uppercase tracking-wide mb-1">Experienced</p>
+        <p class="text-3xl font-bold text-amber-600 mb-1">15-20 min</p>
+        <p class="text-stone-500 text-sm">per round, 2-4 rounds</p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Traditional Finnish Approach</h2>
+    <p class="text-stone-700 mb-4">Finnish sauna culture is built around multiple rounds, not one long stretch. A typical session looks like this:</p>
+    <ol class="space-y-3 text-stone-700 mb-6">
+      <li><span class="font-semibold text-stone-900">Round 1:</span> 10-15 minutes at temperature. Exit, cool down with a cold shower or outside air for 5-10 minutes.</li>
+      <li><span class="font-semibold text-stone-900">Round 2:</span> 15-20 minutes. Pour a ladle or two of water on the rocks mid-round. Exit, cool down again.</li>
+      <li><span class="font-semibold text-stone-900">Round 3 (optional):</span> Another 15-20 minutes, often with birch branches (vihta) if available. Final cool-down.</li>
+    </ol>
+    <p class="text-stone-700 mb-6">Total sauna time is 30 to 60 minutes spread across the rounds. Total session time including cool-downs runs 60 to 90 minutes. The cool-down periods are not optional rest — they're part of the health protocol. The contrast between heat and cold is where much of the cardiovascular benefit comes from.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Signs You've Been In Too Long</h2>
+    <p class="text-stone-700 mb-4">Your body gives clear signals. Exit immediately if you notice:</p>
+    <ul class="space-y-2 text-stone-700 mb-6">
+      <li><span class="font-semibold text-stone-900">Dizziness or lightheadedness</span> — blood pressure shifting from the heat</li>
+      <li><span class="font-semibold text-stone-900">Nausea</span> — core temperature too high</li>
+      <li><span class="font-semibold text-stone-900">Headache</span> — often dehydration or overheating</li>
+      <li><span class="font-semibold text-stone-900">Weak or shaky legs</span> — take it slow getting up, heat lowers blood pressure</li>
+      <li><span class="font-semibold text-stone-900">Heart pounding uncomfortably</span> — normal to feel your heartbeat, not normal for it to feel out of control</li>
+    </ul>
+    <p class="text-stone-700 mb-6">None of these mean you've caused permanent damage — but they're your body telling you the session is over. Sit down immediately when exiting if you feel unsteady, and drink water before attempting a cold shower or cold plunge.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Temperature Matters as Much as Time</h2>
+    <p class="text-stone-700 mb-4">Duration guidelines assume a traditional sauna running 170-185°F. At lower temperatures, you can comfortably stay longer. At higher temperatures, shorter rounds are appropriate.</p>
+    <p class="text-stone-700 mb-4">Infrared saunas run 120-140°F and feel less intense — 20-30 minute sessions in one round are common because the lower temperature is easier on the cardiovascular system. The heat exposure still accumulates.</p>
+    <p class="text-stone-700 mb-6">Bench position also matters. Upper bench is the hottest (heat rises), lower bench is cooler. Beginners should start on the lower bench and work up over several sessions.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How Often Should You Sauna?</h2>
+    <p class="text-stone-700 mb-4">The Finnish research that showed the biggest health benefits followed people who used saunas 4-7 times per week. Cardiovascular mortality rates dropped significantly at 4+ sessions per week compared to 1 session. Daily sauna use is common in Finland and appears safe for healthy adults.</p>
+    <p class="text-stone-700 mb-6">If you can only do 2-3 times per week, you still get meaningful benefit — just less than daily use. Consistency over months and years matters more than any single session's duration.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How long should you stay in a sauna?</h3>
+        <p class="text-stone-700">Beginners: 5-10 minutes per round. Experienced users: 15-20 minutes per round. Multiple rounds with cool-down breaks in between is the traditional approach.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Is 30 minutes in a sauna too long?</h3>
+        <p class="text-stone-700">In a single continuous round at high temperature, yes — it's on the long side. Better to do two 15-minute rounds with a cool-down in between.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How many times a week should you sauna?</h3>
+        <p class="text-stone-700">Research points to 4-7 times per week for meaningful cardiovascular benefit. Even 2-3 times per week shows measurable improvements.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you stay in a sauna too long?</h3>
+        <p class="text-stone-700">Yes. Dizziness, nausea, headache, or a racing heart are signals to exit immediately. Overheating and dehydration are real risks.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/how-to-use-a-sauna" class="text-amber-700 hover:underline">How to Use a Sauna (First-Timer's Guide)</a></li>
+        <li><a href="/guides/sauna-health-benefits" class="text-amber-700 hover:underline">Sauna Health Benefits: What Science Says</a></li>
+        <li><a href="/guides/sauna-after-workout" class="text-amber-700 hover:underline">Sauna After Workout</a></li>
+        <li><a href="/guides/sauna-for-weight-loss" class="text-amber-700 hover:underline">Sauna for Weight Loss</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
