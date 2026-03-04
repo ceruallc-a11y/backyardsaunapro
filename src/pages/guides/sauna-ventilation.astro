@@ -1,0 +1,119 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How should a sauna be ventilated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A sauna should have a fresh air intake vent low on the wall near or behind the heater, and an exhaust vent low on the opposite wall. This cross-flow pattern refreshes the air without venting heat from the top of the room. The exhaust should be adjustable so you can control air exchange rate during sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where should sauna vents be placed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fresh air intake: 6-8 inches above the floor, directly behind or adjacent to the heater. Exhaust: 6-12 inches above the floor on the opposite wall. Both vents should be low to preserve the heat layer at bench level. An intake high on one wall and exhaust high on the opposite wall will flush the hot air out of the room too quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a sauna be too airtight?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A completely sealed sauna becomes stuffy and oxygen-depleted quickly, especially with multiple people. Proper ventilation is not optional — it is required both for comfort and safety. The goal is controlled air exchange that refreshes the room without destroying the heat."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Sauna Ventilation: How to Do It Right (Intake, Exhaust, Placement)"
+  description="How to properly ventilate a home sauna. Covers intake and exhaust placement, vent sizing, common mistakes, and why low vents beat high vents."
+  canonical="/guides/sauna-ventilation"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Ventilation: How to Do It Right</h1>
+    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Sauna interior showing wall and bench construction" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">Sauna ventilation gets misunderstood more than almost any other part of the build. High vents are almost universally wrong. Exhaust fans are rarely needed. And a stuffy sauna session is almost always a ventilation problem, not a heater problem.</p>
+
+    <p class="text-stone-700 mb-8">Here is how it works and how to get it right the first time.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Goal of Sauna Ventilation</h2>
+    <p class="text-stone-700 mb-4">You want fresh oxygen in the room without flushing the heat out. A sauna needs continuous air exchange to stay comfortable for 20-30 minute sessions. Without it, oxygen depletes, carbon dioxide builds up, and the session becomes uncomfortable even at a perfectly good temperature.</p>
+    <p class="text-stone-700 mb-6">The key insight: heat rises. If you put vents at the top of the room, the hot air exits and the room feels cold. If you put vents at the bottom, cool fresh air enters and exits near the floor while the heat layer at bench level stays intact.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Correct Vent Placement</h2>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-6">
+      <h3 class="font-bold text-stone-900 mb-3">The standard setup</h3>
+      <ul class="space-y-3 text-stone-700">
+        <li><span class="font-semibold">Intake vent:</span> 6-8 inches above the floor, directly behind or on the same wall as the heater. This draws fresh cool air across the heater, heating it as it enters the room.</li>
+        <li><span class="font-semibold">Exhaust vent:</span> 6-12 inches above the floor on the opposite wall. Stale air exits near the floor without disrupting the heat at bench level.</li>
+        <li><span class="font-semibold">Both vents adjustable:</span> Adjustable louvers let you control the air exchange rate. Open wider for fresher air; close down to hold heat longer.</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Why High Vents Are Wrong</h2>
+    <p class="text-stone-700 mb-4">High intake and high exhaust sounds logical — fresh air comes in at the top, exits at the top, the heater at the bottom keeps the room warm. In practice this creates a cross-flow that drags hot air across the benches and out the exhaust. The room temperature drops at bench level and the heater runs constantly to compensate.</p>
+    <p class="text-stone-700 mb-6">A high intake with a low exhaust is even worse — it creates a temperature inversion with the coldest air trapped at floor level while hot air at ceiling level gets exhausted.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Vent Sizing</h2>
+    <p class="text-stone-700 mb-4">A 4x8 inch intake vent is appropriate for most residential saunas up to about 300 cubic feet. The exhaust should be slightly larger than the intake — around 6x8 inches or a 4-inch round duct — to prevent back-pressure.</p>
+    <p class="text-stone-700 mb-6">For larger rooms (300+ cubic feet) or saunas used by more than 2 people at once, size up to a 6x8 intake and 8x8 exhaust minimum. Undersized vents create the same stuffiness problem as no vents.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Do You Need a Fan?</h2>
+    <p class="text-stone-700 mb-4">Rarely. Natural convection handles air exchange fine in most residential saunas. A fan is worth considering if the sauna is fully underground with no natural pressure differential, or if the exhaust duct runs more than a few feet horizontally before exiting the building. In those cases, a small inline duct fan on the exhaust side can help.</p>
+    <p class="text-stone-700 mb-6">For most above-grade builds, a passive vent system with adjustable louvers is sufficient and simpler. Fans add noise, complexity, and something to maintain.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Barrel Sauna Ventilation</h2>
+    <p class="text-stone-700 mb-6">Barrel saunas typically come with two plug-style vents — one near the heater end and one at the far end. Both are usually at floor level. This is the correct setup. Use both; leaving them both plugged makes the barrel stuffy fast. Many users open the intake fully and leave the exhaust half-open as a starting point, then adjust based on how the session feels.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Common Ventilation Mistakes</h2>
+    <ul class="space-y-3 text-stone-700 mb-8">
+      <li><span class="font-semibold text-stone-900">Blocking the intake:</span> Objects stored near the heater can partially obstruct airflow. Keep the intake clear.</li>
+      <li><span class="font-semibold text-stone-900">Both vents at the same height:</span> Intake and exhaust at the same level on opposite walls creates poor air movement.</li>
+      <li><span class="font-semibold text-stone-900">Single vent only:</span> One vent without a second for exhaust just creates dead air with one opening. You need both intake and exhaust.</li>
+      <li><span class="font-semibold text-stone-900">No adjustment capability:</span> Fixed vents you can't close or throttle limit your control. Always use adjustable louvers.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How should a sauna be ventilated?</h3>
+        <p class="text-stone-700">Intake low behind the heater, exhaust low on the opposite wall. Both adjustable. This preserves the heat at bench level while exchanging air near the floor.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Where should sauna vents be placed?</h3>
+        <p class="text-stone-700">Intake 6-8 inches above the floor next to or behind the heater. Exhaust 6-12 inches above the floor on the opposite wall. Both vents low.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can a sauna be too airtight?</h3>
+        <p class="text-stone-700">Yes. Oxygen depletes and the session becomes uncomfortable. Proper ventilation is a safety requirement, not optional.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/how-to-build-a-sauna" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
+        <li><a href="/guides/sauna-heater-sizing-guide" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
+        <li><a href="/guides/outdoor-sauna-buying-checklist" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
+        <li><a href="/guides/best-barrel-sauna-kits" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>

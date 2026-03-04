@@ -1,0 +1,104 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What kind of door does a sauna need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A sauna needs a door designed specifically for high heat and humidity. Standard interior doors will warp and fail. Sauna doors are typically made from cedar, hemlock, or other heat-stable wood, with tempered glass if there is a window. The door should swing outward for safety, seal tightly to hold heat, and have no metal hardware on the interior face since metal gets dangerously hot in a sauna."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should a sauna door open in or out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Outward. This is a safety requirement. If a person loses consciousness inside the sauna, a door that opens outward allows someone outside to open it easily. An inward-opening door could be blocked by an incapacitated person and prevent rescue. Most building codes and sauna manufacturer guidelines require outward-opening sauna doors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the standard sauna door size?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most residential sauna doors are 24 inches wide by 72 or 80 inches tall. Narrower doors (24 inches) are common because a smaller door opening means less heat loss when entering and exiting. Some barrel sauna doors are even narrower. Measure your rough opening before ordering a replacement door."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Sauna Doors: What to Know, Sizes, and What to Buy"
+  description="Everything you need to know about sauna doors. Covers materials, sizing, glass vs wood, outward swing requirement, and how to choose the right door for your sauna."
+  canonical="/guides/sauna-door-guide"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Doors: Everything You Need to Know</h1>
+    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Sauna interior with door visible" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">A sauna door is not a standard interior door. The heat and humidity destroy regular wood doors within a season. The hardware gets hot enough to burn. And outward swing is not optional — it is a safety requirement. Here is what to know before you buy or replace a sauna door.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Safety First: The Door Must Open Outward</h2>
+    <p class="text-stone-700 mb-6">This is non-negotiable. If a person loses consciousness inside the sauna, an outward-opening door lets someone outside rescue them. An inward-opening door can be blocked by an incapacitated person and is a documented cause of sauna fatalities. Every sauna manufacturer and most building codes require outward swing. No exceptions.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Door Materials</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Cedar and hemlock</h3>
+    <p class="text-stone-700 mb-4">The standard. Both handle heat-moisture cycles without warping, don't release resins at sauna temperatures, and age well. Most kit saunas include a cedar or hemlock door. If replacing a door, match the wood to your interior cladding for consistency.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Glass panel doors</h3>
+    <p class="text-stone-700 mb-4">Tempered glass in a wood frame is the most popular upgrade for home saunas. The glass must be tempered — never standard float glass, which can shatter. Full-glass doors make a small sauna feel larger, let in natural light, and look clean. The downside is slightly more heat loss through the glass panel compared to a solid wood door.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">What to avoid</h3>
+    <p class="text-stone-700 mb-6">Pine doors warp and weep sap. Standard interior hollow-core doors fail quickly. Any door with metal hardware on the interior face will become too hot to touch. Vinyl weatherstripping degrades in sustained heat — use silicone or leave it off and rely on the door's fit.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Standard Sauna Door Sizes</h2>
+    <p class="text-stone-700 mb-4">Most residential sauna doors are 24 inches wide. The narrow width is intentional — less opening means less heat escapes when entering and exiting. Height is typically 72 or 80 inches (6 or 6.67 feet).</p>
+    <p class="text-stone-700 mb-6">Barrel saunas often have smaller doors — some as narrow as 22 inches. Measure your rough opening before ordering a replacement. Height clearance matters too; some barrel sauna entry points have lower openings than a standard door height.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Hardware Requirements</h2>
+    <p class="text-stone-700 mb-4">Use no metal on the interior-facing side of the door. The handle, hinges, and any latch must be wood, ceramic, or recessed so there is nothing metal projecting inside the sauna. A wood pull-bar on the interior face is standard. The exterior can use standard stainless steel hardware.</p>
+    <p class="text-stone-700 mb-6">The door needs a magnetic or wood latch that can be operated from both sides. A door that cannot be opened from the outside is a safety hazard.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Buying a Replacement Sauna Door</h2>
+    <p class="text-stone-700 mb-6">Sauna specialty retailers stock replacement doors in standard sizes. Measure width, height, and door thickness before ordering. Most kit saunas use 1.5-inch thick doors. If the rough opening is an odd size, contact the original manufacturer — Almost Heaven and Dundalk both sell replacement doors for their kits and can advise on compatible sizes.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What kind of door does a sauna need?</h3>
+        <p class="text-stone-700">A door made from heat-stable wood like cedar or hemlock, with tempered glass if there is a window, no interior metal hardware, and outward swing. Standard interior doors warp and fail.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Should a sauna door open in or out?</h3>
+        <p class="text-stone-700">Outward, always. Safety requirement — an outward-opening door can be opened from outside if someone inside is incapacitated.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What is the standard sauna door size?</h3>
+        <p class="text-stone-700">24 inches wide, 72 or 80 inches tall. Barrel sauna doors are often narrower. Measure your rough opening before buying a replacement.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/how-to-build-a-sauna" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
+        <li><a href="/guides/best-barrel-sauna-kits" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
+        <li><a href="/guides/cedar-vs-hemlock-sauna" class="text-amber-700 hover:underline">Cedar vs Hemlock for Saunas</a></li>
+        <li><a href="/guides/sauna-ventilation" class="text-amber-700 hover:underline">Sauna Ventilation Guide</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
