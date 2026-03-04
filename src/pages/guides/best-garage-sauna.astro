@@ -1,0 +1,153 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+
+const picks = [
+  {
+    rank: 1,
+    asin: "B00A2F99F0",
+    name: "Dynamic Saunas Barcelona Far Infrared",
+    price: "~$899",
+    rating: "4.4/5",
+    tag: "BEST OVERALL",
+    tagColor: "bg-amber-100 text-amber-800",
+    type: "Infrared",
+    summary: "Plug into any 120V outlet, assemble in 30 minutes, and you're done. No electrician, no structural modifications, no permits for the sauna itself. For most garage setups, this is the fastest path to a working sauna. The low-EMF carbon panels deliver real heat therapy at 120-140°F.",
+    pros: ["Standard 120V outlet — no electrician", "Assembles and disassembles easily", "No ventilation requirements", "Fits in a 4x4 foot garage corner"],
+    cons: ["No steam option", "Lower temps than traditional", "1-2 person capacity"]
+  },
+  {
+    rank: 2,
+    asin: "B017WJV8SO",
+    name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
+    price: "~$2,199",
+    rating: "4.5/5",
+    tag: "BEST TRADITIONAL",
+    tagColor: "bg-stone-100 text-stone-800",
+    type: "Traditional Barrel",
+    summary: "If you want the real Finnish experience in your garage — high heat, steam, the works — the Pinnacle is the move. You need a 240V circuit (electrician required) and enough ceiling height for the barrel (roughly 7 feet). The garage actually protects the cedar from weather, which extends its life considerably.",
+    pros: ["Full traditional sauna experience", "Garage protects cedar from weather", "Cedar barrel heats evenly", "Strong resale value if you ever move"],
+    cons: ["Needs 240V/240A electrical", "Heater sold separately", "Requires ceiling clearance ~7 ft", "Higher total installed cost"]
+  }
+];
+---
+<Base
+  title="Best Garage Sauna (2025) — Indoor Setup Guide and Top Picks"
+  description="The best saunas for garage installation. Setup requirements, electrical needs, ventilation, and the top picks for converting your garage space."
+  canonical="/guides/best-garage-sauna"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best Garage Sauna (2025)
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 8 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        A garage is one of the best spots for a sauna. It's sheltered from weather, already has electrical access nearby, and gives you privacy. The setup is different from an outdoor install. Here's what to know.
+      </p>
+    </header>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-3">Garage vs Outdoor Sauna: Key Differences</h2>
+      <div class="grid grid-cols-2 gap-4 text-sm">
+        <div>
+          <p class="font-semibold text-amber-700 mb-2">Advantages of Garage Install</p>
+          <ul class="space-y-1 text-stone-600">
+            <li>+ Protects cedar from weather</li>
+            <li>+ Easier electrical access</li>
+            <li>+ No foundation needed</li>
+            <li>+ Year-round use in any weather</li>
+            <li>+ No zoning setback issues</li>
+            <li>+ Private, out of sight</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-red-600 mb-2">Extra Considerations</p>
+          <ul class="space-y-1 text-stone-600">
+            <li>- Ventilation is critical indoors</li>
+            <li>- Moisture management needed</li>
+            <li>- Ceiling height requirements</li>
+            <li>- Floor must handle water/moisture</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Top Picks for Garage Saunas</h2>
+
+    <div class="space-y-8">
+      {picks.map((pick) => (
+        <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
+          <div class="bg-stone-50 border-b border-stone-200 px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-stone-400 font-bold text-lg">#{pick.rank}</span>
+              <h3 class="text-lg font-bold text-stone-900">{pick.name}</h3>
+            </div>
+            <span class={`text-xs font-bold px-3 py-1 rounded-full ${pick.tagColor}`}>{pick.tag}</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-6 mb-4 text-sm text-stone-500">
+              <span>Type: <strong class="text-stone-700">{pick.type}</strong></span>
+              <span>Rating: <strong class="text-stone-700">{pick.rating}</strong></span>
+            </div>
+            <p class="text-stone-600 mb-4">{pick.summary}</p>
+            <div class="grid grid-cols-2 gap-4 mb-5 text-sm">
+              <div>
+                <p class="font-semibold text-green-700 mb-2">Pros</p>
+                <ul class="space-y-1">
+                  {pick.pros.map(p => <li class="flex items-start gap-2 text-stone-600"><span class="text-green-500 mt-0.5">+</span>{p}</li>)}
+                </ul>
+              </div>
+              <div>
+                <p class="font-semibold text-red-600 mb-2">Cons</p>
+                <ul class="space-y-1">
+                  {pick.cons.map(c => <li class="flex items-start gap-2 text-stone-600"><span class="text-red-400 mt-0.5">-</span>{c}</li>)}
+                </ul>
+              </div>
+            </div>
+            <AmazonButton asin={pick.asin} price={pick.price} />
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-bold mt-12 mb-6 text-stone-900">Garage Sauna Setup Requirements</h2>
+
+    <div class="space-y-5">
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Ventilation</h3>
+        <p class="text-stone-600 text-sm">A traditional sauna in a garage produces significant heat and moisture. The garage needs a way to vent steam and hot air. A fresh air intake near the floor and an exhaust vent near the ceiling is the standard setup. Without ventilation, moisture builds up and damages the garage structure over time.</p>
+        <p class="text-stone-600 text-sm mt-3">Infrared saunas produce far less humidity than traditional saunas. If ventilation is a concern, infrared significantly simplifies the requirements.</p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Ceiling Height</h3>
+        <p class="text-stone-600 text-sm">Most barrel saunas need about 7 feet of ceiling clearance. Check the specifications before buying. Most standard garages have 7-8 foot ceilings — just enough. If your garage has lower ceilings, an infrared cabin sauna with a flat roof is a better fit.</p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Floor and Moisture</h3>
+        <p class="text-stone-600 text-sm">Traditional saunas create water on the floor from pouring water on the rocks and from sweat. Concrete garage floors handle this fine, but you want water to drain away from the sauna structure. A simple rubber mat or small gravel tray under the door threshold keeps water from pooling inside.</p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Electrical Access</h3>
+        <p class="text-stone-600 text-sm">Garages often already have a sub-panel or accessible electrical runs, which makes adding a 240V/30A circuit cheaper than running it from the main house panel. Get quotes from two electricians. Garage sauna electrical work often runs $200-$400 compared to $400-$800 for a distant outdoor install.</p>
+      </div>
+
+    </div>
+
+    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
+      <h3 class="font-bold text-stone-900 mb-3">Related guides</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-electrical-requirements" class="text-amber-700 hover:underline font-medium">Sauna Electrical Requirements</a></li>
+        <li><a href="/guides/best-sauna-for-small-backyard" class="text-amber-700 hover:underline font-medium">Best Sauna for a Small Backyard</a></li>
+        <li><a href="/guides/infrared-vs-traditional-sauna" class="text-amber-700 hover:underline font-medium">Infrared vs Traditional Sauna</a></li>
+        <li><a href="/guides/outdoor-sauna-cost" class="text-amber-700 hover:underline font-medium">Full Outdoor Sauna Cost Breakdown</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
