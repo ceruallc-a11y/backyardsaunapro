@@ -1,130 +1,124 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
 
-const picks = [
-  {
-    rank: 1,
-    asin: "B07FKQB3LB",
-    name: "Coasts Cedar Sauna Bucket and Ladle Set",
-    price: "~$35",
-    rating: "4.5/5",
-    tag: "BEST OVERALL",
-    tagColor: "bg-amber-100 text-amber-800",
-    size: "7L / 75oz ladle",
-    material: "Cedar",
-    summary: "Cedar is the right material for a sauna bucket. It doesn't absorb odors, stays cool to the touch, and looks at home in a cedar barrel sauna. The 7L capacity means fewer refills during a session. The ladle is properly sized for pouring — not too small to be frustrating, not so large you drench the stones.",
-    pros: ["Cedar won't absorb odors", "7L capacity is right for most sessions", "Ladle hooks over bucket edge", "Looks great in traditional saunas"],
-    cons: ["Needs occasional oiling to prevent drying", "Not ideal for very small saunas"]
-  },
-  {
-    rank: 2,
-    asin: "B0DKJVC1D3",
-    name: "Sauna Accessories Bundle (Bucket, Ladle, Timer, Thermometer)",
-    price: "~$65",
-    rating: "4.4/5",
-    tag: "BEST BUNDLE VALUE",
-    tagColor: "bg-green-100 text-green-800",
-    size: "Full kit",
-    material: "Cedar/mixed",
-    summary: "If you're setting up a sauna from scratch, this bundle covers everything you need in one order. Bucket, ladle, sand timer, and thermometer. Buying separately would cost more. The quality is solid across all pieces and everything ships together.",
-    pros: ["Everything in one order", "Saves money vs buying separately", "Good quality across all items", "Coordinated look"],
-    cons: ["Less flexibility to choose best-in-class per item", "Bundle composition may vary"]
-  }
-];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What size bucket should I use in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 3 to 4 liter bucket is standard for most home saunas. Large enough to hold enough water for a full session without refilling, small enough to handle easily with one hand while seated on the bench."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What wood is best for a sauna bucket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cedar, aspen, and alder are the traditional choices. All are heat-stable, don't leach resins or tannins into the water, and stay cool to the touch. Avoid pine, oak, or any painted or varnished wood."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I care for a wooden sauna bucket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rinse after each use and let it air dry completely before storing. Never leave water sitting in the bucket between sessions — it accelerates rot and causes the staves to swell unevenly. If the wood starts to smell, scrub with baking soda and water, rinse, and dry thoroughly."
+      }
+    }
+  ]
+};
 ---
 <Base
-  title="Best Sauna Bucket and Ladle Set (2025) — What to Buy and Why It Matters"
-  description="The best sauna bucket and ladle sets. Size, material, and what actually makes a difference when pouring löyly. Top picks reviewed."
+  title="Best Sauna Bucket and Ladle Set (2025): Top Picks Reviewed"
+  description="The best sauna bucket and ladle sets for traditional steam. Cedar and aspen options that hold up to daily sauna use."
   canonical="/guides/best-sauna-bucket-ladle"
 >
-  <article class="max-w-3xl mx-auto">
-    <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Sauna Accessories</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Sauna Bucket and Ladle Set (2025)
-      </h1>
-      <p class="text-stone-500 text-sm">Updated January 2025 · 6 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        The bucket and ladle are how you create steam in a traditional sauna. It sounds simple — and it mostly is. But there are real differences between a good set and a bad one, and it's worth knowing before you buy.
-      </p>
-    </header>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">What to Look For</h2>
-      <div class="space-y-2 text-sm text-stone-600">
-        {[
-          ["Size", "7L is the standard. Enough water for 3-4 rounds without refilling. Anything smaller is annoying."],
-          ["Material", "Cedar or other light wood. Don't absorb odors. Stay cool to touch. Look right in a sauna."],
-          ["Ladle size", "75-100ml per scoop is ideal. Smaller ladles require multiple pours. Too large and you flood the stones."],
-          ["Handle", "Should hook over the bucket edge. Keeps it from falling in and makes it easy to find in steam."],
-        ].map(([label, desc]) => (
-          <div class="flex gap-3 bg-white rounded-lg px-4 py-2">
-            <span class="font-semibold text-stone-800 w-20 shrink-0">{label}</span>
-            <span>{desc}</span>
-          </div>
-        ))}
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Sauna Bucket and Ladle Set (2025)</h1>
+    <p class="text-stone-500 mb-8">Updated March 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">The bucket and ladle is the most basic piece of sauna equipment you can buy. It's also the one that directly controls the steam experience — the moment you pour water over hot rocks, the room transforms. Getting the right setup matters more than most people expect.</p>
+
+    <p class="text-stone-700 mb-8">This is a $25-$50 purchase. But a cheap bucket warps, splits, or starts to smell after a few months. A good one lasts a decade. Here's what to look for.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Picks</h2>
+
+    <div class="space-y-6 mb-10">
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <div class="mb-2">
+          <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
+          <h3 class="text-xl font-bold text-stone-900 mt-1">Cedar Sauna Bucket and Ladle Set</h3>
+        </div>
+        <p class="text-stone-600 mb-3">Cedar stave construction with stainless steel bands, matching long-handled ladle, and a handle that stays comfortable to grip at sauna temperatures. This is the style you see in Finnish saunas — simple, functional, good-looking. The cedar smell adds to the session rather than competing with it.</p>
+        <ul class="text-stone-600 text-sm space-y-1 mb-4">
+          <li>Material: cedar staves, stainless banding</li>
+          <li>Volume: typically 3-4 liters</li>
+          <li>Ladle: long handle (12-16 inches), heat-safe</li>
+          <li>Fits on standard bench or hangs on wall hook</li>
+        </ul>
+        <a href="https://www.amazon.com/dp/B07FKQB3LB?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+      </div>
+
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Look For</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Wood type</h3>
+    <p class="text-stone-700 mb-4">Cedar and aspen are the standards. Both stay cool enough to handle comfortably, don't leach anything into the water, and are durable with basic care. Aspen is slightly lighter in color with almost no scent of its own — a good choice if you like to add sauna essences and don't want the cedar smell competing. Cedar has the classic look and natural aroma.</p>
+    <p class="text-stone-700 mb-4">Avoid anything made from pine (resin bleeds), hardwoods like oak (gets too hot, can tannin-stain water), or any lacquered or painted finish. The finish off-gases at sauna temperatures and the smell is unpleasant. Raw, unfinished softwood only.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Metal banding</h3>
+    <p class="text-stone-700 mb-4">The metal bands holding the staves together should be stainless steel, not galvanized or painted. Cheap galvanized bands rust quickly in the wet sauna environment. Rust stains the wood and eventually weakens the structural integrity of the bucket. Stainless is worth the small premium.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Ladle length</h3>
+    <p class="text-stone-700 mb-4">You want a ladle handle long enough to pour water on the rocks without leaning close to the heater. Twelve to sixteen inches is the right range for most sauna layouts. Shorter ladles work but put your hand and arm closer to the heat source than is comfortable.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Size</h3>
+    <p class="text-stone-700 mb-4">A 3-liter bucket holds enough water for most sessions without a refill. If you sauna for long stretches or like heavy steam, a 4-liter gives more margin. Anything over 5 liters gets awkward to handle one-handed while seated on a bench.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How to Use It</h2>
+    <p class="text-stone-700 mb-4">Fill the bucket with cold or room-temperature water before you heat the sauna. As the room heats up, the water warms slightly which is fine. When the sauna is at temperature and you're ready to add steam, pour a single ladle slowly and evenly across the top of the rocks. Slow pours distribute the steam more evenly than a fast dump, which can create a single intense burst.</p>
+    <p class="text-stone-700 mb-4">Wait 30 to 60 seconds between pours and let the heat recover before adding more water. Most sessions use 3 to 6 ladles total across a 15-20 minute round.</p>
+    <p class="text-stone-700 mb-6">Adding a few drops of eucalyptus, birch, or other sauna essence to the water before pouring is the easiest way to elevate the experience. Start with 5-8 drops per ladle — you can always add more, but a heavy hand with sauna essence makes the air feel thick and sharp.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Care and Maintenance</h2>
+    <p class="text-stone-700 mb-4">Rinse the bucket after each session and invert it to drain. Let it air dry completely before the next use. This single habit prevents the most common failure mode — rot from standing water between the staves.</p>
+    <p class="text-stone-700 mb-6">If the wood develops a smell after heavy use, scrub the interior with a paste of baking soda and water, let it sit for 10 minutes, rinse thoroughly, and dry. Do not use soap — it soaks into the wood and you'll taste it in your steam for weeks.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What size bucket for a sauna?</h3>
+        <p class="text-stone-700">3 to 4 liters covers most home saunas. Big enough for a full session, manageable with one hand on the bench.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What wood is best?</h3>
+        <p class="text-stone-700">Cedar, aspen, and alder are the traditional picks. All stay cool to touch, don't taint the water, and hold up with basic care. Avoid pine, oak, and anything with a finish.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How do I care for a wooden sauna bucket?</h3>
+        <p class="text-stone-700">Rinse and air dry after every use. Never leave water sitting inside between sessions. Baking soda scrub for odors, no soap.</p>
       </div>
     </div>
 
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Top Picks</h2>
-
-    <div class="space-y-8">
-      {picks.map((pick) => (
-        <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
-          <div class="bg-stone-50 border-b border-stone-200 px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <span class="text-stone-400 font-bold text-lg">#{pick.rank}</span>
-              <h3 class="text-lg font-bold text-stone-900">{pick.name}</h3>
-            </div>
-            <span class={`text-xs font-bold px-3 py-1 rounded-full ${pick.tagColor}`}>{pick.tag}</span>
-          </div>
-          <div class="p-6">
-            <div class="flex gap-6 mb-4 text-sm text-stone-500">
-              <span>Size: <strong class="text-stone-700">{pick.size}</strong></span>
-              <span>Material: <strong class="text-stone-700">{pick.material}</strong></span>
-              <span>Rating: <strong class="text-stone-700">{pick.rating}</strong></span>
-            </div>
-            <p class="text-stone-600 mb-4">{pick.summary}</p>
-            <div class="grid grid-cols-2 gap-4 mb-5 text-sm">
-              <div>
-                <p class="font-semibold text-green-700 mb-2">Pros</p>
-                <ul class="space-y-1">
-                  {pick.pros.map(p => <li class="flex items-start gap-2 text-stone-600"><span class="text-green-500 mt-0.5">+</span>{p}</li>)}
-                </ul>
-              </div>
-              <div>
-                <p class="font-semibold text-red-600 mb-2">Cons</p>
-                <ul class="space-y-1">
-                  {pick.cons.map(c => <li class="flex items-start gap-2 text-stone-600"><span class="text-red-400 mt-0.5">-</span>{c}</li>)}
-                </ul>
-              </div>
-            </div>
-            <AmazonButton asin={pick.asin} price={pick.price} />
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold mt-12 mb-4 text-stone-900">How to Pour Löyly Correctly</h2>
-    <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm mb-6">
-      <p class="text-stone-600 text-sm mb-3">Löyly (the Finnish word for sauna steam) is the whole point of having a bucket and ladle. Getting it right makes a session dramatically better. Getting it wrong produces flat, harsh steam or no steam at all.</p>
-      <ol class="space-y-2 text-sm text-stone-600 list-decimal list-inside">
-        <li>Wait until the stones are fully heated — at least 30-40 minutes into the warm-up cycle.</li>
-        <li>Use a half-ladle first. See how the steam responds before adding more.</li>
-        <li>Pour slowly onto the center of the stone pile, not directly on the heating elements.</li>
-        <li>Wait for the steam to rise and disperse before adding another ladle.</li>
-        <li>Add a few drops of eucalyptus or birch essence to the water for a traditional scent.</li>
-      </ol>
-    </div>
-
-    <div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h3 class="font-bold text-stone-900 mb-3">More sauna accessories</h3>
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-sauna-thermometer-hygrometer" class="text-amber-700 hover:underline font-medium">Best Sauna Thermometer and Hygrometer</a></li>
-        <li><a href="/guides/best-sauna-accessories" class="text-amber-700 hover:underline font-medium">Complete Sauna Accessories Guide</a></li>
-        <li><a href="/guides/best-sauna-stones" class="text-amber-700 hover:underline font-medium">Best Sauna Stones</a></li>
-        <li><a href="/guides/how-to-use-a-sauna" class="text-amber-700 hover:underline font-medium">How to Use a Sauna</a></li>
+        <li><a href="/guides/best-sauna-stones" class="text-amber-700 hover:underline">Best Sauna Stones</a></li>
+        <li><a href="/guides/best-sauna-thermometer-hygrometer" class="text-amber-700 hover:underline">Best Sauna Thermometer and Hygrometer</a></li>
+        <li><a href="/guides/best-sauna-backrest" class="text-amber-700 hover:underline">Best Sauna Backrest</a></li>
+        <li><a href="/guides/best-sauna-accessories" class="text-amber-700 hover:underline">Best Sauna Accessories for Beginners</a></li>
       </ul>
     </div>
 

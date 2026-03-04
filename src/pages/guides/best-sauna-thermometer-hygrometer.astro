@@ -1,149 +1,123 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
 
-const picks = [
-  {
-    rank: 1,
-    asin: "B0BC8QMSKG",
-    name: "Amocane 2-in-1 Sauna Thermometer Hygrometer",
-    price: "~$22",
-    rating: "4.5/5",
-    tag: "BEST OVERALL",
-    tagColor: "bg-amber-100 text-amber-800",
-    type: "Analog combo",
-    range: "32-230°F / 0-100% RH",
-    summary: "Reads both temperature and humidity on a single dial. That's what you actually need in a sauna. Fahrenheit scale, designed specifically for sauna heat ranges (up to 230°F), and accurate enough to tell you when you're at your target temperature and when it's time to pour more water. Mounts to the wall with one screw.",
-    pros: ["Dual reading on one unit", "Purpose-built for sauna temps", "Clear large dial, readable through steam", "No batteries needed"],
-    cons: ["Analog only, no digital readout", "Accuracy varies slightly unit to unit"]
-  },
-  {
-    rank: 2,
-    asin: "B002NM6LT2",
-    name: "Coasts Sauna Thermometer and Hygrometer",
-    price: "~$25",
-    rating: "4.4/5",
-    tag: "MOST POPULAR",
-    tagColor: "bg-stone-100 text-stone-800",
-    type: "Analog combo",
-    range: "32-260°F / 0-100% RH",
-    summary: "One of the most widely purchased sauna thermometers on Amazon. Two separate dials in one unit, wall-mount bracket included, and a higher temperature ceiling than most competitors. If you run a very hot sauna (190°F+) this one stays accurate where others top out.",
-    pros: ["Higher temp ceiling (260°F)", "Widely used, well-reviewed", "Wall bracket included", "Cedar surround looks at home in any sauna"],
-    cons: ["Slightly larger than the Amocane", "Two separate dials vs one combined"]
-  }
-];
----
-<Base
-  title="Best Sauna Thermometer and Hygrometer (2025) — Top Picks Reviewed"
-  description="The best sauna thermometer and hygrometer for barrel and infrared saunas. Know exactly how hot and humid your sauna is — and when it's ready."
-  canonical="/guides/best-sauna-thermometer-hygrometer"
->
-  <article class="max-w-3xl mx-auto">
-    <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Sauna Accessories</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Sauna Thermometer and Hygrometer (2025)
-      </h1>
-      <p class="text-stone-500 text-sm">Updated January 2025 · 6 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        You need to know two things inside a sauna: temperature and humidity. A thermometer tells you when it's ready. A hygrometer tells you when to pour more water. One unit does both jobs and costs under $25. Here are the best options.
-      </p>
-    </header>
-
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-2">Why Both Readings Matter</h2>
-      <div class="grid grid-cols-2 gap-4 text-sm text-stone-600 mt-2">
-        <div>
-          <p class="font-semibold text-stone-800 mb-1">Temperature</p>
-          <p>Target: 170-195°F for traditional. 120-140°F for infrared. Tells you when the sauna is ready and helps you adjust the heater dial correctly.</p>
-        </div>
-        <div>
-          <p class="font-semibold text-stone-800 mb-1">Humidity</p>
-          <p>Target: 10-20% for traditional, higher (30-50%) during löyly. Low humidity means dry air. Pour water to bring it up. Hygrometer tells you when.</p>
-        </div>
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Top Picks</h2>
-
-    <div class="space-y-8">
-      {picks.map((pick) => (
-        <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
-          <div class="bg-stone-50 border-b border-stone-200 px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <span class="text-stone-400 font-bold text-lg">#{pick.rank}</span>
-              <h3 class="text-lg font-bold text-stone-900">{pick.name}</h3>
-            </div>
-            <span class={`text-xs font-bold px-3 py-1 rounded-full ${pick.tagColor}`}>{pick.tag}</span>
-          </div>
-          <div class="p-6">
-            <div class="flex gap-6 mb-4 text-sm text-stone-500">
-              <span>Type: <strong class="text-stone-700">{pick.type}</strong></span>
-              <span>Range: <strong class="text-stone-700">{pick.range}</strong></span>
-              <span>Rating: <strong class="text-stone-700">{pick.rating}</strong></span>
-            </div>
-            <p class="text-stone-600 mb-4">{pick.summary}</p>
-            <div class="grid grid-cols-2 gap-4 mb-5 text-sm">
-              <div>
-                <p class="font-semibold text-green-700 mb-2">Pros</p>
-                <ul class="space-y-1">
-                  {pick.pros.map(p => <li class="flex items-start gap-2 text-stone-600"><span class="text-green-500 mt-0.5">+</span>{p}</li>)}
-                </ul>
-              </div>
-              <div>
-                <p class="font-semibold text-red-600 mb-2">Cons</p>
-                <ul class="space-y-1">
-                  {pick.cons.map(c => <li class="flex items-start gap-2 text-stone-600"><span class="text-red-400 mt-0.5">-</span>{c}</li>)}
-                </ul>
-              </div>
-            </div>
-            <AmazonButton asin={pick.asin} price={pick.price} />
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold mt-12 mb-4 text-stone-900">Where to Mount It</h2>
-    <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm mb-6">
-      <p class="text-stone-600 text-sm mb-3">Mount the thermometer/hygrometer at bench height on the wall opposite the heater. That's where you'll be sitting, and it gives you the most accurate reading of what you're actually experiencing.</p>
-      <p class="text-stone-600 text-sm mb-3">Don't mount it directly above the heater (too hot, inaccurate) or near the floor (cooler than the actual sauna temp). Bench height on the side wall is ideal.</p>
-      <p class="text-stone-600 text-sm">For traditional saunas: let the sauna fully heat for 30-45 minutes before reading. The walls and bench need to come up to temperature for an accurate reading, not just the air.</p>
-    </div>
-
-    <div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h3 class="font-bold text-stone-900 mb-3">Build out your sauna setup</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-sauna-accessories" class="text-amber-700 hover:underline font-medium">Complete Sauna Accessories Guide</a></li>
-        <li><a href="/guides/best-sauna-stones" class="text-amber-700 hover:underline font-medium">Best Sauna Stones (When and How to Replace)</a></li>
-        <li><a href="/guides/how-to-use-a-sauna" class="text-amber-700 hover:underline font-medium">How to Use a Sauna: Beginner Guide</a></li>
-        <li><a href="/guides/best-electric-sauna-heaters" class="text-amber-700 hover:underline font-medium">Best Electric Sauna Heaters</a></li>
-      </ul>
-    </div>
-
-  </article>
-</Base>
-
-<script type="application/ld+json">
-{
+const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Do you need a thermometer and hygrometer in a sauna?",
+      "name": "What temperature should a sauna be?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. A thermometer tells you when the sauna is ready and helps you dial in the right temperature. A hygrometer tells you the humidity level so you know when to pour water on the stones. Together they help you control the experience and make sessions safer for guests unfamiliar with high heat."
+        "text": "A traditional Finnish sauna runs between 150°F and 195°F (65-90°C) at bench level. Infrared saunas run cooler, typically 120-140°F. The ideal range for most people is 170-185°F with a humidity level of 10-20% before adding water to the rocks."
       }
     },
     {
       "@type": "Question",
-      "name": "What temperature should a sauna be?",
+      "name": "Do I need a hygrometer in my sauna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Traditional Finnish saunas run at 170-195°F (77-90°C). Most people find 180-190°F to be the sweet spot. Infrared saunas operate at 120-140°F. A sauna thermometer lets you monitor this precisely rather than guessing."
+        "text": "A hygrometer isn't strictly necessary but adds useful information. Knowing your humidity level helps you dial in the steam experience — most sauna enthusiasts aim for 10-20% relative humidity before pouring water, which spikes to 40-60% briefly after each ladle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use a regular thermometer in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Standard household thermometers use plastic or electronic components that fail or give inaccurate readings above 120°F. You need a sauna-rated thermometer built for sustained exposure to 200°F+ temperatures, usually made of wood and glass or stainless steel."
       }
     }
   ]
-}
-</script>
+};
+---
+<Base
+  title="Best Sauna Thermometer and Hygrometer (2025)"
+  description="The best sauna thermometers and hygrometers for accurate temp and humidity readings. Wood-framed, heat-rated picks that last."
+  canonical="/guides/best-sauna-thermometer-hygrometer"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Sauna Thermometer and Hygrometer (2025)</h1>
+    <p class="text-stone-500 mb-8">Updated March 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">You can't manage what you can't measure. A sauna thermometer tells you when the room is actually ready, not when the heater's timer says it should be. The difference between 155°F and 185°F is significant — session quality, how much water to pour, and how long to stay all change with temperature.</p>
+
+    <p class="text-stone-700 mb-8">Most kits don't include a thermometer. It's a small purchase that makes a real difference.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Picks</h2>
+
+    <div class="space-y-6 mb-10">
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <div class="mb-2">
+          <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
+          <h3 class="text-xl font-bold text-stone-900 mt-1">Sauna Thermometer Hygrometer Combo</h3>
+        </div>
+        <p class="text-stone-600 mb-3">A wood-framed combo unit with both temperature and humidity readings on one face. Cedar or aspen frame stays cool to touch even at 200°F. Glass tube thermometer reads in both Fahrenheit and Celsius. Reads up to 220°F which covers any sauna running at proper temperature.</p>
+        <ul class="text-stone-600 text-sm space-y-1 mb-4">
+          <li>Temperature range: up to 220°F (104°C)</li>
+          <li>Humidity range: 0-100% RH</li>
+          <li>Wood frame (cedar or aspen depending on variant)</li>
+          <li>Wall-mount or bench placement</li>
+        </ul>
+        <a href="https://www.amazon.com/dp/B0BC8QMSKG?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+      </div>
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <div class="mb-2">
+          <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Budget Pick</span>
+          <h3 class="text-xl font-bold text-stone-900 mt-1">Basic Sauna Accessories Bundle</h3>
+        </div>
+        <p class="text-stone-600 mb-3">A good entry-level option that bundles a thermometer with other sauna accessories at a lower per-piece cost. Works well if you're outfitting a new sauna from scratch and want to get everything in one order.</p>
+        <a href="https://www.amazon.com/dp/B0DKJVC1D3?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+      </div>
+
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where to Mount It</h2>
+    <p class="text-stone-700 mb-4">Mount the thermometer on the wall at upper bench level — roughly 4 to 5 feet off the floor. This gives you an accurate reading of what the air temperature actually is where you're sitting, not the floor temperature (always cooler) or the ceiling temperature (always hotter).</p>
+    <p class="text-stone-700 mb-6">Keep it away from the heater and off the wall directly above it. Heat from the element radiates upward and can inflate readings by 20-30 degrees if the thermometer is in that zone. Side wall, mid-bench height, away from direct heater radiation is the right spot.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Reading Temperature and Humidity Together</h2>
+    <p class="text-stone-700 mb-4">Temperature and humidity interact. A sauna at 190°F with 5% humidity feels dry and harsh. The same room at 170°F with 15-20% humidity feels more balanced and easier to breathe. Most people prefer the latter once they've experienced both.</p>
+    <p class="text-stone-700 mb-4">The standard guidance: heat to your target temperature, then pour one or two ladles of water on the rocks to bring humidity up to the 10-20% range. Watch the hygrometer and adjust from there. After a few sessions you'll know exactly what your preference is.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Why Not a Digital Thermometer?</h2>
+    <p class="text-stone-700 mb-4">Most digital sensors and LCD displays fail above 150°F. The components aren't rated for sustained sauna temperatures. You might get away with a digital unit for a season, but the display degrades or gives inaccurate readings once the electronics heat-cycle enough times.</p>
+    <p class="text-stone-700 mb-6">Stick to glass-tube analog thermometers with wood frames. They have no electronics, last indefinitely, and are accurate enough for sauna use. The only downside is reading humidity with a traditional hygroscopic hygrometer requires more attention than a digital display — but for $20-$40 it's a trade-off worth making.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What temperature should a sauna be?</h3>
+        <p class="text-stone-700">Traditional sauna runs 150-195°F at bench level. Most people find 170-185°F the sweet spot. Infrared runs cooler at 120-140°F.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Do I need a hygrometer in my sauna?</h3>
+        <p class="text-stone-700">Not essential, but useful. Knowing your humidity level helps you manage the steam experience. Most sauna enthusiasts run 10-20% before adding water.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can I use a regular thermometer in a sauna?</h3>
+        <p class="text-stone-700">No. Standard thermometers fail above 120°F. Use a sauna-rated thermometer built for 200°F+ sustained exposure — wood-framed glass tube models are the standard.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/best-sauna-stones" class="text-amber-700 hover:underline">Best Sauna Stones</a></li>
+        <li><a href="/guides/best-sauna-bucket-ladle" class="text-amber-700 hover:underline">Best Sauna Bucket and Ladle</a></li>
+        <li><a href="/guides/best-sauna-accessories" class="text-amber-700 hover:underline">Best Sauna Accessories for Beginners</a></li>
+        <li><a href="/guides/how-to-use-a-sauna" class="text-amber-700 hover:underline">How to Use a Sauna</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
