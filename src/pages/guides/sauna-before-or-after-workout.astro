@@ -1,0 +1,115 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should you use a sauna before or after a workout?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After is better for most goals. Post-workout sauna use aids muscle recovery, reduces DOMS (delayed onset muscle soreness), and extends the cardiovascular benefit of exercise. Pre-workout sauna can help warm up muscles and improve flexibility but also depletes energy and fluids before you train, which reduces workout performance for most people."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it OK to sauna before working out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but with limitations. A short pre-workout sauna (10-15 minutes, not too hot) can warm up connective tissue and improve range of motion. The downside is dehydration and glycogen depletion before exercise, which hurts performance in strength and endurance training. For most athletes, the tradeoff doesn't favor pre-workout sauna use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long should you stay in a sauna after a workout?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "15-20 minutes is the sweet spot for post-workout sauna use. Drink 16-24 oz of water before entering. Wait 10-15 minutes after finishing your workout before getting in — immediately post-exercise your core temperature is already elevated and jumping into a hot sauna adds additional heat stress. Cool down slightly first, then sauna."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Sauna Before or After Workout: What's Better and Why"
+  description="Should you sauna before or after exercise? What the research shows, the tradeoffs of each approach, and how to get the most from post-workout sauna use."
+  canonical="/guides/sauna-before-or-after-workout"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Before or After Workout: What's Actually Better</h1>
+    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-stones-closeup.jpg" alt="Sauna stones and ladle for post-workout recovery session" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">The honest answer is: after, for most people and most goals. Post-workout sauna use has meaningful evidence behind it. Pre-workout sauna has benefits too, but they come with real performance tradeoffs. Here is what the research shows and how to use both approaches effectively.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">After a Workout: The Case For</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Muscle recovery</h3>
+    <p class="text-stone-700 mb-4">Heat increases blood flow to muscles, helps clear metabolic waste products from exercise, and reduces delayed onset muscle soreness (DOMS). Multiple studies have shown post-exercise heat exposure — sauna or heat therapy — meaningfully reduces soreness 24-72 hours after training. For people training hard and frequently, this is the main reason to sauna after workouts.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Extended cardiovascular benefit</h3>
+    <p class="text-stone-700 mb-4">A sauna after exercise extends elevated heart rate for another 15-20 minutes. Research from the University of Eastern Finland found that men who combined exercise and regular sauna use had significantly lower all-cause mortality than men who only exercised. The combination appears to compound the cardiovascular benefit.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Growth hormone</h3>
+    <p class="text-stone-700 mb-6">Heat stress independently triggers growth hormone release. Combined with the post-exercise GH response, a post-workout sauna session produces a significantly higher GH spike than either alone. Practically, this supports muscle repair and recovery.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How to Do Post-Workout Sauna Right</h2>
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-6">
+      <ul class="space-y-2 text-stone-700 text-sm">
+        <li><span class="font-semibold">Wait 10-15 minutes after finishing exercise</span> before entering. Your core temperature is already high from training — give it a brief chance to stabilize.</li>
+        <li><span class="font-semibold">Drink 16-24 oz of water</span> before getting in. You are already dehydrated from training.</li>
+        <li><span class="font-semibold">15-20 minutes</span> is the target session length. Longer is not necessarily better when already fatigued.</li>
+        <li><span class="font-semibold">Finish with a cool shower or cold plunge</span> if available. The contrast accelerates the recovery process further. See our <a href="/guides/sauna-cold-plunge" class="text-amber-700 hover:underline">sauna and cold plunge guide</a>.</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Before a Workout: The Case For (and Against)</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Potential benefits</h3>
+    <p class="text-stone-700 mb-4">A short pre-workout sauna session (10-15 minutes at moderate temperature) warms connective tissue and increases range of motion. Some athletes find it useful for dynamic flexibility work or before activities where mobility matters. There is also a mental component — the sauna ritual can be a useful part of getting focused before training.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">The tradeoffs</h3>
+    <p class="text-stone-700 mb-6">Heat exposure before training depletes glycogen, raises core temperature, and causes fluid loss. All three hurt performance — strength output drops when core temperature is too high, endurance capacity decreases with dehydration, and starting a workout glycogen-depleted reduces training quality. For anyone training seriously, the performance cost of pre-workout sauna typically outweighs the flexibility benefit. Short sessions at lower temperatures minimize the damage but the tradeoff rarely favors pre-workout use for performance-focused training.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Verdict</h2>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <p class="text-stone-700 text-sm"><span class="font-semibold">If your goal is recovery and general health:</span> after training, 15-20 minutes, well hydrated. This is the evidence-backed approach with the best return.</p>
+      <p class="text-stone-700 text-sm mt-2"><span class="font-semibold">If your goal is performance:</span> save the sauna for post-workout. Pre-workout sauna costs you output.</p>
+      <p class="text-stone-700 text-sm mt-2"><span class="font-semibold">If you want to use sauna for flexibility:</span> a short, moderate pre-workout session is fine for light training days. Avoid it before heavy strength sessions or intense cardio.</p>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Should you use a sauna before or after a workout?</h3>
+        <p class="text-stone-700">After for most goals. Post-workout sauna aids recovery, extends cardiovascular benefit, and supports muscle repair. Pre-workout sauna hurts performance due to dehydration and elevated core temperature.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How long should you stay in a sauna after a workout?</h3>
+        <p class="text-stone-700">15-20 minutes. Wait 10-15 minutes after finishing exercise before entering. Drink water before going in.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Is it OK to sauna before working out?</h3>
+        <p class="text-stone-700">For light training days and flexibility work, a short moderate session is fine. Avoid before heavy strength or endurance sessions — the performance cost is real.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-after-workout" class="text-amber-700 hover:underline">Sauna After Workout: Full Guide</a></li>
+        <li><a href="/guides/sauna-cold-plunge" class="text-amber-700 hover:underline">Sauna and Cold Plunge</a></li>
+        <li><a href="/guides/how-long-to-stay-in-sauna" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
+        <li><a href="/guides/sauna-for-back-pain" class="text-amber-700 hover:underline">Sauna for Back Pain</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
