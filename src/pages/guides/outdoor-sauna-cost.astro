@@ -1,0 +1,167 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+---
+<Base
+  title="How Much Does an Outdoor Sauna Cost? (2025 Price Guide)"
+  description="Complete outdoor sauna cost breakdown — purchase price, installation, electrical, foundation, and operating costs. What to budget for every type of sauna."
+  canonical="/guides/outdoor-sauna-cost"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        How Much Does an Outdoor Sauna Cost? (2025)
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 9 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        The sticker price is only part of it. A $2,500 barrel sauna kit can turn into a $4,500 project once you add electrical, foundation, and accessories. Here's the full picture — so you can budget accurately before you commit.
+      </p>
+    </header>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-3">Total Cost by Sauna Type</h2>
+      <div class="space-y-2 text-sm">
+        {[
+          ["Portable steam sauna", "$150–$300", "$0", "$0", "$150–$300"],
+          ["1-2 person infrared (indoor)", "$700–$1,500", "$0–$150", "$0", "$700–$1,650"],
+          ["2-4 person barrel sauna (kit)", "$1,800–$3,500", "$300–$800", "$300–$700", "$2,400–$5,000"],
+          ["4-6 person barrel sauna (kit)", "$3,000–$6,000", "$400–$1,000", "$500–$1,200", "$3,900–$8,200"],
+          ["Custom cabin sauna (built)", "$8,000–$25,000+", "$500–$2,000", "$1,000–$2,500", "$9,500–$29,500"],
+        ].map(([type, kit, elec, found, total], i) => (
+          <div class={`grid grid-cols-5 gap-2 rounded-lg p-2 text-xs ${i % 2 === 0 ? 'bg-white' : 'bg-amber-50/50'}`}>
+            <span class="col-span-2 font-medium text-stone-700">{type}</span>
+            <span class="text-stone-600">{kit}</span>
+            <span class="text-stone-600">{elec}</span>
+            <span class="font-semibold text-amber-700">{total}</span>
+          </div>
+        ))}
+        <div class="grid grid-cols-5 gap-2 text-xs text-stone-400 mt-1">
+          <span class="col-span-2"></span>
+          <span>Kit price</span>
+          <span>Electrical</span>
+          <span>Foundation</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-8 mb-6 text-stone-900">Breaking Down Every Cost</h2>
+
+    <div class="space-y-6">
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-stone-900 mb-3">1. The Sauna Kit Itself</h3>
+        <p class="text-stone-600 text-sm mb-4">This is the wood, hardware, benches, and sometimes the heater. Prices span a massive range depending on size, wood species, and brand.</p>
+        <div class="space-y-2 text-sm">
+          {[
+            ["Portable steam tent", "$150–$300", "Not a real sauna. Entry-level try-it option."],
+            ["1-2 person infrared", "$700–$1,500", "Real sauna benefits, plug-and-play, no install needed."],
+            ["2-4 person barrel kit", "$1,800–$3,500", "Sweet spot for most homeowners. Heater usually separate."],
+            ["4-6 person barrel kit", "$3,000–$6,000", "Family-sized. Significantly more room and comfort."],
+            ["Premium / custom cabin", "$8,000–$25,000+", "Custom builds, glass walls, luxury finishes."],
+          ].map(([type, price, note]) => (
+            <div class="flex gap-3 items-start border-b border-stone-100 pb-2">
+              <span class="font-semibold text-stone-800 w-40 flex-shrink-0">{type}</span>
+              <span class="text-amber-700 font-medium w-32 flex-shrink-0">{price}</span>
+              <span class="text-stone-500">{note}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-stone-900 mb-3">2. Electrical Installation</h3>
+        <p class="text-stone-600 text-sm mb-4">Most traditional saunas need a 240V dedicated circuit. Infrared under 3.5kW is the exception — it plugs into a standard outlet.</p>
+        <div class="space-y-2 text-sm">
+          {[
+            ["No electrical (small infrared)", "$0", "120V plug-in. No electrician."],
+            ["Short run (panel nearby)", "$200–$400", "25–50 ft of conduit."],
+            ["Medium run", "$400–$700", "50–100 ft run."],
+            ["Long run or panel upgrade", "$800–$2,000", "100+ ft or panel at capacity."],
+          ].map(([scenario, cost, note]) => (
+            <div class="flex gap-3 items-start border-b border-stone-100 pb-2">
+              <span class="font-medium text-stone-700 w-44 flex-shrink-0">{scenario}</span>
+              <span class="text-amber-700 font-medium w-28 flex-shrink-0">{cost}</span>
+              <span class="text-stone-500">{note}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-stone-900 mb-3">3. Foundation</h3>
+        <p class="text-stone-600 text-sm mb-4">You need a level, stable base. Options range from DIY gravel to a poured concrete pad.</p>
+        <div class="space-y-2 text-sm">
+          {[
+            ["Compacted gravel pad (DIY)", "$150–$400", "Best value. Drains well. DIY-friendly."],
+            ["Pressure-treated timber frame", "$200–$600", "Good for uneven ground."],
+            ["Poured concrete (pro)", "$600–$2,000", "Most permanent. Best for cabin saunas."],
+          ].map(([type, cost, note]) => (
+            <div class="flex gap-3 items-start border-b border-stone-100 pb-2">
+              <span class="font-medium text-stone-700 w-44 flex-shrink-0">{type}</span>
+              <span class="text-amber-700 font-medium w-28 flex-shrink-0">{cost}</span>
+              <span class="text-stone-500">{note}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-stone-900 mb-3">4. Heater (if not included)</h3>
+        <p class="text-stone-600 text-sm mb-4">Most barrel sauna kits sell the heater separately. Budget this in from the start.</p>
+        <div class="space-y-2 text-sm">
+          {[
+            ["Budget heater (Vevor, etc.)", "$250–$450", "Works. Quality varies."],
+            ["Mid-range (Finlandia)", "$450–$650", "Reliable. Good value."],
+            ["Premium (Harvia, Tylo)", "$600–$1,500", "Finnish/Swedish quality. Lasts 20+ years."],
+          ].map(([type, cost, note]) => (
+            <div class="flex gap-3 items-start border-b border-stone-100 pb-2">
+              <span class="font-medium text-stone-700 w-44 flex-shrink-0">{type}</span>
+              <span class="text-amber-700 font-medium w-28 flex-shrink-0">{cost}</span>
+              <span class="text-stone-500">{note}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-xl font-bold text-stone-900 mb-3">5. Ongoing Operating Costs</h3>
+        <p class="text-stone-600 text-sm mb-4">This is where most people get surprised. It's not much — but worth knowing.</p>
+        <div class="space-y-2 text-sm text-stone-600">
+          <p>⚡ <strong>Electricity:</strong> A 6kW heater running 1 hour costs about $0.75–$1.20 at average US rates. A typical 2-hour session: $1.50–$2.50. Monthly for 3 sessions/week: $18–$30.</p>
+          <p>🪨 <strong>Sauna stones:</strong> Replace every 2–3 years. $30–$80.</p>
+          <p>🪵 <strong>Wood treatment:</strong> Annual exterior treatment. $20–$50 in product.</p>
+          <p>🔧 <strong>Electrician check:</strong> Every 2–3 years. $75–$150.</p>
+          <p class="font-medium text-stone-700 mt-2">Total annual operating cost: roughly $300–$600 for a typical traditional sauna used 3x/week.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Is a Backyard Sauna Worth It?</h2>
+    <p class="text-stone-600 mb-4">A gym membership runs $600–$1,200/year. A spa visit is $80–$200 each time. A backyard sauna has a one-time cost and then costs you $25–$50/month to run. If you use it 3x/week, the math gets compelling fast.</p>
+    <p class="text-stone-600 mb-4">Beyond the numbers: property value. Surveys consistently show outdoor saunas increase home desirability and resale value — especially in northern markets where buyers actively look for them.</p>
+
+    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">Best Value Picks by Budget</h2>
+    <div class="space-y-4">
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <span class="text-xs font-bold bg-green-100 text-green-800 px-2 py-1 rounded">UNDER $1,000 ALL-IN</span>
+        <h3 class="font-semibold text-stone-900 mt-2 mb-1">Dynamic Saunas Barcelona Infrared</h3>
+        <p class="text-stone-600 text-sm mb-3">Plug-in, no electrician, no foundation. Real sauna benefits at the lowest total cost of any option.</p>
+        <AmazonButton asin="B00A2F99F0" price="~$899" />
+      </div>
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded">BEST VALUE $3,000–$5,000 ALL-IN</span>
+        <h3 class="font-semibold text-stone-900 mt-2 mb-1">Almost Heaven Pinnacle 4-Person Barrel Sauna</h3>
+        <p class="text-stone-600 text-sm mb-3">Kit + a Harvia heater + gravel pad + electrical = roughly $3,500–$4,500 all-in. Best return on investment in the category.</p>
+        <AmazonButton asin="B017WJV8SO" price="~$2,199" />
+      </div>
+    </div>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
+      <h3 class="text-xl font-bold mb-2">Ready to Plan Your Build?</h3>
+      <p class="text-stone-300 mb-4">See how much space you need and where to put it before you buy.</p>
+      <a href="/guides/how-much-space-for-backyard-sauna" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+        Sauna Space Planning Guide →
+      </a>
+    </div>
+  </article>
+</Base>
