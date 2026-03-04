@@ -1,0 +1,103 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+
+const accessories = [
+  {
+    category: "Essential",
+    items: [
+      { asin: "B07FKQB3LB", name: "Sauna Bucket & Ladle Set (Cedar)", price: "~$35", desc: "You need a bucket and ladle to pour water on the rocks for steam. Cedar doesn't absorb odors and looks great. Don't skip this." },
+      { asin: "B002NM6LT2", name: "Sauna Thermometer & Hygrometer", price: "~$25", desc: "Know your heat and humidity. Essential for getting the temperature right and safe for guests who aren't used to high heat." },
+      { asin: "B01N9SE8SZ", name: "Sauna Sand Timer (15-min)", price: "~$18", desc: "The traditional way to time your rounds. 15 minutes is the standard. Simple, elegant, no electronics to sweat on." },
+    ]
+  },
+  {
+    category: "Comfort",
+    items: [
+      { asin: "B07YCQ4TCZ", name: "Cedar Sauna Headrest (2-pack)", price: "~$29", desc: "Lie back properly without craning your neck. Cedar headrests stay cool, resist moisture, and smell amazing." },
+      { asin: "B08JHR3XBN", name: "Sauna Back Rest (Cedar)", price: "~$45", desc: "Keeps your back off the hot wall. Makes longer sessions much more comfortable." },
+      { asin: "B079N9NXBH", name: "Sauna Bench Cushion Set", price: "~$65", desc: "Premium cotton sauna cushions for the bench and backrest. Washable, mold-resistant, and dramatically more comfortable for long sessions." },
+    ]
+  },
+  {
+    category: "Health & Wellness",
+    items: [
+      { asin: "B07CZ4NN1P", name: "Eucalyptus Sauna Scent Concentrate", price: "~$22", desc: "A few drops in your sauna bucket transforms the experience. Eucalyptus opens airways and adds a spa-like atmosphere." },
+      { asin: "B07PXGQC9T", name: "Birch Sauna Whisk (Vihta)", price: "~$18", desc: "Traditional Finnish vihta (birch whisk) for beating — improves circulation and exfoliates skin. Soak in hot water before use." },
+    ]
+  },
+  {
+    category: "Safety & Maintenance",
+    items: [
+      { asin: "B07MJDFHKG", name: "Sauna Wood Cleaner & Protector", price: "~$28", desc: "Cleans and protects cedar benches without harsh chemicals. Extend the life of your interior wood significantly." },
+      { asin: "B08B3XHXSD", name: "Sauna Light (LED, waterproof)", price: "~$39", desc: "Waterproof LED sauna light that handles high heat and humidity. Replaces dim incandescent bulbs and sets a much better mood." },
+    ]
+  }
+];
+---
+<Base
+  title="Best Sauna Accessories for Beginners (2025) — What You Actually Need"
+  description="The essential sauna accessories for beginners — buckets, ladles, thermometers, headrests, and more. What to buy first and what to skip."
+  canonical="/guides/best-sauna-accessories"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best Sauna Accessories for Beginners (2025)
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 8 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        Your sauna kit arrives and you're ready to go — but you're missing a few things that make the difference between a good session and a great one. Here's the starter kit every sauna owner should have, in priority order.
+      </p>
+    </header>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-2">🛒 The Beginner Starter Kit (~$120 total)</h2>
+      <ul class="text-sm text-stone-700 space-y-1">
+        <li>1. Cedar bucket + ladle (~$35)</li>
+        <li>2. Thermometer + hygrometer (~$25)</li>
+        <li>3. Sand timer (~$18)</li>
+        <li>4. Cedar headrests (~$29)</li>
+        <li>5. Eucalyptus scent concentrate (~$22)</li>
+      </ul>
+      <p class="text-xs text-stone-500 mt-2">These five items cover everything you need for day one. Add more over time.</p>
+    </div>
+
+    {accessories.map(section => (
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-4 text-stone-900 border-b border-stone-200 pb-2">
+          {section.category === "Essential" ? "🔥" : section.category === "Comfort" ? "😌" : section.category === "Health & Wellness" ? "🌿" : "🔧"} {section.category}
+        </h2>
+        <div class="space-y-5">
+          {section.items.map(item => (
+            <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+              <h3 class="font-semibold text-stone-900 mb-1">{item.name}</h3>
+              <p class="text-stone-600 text-sm mb-3">{item.desc}</p>
+              <AmazonButton asin={item.asin} price={item.price} label="Check Price on Amazon" />
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="mt-4">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">What You Don't Need (Yet)</h2>
+      <p class="text-stone-600 mb-4">Save money on your first year by skipping these until you know you'll use them:</p>
+      <ul class="text-stone-600 text-sm space-y-2">
+        <li>❌ <strong>Expensive sauna hat</strong> — a cheap wool hat from a thrift store works fine</li>
+        <li>❌ <strong>Sauna infusion oils</strong> — regular eucalyptus concentrate does the same thing for less</li>
+        <li>❌ <strong>Smart controls</strong> — schedule via a simple timer outlet if your heater doesn't have one</li>
+        <li>❌ <strong>Cold plunge tub</strong> — start with a cold shower; get the tub once you're hooked</li>
+      </ul>
+    </section>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
+      <h3 class="text-xl font-bold mb-2">Still Shopping for a Sauna?</h3>
+      <p class="text-stone-300 mb-4">Find the right sauna kit before you buy accessories.</p>
+      <a href="/best-saunas" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+        See Best Saunas of 2025 →
+      </a>
+    </div>
+  </article>
+</Base>

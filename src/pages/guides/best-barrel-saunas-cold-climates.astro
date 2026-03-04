@@ -1,0 +1,147 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+
+const picks = [
+  {
+    rank: 1,
+    asin: "B017WJV8SO",
+    name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
+    price: "~$2,199",
+    rating: "4.5/5",
+    tag: "BEST OVERALL FOR COLD",
+    tagColor: "bg-amber-100 text-amber-800",
+    cold_rating: "★★★★★",
+    why_cold: "The barrel shape is a natural cold-weather advantage — it sheds snow and concentrates heat at sitting level. Cedar handles freeze-thaw cycles better than most materials.",
+    pros: ["Barrel shape sheds snow naturally", "Cedar stays stable in extreme temps", "Heat-up time under 45 min", "Strong 4-person capacity"],
+    cons: ["Heater sold separately", "Assembly takes 4–6 hours"]
+  },
+  {
+    rank: 2,
+    asin: "B003Z11AXM",
+    name: "Almost Heaven Saunas 6-Person Barrel Sauna",
+    price: "~$3,499",
+    rating: "4.4/5",
+    tag: "BEST LARGE CAPACITY",
+    tagColor: "bg-blue-100 text-blue-800",
+    cold_rating: "★★★★★",
+    why_cold: "More thermal mass means better heat retention once up to temperature. Stainless steel bands and hardware resist corrosion in wet, icy conditions.",
+    pros: ["Large capacity holds heat well", "Stainless steel hardware", "Polished cedar construction", "Great for families"],
+    cons: ["High price", "Needs significant space"]
+  },
+  {
+    rank: 3,
+    asin: "B00A2F99F0",
+    name: "Dynamic Saunas Barcelona Far Infrared",
+    price: "~$899",
+    rating: "4.3/5",
+    tag: "BEST INDOOR/COLD GARAGE",
+    tagColor: "bg-green-100 text-green-800",
+    cold_rating: "★★★★☆",
+    why_cold: "Infrared heats your body directly — even in a cold unheated garage, it warms you up fast. Best option if you don't have an insulated outdoor structure.",
+    pros: ["Works in unheated spaces", "15-min heat-up time", "No frozen pipes or wood issues", "Plug-in 120V"],
+    cons: ["No steam (löyly)", "Indoor/covered use only"]
+  }
+];
+---
+<Base
+  title="Best Barrel Saunas for Cold Climates (2025) — Winter-Ready Picks"
+  description="The best outdoor barrel saunas for cold climates and harsh winters. We ranked them for heat retention, weather resistance, and cold-weather durability."
+  canonical="/guides/best-barrel-saunas-cold-climates"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best Barrel Saunas for Cold Climates (2025)
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 9 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        Using a sauna in winter is one of life's great pleasures — stepping outside in the cold, getting blasted with heat, then rolling in the snow if you're brave enough. But not all saunas handle harsh winters equally. Here's what to look for and our top picks.
+      </p>
+    </header>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-blue-900 mb-2">❄️ What Makes a Sauna Good for Cold Climates?</h2>
+      <ul class="text-sm text-blue-800 space-y-2">
+        <li>✅ <strong>Insulation:</strong> Thick walls (at least 40mm) retain heat even when it's -20°F outside</li>
+        <li>✅ <strong>Wood species:</strong> Cedar handles freeze-thaw cycles without cracking or warping</li>
+        <li>✅ <strong>Barrel shape:</strong> Sheds snow load naturally — flat roofs can collapse under heavy snow</li>
+        <li>✅ <strong>Hardware:</strong> Stainless steel bands and hardware don't rust or corrode in wet/icy conditions</li>
+        <li>✅ <strong>Heater power:</strong> Size up your heater by 20–30% for cold-climate installs</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6 text-stone-900">Our Cold-Climate Top Picks</h2>
+
+    <div class="space-y-8">
+      {picks.map(pick => (
+        <div class="bg-white border border-stone-200 rounded-xl shadow-sm p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>
+            <span class="text-sm text-stone-400">Cold Weather: {pick.cold_rating}</span>
+          </div>
+          <h3 class="text-xl font-bold text-stone-900 mb-2">{pick.name}</h3>
+          <p class="text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+            ❄️ <strong>Why it works in cold:</strong> {pick.why_cold}
+          </p>
+          <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
+            <div>
+              <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
+              {pick.pros.map(p => <p class="text-stone-600">✅ {p}</p>)}
+            </div>
+            <div>
+              <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
+              {pick.cons.map(c => <p class="text-stone-600">⚠️ {c}</p>)}
+            </div>
+          </div>
+          <p class="text-xs text-stone-400 mb-2">Rating: {pick.rating}</p>
+          <AmazonButton asin={pick.asin} price={pick.price} />
+        </div>
+      ))}
+    </div>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">Cold-Climate Installation Tips</h2>
+      <div class="space-y-4">
+        {[
+          ["Build on a solid, level foundation", "Frost heave is real. A properly poured concrete pad or compacted gravel base prevents your sauna from shifting when the ground freezes and thaws. Don't skip this."],
+          ["Size your heater up", "In cold climates, use the next heater size up from the recommended minimum. If the calculator says 6kW, go 8kW. It heats faster and recovers better after you open the door."],
+          ["Seal gaps before winter", "Check all door seals and wood panel joints before the first freeze. A gap that's fine in summer becomes a cold-air highway in January."],
+          ["Protect the heater from the elements", "If your sauna isn't fully weatherproof, a temporary cover for the electrical components during extreme weather is smart — especially if you get a lot of ice and snow."],
+          ["Don't heat an empty sauna in extreme cold", "In -20°F weather, running the heater with no one using it wastes energy and doesn't help the wood. Heat it 45–60 minutes before you plan to use it."],
+        ].map(([title, text]) => (
+          <div class="border-l-4 border-amber-400 pl-4">
+            <h3 class="font-semibold text-stone-800 mb-1">{title}</h3>
+            <p class="text-stone-600 text-sm">{text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">Frequently Asked Questions</h2>
+      <div class="space-y-5">
+        {[
+          ["Can I use a barrel sauna year-round in a cold climate?", "Yes — barrel saunas are actually better in cold climates than many alternatives. The cylindrical shape sheds snow efficiently, and quality cedar construction handles freeze-thaw cycles for decades."],
+          ["How cold is too cold to use an outdoor sauna?", "There's no lower limit if your sauna is well-built. Finns use saunas regularly at -40°F. You'll just want a more powerful heater and to heat it for longer before your session."],
+          ["Do I need to winterize my sauna?", "Traditional barrel saunas don't need winterization — wood breathes and handles cold well. Just make sure the heater is unplugged during extended non-use periods if temperatures drop below -20°F."],
+          ["Will the wood crack in cold weather?", "Quality cedar or hemlock used in reputable sauna kits is kiln-dried and designed for outdoor use. Avoid cheap pine or untreated lumber. Cedar expands and contracts gracefully with temperature changes."],
+        ].map(([q, a]) => (
+          <div class="border-b border-stone-200 pb-4">
+            <h3 class="font-semibold text-stone-800 mb-1">{q}</h3>
+            <p class="text-stone-600 text-sm">{a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
+      <h3 class="text-xl font-bold mb-2">Also Need a Heater?</h3>
+      <p class="text-stone-300 mb-4">See our guide to the best electric sauna heaters — including which ones to upsize for cold-climate installs.</p>
+      <a href="/guides/best-electric-sauna-heaters" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+        Best Electric Sauna Heaters →
+      </a>
+    </div>
+  </article>
+</Base>

@@ -1,0 +1,141 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+---
+<Base
+  title="How Much Space Do You Need for a Backyard Sauna? (Size Guide)"
+  description="Exact space requirements for backyard saunas by type and size. Interior dimensions, clearances, setbacks, and foundation size — everything you need to plan your install."
+  canonical="/guides/how-much-space-for-backyard-sauna"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        How Much Space Do You Need for a Backyard Sauna?
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 7 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        Space planning is where most sauna buyers get tripped up. You need to account for the sauna itself, clearances from fences and structures, foundation overhang, and a place to cool off. Here's the complete breakdown.
+      </p>
+    </header>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-2">Quick Answer</h2>
+      <ul class="text-sm text-stone-700 space-y-1">
+        <li>🏠 <strong>1–2 person sauna:</strong> Minimum 8×8 ft footprint (including clearances)</li>
+        <li>👥 <strong>4-person barrel sauna:</strong> Minimum 10×12 ft footprint</li>
+        <li>👨‍👩‍👧‍👦 <strong>6-person sauna:</strong> Plan for 12×14 ft or more</li>
+        <li>📏 <strong>Clearances:</strong> 3 ft from fences/structures minimum (check local codes)</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">Sauna Dimensions by Type</h2>
+
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-stone-800 text-white">
+            <th class="text-left p-3">Type</th>
+            <th class="text-left p-3">Capacity</th>
+            <th class="text-left p-3">Footprint</th>
+            <th class="text-left p-3">Height</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            ["Barrel Sauna (small)", "1–2 person", "5′ dia × 6′ long", "5′ dia"],
+            ["Barrel Sauna (standard)", "2–4 person", "6′ dia × 7′ long", "6′ dia"],
+            ["Barrel Sauna (large)", "4–6 person", "6′ dia × 8–9′ long", "6′ dia"],
+            ["Cabin Sauna (small)", "1–2 person", "4×4 ft", "7 ft"],
+            ["Cabin Sauna (medium)", "4 person", "6×8 ft", "7 ft"],
+            ["Cabin Sauna (large)", "6–8 person", "8×10 ft", "7 ft"],
+            ["Infrared (1–2 person)", "1–2 person", "3×3 ft", "6 ft"],
+            ["Infrared (2–4 person)", "2–4 person", "4×4 ft", "6.5 ft"],
+          ].map(([type, cap, foot, height], i) => (
+            <tr class={i % 2 === 0 ? "bg-white" : "bg-stone-50"}>
+              <td class="p-3 font-medium text-stone-700 border-b border-stone-200">{type}</td>
+              <td class="p-3 text-stone-600 border-b border-stone-200">{cap}</td>
+              <td class="p-3 text-stone-600 border-b border-stone-200">{foot}</td>
+              <td class="p-3 text-stone-600 border-b border-stone-200">{height}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">The Space You Actually Need (Total Footprint)</h2>
+    <p class="text-stone-600 mb-4">The sauna's dimensions are just the start. Here's what to add:</p>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-8">
+      {[
+        ["Foundation Overhang", "Add 6–12 inches on all sides beyond the sauna walls for the foundation or base pad."],
+        ["Door Clearance", "Add 3 feet in front of the door — you need room to swing it open and step out."],
+        ["Side Clearances", "2–3 feet on all non-door sides for maintenance access and airflow."],
+        ["Fence/Structure Setback", "Check local codes, but plan for minimum 3 feet from any fence, structure, or property line."],
+        ["Cooling Area", "Ideally 6–10 feet nearby for cooling off between rounds. A patio chair or cold shower nearby makes a huge difference."],
+        ["Electrical Access", "Your electrician needs a path to run conduit from the panel to the heater — factor this into placement."],
+      ].map(([title, text]) => (
+        <div class="bg-white border border-stone-200 rounded-lg p-4">
+          <h3 class="font-semibold text-stone-800 mb-1 text-sm">{title}</h3>
+          <p class="text-stone-600 text-sm">{text}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">Real-World Examples</h2>
+
+    <div class="space-y-4 mb-8">
+      <div class="bg-stone-50 border border-stone-200 rounded-lg p-5">
+        <h3 class="font-bold text-stone-800 mb-2">Small Yard (under 500 sq ft usable)</h3>
+        <p class="text-stone-600 text-sm mb-2">A 1–2 person barrel sauna or compact infrared is your best bet. You need a minimum 8×10 ft clear area total (sauna + clearances). Consider a wall-mounted heater to keep the sauna footprint small.</p>
+        <p class="text-xs text-amber-700 font-semibold">Recommended: Almost Heaven 2-Person or Dynamic Saunas Barcelona</p>
+      </div>
+      <div class="bg-stone-50 border border-stone-200 rounded-lg p-5">
+        <h3 class="font-bold text-stone-800 mb-2">Medium Yard (500–1,500 sq ft usable)</h3>
+        <p class="text-stone-600 text-sm mb-2">A standard 4-person barrel sauna fits comfortably. Plan for a 12×14 ft total footprint including clearances and a small cooling area.</p>
+        <p class="text-xs text-amber-700 font-semibold">Recommended: Almost Heaven Pinnacle 4-Person</p>
+      </div>
+      <div class="bg-stone-50 border border-stone-200 rounded-lg p-5">
+        <h3 class="font-bold text-stone-800 mb-2">Large Yard (1,500+ sq ft usable)</h3>
+        <p class="text-stone-600 text-sm mb-2">A 6-person sauna with a dedicated patio, cold plunge, and lounge area is feasible. Budget 16×20 ft for the full experience.</p>
+        <p class="text-xs text-amber-700 font-semibold">Recommended: Almost Heaven 6-Person Barrel</p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Permits and Zoning</h2>
+    <p class="text-stone-600 mb-4">Most municipalities classify outdoor saunas as accessory structures. Rules vary widely, but common requirements include:</p>
+    <ul class="list-disc pl-5 text-stone-600 text-sm space-y-1 mb-4">
+      <li>Maximum size before a permit is required (often 120–200 sq ft)</li>
+      <li>Minimum setback from property lines (often 5–10 ft)</li>
+      <li>Electrical permit for the 240V heater circuit (almost always required)</li>
+      <li>HOA approval if applicable</li>
+    </ul>
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-900">
+      💡 <strong>Pro tip:</strong> Call your local building department before you buy. A 5-minute phone call can save you from installing a sauna in a spot that violates setback rules.
+    </div>
+
+    <section class="mt-10">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {[
+          ["Can I put a sauna on a deck?", "Yes, if the deck is structurally rated for the weight. A 4-person barrel sauna can weigh 800–1,200 lbs fully loaded. Have a structural engineer confirm your deck can handle it."],
+          ["How close to the house can a sauna be?", "Most fire codes require at least 10 feet from the main structure. Check your local code — some areas require more."],
+          ["Do I need a foundation?", "Yes. A level, stable base is essential. Options include a poured concrete pad, pressure-treated timber frame, or compacted gravel. Never place directly on soil."],
+        ].map(([q, a]) => (
+          <div class="border-b border-stone-200 pb-4">
+            <h3 class="font-semibold text-stone-800 mb-1">{q}</h3>
+            <p class="text-stone-600 text-sm">{a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
+      <h3 class="text-xl font-bold mb-2">Ready to Choose Your Sauna?</h3>
+      <p class="text-stone-300 mb-4">Now that you know your space, see which saunas fit your budget and yard size.</p>
+      <a href="/best-saunas" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+        See Best Saunas of 2025 →
+      </a>
+    </div>
+  </article>
+</Base>
