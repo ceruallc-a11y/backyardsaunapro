@@ -1,0 +1,159 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+---
+<Base
+  title="Cedar vs Hemlock Sauna: Which Wood Is Better? (2025)"
+  description="Cedar vs hemlock for sauna construction — durability, scent, moisture resistance, maintenance, and which to choose for your outdoor sauna."
+  canonical="/guides/cedar-vs-hemlock-sauna"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Cedar vs Hemlock Sauna: Which Wood Is Better?
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 7 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        You'll see both woods in sauna kits. Cedar costs more. Hemlock costs less. But the difference isn't just price — they behave differently in heat and moisture, and the choice matters for outdoor builds in particular.
+      </p>
+    </header>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl overflow-hidden mb-8">
+      <div class="grid grid-cols-3 text-sm font-semibold text-stone-500 px-5 py-3 border-b border-stone-200">
+        <span>Category</span>
+        <span class="text-amber-700">Cedar</span>
+        <span class="text-stone-700">Hemlock</span>
+      </div>
+      {[
+        ["Price", "Higher", "Lower (15-25% less)"],
+        ["Scent", "Strong, distinctive", "Minimal"],
+        ["Natural oils", "Yes — moisture & bug resistant", "Less natural oil"],
+        ["Outdoor durability", "Excellent", "Good"],
+        ["Heat tolerance", "Excellent", "Excellent"],
+        ["Weight", "Lighter", "Heavier"],
+        ["Splinter risk", "Low (soft grain)", "Low"],
+        ["Availability", "Widely available", "Widely available"],
+        ["Maintenance", "Less required", "More attention outdoors"],
+      ].map(([cat, cedar, hemlock], i) => (
+        <div class={`grid grid-cols-3 px-5 py-3 text-sm ${i % 2 === 0 ? 'bg-white' : 'bg-stone-50'}`}>
+          <span class="text-stone-600">{cat}</span>
+          <span class="font-medium text-stone-800">{cedar}</span>
+          <span class="font-medium text-stone-800">{hemlock}</span>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Cedar: What Makes It Better</h2>
+
+    <div class="space-y-5">
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Natural Oils and Moisture Resistance</h3>
+        <p class="text-stone-600 text-sm">Cedar contains natural aromatic oils that repel moisture, insects, and mold. This is the biggest practical advantage for outdoor sauna use. A cedar barrel sauna exposed to rain, snow, and the humidity cycle of sauna use holds up naturally without sealing or treatment.</p>
+        <p class="text-stone-600 text-sm mt-3">Hemlock doesn't have these natural oils. It's still a durable wood, but outdoors it requires more maintenance — periodic treatment with sauna wood oil or weatherproofing to prevent graying, checking, and moisture penetration over time.</p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">The Scent</h3>
+        <p class="text-stone-600 text-sm">Cedar's signature scent is either a major selling point or a non-issue depending on who you ask. Most sauna enthusiasts love it. The aromatic compounds released when cedar heats up create a distinctive spa-like environment that hemlock can't replicate.</p>
+        <p class="text-stone-600 text-sm mt-3">If you're sensitive to strong wood scents or prefer a more neutral environment, hemlock is actually the better choice. It's nearly odorless when heated.</p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Longevity Outdoors</h3>
+        <p class="text-stone-600 text-sm">Both cedar and hemlock will last decades in a well-built sauna. Cedar typically lasts longer outdoors without intervention — 30-40 years is common for cedar barrel saunas. Hemlock can reach similar lifespan with proper care, but it requires more consistent maintenance to get there.</p>
+      </div>
+
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Hemlock: When It Makes Sense</h2>
+
+    <div class="space-y-5">
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Budget</h3>
+        <p class="text-stone-600 text-sm">Hemlock saunas run 15-25% less than comparable cedar models. On a $2,000 kit, that's $300-500 in savings. If budget is tight and you're committed to maintaining the wood, hemlock is a legitimate choice.</p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Indoor or Covered Installs</h3>
+        <p class="text-stone-600 text-sm">For a sauna in a garage, covered patio, or indoor space, cedar's weathering advantages matter less. The main stressor on indoor saunas is heat and humidity cycling — both woods handle that equally well. In this context, hemlock is excellent value.</p>
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <h3 class="text-lg font-bold text-stone-900 mb-3">Scent Sensitivity</h3>
+        <p class="text-stone-600 text-sm">Some people find cedar's strong scent overpowering in an enclosed sauna. If you know you're sensitive to aromatic wood scents, hemlock gives you the same sauna experience without the intensity.</p>
+      </div>
+
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">The Verdict</h2>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-8">
+      <p class="text-stone-700 text-sm font-semibold mb-2">Choose Cedar if:</p>
+      <ul class="text-stone-600 text-sm space-y-1 mb-4">
+        <li>You're building an outdoor sauna exposed to weather</li>
+        <li>You want minimal long-term maintenance</li>
+        <li>You appreciate the signature cedar scent</li>
+        <li>Budget allows for it</li>
+      </ul>
+      <p class="text-stone-700 text-sm font-semibold mb-2">Choose Hemlock if:</p>
+      <ul class="text-stone-600 text-sm space-y-1">
+        <li>Budget is a significant factor</li>
+        <li>You're installing indoors or in a covered space</li>
+        <li>You prefer a neutral, unscented environment</li>
+        <li>You're willing to do periodic wood maintenance</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-4 text-stone-900">Best Cedar Sauna</h2>
+    <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm mb-6">
+      <h3 class="font-semibold text-stone-900 mb-2">Almost Heaven Pinnacle 4-Person Barrel Sauna</h3>
+      <p class="text-stone-600 text-sm mb-3">Canadian red cedar, outdoor-rated, the most popular kit in the category. Cedar construction is a big part of why it holds up so well.</p>
+      <AmazonButton asin="B017WJV8SO" price="~$2,199" />
+    </div>
+
+    <h2 class="text-2xl font-bold mb-4 text-stone-900">Best Hemlock Sauna</h2>
+    <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm mb-8">
+      <h3 class="font-semibold text-stone-900 mb-2">AURGOD Outdoor Barrel Sauna with Wood Stove</h3>
+      <p class="text-stone-600 text-sm mb-3">Canadian hemlock construction with the wood-burning stove included. Better value if cedar's premium price is a barrier.</p>
+      <AmazonButton asin="B0DPG3R7PR" price="~$1,899" />
+    </div>
+
+    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
+      <h3 class="font-bold text-stone-900 mb-3">Related guides</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-maintenance-guide" class="text-amber-700 hover:underline font-medium">Sauna Maintenance Guide (Cedar and Hemlock)</a></li>
+        <li><a href="/guides/best-2-person-outdoor-sauna" class="text-amber-700 hover:underline font-medium">Best 2-Person Outdoor Saunas</a></li>
+        <li><a href="/guides/best-4-person-outdoor-sauna" class="text-amber-700 hover:underline font-medium">Best 4-Person Outdoor Saunas</a></li>
+        <li><a href="/guides/outdoor-sauna-cost" class="text-amber-700 hover:underline font-medium">Full Outdoor Sauna Cost Breakdown</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is cedar or hemlock better for a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cedar is better for outdoor saunas exposed to weather. Its natural aromatic oils repel moisture, insects, and mold, requiring less maintenance over time. Hemlock is a good choice for indoor or covered saunas, and costs 15-25% less than cedar. Both woods perform equally well in terms of heat tolerance inside the sauna."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does cedar sauna wood need to be treated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cedar is naturally moisture and pest resistant due to its aromatic oils, so it requires minimal treatment outdoors. Interior cedar sauna surfaces should not be sealed or painted — the wood needs to breathe. A light sauna wood cleaner annually and occasional inspection for gray weathering is all that's typically needed."
+      }
+    }
+  ]
+}
+</script>
