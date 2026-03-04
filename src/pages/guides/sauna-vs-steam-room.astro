@@ -1,0 +1,143 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a sauna or steam room better for you?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both have documented health benefits, but they work differently. Saunas use dry heat (160-195°F, 10-20% humidity) and are better supported by research on cardiovascular health and longevity. Steam rooms use lower temperatures (110-120°F) with 100% humidity and are often preferred for respiratory benefits and skin hydration. For most people, a sauna is the better home investment — lower maintenance, more durable, and backed by stronger research."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which burns more calories, sauna or steam room?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neither burns significant calories compared to exercise. Your heart rate rises in both environments and you lose water weight through sweat, but calories burned are modest — roughly equivalent to a slow walk. The sauna vs steam room choice shouldn't be driven by calorie burn expectations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you build a steam room at home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but it's more complex than a home sauna. Steam rooms require a completely waterproof enclosure (floor to ceiling tile or equivalent), a steam generator plumbed to a water supply, proper drainage, and a sealed door. Maintenance is higher because every surface is constantly wet. A home sauna is simpler to install and maintain."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Sauna vs Steam Room: Key Differences and Which One to Buy"
+  description="Sauna vs steam room comparison — temperature, humidity, health benefits, cost, and which makes more sense for a home installation."
+  canonical="/guides/sauna-vs-steam-room"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna vs Steam Room: What's Actually Different</h1>
+    <p class="text-stone-500 mb-8">Updated March 2025 &mdash; Backyard Sauna Pro</p>
+
+    <p class="text-lg text-stone-700 mb-4">People use "sauna" and "steam room" interchangeably but they're genuinely different environments. The heat feels different, the health effects differ, the maintenance is different, and the cost to build one at home is very different.</p>
+
+    <p class="text-stone-700 mb-8">Here's a clear breakdown so you know what you're actually choosing between.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Core Difference</h2>
+    <p class="text-stone-700 mb-4">A sauna runs hot and dry. Temperatures typically range from 160 to 195°F with humidity around 10 to 20 percent. You add water to hot stones to create brief bursts of steam (löyly), but the room itself stays dry between pours.</p>
+    <p class="text-stone-700 mb-6">A steam room runs cooler and completely wet. Temperatures are usually 110 to 120°F but humidity is 100 percent. The air is saturated — you're sitting inside a cloud. That combination feels intense even though the actual temperature is much lower than a sauna.</p>
+
+    <div class="overflow-x-auto mb-8">
+      <table class="text-sm w-full">
+        <thead>
+          <tr class="text-left text-stone-500 border-b border-stone-200">
+            <th class="pb-2 pr-6">Factor</th>
+            <th class="pb-2 pr-6">Sauna</th>
+            <th class="pb-2">Steam Room</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700">
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-medium">Temperature</td>
+            <td class="py-2 pr-6">160 to 195°F</td>
+            <td class="py-2">110 to 120°F</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-medium">Humidity</td>
+            <td class="py-2 pr-6">10 to 20%</td>
+            <td class="py-2">100%</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-medium">Construction</td>
+            <td class="py-2 pr-6">Wood panels, simple</td>
+            <td class="py-2">Fully waterproof enclosure</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-medium">Maintenance</td>
+            <td class="py-2 pr-6">Low</td>
+            <td class="py-2">High (mold risk)</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-medium">Home install cost</td>
+            <td class="py-2 pr-6">$1,500 to $5,000+</td>
+            <td class="py-2">$3,000 to $10,000+</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-6 font-medium">Research backing</td>
+            <td class="py-2 pr-6">Extensive</td>
+            <td class="py-2">More limited</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Health Benefits</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Sauna</h3>
+    <p class="text-stone-700 mb-4">The research on saunas is substantial. Finnish studies following tens of thousands of people over decades found that regular sauna use (4 to 7 sessions per week) was associated with significantly lower rates of cardiovascular disease and all-cause mortality. The mechanism is similar to moderate aerobic exercise — heart rate rises, blood vessels dilate, and the cardiovascular system gets a real workout.</p>
+    <p class="text-stone-700 mb-4">Heat shock proteins produced during sauna sessions appear to help with muscle recovery, which is why athletes increasingly use sauna after training. There's also decent evidence for improved sleep quality and stress reduction.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Steam Room</h3>
+    <p class="text-stone-700 mb-4">Steam rooms are often preferred for respiratory benefits. The humid air can loosen congestion, soothe irritated airways, and is commonly recommended for people with sinus issues or mild respiratory conditions. Skin hydration is another common reason people prefer steam — the moisture keeps skin from drying out the way dry sauna heat can.</p>
+    <p class="text-stone-700 mb-6">The cardiovascular research base is thinner for steam rooms. The lower temperatures mean a less intense heat stimulus, which likely means less cardiovascular benefit compared to a traditional sauna session.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Which Is Easier to Build at Home</h2>
+    <p class="text-stone-700 mb-4">Sauna is significantly easier. A barrel sauna kit can be installed in a day with basic tools. Indoor sauna kits drop into a spare room. The wood construction handles heat cycles well, maintenance is minimal, and there's no plumbing required beyond your electrical hookup.</p>
+    <p class="text-stone-700 mb-4">A steam room is a serious construction project. The entire enclosure needs to be completely waterproof — floor, walls, ceiling, every joint. A steam generator needs a water line and drainage. The door has to seal tightly. Any gap where steam escapes can cause moisture damage to surrounding structures. Mold is an ongoing maintenance concern because every surface is wet after every session.</p>
+    <p class="text-stone-700 mb-6">For most homeowners considering one or the other, a home sauna is the practical choice. Same core experience (heat, sweat, relaxation, health benefits) with a fraction of the installation complexity and ongoing maintenance.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">When a Steam Room Makes More Sense</h2>
+    <p class="text-stone-700 mb-6">If respiratory health is your main goal, you have chronic sinus issues, you're already doing a full bathroom renovation and can integrate a steam shower at the same time, or you simply prefer the feeling of humid heat over dry heat — steam room is worth considering. Some people genuinely can't tolerate the dry heat of a traditional sauna and find steam much more comfortable. That's a legitimate reason to choose it.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Is a sauna or steam room better for you?</h3>
+        <p class="text-stone-700">Both have real health benefits. Sauna has stronger research behind it, especially for cardiovascular health. Steam rooms have an edge for respiratory benefits and skin hydration. For a home installation, sauna is easier and cheaper to build and maintain.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Which burns more calories, sauna or steam room?</h3>
+        <p class="text-stone-700">Neither burns significant calories compared to exercise. Heart rate rises in both, but calorie burn is modest. Don't choose based on this.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you build a steam room at home?</h3>
+        <p class="text-stone-700">Yes, but it's a real construction project requiring a fully waterproof enclosure, steam generator, water line, and drainage. Much more complex than a home sauna kit.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-health-benefits" class="text-amber-700 hover:underline">Sauna Health Benefits</a></li>
+        <li><a href="/guides/how-long-to-stay-in-sauna" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
+        <li><a href="/guides/sauna-after-workout" class="text-amber-700 hover:underline">Sauna After Workout</a></li>
+        <li><a href="/guides/best-indoor-sauna-kits" class="text-amber-700 hover:underline">Best Indoor Sauna Kits</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
