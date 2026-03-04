@@ -1,0 +1,181 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to build a sauna from scratch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Building a basic outdoor sauna from scratch typically costs $3,000 to $8,000 for materials and a hired electrician, assuming you do most of the construction work yourself. A professionally built custom sauna runs $8,000 to $20,000+. A pre-cut kit sauna (Almost Heaven, Dundalk) plus installation materials and electrical work lands most people at $4,000 to $7,000 total."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you need a permit to build a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually yes for an outdoor structure and always for the 240V electrical work. Permit requirements vary by municipality. Most areas require a building permit for any permanent structure over 120 square feet and an electrical permit for the 240V circuit. Check with your local building department before starting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to build a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A pre-cut kit sauna can be assembled in a weekend by two people with basic construction skills. Building from scratch with your own framing takes most DIYers two to four weekends spread over a month or two, not including the time to get permits and schedule an electrician."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="How to Build a Sauna: Step-by-Step Guide for Home Builds"
+  description="A complete guide to building a home sauna from scratch or from a kit. Covers framing, insulation, vapor barrier, benches, heater selection, and electrical."
+  canonical="/guides/how-to-build-a-sauna"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">How to Build a Sauna: A Complete Guide</h1>
+    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-wood-stove-interior.jpg" alt="Traditional sauna interior with wood-burning stove and benches" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">Building your own sauna is one of the more satisfying home projects you can tackle. It's not complicated once you understand the sequence, and the result is a permanent amenity that gets used for decades.</p>
+
+    <p class="text-stone-700 mb-8">This guide covers the full process: planning, permitting, foundation, framing, insulation, vapor barrier, interior finishing, benches, heater selection, and electrical. Whether you're building from scratch or from a pre-cut kit, the fundamentals are the same.</p>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-900 mb-3">Kit vs Scratch Build</h2>
+      <p class="text-stone-700 text-sm mb-2">A pre-cut kit (Almost Heaven, Dundalk, etc.) gives you pre-dimensioned cedar panels, a door, and benches, taking most of the woodworking out of the project. You still need to build the shell, run electrical, and pour a foundation. Saves 15-20 hours of labor vs framing and cutting everything yourself.</p>
+      <p class="text-stone-700 text-sm">Building from scratch gives you more flexibility in size and design and is cheaper on materials, but adds significant time. For most first-time builds, a kit is the better tradeoff.</p>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Step 1: Plan and Permit</h2>
+    <p class="text-stone-700 mb-4">Before buying anything, call your local building department. Ask two questions: does a sauna of your planned size require a building permit, and what electrical permit is needed for a 240V circuit? Most jurisdictions require both for a permanent outdoor structure with electrical.</p>
+    <p class="text-stone-700 mb-4">Permits typically take two to four weeks to process. Get them before you break ground, not after. An unpermitted structure can complicate home sales and insurance claims years later.</p>
+    <p class="text-stone-700 mb-6">Read our full guide on <a href="/guides/outdoor-sauna-permits" class="text-amber-700 hover:underline">sauna permits</a> for what to expect by region.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Step 2: Foundation</h2>
+    <p class="text-stone-700 mb-4">A barrel sauna needs a level pad. Compact gravel (4-6 inches of 3/4 crushed stone, well tamped) is the easiest and most drainage-friendly option. Concrete pavers on a gravel base work too. Poured concrete is overkill for most residential builds but fine if you already have a suitable slab.</p>
+    <p class="text-stone-700 mb-6">For a framed outdoor sauna, pressure-treated skids on gravel work well for smaller structures. Concrete piers or a full concrete pad are more appropriate for larger buildings. The foundation needs to be level to within about 1/4 inch across the footprint. See our <a href="/guides/sauna-foundation-guide" class="text-amber-700 hover:underline">sauna foundation guide</a> for detailed options.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Step 3: Framing</h2>
+    <p class="text-stone-700 mb-4">Standard 2x4 or 2x6 framing, 16 inches on center. 2x6 gives you more insulation depth, which matters in cold climates. Frame the floor, walls, and roof as you would any small structure. Keep ceiling height at 7 to 7.5 feet for good heat stratification.</p>
+    <p class="text-stone-700 mb-6">The door rough opening should be sized for a sauna door (typically 24x72 or 24x80 inches for a standard kit door). Frame it before you sheathe the walls.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Step 4: Insulation</h2>
+    <p class="text-stone-700 mb-4">Mineral wool (Rockwool) is the preferred insulation for saunas. It's non-combustible, handles moisture better than fiberglass batts, and performs well through heat cycles. Fill the stud bays completely, including the ceiling, which loses the most heat.</p>
+    <p class="text-stone-700 mb-6">In cold climates (zones 5 and up), R-19 in walls and R-30 in the ceiling is a reasonable target. Undersized insulation means the heater runs longer to reach temperature and struggles to maintain it.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Step 5: Vapor Barrier</h2>
+    <p class="text-stone-700 mb-4">The vapor barrier goes on the warm side of the insulation, between the insulation and the interior cedar cladding. Aluminum foil-backed paper is the traditional choice and the right one for saunas. It reflects radiant heat back into the room and provides an effective moisture barrier.</p>
+    <p class="text-stone-700 mb-4">Overlap all seams by at least 4 inches and seal with foil tape rated for high temperature. The corners and edges where walls meet the floor and ceiling are where moisture problems start if the barrier isn't continuous.</p>
+    <p class="text-stone-700 mb-6">The bottom of the vapor barrier should stop a few inches above the floor level. You don't want it wicking moisture from the floor up into the wall cavity.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Step 6: Interior Cladding and Benches</h2>
+    <p class="text-stone-700 mb-4">Western red cedar is the standard interior wood. It handles the heat-moisture cycles well, doesn't warp significantly, releases minimal resins at sauna temperatures, and smells right. Tongue-and-groove 1x4 or 1x6 cedar boards run horizontally on walls and ceiling.</p>
+    <p class="text-stone-700 mb-4">Bench construction is typically kiln-dried cedar or aspen (aspen doesn't get as hot to the touch). Two bench levels: upper bench at about 36-42 inches from the floor (where the heat is best), lower bench at about 18-20 inches. Bench width of 18-24 inches per person minimum, 24-28 inches if you want to lie down.</p>
+    <p class="text-stone-700 mb-6">Leave gaps between bench boards for air circulation, about 1/4 inch between boards. This lets the wood breathe and prevents moisture from sitting on flat surfaces.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Step 7: Heater Selection and Placement</h2>
+    <p class="text-stone-700 mb-4">Calculate your room's cubic footage (length x width x height) and match it to the heater's rated capacity. Size up one model if you have concrete, stone, or uninsulated walls. The heater goes on the wall opposite the door, typically in a corner, with required clearances to combustibles on all sides per the manufacturer's specs.</p>
+    <p class="text-stone-700 mb-6">For most home builds, a <a href="/brands/harvia-sauna-heater-review" class="text-amber-700 hover:underline">Harvia KIP</a> is the default recommendation. UL listed, appropriately sized for residential use, and available in multiple kW ratings. See our <a href="/guides/sauna-heater-sizing-guide" class="text-amber-700 hover:underline">heater sizing guide</a> for the full calculation.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Step 8: Electrical</h2>
+    <p class="text-stone-700 mb-4">This is the one step where you need a licensed electrician unless you're already qualified. The sauna heater requires a dedicated 240V circuit, sized to the heater's amperage draw (a 6kW heater at 240V draws 25A, so a 30A circuit with 10/2 or 10/3 wire is typical). The circuit needs a disconnect within sight of the heater.</p>
+    <p class="text-stone-700 mb-6">Budget $300-$600 for electrical if the panel is reasonably close to the sauna. More if the run is long or the panel needs a new breaker slot. Get the electrical inspected before closing up the walls. See our <a href="/guides/sauna-electrical-requirements" class="text-amber-700 hover:underline">sauna electrical requirements</a> guide for full details.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Step 9: Ventilation</h2>
+    <p class="text-stone-700 mb-6">Fresh air intake low on the wall behind or near the heater. Exhaust vent low on the opposite wall. This creates a cross-flow pattern that refreshes the air without venting heat from the top of the room. An adjustable vent (you can open or close it) gives you control over the air exchange rate during sessions. A session in a sauna with no ventilation gets stuffy fast.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What It Will Cost</h2>
+    <div class="overflow-x-auto mb-6">
+      <table class="text-sm w-full">
+        <thead>
+          <tr class="text-left text-stone-500 border-b border-stone-200">
+            <th class="pb-2 pr-6">Item</th>
+            <th class="pb-2">Estimated Cost</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700">
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">Foundation (gravel pad)</td>
+            <td class="py-2">$150 to $400</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">Framing lumber</td>
+            <td class="py-2">$400 to $800</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">Insulation</td>
+            <td class="py-2">$200 to $400</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">Cedar cladding and benches</td>
+            <td class="py-2">$800 to $1,500</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">Door and hardware</td>
+            <td class="py-2">$300 to $600</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">Heater (Harvia KIP 6kW)</td>
+            <td class="py-2">$500 to $650</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">Electrical (hired out)</td>
+            <td class="py-2">$300 to $600</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">Permits</td>
+            <td class="py-2">$100 to $300</td>
+          </tr>
+          <tr class="font-semibold">
+            <td class="py-2 pr-6">Total (rough estimate)</td>
+            <td class="py-2">$2,750 to $5,250</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How much does it cost to build a sauna from scratch?</h3>
+        <p class="text-stone-700">$3,000 to $8,000 for a DIY build where you hire out the electrical. Pre-cut kit plus installation tends to land at $4,000 to $7,000 total with professional electrical.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Do you need a permit to build a sauna?</h3>
+        <p class="text-stone-700">Usually yes for a permanent outdoor structure and always for the 240V electrical. Check your local building department before starting.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How long does it take to build a sauna?</h3>
+        <p class="text-stone-700">A pre-cut kit takes a weekend for two people. Scratch build typically takes two to four weekends spread over a month or two, plus permitting time.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-foundation-guide" class="text-amber-700 hover:underline">Sauna Foundation Guide</a></li>
+        <li><a href="/guides/sauna-electrical-requirements" class="text-amber-700 hover:underline">Sauna Electrical Requirements</a></li>
+        <li><a href="/guides/outdoor-sauna-permits" class="text-amber-700 hover:underline">Outdoor Sauna Permits</a></li>
+        <li><a href="/guides/sauna-heater-sizing-guide" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
+        <li><a href="/guides/cedar-vs-hemlock-sauna" class="text-amber-700 hover:underline">Cedar vs Hemlock for Saunas</a></li>
+        <li><a href="/guides/outdoor-sauna-buying-checklist" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
