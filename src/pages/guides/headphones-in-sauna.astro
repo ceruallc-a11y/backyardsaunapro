@@ -1,0 +1,97 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you wear headphones in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard headphones and earbuds will be damaged by sauna temperatures and humidity. Most consumer headphones are rated to 95-113°F maximum operating temperature. A traditional sauna runs 160-185°F, which will degrade adhesives, warp plastic housings, damage batteries, and destroy electronics. If you want audio in the sauna, a waterproof Bluetooth speaker placed outside the hottest zone is the practical solution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you wear AirPods in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Apple's AirPods (all models) are rated for a maximum operating temperature of 113°F. A sauna runs 160-185°F. Using AirPods in a sauna will void the warranty and is likely to damage the electronics and battery permanently. Apple explicitly warns against using AirPods in saunas or steam rooms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can I use to listen to music in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A waterproof Bluetooth speaker rated for high temperatures is the best option. Place it near the door or just outside the sauna if your model isn't rated for sustained heat. Some sauna manufacturers sell purpose-built sauna speakers designed for the heat environment. Alternatively, mount a speaker in the changing room or exterior anteroom and leave the sauna door slightly open."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Can You Wear Headphones in a Sauna? (AirPods, Earbuds, and What Works)"
+  description="Why standard headphones and AirPods get damaged in saunas, what the temperature limits actually are, and what to use instead."
+  canonical="/guides/headphones-in-sauna"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Can You Wear Headphones in a Sauna?</h1>
+    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-forest-view.jpg" alt="Sauna interior" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">Short answer: no, not regular headphones or AirPods. The temperatures in a traditional sauna will damage or destroy consumer electronics. Here is what actually happens and what to use instead.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Temperature Problem</h2>
+    <p class="text-stone-700 mb-4">A traditional sauna runs 160-185°F. Most consumer headphones and earbuds are rated for operating temperatures up to 95-113°F. AirPods specifically — Apple rates them for a maximum of 113°F.</p>
+    <p class="text-stone-700 mb-6">At sauna temperatures, adhesives that hold earbuds together soften and fail. Plastic housings warp. Lithium batteries degrade rapidly at high heat and can swell or fail. The circuit boards inside are not designed for this environment. You may get away with it once or twice, but the damage accumulates and the device fails earlier than it should.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">AirPods Specifically</h2>
+    <p class="text-stone-700 mb-6">Apple explicitly warns against using AirPods in saunas or steam rooms in their product documentation. The warranty does not cover heat damage. People do bring them in and sometimes get away with it in the short term, but the battery degrades noticeably faster and eventual failure is likely. Not worth it for a $150-$250 accessory.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Use Instead</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Bluetooth speaker outside the sauna</h3>
+    <p class="text-stone-700 mb-4">The practical solution most people land on. A decent waterproof Bluetooth speaker placed just outside the sauna door, or in a changing area with the door slightly ajar, delivers enough audio for most people. No heat damage, no issues with in-ear fit during sweating, and the sound fills the space better than earbuds anyway.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Purpose-built sauna speakers</h3>
+    <p class="text-stone-700 mb-4">Some sauna manufacturers (Harvia, Helo, Cariitti) sell speakers designed specifically for sauna installation — rated for the heat, mounted in the wall, connected to an amplifier outside the room. These are the correct solution for a permanent home sauna installation. They cost more but last indefinitely and sound better than a portable speaker by the door.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Infrared sauna exception</h3>
+    <p class="text-stone-700 mb-6">An infrared sauna maxes out around 140°F — still too hot for standard AirPods (113°F limit), but some high-temperature rated earbuds rated for up to 140°F may survive short sessions. Dynamic Saunas Barcelona and similar models often come with built-in Bluetooth speakers to sidestep this entirely.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you wear headphones in a sauna?</h3>
+        <p class="text-stone-700">No. Standard headphones and earbuds are rated to ~113°F. A traditional sauna runs 160-185°F. Heat will damage the electronics and battery.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you wear AirPods in a sauna?</h3>
+        <p class="text-stone-700">No. Apple rates AirPods to 113°F maximum. Sauna temperatures will cause accelerated battery degradation and void the warranty.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What can I use to listen to music in a sauna?</h3>
+        <p class="text-stone-700">A waterproof Bluetooth speaker near the door, or purpose-built sauna speakers mounted in the wall. Infrared sauna cabins often have Bluetooth speakers built in.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-etiquette" class="text-amber-700 hover:underline">Sauna Etiquette Guide</a></li>
+        <li><a href="/guides/best-sauna-accessories" class="text-amber-700 hover:underline">Best Sauna Accessories</a></li>
+        <li><a href="/guides/best-sauna-lighting" class="text-amber-700 hover:underline">Best Sauna Lighting</a></li>
+        <li><a href="/guides/best-indoor-sauna-kits" class="text-amber-700 hover:underline">Best Indoor Sauna Kits</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>

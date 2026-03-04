@@ -1,0 +1,98 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does sauna help with a hangover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A sauna can help with some hangover symptoms, particularly muscle aches, fatigue, and that general feeling of being wrecked. The heat improves circulation and can ease body aches. However, alcohol is dehydrating, and a sauna causes more fluid loss through sweat. If you go in dehydrated, a sauna makes it worse. You must rehydrate well before and during any sauna session after drinking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to use a sauna when hungover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With precautions, yes for most healthy people. The risks are dehydration and low blood pressure. Drink 16-24 oz of water before entering, keep sessions short (10-15 minutes max), exit immediately if you feel dizzy or nauseous, and go alone or with someone who can help if needed. Avoid the sauna if you are still intoxicated — alcohol impairs your ability to regulate body temperature."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Sauna for Hangover: Does It Actually Help?"
+  description="Can a sauna cure a hangover? What the evidence says, how to do it safely when dehydrated, and when to skip it."
+  canonical="/guides/sauna-for-hangover"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna for Hangover: Does It Actually Help?</h1>
+    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/people-in-sauna.jpg" alt="Person relaxing in sauna" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">The sauna-as-hangover-cure idea has been around forever in Finnish culture and plenty of other places. There is something to it. There is also a real risk if you do it wrong.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What a Sauna Actually Does for a Hangover</h2>
+    <p class="text-stone-700 mb-4">Alcohol causes inflammation, disrupted sleep, dehydration, and dilated blood vessels that create headache pressure. A sauna does not fix any of those directly. What it does do:</p>
+    <ul class="space-y-2 text-stone-700 mb-6 ml-4">
+      <li><span class="font-semibold">Improves circulation</span> — helps with the sluggish, heavy feeling</li>
+      <li><span class="font-semibold">Relaxes muscles</span> — useful if you drank enough to sleep poorly and wake up stiff</li>
+      <li><span class="font-semibold">Forces you to sit still and breathe</span> — the mental reset is real</li>
+      <li><span class="font-semibold">Light sweat</span> — feels productive even if sweating alcohol out is largely a myth (your liver handles that, not your sweat glands)</li>
+    </ul>
+    <p class="text-stone-700 mb-6">The net effect for most people is feeling better afterward than before, as long as you handle the dehydration issue correctly.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Dehydration Problem</h2>
+    <p class="text-stone-700 mb-6">Alcohol is a diuretic — it dehydrates you. Hangover symptoms are largely dehydration symptoms. A sauna causes more fluid loss. If you go into a sauna already dehydrated and come out more dehydrated, you will feel worse, not better. This is the main way the sauna-for-hangover idea goes wrong. The fix is simple: drink before you go in.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How to Do It Safely</h2>
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-6">
+      <ul class="space-y-3 text-stone-700">
+        <li><span class="font-semibold">Wait until you are fully sober.</span> Never sauna while still intoxicated. Alcohol impairs your ability to detect overheating, which becomes dangerous.</li>
+        <li><span class="font-semibold">Drink 16-24 oz of water before entering.</span> Electrolytes help more than plain water — a sports drink or coconut water is a good choice.</li>
+        <li><span class="font-semibold">Keep sessions short.</span> 10-15 minutes maximum when hungover. Your body is already stressed.</li>
+        <li><span class="font-semibold">Lower temperature than normal.</span> A gentle 160°F session is better than pushing 185°F when you are already depleted.</li>
+        <li><span class="font-semibold">Bring water in with you.</span> Drink during the session if you need to.</li>
+        <li><span class="font-semibold">Exit immediately if dizzy or nauseous.</span> Low blood pressure and dehydration can cause both — do not push through it.</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">When to Skip It</h2>
+    <p class="text-stone-700 mb-6">If you are still intoxicated, skip it entirely. If you have a heart condition or blood pressure issues, talk to your doctor before using a sauna regularly, especially in compromised states. If you are vomiting, the dehydration is too severe — water and rest first, sauna later.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Honest Verdict</h2>
+    <p class="text-stone-700 mb-6">A sauna is not a cure. There is no hangover cure. What it does is address some of the physical discomfort — muscle aches, heaviness, low mood — and the ritual of sitting in heat, sweating, and resting has a restorative quality that is hard to quantify but real. Hydrate first, keep it short, and most people come out feeling noticeably better.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Does sauna help with a hangover?</h3>
+        <p class="text-stone-700">It helps with some symptoms — muscle aches, fatigue, general heaviness. It does not remove alcohol from your system faster. Hydrate well before going in or it will make dehydration worse.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Is it safe to use a sauna when hungover?</h3>
+        <p class="text-stone-700">Yes with precautions: only when fully sober, well hydrated, short sessions (10-15 min), lower temperature. Exit immediately if dizzy. Never sauna while still drunk.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/how-long-to-stay-in-sauna" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
+        <li><a href="/guides/sauna-after-workout" class="text-amber-700 hover:underline">Sauna After Workout</a></li>
+        <li><a href="/guides/sauna-cold-plunge" class="text-amber-700 hover:underline">Sauna and Cold Plunge</a></li>
+        <li><a href="/guides/sauna-for-weight-loss" class="text-amber-700 hover:underline">Sauna for Weight Loss</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>

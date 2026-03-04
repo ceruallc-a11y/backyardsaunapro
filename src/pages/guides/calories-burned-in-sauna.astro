@@ -1,0 +1,129 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many calories do you burn in a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most people burn 50-100 calories during a 20-minute sauna session — roughly equivalent to a slow walk. The elevated heart rate from heat exposure increases metabolic rate slightly. Any weight lost immediately after a sauna session is water weight from sweating, not fat, and returns when you rehydrate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does sauna help burn calories?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Marginally. Heat raises heart rate and metabolic rate, which does burn more calories than sitting at rest. But the effect is modest — 50-100 calories per 20-minute session compared to 200-400 calories for the same duration of moderate exercise. Sauna is not an efficient weight-loss tool on its own but may complement an active lifestyle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many calories does a 30 minute sauna burn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Roughly 75-150 calories for a 30-minute session, depending on body weight, session temperature, and individual metabolism. A heavier person burns more. A hotter sauna burns slightly more. These are estimates — precise calorie counting in a sauna is not practical."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="How Many Calories Do You Burn in a Sauna? (Honest Numbers)"
+  description="How many calories a sauna session actually burns, why the numbers are often exaggerated, and what sauna is actually useful for."
+  canonical="/guides/calories-burned-in-sauna"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">How Many Calories Do You Burn in a Sauna?</h1>
+    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Sauna interior with thermometer" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">The honest answer: less than you probably hope. Sauna burns more calories than sitting on your couch, but not dramatically more. Here are the actual numbers and why the inflated claims circulating online are misleading.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Numbers</h2>
+    <div class="overflow-x-auto mb-6">
+      <table class="text-sm w-full">
+        <thead>
+          <tr class="text-left text-stone-500 border-b border-stone-200">
+            <th class="pb-2 pr-6">Session Length</th>
+            <th class="pb-2 pr-6">Estimated Calories</th>
+            <th class="pb-2">Comparison</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700">
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">10 minutes</td>
+            <td class="py-2 pr-6">25–50 cal</td>
+            <td class="py-2">Half a banana</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">20 minutes</td>
+            <td class="py-2 pr-6">50–100 cal</td>
+            <td class="py-2">A slow 20-min walk</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6">30 minutes</td>
+            <td class="py-2 pr-6">75–150 cal</td>
+            <td class="py-2">About 15 min of light jogging</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-6">45 minutes</td>
+            <td class="py-2 pr-6">110–200 cal</td>
+            <td class="py-2">Less than a 30-min run</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-stone-600 text-sm mb-6">Estimates vary with body weight, temperature, and individual metabolism. A 200 lb person burns more than a 130 lb person in the same session.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Why the Numbers Are Often Exaggerated</h2>
+    <p class="text-stone-700 mb-4">You will see claims of 300-600 calories per 30-minute session. These numbers are not credible. They typically come from confusing water weight loss (from sweating) with fat loss, or from poorly designed studies.</p>
+    <p class="text-stone-700 mb-6">The scale will show you lighter after a sauna session. That is dehydration, not fat. It reverses when you drink. Real calorie burning from heat exposure is more modest and well-documented in peer-reviewed research in the 50-150 calorie range for typical sessions.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Sauna Is Actually Good For</h2>
+    <p class="text-stone-700 mb-4">Sauna is not an efficient weight-loss tool if that is your primary goal. Exercise burns far more calories in the same time. Where sauna does deliver:</p>
+    <ul class="space-y-2 text-stone-700 mb-6 ml-4">
+      <li>Recovery — reduces delayed onset muscle soreness after training</li>
+      <li>Cardiovascular conditioning — regular sauna use is associated with improved heart health in long-term population studies</li>
+      <li>Stress reduction and sleep quality — both have downstream effects on body composition</li>
+      <li>Habit compliance — people who enjoy their recovery routine stick to it</li>
+    </ul>
+    <p class="text-stone-700 mb-6">Used as a complement to exercise and good sleep, sauna contributes to a healthy lifestyle. Used as a substitute for exercise, it delivers modest results. See our guide on <a href="/guides/sauna-for-weight-loss" class="text-amber-700 hover:underline">sauna for weight loss</a> for more detail on what the research actually shows.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How many calories do you burn in a sauna?</h3>
+        <p class="text-stone-700">50-100 calories for a 20-minute session. Body weight, temperature, and metabolism affect the number. Any immediate weight loss is water, not fat.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How many calories does a 30-minute sauna burn?</h3>
+        <p class="text-stone-700">Roughly 75-150 calories. Less than 30 minutes of light jogging, more than 30 minutes sitting on a couch.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Does sauna help burn calories?</h3>
+        <p class="text-stone-700">Marginally. It raises heart rate and metabolic rate but not dramatically. Useful as a complement to exercise, not a replacement.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-for-weight-loss" class="text-amber-700 hover:underline">Sauna for Weight Loss: What the Research Says</a></li>
+        <li><a href="/guides/sauna-after-workout" class="text-amber-700 hover:underline">Sauna After Workout</a></li>
+        <li><a href="/guides/how-long-to-stay-in-sauna" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
+        <li><a href="/guides/sauna-health-benefits" class="text-amber-700 hover:underline">Sauna Health Benefits</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
