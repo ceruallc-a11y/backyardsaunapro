@@ -1,180 +1,172 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
----
-<Base
-  title="Sauna vs Hot Tub (2025) Cost, Health Benefits, and Which to Buy"
-  description="Sauna vs hot tub: honest comparison of cost, maintenance, health benefits, and which one is the better backyard investment for most people."
-  canonical="/guides/sauna-vs-hot-tub"
->
-  <article class="max-w-3xl mx-auto">
-    <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Comparisons</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Sauna vs Hot Tub: Which Is the Better Backyard Investment?
-      </h1>
-      <p class="text-stone-500 text-sm">Updated December 2024 · 9 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        Both feel great. Both have real health benefits. But they're different tools, with different costs, different maintenance burdens, and different long-term ownership experiences. Here's the honest comparison.
-      </p>
-    </header>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Outdoor sauna cabin" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
 
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl overflow-hidden mb-8">
-      <div class="grid grid-cols-3 text-sm font-semibold text-stone-500 px-5 py-3 border-b border-stone-200">
-        <span>Category</span>
-        <span class="text-amber-700">Sauna</span>
-        <span class="text-blue-700">Hot Tub</span>
-      </div>
-      {[
-        ["Purchase cost", "$900-$6,000", "$3,000-$16,000"],
-        ["Installation cost", "$300-$1,500", "$500-$2,000"],
-        ["Monthly operating cost", "$20-$50", "$75-$150"],
-        ["Annual maintenance", "$50-$150", "$400-$1,200"],
-        ["Heat-up time", "30-45 min (or 15 for infrared)", "30-60 min (or always on)"],
-        ["Lifespan", "20-40 years", "10-20 years"],
-        ["Maintenance difficulty", "Low", "Medium-High"],
-        ["Water/chemical upkeep", "None", "Weekly"],
-        ["Cardiovascular benefits", "Strong evidence", "Moderate evidence"],
-        ["Muscle recovery", "Good evidence", "Good evidence"],
-        ["Social experience", "Quiet, meditative", "Social, relaxed"],
-      ].map(([cat, sauna, tub], i) => (
-        <div class={`grid grid-cols-3 px-5 py-3 text-sm ${i % 2 === 0 ? 'bg-white' : 'bg-stone-50'}`}>
-          <span class="text-stone-600">{cat}</span>
-          <span class="font-medium text-stone-800">{sauna}</span>
-          <span class="font-medium text-stone-800">{tub}</span>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">The Real Differences</h2>
-
-    <div class="space-y-5">
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-xl font-bold text-stone-900 mb-3">Cost: Sauna Wins Clearly</h3>
-        <p class="text-stone-600 text-sm">A quality outdoor barrel sauna all-in runs $3,000-$5,000. A quality hot tub starts at $5,000 and runs to $15,000+ for a premium model. The gap is significant.</p>
-        <p class="text-stone-600 text-sm mt-3">Operating costs are also lower. A sauna costs $20-50/month to run. A hot tub kept at temperature year-round costs $75-150/month in electricity, plus $400-1,200/year in chemicals, filters, and other consumables.</p>
-        <p class="text-stone-600 text-sm mt-3">Over 10 years, a sauna typically costs $5,000-$8,000 total (purchase + operating). A hot tub costs $12,000-$25,000+. The sauna is substantially cheaper.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-xl font-bold text-stone-900 mb-3">Maintenance: Sauna Wins Easily</h3>
-        <p class="text-stone-600 text-sm">Hot tub maintenance is a real commitment. Weekly water chemistry checks, monthly filter cleanings, quarterly water changes, annual professional service. Many hot tub owners say they use it less over time because the maintenance feels like work.</p>
-        <p class="text-stone-600 text-sm mt-3">Sauna maintenance is minimal. Brush out the interior occasionally, clean the bench wood with a sauna cleaner once or twice a year, and replace the stones every few years. That's it. No chemicals, no pH testing, no water changes.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-xl font-bold text-stone-900 mb-3">Health Benefits: Sauna Has the Stronger Research</h3>
-        <p class="text-stone-600 text-sm">Both have real benefits. Hot tubs are excellent for joint pain, arthritis, and relaxing sore muscles through hydrotherapy. The buoyancy reduces joint load while the heat increases circulation.</p>
-        <p class="text-stone-600 text-sm mt-3">Saunas have a stronger body of cardiovascular research. The landmark Finnish study showed men who used saunas 4-7 times per week had a 63% lower risk of sudden cardiac death. Hot water immersion shows similar cardiovascular effects, but the sauna research is more extensive and spans longer time frames.</p>
-        <p class="text-stone-600 text-sm mt-3">For pure cardiovascular benefits and respiratory health, sauna leads. For joint pain and mobility, hot tubs may have an edge. For general stress relief and muscle recovery, both perform well.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-xl font-bold text-stone-900 mb-3">Experience: They're Different Things</h3>
-        <p class="text-stone-600 text-sm">A hot tub is social. You sit in it with other people, in the dark, in bubbling warm water. It's comfortable, easy to stay in for an hour, great for conversation.</p>
-        <p class="text-stone-600 text-sm mt-3">A sauna is more meditative. The heat is intense, sessions are shorter (15-20 minutes), and it demands more from you physically. The contrast bathing ritual hot sauna, cold shower or plunge, rest, repeat is something a hot tub can't replicate.</p>
-        <p class="text-stone-600 text-sm mt-3">Neither is better. It depends on what you want from the experience.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-xl font-bold text-stone-900 mb-3">Longevity: Sauna Wins</h3>
-        <p class="text-stone-600 text-sm">A quality cedar barrel sauna can last 30-40 years with basic maintenance. The wood naturally resists moisture and pests. The only major components are the heater and stones both replaceable for a few hundred dollars.</p>
-        <p class="text-stone-600 text-sm mt-3">Hot tubs typically last 10-20 years. The shell, jets, pumps, and electronics are all subject to wear and failure. Major repairs can run $500-$3,000. Eventually the unit needs replacement.</p>
-      </div>
-
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Which Should You Buy?</h2>
-
-    <div class="grid grid-cols-2 gap-4 mb-8">
-      <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
-        <p class="font-semibold text-amber-800 mb-3">Buy a Sauna if:</p>
-        <ul class="space-y-2 text-sm text-stone-600">
-          <li>Budget is under $10,000</li>
-          <li>You want minimal maintenance</li>
-          <li>Health and recovery are the priority</li>
-          <li>You prefer a solo or meditative experience</li>
-          <li>You want something that lasts decades</li>
-          <li>You're in a cold climate</li>
-        </ul>
-      </div>
-      <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
-        <p class="font-semibold text-blue-800 mb-3">Buy a Hot Tub if:</p>
-        <ul class="space-y-2 text-sm text-stone-600">
-          <li>You want a social gathering spot</li>
-          <li>Joint pain or arthritis is the main goal</li>
-          <li>You prefer lower-intensity, longer soaks</li>
-          <li>Budget allows for higher ongoing costs</li>
-          <li>You want to stay in longer than 20 minutes</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="text-stone-600 text-sm mb-8">Many dedicated sauna users eventually add a cold plunge tub a much cheaper alternative to a hot tub that pairs perfectly with sauna use. The contrast between extreme heat and cold immersion is genuinely extraordinary and it costs a fraction of a hot tub.</p>
-
-    <h2 class="text-2xl font-bold mb-4 text-stone-900">Best Sauna Starting Points</h2>
-    <div class="space-y-4 mb-8">
-      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-        <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded">TRADITIONAL BARREL</span>
-        <h3 class="font-semibold text-stone-900 mt-2 mb-2">Almost Heaven Pinnacle 4-Person</h3>
-        <p class="text-stone-600 text-sm mb-3">The most popular outdoor barrel sauna. Full Finnish experience, cedar construction, 4-6 hour assembly.</p>
-        <AmazonButton asin="B017WJV8SO" price="~$2,199" />
-      </div>
-      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-        <span class="text-xs font-bold bg-green-100 text-green-800 px-2 py-1 rounded">EASIEST SETUP</span>
-        <h3 class="font-semibold text-stone-900 mt-2 mb-2">Dynamic Saunas Barcelona Infrared</h3>
-        <p class="text-stone-600 text-sm mb-3">Plug in, 15 minutes to heat, no electrician. The fastest path to regular sauna use.</p>
-        <AmazonButton asin="B00A2F99F0" price="~$899" />
-      </div>
-    </div>
-
-    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h3 class="font-bold text-stone-900 mb-3">More comparisons</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/guides/infrared-vs-traditional-sauna" class="text-amber-700 hover:underline font-medium">Infrared vs Traditional Sauna</a></li>
-        <li><a href="/guides/barrel-sauna-vs-cabin-sauna" class="text-amber-700 hover:underline font-medium">Barrel Sauna vs Cabin Sauna</a></li>
-        <li><a href="/guides/sauna-health-benefits" class="text-amber-700 hover:underline font-medium">Sauna Health Benefits: What the Research Says</a></li>
-        <li><a href="/guides/outdoor-sauna-cost" class="text-amber-700 hover:underline font-medium">Full Outdoor Sauna Cost Breakdown</a></li>
-      </ul>
-    </div>
-
-  </article>
-</Base>
-
-<script type="application/ld+json">
-{
+const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is a sauna or hot tub better for health?",
+      "name": "Is a sauna better than a hot tub?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both have real health benefits. Saunas have stronger cardiovascular research regular sauna use is linked to reduced cardiovascular mortality and lower blood pressure. Hot tubs are particularly effective for joint pain and arthritis through hydrotherapy. For cardiovascular health and recovery, saunas lead. For joint pain and relaxation, both perform well."
+        "text": "Neither is universally better — they serve different purposes. A sauna delivers dry heat, heats up in 20-40 minutes, costs less to maintain, and has stronger evidence for cardiovascular health benefits. A hot tub provides warm water immersion, is immediately usable, and is better for joint pain relief and social use. Most people who own one end up wishing they had the other at some point."
       }
     },
     {
       "@type": "Question",
-      "name": "Is a sauna cheaper than a hot tub?",
+      "name": "Which is cheaper to maintain, a sauna or hot tub?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, significantly. A quality outdoor barrel sauna costs $3,000-$5,000 all-in installed. A quality hot tub starts at $5,000 and commonly runs $8,000-$16,000. Monthly operating costs are also lower for saunas ($20-50/month vs $75-150/month for hot tubs) and maintenance is minimal compared to weekly water chemistry management required for hot tubs."
+        "text": "Saunas are significantly cheaper to maintain. A sauna has no water, no chemicals, no filters, and no pumps. Annual maintenance costs are minimal — occasional bench treatment, stone replacement every few years. A hot tub typically costs $50-$100/month in chemicals, filter replacements, and electricity. Over 10 years a hot tub can cost $6,000-$12,000 more in running costs than a sauna."
       }
     },
     {
       "@type": "Question",
-      "name": "Can you have both a sauna and a hot tub?",
+      "name": "Can you have both a sauna and hot tub?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, and they complement each other well. However, many sauna enthusiasts pair their sauna with a cold plunge tub rather than a hot tub. The contrast between the extreme sauna heat and cold plunge is a core part of traditional Finnish sauna culture and provides health benefits beyond either alone."
+        "text": "Yes, and many people do — the combination of sauna heat followed by cold water (or hot tub) is a popular contrast therapy approach. A barrel sauna alongside a hot tub is a common backyard setup. Budget roughly $5,000-$10,000 for both: an Almost Heaven barrel sauna ($2,200-$3,500) plus a mid-range hot tub ($3,000-$7,000)."
       }
     }
   ]
-}
-</script>
+};
+---
+<Base
+  title="Sauna vs Hot Tub: Which Is Worth Buying in 2025?"
+  description="Sauna vs hot tub compared on cost, maintenance, health benefits, and which makes more sense for your situation. Real numbers, not marketing fluff."
+  canonical="/guides/sauna-vs-hot-tub"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna vs Hot Tub: Which Is Worth Buying?</h1>
+    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Outdoor sauna setup" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">Most people frame this as a competition. It is not quite that — they do different things. But if you are choosing one, cost and maintenance alone usually tips it toward the sauna. Here is the full comparison.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Side-by-Side Comparison</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="text-sm w-full">
+        <thead>
+          <tr class="text-left text-stone-500 border-b border-stone-200">
+            <th class="pb-2 pr-6 w-1/3"></th>
+            <th class="pb-2 pr-6">Sauna</th>
+            <th class="pb-2">Hot Tub</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700">
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-semibold text-stone-600">Purchase price</td>
+            <td class="py-2 pr-6">$2,000-$6,000</td>
+            <td class="py-2">$3,000-$12,000</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-semibold text-stone-600">Monthly running cost</td>
+            <td class="py-2 pr-6">$10-$20</td>
+            <td class="py-2">$75-$150</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-semibold text-stone-600">Annual maintenance</td>
+            <td class="py-2 pr-6">$50-$150</td>
+            <td class="py-2">$600-$1,200</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-semibold text-stone-600">Ready to use</td>
+            <td class="py-2 pr-6">After 20-40 min preheat</td>
+            <td class="py-2">Always on (or 20 min to heat)</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-semibold text-stone-600">Lifespan</td>
+            <td class="py-2 pr-6">20-30+ years</td>
+            <td class="py-2">10-15 years</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-semibold text-stone-600">Maintenance complexity</td>
+            <td class="py-2 pr-6">Very low</td>
+            <td class="py-2">High (chemicals, filters, water)</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-6 font-semibold text-stone-600">Health research</td>
+            <td class="py-2 pr-6">Strong (cardiovascular, recovery)</td>
+            <td class="py-2">Limited</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where Sauna Wins</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Maintenance cost — it's not close</h3>
+    <p class="text-stone-700 mb-4">A sauna has no water. That means no chemicals, no filter replacements, no pump servicing, no water testing, no winterization. A traditional barrel sauna needs bench cleaning and an occasional coat of wood treatment. That's it. A hot tub owner spends $50-$100/month on chemicals alone — bromine, shock, pH adjusters, algaecide — plus filter cartridges every few months. Over 10 years the cost difference is $8,000-$15,000.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Health evidence</h3>
+    <p class="text-stone-700 mb-4">The research on sauna is substantial. Long-term Finnish population studies (following 2,000+ men for 20 years) found that men who used the sauna 4-7 times per week had 40% lower cardiovascular mortality than those who used it once a week. No comparable long-term research exists for hot tubs. See our <a href="/guides/sauna-health-benefits" class="text-amber-700 hover:underline">sauna health benefits guide</a> for the full breakdown.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Lifespan</h3>
+    <p class="text-stone-700 mb-6">A well-built cedar sauna lasts 20-30+ years with basic maintenance. Hot tubs typically last 10-15 years before the shell, jets, or pumps need major repair or replacement.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where Hot Tub Wins</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Joint pain and arthritis</h3>
+    <p class="text-stone-700 mb-4">Warm water immersion with hydrotherapy jets directly targets joint pain in a way dry sauna heat cannot replicate. For people with rheumatoid arthritis, osteoarthritis, or chronic joint pain, a hot tub can be more useful than a sauna on a daily basis. The buoyancy also reduces load on joints during use.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Social experience</h3>
+    <p class="text-stone-700 mb-4">Hot tubs are better for groups. Six adults sitting in a hot tub is comfortable and social; six adults in a sauna is warm and crowded. For families with kids or frequent gatherings, a hot tub is often used more.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Always ready</h3>
+    <p class="text-stone-700 mb-6">A hot tub kept at temperature is instantly usable. A sauna needs 20-40 minutes of preheat. For spontaneous use after work, a hot tub has the advantage.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Verdict</h2>
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <p class="mb-2"><span class="font-semibold">Choose a sauna if:</span> you prioritize health benefits, want low maintenance, plan to use it solo or with a partner, or you are budget-conscious about ongoing costs.</p>
+      <p class="mb-2"><span class="font-semibold">Choose a hot tub if:</span> joint pain is the primary driver, you have a large family or frequent social gatherings, or you want something always ready without a preheat window.</p>
+      <p><span class="font-semibold">Get both if:</span> you have the space and budget. They complement each other well — sauna heat followed by cold water immersion is a legitimate recovery protocol. A barrel sauna plus a modest hot tub runs $6,000-$10,000 installed.</p>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Recommended Saunas</h2>
+    <div class="space-y-4 mb-8">
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-1">Almost Heaven Pinnacle 4-Person — ~$2,199</h3>
+        <p class="text-stone-600 text-sm mb-3">The standard outdoor barrel sauna recommendation. Cedar, DIY-friendly, pairs with a Harvia KIP heater. Our most-recommended sauna for first-time buyers.</p>
+        <a href="https://www.amazon.com/dp/B017WJV8SO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Is a sauna better than a hot tub?</h3>
+        <p class="text-stone-700">For health benefits, lower maintenance, and long-term cost: sauna wins. For joint pain, social use, and always-ready convenience: hot tub has the edge. They serve different primary purposes.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Which is cheaper to maintain?</h3>
+        <p class="text-stone-700">Sauna by a wide margin. No water, no chemicals, no filters. A hot tub costs $600-$1,200/year in maintenance vs $50-$150 for a sauna.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you have both?</h3>
+        <p class="text-stone-700">Yes — a barrel sauna plus a mid-range hot tub runs $6,000-$10,000 installed. They complement each other well for contrast therapy and different types of use.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-vs-steam-room" class="text-amber-700 hover:underline">Sauna vs Steam Room</a></li>
+        <li><a href="/guides/best-barrel-sauna-kits" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
+        <li><a href="/guides/sauna-health-benefits" class="text-amber-700 hover:underline">Sauna Health Benefits</a></li>
+        <li><a href="/guides/sauna-cost" class="text-amber-700 hover:underline">How Much Does a Sauna Cost?</a></li>
+        <li><a href="/guides/outdoor-sauna-buying-checklist" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
