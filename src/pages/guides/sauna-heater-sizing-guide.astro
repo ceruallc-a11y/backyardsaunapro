@@ -1,0 +1,180 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+---
+<Base
+  title="Sauna Heater Sizing Guide (2025) — What Size Heater Do You Need?"
+  description="How to correctly size an electric sauna heater for your room. Calculate cubic footage, account for insulation, and pick the right kW output."
+  canonical="/guides/sauna-heater-sizing-guide"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Sauna Heater Sizing Guide: What Size Do You Actually Need?
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 7 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        An undersized heater struggles to reach temperature. An oversized one burns more energy than necessary. Getting the size right is straightforward once you understand one number: cubic footage.
+      </p>
+    </header>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-3">Quick Sizing Reference</h2>
+      <div class="space-y-2 text-sm">
+        {[
+          ["Up to 100 cu ft", "3-4 kW", "1-2 person compact sauna"],
+          ["100-200 cu ft", "4.5-6 kW", "2-4 person barrel or cabin sauna"],
+          ["200-300 cu ft", "6-8 kW", "4-person barrel or small cabin"],
+          ["300-450 cu ft", "8-10 kW", "4-6 person larger sauna"],
+          ["450-600 cu ft", "10-14 kW", "6-8 person or large custom build"],
+        ].map(([size, kw, desc]) => (
+          <div class="grid grid-cols-3 gap-2 bg-white rounded-lg px-4 py-2">
+            <span class="font-semibold text-stone-800">{size}</span>
+            <span class="text-amber-700 font-bold">{kw}</span>
+            <span class="text-stone-500 text-xs self-center">{desc}</span>
+          </div>
+        ))}
+      </div>
+      <p class="text-xs text-stone-400 mt-3">Add 20-25% to your calculated cubic footage if walls are poorly insulated or for outdoor saunas in very cold climates.</p>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Step 1: Calculate Your Cubic Footage</h2>
+    <p class="text-stone-600 text-sm mb-4">Sauna heaters are sized by volume, not floor area. Measure three dimensions and multiply them together.</p>
+
+    <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm mb-6">
+      <h3 class="text-lg font-bold text-stone-900 mb-3">The Formula</h3>
+      <div class="bg-stone-50 rounded-lg p-4 text-center mb-4">
+        <p class="text-stone-500 text-sm">Length (ft) x Width (ft) x Height (ft) = Cubic Feet</p>
+      </div>
+      <div class="space-y-3 text-sm text-stone-600">
+        <div class="flex justify-between border-b border-stone-100 pb-2">
+          <span>Almost Heaven Pinnacle 4-person barrel</span>
+          <span class="font-semibold">~160 cu ft → 6 kW heater</span>
+        </div>
+        <div class="flex justify-between border-b border-stone-100 pb-2">
+          <span>Almost Heaven 6-person barrel</span>
+          <span class="font-semibold">~240 cu ft → 6-8 kW heater</span>
+        </div>
+        <div class="flex justify-between border-b border-stone-100 pb-2">
+          <span>5x7 foot cabin sauna, 7 ft ceiling</span>
+          <span class="font-semibold">245 cu ft → 6-8 kW heater</span>
+        </div>
+        <div class="flex justify-between pb-2">
+          <span>6x8 foot cabin sauna, 7 ft ceiling</span>
+          <span class="font-semibold">336 cu ft → 8-10 kW heater</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Step 2: Adjust for Your Conditions</h2>
+
+    <div class="space-y-4 mb-8">
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <h3 class="text-base font-bold text-stone-900 mb-2">Outdoor Sauna in Cold Climate</h3>
+        <p class="text-stone-600 text-sm">Add 20-25% to your calculated cubic footage. Outdoor saunas lose heat faster than indoor ones, especially through the floor and roof. A sauna sized for 200 cu ft indoors needs a heater rated for 240-250 cu ft outdoors.</p>
+      </div>
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <h3 class="text-base font-bold text-stone-900 mb-2">Glass Walls or Doors</h3>
+        <p class="text-stone-600 text-sm">Glass transfers heat more efficiently than insulated wood. Add 15-20% to your cubic footage calculation for each large glass panel. A sauna with a full-glass door and panoramic window needs a noticeably larger heater.</p>
+      </div>
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <h3 class="text-base font-bold text-stone-900 mb-2">Tile or Concrete Surfaces</h3>
+        <p class="text-stone-600 text-sm">Tile and concrete absorb heat before releasing it. They take longer to reach temperature than wood. If your sauna has tiled floors or walls, add 10-15% to the cubic footage. This is more common in custom-built saunas than kit saunas.</p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Recommended Heaters by Size</h2>
+
+    <div class="space-y-5">
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <h3 class="text-lg font-bold text-stone-900">Harvia KIP 60B — 6 kW</h3>
+            <p class="text-stone-500 text-sm">Best for rooms up to 265 cu ft</p>
+          </div>
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-100 text-amber-800">MOST POPULAR</span>
+        </div>
+        <p class="text-stone-600 text-sm mb-4">The standard choice for most 2-4 person barrel and cabin saunas. Made in Finland, reliable, and well-matched to the most common home sauna sizes.</p>
+        <AmazonButton asin="B0B7TRM95Y" price="~$579" />
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <h3 class="text-lg font-bold text-stone-900">Finlandia FLB-60 — 6 kW</h3>
+            <p class="text-stone-500 text-sm">Best value for rooms up to 210 cu ft</p>
+          </div>
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-green-100 text-green-800">BEST VALUE</span>
+        </div>
+        <p class="text-stone-600 text-sm mb-4">Finlandia has been building heaters since 1964. This model is reliable, affordable, and well-suited to smaller sauna rooms. A solid choice if the Harvia is over budget.</p>
+        <AmazonButton asin="B000N4RSFO" price="~$499" />
+      </div>
+
+      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <h3 class="text-lg font-bold text-stone-900">Vevor 9 kW</h3>
+            <p class="text-stone-500 text-sm">Best budget option for rooms up to 530 cu ft</p>
+          </div>
+          <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-100 text-blue-800">BUDGET PICK</span>
+        </div>
+        <p class="text-stone-600 text-sm mb-4">For larger rooms on a tighter budget. Not Finnish-made, but it gets the job done. Includes a digital controller and has solid reviews for the price point.</p>
+        <AmazonButton asin="B07WQHQ4BF" price="~$299" />
+      </div>
+
+    </div>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Common Sizing Mistakes</h2>
+    <div class="space-y-3 mb-8">
+      {[
+        ["Sizing for square feet, not cubic feet", "A sauna with 8-foot ceilings needs a larger heater than one with 7-foot ceilings at the same floor area. Always use cubic footage."],
+        ["Trusting the kit's heater recommendation without checking", "Manufacturers sometimes recommend a minimum heater that works in ideal conditions. In a cold climate or a poorly insulated barrel, you may need to go up one size."],
+        ["Buying a heater that's too small to save money", "An undersized heater runs continuously, uses more electricity, and never gets the room properly hot. You end up replacing it. Buy the right size once."],
+        ["Not accounting for outdoor temps", "A heater that works perfectly in summer may struggle in January. If you're in a cold climate, size up."],
+      ].map(([mistake, fix]) => (
+        <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+          <h3 class="text-base font-bold text-red-700 mb-1">{mistake}</h3>
+          <p class="text-stone-600 text-sm">{fix}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
+      <h3 class="font-bold text-stone-900 mb-3">More heater guides</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/best-electric-sauna-heaters" class="text-amber-700 hover:underline font-medium">Best Electric Sauna Heaters (Full Roundup)</a></li>
+        <li><a href="/reviews/harvia-kip-60b-review" class="text-amber-700 hover:underline font-medium">Harvia KIP 60B In-Depth Review</a></li>
+        <li><a href="/guides/best-wood-burning-sauna-heaters" class="text-amber-700 hover:underline font-medium">Best Wood-Burning Sauna Heaters</a></li>
+        <li><a href="/guides/sauna-electrical-requirements" class="text-amber-700 hover:underline font-medium">Sauna Electrical Requirements</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What size sauna heater do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sauna heaters are sized by cubic footage. Calculate your sauna's cubic footage (length x width x ceiling height) and use this guide: up to 100 cu ft needs 3-4 kW, 100-200 cu ft needs 4.5-6 kW, 200-300 cu ft needs 6-8 kW, 300-450 cu ft needs 8-10 kW. Add 20-25% for outdoor saunas in cold climates or poorly insulated walls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a 6 kW sauna heater enough?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 6 kW heater is appropriate for sauna rooms up to about 200-265 cubic feet, which covers most 2-4 person barrel and cabin saunas. The Harvia KIP 60B (6 kW) is rated for up to 265 cubic feet and is the most popular choice for home sauna installations."
+      }
+    }
+  ]
+}
+</script>
