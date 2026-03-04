@@ -1,0 +1,124 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+
+const picks = [
+  {
+    rank: 1,
+    asin: "B017WJV8SO",
+    name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
+    price: "~$2,199",
+    rating: "4.5/5",
+    tag: "BEST OVERALL",
+    tagColor: "bg-amber-100 text-amber-800",
+    type: "Traditional Barrel",
+    capacity: "Rated 4-person, ideal for 2",
+    summary: "Buying a 4-person barrel sauna for two people sounds excessive — it isn't. The extra space makes sessions dramatically more comfortable. You can lie down, stretch out, and have a proper experience.",
+    pros: ["Lie-flat space for 2", "Cedar handles cold climates", "Easy 4-6hr assembly", "Great heat retention"],
+    cons: ["Heater sold separately", "Needs 240V electrical", "Bigger footprint"]
+  },
+  {
+    rank: 2,
+    asin: "B00A2F99F0",
+    name: "Dynamic Saunas Barcelona Far Infrared",
+    price: "~$899",
+    rating: "4.4/5",
+    tag: "BEST VALUE",
+    tagColor: "bg-green-100 text-green-800",
+    type: "Infrared / Indoor",
+    capacity: "1-2 person",
+    summary: "The best 2-person sauna under $1,000 — full stop. Heats in 15 minutes, plugs into any standard outlet, and the low-EMF carbon panels deliver a real session. Best for indoor or covered outdoor use.",
+    pros: ["No electrician needed", "15-min heat-up", "Low EMF certified", "Compact footprint"],
+    cons: ["No steam option", "1-2 person only", "Indoor/covered use only"]
+  },
+  {
+    rank: 3,
+    asin: "B003Z11AXM",
+    name: "Almost Heaven Saunas 6-Person Barrel Sauna",
+    price: "~$3,499",
+    rating: "4.4/5",
+    tag: "BEST PREMIUM",
+    tagColor: "bg-purple-100 text-purple-800",
+    type: "Traditional Barrel",
+    capacity: "Rated 6-person, spacious for 2",
+    summary: "If you want the ultimate two-person retreat — room for both people to lie fully flat, lounge comfortably, and have a spa-level experience — the 6-person barrel is the way to go.",
+    pros: ["Exceptional space for 2", "Highest quality cedar", "True Finnish sauna experience", "Built to last decades"],
+    cons: ["High price", "Significant yard space required", "Longer heat-up time"]
+  }
+];
+---
+<Base
+  title="Best 2-Person Outdoor Sauna Kits (2025) — Top Picks for Couples & Small Spaces"
+  description="The best outdoor 2-person saunas for couples and small yards. We ranked barrel saunas and infrared options by value, quality, and real 2-person comfort."
+  canonical="/guides/best-2-person-outdoor-sauna"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best 2-Person Outdoor Sauna Kits (2025)
+      </h1>
+      <p class="text-stone-500 text-sm">Updated January 2025 · 8 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        Two-person saunas are the sweet spot for couples and small yards. But "rated for 2 people" varies wildly — some feel like a phone booth, others are genuinely comfortable. Here's what to actually buy.
+      </p>
+    </header>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-2">💡 Pro Tip: Size Up</h2>
+      <p class="text-sm text-stone-700">If you're buying for 2 people, strongly consider a 4-person sauna. The price difference is modest, but the comfort difference is dramatic. You go from sitting shoulder-to-shoulder to having room to lie down and actually relax. Most experienced sauna users wish they'd sized up.</p>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6 text-stone-900">Our Top Picks</h2>
+
+    <div class="space-y-8">
+      {picks.map(pick => (
+        <div class="bg-white border border-stone-200 rounded-xl shadow-sm p-6">
+          <div class="flex items-start justify-between mb-3">
+            <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>
+            <span class="text-xs text-stone-400">{pick.type} · {pick.capacity}</span>
+          </div>
+          <h3 class="text-xl font-bold text-stone-900 mb-2">{pick.name}</h3>
+          <p class="text-stone-600 text-sm mb-4">{pick.summary}</p>
+          <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
+            <div>
+              <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
+              {pick.pros.map(p => <p class="text-stone-600">✅ {p}</p>)}
+            </div>
+            <div>
+              <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
+              {pick.cons.map(c => <p class="text-stone-600">⚠️ {c}</p>)}
+            </div>
+          </div>
+          <p class="text-xs text-stone-400 mb-2">Rating: {pick.rating}</p>
+          <AmazonButton asin={pick.asin} price={pick.price} />
+        </div>
+      ))}
+    </div>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">What to Look for in a 2-Person Sauna</h2>
+      <div class="space-y-3">
+        {[
+          ["Interior width", "For two people to sit comfortably, you want at least 48 inches (4 feet) of bench width. Less than that and you're touching elbows."],
+          ["Bench depth", "18 inches minimum for sitting. 20+ inches allows you to tuck your legs up. 24 inches lets you lie down — a major upgrade."],
+          ["Ceiling height", "Standard is 6–7 feet. Anything less feels claustrophobic for two people."],
+          ["Heater placement", "In a 2-person sauna, heater placement matters more. A poorly placed heater creates hot spots. Look for centered placement with good airflow."],
+        ].map(([title, text]) => (
+          <div class="border-l-4 border-amber-400 pl-4">
+            <h3 class="font-semibold text-stone-800 text-sm">{title}</h3>
+            <p class="text-stone-600 text-sm">{text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
+      <h3 class="text-xl font-bold mb-2">See All Our Top Sauna Picks</h3>
+      <p class="text-stone-300 mb-4">Full rankings across all sizes and budgets.</p>
+      <a href="/best-saunas" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+        Best Saunas of 2025 →
+      </a>
+    </div>
+  </article>
+</Base>
