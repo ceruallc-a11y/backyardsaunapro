@@ -1,108 +1,144 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What electrical requirements does a sauna need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most electric sauna heaters require a dedicated 240V circuit. The amperage depends on the heater's kW rating: a 6kW heater needs a 30-amp circuit, an 8-9kW heater needs a 40-amp circuit, and a 10-12kW heater needs a 50-amp circuit. All sauna electrical work should be done by a licensed electrician and inspected. The NEC requires a GFCI breaker for sauna installations in most jurisdictions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to wire a sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Expect $800-$1,500 for a dedicated 240V sauna circuit installation by a licensed electrician. Variables include distance from the panel to the sauna, whether the panel has capacity for a new 240V circuit, local labor rates, and whether the run is exposed or requires going through finished walls or underground. Budget $1,000 as a baseline for planning."
+      }
+    }
+  ]
+};
 ---
 <Base
-  title="Sauna Electrical Requirements: What You Need to Know Before You Buy"
-  description="Complete guide to sauna electrical requirements circuit sizes, breaker ratings, wire gauge, permit requirements, and when to call an electrician."
+  title="Sauna Electrical Requirements: What You Need to Know Before Installing"
+  description="What circuit a sauna needs, amp requirements by heater kW, GFCI rules, installation costs, and what to ask an electrician."
   canonical="/guides/sauna-electrical-requirements"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <article class="max-w-3xl mx-auto">
-    <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Sauna Electrical Requirements: What You Need Before You Buy
-      </h1>
-      <p class="text-stone-500 text-sm">Updated November 2024 · 8 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        Electrical is where most sauna installs stall out. Understanding what you need before you buy saves you from expensive surprises and keeps you safe.
-      </p>
-    </header>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Electrical Requirements: The Complete Guide</h1>
+    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">Quick Reference</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm">
-          <thead><tr class="text-left text-stone-500 border-b border-amber-200"><th class="pb-2 pr-4">Heater Size</th><th class="pb-2 pr-4">Voltage</th><th class="pb-2 pr-4">Amperage</th><th class="pb-2">Wire Gauge</th></tr></thead>
-          <tbody class="text-stone-700">
-            {[["Up to 3.5kW", "120V", "30A", "10 AWG"],["4–6kW", "240V", "30–40A", "8 AWG"],["7–9kW", "240V", "40–50A", "8–6 AWG"],["10–12kW", "240V", "60A", "6 AWG"]].map(([kw,v,a,w]) => (
-              <tr class="border-b border-amber-100"><td class="py-2 pr-4 font-medium">{kw}</td><td class="py-2 pr-4">{v}</td><td class="py-2 pr-4">{a}</td><td class="py-2">{w}</td></tr>
-            ))}
-          </tbody>
-        </table>
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Sauna electrical installation" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page may contain affiliate links.
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">Sauna electrical is not a DIY job in most jurisdictions — a licensed electrician and a permit are required for 240V sauna circuits in nearly every US state and Canadian province. Here is what the installation involves and what it will cost.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Circuit Requirements by Heater Size</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="text-sm w-full">
+        <thead>
+          <tr class="text-left text-stone-500 border-b border-stone-200">
+            <th class="pb-2 pr-6">Heater Size</th>
+            <th class="pb-2 pr-6">Voltage</th>
+            <th class="pb-2 pr-6">Circuit (amps)</th>
+            <th class="pb-2">Wire Size</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700">
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-semibold">3-4.5 kW</td>
+            <td class="py-2 pr-6">240V</td>
+            <td class="py-2 pr-6">20A dedicated</td>
+            <td class="py-2">#12 AWG</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-semibold">6 kW</td>
+            <td class="py-2 pr-6">240V</td>
+            <td class="py-2 pr-6">30A dedicated</td>
+            <td class="py-2">#10 AWG</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-2 pr-6 font-semibold">8-9 kW</td>
+            <td class="py-2 pr-6">240V</td>
+            <td class="py-2 pr-6">40A dedicated</td>
+            <td class="py-2">#8 AWG</td>
+          </tr>
+          <tr>
+            <td class="py-2 pr-6 font-semibold">10-12 kW</td>
+            <td class="py-2 pr-6">240V</td>
+            <td class="py-2 pr-6">50A dedicated</td>
+            <td class="py-2">#6 AWG</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-stone-500 text-xs mb-8">Note: Always verify with your specific heater's installation manual and your local electrician. Actual requirements may vary by jurisdiction and heater model.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The GFCI Requirement</h2>
+    <p class="text-stone-700 mb-4">The National Electrical Code (NEC 680) requires GFCI protection for sauna installations. This means the breaker at the panel that feeds your sauna circuit must be a GFCI breaker. Standard breakers do not satisfy this requirement. Your electrician will handle this, but it is worth confirming before they start work — some older electricians are not current on sauna-specific NEC requirements.</p>
+    <p class="text-stone-700 mb-6">Note that some sauna heaters have internal controls that do not work reliably with certain GFCI breakers. Harvia and a few other manufacturers have published compatibility notes. Check your heater manual or contact the manufacturer before the electrician sources the breaker.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Panel Capacity</h2>
+    <p class="text-stone-700 mb-4">Before calling an electrician, check your panel. A 6kW sauna heater on a 30A circuit requires 30 amps of available capacity. Most modern 200A residential panels have room. Older 100A panels may not — especially if you have electric heat, EV charging, or other large loads.</p>
+    <p class="text-stone-700 mb-6">Your electrician will assess panel capacity before pulling the permit. If the panel is at or near capacity, a panel upgrade ($1,500-$3,000) may be required before the sauna circuit can be added.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Underground vs Above-Ground Runs</h2>
+    <p class="text-stone-700 mb-4">For outdoor saunas, the electrical run from the house to the sauna can go either above-ground (in conduit on the exterior) or underground (buried conduit). Underground is cleaner and more permanent — use Schedule 40 PVC or rigid conduit buried at the required depth (18-24 inches for most residential direct-burial or conduit applications, check your local code).</p>
+    <p class="text-stone-700 mb-6">Underground runs cost more in labor due to trenching, but they look better and do not require conduit along the house exterior. For a permanent sauna installation, underground is worth the extra cost.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cost Breakdown</h2>
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <ul class="space-y-2">
+        <li><span class="font-semibold">Short run (&lt;30 ft, above-ground):</span> $600-$900</li>
+        <li><span class="font-semibold">Medium run (30-60 ft):</span> $900-$1,300</li>
+        <li><span class="font-semibold">Long run (&gt;60 ft) or underground:</span> $1,300-$2,000</li>
+        <li><span class="font-semibold">GFCI breaker add-on:</span> $80-$150 parts + included in labor above</li>
+        <li><span class="font-semibold">Panel upgrade if needed:</span> $1,500-$3,000 additional</li>
+      </ul>
+      <p class="text-stone-500 text-xs mt-3">Estimates for US labor rates in 2025. Get 2-3 quotes from local licensed electricians before committing.</p>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Ask Your Electrician</h2>
+    <ul class="space-y-2 text-stone-700 mb-8 ml-4 text-sm">
+      <li>Does my panel have capacity for a new 240V circuit at [your heater's amperage]?</li>
+      <li>Will you pull a permit and schedule inspection?</li>
+      <li>What GFCI breaker are you planning to use? (Get the brand/model for compatibility check)</li>
+      <li>Underground or above-ground run — which do you recommend for this installation?</li>
+      <li>What is the total including permit fees?</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What electrical requirements does a sauna need?</h3>
+        <p class="text-stone-700">A dedicated 240V circuit sized to the heater's kW rating. Most 4-6 person saunas use a 6kW heater requiring a 30A circuit with #10 AWG wire and a GFCI breaker at the panel.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How much does it cost to wire a sauna?</h3>
+        <p class="text-stone-700">$800-$1,500 for most residential installations. Budget $1,000 as a baseline.</p>
       </div>
     </div>
 
-    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">The Basics: What Most Saunas Need</h2>
-    <p class="text-stone-600 mb-4">The vast majority of home sauna heaters (4–9kW) require a <strong>dedicated 240V circuit</strong> the same type used for electric dryers and ranges. This is not something you can tap into an existing outlet. You need a dedicated circuit run from your electrical panel to the sauna location.</p>
-    <p class="text-stone-600 mb-4">The exception: small infrared saunas under 3.5kW (like the Dynamic Saunas Barcelona) can run on a standard 120V/20A household circuit. This is one of the biggest advantages of infrared no electrician required for installation.</p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">What the Electrician Will Install</h2>
-    <div class="space-y-3 mb-8">
-      {[
-        ["Dedicated circuit", "A new circuit from your main panel to the sauna location. This cannot share a circuit with anything else."],
-        ["Correct breaker", "A double-pole breaker sized to the heater's amperage requirement. A 6kW heater typically needs a 40A breaker."],
-        ["GFCI protection", "Required by NEC for sauna installations. Protects against electrocution in wet environments."],
-        ["Weatherproof conduit", "For outdoor runs, all wiring must be in weatherproof conduit rated for outdoor use."],
-        ["Disconnect switch", "A lockable disconnect within sight of the heater. Required in most jurisdictions."],
-      ].map(([title, text]) => (
-        <div class="flex gap-3 bg-white border border-stone-200 rounded-lg p-4">
-          <span class="text-amber-500"></span>
-          <div>
-            <p class="font-semibold text-stone-800 text-sm">{title}</p>
-            <p class="text-stone-600 text-sm">{text}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">How Much Does Electrical Cost?</h2>
-    <div class="bg-stone-100 rounded-xl p-5 mb-8">
-      <p class="text-stone-600 text-sm mb-3">Electrical cost varies significantly by location, panel distance, and whether your panel has available breaker slots. Rough estimates:</p>
-      <div class="space-y-2 text-sm">
-        {[
-          ["Short run (panel nearby, 25–50 ft)", "$150–$350"],
-          ["Medium run (50–100 ft)", "$300–$600"],
-          ["Long run (100–150 ft)", "$500–$1,000"],
-          ["Panel upgrade needed (no open slots)", "$800–$2,000+"],
-        ].map(([scenario, cost]) => (
-          <div class="flex justify-between bg-white rounded-lg p-3 border border-stone-200">
-            <span class="text-stone-600">{scenario}</span>
-            <span class="font-semibold text-stone-800">{cost}</span>
-          </div>
-        ))}
-      </div>
-      <p class="text-xs text-stone-500 mt-3">Always get 2–3 quotes. Electrician rates vary widely by region.</p>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Permits: Do You Need One?</h2>
-    <p class="text-stone-600 mb-4">Almost always yes for the electrical work specifically. An electrical permit is typically required for any new circuit installation, and inspectors take sauna wiring seriously because of the fire and shock risk in wet, hot environments.</p>
-    <p class="text-stone-600 mb-4">Unpermitted electrical work can void your homeowner's insurance and create liability issues if there's ever a fire or injury. It's not worth skipping.</p>
-
-    <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-8 text-sm text-red-800">
-       <strong>Don't DIY the electrical unless you're a licensed electrician.</strong> Undersized wire in a hot, humid environment is a serious fire hazard. The $200–$600 for a professional is money well spent.
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">No 240V? Your Options</h2>
-    <div class="space-y-3">
-      {[
-        ["Buy an infrared sauna (120V)", "The easiest solution. A 1-2 person infrared runs on a standard household outlet. Real health benefits, no electrician needed."],
-        ["Run a new circuit", "If you're serious about a traditional sauna, the electrical investment pays off over years of use. Budget $300–$800 for most installs."],
-        ["Wood-fired sauna", "No electricity needed for the heat source. You still need a light circuit (120V) but no heater circuit. Great for off-grid or rural properties."],
-      ].map(([title, text]) => (
-        <div class="bg-white border border-stone-200 rounded-lg p-4">
-          <p class="font-semibold text-stone-800 text-sm mb-1">{title}</p>
-          <p class="text-stone-600 text-sm">{text}</p>
-        </div>
-      ))}
-    </div>
-
-    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
-      <h3 class="text-xl font-bold mb-2">Ready to Pick Your Heater?</h3>
-      <p class="text-stone-300 mb-4">Now that you know your electrical setup, find the right heater for your sauna room size.</p>
-      <a href="/guides/best-electric-sauna-heaters" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-        Best Electric Sauna Heaters →
-      </a>
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-heater-sizing-guide" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
+        <li><a href="/guides/how-to-build-a-sauna" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
+        <li><a href="/guides/sauna-cost" class="text-amber-700 hover:underline">How Much Does a Sauna Cost?</a></li>
+        <li><a href="/guides/outdoor-sauna-buying-checklist" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
+      </ul>
     </div>
   </article>
 </Base>
