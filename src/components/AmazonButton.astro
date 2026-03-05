@@ -4,18 +4,17 @@ export interface Props {
   label?: string;
   price?: string;
 }
-const { asin, label = "Check Price on Amazon", price } = Astro.props;
+const { asin, label = "Check Price on Amazon", price: _price } = Astro.props;
 const tag = "backyardsauna-20";
 const url = `https://www.amazon.com/dp/${asin}?tag=${tag}`;
 ---
 <div class="my-4">
-  {price && <p class="text-sm text-stone-500 mb-1">~{price} on Amazon</p>}
   <a
     href={url}
     target="_blank"
     rel="nofollow noopener sponsored"
     class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors shadow"
   >
-    {label} →
+    {label} &rarr;
   </a>
 </div>
