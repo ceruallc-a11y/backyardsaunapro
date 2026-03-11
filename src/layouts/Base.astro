@@ -15,7 +15,7 @@ const siteUrl = "https://backyardsaunapro.com";
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  {canonical && <link rel="canonical" href={`${siteUrl}${canonical}`} />}
+  {canonical && <link rel="canonical" href={`${siteUrl}${canonical.endsWith('/') ? canonical : canonical + '/'}`} />}
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <!-- Amazon Associates disclosure required -->
   <meta name="amazon-associates-tag" content="backyardsauna-20" />
@@ -41,11 +41,11 @@ const siteUrl = "https://backyardsaunapro.com";
       </a>
       <!-- Desktop nav -->
       <nav class="hidden md:flex gap-6 text-sm text-stone-300">
-        <a href="/reviews" class="hover:text-white transition-colors">Reviews</a>
-        <a href="/guides" class="hover:text-white transition-colors">Guides</a>
-        <a href="/brands" class="hover:text-white transition-colors">Brands</a>
-        <a href="/best-saunas" class="hover:text-white transition-colors">Best Picks</a>
-        <a href="/about" class="hover:text-white transition-colors">About</a>
+        <a href="/reviews/" class="hover:text-white transition-colors">Reviews</a>
+        <a href="/guides/" class="hover:text-white transition-colors">Guides</a>
+        <a href="/brands/" class="hover:text-white transition-colors">Brands</a>
+        <a href="/best-saunas/" class="hover:text-white transition-colors">Best Picks</a>
+        <a href="/about/" class="hover:text-white transition-colors">About</a>
       </nav>
       <!-- Mobile hamburger -->
       <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
@@ -56,11 +56,11 @@ const siteUrl = "https://backyardsaunapro.com";
     </div>
     <!-- Mobile nav drawer -->
     <nav id="mobile-menu" class="hidden md:hidden flex-col gap-0 mt-3 border-t border-stone-700 pt-3">
-      <a href="/reviews" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Reviews</a>
-      <a href="/guides" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Guides</a>
-      <a href="/brands" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Brands</a>
-      <a href="/best-saunas" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Best Picks</a>
-      <a href="/about" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">About</a>
+      <a href="/reviews/" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Reviews</a>
+      <a href="/guides/" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Guides</a>
+      <a href="/brands/" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Brands</a>
+      <a href="/best-saunas/" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Best Picks</a>
+      <a href="/about/" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">About</a>
     </nav>
   </header>
   <script>
@@ -83,13 +83,13 @@ const siteUrl = "https://backyardsaunapro.com";
   <footer class="bg-stone-900 text-stone-400 text-sm py-8 px-6 mt-16">
     <div class="max-w-5xl mx-auto">
       <nav class="flex flex-wrap gap-x-6 gap-y-2 mb-5 text-stone-300">
-        <a href="/reviews" class="hover:text-white transition-colors">Reviews</a>
-        <a href="/guides" class="hover:text-white transition-colors">Guides</a>
-        <a href="/brands" class="hover:text-white transition-colors">Brands</a>
-        <a href="/best-saunas" class="hover:text-white transition-colors">Best Picks</a>
-        <a href="/guides/best-barrel-sauna-kits" class="hover:text-white transition-colors">Barrel Saunas</a>
-        <a href="/guides/best-infrared-sauna-blanket" class="hover:text-white transition-colors">Infrared Saunas</a>
-        <a href="/about" class="hover:text-white transition-colors">About</a>
+        <a href="/reviews/" class="hover:text-white transition-colors">Reviews</a>
+        <a href="/guides/" class="hover:text-white transition-colors">Guides</a>
+        <a href="/brands/" class="hover:text-white transition-colors">Brands</a>
+        <a href="/best-saunas/" class="hover:text-white transition-colors">Best Picks</a>
+        <a href="/guides/best-barrel-sauna-kits/" class="hover:text-white transition-colors">Barrel Saunas</a>
+        <a href="/guides/best-infrared-sauna-blanket/" class="hover:text-white transition-colors">Infrared Saunas</a>
+        <a href="/about/" class="hover:text-white transition-colors">About</a>
       </nav>
       <p class="mb-2">
         <strong class="text-stone-300">Affiliate Disclosure:</strong> BackyardSaunaPro.com is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate I earn from qualifying purchases.
