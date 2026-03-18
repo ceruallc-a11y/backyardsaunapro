@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
 const picks = [
   {
@@ -15,7 +16,8 @@ const picks = [
     capacity: "Rated 4-person",
     summary: "The Pinnacle is the sweet spot. It's not the cheapest option in this price range, but it delivers a genuine Finnish sauna experience that cheaper alternatives can't match. Cedar construction, durable hardware, and a session that actually gets hot.",
     pros: ["True traditional heat experience", "Canadian red cedar construction", "Straightforward 4-6 hour assembly", "Excellent heat retention"],
-    cons: ["Heater sold separately (budget ~$400-600 more)", "Needs 240V electrical", "Larger footprint than barrel saunas"]
+    cons: ["Heater sold separately (budget ~$400-600 more)", "Needs 240V electrical", "Larger footprint than barrel saunas"],
+    selectSaunasCollection: "barrel-saunas"
   },
   {
     rank: 2,
@@ -43,7 +45,8 @@ const picks = [
     capacity: "6-person",
     summary: "This is the one you buy when you mean business. Six people fit comfortably. The barrel design circulates heat naturally so the whole space heats evenly. Built from the same quality cedar as the Pinnacle, just scaled up considerably.",
     pros: ["True 6-person capacity", "Barrel design for even heat", "Cedar construction", "Same Almost Heaven quality as smaller models"],
-    cons: ["Heater and installation cost extra", "Needs a large footprint", "Higher total cost with electrical"]
+    cons: ["Heater and installation cost extra", "Needs a large footprint", "Higher total cost with electrical"],
+    selectSaunasCollection: "barrel-saunas"
   }
 ];
 ---
@@ -123,7 +126,10 @@ const picks = [
                 </ul>
               </div>
             </div>
-            <AmazonButton asin={pick.asin} price={pick.price} />
+            <div class="flex flex-wrap gap-3">
+              <AmazonButton asin={pick.asin} price={pick.price} />
+              {pick.selectSaunasCollection && <SelectSaunasButton collection={pick.selectSaunasCollection} label="Shop on Select Saunas" />}
+            </div>
           </div>
         </div>
       ))}

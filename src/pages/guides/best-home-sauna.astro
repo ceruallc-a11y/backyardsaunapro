@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -56,7 +57,7 @@ const faqSchema = {
     </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page also contains affiliate links to Select Saunas. We may earn a commission if you buy through our links, at no extra cost to you.
     </div>
 
     <p class="text-lg text-stone-700 mb-4">A home sauna is one of those things people debate for years and then wonder why they waited. Whether it goes in the backyard, the basement, or a spare room, the right unit makes daily use realistic rather than a special occasion.</p>
@@ -105,7 +106,10 @@ const faqSchema = {
           
         </div>
         <p class="text-stone-600 mb-4">The most recommended residential barrel sauna in North America. Western red cedar construction, pre-cut panels, ships in about two weeks. Heater sold separately — pair it with the Harvia KIP 60B for a complete setup. The 4-person size is right for most backyards and heats up properly without oversizing the room.</p>
-        <a href="https://www.amazon.com/dp/B017WJV8SO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.amazon.com/dp/B017WJV8SO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
+        </div>
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -116,7 +120,10 @@ const faqSchema = {
           
         </div>
         <p class="text-stone-600 mb-4">Step up in size for families or anyone who wants to lie down comfortably. More bench space, same cedar quality. Needs an 8kW heater (Harvia KIP 80B recommended). Right for buyers who won't compromise on room.</p>
-        <a href="https://www.amazon.com/dp/B003Z11AXM?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.amazon.com/dp/B003Z11AXM?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
+        </div>
       </div>
 
     </div>

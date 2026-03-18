@@ -1,0 +1,27 @@
+---
+export interface Props {
+  href?: string;
+  label?: string;
+  collection?: string;
+}
+
+const ref = "10752576.S2huPg7gFg";
+const base = "https://selectsaunas.com";
+const { href, label = "Shop on Select Saunas", collection } = Astro.props;
+
+const url = href
+  ? `${href}${href.includes("?") ? "&" : "?"}sca_ref=${ref}`
+  : collection
+  ? `${base}/collections/${collection}?sca_ref=${ref}`
+  : `${base}?sca_ref=${ref}`;
+---
+<div class="my-4">
+  <a
+    href={url}
+    target="_blank"
+    rel="nofollow noopener sponsored"
+    class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow"
+  >
+    {label} &rarr;
+  </a>
+</div>

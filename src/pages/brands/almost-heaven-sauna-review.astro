@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -56,7 +57,7 @@ const faqSchema = {
 
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page also contains affiliate links to Select Saunas. We may earn a commission if you buy through our links, at no extra cost to you.
     </div>
 
     <p class="text-lg text-stone-700 mb-4">Almost Heaven is the brand most first-time outdoor sauna buyers end up researching. They've been around since the 1970s, they're based in West Virginia, and they sit at a sweet spot where quality is meaningfully better than no-name imports but the price hasn't crossed into Finnish luxury territory.</p>
@@ -105,7 +106,10 @@ const faqSchema = {
             </ul>
           </div>
         </div>
-        <a href="https://www.amazon.com/dp/B017WJV8SO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.amazon.com/dp/B017WJV8SO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
+        </div>
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -115,7 +119,10 @@ const faqSchema = {
         </div>
         <p class="text-stone-600 mb-3">The Grandview steps up to a six-person capacity in a larger barrel format. If you regularly have four or more people sauna together, this is the right move. The larger interior also means you can lie flat on the bench, which many people prefer for longer sessions.</p>
         <p class="text-stone-600 mb-4">The larger interior requires a bigger heater, budget accordingly and match your heater kW to the cubic footage using our <a href="/guides/sauna-heater-sizing-guide" class="text-amber-700 hover:underline">heater sizing guide</a>.</p>
-        <a href="https://www.amazon.com/dp/B003Z11AXM?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.amazon.com/dp/B003Z11AXM?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
+        </div>
       </div>
 
     </div>

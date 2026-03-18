@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import AmazonButton from '../components/AmazonButton.astro';
+import SelectSaunasButton from '../components/SelectSaunasButton.astro';
 
 const picks = [
   {
@@ -14,7 +15,8 @@ const picks = [
     pros: ["Beautiful cedar construction", "Easy 4-6 hour assembly", "Great heat retention from barrel shape", "Works with most sauna heaters"],
     cons: ["Needs 240V heater (sold separately)", "Not for tight spaces"],
     best_for: "Homeowners who want a permanent, beautiful outdoor sauna",
-    type: "Traditional / Barrel"
+    type: "Traditional / Barrel",
+    selectSaunasCollection: "barrel-saunas"
   },
   {
     rank: 2,
@@ -40,7 +42,8 @@ const picks = [
     pros: ["Canadian white cedar stunning quality", "Built to last decades", "Proper Finnish sauna experience", "Excellent steam retention"],
     cons: ["Premium price", "Requires installation effort"],
     best_for: "Serious sauna users who want the real deal",
-    type: "Traditional / Outdoor"
+    type: "Traditional / Outdoor",
+    selectSaunasCollection: "outdoor-saunas"
   },
   {
     rank: 4,
@@ -101,7 +104,10 @@ const picks = [
                 </ul>
               </div>
             </div>
-            <AmazonButton asin={pick.asin} price={pick.price} />
+            <div class="flex flex-wrap gap-3">
+              <AmazonButton asin={pick.asin} price={pick.price} />
+              {pick.selectSaunasCollection && <SelectSaunasButton collection={pick.selectSaunasCollection} label="Shop on Select Saunas" />}
+            </div>
           </div>
         </div>
       ))}

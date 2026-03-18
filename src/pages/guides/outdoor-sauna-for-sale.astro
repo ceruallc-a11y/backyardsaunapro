@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -76,7 +77,10 @@ const faqSchema = {
         </div>
         <p class="text-stone-600 mb-2 text-sm">Western red cedar. Pre-cut assembly kit. The most-sold residential barrel sauna in North America. Heater sold separately — pair with Harvia KIP 60B.</p>
         <p class="text-stone-500 text-xs mb-3">Ships from Amazon. Prime eligible. Assembly: 1 full day, 2 people.</p>
-        <a href="https://www.amazon.com/dp/B017WJV8SO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.amazon.com/dp/B017WJV8SO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
+        </div>
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -88,7 +92,10 @@ const faqSchema = {
           
         </div>
         <p class="text-stone-600 mb-3 text-sm">Larger interior — genuinely comfortable for 3-4 people. Same cedar quality as the Pinnacle, more bench space and headroom. Pairs with Harvia KIP 80B (8kW).</p>
-        <a href="https://www.amazon.com/dp/B003Z11AXM?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.amazon.com/dp/B003Z11AXM?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
+        </div>
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -100,7 +107,7 @@ const faqSchema = {
           
         </div>
         <p class="text-stone-600 mb-3 text-sm">Canadian-made white cedar with noticeably thicker staves and better hardware. Built to last 30+ years. Read our full <a href="/brands/dundalk-leisurecraft-review" class="text-amber-700 hover:underline">Dundalk review</a>.</p>
-        <p class="text-stone-400 text-xs">Available through Dundalk authorized dealers</p>
+        <SelectSaunasButton collection="outdoor-saunas" label="Shop Dundalk on Select Saunas" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">

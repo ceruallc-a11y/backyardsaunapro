@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -136,7 +137,8 @@ const faqSchema = {
     <p class="text-stone-700 mb-6">If you're buying your one and only outdoor sauna and want to be done with it for 30 years, Dundalk is worth the premium. If budget is the primary constraint or you're not sure outdoor sauna is for you yet, Almost Heaven is a solid starting point at half the price.</p>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where to Buy</h2>
-    <p class="text-stone-700 mb-4">Dundalk saunas are sold through their website (dundalkleisurecraft.com), select retailers, and sometimes on Amazon with limited availability. Lead times vary, popular models in peak season (February through May) can run 8-12 weeks. Order early if you want delivery before summer.</p>
+    <p class="text-stone-700 mb-4">Dundalk saunas are sold through their website (dundalkleisurecraft.com) and select specialty retailers. Amazon availability is limited. <strong>Select Saunas</strong> carries the full Dundalk lineup with good stock and US-based support. Lead times vary — popular models in peak season (February through May) can run 8-12 weeks. Order early if you want delivery before summer.</p>
+    <SelectSaunasButton collection="outdoor-saunas" label="Shop Dundalk on Select Saunas" />
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
