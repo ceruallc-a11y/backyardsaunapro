@@ -28,7 +28,9 @@ const siteUrl = "https://backyardsaunapro.com";
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={`${siteUrl}/og-default.jpg`} />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon/favicon-64.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
   <!-- Amazon Associates disclosure required -->
   <meta name="amazon-associates-tag" content="backyardsauna-20" />
   <!-- Impact.com site verification -->
@@ -48,8 +50,9 @@ const siteUrl = "https://backyardsaunapro.com";
   <!-- Header -->
   <header class="bg-stone-900 text-white py-4 px-6 shadow-md">
     <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <a href="/" class="text-xl font-bold tracking-tight hover:text-amber-400 transition-colors">
-        Backyard Sauna Pro
+      <a href="/" class="flex items-center gap-2.5 hover:text-amber-400 transition-colors group">
+        <img src="/images/brand/logo-icon.svg" alt="" class="w-9 h-9 rounded-full bg-white p-0.5 ring-1 ring-stone-700 group-hover:ring-amber-400 transition" aria-hidden="true" />
+        <span class="text-xl font-bold tracking-tight">Backyard Sauna Pro</span>
       </a>
       <!-- Desktop nav -->
       <nav class="hidden md:flex gap-6 text-sm text-stone-300">

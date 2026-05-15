@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 320" role="img" aria-labelledby="title desc">
+  <title id="title">Backyard Sauna Pro Horizontal Logo Simple</title>
+  <desc id="desc">Compact horizontal Backyard Sauna Pro logo for email signatures and website headers, using a clean no-heat-symbol sauna icon.</desc>
+  <defs>
+    <style>
+      .charcoal{fill:#171717}.cedar{fill:#9B5A2E}.cedar2{fill:#B8753D}.amber{fill:#F5B21B}.cream{fill:#FFF7E6}.word{font-family:DejaVu Sans, Inter, Montserrat, Avenir Next, Helvetica Neue, Arial, sans-serif;font-weight:800;letter-spacing:-2px}
+    </style>
+  </defs>
+  <g transform="translate(28 25) scale(.265)">
+    <circle cx="512" cy="512" r="462" class="cream"/>
+    <circle cx="512" cy="512" r="462" fill="none" stroke="#171717" stroke-width="38"/>
+    <path d="M106 714c110-76 238-110 406-110s296 34 406 110" fill="none" stroke="#171717" stroke-width="24" stroke-linecap="round" opacity=".96"/>
+    <path d="M215 690l44-80h-34l42-73h-30l52-88 52 88h-30l42 73h-34l44 80z" class="charcoal"/>
+    <path d="M782 692l33-60h-26l32-56h-22l40-67 40 67h-23l32 56h-26l34 60z" class="charcoal"/>
+    <path d="M363 627h-82c-36 0-65-116-65-143s29-143 65-143h82z" class="cedar2"/>
+    <path d="M281 341h327c80 0 145 64 145 143s-65 143-145 143H281c36 0 65-116 65-143s-29-143-65-143z" class="cedar"/>
+    <path d="M281 341h327c80 0 145 64 145 143s-65 143-145 143H281c36 0 65-116 65-143s-29-143-65-143z" fill="none" stroke="#171717" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="608" cy="484" rx="145" ry="143" fill="#B8753D" stroke="#171717" stroke-width="28"/>
+    <ellipse cx="608" cy="484" rx="103" ry="105" fill="#C68649" stroke="#171717" stroke-width="18"/>
+    <path d="M348 374h234M354 427h211M357 482h205M354 538h211M348 594h234" fill="none" stroke="#4A2A18" stroke-width="12" stroke-linecap="round" opacity=".72"/>
+    <path d="M600 395h76v178h-76z" fill="#8D4F2B" stroke="#171717" stroke-width="14" stroke-linejoin="round"/>
+    <path d="M600 395h76M600 454h76M600 513h76" fill="none" stroke="#4A2A18" stroke-width="8" opacity=".45"/>
+    <circle cx="656" cy="488" r="8" class="amber"/>
+    <path d="M371 628v62M463 628v62M661 628v62" fill="none" stroke="#171717" stroke-width="28" stroke-linecap="round"/>
+    <path d="M344 690h80M435 690h78M632 690h78" fill="none" stroke="#171717" stroke-width="28" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(350 94)">
+    <text x="0" y="88" class="word charcoal" font-size="86">Backyard Sauna</text>
+    <text x="746" y="88" class="word" font-size="86" fill="#9B5A2E">Pro</text>
+    <rect x="4" y="118" width="690" height="9" rx="4.5" class="amber"/>
+  </g>
+</svg>
