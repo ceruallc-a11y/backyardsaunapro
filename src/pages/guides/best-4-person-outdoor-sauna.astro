@@ -8,26 +8,11 @@ import SponsoredNotice from '../../components/SponsoredNotice.astro';
 const picks = [
   {
     rank: 1,
-    sponsor: "sun-home",
-    sunHomeProduct: "luminar",
-    name: "Sun Home Luminar 2-Person Outdoor Infrared Sauna",
-    rating: "Premium",
-    tag: "BEST PREMIUM OUTDOOR INFRARED",
-    tagColor: "bg-stone-900 text-amber-100",
-    type: "Outdoor Infrared",
-    wood: "Premium cedar exterior",
-    summary: "If you want a premium outdoor sauna with full-spectrum infrared, integrated chromotherapy, and a finished aesthetic that looks built rather than assembled, the Luminar is the strongest option in this guide. It's an infrared experience, not a traditional rock-and-steam sauna deliver lower ambient temperatures (around 140 \u00b0F) with longer comfortable sessions and faster heat-up than a barrel + electric heater setup. Wellness-focused buyers tend to prefer this over traditional builds; sauna purists who want 180 \u00b0F l\u00f6yly will not.",
-    pros: ["Full-spectrum infrared (near, mid, far)", "No 240V install or separate heater purchase", "Premium materials and fit/finish", "Faster heat-up than traditional outdoor barrels"],
-    cons: ["Significantly higher cost than barrel kits", "Lower max temperature than traditional sauna", "No steam / l\u00f6yly option", "Premium delivery and placement logistics"],
-    buyerFit: "Best for buyers who want a premium outdoor infrared sauna with a luxury/wellness-oriented setup. Not the right pick for budget shoppers, traditional Finnish-style users, or anyone wanting wood-burning or steam.",
-  },
-  {
-    rank: 2,
     asin: "B017WJV8SO",
     name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
     price: "",
     rating: "4.5/5",
-    tag: "BEST TRADITIONAL BARREL",
+    tag: "BEST OVERALL",
     tagColor: "bg-amber-100 text-amber-800",
     type: "Traditional Barrel",
     wood: "Canadian Red Cedar",
@@ -37,7 +22,7 @@ const picks = [
     selectSaunasCollection: "barrel-saunas"
   },
   {
-    rank: 3,
+    rank: 2,
     asin: "B0DPG3R7PR",
     name: "AURGOD Outdoor Barrel Sauna with Wood Stove",
     price: "",
@@ -51,7 +36,7 @@ const picks = [
     cons: ["Hemlock, not cedar (less aromatic)", "Wood sourcing is ongoing work", "Less brand reputation than Almost Heaven"]
   },
   {
-    rank: 4,
+    rank: 3,
     asin: "B003Z11AXM",
     name: "Almost Heaven 6-Person Barrel Sauna",
     price: "",
@@ -92,8 +77,7 @@ const picks = [
       <h2 class="font-bold text-stone-800 mb-3">Quick Picks</h2>
       <div class="space-y-2 text-sm">
         {[
-          ["Best Premium Outdoor Infrared (Sponsored)", "Sun Home Luminar", "Premium"],
-          ["Best Traditional Barrel", "Almost Heaven Pinnacle", ""],
+          ["Best Overall", "Almost Heaven Pinnacle", ""],
           ["Best Wood-Burning Bundle", "AURGOD Barrel with Stove", ""],
           ["Best for Real 4-Person Use", "Almost Heaven 6-Person", ""],
         ].map(([label, name, price]) => (
