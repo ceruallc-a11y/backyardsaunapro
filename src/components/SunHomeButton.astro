@@ -1,13 +1,15 @@
 ---
 // SunHomeButton.astro
 // Sponsored placement button for Sun Home Saunas (Impact.com affiliate program).
-// IMPORTANT: When `url` is left empty, links to canonical sunhomesaunas.com.
+// IMPORTANT: When `url` is empty, links to canonical sunhomesaunas.com.
 // Replace href values site-wide with approved Impact.com affiliate URLs before
 // promoting publicly. Never use Streak tracking redirects here.
 const {
   product = "equinox",
   url = "",
   label = "See it at Sun Home",
+  code = "BSP",
+  showCode = true,
 } = Astro.props;
 
 const fallbacks = {
@@ -18,11 +20,19 @@ const fallbacks = {
 
 const href = url || fallbacks[product] || "https://sunhomesaunas.com";
 ---
-<a
-  href={href}
-  target="_blank"
-  rel="sponsored noopener"
-  class="inline-block bg-stone-900 hover:bg-stone-800 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
->
-  {label}
-</a>
+<div class="flex flex-wrap items-center gap-3">
+  <a
+    href={href}
+    target="_blank"
+    rel="sponsored noopener"
+    class="inline-block bg-stone-900 hover:bg-stone-800 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
+  >
+    {label}
+  </a>
+  {showCode && code && (
+    <span class="inline-flex items-center gap-2 text-sm text-stone-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
+      <span class="text-xs uppercase tracking-wide text-stone-500">Reader code</span>
+      <code class="font-mono font-bold text-stone-900">{code}</code>
+    </span>
+  )}
+</div>
