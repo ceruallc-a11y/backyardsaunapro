@@ -1,0 +1,211 @@
+---
+import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+import SunHomeButton from '../../components/SunHomeButton.astro';
+import SponsoredNotice from '../../components/SponsoredNotice.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best infrared sauna in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For buyers shopping at the premium end of the infrared market, the Sun Home Equinox is the strongest pick in 2026: full-spectrum infrared, integrated chromotherapy, and a finished design-forward cabin. For budget shoppers, the Dynamic Saunas Barcelona remains the most reviewed plug-in infrared at under $1,500."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is full-spectrum infrared worth the extra cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full-spectrum infrared layers near, mid, and far infrared in one cabin instead of only far. For users who care about the broader research on near infrared (skin, mitochondrial effects), the premium is justified. For users primarily wanting heat and sweat, a far-only cabin at a third of the price gets you 80 percent of the experience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is an infrared sauna different from a traditional sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Infrared saunas heat your body directly with infrared light at ambient temperatures around 120-150 \u00b0F. Traditional saunas heat the air with a rock-and-element heater to 170-195 \u00b0F and let you throw water for steam. The infrared experience is longer and more comfortable; the traditional experience is hotter, more intense, and gives you l\u00f6yly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are infrared saunas safe for daily use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes for most healthy adults. Sessions of 20-40 minutes a few times a week are well-tolerated. Hydrate before and after, and skip sessions if you're pregnant, taking medications that affect heat regulation, or have unstable cardiovascular conditions without your doctor's sign-off."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Best Infrared Sauna of 2026: Top Picks Reviewed"
+  description="The best infrared saunas of 2026, from premium full-spectrum cabins to plug-in budget units. Honest picks, real tradeoffs, no displayed prices."
+  canonical="/guides/best-infrared-sauna-of-2026"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best Infrared Sauna of 2026
+      </h1>
+      <p class="text-stone-500 text-sm">Updated May 2026 · 11 min read · Backyard Sauna Pro</p>
+      <p class="text-lg text-stone-600 mt-4">
+        Infrared saunas have stopped being a niche curiosity and become the default home-sauna purchase for buyers who don't want to run 240V, build a foundation, or wait six months for delivery. The market is now crowded, prices range from $700 to $14,000, and the spec sheets blur together. This guide cuts through it.
+      </p>
+    </header>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Infrared sauna cabin with bench and chromotherapy lighting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Disclosure:</strong> This post contains affiliate links. As an Amazon Associate I earn from qualifying purchases. We also work with Sun Home Saunas as a featured partner — that relationship is disclosed prominently next to every Sun Home placement below.
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-3">Quick Picks</h2>
+      <ul class="space-y-2 text-sm text-stone-700">
+        <li><span class="font-semibold">Best Premium Infrared (Sponsored):</span> Sun Home Equinox 2-Person Full-Spectrum</li>
+        <li><span class="font-semibold">Best Red Light + Infrared:</span> Sun Home Eclipse 2-Person</li>
+        <li><span class="font-semibold">Best Budget Plug-In:</span> Dynamic Saunas Barcelona</li>
+        <li><span class="font-semibold">Best 1-Person Compact:</span> Dynamic Saunas Andora</li>
+        <li><span class="font-semibold">Best Portable / Tent Style:</span> SereneLife Portable Infrared</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How We Picked</h2>
+    <p class="text-stone-700 mb-4">We don't run a lab. What we do is read the actual owner reviews after the 90-day novelty period, cross-reference manufacturer specs against what owners say in practice, and weigh editorial integrity against the noise of every brand calling itself "best."</p>
+    <p class="text-stone-700 mb-6">Where a product is part of a paid partnership, we say so above the placement. The category fit has to be defensible on its own — we don't move a sauna into a "best budget" slot because someone paid us. The Sun Home picks below are in the premium and red-light niches because that's where they actually win.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Premium Infrared</h2>
+
+    <div class="border border-stone-300 rounded-xl p-6 bg-stone-50 mb-8">
+      <SponsoredNotice />
+      <span class="text-xs font-semibold text-stone-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Premium / Best Overall Infrared</span>
+      <h3 class="text-2xl font-bold text-stone-900 mt-2 mb-3">Sun Home Equinox 2-Person Full-Spectrum Infrared</h3>
+      <p class="text-stone-700 mb-4">If you've spent any time shopping infrared at the premium end, you know what the category looks like: glossy cabins that arrive on a pallet, vague spec sheets, and a wide gap between marketing and what actually shows up. The Equinox is the rare unit that lines up. Full-spectrum infrared — near, mid, and far — instead of the far-only emitters most budget cabins ship with. Integrated chromotherapy. Eucalyptus-grade wood and panels that feel built rather than assembled.</p>
+      <p class="text-stone-700 mb-4">The real argument for the Equinox isn't the feature list. It's the experience. Infrared at this level runs cooler than a traditional 180 °F session, which sounds like a downside until you realize it means you can do 35-45 minutes without white-knuckling the bench. That changes how often you actually use the thing. The buyers who get the most out of the Equinox are the ones who treat it as a daily wellness tool, not a weekend ritual.</p>
+      <div class="bg-white border border-stone-200 rounded-lg p-4 mb-5 text-sm text-stone-700">
+        <strong class="block text-stone-900 mb-1">Who this is for</strong>
+        Best for buyers who want a premium, finished infrared cabin with full-spectrum emitters and a wellness-focused setup. Not the right pick if you're shopping primarily on price, want a traditional rock-and-steam sauna, or need a unit that ships in under a week.
+      </div>
+      <div class="grid grid-cols-2 gap-4 mb-5 text-sm">
+        <div>
+          <p class="font-semibold text-green-700 mb-2">Pros</p>
+          <ul class="space-y-1 text-stone-600">
+            <li>Full-spectrum (near, mid, far) emitters</li>
+            <li>Integrated chromotherapy + audio</li>
+            <li>Plug-in (no electrician)</li>
+            <li>Premium fit and finish</li>
+            <li>Strong customer service</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-red-600 mb-2">Cons</p>
+          <ul class="space-y-1 text-stone-600">
+            <li>Premium price tier</li>
+            <li>Lower max temperature than traditional</li>
+            <li>No steam / no löyly</li>
+            <li>White-glove delivery logistics</li>
+          </ul>
+        </div>
+      </div>
+      <SunHomeButton product="equinox" label="See Sun Home Equinox" />
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Red Light + Infrared</h2>
+
+    <div class="border border-stone-300 rounded-xl p-6 bg-stone-50 mb-8">
+      <SponsoredNotice />
+      <span class="text-xs font-semibold text-stone-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Red Light / Best Premium Wellness Sauna</span>
+      <h3 class="text-2xl font-bold text-stone-900 mt-2 mb-3">Sun Home Eclipse 2-Person Red Light + Infrared</h3>
+      <p class="text-stone-700 mb-4">Most "red light saunas" on the market are infrared cabins with a strip of LEDs glued to the wall. The Eclipse is the closest thing we've seen to a serious integration of clinical-grade red and near-infrared light into a usable sauna cabin. The panels deliver real irradiance at therapeutic wavelengths, not the watered-down 660nm sparkle that shows up in cheaper units.</p>
+      <p class="text-stone-700 mb-4">That matters because the use case is specific. If you want a sauna and a red-light panel, buy a sauna and a red-light panel separately and save several thousand dollars. If you want them in the same enclosure so you actually use both regularly — which most people don't, when they're separated — the Eclipse earns its slot. It's a wellness-focused cabin for buyers who care about the recovery and skin-health side of light therapy and are willing to pay for an integrated build.</p>
+      <div class="bg-white border border-stone-200 rounded-lg p-4 mb-5 text-sm text-stone-700">
+        <strong class="block text-stone-900 mb-1">Who this is for</strong>
+        Best for buyers who want serious red-light therapy and infrared sauna in one cabin, with premium build quality. Not the right pick if you only want a sauna, only want a red-light panel, are on a budget, or want a traditional high-heat session.
+      </div>
+      <SunHomeButton product="eclipse" label="See Sun Home Eclipse" />
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Budget Plug-In Infrared</h2>
+
+    <div class="border border-stone-200 rounded-xl p-6 bg-white mb-8">
+      <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Budget / Best Plug-In</span>
+      <h3 class="text-xl font-bold text-stone-900 mt-2 mb-3">Dynamic Saunas Barcelona 1-2 Person</h3>
+      <p class="text-stone-700 mb-4">The Barcelona has been on this list every year for a reason. It's the most reviewed plug-in infrared at its price point, it actually assembles in about an hour, and it runs on a standard 120V outlet without an electrician's bill. Far-infrared only, hemlock construction, and a max temperature around 140 °F. Not luxury, but honest and well-built for the price.</p>
+      <p class="text-stone-700 mb-4">This is the right pick for renters, apartment dwellers, anyone who can't run a 240V circuit, or anyone who's not sure they'll actually use a sauna and doesn't want to gamble four figures finding out.</p>
+      <AmazonButton asin="B00A2F99F0" />
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best 1-Person Compact</h2>
+
+    <div class="border border-stone-200 rounded-xl p-6 bg-white mb-8">
+      <h3 class="text-xl font-bold text-stone-900 mb-3">Dynamic Saunas Andora 1-Person</h3>
+      <p class="text-stone-700 mb-4">If floor space is the real constraint — a studio apartment, a small spare room, or a tight basement corner — the Andora is the cleanest 1-person infrared option. Same plug-in 120V design, same hemlock, smaller footprint. The tradeoff is obvious: only one person at a time, no stretching out.</p>
+      <AmazonButton asin="B003YH9DXG" />
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Portable / Tent Style</h2>
+
+    <div class="border border-stone-200 rounded-xl p-6 bg-white mb-8">
+      <h3 class="text-xl font-bold text-stone-900 mb-3">SereneLife Portable Infrared Sauna</h3>
+      <p class="text-stone-700 mb-4">Not a real sauna. It's a tent with an infrared element and your head sticks out. We say that up front. But for under a few hundred dollars, it's the cheapest path to regular infrared sessions, folds flat for storage, and works well as a supplemental recovery tool for athletes or for buyers in tight spaces. See our <a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline">portable sauna guide</a> for the full lineup.</p>
+      <AmazonButton asin="B084GY5CHB" />
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Look For in 2026</h2>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Full-spectrum vs far-only emitters</h3>
+    <p class="text-stone-700 mb-4">Far infrared does the heating and sweating. Near and mid infrared are where most of the recovery, skin, and mitochondrial research sits. A full-spectrum cabin gives you all three; a far-only cabin gives you a hot box. Whether the upgrade is worth it depends on whether you actually care about the broader research.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">EMF ratings</h3>
+    <p class="text-stone-700 mb-4">Low-EMF carbon panels are now table stakes. If a manufacturer doesn't publish EMF figures, treat that as a red flag. The premium brands list them; the cheap brands tend not to.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Wood quality</h3>
+    <p class="text-stone-700 mb-4">Most plug-in infrared cabins ship in Canadian hemlock. It's structurally fine and doesn't sap at infrared temperatures. Cedar is rare at this price point because the wood handles 180 °F traditional heat without warping — which is overkill for a 140 °F infrared cabin. Don't pay a cedar premium for a unit that never hits a temperature where it matters.</p>
+
+    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Electrical: 120V vs 240V</h3>
+    <p class="text-stone-700 mb-6">Most infrared cabins under 2kW run on a standard 120V outlet. That's the whole point. If a manufacturer is asking you to run 240V for an infrared unit, the unit is large enough that it's competing with a real traditional sauna build — and at that point the question becomes whether you want infrared at all or whether you want the high-heat löyly experience. See our <a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">infrared vs traditional comparison</a>.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What is the best infrared sauna in 2026?</h3>
+        <p class="text-stone-700">For premium buyers, the Sun Home Equinox is the strongest full-spectrum infrared cabin available. For budget buyers, the Dynamic Saunas Barcelona remains the most reviewed plug-in unit at its price.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Is full-spectrum infrared worth the extra cost?</h3>
+        <p class="text-stone-700">Yes if you care about the near-infrared research on recovery and skin. No if you primarily want heat and sweat — a far-only cabin gets you most of the way there at a third of the price.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How is infrared different from a traditional sauna?</h3>
+        <p class="text-stone-700">Infrared heats your body directly with light at 120-150 °F. Traditional heats the air to 170-195 °F with steam. Infrared is longer and gentler; traditional is hotter and more intense.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Are infrared saunas safe for daily use?</h3>
+        <p class="text-stone-700">For most healthy adults, yes. Hydrate, keep sessions in the 20-40 minute range, and check with your doctor if you're pregnant, on medications affecting heat regulation, or have unstable cardiovascular conditions.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/best-home-sauna/" class="text-amber-700 hover:underline">Best Home Sauna</a></li>
+        <li><a href="/guides/best-indoor-sauna-kits/" class="text-amber-700 hover:underline">Best Indoor Sauna Kits</a></li>
+        <li><a href="/guides/best-outdoor-sauna-of-2026/" class="text-amber-700 hover:underline">Best Outdoor Sauna of 2026</a></li>
+        <li><a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">Infrared vs Traditional Sauna</a></li>
+        <li><a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline">Best Portable Sauna</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
