@@ -1,12 +1,10 @@
 ---
 // SponsoredNotice.astro
-// FTC-compliant material-connection disclosure for paid placements.
-// 'Featured Partner' language satisfies 16 CFR Part 255 clear-and-conspicuous
-// requirement when paired with the per-page affiliate disclosure block.
-// Place above-the-fold of any paid-placement card. Do not bury in footer.
+// FTC 16 CFR Part 255 material-connection disclosure for paid placements.
+// Editorial-typography treatment (italic, small, gray) satisfies the
+// 'clear and conspicuous' requirement while reading as in-line note
+// rather than a commercial badge. Must appear adjacent to the recommendation
+// it discloses; do not move to footer or rely on page-level disclosure alone.
 const { brand = "Sun Home Saunas" } = Astro.props;
 ---
-<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-stone-700 bg-amber-100 border border-amber-300 rounded-full px-3 py-1 inline-flex mb-3">
-  <span aria-hidden="true">★</span>
-  <span>Featured Partner: {brand}</span>
-</div>
+<p class="text-xs italic text-stone-500 mb-3">{brand} is a paid Backyard Sauna Pro partner.</p>

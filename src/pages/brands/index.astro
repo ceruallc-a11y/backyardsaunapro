@@ -63,7 +63,7 @@ const brands = [
       {brands.map(brand => (
         <a href={brand.href} class={`block rounded-xl p-4 hover:shadow transition-all ${brand.featured ? 'bg-stone-50 border border-stone-300 hover:border-stone-400' : 'bg-white border border-stone-200 hover:border-amber-400'}`}>
           {brand.featured && (
-            <span class="text-xs font-semibold uppercase tracking-wide text-stone-600 bg-amber-100 border border-amber-300 rounded-full px-2 py-0.5 inline-block mb-2">Featured Partner</span>
+            <span class="text-xs italic text-stone-500 block mb-1">Paid partner</span>
           )}
           <h2 class="font-bold text-stone-900 mb-1">{brand.name}</h2>
           <p class="text-stone-500 text-sm">{brand.desc}</p>
