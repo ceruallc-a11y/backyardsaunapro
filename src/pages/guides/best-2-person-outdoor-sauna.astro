@@ -1,15 +1,32 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+import SunHomeButton from '../../components/SunHomeButton.astro';
+import SponsoredNotice from '../../components/SponsoredNotice.astro';
 
 const picks = [
   {
     rank: 1,
+    sponsor: "sun-home",
+    sunHomeProduct: "luminar",
+    name: "Sun Home Luminar 2-Person Outdoor Infrared Sauna",
+    rating: "Premium",
+    tag: "BEST PREMIUM OUTDOOR INFRARED",
+    tagColor: "bg-stone-900 text-amber-100",
+    type: "Outdoor Infrared",
+    capacity: "True 2-person",
+    summary: "For two people who want a premium outdoor sauna designed for daily wellness use rather than a traditional Finnish session, the Luminar is the cleanest pick in this guide. Full-spectrum infrared, integrated chromotherapy, finished aesthetics. Lower ambient temperatures than a barrel + electric heater (around 140 \u00b0F) but longer comfortable sessions and faster heat-up. Sized for two without the awkward over-sizing that comes with buying a 4-person barrel for a couple.",
+    pros: ["True 2-person infrared layout, no over-sizing", "Full-spectrum infrared (near, mid, far)", "No 240V install or separate heater purchase", "Faster heat-up than traditional outdoor barrels"],
+    cons: ["Significantly higher price than barrel kits", "Lower max temperature than traditional sauna", "No steam / l\u00f6yly option", "Premium delivery and placement logistics"],
+    buyerFit: "Best for couples wanting a premium outdoor infrared sauna with a luxury/wellness focus. Not the right pick for budget shoppers, traditional Finnish-style users, or anyone wanting wood-burning or steam.",
+  },
+  {
+    rank: 2,
     asin: "B017WJV8SO",
     name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
     
     rating: "4.5/5",
-    tag: "BEST OVERALL",
+    tag: "BEST TRADITIONAL BARREL",
     tagColor: "bg-amber-100 text-amber-800",
     type: "Traditional Barrel",
     capacity: "Rated 4-person, ideal for 2",
@@ -18,7 +35,7 @@ const picks = [
     cons: ["Heater sold separately", "Needs 240V electrical", "Bigger footprint"]
   },
   {
-    rank: 2,
+    rank: 3,
     asin: "B00A2F99F0",
     name: "Dynamic Saunas Barcelona Far Infrared",
     
@@ -32,7 +49,7 @@ const picks = [
     cons: ["No steam option", "1-2 person only", "Indoor/covered use only"]
   },
   {
-    rank: 3,
+    rank: 4,
     asin: "B003Z11AXM",
     name: "Almost Heaven Saunas 6-Person Barrel Sauna",
     
@@ -83,7 +100,14 @@ const picks = [
             <span class="text-xs text-stone-400">{pick.type} · {pick.capacity}</span>
           </div>
           <h3 class="text-xl font-bold text-stone-900 mb-2">{pick.name}</h3>
+          {pick.sponsor === 'sun-home' && <SponsoredNotice />}
           <p class="text-stone-600 text-sm mb-4">{pick.summary}</p>
+          {pick.buyerFit && (
+            <div class="bg-stone-50 border border-stone-200 rounded-lg p-4 mb-4 text-sm text-stone-700">
+              <strong class="block text-stone-900 mb-1">Who this is for</strong>
+              {pick.buyerFit}
+            </div>
+          )}
           <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
             <div>
               <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
@@ -95,7 +119,11 @@ const picks = [
             </div>
           </div>
           <p class="text-xs text-stone-400 mb-2">Rating: {pick.rating}</p>
-          <AmazonButton asin={pick.asin} price={pick.price} />
+          {pick.sponsor === 'sun-home' ? (
+            <SunHomeButton product={pick.sunHomeProduct} label="See Sun Home Luminar" />
+          ) : (
+            <AmazonButton asin={pick.asin} price={pick.price} />
+          )}
         </div>
       ))}
     </div>
