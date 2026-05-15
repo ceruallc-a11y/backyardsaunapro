@@ -1,10 +1,12 @@
 ---
 // SponsoredNotice.astro
-// FTC-style sponsored placement disclosure. Place above-the-fold of any
-// Sun Home (or other paid-placement) card. Do not bury in footer.
+// FTC-compliant material-connection disclosure for paid placements.
+// 'Featured Partner' language satisfies 16 CFR Part 255 clear-and-conspicuous
+// requirement when paired with the per-page affiliate disclosure block.
+// Place above-the-fold of any paid-placement card. Do not bury in footer.
 const { brand = "Sun Home Saunas" } = Astro.props;
 ---
 <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-stone-700 bg-amber-100 border border-amber-300 rounded-full px-3 py-1 inline-flex mb-3">
   <span aria-hidden="true">★</span>
-  <span>Sponsored, Featured Partner: {brand}</span>
+  <span>Featured Partner: {brand}</span>
 </div>
