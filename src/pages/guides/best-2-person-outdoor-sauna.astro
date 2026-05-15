@@ -94,7 +94,13 @@ const picks = [
 
     <div class="space-y-8">
       {picks.map(pick => (
-        <div class="bg-white border border-stone-200 rounded-xl shadow-sm p-6">
+        <div class="bg-white border border-stone-200 rounded-xl shadow-sm overflow-hidden">
+          {pick.sponsor === 'sun-home' && (
+            <div class="overflow-hidden">
+              <img src="/images/sun-home/luminar.jpg" alt="Sun Home Luminar 2-Person Outdoor Infrared sauna in a backyard" class="w-full h-auto object-cover max-h-72" loading="lazy" width="1600" height="1067" />
+            </div>
+          )}
+          <div class="p-6">
           <div class="flex items-start justify-between mb-3">
             <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>
             <span class="text-xs text-stone-400">{pick.type} · {pick.capacity}</span>
@@ -124,6 +130,7 @@ const picks = [
           ) : (
             <AmazonButton asin={pick.asin} price={pick.price} />
           )}
+          </div>
         </div>
       ))}
     </div>
