@@ -1,18 +1,22 @@
 ---
 // AdvertiserDisclosure.astro
-// Forbes Advisor-style subtle disclosure: small grey link that toggles a popover.
-// FTC 16 CFR Part 255 compliant: clear, conspicuous, placed before any product claim,
-// names the sponsor, states material connection. Doesn't read as a commercial billboard.
+// Forbes Advisor-style: ultra-subtle grey link, top-right of article.
+// Above-the-fold placement preserves FTC 16 CFR Part 255 clear-and-conspicuous
+// requirement while staying out of the editorial visual hierarchy.
 const { brand = "Sun Home Saunas" } = Astro.props;
 ---
 
-<div class="not-prose flex justify-end mb-2 text-xs text-stone-500">
-  <details class="group inline-block text-right">
-    <summary class="cursor-pointer underline decoration-dotted underline-offset-2 hover:text-stone-700 list-none select-none">
+<div class="not-prose flex justify-end mb-1 -mt-2">
+  <details class="group inline-block text-right relative">
+    <summary
+      class="cursor-pointer text-[10px] uppercase tracking-wide text-stone-400 hover:text-stone-600 transition-colors list-none select-none"
+    >
       Advertiser Disclosure
     </summary>
-    <div class="mt-2 max-w-md text-left border border-stone-200 bg-white rounded-md p-3 shadow-sm text-stone-600 leading-relaxed">
-      We may earn a commission from links on this page. Some product placements, including those from <strong>{brand}</strong>, are paid partnerships. Editorial ratings, pros, cons, and rankings are our own.
+    <div
+      class="absolute right-0 mt-1 w-72 z-10 text-left text-[11px] leading-snug text-stone-600 border border-stone-200 bg-white rounded-md p-2.5 shadow-sm"
+    >
+      We may earn a commission from links on this page. Some product placements, including those from <strong>{brand}</strong>, are paid partnerships. Ratings, pros, cons, and rankings are our own.
     </div>
   </details>
 </div>
