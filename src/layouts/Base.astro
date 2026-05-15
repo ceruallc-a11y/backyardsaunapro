@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 export interface Props {
   title: string;
   description: string;
@@ -97,6 +98,7 @@ const siteUrl = "https://backyardsaunapro.com";
   <!-- Footer -->
   <footer class="bg-stone-900 text-stone-400 text-sm py-8 px-6 mt-16">
     <div class="max-w-5xl mx-auto">
+      <NewsletterSignup />
       <nav class="flex flex-wrap gap-x-6 gap-y-2 mb-5 text-stone-300">
         <a href="/reviews/" class="hover:text-white transition-colors">Reviews</a>
         <a href="/guides/" class="hover:text-white transition-colors">Guides</a>
