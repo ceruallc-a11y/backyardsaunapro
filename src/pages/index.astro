@@ -1,31 +1,34 @@
 ---
 import Base from '../layouts/Base.astro';
 import AmazonButton from '../components/AmazonButton.astro';
+import SunHomeButton from '../components/SunHomeButton.astro';
+import SponsoredNotice from '../components/SponsoredNotice.astro';
 
 const featuredPicks = [
+  {
+    sponsor: "sun-home",
+    sunHomeProduct: "equinox",
+    image: "/images/sun-home/equinox.jpg",
+    name: "Sun Home Equinox 2-Person Full-Spectrum Infrared",
+    rating: "Premium",
+    blurb: "Premium full-spectrum infrared cabin. Plug-in 120V install, integrated chromotherapy, and a finished design-forward build. Our pick for premium home sauna in 2026.",
+    tag: "BEST OVERALL"
+  },
   {
     asin: "B017WJV8SO",
     name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
     price: "",
     rating: "4.5/5",
-    blurb: "The most popular outdoor barrel sauna on Amazon. Canadian red cedar, solid hardware, and a genuine Finnish experience. Our top pick for most homeowners.",
-    tag: "BEST OVERALL"
+    blurb: "The most popular outdoor barrel sauna on Amazon. Canadian red cedar, solid hardware, and a genuine Finnish experience with rocks and steam.",
+    tag: "BEST TRADITIONAL"
   },
   {
     asin: "B00A2F99F0",
     name: "Dynamic Saunas Barcelona Far Infrared",
     price: "",
     rating: "4.4/5",
-    blurb: "Plugs into a standard outlet. Heats in 15 minutes. Low-EMF carbon panels. The easiest way to get a real sauna experience without the installation complexity.",
-    tag: "BEST VALUE"
-  },
-  {
-    asin: "B003Z11AXM",
-    name: "Almost Heaven 6-Person Barrel Sauna",
-    price: "",
-    rating: "4.4/5",
-    blurb: "For families and serious sauna users. Enough room to actually lie down. The same Almost Heaven quality in a size that fits real groups.",
-    tag: "BEST LARGE"
+    blurb: "Plugs into a standard outlet. Heats in 15 minutes. Low-EMF carbon panels. The easiest budget path to a real sauna experience without the installation complexity.",
+    tag: "BEST BUDGET"
   }
 ];
 ---
@@ -54,26 +57,54 @@ const featuredPicks = [
 
   <!-- Featured Picks -->
   <section class="mt-12">
-    <h2 class="text-2xl font-bold mb-2 text-stone-900">Our Top Picks</h2>
+    <h2 class="text-2xl font-bold mb-2 text-stone-900">Our Top Picks for 2026</h2>
     <p class="text-stone-500 text-sm mb-6">Quick overview. <a href="/best-saunas/" class="text-amber-700 hover:underline">Full reviews here.</a></p>
     <div class="grid md:grid-cols-3 gap-6">
       {featuredPicks.map(pick => (
-        <div class="bg-white rounded-xl shadow-sm p-6 border border-stone-200 flex flex-col">
-          <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded w-fit mb-3">{pick.tag}</span>
+        <div class={`rounded-xl shadow-sm p-6 border flex flex-col ${pick.sponsor === 'sun-home' ? 'bg-stone-50 border-stone-300' : 'bg-white border-stone-200'}`}>
+          {pick.sponsor === 'sun-home' && pick.image && (
+            <div class="bg-white rounded-lg overflow-hidden mb-4">
+              <img src={pick.image} alt={pick.name} class="w-full h-32 object-contain mx-auto" loading="lazy" />
+            </div>
+          )}
+          <span class={`text-xs font-bold px-2 py-1 rounded w-fit mb-3 ${pick.sponsor === 'sun-home' ? 'bg-stone-900 text-amber-100' : 'bg-amber-100 text-amber-800'}`}>{pick.tag}</span>
+          {pick.sponsor === 'sun-home' && <SponsoredNotice />}
           <h3 class="font-semibold text-stone-900 mb-2 leading-snug">{pick.name}</h3>
           <p class="text-sm text-stone-600 flex-grow mb-3">{pick.blurb}</p>
           <p class="text-xs text-stone-400 mb-3">Rating: {pick.rating}</p>
-          <AmazonButton asin={pick.asin} price={pick.price} />
+          {pick.sponsor === 'sun-home' ? (
+            <SunHomeButton product={pick.sunHomeProduct} label="See Sun Home Equinox" />
+          ) : (
+            <AmazonButton asin={pick.asin} price={pick.price} />
+          )}
         </div>
       ))}
     </div>
   </section>
 
-  <!-- Buying Guides -->
+  <!-- 2026 Featured Guides -->
   <section class="mt-16">
+    <h2 class="text-2xl font-bold mb-6 text-stone-900">New for 2026</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      {[
+        ["/guides/best-infrared-sauna-of-2026/", "Best Infrared Sauna of 2026", "Premium full-spectrum cabins, budget plug-ins, and red light combos. Honest picks for every price point."],
+        ["/guides/best-outdoor-sauna-of-2026/", "Best Outdoor Sauna of 2026", "Barrel kits, wood-burning bundles, and premium outdoor infrared. The full landscape compared."],
+      ].map(([href, title, desc]) => (
+        <a href={href} class="block bg-amber-50 border border-amber-300 rounded-xl p-5 hover:border-amber-500 hover:shadow transition-all">
+          <p class="font-semibold text-stone-900">{title}</p>
+          <p class="text-sm text-stone-600 mt-1">{desc}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Buying Guides -->
+  <section class="mt-12">
     <h2 class="text-2xl font-bold mb-6 text-stone-900">Buying Guides</h2>
     <div class="grid md:grid-cols-2 gap-4">
       {[
+        ["/guides/best-home-sauna/", "Best Home Sauna", "Top picks across every setup and budget. Premium infrared, traditional barrel, and budget plug-in."],
+        ["/guides/best-indoor-sauna-kits/", "Best Indoor Sauna Kits", "Plug-in infrared and traditional steam kits compared for every budget and space."],
         ["/guides/best-saunas-under-5000", "Best Saunas Under $5,000", "The price range where quality and value actually meet."],
         ["/guides/best-saunas-under-2000", "Best Saunas Under $2,000", "Decent saunas exist under $2k. Here's where to find them."],
         ["/guides/best-4-person-outdoor-sauna", "Best 4-Person Outdoor Saunas", "What '4-person' actually means and the best options."],

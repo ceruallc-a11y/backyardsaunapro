@@ -1,0 +1,175 @@
+---
+import Base from '../../layouts/Base.astro';
+import SunHomeButton from '../../components/SunHomeButton.astro';
+import SponsoredNotice from '../../components/SponsoredNotice.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Sun Home Saunas a good brand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sun Home Saunas is a premium US-based infrared and red light sauna brand voted Best Home Sauna by Fortune (2026) and Best Infrared Home Sauna by Forbes (2025). They publish independently-verified EMF testing (Vitatech, 0.5 mG), VOC testing (VERT, 27 ug/m3 TVOC, AIHA-accredited), and operating temperature data (GGR-verified 165-170 degrees F). For premium buyers who want third-party safety data and an app-integrated cabin, Sun Home is the strongest option in the category."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Sun Home Equinox, Luminar, and Eclipse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Equinox is the indoor premium full-spectrum infrared (2-person and 3-person). Luminar is the outdoor infrared with aerospace-grade aluminum exterior (2-person and 5-person). Eclipse is the indoor infrared cabin with factory-integrated dual-tower red light therapy at 630-850nm (2-person and 4-person). Equinox is the best overall pick for indoor wellness use; Luminar is the right choice for outdoor placement; Eclipse is for buyers who specifically want red light therapy integrated with their sauna."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Sun Home make a 4-person outdoor sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sun Home does not currently make a dedicated 4-person outdoor sauna. The Luminar outdoor line ships in 2-person and 5-person configurations. For 4-person outdoor traditional barrel saunas, Almost Heaven and Redwood Outdoors are stronger options. The Sun Home Eclipse and Solstice both offer 4-person configurations but are indoor products."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Sun Home Saunas worth the price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sun Home sits at the premium end of the infrared sauna market. The value case rests on three things: independently-verified safety testing (EMF, VOC, temperature), full-spectrum heaters versus far-only emitters in budget cabins, and a native app with guided breathwork and remote preheat. For buyers who care about these specifics, the premium is justified. For buyers who primarily want heat and sweat without third-party verification, a budget plug-in like Dynamic Barcelona at a third of the price gets you most of the experience."
+      }
+    }
+  ]
+};
+---
+<Base
+  title="Sun Home Saunas Review (2026): Equinox, Luminar, Eclipse Compared"
+  description="An honest review of Sun Home Saunas premium infrared and red light models. Independently-verified testing, who it's for, and how the lineup compares."
+  canonical="/brands/sun-home-saunas-review"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Brand Reviews</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Sun Home Saunas Review (2026)</h1>
+      <p class="text-stone-500 text-sm">Updated May 2026 &middot; 8 min read &middot; Backyard Sauna Pro</p>
+      <p class="text-lg text-stone-600 mt-4">
+        Sun Home Saunas is the premium US infrared and red light brand that has been picking up most of the major editorial nods over the last two years (Fortune, Forbes, Rolling Stone, NY Post). They lead the category on third-party safety testing. Whether they're the right brand for you depends on what you actually want from a sauna.
+      </p>
+    </header>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/sun-home/luminar.jpg" alt="Sun Home Luminar outdoor infrared sauna in a backyard" class="w-full object-cover max-h-80" loading="lazy" width="1600" height="1067" />
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Disclosure:</strong> We work with Sun Home Saunas as a featured partner. That relationship does not change our editorial framing of the brand's strengths and weaknesses. Affiliate links on this page may earn a commission at no extra cost to you.
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-8 mb-4">The Quick Take</h2>
+    <p class="text-stone-700 mb-4">Premium full-spectrum infrared and red light therapy cabins. The brand publishes independently-verified EMF (0.5 mG, Vitatech), VOC (27 ug/m3, VERT/AIHA), and operating temperature data (165-170 degrees F, GGR-verified) that most competitors in the category simply do not. App integration, magnetic tool-free assembly, in-home warranty service, and a finished aesthetic that arrives ready to use rather than as a kit.</p>
+    <p class="text-stone-700 mb-6">Not the right brand if you want traditional Finnish heat with rocks and steam, if you are shopping under $2,000, or if you want a wood-burning cabin. Sun Home is firmly in the wellness-infrared lane and does not pretend otherwise.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">The Lineup</h2>
+
+    <div class="space-y-6">
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <h3 class="text-xl font-bold text-stone-900 mb-2">Equinox (2-person, 3-person indoor)</h3>
+        <p class="text-stone-700 text-sm mb-3">Full-spectrum infrared (near, mid, far), 120V plug-and-play install, kiln-dried eucalyptus interior, GGR-verified 165-170 degrees F operating temperature. No app or red light therapy. This is the brand's editorial flagship and our pick for Best Overall premium indoor infrared in 2026.</p>
+        <SponsoredNotice />
+        <div class="mt-3">
+          <SunHomeButton product="equinox" label="See Sun Home Equinox" />
+        </div>
+      </div>
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <h3 class="text-xl font-bold text-stone-900 mb-2">Luminar (2-person, 5-person outdoor)</h3>
+        <p class="text-stone-700 text-sm mb-3">Outdoor infrared with patented aerospace-grade aluminum exterior and marine-grade matte black hardware. Canadian red cedar interior, native Sun Home app, optional red light therapy add-on. No annual staining and no cover required between sessions, which is a meaningful long-term maintenance win versus traditional cedar barrel kits.</p>
+        <SponsoredNotice />
+        <div class="mt-3">
+          <SunHomeButton product="luminar" label="See Sun Home Luminar" />
+        </div>
+      </div>
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <h3 class="text-xl font-bold text-stone-900 mb-2">Eclipse (2-person, 4-person indoor)</h3>
+        <p class="text-stone-700 text-sm mb-3">The brand's red light + infrared cabin. Factory-integrated dual-tower red light therapy at 630-850nm with 1,800W output, included standard. Canadian red cedar interior, native Sun Home app with guided breathwork and remote preheat. Best for buyers who want serious RLT integrated with their sauna rather than as a separate panel purchase.</p>
+        <SponsoredNotice />
+        <div class="mt-3">
+          <SunHomeButton product="eclipse" label="See Sun Home Eclipse" />
+        </div>
+      </div>
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <h3 class="text-xl font-bold text-stone-900 mb-2">Pod (1-person indoor)</h3>
+        <p class="text-stone-700 text-sm mb-3">Compact single-occupant cabin with factory-integrated red light therapy at 660 + 850nm and the native Sun Home app. Designed for apartments, home offices, and tight wellness rooms where a 2-person cabin will not fit. Not a featured placement on Backyard Sauna Pro, but worth knowing about if floor space is the constraint.</p>
+      </div>
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <h3 class="text-xl font-bold text-stone-900 mb-2">Solstice (1, 2, 3, 4-person indoor)</h3>
+        <p class="text-stone-700 text-sm mb-3">The most affordable Sun Home line. Premium indoor build at a lower entry point than Equinox. Kiln-dried eucalyptus interior, no app, no red light therapy. Solid choice for buyers who want Sun Home build quality without the full Equinox spec sheet.</p>
+      </div>
+
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Sun Home Does Better Than Competitors</h2>
+    <ul class="list-disc pl-6 space-y-2 text-stone-700 mb-6">
+      <li><strong>Third-party safety testing.</strong> Most infrared sauna brands publish nothing on EMF, VOC, or verified operating temperature. Sun Home publishes all three with named labs.</li>
+      <li><strong>Full-spectrum versus far-only emitters.</strong> Budget infrared cabins use far-only panels that hit roughly 140 degrees F. Sun Home's full-spectrum heaters (Eclipse, Luminar) layer near and mid infrared on top.</li>
+      <li><strong>App integration.</strong> Eclipse, Luminar, and Pod include the native Sun Home app for guided breathwork, remote preheat, and session scheduling. Niche but useful.</li>
+      <li><strong>In-home warranty service.</strong> Eclipse, Luminar, and Pod carry a limited lifetime residential warranty with in-home technician visits, not ship-parts-DIY.</li>
+      <li><strong>Tool-free magnetic assembly.</strong> Most kit saunas are an afternoon with a drill. Equinox and the rest of the lineup go together magnetically.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where Sun Home Is Not the Right Pick</h2>
+    <ul class="list-disc pl-6 space-y-2 text-stone-700 mb-6">
+      <li><strong>Traditional Finnish heat.</strong> Sun Home runs at infrared temperatures (165-170 degrees F max), not 195 degrees F barrel sauna heat. No rocks, no l&ouml;yly. For traditional, see <a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven</a> or <a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk LeisureCraft</a>.</li>
+      <li><strong>Budget under $2,000.</strong> Sun Home is premium-tier. <a href="/brands/dynamic-saunas-review/" class="text-amber-700 hover:underline">Dynamic Saunas</a> (Barcelona, Andora) is the right budget alternative.</li>
+      <li><strong>Wood-burning saunas.</strong> Sun Home is electric and infrared only. For wood-burning, look at the AURGOD bundle (Amazon) or pair an Almost Heaven kit with a Harvia M3 or HUUM wood stove.</li>
+      <li><strong>Dedicated 4-person outdoor.</strong> Luminar ships in 2-person and 5-person outdoor configurations. There is no 4-person outdoor Sun Home product.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Featured Sun Home Placements on Backyard Sauna Pro</h2>
+    <ul class="space-y-2 text-sm mb-8">
+      <li><a href="/guides/best-home-sauna/" class="text-amber-700 hover:underline">Best Home Sauna</a> (Equinox = Best Overall)</li>
+      <li><a href="/guides/best-indoor-sauna-kits/" class="text-amber-700 hover:underline">Best Indoor Sauna Kits</a> (Equinox = Best Overall, Eclipse secondary)</li>
+      <li><a href="/guides/best-infrared-sauna-of-2026/" class="text-amber-700 hover:underline">Best Infrared Sauna of 2026</a> (Equinox = Best Overall, Eclipse = Best Red Light)</li>
+      <li><a href="/guides/best-2-person-outdoor-sauna/" class="text-amber-700 hover:underline">Best 2-Person Outdoor Sauna</a> (Luminar = Best Overall)</li>
+      <li><a href="/guides/best-outdoor-sauna-of-2026/" class="text-amber-700 hover:underline">Best Outdoor Sauna of 2026</a> (Luminar = Best Overall)</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5 mb-10">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Is Sun Home Saunas a good brand?</h3>
+        <p class="text-stone-700 text-sm">For premium infrared buyers, yes. Voted Best Home Sauna by Fortune (2026) and Best Infrared Home Sauna by Forbes (2025). Independently-verified EMF, VOC, and operating temperature data is rare in this category and Sun Home publishes all three.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Equinox vs Luminar vs Eclipse?</h3>
+        <p class="text-stone-700 text-sm">Equinox = indoor premium full-spectrum. Luminar = outdoor (2P and 5P). Eclipse = indoor with integrated red light therapy.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Does Sun Home make a 4-person outdoor sauna?</h3>
+        <p class="text-stone-700 text-sm">No. The outdoor Luminar line ships in 2-person and 5-person. Eclipse 4P and Solstice 4P are indoor products. For 4-person outdoor, see Almost Heaven Pinnacle or Redwood Outdoors.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Are Sun Home Saunas worth the price?</h3>
+        <p class="text-stone-700 text-sm">If you value third-party testing, full-spectrum heaters, app integration, and finished build quality, yes. If you only want heat and sweat, a Dynamic Barcelona at a third of the price gets you most of the experience.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Saunas Review</a></li>
+        <li><a href="/brands/dynamic-saunas-review/" class="text-amber-700 hover:underline">Dynamic Saunas Review</a></li>
+        <li><a href="/brands/redwood-outdoors-sauna-review/" class="text-amber-700 hover:underline">Redwood Outdoors Review</a></li>
+        <li><a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">Infrared vs Traditional Sauna</a></li>
+        <li><a href="/best-saunas/" class="text-amber-700 hover:underline">Best Backyard Saunas of 2026</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>

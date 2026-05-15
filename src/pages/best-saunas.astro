@@ -2,24 +2,74 @@
 import Base from '../layouts/Base.astro';
 import AmazonButton from '../components/AmazonButton.astro';
 import SelectSaunasButton from '../components/SelectSaunasButton.astro';
+import SunHomeButton from '../components/SunHomeButton.astro';
+import SponsoredNotice from '../components/SponsoredNotice.astro';
 
 const picks = [
   {
     rank: 1,
+    sponsor: "sun-home",
+    sunHomeProduct: "equinox",
+    image: "/images/sun-home/equinox.jpg",
+    name: "Sun Home Equinox 2-Person Full-Spectrum Infrared",
+    price: "",
+    rating: "Premium",
+    tag: "BEST OVERALL",
+    tagColor: "bg-stone-900 text-amber-100",
+    pros: ["Full-spectrum infrared (near, mid, far)", "Plug-in 120V install, no electrician", "Integrated chromotherapy and audio", "Premium kiln-dried eucalyptus build"],
+    cons: ["Premium price tier", "Lower max temperature than traditional (around 165 \u00b0F)", "No rocks, no l\u00f6yly", "White-glove delivery logistics"],
+    best_for: "Premium buyers who want a finished, design-forward infrared cabin for daily wellness use",
+    type: "Premium Indoor Infrared",
+    buyerFit: "Best for buyers shopping at the premium end who want full-spectrum infrared and a polished home setup. Not the right pick for budget shoppers, traditional Finnish-style users, or anyone wanting wood-burning or steam.",
+  },
+  {
+    rank: 2,
     asin: "B017WJV8SO",
     name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
     price: "",
     rating: "4.5/5 ",
-    tag: "BEST OVERALL",
+    tag: "BEST TRADITIONAL",
     tagColor: "bg-amber-100 text-amber-800",
     pros: ["Beautiful cedar construction", "Easy 4-6 hour assembly", "Great heat retention from barrel shape", "Works with most sauna heaters"],
     cons: ["Needs 240V heater (sold separately)", "Not for tight spaces"],
-    best_for: "Homeowners who want a permanent, beautiful outdoor sauna",
+    best_for: "Homeowners who want a permanent, beautiful outdoor sauna with traditional Finnish heat",
     type: "Traditional / Barrel",
     selectSaunasCollection: "barrel-saunas"
   },
   {
-    rank: 2,
+    rank: 3,
+    sponsor: "sun-home",
+    sunHomeProduct: "luminar",
+    image: "/images/sun-home/luminar.jpg",
+    name: "Sun Home Luminar 2-Person Outdoor Infrared",
+    price: "",
+    rating: "Premium",
+    tag: "BEST OUTDOOR",
+    tagColor: "bg-stone-900 text-amber-100",
+    pros: ["Patented aerospace-grade aluminum exterior", "Plug-in 120V install in most cases", "Native Sun Home app with remote preheat", "No annual staining or cover required"],
+    cons: ["Premium price tier", "Lower max temperature than traditional", "No rocks, no l\u00f6yly", "Larger footprint than a 2-person barrel"],
+    best_for: "Buyers who want a finished outdoor cabin that arrives ready to use with no foundation or electrical contractor",
+    type: "Premium Outdoor Infrared",
+    buyerFit: "Best for buyers who want a premium outdoor infrared cabin with a low-maintenance exterior. Not the right pick for buyers shopping on price, wanting wood-burning, or wanting traditional steam.",
+  },
+  {
+    rank: 4,
+    sponsor: "sun-home",
+    sunHomeProduct: "eclipse",
+    image: "/images/sun-home/eclipse.jpg",
+    name: "Sun Home Eclipse 2-Person Red Light + Infrared",
+    price: "",
+    rating: "Premium",
+    tag: "BEST RED LIGHT",
+    tagColor: "bg-stone-900 text-amber-100",
+    pros: ["Factory-integrated dual-tower red light (630-850nm, 1,800W)", "Native Sun Home app with guided breathwork", "Canadian red cedar interior", "Plug-in 120V install"],
+    cons: ["Premium price tier", "Specific use case (RLT + infrared combined)", "Not a traditional sauna experience", "Higher cost than buying RLT + sauna separately"],
+    best_for: "Buyers who want serious red light therapy and infrared in one cabin instead of two separate units",
+    type: "Premium Indoor Red Light + Infrared",
+    buyerFit: "Best for buyers who specifically want red light therapy integrated with their sauna in a single premium build. Not the right pick if you only want a sauna, only want a red light panel, or are budget-focused.",
+  },
+  {
+    rank: 5,
     asin: "B00A2F99F0",
     name: "Dynamic Saunas Barcelona 1-2 Person Far Infrared",
     price: "",
@@ -32,7 +82,7 @@ const picks = [
     type: "Infrared / Indoor"
   },
   {
-    rank: 3,
+    rank: 6,
     asin: "B017WJV8SO",
     name: "Dundalk LeisureCraft Harmony 2-Person Sauna",
     price: "",
@@ -46,7 +96,7 @@ const picks = [
     selectSaunasCollection: "outdoor-saunas"
   },
   {
-    rank: 4,
+    rank: 7,
     asin: "B084GY5CHB",
     name: "SereneLife Portable Steam Sauna",
     price: "",
@@ -61,26 +111,36 @@ const picks = [
 ];
 ---
 <Base
-  title="Best Backyard Saunas of 2025 Top Picks for Every Budget"
-  description="Our experts tested and ranked the best backyard saunas of 2025. From budget infrared to premium Finnish barrel saunas find your perfect match."
+  title="Best Backyard Saunas of 2026: Top Picks for Every Budget"
+  description="Our top sauna picks for 2026. From premium infrared cabins to budget plug-ins and traditional Finnish barrels. Real picks, honest tradeoffs."
   canonical="/best-saunas"
 >
   <article class="max-w-3xl mx-auto">
     <header class="mb-10">
       <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Best Picks</p>
       <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Backyard Saunas of 2025
+        Best Backyard Saunas of 2026
       </h1>
-      <p class="text-stone-500 text-sm mb-4">Updated January 2025 · 12 min read</p>
+      <p class="text-stone-500 text-sm mb-4">Updated May 2026 · 12 min read</p>
       <p class="text-lg text-stone-600">
-        We researched over 40 backyard saunas comparing specs, real customer reviews, build quality, and long-term value. Here are the ones actually worth your money.
+        We researched over 40 saunas comparing specs, real owner reviews, build quality, and long-term value. Here are the ones actually worth your money in 2026, with sponsored partner placements clearly disclosed above each card.
       </p>
     </header>
 
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 text-sm text-stone-700">
+      <strong>Disclosure:</strong> This page contains affiliate links. As an Amazon Associate I earn from qualifying purchases. We also work with Sun Home Saunas as a featured partner. That relationship is disclosed prominently next to every Sun Home placement below.
+    </div>
+
     <div class="space-y-10">
       {picks.map(pick => (
-        <div class="bg-white border border-stone-200 rounded-xl shadow-sm overflow-hidden">
+        <div class={`border rounded-xl shadow-sm overflow-hidden ${pick.sponsor === 'sun-home' ? 'border-stone-300 bg-stone-50' : 'bg-white border-stone-200'}`}>
+          {pick.sponsor === 'sun-home' && pick.image && (
+            <div class={pick.sunHomeProduct === 'equinox' ? 'bg-white p-5' : 'overflow-hidden'}>
+              <img src={pick.image} alt={pick.name} class={pick.sunHomeProduct === 'equinox' ? 'w-full h-auto object-contain max-h-72 mx-auto' : 'w-full h-auto object-cover max-h-72'} loading="lazy" width="1600" height="1067" />
+            </div>
+          )}
           <div class="p-6">
+            {pick.sponsor === 'sun-home' && <SponsoredNotice />}
             <div class="flex items-start justify-between mb-3">
               <div>
                 <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>
@@ -90,6 +150,12 @@ const picks = [
             </div>
             <h2 class="text-xl font-bold text-stone-900 mb-1">{pick.name}</h2>
             <p class="text-sm text-stone-500 mb-4">Best for: {pick.best_for}</p>
+            {pick.buyerFit && (
+              <div class="bg-white border border-stone-200 rounded-lg p-4 mb-4 text-sm text-stone-700">
+                <strong class="block text-stone-900 mb-1">Who this is for</strong>
+                {pick.buyerFit}
+              </div>
+            )}
             <div class="grid md:grid-cols-2 gap-4 mb-4">
               <div>
                 <h4 class="text-xs font-bold text-green-700 uppercase mb-1">Pros</h4>
@@ -105,8 +171,14 @@ const picks = [
               </div>
             </div>
             <div class="flex flex-wrap gap-3">
-              <AmazonButton asin={pick.asin} price={pick.price} />
-              {pick.selectSaunasCollection && <SelectSaunasButton collection={pick.selectSaunasCollection} label="Shop on Select Saunas" />}
+              {pick.sponsor === 'sun-home' ? (
+                <SunHomeButton product={pick.sunHomeProduct} label={`See Sun Home ${pick.sunHomeProduct.charAt(0).toUpperCase() + pick.sunHomeProduct.slice(1)}`} />
+              ) : (
+                <>
+                  <AmazonButton asin={pick.asin} price={pick.price} />
+                  {pick.selectSaunasCollection && <SelectSaunasButton collection={pick.selectSaunasCollection} label="Shop on Select Saunas" />}
+                </>
+              )}
             </div>
           </div>
         </div>

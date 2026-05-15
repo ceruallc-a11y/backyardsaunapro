@@ -1,9 +1,58 @@
 ---
 import Base from '../../layouts/Base.astro';
+
+const brands = [
+  {
+    href: "/brands/sun-home-saunas-review/",
+    name: "Sun Home Saunas",
+    desc: "Premium infrared and red light sauna brand. Equinox, Luminar, Eclipse models with verified EMF, VOC, and temperature testing. (Featured partner.)",
+    featured: true,
+  },
+  {
+    href: "/brands/almost-heaven-sauna-review/",
+    name: "Almost Heaven Saunas",
+    desc: "The most popular US barrel sauna brand. Quality, value, and best models reviewed.",
+  },
+  {
+    href: "/brands/dundalk-leisurecraft-review/",
+    name: "Dundalk LeisureCraft",
+    desc: "Premium Canadian-made barrel saunas. Thick clear cedar and 30+ year build quality reviewed.",
+  },
+  {
+    href: "/brands/redwood-outdoors-sauna-review/",
+    name: "Redwood Outdoors",
+    desc: "Premium Thermowood barrel and cabin saunas. Better outdoor durability than cedar, is the premium worth it?",
+  },
+  {
+    href: "/brands/finnleo-sauna-review/",
+    name: "Finnleo Saunas",
+    desc: "Premium Finnish brand with strong US dealer support. Who it's for and whether the price premium is worth it.",
+  },
+  {
+    href: "/brands/harvia-sauna-heater-review/",
+    name: "Harvia Sauna Heaters",
+    desc: "The world's most popular sauna heater brand. KIP, M3, Cilindro reviewed and sized for your room.",
+  },
+  {
+    href: "/brands/huum-sauna-heater-review/",
+    name: "HUUM Sauna Heaters",
+    desc: "Estonian heaters with exceptional design, and the UL listing issue US buyers need to know.",
+  },
+  {
+    href: "/brands/dynamic-saunas-review/",
+    name: "Dynamic Saunas",
+    desc: "The top-rated plug-in infrared sauna brand. What they get right, where they cut corners, and which model to buy.",
+  },
+  {
+    href: "/brands/finnish-sauna-builders-review/",
+    name: "Finnish Sauna Builders",
+    desc: "Specialty sauna retailer carrying Almost Heaven, Dundalk, and HUUM. Strong customer service, worth the slight premium?",
+  },
+];
 ---
 <Base
-  title="Sauna Brand Reviews - Backyard Sauna Pro"
-  description="Honest brand overviews and comparisons for the top outdoor sauna manufacturers, Almost Heaven, Dundalk, Harvia, Dynamic Saunas, and more."
+  title="Sauna Brand Reviews | Backyard Sauna Pro"
+  description="Honest brand overviews for the top outdoor and infrared sauna manufacturers: Sun Home, Almost Heaven, Dundalk, Harvia, Dynamic Saunas, and more."
   canonical="/brands"
 >
   <div class="max-w-3xl mx-auto">
@@ -11,53 +60,15 @@ import Base from '../../layouts/Base.astro';
     <p class="text-stone-500 mb-10">Who makes a good sauna, and who to avoid. Brand-by-brand breakdowns.</p>
 
     <div class="grid md:grid-cols-2 gap-4">
-      <a href="/brands/almost-heaven-sauna-review/" class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
-        <h2 class="font-bold text-stone-900 mb-1">Almost Heaven Saunas</h2>
-        <p class="text-stone-500 text-sm">The most popular US barrel sauna brand, quality, value, and best models reviewed.</p>
-      </a>
-    </div>
-
-      <a href="/brands/dundalk-leisurecraft-review/" class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
-        <h2 class="font-bold text-stone-900 mb-1">Dundalk LeisureCraft</h2>
-        <p class="text-stone-500 text-sm">Premium Canadian-made barrel saunas, thick clear cedar and 30+ year build quality reviewed.</p>
-      </a>
-    </div>
-
-      <a href="/brands/harvia-sauna-heater-review/" class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
-        <h2 class="font-bold text-stone-900 mb-1">Harvia Sauna Heaters</h2>
-        <p class="text-stone-500 text-sm">The world's most popular sauna heater brand. KIP, M3, Cilindro reviewed and sized for your room.</p>
-      </a>
-
-      <a href="/brands/huum-sauna-heater-review/" class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
-        <h2 class="font-bold text-stone-900 mb-1">HUUM Sauna Heaters</h2>
-        <p class="text-stone-500 text-sm">Estonian heaters with exceptional design, and the UL listing issue US buyers need to know.</p>
-      </a>
-    </div>
-
-      <a href="/brands/finnleo-sauna-review/" class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
-        <h2 class="font-bold text-stone-900 mb-1">Finnleo Saunas</h2>
-        <p class="text-stone-500 text-sm">Premium Finnish brand with strong US dealer support. Who it's for and whether the price premium is worth it.</p>
-      </a>
-    </div>
-
-      <a href="/brands/harvia-sauna-heater-review/" class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
-        <h2 class="font-bold text-stone-900 mb-1">Harvia Sauna Heaters</h2>
-        <p class="text-stone-500 text-sm">The default heater recommendation for North American buyers. KIP, Cilindro, and M3 wood-burning models covered.</p>
-      </a>
-    </div>
-
-      <a href="/brands/dynamic-saunas-review/" class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
-        <h2 class="font-bold text-stone-900 mb-1">Dynamic Saunas</h2>
-        <p class="text-stone-500 text-sm">The top-rated plug-in infrared sauna brand. What they get right, where they cut corners, and which model to buy.</p>
-      </a>
-      <a href="/brands/redwood-outdoors-sauna-review/" class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
-        <h2 class="font-bold text-stone-900 mb-1">Redwood Outdoors</h2>
-        <p class="text-stone-500 text-sm">Premium Thermowood barrel and cabin saunas. Better outdoor durability than cedar — is the premium worth it?</p>
-      </a>
-      <a href="/brands/finnish-sauna-builders-review/" class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
-        <h2 class="font-bold text-stone-900 mb-1">Finnish Sauna Builders</h2>
-        <p class="text-stone-500 text-sm">Specialty sauna retailer carrying Almost Heaven, Dundalk, and HUUM. Strong customer service — worth the slight premium?</p>
-      </a>
+      {brands.map(brand => (
+        <a href={brand.href} class={`block rounded-xl p-4 hover:shadow transition-all ${brand.featured ? 'bg-stone-50 border border-stone-300 hover:border-stone-400' : 'bg-white border border-stone-200 hover:border-amber-400'}`}>
+          {brand.featured && (
+            <span class="text-xs font-semibold uppercase tracking-wide text-stone-600 bg-amber-100 border border-amber-300 rounded-full px-2 py-0.5 inline-block mb-2">Featured Partner</span>
+          )}
+          <h2 class="font-bold text-stone-900 mb-1">{brand.name}</h2>
+          <p class="text-stone-500 text-sm">{brand.desc}</p>
+        </a>
+      ))}
     </div>
   </div>
 </Base>
