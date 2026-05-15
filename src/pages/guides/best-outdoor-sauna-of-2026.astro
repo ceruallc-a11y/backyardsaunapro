@@ -1,47 +1,242 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
-import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
-import SunHomeButton from '../../components/SunHomeButton.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const updated = "May 15, 2026";
+const priceChecked = "May 15, 2026";
+const datePublished = "2026-01-15";
+const dateModified = "2026-05-15";
+const pageUrl = "https://backyardsaunapro.com/guides/best-outdoor-sauna-of-2026/";
+
+const products = [
+  {
+    rank: 1,
+    tag: "Best Outdoor Infrared",
+    tagColor: "bg-stone-900 text-amber-100",
+    name: "Sun Home Luminar 2-Person Outdoor Infrared",
+    image: "/images/sun-home/luminar.jpg",
+    imageAlt: "Sun Home Luminar 2-Person Outdoor Infrared sauna in a backyard",
+    sponsor: "sun-home",
+    sunHomeProduct: "luminar",
+    verdict: "The finished outdoor infrared cabin you wanted the renderings to ship as. Premium aluminum exterior, full-spectrum infrared, and a 120V plug-in install in most cases.",
+    bestFor: "Buyers who want a polished outdoor cabin that arrives ready to use, with no foundation pour and no electrical contractor on the calendar.",
+    avoidIf: "You want traditional Finnish heat with rocks and steam, prefer wood-burning, are shopping primarily on price, or want the lowest cost per bench square foot.",
+    specs: {
+      type: "Premium outdoor infrared cabin",
+      capacity: "2 people",
+      heatSource: "Full-spectrum infrared panels (near, mid, far)",
+      maxTemp: "Around 140 °F",
+      electrical: "120V standard outlet in most installs",
+      dimensions: "Approximately 62 x 50 x 79 in",
+      warranty: "Lifetime structural, 5 yr electrical (per manufacturer)",
+      priceBand: "Premium",
+    },
+    whyItWon: "Sun Home is the only manufacturer in the outdoor-infrared category right now shipping a cabin with a patented aerospace-grade aluminum exterior that does not need annual staining or a cover. Combined with a real 120V install path, it removes the two biggest installation headaches buyers face with outdoor saunas.",
+    tradeoffs: [
+      "Premium price tier with no street discounting",
+      "Lower max temperature than a 6kW traditional barrel",
+      "No rocks, no löyly, no steam ritual",
+      "White-glove delivery logistics require a clear path to the install spot",
+      "Larger footprint than a compact 2-person barrel",
+    ],
+    ownerComplaints: [
+      "Delivery scheduling can run long during peak season",
+      "Some owners report wanting hotter sessions and switching to longer durations to compensate",
+    ],
+    installationNotes: "Most buyers can stand it on a level patio or gravel pad. Confirm the 120V circuit is dedicated and not shared with other high-draw appliances. No foundation pour is required for typical residential installs.",
+  },
+  {
+    rank: 2,
+    tag: "Best Traditional Barrel",
+    name: "Almost Heaven Pinnacle 4-Person Barrel",
+    asin: "B017WJV8SO",
+    selectSaunasCollection: "barrel-saunas",
+    verdict: "The default North American residential barrel sauna for a reason. Canadian red cedar, panels that line up, and an install process documented in every YouTube format imaginable.",
+    bestFor: "Buyers who want real Finnish heat with rocks and steam, are comfortable wiring a 240V circuit, and want a barrel sauna that resells well.",
+    avoidIf: "You want a finished plug-and-play cabin, the simplest possible install, or you regularly host four adults who actually want bench space.",
+    specs: {
+      type: "Traditional outdoor barrel",
+      capacity: "4 people (2-3 comfortable)",
+      heatSource: "Electric heater + rocks (sold separately, typically 6kW Harvia KIP)",
+      maxTemp: "180-195 °F",
+      electrical: "240V dedicated 30A circuit",
+      dimensions: "72 in diameter x 72 in length",
+      warranty: "5 yr structural",
+      priceBand: "Mid",
+    },
+    whyItWon: "Years of consistent build quality, pre-cut tongue-and-groove panels, hardware that fits, and a heater compatibility list long enough that you can shop the heater independently. The barrel shape itself retains heat better than a flat-wall cabin of the same volume.",
+    tradeoffs: [
+      "Heater is a separate purchase",
+      "Needs 240V install, which often means an electrician",
+      "Foundation work (gravel pad or pavers) required for longevity",
+      "4-person rating is honest for 2-3 adults, snug for four",
+    ],
+    ownerComplaints: [
+      "Door alignment can drift after the first winter, easy to reshim",
+      "Bands need a re-tighten after the wood seats in the first 30 days",
+    ],
+    installationNotes: "Plan a level gravel pad at least 4 in deep, or pour pavers. Most buyers hire an electrician for the 240V run. Assembly is 4-6 hours with two people.",
+  },
+  {
+    rank: 3,
+    tag: "Best Wood-Burning Bundle",
+    name: "AURGOD Outdoor Barrel Sauna with Wood Stove",
+    asin: "B0DPG3R7PR",
+    verdict: "Unusual in this category: the wood-burning stove and chimney kit are in the box. The right buy for buyers who want a wood-fired sauna without an electrician's invoice.",
+    bestFor: "Cabins, rural properties, or backyards where running 240V is more trouble than it is worth. Buyers who want a glowing wood stove instead of a digital control panel.",
+    avoidIf: "You do not have a reliable supply of firewood, you live somewhere with strict outdoor burn restrictions, or you want a unit you can preheat from your phone.",
+    specs: {
+      type: "Traditional outdoor barrel, wood-fired",
+      capacity: "4 people",
+      heatSource: "Included wood-burning stove + chimney",
+      maxTemp: "180-200 °F",
+      electrical: "None required",
+      dimensions: "72 in diameter x ~72 in length",
+      warranty: "1 yr limited (per listing)",
+      priceBand: "Mid",
+    },
+    whyItWon: "Bundling the stove is the differentiator. Most barrel kits send you on a separate hunt for a Harvia or Kuuma stove that adds $1,200-$2,000 to the build. AURGOD ships the whole thing on one pallet.",
+    tradeoffs: [
+      "Hemlock construction, not cedar. Less aromatic, slightly more maintenance",
+      "Wood sourcing is an ongoing chore",
+      "Longer heat-up than electric: plan 45-60 minutes",
+      "Brand support is thinner than the Almost Heaven side of the market",
+    ],
+    ownerComplaints: [
+      "Chimney flashing kit is basic, some owners upgrade it",
+      "Door gasket can need a replacement in year two with heavy use",
+    ],
+    installationNotes: "Confirm local burn codes before ordering. Plan a non-combustible pad under the stove area. Spark arrestor on the chimney is recommended in dry regions.",
+  },
+  {
+    rank: 4,
+    tag: "Best for Real 4-Person Use",
+    name: "Almost Heaven 6-Person Cedar Barrel",
+    asin: "B003Z11AXM",
+    selectSaunasCollection: "barrel-saunas",
+    verdict: "If you actually want four adults inside with room to lie down, you want the 6-person. Same Almost Heaven cedar quality scaled up to a footprint that hosts groups without elbow politics.",
+    bestFor: "Households that regularly host friends or family, or anyone tall enough that they want to lie flat on a bench.",
+    avoidIf: "Tight backyard, narrow side gate access, or you mostly sauna alone or as a couple.",
+    specs: {
+      type: "Traditional outdoor barrel",
+      capacity: "6 people (4 comfortable)",
+      heatSource: "Electric heater + rocks (8kW Harvia KIP 80B typical)",
+      maxTemp: "180-195 °F",
+      electrical: "240V 40A dedicated circuit",
+      dimensions: "72 in diameter x 96 in length",
+      warranty: "5 yr structural",
+      priceBand: "Mid-high",
+    },
+    whyItWon: "Bench space is the unromantic spec that decides whether you actually use a sauna with company. The 6-person gives you opposing benches long enough to recline.",
+    tradeoffs: [
+      "Larger footprint demands more yard",
+      "8kW heater needs a 40A circuit, often a separate sub-panel run",
+      "Delivery logistics get heavier",
+    ],
+    ownerComplaints: [
+      "Same band re-tightening pattern as the 4-person, slightly more bands",
+    ],
+    installationNotes: "Level pad at least 8 ft x 7 ft. Most installs need an electrician for the 40A run. Assembly is 6-8 hours with two people.",
+  },
+  {
+    rank: 5,
+    tag: "Best Compact 2-Person Barrel",
+    name: "Almost Heaven Salem 2-Person Barrel",
+    selectSaunasCollection: "barrel-saunas",
+    verdict: "Same cedar pedigree, smallest serious footprint in this guide. Designed for tight backyards, narrow side yards, and corner-of-the-deck installs.",
+    bestFor: "Couples or solo users with limited outdoor space who still want real traditional heat.",
+    avoidIf: "You host friends, or you want bench space to recline.",
+    specs: {
+      type: "Traditional outdoor barrel",
+      capacity: "2 people",
+      heatSource: "Electric heater + rocks (4kW typical)",
+      maxTemp: "180-195 °F",
+      electrical: "240V 20A circuit (sometimes 30A depending on heater)",
+      dimensions: "60 in diameter x 60 in length",
+      warranty: "5 yr structural",
+      priceBand: "Mid",
+    },
+    whyItWon: "A 4kW heater can sometimes run off a 20A circuit, which is cheaper to install than the 30-40A runs the larger barrels need. That meaningfully drops the installed total.",
+    tradeoffs: [
+      "Tight for two tall adults",
+      "Shorter benches limit reclining",
+    ],
+    ownerComplaints: [
+      "Some buyers wish for an upper bench tier, this model is single-level",
+    ],
+    installationNotes: "Level pad about 6 ft x 6 ft. Confirm heater amperage before sizing the circuit.",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best Outdoor Sauna of 2026",
+  "datePublished": datePublished,
+  "dateModified": dateModified,
+  "author": {
+    "@type": "Person",
+    "name": "Aurec Senenoi",
+    "url": "https://backyardsaunapro.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Backyard Sauna Pro",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://backyardsaunapro.com/images/brand/logo-icon.svg"
+    }
+  },
+  "mainEntityOfPage": pageUrl
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://backyardsaunapro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://backyardsaunapro.com/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Best Outdoor Sauna of 2026", "item": pageUrl }
+  ]
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Best Outdoor Saunas of 2026",
+  "itemListElement": products.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "Product",
+      "name": p.name,
+      "category": p.specs.type,
+      "description": p.verdict
+    }
+  }))
+};
+
+const faqs = [
+  { q: "What is the best outdoor sauna in 2026?", a: "It depends on the experience you want. The Sun Home Luminar is the best outdoor infrared cabin because it ships finished, plugs into 120V in most cases, and skips foundation work. For traditional Finnish heat with rocks and steam, the Almost Heaven Pinnacle 4-Person barrel is the strongest traditional pick. Those are two different categories, not co-winners." },
+  { q: "Outdoor barrel sauna vs outdoor infrared cabin, which is better?", a: "Different experiences. A barrel sauna runs at 180-195 °F with rocks and löyly but needs 240V and a foundation pad. An outdoor infrared cabin runs around 140 °F, usually plugs into 120V, and skips the pad. Neither is objectively better. Pick based on whether you want intense heat with steam or longer cooler sessions." },
+  { q: "How much does an outdoor sauna cost in 2026?", a: "Traditional barrel kit runs $2,000 to $4,500, plus $1,000 to $2,000 for the heater, 240V install, and foundation, for an installed total around $3,500 to $6,500. Premium outdoor infrared cabins sit in the $7,000 to $12,000 range installed. Custom builds run higher." },
+  { q: "Do outdoor saunas hold up in cold climates?", a: "Yes, when built and insulated for it. Cedar barrel saunas in Minnesota, Maine, and Canada commonly run year-round and last 15-20 years with basic maintenance. The factors that matter most are freeze-thaw handling, snow loading on the roof, and whether the heater is sized for the volume." },
+  { q: "What electrical setup does an outdoor sauna need?", a: "Most traditional barrel saunas need a dedicated 240V circuit, typically 30A for a 6kW heater or 40A for an 8kW heater. Outdoor infrared cabins under 2kW usually run on a standard 120V outlet. Always confirm the exact spec on the heater you buy and pull a permit if your jurisdiction requires one." },
+  { q: "Do I need a foundation for an outdoor sauna?", a: "For a traditional barrel sauna, yes. A gravel pad at least 4 in deep, or pavers, is the standard. The pad keeps the bottom of the barrel out of standing water and protects the wood from rot. Outdoor infrared cabins on patios or decks can often skip a dedicated pad if the surface is already level." },
+  { q: "Do outdoor saunas need a permit?", a: "Often yes, especially if the sauna is over a certain square footage, has a permanent electrical hookup, or is a wood-burning unit. Rules vary by municipality. Check your local building department before ordering. See our outdoor sauna permits guide for what to expect." },
+  { q: "What maintenance does an outdoor sauna need?", a: "Traditional cedar barrels need a band re-tighten after the first 30 days, a quick interior wipe after each session, and an exterior treatment every 1-2 years depending on climate. Aluminum-clad outdoor infrared cabins skip the exterior staining. Replace heater rocks every 2-3 years on traditional units." },
+  { q: "How long do outdoor saunas last?", a: "A quality cedar barrel sauna with normal maintenance lasts 15-20 years. Premium outdoor infrared cabins with aluminum exteriors are too new in the market for a clean longevity number, but the structural components are designed for similar lifespans. Heaters typically need replacement around year 10-12 on traditional units." },
+];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the best outdoor sauna in 2026?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Sun Home Luminar 2-person outdoor infrared is the best overall outdoor sauna of 2026: full-spectrum infrared, plug-in install in most cases, and a finished design-forward cabin that arrives ready to use. For buyers who specifically want traditional Finnish heat with rocks and steam, the Almost Heaven Pinnacle 4-person barrel sauna is the strongest traditional pick."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Outdoor barrel sauna vs outdoor infrared cabin: which is better?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Different experiences. A barrel sauna gives you traditional 170-195 °F heat with rocks and löyly but needs 240V electrical and a foundation. An outdoor infrared cabin runs at lower temperatures (around 140 °F), plugs into 120V in most cases, and skips the foundation work. Neither is objectively better, they're built for different buyers."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does an outdoor sauna cost in 2026?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A traditional barrel sauna kit runs $2,000-$4,500 plus another $1,000-$2,000 for the heater, electrical install, and foundation, putting the total at $3,500-$6,500 installed. Premium outdoor infrared cabins sit in the $7,000-$12,000 range. Custom builds go higher."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do outdoor saunas hold up in cold climates?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, when built and insulated for it. Cedar barrel saunas in Minnesota and Canada commonly run year-round and last 15-20 years with basic maintenance. The factor that matters most is how the unit handles freeze-thaw cycles and snow loading. See our cold-climate guide for specifics."
-      }
-    }
-  ]
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
 };
 ---
 <Base
@@ -49,16 +244,21 @@ const faqSchema = {
   description="The best outdoor saunas of 2026: barrel kits, wood-burning bundles, and premium outdoor infrared. Honest picks, real budgets, no displayed prices."
   canonical="/guides/best-outdoor-sauna-of-2026"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
       <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-3">
         Best Outdoor Sauna of 2026
       </h1>
-      <p class="text-stone-500 text-sm">Updated May 2026 · 12 min read · Backyard Sauna Pro</p>
-      <p class="text-lg text-stone-600 mt-4">
+      <p class="text-sm text-stone-500 italic mb-4">
+        By <a href="/about/" class="hover:text-amber-700 underline-offset-2 hover:underline">Aurec Senenoi</a> · Updated {updated} · Price checked {priceChecked}
+      </p>
+      <p class="text-lg text-stone-600">
         The outdoor-sauna category has split. On one side: traditional barrel and cabin kits with cedar construction, electric or wood-fired heaters, 240V, the real Finnish experience. On the other: finished outdoor infrared cabins that show up on a pallet and plug into a regular outlet. Both have their place. Buying the wrong one for your situation is an expensive mistake.
       </p>
     </header>
@@ -69,107 +269,50 @@ const faqSchema = {
 
     <AdvertiserDisclosure />
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">Quick Picks</h2>
+    <section class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8" aria-label="Best in 60 seconds">
+      <h2 class="font-bold text-stone-800 mb-3">Best in 60 seconds</h2>
       <ul class="space-y-2 text-sm text-stone-700">
-        <li><span class="font-semibold">Best Overall:</span> Sun Home Luminar 2-Person Outdoor Infrared</li>
-        <li><span class="font-semibold">Best Traditional Barrel:</span> Almost Heaven Pinnacle 4-Person</li>
-        <li><span class="font-semibold">Best Wood-Burning Bundle:</span> AURGOD Outdoor Barrel with Wood Stove</li>
-        <li><span class="font-semibold">Best for Real 4-Person Use:</span> Almost Heaven 6-Person Cedar Barrel</li>
-        <li><span class="font-semibold">Best Compact 2-Person Barrel:</span> Almost Heaven Salem 2-Person</li>
+        <li><span class="font-semibold">Best Outdoor Infrared:</span> Sun Home Luminar. Pick if you want a finished cabin with a 120V plug-in install and no foundation work. Skip if you want rocks and steam.</li>
+        <li><span class="font-semibold">Best Traditional Barrel:</span> Almost Heaven Pinnacle 4-Person. Pick if you want real Finnish heat with löyly. Skip if you cannot run 240V.</li>
+        <li><span class="font-semibold">Best Wood-Burning:</span> AURGOD Outdoor Barrel with stove included. Pick if you have firewood and no easy power run. Skip if you live somewhere with strict burn codes.</li>
+        <li><span class="font-semibold">Best for Groups:</span> Almost Heaven 6-Person Cedar Barrel. Pick if you actually host four adults. Skip if you mostly sauna alone.</li>
+        <li><span class="font-semibold">Best Compact:</span> Almost Heaven Salem 2-Person. Pick if your yard is tight. Skip if you want room to lie down.</li>
       </ul>
+    </section>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Comparison matrix</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="text-sm w-full border border-stone-200 rounded-lg">
+        <thead class="bg-stone-100 text-stone-700">
+          <tr class="text-left">
+            <th class="p-2">Product</th>
+            <th class="p-2">Category winner</th>
+            <th class="p-2">Type</th>
+            <th class="p-2">Capacity</th>
+            <th class="p-2">Max temp</th>
+            <th class="p-2">Electrical</th>
+            <th class="p-2">Typical installed</th>
+            <th class="p-2">Best for</th>
+            <th class="p-2">Avoid if</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700">
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Sun Home Luminar</td><td class="p-2">Best Outdoor Infrared</td><td class="p-2">Premium infrared</td><td class="p-2">2</td><td class="p-2">~140 °F</td><td class="p-2">120V</td><td class="p-2">$8k-$12k</td><td class="p-2">Finished cabin, easy install</td><td class="p-2">You want löyly</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH Pinnacle 4P</td><td class="p-2">Best Traditional Barrel</td><td class="p-2">Cedar barrel</td><td class="p-2">4</td><td class="p-2">~190 °F</td><td class="p-2">240V/30A</td><td class="p-2">$4k-$6k</td><td class="p-2">Real Finnish heat</td><td class="p-2">No 240V access</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AURGOD Wood-Stove</td><td class="p-2">Best Wood-Burning</td><td class="p-2">Hemlock barrel + stove</td><td class="p-2">4</td><td class="p-2">~195 °F</td><td class="p-2">None</td><td class="p-2">$3.5k-$5k</td><td class="p-2">Off-grid, wood-fired</td><td class="p-2">Burn codes, no firewood</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH 6-Person Barrel</td><td class="p-2">Best for 4 Actual People</td><td class="p-2">Cedar barrel</td><td class="p-2">6</td><td class="p-2">~190 °F</td><td class="p-2">240V/40A</td><td class="p-2">$5k-$7k</td><td class="p-2">Group sessions</td><td class="p-2">Tight yard</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH Salem 2P</td><td class="p-2">Best Compact Barrel</td><td class="p-2">Cedar barrel</td><td class="p-2">2</td><td class="p-2">~190 °F</td><td class="p-2">240V/20-30A</td><td class="p-2">$3k-$4.5k</td><td class="p-2">Small yards</td><td class="p-2">Hosting groups</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How We Picked</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How we picked</h2>
     <p class="text-stone-700 mb-4">No lab. No staged photos. We comb owner reviews after the honeymoon period, check whether brands stand behind their warranties when something goes wrong, and weigh editorial honesty against the temptation to call everything "best." Where we have an editorial collaboration with a brand, we disclose it right above the placement and only put their product in categories where it genuinely fits.</p>
-    <p class="text-stone-700 mb-6">The Sun Home Luminar is here in the premium outdoor infrared category because that's the slot it actually wins. We are not calling it the best traditional barrel sauna, the best budget pick, or the best wood-burning option, because it isn't any of those.</p>
+    <p class="text-stone-700 mb-8">The Sun Home Luminar is here as Best Outdoor Infrared because that is the slot it actually wins. It is not co-elevated with the Pinnacle. The Pinnacle is the Best Traditional Barrel. Those are different categories serving different buyers, and pretending otherwise would be padding.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Overall Outdoor Sauna</h2>
+    {products.map(p => <ProductCard {...p} />)}
 
-    <div class="border border-stone-300 rounded-xl overflow-hidden bg-stone-50 mb-8">
-      <div class="overflow-hidden">
-        <img src="/images/sun-home/luminar.jpg" alt="Sun Home Luminar 2-Person Outdoor Infrared sauna in a backyard" class="w-full h-auto object-cover max-h-80" loading="lazy" width="1600" height="1067" />
-      </div>
-      <div class="p-6">
-      <span class="text-xs font-semibold text-stone-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
-      <h3 class="text-2xl font-bold text-stone-900 mt-2 mb-1">Sun Home Luminar 2-Person Outdoor Infrared</h3>
-      <p class="text-stone-700 mb-4">If your backyard sauna fantasy involves a finished cedar-and-glass cabin that shows up on a delivery truck rather than a stack of pre-cut panels and a separate heater purchase, the Luminar is the pick. It's the rare outdoor sauna that arrives looking like the renderings, premium exterior, full-spectrum infrared, and no electrical contractor to schedule because most installs work off a standard outlet.</p>
-      <p class="text-stone-700 mb-4">The honest tradeoff is what you'd expect. A traditional barrel sauna with a 6kW Harvia heater will pull you to 185 °F and let you throw water over rocks for steam. The Luminar runs around 140 °F and is built for longer, more sustainable infrared sessions. Wellness buyers who want a daily wind-down session pick this. Sauna purists who want intense löyly and a wood stove glow do not.</p>
-      <div class="bg-white border border-stone-200 rounded-lg p-4 mb-5 text-sm text-stone-700">
-        <strong class="block text-stone-900 mb-1">Who this is for</strong>
-        Best for buyers who want a premium outdoor infrared cabin, a finished design-forward look, and a simpler install. Not the right pick if you're shopping primarily on budget, want traditional Finnish heat with rocks and steam, want a wood-burning sauna, or need the lowest cost per square foot of bench.
-      </div>
-      <div class="grid grid-cols-2 gap-4 mb-5 text-sm">
-        <div>
-          <p class="font-semibold text-green-700 mb-2">Pros</p>
-          <ul class="space-y-1 text-stone-600">
-            <li>Full-spectrum (near, mid, far) infrared</li>
-            <li>Arrives as a finished cabin</li>
-            <li>Standard 120V install in most cases</li>
-            <li>Premium cedar and glass exterior</li>
-            <li>Faster heat-up than barrel + heater</li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-semibold text-red-600 mb-2">Cons</p>
-          <ul class="space-y-1 text-stone-600">
-            <li>Premium price tier</li>
-            <li>Lower max temperature than traditional</li>
-            <li>No rocks, no löyly</li>
-            <li>White-glove delivery logistics</li>
-            <li>Larger footprint than a 2-person barrel</li>
-          </ul>
-        </div>
-      </div>
-      <SunHomeButton product="luminar" label="See Sun Home Luminar" />
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Traditional Barrel</h2>
-
-    <div class="border border-stone-200 rounded-xl p-6 bg-white mb-8">
-      <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Traditional Barrel</span>
-      <h3 class="text-xl font-bold text-stone-900 mt-2 mb-3">Almost Heaven Pinnacle 4-Person Barrel</h3>
-      <p class="text-stone-700 mb-4">The Pinnacle has been the default residential barrel sauna in North America for years and remains the default in 2026. Canadian red cedar, pre-cut panels, hardware that lines up, and an assembly process that's been documented in enough YouTube videos that you can practically install it from muscle memory. Pair it with a Harvia KIP 60B (6kW) for a complete traditional setup.</p>
-      <p class="text-stone-700 mb-4">The "4-person" rating is honest only if you mean 4 people sitting upright and friendly. For 2-3 adults who want real space, this is correct. If you regularly host 4, size up.</p>
-      <div class="flex flex-wrap gap-3">
-        <AmazonButton asin="B017WJV8SO" />
-        <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Wood-Burning Bundle</h2>
-
-    <div class="border border-stone-200 rounded-xl p-6 bg-white mb-8">
-      <span class="text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Wood-Burning</span>
-      <h3 class="text-xl font-bold text-stone-900 mt-2 mb-3">AURGOD Outdoor Barrel Sauna with Wood Stove</h3>
-      <p class="text-stone-700 mb-4">Most barrel sauna kits ship without a heater. The AURGOD is the unusual one that includes the wood-burning stove and chimney kit in the box. That's the right setup for buyers who want the traditional wood-fired experience without an electrician's invoice, and for cabin owners or rural properties where running 240V is more trouble than it's worth.</p>
-      <p class="text-stone-700 mb-4">Hemlock instead of cedar, so less aromatic and slightly more maintenance over time. Wood sourcing is an ongoing chore. The tradeoff is real Finnish heat off a stove that glows.</p>
-      <AmazonButton asin="B0DPG3R7PR" />
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best for Real 4-Person Use</h2>
-
-    <div class="border border-stone-200 rounded-xl p-6 bg-white mb-8">
-      <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best for 4 Actual People</span>
-      <h3 class="text-xl font-bold text-stone-900 mt-2 mb-3">Almost Heaven 6-Person Cedar Barrel</h3>
-      <p class="text-stone-700 mb-4">A 4-person sauna with 4 adults in it feels like a crowded elevator. If you actually host groups, the 6-person is what you want. Same Almost Heaven cedar quality, more bench space, room to lie down. Needs an 8kW heater (Harvia KIP 80B is the standard pair).</p>
-      <div class="flex flex-wrap gap-3">
-        <AmazonButton asin="B003Z11AXM" />
-        <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Compact 2-Person Barrel</h2>
-
-    <div class="border border-stone-200 rounded-xl p-6 bg-white mb-8">
-      <h3 class="text-xl font-bold text-stone-900 mb-3">Almost Heaven Salem 2-Person Barrel</h3>
-      <p class="text-stone-700 mb-4">Tight backyard, narrow side yard, or a corner of a deck, the Salem is the smallest serious barrel sauna in this guide. Same cedar quality scaled to a 2-person footprint. Heater requirement drops to 4kW, which can simplify the electrical install. See the full lineup in our <a href="/guides/best-2-person-outdoor-sauna/" class="text-amber-700 hover:underline">best 2-person outdoor sauna guide</a>.</p>
-      <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Outdoor Barrel vs Outdoor Infrared</h2>
-
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Outdoor barrel vs outdoor infrared</h2>
     <div class="overflow-x-auto mb-6">
       <table class="text-sm w-full">
         <thead>
@@ -180,47 +323,19 @@ const faqSchema = {
           </tr>
         </thead>
         <tbody class="text-stone-700">
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6">Max temperature</td>
-            <td class="py-2 pr-6">170-195 °F</td>
-            <td class="py-2">130-150 °F</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6">Heat source</td>
-            <td class="py-2 pr-6">Electric or wood stove + rocks</td>
-            <td class="py-2">Infrared panels</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6">Löyly / steam</td>
-            <td class="py-2 pr-6">Yes</td>
-            <td class="py-2">No</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6">Electrical</td>
-            <td class="py-2 pr-6">240V dedicated circuit</td>
-            <td class="py-2">120V outlet (usually)</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6">Heat-up time</td>
-            <td class="py-2 pr-6">35-60 min</td>
-            <td class="py-2">15-25 min</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6">Typical session</td>
-            <td class="py-2 pr-6">10-20 min</td>
-            <td class="py-2">30-45 min</td>
-          </tr>
-          <tr>
-            <td class="py-2 pr-6">Starting installed price</td>
-            <td class="py-2 pr-6">~$3,500</td>
-            <td class="py-2">~$7,000</td>
-          </tr>
+          <tr class="border-b border-stone-100"><td class="py-2 pr-6">Max temperature</td><td class="py-2 pr-6">170-195 °F</td><td class="py-2">130-150 °F</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-2 pr-6">Heat source</td><td class="py-2 pr-6">Electric or wood stove + rocks</td><td class="py-2">Infrared panels</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-2 pr-6">Löyly / steam</td><td class="py-2 pr-6">Yes</td><td class="py-2">No</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-2 pr-6">Electrical</td><td class="py-2 pr-6">240V dedicated circuit</td><td class="py-2">120V outlet (usually)</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-2 pr-6">Heat-up time</td><td class="py-2 pr-6">35-60 min</td><td class="py-2">15-25 min</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-2 pr-6">Typical session</td><td class="py-2 pr-6">10-20 min</td><td class="py-2">30-45 min</td></tr>
+          <tr><td class="py-2 pr-6">Starting installed price</td><td class="py-2 pr-6">~$3,500</td><td class="py-2">~$7,000</td></tr>
         </tbody>
       </table>
     </div>
     <p class="text-stone-700 mb-6">For a deeper breakdown, see <a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">infrared vs traditional sauna</a>.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Budget</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to budget</h2>
     <div class="overflow-x-auto mb-6">
       <table class="text-sm w-full">
         <thead>
@@ -243,23 +358,13 @@ const faqSchema = {
     <p class="text-stone-700 mb-6">See our full <a href="/guides/outdoor-sauna-cost/" class="text-amber-700 hover:underline">outdoor sauna cost guide</a> for line-item breakdowns.</p>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is the best outdoor sauna in 2026?</h3>
-        <p class="text-stone-700">The Sun Home Luminar is the best overall outdoor sauna of 2026. For traditional Finnish heat with rocks and steam, the Almost Heaven Pinnacle 4-Person remains the strongest traditional pick.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Barrel sauna vs outdoor infrared cabin?</h3>
-        <p class="text-stone-700">Different experiences. Barrel = hotter, real steam, needs 240V and a foundation. Infrared cabin = lower temps, finished look, simpler install. Pick based on the experience you actually want.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How much does an outdoor sauna cost in 2026?</h3>
-        <p class="text-stone-700">Traditional barrel installed: $3,500 - $6,500. Premium outdoor infrared cabin installed: $7,000 - $12,000. Custom builds run higher.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Do outdoor saunas hold up in cold climates?</h3>
-        <p class="text-stone-700">Yes, when built for it. Cedar barrel saunas run year-round in Minnesota and Canada and last 15-20 years with basic maintenance. See our <a href="/guides/best-barrel-saunas-cold-climates/" class="text-amber-700 hover:underline">cold-climate guide</a>.</p>
-      </div>
+    <div class="space-y-3 mb-8">
+      {faqs.map(f => (
+        <details class="border border-stone-200 rounded-lg p-4 bg-white">
+          <summary class="font-bold text-stone-900 cursor-pointer">{f.q}</summary>
+          <p class="text-stone-700 mt-2 text-sm">{f.a}</p>
+        </details>
+      ))}
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">

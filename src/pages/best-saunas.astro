@@ -1,203 +1,354 @@
 ---
 import Base from '../layouts/Base.astro';
-import AmazonButton from '../components/AmazonButton.astro';
-import SelectSaunasButton from '../components/SelectSaunasButton.astro';
-import SunHomeButton from '../components/SunHomeButton.astro';
 import AdvertiserDisclosure from '../components/AdvertiserDisclosure.astro';
+import ProductCard from '../components/ProductCard.astro';
+
+const updated = "May 15, 2026";
+const priceChecked = "May 15, 2026";
+const datePublished = "2026-01-15";
+const dateModified = "2026-05-15";
+const pageUrl = "https://backyardsaunapro.com/best-saunas/";
 
 const picks = [
   {
     rank: 1,
+    tag: "Best Overall Infrared",
+    tagColor: "bg-stone-900 text-amber-100",
+    name: "Sun Home Equinox 2-Person Full-Spectrum Infrared",
+    image: "/images/sun-home/equinox.jpg",
+    imageAlt: "Sun Home Equinox 2-Person Full-Spectrum Infrared",
+    imageContain: true,
     sponsor: "sun-home",
     sunHomeProduct: "equinox",
-    image: "/images/sun-home/equinox.jpg",
-    name: "Sun Home Equinox 2-Person Full-Spectrum Infrared",
-    price: "",
-    rating: "Premium",
-    tag: "BEST OVERALL",
-    tagColor: "bg-stone-900 text-amber-100",
-    pros: ["Full-spectrum infrared (near, mid, far)", "Plug-in 120V install, no electrician", "Integrated chromotherapy and audio", "Premium kiln-dried eucalyptus build"],
-    cons: ["Premium price tier", "Lower max temperature than traditional (around 165 \u00b0F)", "No rocks, no l\u00f6yly", "White-glove delivery logistics"],
-    best_for: "Premium buyers who want a finished, design-forward infrared cabin for daily wellness use",
-    type: "Premium Indoor Infrared",
-    buyerFit: "Best for buyers shopping at the premium end who want full-spectrum infrared and a polished home setup. Not the right pick for budget shoppers, traditional Finnish-style users, or anyone wanting wood-burning or steam.",
+    verdict: "The premium full-spectrum infrared cabin with the fit, finish, and plug-in install that justify daily use.",
+    bestFor: "Premium buyers who want a finished, design-forward infrared cabin for daily wellness sessions.",
+    avoidIf: "You want traditional rocks and steam, are shopping primarily on price, or need delivery in under a week.",
+    specs: {
+      type: "Premium indoor infrared",
+      capacity: "2 people",
+      heatSource: "Full-spectrum infrared (near, mid, far)",
+      maxTemp: "Around 165 °F",
+      electrical: "120V standard outlet",
+      dimensions: "Approximately 47 x 45 x 75 in",
+      warranty: "Lifetime structural, 5 yr electrical",
+      priceBand: "Premium",
+    },
+    whyItWon: "Full-spectrum emitters paired with a finished eucalyptus build and a real 120V install path. The category default at the premium end.",
+    tradeoffs: [
+      "Premium price tier",
+      "Lower max temperature than traditional",
+      "No löyly",
+      "White-glove delivery logistics",
+    ],
+    ownerComplaints: ["Heat-up time longer than budget cabins", "Some buyers want a second tier of seating"],
+    installationNotes: "Plug-in 120V. No electrician required for typical installs.",
   },
   {
     rank: 2,
+    tag: "Best Traditional",
+    name: "Almost Heaven Pinnacle 4-Person Barrel",
     asin: "B017WJV8SO",
-    name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
-    price: "",
-    rating: "4.5/5 ",
-    tag: "BEST TRADITIONAL",
-    tagColor: "bg-amber-100 text-amber-800",
-    pros: ["Beautiful cedar construction", "Easy 4-6 hour assembly", "Great heat retention from barrel shape", "Works with most sauna heaters"],
-    cons: ["Needs 240V heater (sold separately)", "Not for tight spaces"],
-    best_for: "Homeowners who want a permanent, beautiful outdoor sauna with traditional Finnish heat",
-    type: "Traditional / Barrel",
-    selectSaunasCollection: "barrel-saunas"
+    selectSaunasCollection: "barrel-saunas",
+    verdict: "Default North American residential barrel for a reason. Canadian red cedar, panels that line up, install process documented everywhere.",
+    bestFor: "Buyers who want real Finnish heat with rocks and steam and are comfortable wiring a 240V circuit.",
+    avoidIf: "You want a finished plug-and-play cabin, the simplest possible install, or you do not have outdoor space.",
+    specs: {
+      type: "Traditional outdoor barrel",
+      capacity: "4 people (2-3 comfortable)",
+      heatSource: "Electric heater + rocks (6kW Harvia KIP typical)",
+      maxTemp: "180-195 °F",
+      electrical: "240V dedicated 30A circuit",
+      dimensions: "72 in diameter x 72 in length",
+      warranty: "5 yr structural",
+      priceBand: "Mid",
+    },
+    whyItWon: "Years of consistent build quality, broad heater compatibility, and barrel shape that retains heat better than a flat-wall cabin of the same volume.",
+    tradeoffs: ["Heater is a separate purchase", "Needs 240V install", "Foundation pad required"],
+    ownerComplaints: ["Bands need re-tighten after first 30 days", "Door alignment can drift after first winter"],
+    installationNotes: "Gravel pad at least 4 in deep, or pavers. 240V dedicated circuit. Assembly 4-6 hours.",
   },
   {
     rank: 3,
+    tag: "Best Outdoor Infrared",
+    tagColor: "bg-stone-900 text-amber-100",
+    name: "Sun Home Luminar 2-Person Outdoor Infrared",
+    image: "/images/sun-home/luminar.jpg",
+    imageAlt: "Sun Home Luminar 2-Person Outdoor Infrared",
     sponsor: "sun-home",
     sunHomeProduct: "luminar",
-    image: "/images/sun-home/luminar.jpg",
-    name: "Sun Home Luminar 2-Person Outdoor Infrared",
-    price: "",
-    rating: "Premium",
-    tag: "BEST OUTDOOR",
-    tagColor: "bg-stone-900 text-amber-100",
-    pros: ["Patented aerospace-grade aluminum exterior", "Plug-in 120V install in most cases", "Native Sun Home app with remote preheat", "No annual staining or cover required"],
-    cons: ["Premium price tier", "Lower max temperature than traditional", "No rocks, no l\u00f6yly", "Larger footprint than a 2-person barrel"],
-    best_for: "Buyers who want a finished outdoor cabin that arrives ready to use with no foundation or electrical contractor",
-    type: "Premium Outdoor Infrared",
-    buyerFit: "Best for buyers who want a premium outdoor infrared cabin with a low-maintenance exterior. Not the right pick for buyers shopping on price, wanting wood-burning, or wanting traditional steam.",
+    verdict: "Finished outdoor cabin with aluminum exterior, full-spectrum infrared, and a 120V install path that skips the electrician.",
+    bestFor: "Buyers who want a finished outdoor cabin that arrives ready to use with no foundation pour.",
+    avoidIf: "You want wood-burning, traditional steam, or the lowest cost per bench square foot.",
+    specs: {
+      type: "Premium outdoor infrared",
+      capacity: "2 people",
+      heatSource: "Full-spectrum infrared panels",
+      maxTemp: "Around 140 °F",
+      electrical: "120V standard outlet",
+      dimensions: "Approximately 62 x 50 x 79 in",
+      warranty: "Lifetime structural, 5 yr electrical",
+      priceBand: "Premium",
+    },
+    whyItWon: "Aerospace-grade aluminum exterior eliminates annual staining and covers, paired with a real 120V install path.",
+    tradeoffs: ["Premium price", "No löyly", "Lower max temp than barrel", "Larger footprint than 2-person barrel"],
+    ownerComplaints: ["Delivery scheduling can run long in peak season"],
+    installationNotes: "Level patio or gravel pad. Dedicated 120V circuit recommended.",
   },
   {
     rank: 4,
+    tag: "Best Red Light + Infrared",
+    tagColor: "bg-stone-900 text-amber-100",
+    name: "Sun Home Eclipse 2-Person Red Light + Infrared",
+    image: "/images/sun-home/eclipse.jpg",
+    imageAlt: "Sun Home Eclipse 2-Person Red Light + Infrared",
     sponsor: "sun-home",
     sunHomeProduct: "eclipse",
-    image: "/images/sun-home/eclipse.jpg",
-    name: "Sun Home Eclipse 2-Person Red Light + Infrared",
-    price: "",
-    rating: "Premium",
-    tag: "BEST RED LIGHT",
-    tagColor: "bg-stone-900 text-amber-100",
-    pros: ["Factory-integrated dual-tower red light (630-850nm, 1,800W)", "Native Sun Home app with guided breathwork", "Canadian red cedar interior", "Plug-in 120V install"],
-    cons: ["Premium price tier", "Specific use case (RLT + infrared combined)", "Not a traditional sauna experience", "Higher cost than buying RLT + sauna separately"],
-    best_for: "Buyers who want serious red light therapy and infrared in one cabin instead of two separate units",
-    type: "Premium Indoor Red Light + Infrared",
-    buyerFit: "Best for buyers who specifically want red light therapy integrated with their sauna in a single premium build. Not the right pick if you only want a sauna, only want a red light panel, or are budget-focused.",
+    verdict: "Serious red-light therapy integrated with infrared in one cabin, not strip-LED theater.",
+    bestFor: "Buyers who want real RLT and infrared in one footprint and will use both because they are combined.",
+    avoidIf: "You only want a sauna, only want a red-light panel, or are budget-focused.",
+    specs: {
+      type: "Premium indoor red light + infrared",
+      capacity: "2 people",
+      heatSource: "Full-spectrum infrared + 1,800W red light tower (630-850nm)",
+      maxTemp: "Around 165 °F",
+      electrical: "120V standard outlet",
+      dimensions: "Approximately 47 x 45 x 75 in",
+      warranty: "Lifetime structural, 5 yr electrical",
+      priceBand: "Premium",
+    },
+    whyItWon: "Dual-tower red-light panels at therapeutic wavelengths and irradiance, integrated with a full-spectrum infrared cabin and a guided session app.",
+    tradeoffs: ["Premium price", "Niche use case", "Higher cost than buying separately"],
+    ownerComplaints: ["High brightness setting warrants eye protection"],
+    installationNotes: "120V plug-in. Indoor only. Clearance for tower panels.",
   },
   {
     rank: 5,
-    asin: "B00A2F99F0",
+    tag: "Best Budget",
     name: "Dynamic Saunas Barcelona 1-2 Person Far Infrared",
-    price: "",
-    rating: "4.4/5 ",
-    tag: "BEST BUDGET",
-    tagColor: "bg-green-100 text-green-800",
-    pros: ["Heats in just 15 minutes", "Low-EMF carbon panels", "Plugs into standard 120V outlet", "Compact fits in any room"],
-    cons: ["1-2 person only", "No steam option"],
-    best_for: "First-time buyers and smaller spaces",
-    type: "Infrared / Indoor"
+    asin: "B00A2F99F0",
+    verdict: "Most reviewed plug-in infrared at its price. Honest build, real 120V install, assembly in about an hour.",
+    bestFor: "First-time buyers, renters, and anyone trying infrared before committing to a premium cabin.",
+    avoidIf: "You want full-spectrum, premium finish, or space for three.",
+    specs: {
+      type: "Budget indoor infrared",
+      capacity: "1-2 people",
+      heatSource: "Low-EMF far-infrared carbon panels",
+      maxTemp: "Around 140 °F",
+      electrical: "120V standard outlet",
+      dimensions: "Approximately 35 x 35 x 75 in",
+      warranty: "5 yr heater, 1 yr controls",
+      priceBand: "Budget",
+    },
+    whyItWon: "Years of consistent owner reviews and panels that actually run low-EMF at a price-to-quality ratio nothing else at this tier matches.",
+    tradeoffs: ["Far-only emitters", "Hemlock not cedar", "Compact for two adults", "Basic controls"],
+    ownerComplaints: ["Door magnets weaken over years", "Basic audio quality"],
+    installationNotes: "120V outlet, dedicated circuit recommended. Assembly 60-90 min with two people.",
   },
   {
     rank: 6,
+    tag: "Best Premium Traditional",
+    name: "Dundalk LeisureCraft Harmony 2-Person",
     asin: "B017WJV8SO",
-    name: "Dundalk LeisureCraft Harmony 2-Person Sauna",
-    price: "",
-    rating: "4.8/5 ",
-    tag: "BEST PREMIUM",
-    tagColor: "bg-purple-100 text-purple-800",
-    pros: ["Canadian white cedar stunning quality", "Built to last decades", "Proper Finnish sauna experience", "Excellent steam retention"],
-    cons: ["Premium price", "Requires installation effort"],
-    best_for: "Serious sauna users who want the real deal",
-    type: "Traditional / Outdoor",
-    selectSaunasCollection: "outdoor-saunas"
+    selectSaunasCollection: "outdoor-saunas",
+    verdict: "Canadian white cedar build for buyers who want the traditional Finnish experience with no compromises and decades of life.",
+    bestFor: "Serious sauna users who want premium traditional construction outdoors.",
+    avoidIf: "You want plug-and-play, budget pricing, or no install work.",
+    specs: {
+      type: "Premium outdoor traditional",
+      capacity: "2 people",
+      heatSource: "Electric or wood (separate)",
+      maxTemp: "180-200 °F",
+      electrical: "240V dedicated circuit (if electric)",
+      dimensions: "Approximately 70 x 70 x 84 in",
+      warranty: "5 yr structural",
+      priceBand: "Premium",
+    },
+    whyItWon: "Canadian white cedar at a build standard above the volume barrel category, with steam retention and finish that hold up for decades.",
+    tradeoffs: ["Premium price", "Requires install effort", "Heater is separate"],
+    ownerComplaints: ["Lead times can be long for custom configurations"],
+    installationNotes: "Level pad and 240V (if electric). Assembly is a weekend project.",
   },
   {
     rank: 7,
-    asin: "B084GY5CHB",
+    tag: "Best Portable",
     name: "SereneLife Portable Steam Sauna",
-    price: "",
-    rating: "4.2/5 ",
-    tag: "BEST PORTABLE",
-    tagColor: "bg-blue-100 text-blue-800",
-    pros: ["Under $150", "Setup in minutes", "No installation", "Compact storage"],
-    cons: ["Not the real sauna experience", "Limited to one person", "Shorter lifespan"],
-    best_for: "Renters, travelers, or trying sauna before committing",
-    type: "Portable Steam"
-  }
+    asin: "B084GY5CHB",
+    verdict: "Tent style with your head out. Cheapest path to regular sessions for travel, rentals, or recovery.",
+    bestFor: "Renters, travelers, athletes, or trial buyers.",
+    avoidIf: "You want a real cabin experience or whole-body heat.",
+    specs: {
+      type: "Portable tent-style",
+      capacity: "1 person",
+      heatSource: "Steam generator or infrared depending on SKU",
+      maxTemp: "Around 150 °F",
+      electrical: "120V standard outlet",
+      dimensions: "Approximately 31 x 27 x 38 in seated",
+      warranty: "1 yr limited",
+      priceBand: "Budget",
+    },
+    whyItWon: "Most consistent portable in the under-$200 tier. Folds flat, ships in a single box.",
+    tradeoffs: ["Head sticks out", "Limited lifespan", "No real sauna ritual"],
+    ownerComplaints: ["Zipper failure with heavy use", "Foot pad not always included"],
+    installationNotes: "No install. Unfold, plug in, sit.",
+  },
 ];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best Home Saunas of 2026",
+  "datePublished": datePublished,
+  "dateModified": dateModified,
+  "author": { "@type": "Person", "name": "Aurec Senenoi", "url": "https://backyardsaunapro.com/about/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Backyard Sauna Pro",
+    "logo": { "@type": "ImageObject", "url": "https://backyardsaunapro.com/images/brand/logo-icon.svg" }
+  },
+  "mainEntityOfPage": pageUrl
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://backyardsaunapro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Best Home Saunas of 2026", "item": pageUrl }
+  ]
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Best Home Saunas of 2026",
+  "itemListElement": picks.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": { "@type": "Product", "name": p.name, "category": p.specs.type, "description": p.verdict }
+  }))
+};
+
+const faqs = [
+  { q: "Indoor vs outdoor sauna, which should I buy?", a: "Indoor saunas (typically infrared cabins) plug into 120V, install in a basement or spare room, and avoid weather concerns. Outdoor saunas (typically traditional barrel or cabin builds) need a foundation pad, often a 240V circuit, and deliver the higher heat and löyly that infrared cannot. If you have outdoor space and want real Finnish heat, go outdoor traditional. If space is tight and you want daily wellness sessions, go indoor infrared." },
+  { q: "Infrared vs traditional sauna, what is the difference?", a: "Infrared saunas heat your body directly with infrared light at ambient temperatures of 120-150 °F. Traditional saunas heat the air to 170-195 °F with a rock-and-element heater and let you throw water on rocks for steam. Infrared sessions run 30-45 minutes and feel gentler. Traditional sessions run 10-20 minutes and feel intense. Neither is objectively better." },
+  { q: "What is the best sauna under $3,000?", a: "Under $3,000, your strongest options are a plug-in indoor infrared cabin like the Dynamic Saunas Barcelona or a budget outdoor barrel kit. Premium full-spectrum infrared and premium outdoor cabins do not fit this budget. If you cannot run 240V, infrared is the right call. If you have outdoor space and a friend with an electrician's license, a budget barrel sauna becomes viable." },
+  { q: "What should I skip when buying a sauna?", a: "Skip any cabin that does not publish EMF ratings, skip cedar premiums on infrared cabins that never exceed 140 °F (cedar matters at traditional temperatures), skip strip-LED 'red light' marketing that is not backed by published irradiance numbers, and skip extended warranties on portable units where the failure point is usually the zipper anyway." },
+  { q: "Do I need 240V for a home sauna?", a: "For traditional saunas, almost always yes (typically 30A for 6kW, 40A for 8kW). For infrared cabins under 2kW, no, a standard 120V outlet works. Portable tent-style units run 120V. If running 240V is a dealbreaker, that narrows your decision tree to infrared or portable." },
+  { q: "How much space does a home sauna need?", a: "Plan for the cabin footprint plus 12 in of clearance on all sides for airflow, plus full door swing clearance. A 2-person infrared needs about 4 ft x 4 ft of floor space. A 4-person outdoor barrel needs about 7 ft x 7 ft of pad, plus access for assembly. See our space planning guide for full breakdowns." },
+  { q: "How long do home saunas last?", a: "Quality cedar barrel saunas with normal maintenance last 15-20 years. Premium infrared cabins are designed for similar lifespans, though the category is too young in the market for clean longevity data. Budget plug-in infrared cabins typically run 7-12 years before electronics need replacement. Portable units run 2-4 years with regular use." },
+  { q: "What maintenance does a home sauna need?", a: "Indoor infrared cabins need a wipe-down after sessions and the occasional vacuum. Outdoor cedar barrels need a band re-tighten in the first 30 days, exterior treatment every 1-2 years, and a heater rock replacement every 2-3 years. Wood-burning units add chimney cleaning and ash management. None of it is heavy work; it is just real work." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
 ---
 <Base
-  title="Best Backyard Saunas of 2026: Top Picks for Every Budget"
-  description="Our top sauna picks for 2026. From premium infrared cabins to budget plug-ins and traditional Finnish barrels. Real picks, honest tradeoffs."
+  title="Best Home Saunas of 2026: Top Picks for Every Budget"
+  description="Our top home sauna picks for 2026. Premium infrared, traditional barrels, budget plug-ins, and portables. Real picks, honest tradeoffs, decision tree to find your fit."
   canonical="/best-saunas"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <article class="max-w-3xl mx-auto">
-    <header class="mb-10">
+    <header class="mb-8">
       <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Best Picks</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Backyard Saunas of 2026
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-3">
+        Best Home Saunas of 2026
       </h1>
-      <p class="text-stone-500 text-sm mb-4">Updated May 2026 · 12 min read</p>
+      <p class="text-sm text-stone-500 italic mb-4">
+        By <a href="/about/" class="hover:text-amber-700 underline-offset-2 hover:underline">Aurec Senenoi</a> · Updated {updated} · Price checked {priceChecked}
+      </p>
       <p class="text-lg text-stone-600">
-        We researched over 40 saunas comparing specs, real owner reviews, build quality, and long-term value. Here are the ones actually worth your money in 2026.
+        The home-sauna category covers more ground than it used to. Premium full-spectrum infrared cabins, traditional outdoor barrels, plug-in budget units, and portable tents share the same Google searches and almost nothing else. This is the decision hub. Find your buyer-path below, then jump to the category guide that fits.
       </p>
     </header>
 
     <AdvertiserDisclosure />
 
-    <div class="space-y-10">
-      {picks.map(pick => (
-        <div class={`border rounded-xl shadow-sm overflow-hidden ${pick.sponsor === 'sun-home' ? 'border-stone-300 bg-stone-50' : 'bg-white border-stone-200'}`}>
-          {pick.sponsor === 'sun-home' && pick.image && (
-            <div class={pick.sunHomeProduct === 'equinox' ? 'bg-white p-5' : 'overflow-hidden'}>
-              <img src={pick.image} alt={pick.name} class={pick.sunHomeProduct === 'equinox' ? 'w-full h-auto object-contain max-h-72 mx-auto' : 'w-full h-auto object-cover max-h-72'} loading="lazy" width="1600" height="1067" />
-            </div>
-          )}
-          <div class="p-6">
-            <div class="flex items-start justify-between mb-3">
-              <div>
-                <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>
-                <span class="ml-2 text-xs text-stone-400">{pick.type}</span>
-              </div>
-              <span class="text-sm font-semibold text-stone-600">{pick.rating}</span>
-            </div>
-            <h2 class="text-xl font-bold text-stone-900 mb-1">{pick.name}</h2>
-            <p class="text-sm text-stone-500 mb-4">Best for: {pick.best_for}</p>
-            {pick.buyerFit && (
-              <div class="bg-white border border-stone-200 rounded-lg p-4 mb-4 text-sm text-stone-700">
-                <strong class="block text-stone-900 mb-1">Who this is for</strong>
-                {pick.buyerFit}
-              </div>
-            )}
-            <div class="grid md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <h4 class="text-xs font-bold text-green-700 uppercase mb-1">Pros</h4>
-                <ul class="text-sm text-stone-600 space-y-1">
-                  {pick.pros.map(p => <li> {p}</li>)}
-                </ul>
-              </div>
-              <div>
-                <h4 class="text-xs font-bold text-red-600 uppercase mb-1">Cons</h4>
-                <ul class="text-sm text-stone-600 space-y-1">
-                  {pick.cons.map(c => <li> {c}</li>)}
-                </ul>
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              {pick.sponsor === 'sun-home' ? (
-                <SunHomeButton product={pick.sunHomeProduct} label={`See Sun Home ${pick.sunHomeProduct.charAt(0).toUpperCase() + pick.sunHomeProduct.slice(1)}`} />
-              ) : (
-                <>
-                  <AmazonButton asin={pick.asin} price={pick.price} />
-                  {pick.selectSaunasCollection && <SelectSaunasButton collection={pick.selectSaunasCollection} label="Shop on Select Saunas" />}
-                </>
-              )}
-            </div>
-          </div>
-        </div>
+    <section class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8" aria-label="Find your sauna decision tree">
+      <h2 class="font-bold text-stone-800 mb-3">Find your sauna</h2>
+      <p class="text-sm text-stone-700 mb-4">Pick the path that matches your situation. Each leads to the right category guide.</p>
+      <ul class="space-y-3 text-sm text-stone-700">
+        <li>
+          <strong>I want an outdoor sauna with real Finnish heat.</strong> Go to <a href="/guides/best-outdoor-sauna-of-2026/" class="text-amber-700 hover:underline font-semibold">Best Outdoor Sauna of 2026</a>. Cedar barrels, wood-burning bundles, and premium outdoor infrared all live there.
+        </li>
+        <li>
+          <strong>I want an indoor infrared cabin for daily wellness sessions.</strong> Go to <a href="/guides/best-infrared-sauna-of-2026/" class="text-amber-700 hover:underline font-semibold">Best Infrared Sauna of 2026</a>. Premium full-spectrum, red light, budget plug-ins, and portables all live there.
+        </li>
+        <li>
+          <strong>I want infrared (lower heat, longer sessions) vs traditional (high heat, löyly).</strong> Start with our <a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline font-semibold">infrared vs traditional comparison</a>.
+        </li>
+        <li>
+          <strong>I have under $3,000 to spend.</strong> See <a href="/guides/best-saunas-under-2000/" class="text-amber-700 hover:underline font-semibold">Best Saunas Under $2,000</a> for plug-in options, or <a href="/guides/best-saunas-under-5000/" class="text-amber-700 hover:underline font-semibold">Best Saunas Under $5,000</a> for a budget outdoor barrel build.
+        </li>
+        <li>
+          <strong>I rent, travel, or just want to try a sauna without a real install.</strong> See <a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline font-semibold">Best Portable Sauna</a>.
+        </li>
+      </ul>
+    </section>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Top picks at a glance</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="text-sm w-full border border-stone-200 rounded-lg">
+        <thead class="bg-stone-100 text-stone-700">
+          <tr class="text-left">
+            <th class="p-2">Product</th>
+            <th class="p-2">Category winner</th>
+            <th class="p-2">Type</th>
+            <th class="p-2">Capacity</th>
+            <th class="p-2">Max temp</th>
+            <th class="p-2">Electrical</th>
+            <th class="p-2">Typical installed</th>
+            <th class="p-2">Best for</th>
+            <th class="p-2">Avoid if</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700">
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Sun Home Equinox</td><td class="p-2">Best Overall Infrared</td><td class="p-2">Premium full-spectrum</td><td class="p-2">2</td><td class="p-2">~165 °F</td><td class="p-2">120V</td><td class="p-2">$7k-$10k</td><td class="p-2">Daily wellness use</td><td class="p-2">Want löyly</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH Pinnacle 4P</td><td class="p-2">Best Traditional</td><td class="p-2">Cedar barrel</td><td class="p-2">4</td><td class="p-2">~190 °F</td><td class="p-2">240V/30A</td><td class="p-2">$4k-$6k</td><td class="p-2">Real Finnish heat</td><td class="p-2">No 240V access</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Sun Home Luminar</td><td class="p-2">Best Outdoor Infrared</td><td class="p-2">Premium outdoor infrared</td><td class="p-2">2</td><td class="p-2">~140 °F</td><td class="p-2">120V</td><td class="p-2">$8k-$12k</td><td class="p-2">Finished outdoor cabin</td><td class="p-2">Want löyly</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Sun Home Eclipse</td><td class="p-2">Best Red Light + Infrared</td><td class="p-2">RLT + infrared</td><td class="p-2">2</td><td class="p-2">~165 °F</td><td class="p-2">120V</td><td class="p-2">$8k-$11k</td><td class="p-2">Integrated RLT</td><td class="p-2">Only want one</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Dynamic Barcelona</td><td class="p-2">Best Budget</td><td class="p-2">Far-only infrared</td><td class="p-2">1-2</td><td class="p-2">~140 °F</td><td class="p-2">120V</td><td class="p-2">$1.2k-$1.5k</td><td class="p-2">First-time buyers</td><td class="p-2">Want full-spectrum</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Dundalk Harmony</td><td class="p-2">Best Premium Traditional</td><td class="p-2">Cedar outdoor</td><td class="p-2">2</td><td class="p-2">~195 °F</td><td class="p-2">240V</td><td class="p-2">$6k-$9k</td><td class="p-2">Premium traditional</td><td class="p-2">Want plug-and-play</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">SereneLife Portable</td><td class="p-2">Best Portable</td><td class="p-2">Tent-style</td><td class="p-2">1</td><td class="p-2">~150 °F</td><td class="p-2">120V</td><td class="p-2">Under $200</td><td class="p-2">Travel, trial</td><td class="p-2">Want real cabin</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How we choose</h2>
+    <p class="text-stone-700 mb-4">Every sauna on this list was evaluated on build quality and materials, ease of assembly, real customer reviews (we read the three-star ones), energy efficiency, warranty, and long-term durability reports. We do not recommend products we would not stand behind.</p>
+    <p class="text-stone-700 mb-8">Sun Home appears in three slots because Sun Home actually wins those categories: Equinox for premium indoor infrared, Eclipse for integrated red-light and infrared, Luminar for outdoor infrared. We do not co-elevate them with traditional picks and we do not stack them into categories that do not fit.</p>
+
+    {picks.map(p => <ProductCard {...p} />)}
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-3 mb-8">
+      {faqs.map(f => (
+        <details class="border border-stone-200 rounded-lg p-4 bg-white">
+          <summary class="font-bold text-stone-900 cursor-pointer">{f.q}</summary>
+          <p class="text-stone-700 mt-2 text-sm">{f.a}</p>
+        </details>
       ))}
     </div>
 
-    <section class="mt-14">
-      <h2 class="text-2xl font-bold mb-4 text-stone-900">How We Choose</h2>
-      <p class="text-stone-600 mb-4">
-        Every sauna on this list was evaluated on: build quality and materials, ease of assembly, real customer reviews (not just star ratings we read the 3-star ones), energy efficiency, warranty, and long-term durability reports.
-      </p>
-      <p class="text-stone-600">
-        We don't test products we can't stand behind. If we wouldn't recommend it to a friend, it doesn't make the list.
-      </p>
-    </section>
-
     <section class="mt-10">
-      <h2 class="text-2xl font-bold mb-4 text-stone-900">More Guides</h2>
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">More guides</h2>
       <ul class="space-y-2">
-        <li><a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">→ Infrared vs Traditional Sauna: Which Is Right for You?</a></li>
-        <li><a href="/guides/best-saunas-under-2000/" class="text-amber-700 hover:underline">→ Best Backyard Saunas Under $2,000</a></li>
-        <li><a href="/guides/how-to-assemble-barrel-sauna/" class="text-amber-700 hover:underline">→ How to Install a Barrel Sauna: Step-by-Step</a></li>
+        <li><a href="/guides/best-outdoor-sauna-of-2026/" class="text-amber-700 hover:underline">Best Outdoor Sauna of 2026</a></li>
+        <li><a href="/guides/best-infrared-sauna-of-2026/" class="text-amber-700 hover:underline">Best Infrared Sauna of 2026</a></li>
+        <li><a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">Infrared vs Traditional Sauna</a></li>
+        <li><a href="/guides/best-saunas-under-2000/" class="text-amber-700 hover:underline">Best Saunas Under $2,000</a></li>
+        <li><a href="/guides/how-to-assemble-barrel-sauna/" class="text-amber-700 hover:underline">How to Install a Barrel Sauna</a></li>
       </ul>
     </section>
   </article>
