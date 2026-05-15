@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
 import SunHomeButton from '../../components/SunHomeButton.astro';
-import SponsoredNotice from '../../components/SponsoredNotice.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -63,9 +63,7 @@ const faqSchema = {
       <img src="/images/sun-home/luminar.jpg" alt="Sun Home Luminar outdoor infrared sauna in a backyard" class="w-full object-cover max-h-80" loading="lazy" width="1600" height="1067" />
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Disclosure:</strong> This brand review and the Sun Home product placements on backyardsaunapro.com were created in collaboration with Sun Home Saunas. That relationship does not change our editorial framing of the brand's strengths and weaknesses. Affiliate links on this page may earn a commission at no extra cost to you.
-    </div>
+    <AdvertiserDisclosure />
 
     <h2 class="text-2xl font-bold text-stone-900 mt-8 mb-4">The Quick Take</h2>
     <p class="text-stone-700 mb-4">Premium full-spectrum infrared and red light therapy cabins. The brand publishes independently-verified EMF (0.5 mG, Vitatech), VOC (27 ug/m3, VERT/AIHA), and operating temperature data (165-170 degrees F, GGR-verified) that most competitors in the category simply do not. App integration, magnetic tool-free assembly, in-home warranty service, and a finished aesthetic that arrives ready to use rather than as a kit.</p>
@@ -78,7 +76,6 @@ const faqSchema = {
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
         <h3 class="text-xl font-bold text-stone-900 mb-2">Equinox (2-person, 3-person indoor)</h3>
         <p class="text-stone-700 text-sm mb-3">Full-spectrum infrared (near, mid, far), 120V plug-and-play install, kiln-dried eucalyptus interior, GGR-verified 165-170 degrees F operating temperature. No app or red light therapy. This is the brand's editorial flagship and our pick for Best Overall premium indoor infrared in 2026.</p>
-        <SponsoredNotice />
         <div class="mt-3">
           <SunHomeButton product="equinox" label="See Sun Home Equinox" />
         </div>
@@ -87,7 +84,6 @@ const faqSchema = {
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
         <h3 class="text-xl font-bold text-stone-900 mb-2">Luminar (2-person, 5-person outdoor)</h3>
         <p class="text-stone-700 text-sm mb-3">Outdoor infrared with patented aerospace-grade aluminum exterior and marine-grade matte black hardware. Canadian red cedar interior, native Sun Home app, optional red light therapy add-on. No annual staining and no cover required between sessions, which is a meaningful long-term maintenance win versus traditional cedar barrel kits.</p>
-        <SponsoredNotice />
         <div class="mt-3">
           <SunHomeButton product="luminar" label="See Sun Home Luminar" />
         </div>
@@ -96,7 +92,6 @@ const faqSchema = {
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
         <h3 class="text-xl font-bold text-stone-900 mb-2">Eclipse (2-person, 4-person indoor)</h3>
         <p class="text-stone-700 text-sm mb-3">The brand's red light + infrared cabin. Factory-integrated dual-tower red light therapy at 630-850nm with 1,800W output, included standard. Canadian red cedar interior, native Sun Home app with guided breathwork and remote preheat. Best for buyers who want serious RLT integrated with their sauna rather than as a separate panel purchase.</p>
-        <SponsoredNotice />
         <div class="mt-3">
           <SunHomeButton product="eclipse" label="See Sun Home Eclipse" />
         </div>

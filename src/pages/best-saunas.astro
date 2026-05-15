@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import AmazonButton from '../components/AmazonButton.astro';
 import SelectSaunasButton from '../components/SelectSaunasButton.astro';
 import SunHomeButton from '../components/SunHomeButton.astro';
-import SponsoredNotice from '../components/SponsoredNotice.astro';
+import AdvertiserDisclosure from '../components/AdvertiserDisclosure.astro';
 
 const picks = [
   {
@@ -123,13 +123,11 @@ const picks = [
       </h1>
       <p class="text-stone-500 text-sm mb-4">Updated May 2026 · 12 min read</p>
       <p class="text-lg text-stone-600">
-        We researched over 40 saunas comparing specs, real owner reviews, build quality, and long-term value. Here are the ones actually worth your money in 2026, with brand collaborations disclosed inline on the relevant product cards.
+        We researched over 40 saunas comparing specs, real owner reviews, build quality, and long-term value. Here are the ones actually worth your money in 2026.
       </p>
     </header>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 text-sm text-stone-700">
-      <strong>Disclosure:</strong> This page contains affiliate links. As an Amazon Associate I earn from qualifying purchases. This page includes placements created in collaboration with Sun Home Saunas, disclosed inline on each Sun Home product card below.
-    </div>
+    <AdvertiserDisclosure />
 
     <div class="space-y-10">
       {picks.map(pick => (
@@ -140,7 +138,6 @@ const picks = [
             </div>
           )}
           <div class="p-6">
-            {pick.sponsor === 'sun-home' && <SponsoredNotice />}
             <div class="flex items-start justify-between mb-3">
               <div>
                 <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>

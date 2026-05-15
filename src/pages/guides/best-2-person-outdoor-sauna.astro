@@ -1,8 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
 import SunHomeButton from '../../components/SunHomeButton.astro';
-import SponsoredNotice from '../../components/SponsoredNotice.astro';
 
 const picks = [
   {
@@ -80,6 +80,8 @@ const picks = [
         Two-person saunas are the sweet spot for couples and small yards. But "rated for 2 people" varies wildly some feel like a phone booth, others are genuinely comfortable. Here's what to actually buy.
       </p>
     </header>
+
+    <AdvertiserDisclosure />
     <div class="rounded-xl overflow-hidden mb-8">
       <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Barrel sauna with wood pile in a grassy field" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
@@ -106,7 +108,6 @@ const picks = [
             <span class="text-xs text-stone-400">{pick.type} · {pick.capacity}</span>
           </div>
           <h3 class="text-xl font-bold text-stone-900 mb-2">{pick.name}</h3>
-          {pick.sponsor === 'sun-home' && <SponsoredNotice />}
           <p class="text-stone-600 text-sm mb-4">{pick.summary}</p>
           {pick.buyerFit && (
             <div class="bg-stone-50 border border-stone-200 rounded-lg p-4 mb-4 text-sm text-stone-700">

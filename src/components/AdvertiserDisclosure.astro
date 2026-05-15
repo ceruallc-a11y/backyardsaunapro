@@ -1,0 +1,19 @@
+---
+// AdvertiserDisclosure.astro
+// Top-of-article material-connection disclosure (Forbes/Fortune model).
+// Used on any page containing paid placement(s). Replaces inline per-card
+// SponsoredNotice while still satisfying FTC 16 CFR Part 255 "clear and
+// conspicuous" placement requirements: visible above the fold, before
+// any product recommendation, with the sponsor brand explicitly named.
+const { brand = "Sun Home Saunas" } = Astro.props;
+---
+<aside
+  role="note"
+  aria-label="Advertiser disclosure"
+  class="not-prose border-l-4 border-amber-500 bg-amber-50 text-stone-700 px-4 py-3 text-sm rounded-r-md mb-6"
+>
+  <p class="font-semibold text-stone-800 mb-1">Advertiser Disclosure</p>
+  <p>
+    This article contains sponsored placements from <strong>{brand}</strong>. {brand} compensates Backyard Sauna Pro for inclusion within product categories. Product framing, ratings, pros/cons, and editorial commentary remain our own. We also earn commissions on qualifying purchases through partner links; this never affects our recommendations.
+  </p>
+</aside>

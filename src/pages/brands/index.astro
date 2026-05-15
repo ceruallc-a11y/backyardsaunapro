@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
 
 const brands = [
   {
@@ -57,14 +58,13 @@ const brands = [
 >
   <div class="max-w-3xl mx-auto">
     <h1 class="text-4xl font-bold text-stone-900 mb-2">Sauna Brand Reviews</h1>
+
+    <AdvertiserDisclosure />
     <p class="text-stone-500 mb-10">Who makes a good sauna, and who to avoid. Brand-by-brand breakdowns.</p>
 
     <div class="grid md:grid-cols-2 gap-4">
       {brands.map(brand => (
         <a href={brand.href} class={`block rounded-xl p-4 hover:shadow transition-all ${brand.featured ? 'bg-stone-50 border border-stone-300 hover:border-stone-400' : 'bg-white border border-stone-200 hover:border-amber-400'}`}>
-          {brand.featured && (
-            <span class="text-xs italic text-stone-500 block mb-1">In collaboration with Sun Home</span>
-          )}
           <h2 class="font-bold text-stone-900 mb-1">{brand.name}</h2>
           <p class="text-stone-500 text-sm">{brand.desc}</p>
         </a>

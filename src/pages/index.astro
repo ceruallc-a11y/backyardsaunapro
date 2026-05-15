@@ -1,8 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
+import AdvertiserDisclosure from '../components/AdvertiserDisclosure.astro';
 import AmazonButton from '../components/AmazonButton.astro';
 import SunHomeButton from '../components/SunHomeButton.astro';
-import SponsoredNotice from '../components/SponsoredNotice.astro';
 
 const featuredPicks = [
   {
@@ -42,6 +42,8 @@ const featuredPicks = [
     <h1 class="text-4xl md:text-5xl font-bold text-stone-900 mb-4 leading-tight">
       Find the Right Backyard Sauna
     </h1>
+
+    <AdvertiserDisclosure />
     <p class="text-lg text-stone-600 max-w-2xl mx-auto mb-8">
       Sauna guides written by people who've actually built one.
     </p>
@@ -68,7 +70,6 @@ const featuredPicks = [
             </div>
           )}
           <span class={`text-xs font-bold px-2 py-1 rounded w-fit mb-3 ${pick.sponsor === 'sun-home' ? 'bg-stone-900 text-amber-100' : 'bg-amber-100 text-amber-800'}`}>{pick.tag}</span>
-          {pick.sponsor === 'sun-home' && <SponsoredNotice />}
           <h3 class="font-semibold text-stone-900 mb-2 leading-snug">{pick.name}</h3>
           <p class="text-sm text-stone-600 flex-grow mb-3">{pick.blurb}</p>
           <p class="text-xs text-stone-400 mb-3">Rating: {pick.rating}</p>
