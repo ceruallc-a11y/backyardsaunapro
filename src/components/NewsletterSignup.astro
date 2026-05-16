@@ -1,6 +1,6 @@
 ---
 // NewsletterSignup.astro
-// Footer-mounted email capture, Kit form UID: b7d6fe4c1e
+// Footer-mounted email capture, Kit form ID: 9452008 (UID b7d6fe4c1e)
 ---
 
 <section class="newsletter-cta bg-stone-800 text-stone-100 py-6 px-4 rounded-md mb-6">
@@ -10,7 +10,11 @@
       <p class="text-sm text-stone-300">12 things to check before you spend $5,000+. Electrical, foundation, zoning, red flags to avoid.</p>
     </div>
     <div class="md:w-1/2">
-      <script async data-uid="b7d6fe4c1e" src="https://backyardsaunapro.kit.com/b7d6fe4c1e/index.js"></script>
+      <form action="https://app.kit.com/forms/9452008/subscriptions" method="post" data-sv-form="9452008" data-uid="b7d6fe4c1e" data-format="inline" data-version="5" class="kit-form flex flex-col sm:flex-row gap-2">
+        <input type="email" name="email_address" placeholder="your@email.com" required class="kit-email-input flex-1 px-4 py-2 rounded-md border border-stone-600 bg-stone-900 text-stone-100 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-600" />
+        <button type="submit" class="kit-submit-btn bg-amber-600 hover:bg-amber-700 text-white font-semibold px-4 py-2 rounded-md transition-colors whitespace-nowrap">Send me the checklist</button>
+      </form>
+      <p class="kit-fine-print text-xs text-stone-400 mt-2">No spam. Unsubscribe anytime.</p>
     </div>
   </div>
 </section>
