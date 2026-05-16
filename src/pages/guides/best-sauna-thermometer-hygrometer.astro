@@ -31,6 +31,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Best Sauna Thermometer and Hygrometer (2025)"
@@ -67,7 +68,7 @@ const faqSchema = {
           <li>Wood frame (cedar or aspen depending on variant)</li>
           <li>Wall-mount or bench placement</li>
         </ul>
-        <a href="https://www.amazon.com/dp/B0BC8QMSKG?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B0BC8QMSKG" variant="primary" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -76,7 +77,7 @@ const faqSchema = {
           <h3 class="text-xl font-bold text-stone-900 mt-1">Basic Sauna Accessories Bundle</h3>
         </div>
         <p class="text-stone-600 mb-3">A good entry-level option that bundles a thermometer with other sauna accessories at a lower per-piece cost. Works well if you're outfitting a new sauna from scratch and want to get everything in one order.</p>
-        <a href="https://www.amazon.com/dp/B0DKJVC1D3?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B0DKJVC1D3" variant="primary" />
       </div>
 
     </div>

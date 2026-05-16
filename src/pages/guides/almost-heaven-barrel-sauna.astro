@@ -39,6 +39,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Almost Heaven Barrel Sauna Review (2025): Models & Prices"
@@ -123,14 +124,14 @@ const faqSchema = {
           </ul>
         </div>
       </div>
-      <a href="https://www.amazon.com/dp/B017WJV8SO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+      <AmazonButton asin="B017WJV8SO" variant="primary" />
     </div>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The 6-Person — For Families</h2>
     <p class="text-stone-700 mb-4">The 6-person model has a noticeably larger bench layout — two full-length benches where people can lie down rather than sit. If you regularly sauna with 3+ people or want to lie down and stretch out, this is the right model. It requires an 8kW heater (vs 6kW for the Pinnacle) and takes longer to preheat, but the extra space is the kind of thing owners are happy they paid for.</p>
 
     <div class="border border-stone-200 rounded-xl p-5 bg-white mb-6">
-      <a href="https://www.amazon.com/dp/B003Z11AXM?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check 6-Person Price on Amazon</a>
+      <AmazonButton asin="B003Z11AXM" variant="primary" label="Check 6-Person Price on Amazon" />
     </div>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Which Heater to Pair With It</h2>
@@ -144,7 +145,7 @@ const faqSchema = {
     <div class="border border-stone-200 rounded-xl p-5 bg-white mb-8">
       <h3 class="font-bold text-stone-900 mb-1">Harvia KIP 60B — ~$579</h3>
       <p class="text-stone-600 text-sm mb-3">The standard pairing for the Pinnacle. Finnish-made, UL-listed, holds 33 lbs of stones. Ships separately from Amazon.</p>
-      <a href="https://www.amazon.com/dp/B0B7TRM95Y?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Check Harvia KIP 60B on Amazon</a>
+      <AmazonButton asin="B0B7TRM95Y" variant="small" label="Check Harvia KIP 60B on Amazon" />
     </div>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What You Need Beyond the Kit</h2>

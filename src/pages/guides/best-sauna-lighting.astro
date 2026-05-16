@@ -23,6 +23,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Best Sauna Lighting (2025): What Works and What to Avoid"
@@ -65,7 +66,7 @@ const faqSchema = {
           <h3 class="text-lg font-bold text-stone-900 mt-1">Purpose-Built Sauna LED Fixture</h3>
         </div>
         <p class="text-stone-600 mb-3 text-sm">Sauna-specific LED fixtures from brands like Harvia, Helo, or Cariitti are designed for the environment and last decades. Mount behind the upper bench for indirect glow. Look for 12V low-voltage options — they are safer in the heat and humidity environment than line voltage.</p>
-        <a href="https://www.amazon.com/s?k=sauna+led+light+fixture+high+temperature&tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Browse Sauna Lights on Amazon</a>
+        <AmazonButton search="sauna led light fixture high temperature" variant="small" label="Browse Sauna Lights on Amazon" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -74,7 +75,7 @@ const faqSchema = {
           <h3 class="text-lg font-bold text-stone-900 mt-1">12V LED Strip Lighting (High Temp Rated)</h3>
         </div>
         <p class="text-stone-600 mb-3 text-sm">A 12V LED strip rated for high temperature mounted behind the upper bench creates beautiful indirect light for under $30. Run the 12V transformer outside the sauna room and just bring the low-voltage wire in. Simple, effective, very cheap.</p>
-        <a href="https://www.amazon.com/s?k=12v+led+strip+high+temperature+sauna&tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block border border-amber-400 text-amber-700 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-amber-50 transition-colors">Browse LED Strips on Amazon</a>
+        <AmazonButton search="12v led strip high temperature sauna" variant="outline" label="Browse LED Strips on Amazon" />
       </div>
     </div>
 

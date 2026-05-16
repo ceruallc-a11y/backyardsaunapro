@@ -23,6 +23,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Best Sauna Towels (2025): What Actually Works"
@@ -61,7 +62,7 @@ const faqSchema = {
           
         </div>
         <p class="text-stone-600 mb-4 text-sm">100% cotton, fast-drying, large enough to sit on and wrap around. Buy 2-3 so you always have a dry one. The most practical sauna towel for the money.</p>
-        <a href="https://www.amazon.com/s?k=turkish+peshtemal+towel+sauna+cotton&tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Browse Turkish Towels on Amazon</a>
+        <AmazonButton search="turkish peshtemal towel sauna cotton" variant="primary" label="Browse Turkish Towels on Amazon" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -73,7 +74,7 @@ const faqSchema = {
           
         </div>
         <p class="text-stone-600 mb-4 text-sm">Dedicated bench towels or pads are cut wide to cover the full bench surface and often have a non-slip backing. Worth having if you use the sauna daily — they protect the cedar better than draping a regular towel.</p>
-        <a href="https://www.amazon.com/s?k=sauna+bench+towel+cover+cotton&tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block border border-amber-400 text-amber-700 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-amber-50 transition-colors">Browse Bench Towels on Amazon</a>
+        <AmazonButton search="sauna bench towel cover cotton" variant="outline" label="Browse Bench Towels on Amazon" />
       </div>
     </div>
 

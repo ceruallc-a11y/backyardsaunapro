@@ -23,6 +23,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Best 2-Person Sauna (2025): Outdoor, Indoor, and Plug-In Options"
@@ -67,7 +68,7 @@ const faqSchema = {
         </div>
         <p class="text-stone-600 mb-2 text-sm">Western red cedar barrel kit, compact footprint (4' diameter), works well in tight spaces. Pairs with Harvia KIP 45B (4.5kW). The smallest production barrel sauna from a reliable brand. Real sauna experience, just compact.</p>
         <p class="text-stone-500 text-xs mb-3">Heater sold separately — add ~$450 for the KIP 45B.</p>
-        <a href="https://www.amazon.com/s?k=almost+heaven+refuge+barrel+sauna&tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton search="almost heaven refuge barrel sauna" variant="primary" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -79,7 +80,7 @@ const faqSchema = {
           
         </div>
         <p class="text-stone-600 mb-2 text-sm">120V plug-in, no electrician needed. Pre-assembled infrared panels, Canadian hemlock, assembles in 45 minutes. The benchmark for affordable indoor 2-person saunas. Not a traditional steam sauna — infrared, lower temperature. Good for solo use or a couple who does not mind being cozy.</p>
-        <a href="https://www.amazon.com/dp/B00A2F99F0?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B00A2F99F0" variant="primary" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -91,7 +92,7 @@ const faqSchema = {
           
         </div>
         <p class="text-stone-600 mb-3 text-sm">Listed as 4-person but genuinely comfortable for 2. Larger interior means room to lie down, proper bench length, and enough space that two people are not on top of each other. If you can afford the extra $600 over the Refuge, the experience gap is substantial.</p>
-        <a href="https://www.amazon.com/dp/B017WJV8SO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block border border-amber-400 text-amber-700 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-amber-50 transition-colors">Check Price on Amazon</a>
+        <AmazonButton asin="B017WJV8SO" variant="outline" />
       </div>
     </div>
 

@@ -39,6 +39,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Best 1-Person Sauna (2025): Indoor and Outdoor Picks"
@@ -101,7 +102,7 @@ const faqSchema = {
           <span>|</span>
           <span class="text-red-700 font-medium">Cons: max 140°F (not traditional heat)</span>
         </div>
-        <a href="https://www.amazon.com/dp/B00A2F99F0?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B00A2F99F0" variant="primary" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -138,7 +139,7 @@ const faqSchema = {
           <span>|</span>
           <span class="text-red-700 font-medium">Cons: needs 240V wiring, outdoor only</span>
         </div>
-        <a href="https://www.amazon.com/dp/B017WJV8SO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B017WJV8SO" variant="primary" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -154,7 +155,7 @@ const faqSchema = {
           <span class="mx-2">|</span>
           <span class="text-red-700 font-medium">Cons: not a real sauna experience, less durable</span>
         </div>
-        <a href="https://www.amazon.com/dp/B084GY5CHB?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B084GY5CHB" variant="primary" />
       </div>
 
     </div>

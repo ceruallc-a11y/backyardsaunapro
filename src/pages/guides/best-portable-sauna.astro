@@ -31,6 +31,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Best Portable Sauna (2025): Tent and Infrared Options Reviewed"
@@ -87,7 +88,7 @@ const faqSchema = {
           <span>|</span>
           <span class="text-red-700 font-medium">Cons: not a traditional sauna, head stays outside</span>
         </div>
-        <a href="https://www.amazon.com/dp/B084GY5CHB?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B084GY5CHB" variant="primary" />
       </div>
 
     </div>

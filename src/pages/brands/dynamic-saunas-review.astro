@@ -31,6 +31,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Dynamic Saunas Review (2025): Barcelona, Andora, and Which to Buy"
@@ -101,7 +102,7 @@ const faqSchema = {
           
         </div>
         <p class="text-stone-600 text-sm mb-3">The most reviewed model. Fits most spare bedrooms or basements. Six carbon panels, Bluetooth audio, chromotherapy light. Right for solo use or two people who don't mind close quarters.</p>
-        <a href="https://www.amazon.com/dp/B00A2F99F0?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B00A2F99F0" variant="small" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">

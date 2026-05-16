@@ -23,6 +23,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Sauna Tent (2025): What They Are, Best Picks, and Who They're For"
@@ -61,7 +62,7 @@ const faqSchema = {
           
         </div>
         <p class="text-stone-600 mb-3 text-sm">Heavy canvas teepee-style tents designed specifically for sauna use hold heat well and are comfortable for 4-6 people. Setup takes 20-30 minutes. Pairs with a small wood stove like the Harvia M3 or Gstove Heat View.</p>
-        <a href="https://www.amazon.com/s?k=canvas+tent+sauna+portable+wood+stove&tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Browse Canvas Sauna Tents on Amazon</a>
+        <AmazonButton search="canvas tent sauna portable wood stove" variant="primary" label="Browse Canvas Sauna Tents on Amazon" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -73,7 +74,7 @@ const faqSchema = {
           
         </div>
         <p class="text-stone-600 mb-3 text-sm">A compact single-person steam tent with a built-in steam generator. Not a traditional sauna tent — more of a steam pod — but it delivers a legitimate sweat session for solo use and stores in a bag. Good for apartments or travel. See our <a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline">portable sauna guide</a> for more options in this category.</p>
-        <a href="https://www.amazon.com/dp/B084GY5CHB?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block border border-amber-400 text-amber-700 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-amber-50 transition-colors">Check Price on Amazon</a>
+        <AmazonButton asin="B084GY5CHB" variant="outline" />
       </div>
     </div>
 
@@ -82,7 +83,7 @@ const faqSchema = {
     <div class="border border-stone-200 rounded-xl p-5 bg-white mb-8">
       <h3 class="font-bold text-stone-900 mb-1">Harvia M3 — ~$799</h3>
       <p class="text-stone-600 text-sm mb-3">Compact, Finnish-made, heats 8-13m³. The most-recommended stove for portable and tent sauna applications.</p>
-      <a href="https://www.amazon.com/dp/B01FY6PZYU?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+      <AmazonButton asin="B01FY6PZYU" variant="small" />
     </div>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Sauna Tent vs Barrel Sauna: Which to Buy</h2>

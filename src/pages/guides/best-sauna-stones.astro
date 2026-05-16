@@ -39,6 +39,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Best Sauna Stones (2025): Olivine, Granite, and What Actually Works"
@@ -79,7 +80,7 @@ const faqSchema = {
           <li>Weight options: 22 lb, 44 lb bags</li>
           <li>Works with electric and wood-burning heaters</li>
         </ul>
-        <a href="https://www.amazon.com/dp/B0FB6SGKJL?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B0FB6SGKJL" variant="primary" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
@@ -88,7 +89,7 @@ const faqSchema = {
           <h3 class="text-xl font-bold text-stone-900 mt-1">Olivine Sauna Rocks (Standard)</h3>
         </div>
         <p class="text-stone-600 mb-3">Same olivine material at a lower price per pound. Good for first-time buyers who want to try olivine without committing to a premium bag. Slightly more variation in size and shape than the premium option, which doesn't affect performance but looks less uniform in the heater.</p>
-        <a href="https://www.amazon.com/dp/B00R52X6U2?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B00R52X6U2" variant="primary" />
       </div>
 
     </div>

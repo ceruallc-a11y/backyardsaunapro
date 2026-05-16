@@ -31,6 +31,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Sauna vs Hot Tub: Which Is Worth Buying in 2025?"
@@ -137,7 +138,7 @@ const faqSchema = {
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
         <h3 class="font-bold text-stone-900 mb-1">Almost Heaven Pinnacle 4-Person — ~$2,199</h3>
         <p class="text-stone-600 text-sm mb-3">The standard outdoor barrel sauna recommendation. Cedar, DIY-friendly, pairs with a Harvia KIP heater. Our most-recommended sauna for first-time buyers.</p>
-        <a href="https://www.amazon.com/dp/B017WJV8SO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B017WJV8SO" variant="small" />
       </div>
     </div>
 

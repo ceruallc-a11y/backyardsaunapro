@@ -31,6 +31,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Finnleo Sauna Review (2025): Quality, Pricing, and Who It's For"
@@ -121,7 +122,7 @@ const faqSchema = {
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Finlandia Heater Line</h2>
     <p class="text-stone-700 mb-4">Finlandia is Finnleo's in-house heater brand. Their FLB series is a reliable mid-range electric heater that competes with the Harvia KIP and similar units. UL listed, good stone capacity, solid warranty. If you're buying a Finnleo sauna package it includes a Finlandia heater by default. If you're building or buying a sauna from another brand, the Finlandia FLB-60 is worth knowing about as a standalone purchase.</p>
-    <a href="https://www.amazon.com/dp/B000N4RSFO?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm mb-8">Check Finlandia FLB-60 on Amazon</a>
+    <AmazonButton asin="B000N4RSFO" variant="primary" label="Check Finlandia FLB-60 on Amazon" class="mb-8" />
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">

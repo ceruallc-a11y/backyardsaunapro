@@ -31,6 +31,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Best Sauna Essential Oils and Essences (2025)"
@@ -67,7 +68,7 @@ const faqSchema = {
           <li>Works with any traditional or wood-burning heater</li>
           <li>Long-lasting: one bottle lasts months of regular use</li>
         </ul>
-        <a href="https://www.amazon.com/dp/B07CZ4NN1P?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B07CZ4NN1P" variant="primary" />
       </div>
 
     </div>

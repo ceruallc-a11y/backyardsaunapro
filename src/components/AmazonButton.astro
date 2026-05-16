@@ -1,20 +1,69 @@
 ---
 export interface Props {
-  asin: string;
+  asin?: string;
+  search?: string;
+  href?: string;
+  slug?: string;
   label?: string;
   price?: string;
+  variant?: "primary" | "outline" | "small" | "default";
+  class?: string;
 }
-const { asin, label = "Check Price on Amazon", price: _price } = Astro.props;
+const {
+  asin,
+  search,
+  href,
+  slug,
+  label = "Check Price on Amazon",
+  price: _price,
+  variant = "default",
+  class: extraClass = "",
+} = Astro.props;
+
 const tag = "backyardsauna-20";
-const url = `https://www.amazon.com/dp/${asin}?tag=${tag}`;
+// Derive slug from page URL when not explicitly provided.
+const pathname = Astro.url?.pathname ?? "/";
+const derivedSlug =
+  slug ??
+  (pathname
+    .replace(/\/+$/, "")
+    .split("/")
+    .filter(Boolean)
+    .pop() ?? "home");
+const ascsubtag = `bsp_${derivedSlug}`;
+
+let url: string;
+if (asin) {
+  url = `https://www.amazon.com/dp/${asin}?tag=${tag}&ascsubtag=${ascsubtag}`;
+} else if (search) {
+  url = `https://www.amazon.com/s?k=${encodeURIComponent(search)}&tag=${tag}&ascsubtag=${ascsubtag}`;
+} else if (href) {
+  // Strip any pre-existing tag, then add our tag + ascsubtag.
+  let base = href.replace(/([?&])tag=[^&]*/g, "$1").replace(/[?&]$/, "");
+  const sep = base.includes("?") ? "&" : "?";
+  url = `${base}${sep}tag=${tag}&ascsubtag=${ascsubtag}`;
+} else {
+  url = `https://www.amazon.com/?tag=${tag}&ascsubtag=${ascsubtag}`;
+}
+
+const styles: Record<string, string> = {
+  default:
+    "inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors shadow",
+  primary:
+    "inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm",
+  outline:
+    "inline-block border border-amber-400 text-amber-700 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-amber-50 transition-colors",
+  small:
+    "inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm",
+};
+const cls = `${styles[variant] ?? styles.default} ${extraClass}`.trim();
+const arrow = variant === "default" ? " \u2192" : "";
 ---
-<div class="my-4">
-  <a
-    href={url}
-    target="_blank"
-    rel="nofollow noopener sponsored"
-    class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors shadow"
-  >
-    {label} &rarr;
-  </a>
-</div>
+<a
+  href={url}
+  target="_blank"
+  rel="nofollow noopener sponsored"
+  class={cls}
+>
+  {label}{arrow}
+</a>

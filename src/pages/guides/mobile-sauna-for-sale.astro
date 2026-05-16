@@ -31,6 +31,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="Mobile Sauna for Sale (2025): What to Know Before You Buy"
@@ -76,7 +77,7 @@ const faqSchema = {
     <div class="border border-stone-200 rounded-xl p-5 bg-white mb-8">
       <h3 class="font-bold text-stone-900 mb-1">Harvia M3 Wood-Burning Stove — ~$799</h3>
       <p class="text-stone-600 text-sm mb-3">The standard wood stove recommendation for mobile sauna builds. Compact, no electricity needed, 8-13m³ heating volume.</p>
-      <a href="https://www.amazon.com/dp/B01FY6PZYU?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+      <AmazonButton asin="B01FY6PZYU" variant="small" />
     </div>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Mobile Sauna as a Business</h2>

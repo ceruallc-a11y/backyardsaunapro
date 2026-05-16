@@ -31,6 +31,7 @@ const faqSchema = {
     }
   ]
 };
+import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
   title="HUUM Sauna Heater Review (2025): Is It Worth Buying?"
@@ -133,7 +134,7 @@ const faqSchema = {
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
         <h3 class="text-lg font-bold text-stone-900 mb-2">HUUM Hive 13kW</h3>
         <p class="text-stone-600 mb-3">The larger wood-look heater with substantial stone capacity. Designed for bigger rooms of 400-700 cubic feet. The aesthetic is distinctive and the steam quality is excellent when properly loaded with olivine stones.</p>
-        <a href="https://www.amazon.com/dp/B096T61VPY?tag=backyardsauna-20" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Check Price on Amazon</a>
+        <AmazonButton asin="B096T61VPY" variant="primary" />
       </div>
     </div>
 
