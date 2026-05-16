@@ -1,44 +1,16 @@
 ---
 // NewsletterSignup.astro
-// Footer-mounted email capture, posts to Kit (ConvertKit).
-// Form UID: ac62fc30a5 (BackYardSaunaPro creator profile)
-// Form ID: 9448103
+// Footer-mounted email capture, Kit form UID: b7d6fe4c1e
 ---
 
 <section class="newsletter-cta bg-stone-800 text-stone-100 py-6 px-4 rounded-md mb-6">
   <div class="max-w-3xl mx-auto flex flex-col md:flex-row md:items-center gap-4">
     <div class="flex-1">
-      <h3 class="text-lg font-semibold text-white mb-1">Free Download: Outdoor Sauna Buying Checklist</h3>
-      <p class="text-sm text-stone-300">12 things to check before you spend $5,000+. One email per week max. Unsubscribe anytime.</p>
+      <h3 class="text-lg font-semibold text-white mb-1">Free: Outdoor Sauna Buying Checklist</h3>
+      <p class="text-sm text-stone-300">12 things to check before you spend $5,000+. Electrical, foundation, zoning, red flags to avoid.</p>
     </div>
-    <form
-      action="https://app.kit.com/forms/9448103/subscriptions"
-      method="post"
-      data-sv-form="9448103"
-      data-uid="ac62fc30a5"
-      data-format="inline"
-      data-version="5"
-      class="flex flex-col sm:flex-row gap-2 md:w-1/2"
-    >
-      <input type="hidden" name="tags[]" value="lead-magnet:outdoor-checklist" />
-      <label class="sr-only" for="newsletter-email">Email address</label>
-      <input
-        id="newsletter-email"
-        type="email"
-        name="email_address"
-        placeholder="your@email.com"
-        required
-        autocomplete="email"
-        class="flex-1 px-3 py-2 rounded border border-stone-600 bg-stone-900 text-stone-100 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-amber-500"
-      />
-      <button
-        type="submit"
-        class="px-4 py-2 rounded bg-amber-500 text-stone-900 font-semibold hover:bg-amber-400 transition"
-      >
-        Send me the checklist
-      </button>
-    </form>
+    <div class="md:w-1/2">
+      <script async data-uid="b7d6fe4c1e" src="https://backyardsaunapro.kit.com/b7d6fe4c1e/index.js"></script>
+    </div>
   </div>
 </section>
-
-<script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>

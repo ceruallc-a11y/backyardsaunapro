@@ -1,7 +1,7 @@
 ---
 // LeadMagnetSignup.astro
-// Gated checklist download: /lead-magnets/outdoor-sauna-checklist.html
-// Kit form UID: ac62fc30a5, Form ID: 9448103
+// Lead magnet CTA. Kit form UID: b7d6fe4c1e
+// Direct download fallback: /lead-magnets/outdoor-sauna-checklist.html
 ---
 
 <section class="lead-magnet-cta bg-amber-50 border border-amber-300 border-l-4 border-l-amber-700 rounded-lg p-6 md:p-8 my-10">
@@ -9,47 +9,17 @@
     <div>
       <p class="text-xs font-bold uppercase tracking-wider text-amber-800 mb-2">Free Download</p>
       <h3 class="text-2xl font-bold text-stone-900 mb-2 leading-tight">
-        Outdoor Sauna Buying Checklist
+        Free: Outdoor Sauna Buying Checklist
       </h3>
       <p class="text-stone-700 mb-3">
-        12 things to check before you spend $5,000+
+        12 things to check before you spend $5,000+. Electrical, foundation, zoning, red flags to avoid.
       </p>
-      <ul class="text-sm text-stone-600 space-y-1 list-disc list-inside">
-        <li>Specs to compare across brands</li>
-        <li>True installed cost ranges ($3k to $15k+)</li>
-        <li>Heater sizing cheat sheet</li>
-        <li>Red flags and seller questions</li>
-      </ul>
+      <p class="text-sm text-stone-600">
+        Prefer to skip the email? <a href="/lead-magnets/outdoor-sauna-checklist.html" class="text-amber-700 hover:underline font-medium">View the full checklist</a>.
+      </p>
     </div>
-    <form
-      action="https://app.kit.com/forms/9448103/subscriptions"
-      method="post"
-      data-sv-form="9448103"
-      data-uid="ac62fc30a5"
-      data-format="inline"
-      data-version="5"
-      class="flex flex-col gap-3"
-    >
-      <label class="sr-only" for="lead-magnet-email">Email address</label>
-      <input
-        id="lead-magnet-email"
-        type="email"
-        name="email_address"
-        placeholder="your@email.com"
-        required
-        autocomplete="email"
-        class="px-4 py-3 rounded border border-stone-300 bg-white text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
-      />
-      <input type="hidden" name="tags[]" value="lead-magnet:outdoor-checklist" />
-      <button
-        type="submit"
-        class="px-4 py-3 rounded bg-stone-900 hover:bg-stone-700 text-white font-semibold transition-colors"
-      >
-        Send me the checklist
-      </button>
-      <p class="text-xs text-stone-500">No spam. Unsubscribe anytime.</p>
-    </form>
+    <div class="kit-embed-wrapper">
+      <script async data-uid="b7d6fe4c1e" src="https://backyardsaunapro.kit.com/b7d6fe4c1e/index.js"></script>
+    </div>
   </div>
 </section>
-
-<script src="https://f.convertkit.com/ckjs/ck.5.js" async></script>
