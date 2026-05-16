@@ -26,7 +26,7 @@ const products = [
       type: "Premium outdoor infrared cabin",
       capacity: "2 people",
       heatSource: "Full-spectrum infrared panels (near, mid, far)",
-      maxTemp: "Around 140 °F",
+      maxTemp: "Around 140 °F",
       electrical: "120V standard outlet in most installs",
       dimensions: "Approximately 62 x 50 x 79 in",
       warranty: "Lifetime structural, 5 yr electrical (per manufacturer)",
@@ -59,7 +59,7 @@ const products = [
       type: "Traditional outdoor barrel",
       capacity: "4 people (2-3 comfortable)",
       heatSource: "Electric heater + rocks (sold separately, typically 6kW Harvia KIP)",
-      maxTemp: "180-195 °F",
+      maxTemp: "180-195 °F",
       electrical: "240V dedicated 30A circuit",
       dimensions: "72 in diameter x 72 in length",
       warranty: "5 yr structural",
@@ -90,7 +90,7 @@ const products = [
       type: "Traditional outdoor barrel, wood-fired",
       capacity: "4 people",
       heatSource: "Included wood-burning stove + chimney",
-      maxTemp: "180-200 °F",
+      maxTemp: "180-200 °F",
       electrical: "None required",
       dimensions: "72 in diameter x ~72 in length",
       warranty: "1 yr limited (per listing)",
@@ -122,7 +122,7 @@ const products = [
       type: "Traditional outdoor barrel",
       capacity: "6 people (4 comfortable)",
       heatSource: "Electric heater + rocks (8kW Harvia KIP 80B typical)",
-      maxTemp: "180-195 °F",
+      maxTemp: "180-195 °F",
       electrical: "240V 40A dedicated circuit",
       dimensions: "72 in diameter x 96 in length",
       warranty: "5 yr structural",
@@ -151,7 +151,7 @@ const products = [
       type: "Traditional outdoor barrel",
       capacity: "2 people",
       heatSource: "Electric heater + rocks (4kW typical)",
-      maxTemp: "180-195 °F",
+      maxTemp: "180-195 °F",
       electrical: "240V 20A circuit (sometimes 30A depending on heater)",
       dimensions: "60 in diameter x 60 in length",
       warranty: "5 yr structural",
@@ -219,7 +219,7 @@ const itemListSchema = {
 
 const faqs = [
   { q: "What is the best outdoor sauna in 2026?", a: "It depends on the experience you want. The Sun Home Luminar is the best outdoor infrared cabin because it ships finished, plugs into 120V in most cases, and skips foundation work. For traditional Finnish heat with rocks and steam, the Almost Heaven Pinnacle 4-Person barrel is the strongest traditional pick. Those are two different categories, not co-winners." },
-  { q: "Outdoor barrel sauna vs outdoor infrared cabin, which is better?", a: "Different experiences. A barrel sauna runs at 180-195 °F with rocks and löyly but needs 240V and a foundation pad. An outdoor infrared cabin runs around 140 °F, usually plugs into 120V, and skips the pad. Neither is objectively better. Pick based on whether you want intense heat with steam or longer cooler sessions." },
+  { q: "Outdoor barrel sauna vs outdoor infrared cabin, which is better?", a: "Different experiences. A barrel sauna runs at 180-195 °F with rocks and löyly but needs 240V and a foundation pad. An outdoor infrared cabin runs around 140 °F, usually plugs into 120V, and skips the pad. Neither is objectively better. Pick based on whether you want intense heat with steam or longer cooler sessions." },
   { q: "How much does an outdoor sauna cost in 2026?", a: "Traditional barrel kit runs $2,000 to $4,500, plus $1,000 to $2,000 for the heater, 240V install, and foundation, for an installed total around $3,500 to $6,500. Premium outdoor infrared cabins sit in the $7,000 to $12,000 range installed. Custom builds run higher." },
   { q: "Do outdoor saunas hold up in cold climates?", a: "Yes, when built and insulated for it. Cedar barrel saunas in Minnesota, Maine, and Canada commonly run year-round and last 15-20 years with basic maintenance. The factors that matter most are freeze-thaw handling, snow loading on the roof, and whether the heater is sized for the volume." },
   { q: "What electrical setup does an outdoor sauna need?", a: "Most traditional barrel saunas need a dedicated 240V circuit, typically 30A for a 6kW heater or 40A for an 8kW heater. Outdoor infrared cabins under 2kW usually run on a standard 120V outlet. Always confirm the exact spec on the heater you buy and pull a permit if your jurisdiction requires one." },
@@ -297,11 +297,11 @@ const faqSchema = {
           </tr>
         </thead>
         <tbody class="text-stone-700">
-          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Sun Home Luminar</td><td class="p-2">Best Outdoor Infrared</td><td class="p-2">Premium infrared</td><td class="p-2">2</td><td class="p-2">~140 °F</td><td class="p-2">120V</td><td class="p-2">$8k-$12k</td><td class="p-2">Finished cabin, easy install</td><td class="p-2">You want löyly</td></tr>
-          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH Pinnacle 4P</td><td class="p-2">Best Traditional Barrel</td><td class="p-2">Cedar barrel</td><td class="p-2">4</td><td class="p-2">~190 °F</td><td class="p-2">240V/30A</td><td class="p-2">$4k-$6k</td><td class="p-2">Real Finnish heat</td><td class="p-2">No 240V access</td></tr>
-          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AURGOD Wood-Stove</td><td class="p-2">Best Wood-Burning</td><td class="p-2">Hemlock barrel + stove</td><td class="p-2">4</td><td class="p-2">~195 °F</td><td class="p-2">None</td><td class="p-2">$3.5k-$5k</td><td class="p-2">Off-grid, wood-fired</td><td class="p-2">Burn codes, no firewood</td></tr>
-          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH 6-Person Barrel</td><td class="p-2">Best for 4 Actual People</td><td class="p-2">Cedar barrel</td><td class="p-2">6</td><td class="p-2">~190 °F</td><td class="p-2">240V/40A</td><td class="p-2">$5k-$7k</td><td class="p-2">Group sessions</td><td class="p-2">Tight yard</td></tr>
-          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH Salem 2P</td><td class="p-2">Best Compact Barrel</td><td class="p-2">Cedar barrel</td><td class="p-2">2</td><td class="p-2">~190 °F</td><td class="p-2">240V/20-30A</td><td class="p-2">$3k-$4.5k</td><td class="p-2">Small yards</td><td class="p-2">Hosting groups</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Sun Home Luminar</td><td class="p-2">Best Outdoor Infrared</td><td class="p-2">Premium infrared</td><td class="p-2">2</td><td class="p-2">~140 °F</td><td class="p-2">120V</td><td class="p-2">$8k-$12k</td><td class="p-2">Finished cabin, easy install</td><td class="p-2">You want löyly</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH Pinnacle 4P</td><td class="p-2">Best Traditional Barrel</td><td class="p-2">Cedar barrel</td><td class="p-2">4</td><td class="p-2">~190 °F</td><td class="p-2">240V/30A</td><td class="p-2">$4k-$6k</td><td class="p-2">Real Finnish heat</td><td class="p-2">No 240V access</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AURGOD Wood-Stove</td><td class="p-2">Best Wood-Burning</td><td class="p-2">Hemlock barrel + stove</td><td class="p-2">4</td><td class="p-2">~195 °F</td><td class="p-2">None</td><td class="p-2">$3.5k-$5k</td><td class="p-2">Off-grid, wood-fired</td><td class="p-2">Burn codes, no firewood</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH 6-Person Barrel</td><td class="p-2">Best for 4 Actual People</td><td class="p-2">Cedar barrel</td><td class="p-2">6</td><td class="p-2">~190 °F</td><td class="p-2">240V/40A</td><td class="p-2">$5k-$7k</td><td class="p-2">Group sessions</td><td class="p-2">Tight yard</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH Salem 2P</td><td class="p-2">Best Compact Barrel</td><td class="p-2">Cedar barrel</td><td class="p-2">2</td><td class="p-2">~190 °F</td><td class="p-2">240V/20-30A</td><td class="p-2">$3k-$4.5k</td><td class="p-2">Small yards</td><td class="p-2">Hosting groups</td></tr>
         </tbody>
       </table>
     </div>
@@ -323,7 +323,7 @@ const faqSchema = {
           </tr>
         </thead>
         <tbody class="text-stone-700">
-          <tr class="border-b border-stone-100"><td class="py-2 pr-6">Max temperature</td><td class="py-2 pr-6">170-195 °F</td><td class="py-2">130-150 °F</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-2 pr-6">Max temperature</td><td class="py-2 pr-6">170-195 °F</td><td class="py-2">130-150 °F</td></tr>
           <tr class="border-b border-stone-100"><td class="py-2 pr-6">Heat source</td><td class="py-2 pr-6">Electric or wood stove + rocks</td><td class="py-2">Infrared panels</td></tr>
           <tr class="border-b border-stone-100"><td class="py-2 pr-6">Löyly / steam</td><td class="py-2 pr-6">Yes</td><td class="py-2">No</td></tr>
           <tr class="border-b border-stone-100"><td class="py-2 pr-6">Electrical</td><td class="py-2 pr-6">240V dedicated circuit</td><td class="py-2">120V outlet (usually)</td></tr>
