@@ -1,0 +1,233 @@
+---
+import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+import SunHomeButton from '../../components/SunHomeButton.astro';
+
+const picks = [
+  {
+    rank: 1,
+    asin: "B017WJV8SO",
+    name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
+    rating: "4.5/5",
+    tag: "BEST OVERALL",
+    tagColor: "bg-stone-900 text-amber-100",
+    type: "Traditional Barrel",
+    capacity: "Rated 4-person, ideal for 3",
+    summary: "This is the honest answer to the 3-person sauna question. Manufacturers do not build a dedicated 3-person barrel, and a true 2-person barrel is cramped the moment a third adult sits down. The Pinnacle 4-person hits the sweet spot for a group of three: enough bench length for everyone to sit upright without touching shoulders, and enough depth that one person can stretch out while the other two sit. Western red cedar construction, pre-cut panels, and a one-day assembly for most DIYers. Heater is sold separately, and a 6kW Harvia KIP pairs well with this footprint.",
+    pros: ["Real comfort for 3 adults, not just technically fitting", "Western red cedar handles cold climates", "One-day assembly for most buyers", "Pairs with a standard 6kW heater"],
+    cons: ["Heater sold separately", "Needs a 240V dedicated circuit", "Footprint of about 6x7 feet plus clearance"],
+    buyerFit: "Best for a household of three who want a traditional outdoor Finnish sauna and are willing to handle a 240V install. If two of the three will use it daily and the third joins on weekends, this is the right size.",
+  },
+  {
+    rank: 2,
+    asin: "B000R2PTHG",
+    name: "Almost Heaven Allegheny 4-Person Barrel Sauna",
+    rating: "4.4/5",
+    tag: "BEST VALUE BARREL",
+    tagColor: "bg-green-100 text-green-800",
+    type: "Traditional Barrel",
+    capacity: "Rated 4-person, comfortable for 3",
+    summary: "The Allegheny is the lower-priced sibling of the Pinnacle and the easiest way into a real cedar barrel sauna for a group of three. Same 4-person rating, same cedar species, slightly simpler trim and hardware package. For a family or couple plus one that wants the traditional barrel experience without stretching to the premium tier, this is the value pick.",
+    pros: ["Lower price than the Pinnacle for similar interior space", "Western red cedar construction", "Genuine room for 3 adults to sit upright", "Same assembly approach as other Almost Heaven barrels"],
+    cons: ["Heater sold separately", "Less premium trim than the Pinnacle", "Still needs 240V wiring"],
+  },
+  {
+    rank: 3,
+    asin: "B00A2F99F0",
+    name: "Dynamic Saunas Barcelona 2-Person Infrared",
+    rating: "4.4/5",
+    tag: "BEST BUDGET",
+    tagColor: "bg-amber-100 text-amber-800",
+    type: "Infrared / Indoor",
+    capacity: "Rated 2-person, fits 3 slim adults",
+    summary: "The Barcelona is the cheapest credible way to get three people into a sauna under one roof. It is rated for two, and that is the honest read for two average adults sitting comfortably. Three slim adults can fit on the bench for a session, but nobody is stretching out. The trade is that this sauna plugs into a standard 120V outlet, heats up in roughly 15 minutes, and costs a fraction of any barrel option. Best for indoor or fully covered outdoor placement.",
+    pros: ["Plugs into a standard 120V outlet", "Heats up in about 15 minutes", "Low-EMF carbon panels", "By far the lowest entry price in this guide"],
+    cons: ["Tight for 3 adults, fine for 3 slim users or 2 plus a kid", "No steam or löyly", "Indoor or covered placement only", "Lower max temperature than traditional saunas"],
+  },
+  {
+    rank: 4,
+    sponsor: "sun-home",
+    sunHomeProduct: "luminar",
+    name: "Sun Home Luminar 2-Person Outdoor Infrared Sauna",
+    rating: "Premium",
+    tag: "BEST PREMIUM INFRARED",
+    tagColor: "bg-purple-100 text-purple-800",
+    type: "Outdoor Infrared",
+    capacity: "True 2-person",
+    summary: "The Luminar is a true 2-person infrared cabin, not a 3-person sauna. It earns a spot here for a specific case: a three-person household where two adults are the primary daily users and the third joins occasionally. Trying to wedge three adults into the Luminar is not the right move, but trying to oversize to a 4-person barrel when only two people will actually use the sauna day to day is the opposite mistake. Full-spectrum infrared, chromotherapy, finished outdoor aesthetics, and no 240V install.",
+    pros: ["Premium full-spectrum infrared (near, mid, far)", "No 240V install, no separate heater purchase", "Faster heat-up than a barrel plus electric heater", "Built and finished for outdoor placement"],
+    cons: ["True 2-person layout, not for 3 adults at once", "Significantly higher price than any barrel kit", "Lower max temperature than traditional sauna", "No steam option"],
+    buyerFit: "Best for a 3-person household where two adults will use the sauna regularly and the third uses it occasionally. The wrong pick if all three plan to sauna together as a routine.",
+  },
+  {
+    rank: 5,
+    asin: "B003Z11AXM",
+    name: "Almost Heaven Saunas 6-Person Barrel Sauna",
+    rating: "4.4/5",
+    tag: "BEST SPACIOUS",
+    tagColor: "bg-blue-100 text-blue-800",
+    type: "Traditional Barrel",
+    capacity: "Rated 6-person, luxurious for 3",
+    summary: "If the yard has the space and the budget has the room, sizing all the way up to the 6-person barrel turns a 3-person sauna session into something closer to a private spa. Three adults can each stretch fully along the benches with no overlap. Heat-up takes longer and an 8kW heater is required, but the interior experience is in a different league from anything in the smaller barrel tier.",
+    pros: ["Three adults can each lie fully flat", "Highest tier of comfort for a group of 3", "Same cedar quality as smaller Almost Heaven barrels", "Built to last decades with basic maintenance"],
+    cons: ["Largest footprint in this guide", "Requires an 8kW heater and a 240V circuit", "Longer heat-up time than smaller models", "Highest total install cost"],
+  },
+];
+---
+<Base
+  title="Best 3-Person Saunas (2026): Top Picks for Groups & Families"
+  description="The best 3-person saunas for families, couples plus one, and small friend groups. We ranked barrel and infrared options by real-world comfort for three adults."
+  canonical="/guides/best-3-person-sauna"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        Best 3-Person Saunas (2026): Top Picks for Groups & Families
+      </h1>
+      <p class="text-stone-500 text-sm">Updated 2026 · 9 min read</p>
+      <p class="text-lg text-stone-600 mt-4">
+        Three is the trickiest group size to shop for. Manufacturers build 1, 2, 4, and 6-person saunas. Almost nobody builds a dedicated 3-person model. Here is how to pick the right size anyway, and the specific kits that actually work for a group of three.
+      </p>
+    </header>
+
+    <AdvertiserDisclosure />
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Barrel sauna with wood pile in a grassy field" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-800 mb-2">The 3-Person Reality</h2>
+      <p class="text-sm text-stone-700">There is no real "3-person sauna" category. The honest answer for a group of three is a 4-person barrel sauna. A 2-person sauna with three adults inside feels like a packed elevator. A 4-person model gives all three room to sit upright without touching shoulders, with bench depth for one person to lie down. Sizing up by one is almost always the right call.</p>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6 text-stone-900">Our Top Picks</h2>
+
+    <div class="space-y-8">
+      {picks.map(pick => (
+        <div class="bg-white border border-stone-200 rounded-xl shadow-sm overflow-hidden">
+          {pick.sponsor === 'sun-home' && (
+            <div class="overflow-hidden">
+              <img src="/images/sun-home/luminar.jpg" alt="Sun Home Luminar 2-Person Outdoor Infrared sauna in a backyard" class="w-full h-auto object-cover max-h-72" loading="lazy" width="1600" height="1067" />
+            </div>
+          )}
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>
+              <span class="text-xs text-stone-400">{pick.type} · {pick.capacity}</span>
+            </div>
+            <h3 class="text-xl font-bold text-stone-900 mb-2">{pick.name}</h3>
+            <p class="text-stone-600 text-sm mb-4">{pick.summary}</p>
+            {pick.buyerFit && (
+              <div class="bg-stone-50 border border-stone-200 rounded-lg p-4 mb-4 text-sm text-stone-700">
+                <strong class="block text-stone-900 mb-1">Who this is for</strong>
+                {pick.buyerFit}
+              </div>
+            )}
+            <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
+              <div>
+                <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
+                {pick.pros.map(p => <p class="text-stone-600"> {p}</p>)}
+              </div>
+              <div>
+                <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
+                {pick.cons.map(c => <p class="text-stone-600"> {c}</p>)}
+              </div>
+            </div>
+            <p class="text-xs text-stone-400 mb-2">Rating: {pick.rating}</p>
+            {pick.sponsor === 'sun-home' ? (
+              <SunHomeButton product={pick.sunHomeProduct} label="See Sun Home Luminar" />
+            ) : (
+              <AmazonButton asin={pick.asin} />
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">What to Look for in a 3-Person Sauna</h2>
+      <div class="space-y-3">
+        {[
+          ["Bench length", "Three adults sitting upright need at least 66 to 72 inches of usable bench. Most 4-person barrels deliver this; most 2-person cabins do not."],
+          ["Bench depth", "20 inches lets a person tuck their legs up. 24+ inches lets one person lie down while two sit, which is the realistic 3-person flow."],
+          ["Heater output", "A 4-person barrel needs at least 6kW. Going up to 8kW is worth it in cold climates or if the sauna will be used heavily."],
+          ["Indoor vs outdoor", "Three-adult sessions get warm and humid fast. Outdoor barrels handle that load better than indoor infrared cabins shoehorned into a basement corner."],
+          ["Door swing and entry", "A small door on a packed 3-person sauna is awkward. Look for a glass door at least 24 inches wide with outward swing."],
+        ].map(([title, text]) => (
+          <div class="border-l-4 border-amber-400 pl-4">
+            <h3 class="font-semibold text-stone-800 text-sm">{title}</h3>
+            <p class="text-stone-600 text-sm">{text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">Barrel vs Infrared for a Group of Three</h2>
+      <p class="text-stone-700 mb-3">A traditional barrel with an electric heater is the right choice if the household wants a real Finnish-style session: high heat, the option of löyly, and the ability to size up to a 4 or 6-person interior cheaply. The cost is a 240V install and a longer heat-up.</p>
+      <p class="text-stone-700">An infrared cabin is the right choice if the priority is daily wellness use, fast heat-up, and a standard outlet. The cost is that almost no infrared cabin truly fits three adults without feeling cramped, so a household of three using infrared usually means two daily users and one occasional joiner.</p>
+    </section>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
+      <h3 class="text-xl font-bold mb-2">See All Our Top Sauna Picks</h3>
+      <p class="text-stone-300 mb-4">Full rankings across all sizes and budgets.</p>
+      <a href="/best-saunas/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
+        Best Saunas of 2026 →
+      </a>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related Guides</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/best-2-person-outdoor-sauna/" class="text-amber-700 hover:underline">Best 2-Person Outdoor Sauna</a></li>
+        <li><a href="/guides/best-4-person-sauna/" class="text-amber-700 hover:underline">Best 4-Person Sauna</a></li>
+        <li><a href="/guides/best-1-person-sauna/" class="text-amber-700 hover:underline">Best 1-Person Sauna</a></li>
+        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
+        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
+      </ul>
+    </div>
+  </article>
+</Base>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there a true 3-person sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost no manufacturer builds a dedicated 3-person sauna. The standard sizes are 1, 2, 4, and 6-person. For a group of three adults, the right choice is a 4-person barrel sauna like the Almost Heaven Pinnacle. It gives three people room to sit upright comfortably and lets one person lie down across the bench."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can 3 people fit in a 2-person sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three slim adults can technically fit on the bench of a 2-person sauna like the Dynamic Saunas Barcelona, but it is tight and nobody can stretch out. For occasional use or two adults plus a child, a 2-person cabin is workable. For three adults using the sauna together routinely, step up to a 4-person model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size heater does a 3-person sauna need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Since the right kit for three people is a 4-person barrel sauna, the heater requirement is 6 to 8 kW. The Harvia KIP 60B (6kW) is the standard pairing for a 4-person Almost Heaven barrel. In cold climates or for heavy use, the 8kW KIP 80B is worth the upgrade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should a 3-person household get a 2-person or 4-person sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If all three people will routinely sauna together, get the 4-person model. If only two are daily users and the third joins occasionally, a premium 2-person cabin like the Sun Home Luminar is a better fit for the actual usage pattern. The mistake is buying a small sauna because the household is small and then never being able to use it as a group."
+      }
+    }
+  ]
+}
+</script>
