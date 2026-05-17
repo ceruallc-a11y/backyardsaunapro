@@ -1,0 +1,223 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you put a sauna on a deck?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but only if the deck is rated for the load. A typical 4-person barrel sauna with occupants, benches, heater, and stones runs 1,500 to 2,200 lbs concentrated on a small footprint. Most residential decks are built to 40 psf live load and 10 psf dead load. Verify joist size, span, and post spacing before placing any sauna on a deck, and consider adding blocking or a dedicated support post under the load path."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a barrel or cabin sauna better for a deck?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Barrel saunas are usually the better fit for decks. They distribute weight along two cradles instead of a continuous floor, and their cylindrical shape sheds wind and snow load. Cabin saunas have a larger footprint and a flat floor that loads the deck more evenly per square foot, which sounds good but means you cannot easily route the load to specific joists or beams. For most deck installs, a 4-person to 6-person barrel is the safer choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a permit for a sauna on my deck?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often yes. Most jurisdictions treat a permanent sauna as an accessory structure, and any modification to a deck or addition of significant load triggers a permit. Electrical hookup for a 240V heater almost always requires a permit and inspection. Check with your local building department before buying. Some homeowners insurance policies also require disclosure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the lightest outdoor sauna for a deck?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 2-person to 4-person barrel sauna with cedar staves is typically the lightest real outdoor option, weighing 600 to 1,100 lbs empty. Infrared cabin saunas can be lighter still (400 to 800 lbs empty) but feel different and run on standard 120V or 240V circuits. For deck installs where weight is the binding constraint, a small barrel or a compact infrared is the way to go."
+      }
+    }
+  ]
+};
+import AmazonButton from '../../components/AmazonButton.astro';
+---
+<Base
+  title="Best Sauna for a Deck (2025): Top Picks and Weight Considerations"
+  description="The best saunas for a deck in 2025. Weight limits, foundation options, barrel vs cabin, and top picks for installing an outdoor sauna on a wooden deck."
+  canonical="/guides/best-sauna-for-deck"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Sauna for a Deck (2025)</h1>
+    <p class="text-stone-500 mb-8">Updated February 2025, Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Outdoor sauna installed on a wooden backyard deck" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    </div>
+
+    <p class="text-lg text-stone-700 mb-4">Putting a sauna on a deck is one of the most common backyard upgrades, and one of the most frequently botched. The deck looks solid, the sauna looks compact, the install seems obvious. Then a 4-person barrel filled with four adults, hot stones, and water hits the joists with 2,000 lbs concentrated on six square feet of bearing surface, and the deck starts to creak. This guide covers what to buy, where to put it, and how to keep the deck under it from sagging.</p>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-900 mb-2">Quick Picks</h2>
+      <ul class="space-y-2 text-stone-700 text-sm">
+        <li><span class="font-semibold">Best overall for a deck:</span> Almost Heaven Allegheny 4-Person Barrel (~$3,200-$4,000)</li>
+        <li><span class="font-semibold">Best lightweight pick:</span> Almost Heaven Audra 2-Person Barrel</li>
+        <li><span class="font-semibold">Best premium build:</span> Dundalk LeisureCraft 4-Person Barrel</li>
+        <li><span class="font-semibold">Best infrared (lightest):</span> Sun Home Equinox 3-Person</li>
+        <li><span class="font-semibold">Best wood-fired option:</span> Almost Heaven Salem with Harvia M3</li>
+        <li><span class="font-semibold">Recommended heater pairing:</span> Harvia KIP 60B (6kW) or KIP 80B (8kW)</li>
+      </ul>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Weight Is the Whole Problem</h2>
+    <p class="text-stone-700 mb-4">A wooden deck is engineered for distributed load. People walking, a grill, a few chairs, maybe a hot tub if the deck was designed for one. A sauna concentrates more weight on less footprint than almost anything else you would put outside. Quick math for typical barrel saunas:</p>
+    <ul class="text-stone-700 mb-6 list-disc pl-6 space-y-1">
+      <li>2-person barrel: 500-700 lbs empty, 900-1,200 lbs in use</li>
+      <li>4-person barrel: 900-1,200 lbs empty, 1,500-2,200 lbs in use</li>
+      <li>6-person barrel: 1,400-1,800 lbs empty, 2,400-3,200 lbs in use</li>
+      <li>Cabin sauna (8x8): 1,800-2,500 lbs empty, 3,000-4,200 lbs in use</li>
+    </ul>
+    <p class="text-stone-700 mb-6">Residential deck code (IRC, most jurisdictions) calls for 40 psf live load plus 10 psf dead load. A barrel sauna sitting on two cradle blocks puts its entire weight on roughly 4-8 sq ft of bearing area. That can easily exceed 200-400 psf at the contact points, five to ten times what the deck is rated for. The deck does not collapse, but joists deflect, fasteners pull, and over a season or two the structure under the sauna starts to fail in slow motion.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Barrel vs Cabin for Deck Installs</h2>
+    <p class="text-stone-700 mb-4">For a deck, barrel saunas almost always win. The reasons:</p>
+    <ul class="text-stone-700 mb-4 list-disc pl-6 space-y-1">
+      <li><strong>Weight per person.</strong> A barrel uses less wood than an equivalent cabin, so the same capacity weighs 30-40% less.</li>
+      <li><strong>Predictable load path.</strong> Two cradle blocks. You can position them directly over joists, beams, or a doubled support, instead of guessing where a flat floor is loading the structure.</li>
+      <li><strong>Lower wind profile.</strong> Round shape sheds wind. Cabins catch it, and a deck install means the sauna is already elevated above the wind shadow of the house.</li>
+      <li><strong>Easier leveling.</strong> Shimming two cradles is trivial. Leveling a 64 sq ft cabin floor on a deck that has settled is not.</li>
+    </ul>
+    <p class="text-stone-700 mb-6">Cabin saunas work on a deck if the deck was designed for the load (think: a custom deck with a hot tub bay), but for the standard backyard deck, a barrel is the right answer.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Picks for a Deck Sauna</h2>
+
+    <div class="space-y-5 mb-10">
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
+            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Allegheny 4-Person Barrel</h3>
+          </div>
+        </div>
+        <p class="text-stone-600 mb-4">The sweet spot for deck installs: small enough that a properly built deck can carry it, large enough to actually use with family or friends. Western red cedar, two-cradle design that lets you position the load over reinforced joists, and a heater bay that accepts a 6-8kW electric or compact wood stove. Roughly 6 ft long by 6 ft diameter, around 1,000 lbs empty. Pros: predictable load path, fair price, easy assembly weekend. Cons: still needs joist reinforcement on most decks; not the lightest option if your deck is already marginal. Read our <a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven full review</a>.</p>
+        <AmazonButton href="#" variant="primary" label="View Almost Heaven Barrels on Amazon" />
+      </div>
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <span class="text-xs font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Lightest Pick</span>
+            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Audra 2-Person Barrel</h3>
+          </div>
+        </div>
+        <p class="text-stone-600 mb-4">If your deck is older, smaller, or just not rated for serious weight, the Audra is the realistic option. Around 4 ft long, 5 ft diameter, roughly 600 lbs empty. Two adults fit, the cradle footprint is small enough to land directly over a beam, and the heater sizing drops to a 4.5-6kW unit on a standard 240V/30A circuit. Pros: lowest-weight real cedar barrel, modest electrical load, easy to site. Cons: tight for more than two; no room to lie down.</p>
+        <AmazonButton href="#" variant="primary" label="View Almost Heaven Audra on Amazon" />
+      </div>
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Premium</span>
+            <h3 class="text-xl font-bold text-stone-900 mt-1">Dundalk LeisureCraft 4-Person Barrel</h3>
+          </div>
+        </div>
+        <p class="text-stone-600 mb-4">Canadian-made, thicker staves, better hardware. The buy if you want the sauna to outlast the deck. Dundalk includes heavier cradle blocks, which helps distribute load slightly better than thinner imported barrels. Pros: top-tier build, premium door and bench finish, dealer support. Cons: more expensive than Almost Heaven, slightly heavier, not always stocked on Amazon. Read our <a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk full review</a>.</p>
+        <p class="text-stone-400 text-xs italic">Available through Dundalk dealers</p>
+      </div>
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Infrared</span>
+            <h3 class="text-xl font-bold text-stone-900 mt-1">Sun Home Equinox 3-Person</h3>
+          </div>
+        </div>
+        <p class="text-stone-600 mb-4">If the deck is borderline and you cannot reinforce, infrared is the workaround. The Sun Home Equinox 3-person runs roughly 450-550 lbs empty, plugs into a 240V/20A outlet, and skips the stones-and-water weight entirely. Honest caveat: it is not a traditional sauna. Top temp around 140°F, no loyly, different feel. But for a deck that simply cannot take 2,000 lbs concentrated, it is the practical answer. Pros: lowest weight, no plumbing or water spillage, modest electrical. Cons: no real loyly, higher cost per square foot of interior, infrared experience.</p>
+        <p class="text-stone-400 text-xs italic">Available direct from Sun Home Saunas</p>
+      </div>
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Wood-Fired</span>
+            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Salem 4-Person with Harvia M3</h3>
+          </div>
+        </div>
+        <p class="text-stone-600 mb-4">For decks where running a 240V/40A circuit is impractical, a wood-fired barrel paired with the Harvia M3 (3kW equivalent, 6-13 m3 room) is the workable path. You skip the electrical install entirely; trade-off is fire safety planning, a code-compliant chimney pass-through, and a non-combustible deck pad under the heater zone. Check local code first; some jurisdictions prohibit wood-fired heaters on combustible decks. Pros: no electrical, classic experience, real loyly. Cons: chimney install, fire risk on a wood deck, regulatory friction.</p>
+        <AmazonButton href="#" variant="primary" label="View Harvia M3 on Amazon" />
+      </div>
+
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <div class="flex items-start justify-between mb-2">
+          <div>
+            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Heater Pairing</span>
+            <h3 class="text-xl font-bold text-stone-900 mt-1">Harvia KIP 60B (6kW) or KIP 80B (8kW)</h3>
+          </div>
+        </div>
+        <p class="text-stone-600 mb-4">For a 2-4 person deck barrel, the Harvia KIP 60B (6kW) covers most installs on a 240V/30A circuit. Step up to the KIP 80B (8kW, 240V/40A) for a 4-6 person barrel or outdoor cold-climate use. Both are reliable, widely supported, and pair correctly with the cabinet sizes recommended above. Confirm against your specific room volume using our <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">heater sizing guide</a>.</p>
+        <AmazonButton href="#" variant="primary" label="View Harvia KIP Series on Amazon" />
+      </div>
+
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Foundation Options for a Deck Install</h2>
+
+    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">1. Verify the deck rating first</h3>
+    <p class="text-stone-700 mb-4">Pull the original deck plans if you have them. If not, measure joist size, span, and spacing. A 2x8 joist at 16 in on center, 10 ft span, in southern yellow pine, is rated for roughly 40 psf live load. A 4-person barrel on two cradles can put 250-400 psf at the bearing points. That ratio (concentrated load to rated load) is the number you actually care about, not the sauna weight in isolation.</p>
+
+    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">2. Add a dedicated support post or pier</h3>
+    <p class="text-stone-700 mb-4">The cleanest fix: run a 6x6 post from grade up to a doubled joist or new beam directly under the sauna cradle line. Concrete pier at the bottom, post-base hardware, joist hangers as needed. This bypasses the deck framing entirely and puts the sauna load on its own foundation. Cost: typically $300-$800 in materials, half a weekend of work.</p>
+
+    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">3. Sister and block the joists</h3>
+    <p class="text-stone-700 mb-4">If a new post is impractical, sister (laminate) a second joist alongside each existing joist under the sauna footprint, and add solid blocking between joists at the cradle bearing points. This doubles the local load capacity and stiffens the deck so deflection stays in code-acceptable range. Acceptable for smaller barrels (2-4 person) on otherwise sound decks.</p>
+
+    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">4. Deck feet and load-distribution pads</h3>
+    <p class="text-stone-700 mb-4">Rubber or composite deck pads under the cradles spread the bearing area from roughly 1 sq ft per cradle to 3-4 sq ft. They will not save a marginal deck on their own, but combined with joist reinforcement they meaningfully lower psf at the contact points. They also protect the deck surface from moisture trapping under the cradles, which is the second-biggest cause of deck rot in sauna installs (first is splashed water and steam).</p>
+
+    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">5. Moisture management</h3>
+    <p class="text-stone-700 mb-6">A sauna drips. Bathers exit wet, water hits the stones and condenses, ventilation pushes humid air against the deck boards directly under the unit. Plan for: a slight gap (rubber pads) under the cradles, a drip channel or splash mat at the door, and seasonal inspection of the deck boards under and around the sauna. Decks that get this wrong rot in three to five years; decks that get it right last as long as any other section.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Sizing for a Deck</h2>
+    <p class="text-stone-700 mb-6">For most residential decks, a 2-person to 4-person barrel is the realistic ceiling without significant structural work. A 6-person barrel is possible but typically requires a dedicated support post and is the inflection point where building a small ground-level pad next to the deck often makes more sense than putting it on the deck. Cabin saunas on decks are almost always a structural overhaul project, not a buy-and-place project.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Electrical Reality</h2>
+    <p class="text-stone-700 mb-6">A 6kW heater needs a 240V/30A dedicated circuit. An 8kW needs 240V/40A. Running that to a deck means either a sub-feed from the main panel through conduit (cleanest) or an exterior-rated cable run to a weatherproof disconnect at the sauna. Budget $600-$1,500 for a licensed electrician unless your panel is on the same wall as the deck. Pulling permits is almost always required, and the inspector will look at the deck loading too, so do the structural fix first.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you put a sauna on a deck?</h3>
+        <p class="text-stone-700">Yes, but only if the deck can carry the load. A 4-person barrel concentrates 1,500-2,200 lbs on two small cradle points. Verify joist size and span, and reinforce with a support post, sistered joists, or load-spreading pads before placing the sauna.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Is a barrel or cabin sauna better for a deck?</h3>
+        <p class="text-stone-700">Barrel, almost always. Lower weight per person, predictable two-cradle load path you can align to joists, lower wind profile. Cabin saunas only make sense on decks specifically engineered for the load.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Do I need a permit for a sauna on my deck?</h3>
+        <p class="text-stone-700">Usually yes. Most jurisdictions treat a permanent sauna as an accessory structure, and the 240V heater install requires a permit and inspection. Check before you buy.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What is the lightest outdoor sauna for a deck?</h3>
+        <p class="text-stone-700">A 2-person cedar barrel (around 600 lbs empty) or a small infrared cabin (400-500 lbs empty) are the lightest real options. Both are viable for older decks where weight is the binding constraint.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/best-4-person-sauna/" class="text-amber-700 hover:underline">Best 4-Person Sauna</a></li>
+        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
+        <li><a href="/guides/how-to-build-a-sauna/" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
+        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
+      </ul>
+    </div>
+
+  </article>
+</Base>
