@@ -7,6 +7,7 @@ export interface Props {
   label?: string;
   price?: string;
   variant?: "primary" | "outline" | "small" | "default";
+  ctaPosition?: string;
   class?: string;
 }
 const {
@@ -17,6 +18,7 @@ const {
   label = "Check Price on Amazon",
   price: _price,
   variant = "default",
+  ctaPosition = variant === "default" ? "featured" : "product_card",
   class: extraClass = "",
 } = Astro.props;
 
@@ -64,6 +66,8 @@ const arrow = variant === "default" ? " \u2192" : "";
   target="_blank"
   rel="nofollow noopener sponsored"
   class={cls}
+  data-cta-position={ctaPosition}
+  data-product-id={asin || search || derivedSlug}
 >
   {label}{arrow}
 </a>

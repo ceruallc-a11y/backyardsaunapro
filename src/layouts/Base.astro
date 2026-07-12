@@ -103,6 +103,10 @@ const siteUrl = "https://backyardsaunapro.com";
         'www.sunhomesaunas.com': 'sun_home',
         'selectsaunas.com': 'select_saunas',
         'www.selectsaunas.com': 'select_saunas',
+        'redwoodoutdoors.com': 'redwood_outdoors',
+        'www.redwoodoutdoors.com': 'redwood_outdoors',
+        'finnishsaunabuilders.com': 'finnish_sauna_builders',
+        'www.finnishsaunabuilders.com': 'finnish_sauna_builders',
       };
       const partner = commerceHosts[destination.hostname];
       if (!partner || typeof window.gtag !== 'function') return;
@@ -112,6 +116,26 @@ const siteUrl = "https://backyardsaunapro.com";
         link_url: destination.href,
         link_text: link.textContent?.trim().slice(0, 100) || '',
         page_path: window.location.pathname,
+        cta_position: link.dataset.ctaPosition || 'content',
+        product_id: link.dataset.productId || '',
+      });
+    });
+
+    document.addEventListener('submit', (event) => {
+      const form = event.target;
+      if (!(form instanceof HTMLFormElement) || !form.matches('.kit-form')) return;
+      if (typeof window.gtag !== 'function') return;
+
+      const formLocation = form.dataset.formLocation || 'unknown';
+      window.gtag('event', 'newsletter_signup', {
+        form_id: form.dataset.svForm || '',
+        form_location: formLocation,
+        page_path: window.location.pathname,
+      });
+      window.gtag('event', 'generate_lead', {
+        currency: 'USD',
+        value: 1,
+        lead_source: `kit_${formLocation}`,
       });
     });
   </script>

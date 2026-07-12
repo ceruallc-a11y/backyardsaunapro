@@ -11,6 +11,7 @@ const {
   code = "BSP",
   showCode = true,
   codeLabel = "Discount code",
+  ctaPosition = "product_card",
 } = Astro.props;
 
 const fallbacks = {
@@ -29,6 +30,8 @@ const href = url || fallbacks[product] || "https://sunhomesaunas.com";
     target="_blank"
     rel="sponsored noopener"
     class="inline-block bg-stone-900 hover:bg-stone-800 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
+    data-cta-position={ctaPosition}
+    data-product-id={product}
   >
     {label}
   </a>

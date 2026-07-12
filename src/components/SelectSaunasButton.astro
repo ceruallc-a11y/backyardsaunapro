@@ -3,11 +3,12 @@ export interface Props {
   href?: string;
   label?: string;
   collection?: string;
+  ctaPosition?: string;
 }
 
 const ref = "10752576.S2huPg7gFg";
 const base = "https://selectsaunas.com";
-const { href, label = "Shop on Select Saunas", collection } = Astro.props;
+const { href, label = "Shop on Select Saunas", collection, ctaPosition = "product_card" } = Astro.props;
 
 const url = href
   ? `${href}${href.includes("?") ? "&" : "?"}sca_ref=${ref}`
@@ -21,6 +22,8 @@ const url = href
     target="_blank"
     rel="nofollow noopener sponsored"
     class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow"
+    data-cta-position={ctaPosition}
+    data-product-id={collection || "store"}
   >
     {label} &rarr;
   </a>

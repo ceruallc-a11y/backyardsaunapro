@@ -79,6 +79,10 @@ import AmazonButton from '../../components/AmazonButton.astro';
         <li><span class="font-semibold">Best portable:</span> SereneLife Portable Infrared Sauna</li>
         <li><span class="font-semibold">Best heater for a DIY build:</span> Harvia KIP 60B (6kW)</li>
       </ul>
+      <div class="flex flex-wrap gap-3 mt-5 pt-5 border-t border-stone-200">
+        <SunHomeButton product="equinox" label="See best overall" showCode={false} ctaPosition="above_fold" />
+        <SelectSaunasButton collection="barrel-saunas" label="Compare traditional saunas" ctaPosition="above_fold" />
+      </div>
     </div>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Which Type of Home Sauna Is Right for You</h2>
