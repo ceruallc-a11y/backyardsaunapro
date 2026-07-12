@@ -88,6 +88,32 @@ const siteUrl = "https://backyardsaunapro.com";
         menu.classList.toggle('flex');
       });
     }
+
+    document.addEventListener('click', (event) => {
+      const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
+      if (!(link instanceof HTMLAnchorElement)) return;
+
+      const destination = new URL(link.href, window.location.href);
+      if (destination.hostname === window.location.hostname) return;
+
+      const commerceHosts = {
+        'amazon.com': 'amazon',
+        'www.amazon.com': 'amazon',
+        'sunhomesaunas.com': 'sun_home',
+        'www.sunhomesaunas.com': 'sun_home',
+        'selectsaunas.com': 'select_saunas',
+        'www.selectsaunas.com': 'select_saunas',
+      };
+      const partner = commerceHosts[destination.hostname];
+      if (!partner || typeof window.gtag !== 'function') return;
+
+      window.gtag('event', 'affiliate_click', {
+        partner,
+        link_url: destination.href,
+        link_text: link.textContent?.trim().slice(0, 100) || '',
+        page_path: window.location.pathname,
+      });
+    });
   </script>
 
   <!-- Main -->
