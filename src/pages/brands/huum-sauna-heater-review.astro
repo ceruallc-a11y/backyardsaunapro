@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -7,162 +8,116 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is HUUM a good sauna heater brand?",
+      "name": "Is a HUUM sauna heater worth considering?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "HUUM makes well-designed heaters with distinctive aesthetics and good stone capacity, but they've had documented UL listing issues in the US market that are worth knowing about before buying. For buyers in North America who need UL listed equipment for insurance or building code compliance, Harvia is the safer choice."
+        "text": "HUUM is worth comparing when exposed-stone design and app-based controls matter. The final decision should depend on the exact model's room-sizing table, electrical requirements, safety clearances, listing documentation, local approval, and installed project cost."
       }
     },
     {
       "@type": "Question",
-      "name": "Where are HUUM heaters made?",
+      "name": "What is the difference between HUUM DROP and HIVE?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "HUUM is an Estonian company. Their heaters are designed and manufactured in Estonia and have a strong reputation in Europe."
+        "text": "DROP is a wall-mounted heater for smaller sauna rooms, while HIVE is a floor-standing heater intended for larger rooms and a much larger rock load. Both require a compatible control system, stones, correct clearances, and professional electrical installation."
       }
     },
     {
       "@type": "Question",
-      "name": "HUUM vs Harvia — which is better?",
+      "name": "How should a North American buyer verify a HUUM heater?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Harvia is the more conservative and widely recommended choice for US buyers — UL listed, widely stocked, proven reliability, and strong US distribution. HUUM has superior aesthetics and large stone capacity but has faced UL certification questions that affect insurability and code compliance in some US jurisdictions."
+        "text": "Verify the exact model and voltage, current listing or certification documentation, room-volume range, required controller, breaker and conductor requirements, safety clearances, warranty support, and acceptance by the local authority having jurisdiction before purchase."
       }
     }
   ]
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="HUUM Sauna Heater Review (2025): Is It Worth Buying?"
-  description="An honest look at HUUM sauna heaters, what they do well, their UL certification situation in the US, and how they compare to Harvia."
+  title="HUUM Sauna Heater Review (2026): DROP vs HIVE"
+  description="A verification-first HUUM sauna heater review comparing DROP and HIVE, required components, installation questions, and what North American buyers should confirm."
   canonical="/brands/huum-sauna-heater-review"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">HUUM Sauna Heater Review (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Modern sauna interior with bench and stones" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
+    <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-3">Sauna heater review</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">HUUM Sauna Heater Review: DROP vs HIVE</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 2026 &middot; Backyard Sauna Pro</p>
 
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Sauna interior with benches and heater stones" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate, Backyard Sauna Pro earns from qualifying purchases. This page also links to HUUM's official documentation so you can verify specifications before buying.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">HUUM has built a following among sauna enthusiasts who care about aesthetics. Their Drop and Hive heaters look unlike anything else on the market, organic, sculptural, and unmistakably European. The stone capacity is generous and the WiFi control integration is genuinely useful.</p>
+    <p class="text-lg text-stone-700 mb-4">HUUM's exposed-stone heaters are visually distinctive, but appearance is only one part of this purchase. The exact room volume, voltage, controller, electrical service, clearances, stones, listing documentation, and installer support determine whether a model is a practical fit.</p>
+    <p class="text-stone-700 mb-8">Our verdict: shortlist HUUM when its design and control system fit your project, then verify the complete installed system before ordering. We have not hands-on tested these heaters.</p>
 
-    <p class="text-stone-700 mb-8">There's also a real issue US buyers need to know about. Here's the full picture.</p>
+    <section class="bg-stone-900 text-white rounded-xl p-6 mb-8">
+      <p class="text-amber-300 text-sm font-semibold uppercase tracking-wide mb-2">Start with the exact model</p>
+      <h2 class="text-2xl font-bold mb-3">Compare current HUUM listings</h2>
+      <p class="text-stone-200 mb-5">Use the model name and voltage from your installer-approved plan. Do not substitute a similar-looking heater without rechecking the manual.</p>
+      <AmazonButton search="HUUM sauna heater DROP HIVE" variant="primary" label="Compare HUUM heaters on Amazon" ctaPosition="above_fold" />
+    </section>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="text-lg font-bold text-stone-900 mb-3">Quick Verdict</h2>
-      <ul class="space-y-2 text-stone-700 text-sm">
-        <li><span class="font-semibold text-green-700">Best for:</span> European buyers or US buyers in jurisdictions where UL listing isn't required</li>
-        <li><span class="font-semibold text-stone-700">Aesthetics:</span> Some of the best-looking heaters available</li>
-        <li><span class="font-semibold text-stone-700">Made in:</span> Estonia</li>
-        <li><span class="font-semibold text-red-700">Watch out for:</span> UL certification questions affect insurance and code compliance in some US areas</li>
-        <li><span class="font-semibold text-stone-700">US alternative:</span> Harvia KIP or Harvia Cilindro for comparable performance with clear UL listing</li>
-      </ul>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What HUUM Does Well</h2>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Stone capacity</h3>
-    <p class="text-stone-700 mb-4">HUUM's design philosophy prioritizes stone mass. The Drop 4.5kW holds around 22 lbs of stones; the Hive 9kW holds about 50 lbs. More stone mass means better heat storage, more even steam distribution, and a softer löyly (steam) than heaters with smaller stone loads. This is a real performance advantage for serious sauna users.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">UKU WiFi control</h3>
-    <p class="text-stone-700 mb-4">HUUM's optional UKU controller lets you preheat the sauna remotely via app. For an outdoor sauna that takes 45-60 minutes to heat, being able to start it from your phone before you leave the house is genuinely useful. The app is well-reviewed and the integration works reliably.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Aesthetics</h3>
-    <p class="text-stone-700 mb-4">The Drop looks like a stone hanging in mid-air. The Hive has an architectural quality that most other heaters lack. If the sauna interior matters to you visually, HUUM heaters are in a different category than the utilitarian look of most competitors.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The UL Listing Concern</h2>
-    <p class="text-stone-700 mb-4">This is the thing US buyers need to research before purchasing. HUUM has marketed some products as UL listed in the US market when the certification applied to components rather than the complete assembled unit, a meaningful distinction in building code compliance and homeowner insurance contexts.</p>
-    <p class="text-stone-700 mb-4">The practical implications vary. In some US jurisdictions, an electrical inspector may require the heater to carry full UL listing for the complete unit. Some homeowner insurance policies have similar requirements. In others it's a non-issue.</p>
-    <p class="text-stone-700 mb-4">Before buying a HUUM heater for installation in the US, confirm with your local building department and your insurance provider what they require. If either requires full UL listing on the complete unit, <a href="/reviews/harvia-kip-60b-review/" class="text-amber-700 hover:underline">Harvia</a> is the straightforward alternative, clear UL listing, similar performance range, and widely stocked in North America.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">HUUM vs Harvia</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Quick decision: DROP or HIVE?</h2>
     <div class="overflow-x-auto mb-6">
       <table class="text-sm w-full">
         <thead>
           <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-6">Factor</th>
-            <th class="pb-2 pr-6">HUUM</th>
-            <th class="pb-2">Harvia</th>
+            <th class="pb-2 pr-6">Decision factor</th>
+            <th class="pb-2 pr-6">DROP</th>
+            <th class="pb-2">HIVE</th>
           </tr>
         </thead>
         <tbody class="text-stone-700">
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Aesthetics</td>
-            <td class="py-2 pr-6 text-green-700">Excellent</td>
-            <td class="py-2">Functional/standard</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Stone capacity</td>
-            <td class="py-2 pr-6 text-green-700">High</td>
-            <td class="py-2">Good</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">UL listing (US)</td>
-            <td class="py-2 pr-6 text-red-700">Verify before buying</td>
-            <td class="py-2 text-green-700">Clear</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">US availability</td>
-            <td class="py-2 pr-6">Limited</td>
-            <td class="py-2 text-green-700">Wide</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">WiFi control</td>
-            <td class="py-2 pr-6 text-green-700">Yes (UKU)</td>
-            <td class="py-2">Some models</td>
-          </tr>
-          <tr>
-            <td class="py-2 pr-6 font-medium">Price</td>
-            <td class="py-2 pr-6">Premium</td>
-            <td class="py-2">Mid-range</td>
-          </tr>
+          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-medium">Mounting</td><td class="py-3 pr-6">Wall-mounted</td><td class="py-3">Floor-standing</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-medium">Typical project</td><td class="py-3 pr-6">Smaller residential sauna</td><td class="py-3">Larger room or commercial-scale layout</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-medium">Official rock capacity</td><td class="py-3 pr-6">55 kg</td><td class="py-3">250 kg for current HIVE 12/15/18 models</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-medium">Control</td><td class="py-3 pr-6">Compatible UKU system required</td><td class="py-3">Compatible UKU system required</td></tr>
+          <tr><td class="py-3 pr-6 font-medium">Best reason to choose it</td><td class="py-3 pr-6">Exposed-stone design without a large floor footprint</td><td class="py-3">Large stone mass for a room sized to the model</td></tr>
         </tbody>
       </table>
     </div>
+    <p class="text-sm text-stone-600 mb-8">Sources: HUUM's current <a href="https://huumsauna.com/product/drop-electric-sauna-heater/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">DROP specifications</a> and <a href="https://huumsauna.com/product/hive-electric-sauna-heater/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">HIVE specifications</a>. Specifications can change; use the manual supplied for the exact product.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Best HUUM Models</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What the heater price does not tell you</h2>
+    <p class="text-stone-700 mb-4">A HUUM project may also require a UKU control system, the specified quantity and size of sauna stones, heat-resistant cable, safety railing or other guards, and installation labor. Larger models can materially affect electrical-service planning and project cost.</p>
+    <p class="text-stone-700 mb-6">HUUM states that electrical work must be completed by a certified electrician in accordance with local requirements. Treat online wattage charts as screening information, not an installation design.</p>
 
-    <div class="space-y-5 mb-8">
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <h3 class="text-lg font-bold text-stone-900 mb-2">HUUM Hive 13kW</h3>
-        <p class="text-stone-600 mb-3">The larger wood-look heater with substantial stone capacity. Designed for bigger rooms of 400-700 cubic feet. The aesthetic is distinctive and the steam quality is excellent when properly loaded with olivine stones.</p>
-        <AmazonButton asin="B096T61VPY" variant="primary" />
-      </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">North American verification checklist</h2>
+    <ol class="list-decimal pl-5 space-y-3 text-stone-700 mb-8">
+      <li>Calculate the finished hot-room volume, including the adjustment required by the manufacturer for glass, masonry, or other uninsulated surfaces.</li>
+      <li>Match the exact model to the available supply voltage and an electrician-approved circuit design.</li>
+      <li>Ask the seller for current listing or certification documentation for that exact model and voltage. Confirm acceptance with the local authority having jurisdiction and insurer where relevant.</li>
+      <li>Price the controller, stones, guards, wiring, labor, and delivery instead of comparing heater-only prices.</li>
+      <li>Confirm who provides warranty service and replacement elements in your region.</li>
+    </ol>
+
+    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-8">
+      <h2 class="text-xl font-bold text-stone-900 mb-2">Build the project around verified requirements</h2>
+      <p class="text-stone-700 mb-4">Use the free planner to organize room dimensions, electrical questions, budget, and installer needs before requesting quotes. It is a planning aid, not engineering or permit approval.</p>
+      <a href="/sauna-planner/" class="inline-block bg-emerald-800 hover:bg-emerald-900 text-white font-semibold px-5 py-3 rounded-lg" data-cta-position="planner">Build your sauna project brief</a>
     </div>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is HUUM a good sauna heater brand?</h3>
-        <p class="text-stone-700">Good design and stone capacity. US buyers should verify UL certification requirements with their local building department and insurer before purchasing.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Where are HUUM heaters made?</h3>
-        <p class="text-stone-700">Estonia. Strong reputation in European markets.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">HUUM vs Harvia, which is better for US buyers?</h3>
-        <p class="text-stone-700">Harvia for ease of compliance and availability. HUUM if aesthetics and stone capacity are the priority and UL listing isn't a concern in your jurisdiction.</p>
-      </div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Is a HUUM sauna heater worth considering?</h3><p class="text-stone-700">Yes, when the design and controls fit your project and the exact installed system passes your sizing, electrical, clearance, documentation, and support checks.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">What is the difference between DROP and HIVE?</h3><p class="text-stone-700">DROP is wall-mounted and aimed at smaller rooms. HIVE is floor-standing and uses a much larger rock load for larger rooms. Use HUUM's current model table rather than choosing by appearance.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Is HUUM better than Harvia?</h3><p class="text-stone-700">There is no universal winner. Compare the exact models on room fit, installed cost, controls, local documentation, service, clearances, and the heat experience you want.</p></div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Continue comparing</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="/reviews/harvia-kip-60b-review/" class="text-amber-700 hover:underline">Harvia KIP 60B Review</a></li>
-        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Best Electric Sauna Heaters</a></li>
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
-        <li><a href="/guides/best-sauna-stones/" class="text-amber-700 hover:underline">Best Sauna Stones</a></li>
+        <li><a href="/reviews/harvia-kip-60b-review/" class="text-amber-700 hover:underline">Harvia KIP 60B verification guide</a></li>
+        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Electric sauna heater comparison</a></li>
+        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna heater sizing guide</a></li>
+        <li><a href="/tools/sauna-cost-calculator/" class="text-amber-700 hover:underline">Sauna project cost calculator</a></li>
       </ul>
     </div>
-
   </article>
 </Base>
