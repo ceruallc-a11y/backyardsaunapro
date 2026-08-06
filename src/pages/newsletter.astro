@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import LeadMagnetSignup from '../components/LeadMagnetSignup.astro';
+---
+<Base
+  title="Backyard Sauna Pro Newsletter and Buying Checklist"
+  description="Get the outdoor sauna buying checklist and occasional practical guidance on products, installation, ownership costs, and project planning."
+  canonical="/newsletter"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Free buyer resource</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Make the expensive decisions before the sauna arrives</h1>
+      <p class="text-lg text-stone-700">Start with the outdoor sauna buying checklist. After that, receive occasional buyer guidance focused on products, installation, ownership cost, and avoiding preventable project mistakes.</p>
+    </header>
+
+    <section class="grid md:grid-cols-3 gap-4 mb-8">
+      {[
+        ["Plan", "Verify the site, permits, foundation, heater, utilities, and delivery."],
+        ["Compare", "Focus on usable dimensions, current specifications, warranty, and installed cost."],
+        ["Maintain", "Understand energy, cleaning, weather protection, service, and replacement costs."]
+      ].map(([title, body]) => (
+        <div class="bg-white border border-stone-200 rounded-lg p-5">
+          <h2 class="font-bold text-stone-900 mb-2">{title}</h2>
+          <p class="text-stone-600 text-sm">{body}</p>
+        </div>
+      ))}
+    </section>
+
+    <LeadMagnetSignup />
+
+    <p class="text-sm text-stone-600 mt-6">The checklist can also be viewed without subscribing. Email addresses submitted through the form are processed by Kit. Every marketing email includes an unsubscribe link. See the <a href="/privacy/" class="text-amber-700 hover:underline">privacy policy</a>.</p>
+  </article>
+</Base>

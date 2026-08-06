@@ -44,7 +44,14 @@ const siteUrl = "https://backyardsaunapro.com";
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-0F814NTT5J');
+    gtag('set', {
+      site_name: 'backyard_sauna_pro',
+      site_hostname: window.location.hostname,
+    });
+    gtag('config', 'G-0F814NTT5J', {
+      page_location: window.location.href,
+      page_path: window.location.pathname,
+    });
   </script>
 </head>
 <body class="bg-stone-50 text-stone-800 font-sans">
@@ -61,6 +68,8 @@ const siteUrl = "https://backyardsaunapro.com";
         <a href="/guides/" class="hover:text-white transition-colors">Guides</a>
         <a href="/brands/" class="hover:text-white transition-colors">Brands</a>
         <a href="/best-saunas/" class="hover:text-white transition-colors">Best Picks</a>
+        <a href="/sauna-planner/" class="hover:text-white transition-colors">Plan a Sauna</a>
+        <a href="/tools/sauna-electricity-cost-calculator/" class="hover:text-white transition-colors">Cost Tool</a>
         <a href="/about/" class="hover:text-white transition-colors">About</a>
       </nav>
       <!-- Mobile hamburger -->
@@ -76,6 +85,8 @@ const siteUrl = "https://backyardsaunapro.com";
       <a href="/guides/" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Guides</a>
       <a href="/brands/" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Brands</a>
       <a href="/best-saunas/" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Best Picks</a>
+      <a href="/sauna-planner/" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Plan a Sauna</a>
+      <a href="/tools/sauna-electricity-cost-calculator/" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">Cost Tool</a>
       <a href="/about/" class="block py-2.5 text-sm text-stone-300 hover:text-white transition-colors">About</a>
     </nav>
   </header>
@@ -112,6 +123,8 @@ const siteUrl = "https://backyardsaunapro.com";
       if (!partner || typeof window.gtag !== 'function') return;
 
       window.gtag('event', 'affiliate_click', {
+        site_name: 'backyard_sauna_pro',
+        site_hostname: window.location.hostname,
         partner,
         link_url: destination.href,
         link_text: link.textContent?.trim().slice(0, 100) || '',
@@ -128,14 +141,25 @@ const siteUrl = "https://backyardsaunapro.com";
 
       const formLocation = form.dataset.formLocation || 'unknown';
       window.gtag('event', 'newsletter_signup', {
+        site_name: 'backyard_sauna_pro',
+        site_hostname: window.location.hostname,
         form_id: form.dataset.svForm || '',
         form_location: formLocation,
         page_path: window.location.pathname,
+        signup_status: 'attempted',
       });
-      window.gtag('event', 'generate_lead', {
-        currency: 'USD',
-        value: 1,
-        lead_source: `kit_${formLocation}`,
+    });
+
+    document.addEventListener('click', (event) => {
+      const link = event.target instanceof Element ? event.target.closest('a[data-track-event]') : null;
+      if (!(link instanceof HTMLAnchorElement) || typeof window.gtag !== 'function') return;
+
+      window.gtag('event', link.dataset.trackEvent, {
+        site_name: 'backyard_sauna_pro',
+        site_hostname: window.location.hostname,
+        page_path: window.location.pathname,
+        cta_position: link.dataset.ctaPosition || 'content',
+        destination_type: link.protocol === 'mailto:' ? 'email' : 'link',
       });
     });
   </script>
@@ -157,6 +181,10 @@ const siteUrl = "https://backyardsaunapro.com";
         <a href="/guides/best-outdoor-sauna-of-2026/" class="hover:text-white transition-colors">Outdoor Saunas</a>
         <a href="/guides/best-infrared-sauna-of-2026/" class="hover:text-white transition-colors">Infrared Saunas</a>
         <a href="/about/" class="hover:text-white transition-colors">About</a>
+        <a href="/how-we-review/" class="hover:text-white transition-colors">How We Review</a>
+        <a href="/newsletter/" class="hover:text-white transition-colors">Newsletter</a>
+        <a href="/partners/" class="hover:text-white transition-colors">Partners</a>
+        <a href="/contact/" class="hover:text-white transition-colors">Contact</a>
       </nav>
       <p class="mb-2">
         <strong class="text-stone-300">Affiliate Disclosure:</strong> BackyardSaunaPro.com is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate I earn from qualifying purchases.

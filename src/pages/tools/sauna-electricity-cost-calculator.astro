@@ -1,0 +1,124 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Sauna Electricity Cost Calculator"
+  description="Estimate monthly and annual sauna electricity cost from heater power, local electricity rate, session length, warm-up time, and weekly use."
+  canonical="/tools/sauna-electricity-cost-calculator"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Homeowner Planning Tool</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Sauna Electricity Cost Calculator</h1>
+      <p class="text-lg text-stone-600">Estimate operating cost with editable assumptions and a visible formula. This is a planning range, not a utility quote.</p>
+    </header>
+
+    <div class="grid lg:grid-cols-[1fr_0.9fr] gap-6 items-start">
+      <form id="electricity-calculator" class="bg-white border border-stone-200 rounded-lg p-6 space-y-5" novalidate>
+        <label class="block">
+          <span class="block text-sm font-semibold text-stone-800 mb-1">Heater power</span>
+          <span class="flex items-center gap-2"><input id="heater-kw" type="number" min="0.5" max="30" step="0.1" value="6" required class="w-full px-3 py-2 border border-stone-300 rounded-md" /><span class="text-sm text-stone-500 w-12">kW</span></span>
+        </label>
+        <label class="block">
+          <span class="block text-sm font-semibold text-stone-800 mb-1">Electricity rate</span>
+          <span class="flex items-center gap-2"><input id="rate" type="number" min="0.01" max="2" step="0.01" value="0.18" required class="w-full px-3 py-2 border border-stone-300 rounded-md" /><span class="text-sm text-stone-500 w-12">$/kWh</span></span>
+        </label>
+        <label class="block">
+          <span class="block text-sm font-semibold text-stone-800 mb-1">Warm-up time</span>
+          <span class="flex items-center gap-2"><input id="warmup-minutes" type="number" min="0" max="240" step="5" value="35" required class="w-full px-3 py-2 border border-stone-300 rounded-md" /><span class="text-sm text-stone-500 w-12">min</span></span>
+        </label>
+        <label class="block">
+          <span class="block text-sm font-semibold text-stone-800 mb-1">Session time after warm-up</span>
+          <span class="flex items-center gap-2"><input id="session-minutes" type="number" min="5" max="240" step="5" value="30" required class="w-full px-3 py-2 border border-stone-300 rounded-md" /><span class="text-sm text-stone-500 w-12">min</span></span>
+        </label>
+        <label class="block">
+          <span class="block text-sm font-semibold text-stone-800 mb-1">Sessions per week</span>
+          <input id="sessions-week" type="number" min="1" max="21" step="1" value="4" required class="w-full px-3 py-2 border border-stone-300 rounded-md" />
+        </label>
+        <label class="block">
+          <span class="block text-sm font-semibold text-stone-800 mb-1">Average power after warm-up</span>
+          <span class="flex items-center gap-2"><input id="duty-cycle" type="number" min="10" max="100" step="5" value="60" required class="w-full px-3 py-2 border border-stone-300 rounded-md" /><span class="text-sm text-stone-500 w-12">%</span></span>
+          <span class="block text-xs text-stone-500 mt-1">The heater may cycle after reaching temperature. Use 100% for a conservative upper estimate.</span>
+        </label>
+        <button type="submit" class="w-full bg-stone-900 hover:bg-stone-700 text-white font-semibold px-5 py-3 rounded-md transition-colors">Calculate cost</button>
+        <p id="calculator-error" class="hidden text-sm text-red-700" role="alert"></p>
+      </form>
+
+      <aside id="calculator-results" class="bg-amber-50 border border-amber-200 rounded-lg p-6" aria-live="polite">
+        <p class="text-sm font-semibold text-amber-800 mb-1">Estimated operating cost</p>
+        <p id="monthly-cost" class="text-4xl font-bold text-stone-900 mb-1">$0.00</p>
+        <p class="text-sm text-stone-600 mb-5">per month</p>
+        <dl class="space-y-3 text-sm">
+          <div class="flex justify-between gap-4"><dt class="text-stone-600">Per session</dt><dd id="session-cost" class="font-semibold text-stone-900">$0.00</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-stone-600">Per year</dt><dd id="annual-cost" class="font-semibold text-stone-900">$0.00</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-stone-600">Energy per session</dt><dd id="session-kwh" class="font-semibold text-stone-900">0.00 kWh</dd></div>
+        </dl>
+        <div class="border-t border-amber-200 mt-5 pt-5">
+          <p class="text-xs font-semibold text-stone-700 mb-2">Formula</p>
+          <p id="formula" class="text-xs text-stone-600 leading-relaxed">Enter your assumptions and select Calculate cost.</p>
+        </div>
+      </aside>
+    </div>
+
+    <section class="mt-8 bg-stone-100 rounded-lg p-5 text-sm text-stone-600">
+      <h2 class="font-bold text-stone-900 mb-2">What this estimate leaves out</h2>
+      <p>Real consumption changes with insulation, room volume, glass and masonry, weather, ventilation, thermostat cycling, heater condition, and local taxes or time-of-use rates. Confirm heater requirements with the manufacturer and a qualified electrician.</p>
+    </section>
+  </article>
+
+  <script>
+    const form = document.querySelector('#electricity-calculator');
+    let started = false;
+    const valueOf = (selector) => Number(document.querySelector(selector)?.value);
+    const money = (value) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
+
+    form?.addEventListener('input', () => {
+      if (started) return;
+      started = true;
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'calculator_started', { calculator: 'sauna_electricity_cost', page_path: window.location.pathname });
+      }
+    });
+
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const heaterKw = valueOf('#heater-kw');
+      const rate = valueOf('#rate');
+      const warmupHours = valueOf('#warmup-minutes') / 60;
+      const sessionHours = valueOf('#session-minutes') / 60;
+      const sessionsWeek = valueOf('#sessions-week');
+      const dutyCycle = valueOf('#duty-cycle') / 100;
+      const inputs = [heaterKw, rate, warmupHours, sessionHours, sessionsWeek, dutyCycle];
+      const error = document.querySelector('#calculator-error');
+
+      if (inputs.some((value) => !Number.isFinite(value) || value < 0) || heaterKw <= 0 || rate <= 0 || sessionsWeek <= 0 || dutyCycle <= 0) {
+        if (error) {
+          error.textContent = 'Enter valid positive values for every field.';
+          error.classList.remove('hidden');
+        }
+        return;
+      }
+      error?.classList.add('hidden');
+
+      const sessionKwh = heaterKw * warmupHours + heaterKw * dutyCycle * sessionHours;
+      const sessionCost = sessionKwh * rate;
+      const annualCost = sessionCost * sessionsWeek * 52;
+      const monthlyCost = annualCost / 12;
+
+      document.querySelector('#session-cost').textContent = money(sessionCost);
+      document.querySelector('#monthly-cost').textContent = money(monthlyCost);
+      document.querySelector('#annual-cost').textContent = money(annualCost);
+      document.querySelector('#session-kwh').textContent = `${sessionKwh.toFixed(2)} kWh`;
+      document.querySelector('#formula').textContent = `${heaterKw.toFixed(1)} kW × ${warmupHours.toFixed(2)} warm-up hours + ${heaterKw.toFixed(1)} kW × ${Math.round(dutyCycle * 100)}% × ${sessionHours.toFixed(2)} session hours = ${sessionKwh.toFixed(2)} kWh per session.`;
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'calculator_completed', {
+          calculator: 'sauna_electricity_cost',
+          page_path: window.location.pathname,
+          heater_kw_band: heaterKw < 4 ? 'under_4' : heaterKw < 9 ? '4_to_8_9' : '9_plus',
+          monthly_cost_band: monthlyCost < 10 ? 'under_10' : monthlyCost < 25 ? '10_to_24' : monthlyCost < 50 ? '25_to_49' : '50_plus',
+        });
+      }
+    });
+  </script>
+</Base>

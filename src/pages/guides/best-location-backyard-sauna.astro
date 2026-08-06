@@ -1,106 +1,103 @@
 ---
 import Base from '../../layouts/Base.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How far should a backyard sauna be from a house or property line?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no universal setback. Requirements can depend on local zoning, building and fire codes, easements, lot type, fuel source, sauna size, and HOA rules. Confirm the exact location with the local authority before ordering or building."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes a good backyard sauna location?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A strong candidate location is code-compliant, level or feasibly supported, well drained, accessible for delivery and maintenance, compatible with the electrical or chimney plan, and connected to the house by a safe, private path."
+      }
+    }
+  ]
+};
 ---
 <Base
-  title="Best Location for a Backyard Sauna Placement Guide (2025)"
-  description="Where to put your backyard sauna for the best experience, safety, and longevity. Sun exposure, privacy, drainage, electrical access, and more."
+  title="Best Location for a Backyard Sauna: A Site-Verification Guide"
+  description="Choose a backyard sauna location by checking zoning, easements, drainage, foundation, power, delivery, privacy, weather, and service access."
   canonical="/guides/best-location-backyard-sauna"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Location for a Backyard Sauna
-      </h1>
-      <p class="text-stone-500 text-sm">Updated November 2024 · 7 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        Where you put your sauna matters more than most people realize. The wrong spot means poor drainage, awkward electrical runs, no privacy, or a sauna that bakes in summer and freezes in winter. Here's how to pick right the first time.
-      </p>
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best Location for a Backyard Sauna: A Site-Verification Guide</h1>
+      <p class="text-stone-500 text-sm">Reviewed August 2026 | Verify requirements locally before ordering</p>
+      <p class="text-lg text-stone-700 mt-4">The best-looking spot is not always buildable. Start with legal and utility constraints, then compare drainage, delivery, power, privacy, weather exposure, and the path you will actually use.</p>
     </header>
 
-    <h2 class="text-2xl font-bold mt-4 mb-6 text-stone-900">The Key Factors to Consider</h2>
+    <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>No universal setback:</strong> Do not rely on a generic five-foot or ten-foot rule. Zoning, building code, fire rules, easements, HOA restrictions, fuel type, and the model itself can all change the required location.
+    </div>
 
-    <div class="space-y-5 mb-10">
+    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">1. Draw the no-build areas first</h2>
+    <p class="text-stone-700 mb-4">Use a property survey or reliable site plan to mark lot lines, easements, utilities, septic components, drainage routes, wells, protected trees, and existing structures. Then ask the local zoning or building authority what applies to the exact sauna size and fuel source.</p>
+    <p class="text-stone-700 mb-6">If an HOA or historic-district review applies, get written approval before purchasing. A retailer's general permit statement is not approval for your property.</p>
+
+    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">2. Compare the remaining sites</h2>
+    <div class="grid md:grid-cols-2 gap-4 mb-10">
       {[
-        {
-          icon: "",
-          title: "Drainage first",
-          body: "This is non-negotiable. Your sauna location needs positive drainage water must flow away from it, not toward it or underneath it. Low spots in your yard, areas that stay wet after rain, or ground that slopes toward the sauna are all problems. Walk your yard after heavy rain and mark where water pools. None of those spots work.",
-        },
-        {
-          icon: "",
-          title: "Proximity to your electrical panel",
-          body: "Every 50 feet of conduit run to your panel adds $50–$150 in electrical costs. A sauna that's 30 feet from the panel might cost $250 to wire. The same sauna 150 feet away might cost $800+. This isn't a reason to put it in a bad spot, but it should be part of the calculation. Check where your panel is before you finalize placement.",
-        },
-        {
-          icon: "",
-          title: "Shade vs. sun",
-          body: "Some shade is good it keeps the sauna cooler on the outside, which means the heater works more efficiently and the wood stays in better condition. But avoid placing under a tree that drops a lot of debris (leaves, needles, sap) it clogs the gaps in barrel saunas and causes rot. Filtered afternoon shade from a fence or structure is ideal.",
-        },
-        {
-          icon: "",
-          title: "Privacy",
-          body: "You're going to be walking between the sauna and your house in a towel (or less). Make sure your placement gives you a natural privacy buffer from neighbors and the street. A fence line, hedge, or the back corner of the yard is ideal. Don't put it right next to the property line on a neighbor's side unless you have a privacy screen.",
-        },
-        {
-          icon: "",
-          title: "Path from the house",
-          body: "You want a direct, clear path from the house to the sauna ideally with lighting for night sessions. A 20-foot sprint across wet grass in January is fine. A 100-foot obstacle course is not. Consider lighting the path from the start.",
-        },
-        {
-          icon: "",
-          title: "Wind exposure in cold climates",
-          body: "If you're in a cold climate, avoid placing the sauna on the windward side of your property where it gets blasted by prevailing winds. A natural windbreak (fence, hedge, building) on the north and west sides dramatically improves heat efficiency and makes your outdoor cooldown more comfortable.",
-        },
-        {
-          icon: "",
-          title: "Maintenance access",
-          body: "Leave at least 2–3 feet of clearance on all sides for maintenance access. You'll need to treat the exterior wood periodically, inspect the foundation, and occasionally access the electrical connection. Don't box the sauna into a corner with no access.",
-        },
-        {
-          icon: "",
-          title: "Setbacks from structures",
-          body: "Most fire codes require 10 feet minimum from your house and other structures. Check your local code some areas require more. Also check HOA rules if applicable. Don't assume.",
-        },
-      ].map(item => (
-        <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-          <h3 class="font-bold text-stone-900 mb-2">{item.icon} {item.title}</h3>
-          <p class="text-stone-600 text-sm">{item.body}</p>
-        </div>
+        ["Drainage and grade", "Prefer a location where water moves away from the foundation and door. Have the base designed for the soil, frost, runoff, and structure."],
+        ["Electrical or chimney route", "Ask a qualified electrician or installer to compare service capacity, trenching, conductor route, disconnects, or chimney clearances before the layout is final."],
+        ["Delivery access", "Verify freight dimensions, pallet weight, gate width, overhead obstacles, turning room, unloading equipment, and temporary storage."],
+        ["Service clearance", "Keep all manufacturer-required clearances and enough practical access for exterior care, heater service, tightening, cleaning, and roof or snow work."],
+        ["Privacy and path", "Plan a stable, lit, slip-resistant route between house and sauna. Screen views without blocking required clearances or ventilation."],
+        ["Weather exposure", "Use site-specific wind, drifting snow, sun, tree debris, and runoff information. Do not assume one compass direction is best across North America."]
+      ].map(([title, body]) => (
+        <section class="bg-white border border-stone-200 rounded-xl p-5">
+          <h3 class="font-bold text-stone-900 mb-2">{title}</h3>
+          <p class="text-stone-600 text-sm">{body}</p>
+        </section>
       ))}
     </div>
 
-    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">The Ideal Spot (If You Have the Choice)</h2>
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <p class="text-stone-700 text-sm leading-relaxed">
-        Back corner of the yard, away from the main house but with a clear lit path. Slightly elevated ground with natural drainage away from the structure. Some natural shade from a fence or structure on the west/south side. Close enough to the panel to keep electrical costs reasonable. Private from neighbors. Enough clearance for maintenance. A small patio or gravel area in front of the door for cooling down.
-      </p>
+    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">3. Score each candidate before committing</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm border-collapse">
+        <thead><tr class="text-left border-b border-stone-300"><th class="py-3 pr-4">Check</th><th class="py-3 pr-4">Evidence to collect</th><th class="py-3">Pass?</th></tr></thead>
+        <tbody class="text-stone-700">
+          {[
+            ["Legal placement", "Written setback, permit, easement, and HOA confirmation"],
+            ["Foundation", "Site-specific base plan and drainage path"],
+            ["Utilities", "Electrician or installer feasibility and quote"],
+            ["Delivery", "Seller freight plan matched to the access route"],
+            ["Maintenance", "Manufacturer clearances plus practical service access"],
+            ["Daily use", "Private, lit, stable route and cooling area"]
+          ].map(([check, evidence]) => <tr class="border-b border-stone-100"><td class="py-3 pr-4 font-semibold">{check}</td><td class="py-3 pr-4">{evidence}</td><td class="py-3">[ ]</td></tr>)}
+        </tbody>
+      </table>
     </div>
 
-    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">Orientation: Which Way Should the Door Face?</h2>
-    <p class="text-stone-600 mb-4">Face the door away from prevailing winds. In most of North America, winds come predominantly from the west and northwest. Orienting the door east or south means you're not fighting the wind every time you step out.</p>
-    <p class="text-stone-600 mb-4">It also means the morning sun hits the door side, which looks great and helps dry any moisture that accumulates near the entrance.</p>
+    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">Common expensive mistakes</h2>
+    <ul class="list-disc pl-5 space-y-3 text-stone-700 mb-8">
+      <li>Ordering before confirming the legal footprint and easements.</li>
+      <li>Pricing only the sauna while ignoring trenching, panel capacity, base work, freight, or a crane.</li>
+      <li>Using a generic setback or wind-direction rule from another jurisdiction.</li>
+      <li>Placing the door where roof runoff, drifting snow, mud, or ice collects.</li>
+      <li>Leaving no access for exterior finishing, heater service, or warranty inspections.</li>
+      <li>Assuming a freight truck can reach the final location.</li>
+    </ul>
 
-    <section class="mt-10">
-      <h2 class="text-2xl font-bold mb-4 text-stone-900">Common Placement Mistakes</h2>
-      <ul class="space-y-2 text-stone-600 text-sm">
-        {[
-          "Placing it where the yard drains toward it (guaranteed rot)",
-          "Too far from the electrical panel (costs hundreds extra to wire)",
-          "Under a pine or fir tree (sap and debris are constant problems)",
-          "Against the property line without checking local setback rules",
-          "No path lighting night sessions are miserable without it",
-          "No cooling area in front you need somewhere to stand when you step out",
-        ].map(m => <li class="flex gap-2"><span class="text-red-400"></span>{m}</li>)}
-      </ul>
-    </section>
-
-    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
-      <h3 class="text-xl font-bold mb-2">Now: How Much Space Do You Need?</h3>
-      <p class="text-stone-300 mb-4">Once you've picked your spot, make sure you have enough room for the sauna plus clearances.</p>
-      <a href="/guides/how-much-space-for-backyard-sauna/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-        Sauna Space Planning Guide →
-      </a>
+    <div class="bg-stone-800 text-white rounded-xl p-6 mt-12">
+      <h2 class="text-xl font-bold mb-2">Turn the location into a project budget</h2>
+      <p class="text-stone-300 mb-4">The same sauna can have a very different installed cost at two spots in the same yard.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/tools/sauna-cost-calculator/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-5 py-3 rounded-lg">Estimate the full project</a>
+        <a href="/guides/outdoor-sauna-buying-checklist/" class="inline-block border border-stone-500 hover:border-stone-300 text-white font-semibold px-5 py-3 rounded-lg">Open the buying checklist</a>
+      </div>
     </div>
   </article>
 </Base>

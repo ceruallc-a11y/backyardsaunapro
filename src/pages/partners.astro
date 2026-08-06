@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Partner With Backyard Sauna Pro"
+  description="Partnership opportunities for sauna brands, retailers, installers, and home recovery companies serving serious buyers."
+  canonical="/partners"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-10">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Industry Partnerships</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Reach Homeowners Planning a Sauna Project</h1>
+      <p class="text-lg text-stone-600">Backyard Sauna Pro creates practical buying, planning, installation, and ownership guidance. We consider partnerships that make those decisions more useful and transparent.</p>
+    </header>
+
+    <section class="grid md:grid-cols-2 gap-5 mb-10">
+      {[
+        ["Buyer guides", "Clearly labeled sponsored placements, category guides, and product-launch features with documented facts and buyer-fit limits."],
+        ["Newsletter", "Sponsored issues or placements after subscriber and engagement metrics are verified."],
+        ["Case studies", "Showroom or completed-installation stories based on approved assets, real project constraints, and attributable sources."],
+        ["Buyer introductions", "A future manually reviewed homeowner matching pilot, launched only with approved consent, privacy, and partner-response rules."],
+      ].map(([title, description]) => (
+        <div class="bg-white border border-stone-200 rounded-lg p-5">
+          <h2 class="text-lg font-bold text-stone-900 mb-2">{title}</h2>
+          <p class="text-sm text-stone-600">{description}</p>
+        </div>
+      ))}
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-stone-900 mb-4">Good partnership fit</h2>
+      <ul class="grid md:grid-cols-2 gap-3 text-sm text-stone-700">
+        <li class="bg-stone-100 p-4 rounded-md">Sauna manufacturers, kit companies, retailers, and heater brands</li>
+        <li class="bg-stone-100 p-4 rounded-md">Dealers, installers, electricians, and outdoor-living specialists</li>
+        <li class="bg-stone-100 p-4 rounded-md">Cold-plunge and recovery brands relevant to the same homeowner</li>
+        <li class="bg-stone-100 p-4 rounded-md">Companies willing to provide current product data and transparent terms</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-stone-900 mb-3">Editorial and disclosure policy</h2>
+      <p class="text-stone-600 mb-3">We do not sell undisclosed rankings, fabricate testing, repeat unsupported medical claims, or publish invented audience numbers. Sponsored relationships are labeled, product facts are attributed, and the publication retains correction rights.</p>
+      <p class="text-stone-600">Current reach, subscriber, click, and conversion figures are shared only after they are verified for a stated period.</p>
+    </section>
+
+    <section class="bg-stone-900 text-white rounded-lg p-7">
+      <h2 class="text-2xl font-bold mb-2">Start a conversation</h2>
+      <p class="text-stone-300 mb-5">Include your company, product category, target buyer, proposed format, timing, budget range, affiliate terms, and available product data.</p>
+      <a href="mailto:support@backyardsaunapro.com?subject=Partnership%20inquiry%20-%20Backyard%20Sauna%20Pro" data-track-event="partner_inquiry_started" data-cta-position="partners_page" class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-md transition-colors">Email a partnership inquiry</a>
+    </section>
+  </article>
+  <script>
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'advertise_page_view', {
+        site_name: 'backyard_sauna_pro',
+        site_hostname: window.location.hostname,
+        page_path: window.location.pathname,
+      });
+    }
+  </script>
+</Base>

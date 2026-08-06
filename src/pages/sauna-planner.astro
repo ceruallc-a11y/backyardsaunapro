@@ -1,0 +1,131 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Free Sauna Project Planner: Create a Buyer Brief"
+  description="Create a private sauna project brief with your site, size, heater, budget, timing, utility, delivery, and installation requirements."
+  canonical="/sauna-planner"
+>
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Free planning tool</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Build a sauna project brief before you contact sellers</h1>
+      <p class="text-lg text-stone-700">Turn the basic decisions into one summary you can use for quotes. Your answers stay in this browser unless you explicitly copy or email the brief.</p>
+    </header>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Privacy:</strong> This tool does not submit or store your answers. Choosing "Email this brief" opens your email app with the summary filled in; you decide whether to send it.
+    </div>
+
+    <form id="sauna-planner" class="bg-white border border-stone-200 rounded-xl p-5 md:p-7 space-y-6">
+      <div class="grid md:grid-cols-2 gap-5">
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Project location</span><select name="location" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>Outdoor</option><option>Indoor</option><option>Undecided</option></select></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Heat type</span><select name="heatType" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>Traditional electric</option><option>Wood-fired</option><option>Infrared</option><option>Steam</option><option>Undecided</option></select></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Expected users</span><select name="users" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>1-2 people</option><option>3-4 people</option><option>5-6 people</option><option>7+ people</option></select></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Target budget</span><select name="budget" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>Under $5,000 installed</option><option>$5,000-$10,000 installed</option><option>$10,000-$20,000 installed</option><option>$20,000+ installed</option><option>Not set</option></select></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Purchase timeline</span><select name="timeline" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>Within 30 days</option><option>1-3 months</option><option>3-6 months</option><option>6-12 months</option><option>Researching only</option></select></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Project type</span><select name="projectType" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>Existing space</option><option>New detached structure</option><option>New construction or remodel</option><option>Portable or plug-in unit</option><option>Undecided</option></select></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Available dimensions</span><input name="dimensions" type="text" maxlength="80" placeholder="Example: 8 ft x 10 ft area" class="w-full border border-stone-300 rounded-md px-3 py-3" /></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">ZIP or region</span><input name="region" type="text" maxlength="20" placeholder="Optional" class="w-full border border-stone-300 rounded-md px-3 py-3" /></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Electrical status</span><select name="electrical" class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option>Unknown</option><option>Electrician has reviewed the site</option><option>Panel capacity is known</option><option>Planning wood-fired, not electric</option></select></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Installation help</span><select name="installation" class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option>Need full installation help</option><option>Need electrical or chimney work only</option><option>Planning DIY kit assembly</option><option>Have a contractor</option><option>Undecided</option></select></label>
+      </div>
+
+      <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Delivery, access, or product preferences</span><textarea name="notes" maxlength="500" rows="4" placeholder="Gate width, stairs, crane concerns, preferred brands, accessibility needs, or other constraints" class="w-full border border-stone-300 rounded-md px-3 py-3"></textarea></label>
+
+      <button type="submit" class="w-full sm:w-auto bg-stone-900 hover:bg-stone-700 text-white font-semibold px-6 py-3 rounded-md">Create my project brief</button>
+    </form>
+
+    <section id="planner-result" class="hidden mt-8 bg-white border border-stone-200 rounded-xl p-5 md:p-7" aria-live="polite">
+      <h2 class="text-2xl font-bold text-stone-900 mb-2">Your project brief</h2>
+      <p class="text-sm text-stone-600 mb-4">Review it before sharing. A seller or installer still needs to verify product, code, site, and trade requirements.</p>
+      <textarea id="planner-summary" rows="16" readonly class="w-full border border-stone-300 rounded-md px-3 py-3 text-sm bg-stone-50"></textarea>
+      <div class="flex flex-wrap gap-3 mt-4">
+        <button id="copy-brief" type="button" class="bg-stone-200 hover:bg-stone-300 text-stone-900 font-semibold px-5 py-3 rounded-md">Copy brief</button>
+        <a id="email-brief" href="mailto:support@backyardsaunapro.com" data-track-event="lead_form_submission_intent" data-cta-position="sauna_planner" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-5 py-3 rounded-md">Email this brief for review</a>
+      </div>
+      <p id="copy-status" class="text-sm text-stone-600 mt-3" aria-live="polite"></p>
+    </section>
+
+    <div class="mt-10 text-sm text-stone-600">
+      <p>For immediate self-service planning, continue with the <a href="/tools/sauna-cost-calculator/" class="text-amber-700 hover:underline">project cost calculator</a> and <a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">outdoor sauna buying checklist</a>.</p>
+    </div>
+  </article>
+
+  <script>
+    const form = document.getElementById('sauna-planner');
+    const result = document.getElementById('planner-result');
+    const summary = document.getElementById('planner-summary');
+    const emailLink = document.getElementById('email-brief');
+    const copyButton = document.getElementById('copy-brief');
+    const copyStatus = document.getElementById('copy-status');
+    let started = false;
+
+    if (form instanceof HTMLFormElement) {
+      form.addEventListener('input', () => {
+        if (started) return;
+        started = true;
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'sauna_planner_started', {
+            site_name: 'backyard_sauna_pro',
+            site_hostname: window.location.hostname,
+            page_path: window.location.pathname,
+          });
+        }
+      });
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const values = Object.fromEntries(new FormData(form).entries());
+        const lines = [
+          'BACKYARD SAUNA PRO - PROJECT BRIEF',
+          '',
+          `Location: ${values.location}`,
+          `Heat type: ${values.heatType}`,
+          `Expected users: ${values.users}`,
+          `Installed budget: ${values.budget}`,
+          `Timeline: ${values.timeline}`,
+          `Project type: ${values.projectType}`,
+          `Available dimensions: ${values.dimensions || 'Not provided'}`,
+          `ZIP or region: ${values.region || 'Not provided'}`,
+          `Electrical status: ${values.electrical}`,
+          `Installation help: ${values.installation}`,
+          `Other constraints: ${values.notes || 'None provided'}`,
+          '',
+          'Please help me identify the next verification steps. I understand that product specifications, site conditions, code, permits, and trade requirements must be confirmed before purchase or installation.'
+        ];
+        const text = lines.join('\n');
+
+        if (summary instanceof HTMLTextAreaElement) summary.value = text;
+        if (emailLink instanceof HTMLAnchorElement) {
+          emailLink.href = `mailto:support@backyardsaunapro.com?subject=${encodeURIComponent('Sauna project brief')}&body=${encodeURIComponent(text)}`;
+        }
+        result?.classList.remove('hidden');
+        result?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'sauna_planner_completed', {
+            site_name: 'backyard_sauna_pro',
+            site_hostname: window.location.hostname,
+            page_path: window.location.pathname,
+            project_location: String(values.location),
+            heat_type: String(values.heatType),
+            budget_range: String(values.budget),
+            timeline: String(values.timeline),
+          });
+        }
+      });
+    }
+
+    copyButton?.addEventListener('click', async () => {
+      if (!(summary instanceof HTMLTextAreaElement)) return;
+      try {
+        await navigator.clipboard.writeText(summary.value);
+        if (copyStatus) copyStatus.textContent = 'Brief copied.';
+      } catch {
+        summary.select();
+        if (copyStatus) copyStatus.textContent = 'Select and copy the highlighted brief.';
+      }
+    });
+  </script>
+</Base>

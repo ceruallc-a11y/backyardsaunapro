@@ -1,200 +1,143 @@
 ---
 import Base from '../../layouts/Base.astro';
 
+const sections = [
+  {
+    title: "Property and approvals",
+    checks: [
+      ["The exact site is marked on a survey or reliable site plan.", "Confirm lot lines, easements, utilities, septic components, drainage, and protected areas."],
+      ["The local authority has answered the project-specific permit and setback questions.", "Give them the sauna dimensions, foundation, fuel source, electrical plan, and property address."],
+      ["HOA or design-review approval is documented if applicable.", "Do not rely on a neighbor's project or a retailer's general statement."]
+    ]
+  },
+  {
+    title: "Site and foundation",
+    checks: [
+      ["The base is designed for the structure and site.", "Account for soil, frost, drainage, runoff, anchoring, and manufacturer requirements."],
+      ["Water moves away from the sauna and entry.", "Check the site after rain and plan roof runoff, snow, and a stable approach."],
+      ["Required service clearances remain accessible.", "Leave room for exterior care, heater service, tightening, roof work, and inspection."]
+    ]
+  },
+  {
+    title: "Heater and utilities",
+    checks: [
+      ["The sauna manufacturer approves the exact heater model.", "Match the heater's rated room-volume method and any adjustment for glass, masonry, or uninsulated surfaces."],
+      ["A qualified electrician has reviewed the actual installation.", "Confirm service capacity, circuit, controls, disconnects, routing, trenching, bonding, permits, and inspection."],
+      ["A wood-fired plan has been reviewed locally if applicable.", "Confirm appliance listing, chimney system, clearances, ember protection, insurance, and fuel storage requirements."]
+    ]
+  },
+  {
+    title: "Space and comfort",
+    checks: [
+      ["The interior bench dimensions fit the people who will use it.", "Do not rely only on a marketing capacity label; compare usable bench length, width, and levels."],
+      ["The door, changing route, and cooling area work in real use.", "Plan privacy, lighting, slip resistance, winter access, and where towels and footwear go."],
+      ["The chosen format fits the goal.", "Compare barrel, cabin, indoor, infrared, and kit options by comfort, maintenance, weather protection, and installation rather than appearance alone."]
+    ]
+  },
+  {
+    title: "Freight and assembly",
+    checks: [
+      ["The freight plan reaches the property.", "Verify package size and weight, truck access, lift-gate service, unloading, gate width, overhead obstacles, and temporary storage."],
+      ["The assembly plan matches the product.", "Confirm crew size, tools, lifting needs, weather window, installer scope, and what is excluded."],
+      ["Damage and missing-part procedures are understood.", "Know the inspection deadline, photo requirements, return terms, and who pays for replacement freight."]
+    ]
+  },
+  {
+    title: "Full budget and ownership",
+    checks: [
+      ["The budget includes more than the sauna price.", "Add freight, tax, base, electrical or chimney work, permits, assembly, weather protection, access path, accessories, and contingency."],
+      ["Warranty requirements are saved before purchase.", "Keep copies of the listing, manual, warranty, approved heater, receipts, installer details, and maintenance records."],
+      ["Ongoing care is realistic.", "Price exterior treatment, cleaning, heater stones or parts, inspections, energy or fuel, and snow or roof maintenance."]
+    ]
+  }
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What do I need to know before buying an outdoor sauna?",
+      "name": "What should I confirm before buying an outdoor sauna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The main things to sort out before buying: where exactly it will go and whether the site is level, what electrical service you have available (most heaters need 240V), whether your municipality requires a permit, what size you need for your typical group, and what your realistic total budget is including delivery, installation, electrical, and a foundation pad."
+        "text": "Confirm the legal site, foundation and drainage, approved heater, electrical or chimney plan, usable interior dimensions, freight access, assembly scope, complete installed budget, warranty, and maintenance requirements before ordering."
       }
     },
     {
       "@type": "Question",
-      "name": "How much does it really cost to install an outdoor sauna?",
+      "name": "How much does an outdoor sauna cost to install?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The sauna unit is just part of the cost. Add $500-1,500 for a dedicated 240V electrical circuit, $100-300 for a gravel or concrete pad, and $200-600 for delivery depending on your location. Total installed cost for a $2,000 barrel sauna is often $3,000-4,000 once everything is included."
+        "text": "There is no dependable universal installed price. The total depends on the product, freight, site work, foundation, electrical or chimney work, permits, assembly, access, taxes, weather protection, and local labor. Build a project-specific budget from quotes."
       }
     }
   ]
 };
 ---
 <Base
-  title="Outdoor Sauna Buying Checklist: What to Confirm Before You Order"
-  description="Everything to verify before buying an outdoor sauna: site, electrical, permits, size, budget, and delivery. Avoid expensive surprises."
+  title="Outdoor Sauna Buying Checklist: Verify Before You Order"
+  description="A practical outdoor sauna checklist covering site, permits, foundation, heater, electrical, freight, assembly, warranty, and full project cost."
   canonical="/guides/outdoor-sauna-buying-checklist"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Outdoor Sauna Buying Checklist</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+    <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Pre-purchase checklist</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Outdoor Sauna Buying Checklist: Verify Before You Order</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 2026 | Use product-specific quotes and local requirements</p>
+
     <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Barrel sauna with wood pile in a grassy field" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Outdoor barrel sauna in a grassy setting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
+    <p class="text-lg text-stone-700 mb-4">The unit price is often the easiest number to find and the least complete. This checklist is designed to uncover the site work, approvals, utilities, freight, and ownership costs that determine whether a sauna is actually a good fit.</p>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-10 text-sm text-stone-700">
+      <strong>How to use it:</strong> Do not check an item because it seems likely. Save the written answer, drawing, quote, manual page, or approval that proves it.
+    </div>
 
-    <p class="text-lg text-stone-700 mb-4">Most buying regret with outdoor saunas comes from skipping the pre-purchase homework. The sauna arrives, and then you find out your electrical panel is too far away, or the site you picked has drainage issues, or the model you ordered is technically two people but realistically one.</p>
-
-    <p class="text-stone-700 mb-8">Go through this list before you order. It takes 30 minutes and saves expensive surprises.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Site and Location</h2>
-    <div class="space-y-4 mb-8">
-      {[
-        { item: "I have a specific location picked out, not just 'somewhere in the backyard'", detail: "Measure it. Confirm the footprint fits with at least 2 feet clearance on all sides." },
-        { item: "The site is reasonably level or I know how much grading is needed", detail: "More than 6 inches of slope means extra work. More than 12 inches means significant grading or adjustable footings." },
-        { item: "Drainage is adequate, water doesn't pool at the site after rain", detail: "Pour a bucket of water there and watch what happens. If it pools, you need a drainage solution before the sauna goes in." },
-        { item: "There's a clear path from the street or driveway for delivery", detail: "Barrel saunas ship on large pallets or as bundles up to 9 feet long. Check gate widths and overhead clearance." },
-        { item: "I know the setback requirements for my property", detail: "Most areas require 5-10 feet from property lines for an accessory structure. Check before you commit to a location." },
-      ].map(({item, detail}) => (
-        <div class="flex gap-3 p-4 bg-white border border-stone-200 rounded-xl">
-          <span class="text-xl mt-0.5">&#9744;</span>
-          <div>
-            <p class="font-semibold text-stone-900 text-sm">{item}</p>
-            <p class="text-stone-500 text-sm mt-0.5">{detail}</p>
-          </div>
+    {sections.map(section => (
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold text-stone-900 mb-5">{section.title}</h2>
+        <div class="space-y-4">
+          {section.checks.map(([item, detail]) => (
+            <div class="flex gap-3 p-4 bg-white border border-stone-200 rounded-xl">
+              <span class="text-xl mt-0.5" aria-hidden="true">&#9744;</span>
+              <div>
+                <p class="font-semibold text-stone-900 text-sm">{item}</p>
+                <p class="text-stone-600 text-sm mt-1">{detail}</p>
+              </div>
+            </div>
+          ))}
         </div>
+      </section>
+    ))}
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-12 mb-4">Build the installed-cost worksheet</h2>
+    <p class="text-stone-700 mb-4">Collect real quotes or written allowances for every applicable line. Mark unknowns instead of replacing them with broad internet averages.</p>
+    <div class="grid sm:grid-cols-2 gap-3 mb-8 text-sm text-stone-700">
+      {["Sauna and heater package", "Freight, unloading, and storage", "Tax and permit fees", "Survey or site planning", "Foundation and drainage", "Electrical or chimney work", "Assembly or contractor labor", "Roof and weather protection", "Path, lighting, and privacy", "Accessories and safety items", "Initial exterior finish", "Contingency for unknowns"].map(item => (
+        <div class="flex gap-2 border-b border-stone-200 py-2"><span aria-hidden="true">&#9744;</span><span>{item}</span></div>
       ))}
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Electrical</h2>
-    <div class="space-y-4 mb-8">
-      {[
-        { item: "I know what voltage and amperage my heater requires", detail: "Most electric sauna heaters need 240V/30A or 240V/40A. Confirm with the specific model before buying." },
-        { item: "I've gotten an electrician quote to run a dedicated circuit to the sauna site", detail: "Budget $500-1,500 depending on panel distance and local labor rates. Get this quote before committing." },
-        { item: "My electrical panel has capacity for an additional 30-40A circuit", detail: "Older panels (100A service) may not have room. If yours is near capacity, factor in a panel upgrade." },
-        { item: "OR: I'm going with a wood-burning heater and don't need electrical at the sauna", detail: "Wood-burning heaters like the Harvia M3 eliminate the electrical requirement entirely, though you still need a permit in most jurisdictions." },
-      ].map(({item, detail}) => (
-        <div class="flex gap-3 p-4 bg-white border border-stone-200 rounded-xl">
-          <span class="text-xl mt-0.5">&#9744;</span>
-          <div>
-            <p class="font-semibold text-stone-900 text-sm">{item}</p>
-            <p class="text-stone-500 text-sm mt-0.5">{detail}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Permits</h2>
-    <div class="space-y-4 mb-8">
-      {[
-        { item: "I've called my local building department and confirmed permit requirements", detail: "A 5-minute call. Ask: does an outdoor sauna of X square feet require a permit? What are the setback requirements?" },
-        { item: "If in an HOA: I've confirmed the sauna is allowed and what the rules are", detail: "HOAs vary wildly. Some allow it freely, some require pre-approval, some prohibit outbuildings entirely." },
-        { item: "I understand the timeline, permits can take 2-8 weeks in some jurisdictions", detail: "If you need a permit, apply before ordering the sauna so you're not sitting on a paid unit waiting for approval." },
-      ].map(({item, detail}) => (
-        <div class="flex gap-3 p-4 bg-white border border-stone-200 rounded-xl">
-          <span class="text-xl mt-0.5">&#9744;</span>
-          <div>
-            <p class="font-semibold text-stone-900 text-sm">{item}</p>
-            <p class="text-stone-500 text-sm mt-0.5">{detail}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Size and Capacity</h2>
-    <div class="space-y-4 mb-8">
-      {[
-        { item: "I understand that manufacturer 'person' ratings are optimistic", detail: "A '4-person' barrel sauna comfortably fits 2-3 people for a real session. Plan for fewer people than the rating." },
-        { item: "I know whether I want a barrel or cabin style and why", detail: "Barrels heat faster and are more efficient. Cabin saunas fit more people per footprint and look more like a structure. See our comparison guide." },
-        { item: "I've measured the exact space and confirmed the model fits", detail: "Include delivery access, not just the final footprint. Account for changing room if the model includes one." },
-      ].map(({item, detail}) => (
-        <div class="flex gap-3 p-4 bg-white border border-stone-200 rounded-xl">
-          <span class="text-xl mt-0.5">&#9744;</span>
-          <div>
-            <p class="font-semibold text-stone-900 text-sm">{item}</p>
-            <p class="text-stone-500 text-sm mt-0.5">{detail}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Total Budget (Not Just the Unit Price)</h2>
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <div class="space-y-3 text-sm">
-        <div class="flex justify-between text-stone-700 border-b border-stone-200 pb-2">
-          <span class="font-medium">Sauna unit</span>
-          <span>$1,800 - $5,000+</span>
-        </div>
-        <div class="flex justify-between text-stone-700 border-b border-stone-200 pb-2">
-          <span class="font-medium">Electrical (dedicated 240V circuit)</span>
-          <span>$500 - $1,500</span>
-        </div>
-        <div class="flex justify-between text-stone-700 border-b border-stone-200 pb-2">
-          <span class="font-medium">Foundation pad (gravel or concrete)</span>
-          <span>$100 - $600</span>
-        </div>
-        <div class="flex justify-between text-stone-700 border-b border-stone-200 pb-2">
-          <span class="font-medium">Delivery (freight, varies by distance)</span>
-          <span>$0 - $500</span>
-        </div>
-        <div class="flex justify-between text-stone-700 border-b border-stone-200 pb-2">
-          <span class="font-medium">Heater upgrade (if not included)</span>
-          <span>$400 - $700</span>
-        </div>
-        <div class="flex justify-between text-stone-700 border-b border-stone-200 pb-2">
-          <span class="font-medium">Accessories (bucket, thermometer, stones)</span>
-          <span>$80 - $200</span>
-        </div>
-        <div class="flex justify-between font-bold text-stone-900 pt-1">
-          <span>Realistic total for a $2,000 barrel sauna</span>
-          <span>$3,000 - $4,500</span>
-        </div>
+    <div class="bg-stone-800 text-white rounded-xl p-6 mt-12">
+      <h2 class="text-xl font-bold mb-2">Calculate before checkout</h2>
+      <p class="text-stone-300 mb-4">Use the project calculator to total the quotes you collect and expose missing costs.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/tools/sauna-cost-calculator/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-5 py-3 rounded-lg">Open the cost calculator</a>
+        <a href="/lead-magnets/outdoor-sauna-checklist.html" class="inline-block border border-stone-500 hover:border-stone-300 text-white font-semibold px-5 py-3 rounded-lg">Open the printable checklist</a>
       </div>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Assembly and Installation</h2>
-    <div class="space-y-4 mb-8">
-      {[
-        { item: "I have someone to help with assembly, this is a two-person job minimum", detail: "Barrel staves and structural pieces are heavy and awkward solo. You need at least one helper for a full day." },
-        { item: "I have basic tools: rubber mallet, level, drill, and wrenches", detail: "Most kits need these at minimum. Some need a circular saw for trim cuts." },
-        { item: "I've budgeted a weekend for assembly, not an afternoon", detail: "Most buyers report 6-10 hours for a barrel sauna with two people. Plan accordingly." },
-      ].map(({item, detail}) => (
-        <div class="flex gap-3 p-4 bg-white border border-stone-200 rounded-xl">
-          <span class="text-xl mt-0.5">&#9744;</span>
-          <div>
-            <p class="font-semibold text-stone-900 text-sm">{item}</p>
-            <p class="text-stone-500 text-sm mt-0.5">{detail}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Ready to Buy?</h2>
-    <p class="text-stone-700 mb-6">If you've worked through this checklist, you're in better shape than most first-time buyers. Start with our roundups to find the right model:</p>
-    <div class="grid md:grid-cols-2 gap-3">
-      <a href="/best-saunas/" class="block bg-amber-50 border border-amber-200 rounded-xl p-4 hover:border-amber-400 transition-all">
-        <p class="font-semibold text-stone-900 text-sm">Best Outdoor Saunas Overall</p>
-        <p class="text-stone-500 text-xs mt-0.5">Top picks across all categories</p>
-      </a>
-      <a href="/guides/best-4-person-outdoor-sauna/" class="block bg-amber-50 border border-amber-200 rounded-xl p-4 hover:border-amber-400 transition-all">
-        <p class="font-semibold text-stone-900 text-sm">Best 4-Person Outdoor Saunas</p>
-        <p class="text-stone-500 text-xs mt-0.5">The most popular size category</p>
-      </a>
-      <a href="/guides/best-saunas-under-2000/" class="block bg-amber-50 border border-amber-200 rounded-xl p-4 hover:border-amber-400 transition-all">
-        <p class="font-semibold text-stone-900 text-sm">Best Saunas Under $2,000</p>
-        <p class="text-stone-500 text-xs mt-0.5">Best value options</p>
-      </a>
-      <a href="/guides/outdoor-sauna-cost/" class="block bg-amber-50 border border-amber-200 rounded-xl p-4 hover:border-amber-400 transition-all">
-        <p class="font-semibold text-stone-900 text-sm">Full Cost Breakdown</p>
-        <p class="text-stone-500 text-xs mt-0.5">Everything you'll actually spend</p>
-      </a>
-    </div>
-
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related Guides</h3>
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Related planning guides</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/outdoor-sauna-permits/" class="text-amber-700 hover:underline">Do You Need a Permit for an Outdoor Sauna?</a></li>
-        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Requirements</a></li>
-        <li><a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">Gravel Pad for a Barrel Sauna</a></li>
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
+        <li><a href="/guides/best-location-backyard-sauna/" class="text-amber-700 hover:underline">Choose and verify the location</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Plan the electrical scope</a></li>
+        <li><a href="/guides/outdoor-sauna-permits/" class="text-amber-700 hover:underline">Prepare permit questions</a></li>
+        <li><a href="/guides/how-to-build-a-sauna/" class="text-amber-700 hover:underline">Plan a kit or custom build</a></li>
       </ul>
     </div>
-
   </article>
 </Base>
