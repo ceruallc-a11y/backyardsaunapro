@@ -14,7 +14,8 @@
 
 .site-header,
 .site-footer,
-.home-page {
+.home-page,
+.hub-page {
   font-family: Aptos, "Segoe UI Variable", "Segoe UI", sans-serif;
   letter-spacing: 0;
 }
@@ -99,7 +100,9 @@
 .site-footer input:focus-visible,
 .home-page a:focus-visible,
 .home-page button:focus-visible,
-.home-page input:focus-visible {
+.home-page input:focus-visible,
+.hub-page a:focus-visible,
+.hub-page input:focus-visible {
   outline: 3px solid var(--bsp-amber);
   outline-offset: 3px;
 }
@@ -107,6 +110,95 @@
 .home-page {
   color: var(--bsp-ink);
   background: #f8faf8;
+}
+
+.hub-page {
+  color: var(--bsp-ink);
+  background: #fff;
+}
+
+.hub-page h1,
+.hub-page h2,
+.hub-page h3,
+.hub-page p {
+  text-wrap: pretty;
+}
+
+.guide-hub-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: min(48dvh, 480px);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: var(--bsp-forest-950);
+}
+
+.guide-hub-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("/images/lifestyle/sauna-in-snow.jpg");
+  background-position: center 48%;
+  background-size: cover;
+}
+
+.guide-hub-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgb(7 27 21 / 0.92) 0%, rgb(7 27 21 / 0.7) 48%, rgb(7 27 21 / 0.18) 100%);
+}
+
+.hub-feature {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--bsp-line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 16px 42px rgb(18 55 42 / 0.07);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.hub-feature:hover {
+  border-color: #9eb2a5;
+  box-shadow: 0 20px 50px rgb(18 55 42 / 0.12);
+  transform: translateY(-2px);
+}
+
+.hub-feature img {
+  transition: transform 420ms ease;
+}
+
+.hub-feature:hover img {
+  transform: scale(1.025);
+}
+
+.hub-text-link {
+  color: var(--bsp-forest-800);
+  font-size: 0.875rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hub-text-link:hover {
+  color: var(--bsp-forest-950);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hub-guide-link {
+  display: block;
+  min-width: 0;
+  border-top: 1px solid var(--bsp-line);
+  padding: 1rem 0;
+  transition: padding-left 180ms ease;
+}
+
+.hub-guide-link:hover {
+  padding-left: 0.25rem;
 }
 
 .home-page h1,
@@ -239,7 +331,8 @@
 @media (prefers-reduced-motion: reduce) {
   .site-header *,
   .site-footer *,
-  .home-page * {
+  .home-page *,
+  .hub-page * {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }

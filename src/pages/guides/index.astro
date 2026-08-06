@@ -148,28 +148,152 @@ const guides = [
     ]
   }
 ];
+
+const featuredGuides = [
+  {
+    href: "/best-saunas/",
+    label: "Compare products",
+    title: "Find the sauna format that fits",
+    desc: "Start with location, heat type, capacity, budget, and installation needs.",
+    image: "/images/lifestyle/sauna-interior-forest-view.jpg",
+    imageAlt: "Sauna benches facing a forest view",
+  },
+  {
+    href: "/guides/outdoor-vs-indoor-sauna/",
+    label: "Choose a location",
+    title: "Outdoor or indoor?",
+    desc: "Compare space, weather exposure, utilities, maintenance, and daily convenience.",
+    image: "/images/lifestyle/barrel-sauna-field.jpg",
+    imageAlt: "Outdoor barrel sauna in a field",
+  },
+  {
+    href: "/tools/sauna-cost-calculator/",
+    label: "Build the budget",
+    title: "Total the whole project",
+    desc: "Include freight, site work, electrical or chimney work, permits, labor, and contingency.",
+    image: "/images/lifestyle/sauna-benches-stones.jpg",
+    imageAlt: "Wood sauna benches beside heater stones",
+  },
+];
+
+const seenGuides = new Set<string>();
+const guideSections = guides
+  .map((section) => ({
+    ...section,
+    items: section.items.filter((item) => {
+      if (seenGuides.has(item.href)) return false;
+      seenGuides.add(item.href);
+      return true;
+    }),
+  }))
+  .filter((section) => section.items.length > 0);
+
+const guideCount = guideSections.reduce((count, section) => count + section.items.length, 0);
+const displayTitle = (title: string) => title.replace(/\s*\(2025\)/g, "");
 ---
 <Base
-  title="Sauna Guides Backyard Sauna Pro"
-  description="All sauna buying guides, planning guides, installation guides, and comparisons from Backyard Sauna Pro."
+  title="Sauna Buying and Planning Guides | Backyard Sauna Pro"
+  description="Compare sauna types, plan space and utilities, estimate project costs, and find practical installation and ownership guidance."
   canonical="/guides"
+  mainClass="hub-page"
 >
-  <div class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-2">Sauna Guides</h1>
-    <p class="text-stone-500 mb-10">Everything you need to buy, plan, install, and maintain a backyard sauna.</p>
+  <header class="guide-hub-hero">
+    <div class="max-w-7xl mx-auto w-full px-6 lg:px-8 py-16 md:py-20">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold text-[#f0b253] mb-4">Buyer and owner library</p>
+        <h1 class="display-type text-4xl md:text-6xl leading-[1.05] text-white mb-5">Sauna buying and planning guides</h1>
+        <p class="text-lg md:text-xl leading-relaxed text-white/80 max-w-2xl">Make the expensive decisions in the right order: format, location, utilities, complete project cost, then product.</p>
+      </div>
+    </div>
+  </header>
 
-    {guides.map(section => (
-      <section class="mb-10">
-        <h2 class="text-xl font-bold text-stone-900 mb-4">{section.category}</h2>
-        <div class="grid md:grid-cols-2 gap-4">
-          {section.items.map(item => (
-            <a href={item.href} class="block bg-white border border-stone-200 rounded-xl p-4 hover:border-amber-400 hover:shadow transition-all">
-              <p class="font-semibold text-stone-900 text-sm">{item.title}</p>
-              <p class="text-xs text-stone-500 mt-1">{item.desc}</p>
-            </a>
-          ))}
+  <section class="bg-[#f8faf8] border-b border-[#d4ddd7]" aria-labelledby="start-heading">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-7">
+        <div>
+          <p class="text-sm font-semibold text-[#1c4a39] mb-2">Start with the project</p>
+          <h2 id="start-heading" class="display-type text-3xl md:text-4xl text-[#17211d]">Three decisions before the shortlist</h2>
         </div>
-      </section>
-    ))}
-  </div>
+        <a href="/sauna-planner/" class="hub-text-link">Build a project brief <span aria-hidden="true">&rarr;</span></a>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-5">
+        {featuredGuides.map((guide) => (
+          <a href={guide.href} class="hub-feature group">
+            <div class="aspect-[16/10] overflow-hidden bg-[#e8f0eb]">
+              <img src={guide.image} alt={guide.imageAlt} width="1200" height="750" loading="lazy" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-5 md:p-6">
+              <p class="text-xs font-semibold text-[#1c4a39] mb-2">{guide.label}</p>
+              <h3 class="text-xl font-bold text-[#17211d] mb-2 group-hover:text-[#1c4a39]">{guide.title}</h3>
+              <p class="text-sm leading-relaxed text-[#5a6962]">{guide.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white" aria-labelledby="library-heading">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+      <div class="grid lg:grid-cols-[18rem_minmax(0,1fr)] gap-10 lg:gap-14">
+        <aside class="lg:sticky lg:top-24 lg:self-start">
+          <p class="text-sm font-semibold text-[#1c4a39] mb-2">{guideCount} practical guides</p>
+          <h2 id="library-heading" class="display-type text-3xl text-[#17211d] mb-4">Browse the library</h2>
+          <label for="guide-search" class="block text-sm font-semibold text-[#17211d] mb-2">Search guides</label>
+          <input id="guide-search" type="search" placeholder="Heater, foundation, infrared..." class="w-full min-h-12 border border-[#b8c7be] bg-white px-4 py-3 text-[#17211d] placeholder:text-[#78877f] focus:outline-none focus:ring-2 focus:ring-[#e6a23a] focus:ring-offset-2 rounded-md" autocomplete="off" />
+          <p id="guide-count" class="text-sm text-[#5a6962] mt-3" aria-live="polite">Showing all {guideCount} guides</p>
+        </aside>
+
+        <div id="guide-library" class="space-y-12">
+          {guideSections.map((section) => (
+            <section class="guide-section" data-guide-section>
+              <div class="flex items-center gap-4 mb-4">
+                <h3 class="text-xl font-bold text-[#17211d] whitespace-nowrap">{section.category}</h3>
+                <span class="h-px flex-1 bg-[#d4ddd7]" aria-hidden="true"></span>
+              </div>
+              <div class="grid md:grid-cols-2 gap-x-8">
+                {section.items.map((item) => (
+                  <a href={item.href} class="hub-guide-link group" data-guide-item data-search={`${item.title} ${item.desc}`.toLowerCase()}>
+                    <span class="block font-semibold text-[#17211d] group-hover:text-[#1c4a39]">{displayTitle(item.title)}</span>
+                    <span class="block text-sm leading-relaxed text-[#5a6962] mt-1">{item.desc}</span>
+                  </a>
+                ))}
+              </div>
+            </section>
+          ))}
+          <p id="guide-empty" class="hidden border-t border-[#d4ddd7] pt-6 text-[#5a6962]">No guide matches that search.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const search = document.getElementById('guide-search');
+    const count = document.getElementById('guide-count');
+    const empty = document.getElementById('guide-empty');
+    const items = Array.from(document.querySelectorAll('[data-guide-item]'));
+    const sections = Array.from(document.querySelectorAll('[data-guide-section]'));
+
+    if (search instanceof HTMLInputElement) {
+      search.addEventListener('input', () => {
+        const query = search.value.trim().toLowerCase();
+        let visible = 0;
+
+        items.forEach((item) => {
+          const matches = !query || item.getAttribute('data-search')?.includes(query);
+          item.classList.toggle('hidden', !matches);
+          if (matches) visible += 1;
+        });
+
+        sections.forEach((section) => {
+          const hasVisibleItem = Array.from(section.querySelectorAll('[data-guide-item]')).some((item) => !item.classList.contains('hidden'));
+          section.classList.toggle('hidden', !hasVisibleItem);
+        });
+
+        if (count) count.textContent = query ? `${visible} ${visible === 1 ? 'guide' : 'guides'} found` : `Showing all ${items.length} guides`;
+        empty?.classList.toggle('hidden', visible > 0);
+      });
+    }
+  </script>
 </Base>
