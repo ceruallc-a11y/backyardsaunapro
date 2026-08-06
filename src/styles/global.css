@@ -1,1 +1,246 @@
 @import "tailwindcss";
+
+:root {
+  --bsp-forest-950: #0b211a;
+  --bsp-forest-900: #12372a;
+  --bsp-forest-800: #1c4a39;
+  --bsp-sage-100: #e8f0eb;
+  --bsp-sage-50: #f4f7f5;
+  --bsp-amber: #e6a23a;
+  --bsp-ink: #17211d;
+  --bsp-muted: #5a6962;
+  --bsp-line: #d4ddd7;
+}
+
+.site-header,
+.site-footer,
+.home-page {
+  font-family: Aptos, "Segoe UI Variable", "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+.display-type {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.site-header {
+  background: color-mix(in srgb, var(--bsp-forest-950) 96%, transparent);
+  border-bottom: 1px solid rgb(255 255 255 / 0.12);
+  box-shadow: 0 8px 28px rgb(8 31 23 / 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.site-brand,
+.site-nav-link,
+.site-mobile-link,
+.site-footer a {
+  color: rgb(255 255 255 / 0.82);
+}
+
+.site-brand:hover,
+.site-nav-link:hover,
+.site-nav-link[aria-current="page"],
+.site-mobile-link:hover,
+.site-mobile-link[aria-current="page"],
+.site-footer a:hover {
+  color: #fff;
+}
+
+.site-nav-link[aria-current="page"] {
+  background: rgb(255 255 255 / 0.09);
+}
+
+.site-nav-cta {
+  margin-left: 0.25rem;
+  background: var(--bsp-amber);
+  color: var(--bsp-forest-950);
+  font-weight: 700;
+}
+
+.site-nav-cta:hover {
+  background: #f0b253;
+  color: var(--bsp-forest-950);
+}
+
+.menu-toggle {
+  border: 1px solid rgb(255 255 255 / 0.2);
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+  background: rgb(255 255 255 / 0.1);
+}
+
+.site-footer {
+  background: var(--bsp-forest-950);
+  color: rgb(255 255 255 / 0.62);
+}
+
+.footer-nav a,
+.site-footer button,
+.site-footer input,
+.bsp-button,
+.home-action {
+  transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease, transform 220ms ease;
+}
+
+.site-footer button:active,
+.bsp-button:active,
+.home-action:active {
+  transform: translateY(1px);
+}
+
+.site-header a:focus-visible,
+.site-header button:focus-visible,
+.site-footer a:focus-visible,
+.site-footer button:focus-visible,
+.site-footer input:focus-visible,
+.home-page a:focus-visible,
+.home-page button:focus-visible,
+.home-page input:focus-visible {
+  outline: 3px solid var(--bsp-amber);
+  outline-offset: 3px;
+}
+
+.home-page {
+  color: var(--bsp-ink);
+  background: #f8faf8;
+}
+
+.home-page h1,
+.home-page h2,
+.home-page h3,
+.home-page p {
+  text-wrap: pretty;
+}
+
+.home-page h1,
+.home-page h2 {
+  text-wrap: balance;
+}
+
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: min(68dvh, 680px);
+  overflow: hidden;
+  color: #fff;
+  background: var(--bsp-forest-950);
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("/images/lifestyle/barrel-sauna-field.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgb(7 27 21 / 0.92) 0%, rgb(7 27 21 / 0.76) 43%, rgb(7 27 21 / 0.18) 75%, rgb(7 27 21 / 0.04) 100%);
+}
+
+.home-action {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.home-action-primary {
+  background: var(--bsp-amber);
+  color: var(--bsp-forest-950);
+}
+
+.home-action-primary:hover {
+  background: #f0b253;
+}
+
+.home-action-secondary {
+  border-color: rgb(255 255 255 / 0.52);
+  background: rgb(10 35 27 / 0.28);
+  color: #fff;
+}
+
+.home-action-secondary:hover {
+  border-color: #fff;
+  background: rgb(10 35 27 / 0.62);
+}
+
+.home-step {
+  border-top: 2px solid var(--bsp-line);
+}
+
+.home-step-number {
+  color: var(--bsp-forest-800);
+  font-variant-numeric: tabular-nums;
+}
+
+.home-feature {
+  border: 1px solid var(--bsp-line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgb(18 55 42 / 0.08);
+}
+
+.home-feature-muted {
+  background: var(--bsp-sage-100);
+}
+
+.home-guide-link {
+  display: block;
+  border-top: 1px solid var(--bsp-line);
+  padding: 1rem 0;
+  color: var(--bsp-ink);
+  transition: color 180ms ease, padding-left 180ms ease;
+}
+
+.home-guide-link:hover {
+  color: var(--bsp-forest-800);
+  padding-left: 0.25rem;
+}
+
+.home-photo-link img {
+  transition: transform 420ms ease;
+}
+
+.home-photo-link:hover img {
+  transform: scale(1.025);
+}
+
+@media (max-width: 767px) {
+  .home-hero {
+    min-height: min(72dvh, 620px);
+  }
+
+  .home-hero::before {
+    background-position: 58% center;
+  }
+
+  .home-hero::after {
+    background: linear-gradient(90deg, rgb(7 27 21 / 0.94) 0%, rgb(7 27 21 / 0.78) 70%, rgb(7 27 21 / 0.34) 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header *,
+  .site-footer *,
+  .home-page * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

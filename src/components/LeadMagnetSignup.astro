@@ -2,8 +2,34 @@
 // LeadMagnetSignup.astro
 // Lead magnet CTA. Kit form ID: 9452008 (UID b7d6fe4c1e)
 // Direct download fallback: /lead-magnets/outdoor-sauna-checklist.html
+const { variant = "default" } = Astro.props;
 ---
 
+{variant === "home" ? (
+  <section class="lead-magnet-cta border-y border-[#d4ddd7] bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 py-10 md:py-14 grid lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-16 items-center">
+      <div>
+        <p class="text-sm font-semibold text-[#1c4a39] mb-3">Free planning checklist</p>
+        <h2 class="display-type text-3xl md:text-4xl text-[#17211d] leading-tight mb-3">Catch the expensive details before you order.</h2>
+        <p class="text-[#5a6962] max-w-[58ch] leading-relaxed">
+          Check the site, foundation, heater, permits, freight, warranty, and full installed budget in one pass.
+        </p>
+      </div>
+      <div>
+        <form action="https://app.kit.com/forms/9452008/subscriptions" method="post" data-sv-form="9452008" data-uid="b7d6fe4c1e" data-format="inline" data-version="5" data-form-location="lead_magnet" class="kit-form grid sm:grid-cols-[1fr_auto] gap-3 items-end">
+          <div>
+            <label for="home-checklist-email" class="block text-sm font-semibold text-[#17211d] mb-2">Email address</label>
+            <input id="home-checklist-email" type="email" name="email_address" placeholder="you@example.com" required class="kit-email-input w-full min-h-12 px-4 py-3 rounded-md border border-[#b9c8bf] bg-white text-[#17211d] placeholder-[#718078] focus:outline-none focus:ring-2 focus:ring-[#e6a23a]" />
+          </div>
+          <button type="submit" class="kit-submit-btn min-h-12 bg-[#12372a] hover:bg-[#1c4a39] text-white font-semibold px-5 py-3 rounded-md whitespace-nowrap">Send checklist</button>
+        </form>
+        <p class="kit-fine-print text-xs text-[#5a6962] mt-3">
+          Occasional buyer guidance. Unsubscribe anytime. <a href="/lead-magnets/outdoor-sauna-checklist.html" class="font-semibold text-[#1c4a39] underline">View without email</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+) : (
 <section class="lead-magnet-cta bg-amber-50 border border-amber-300 border-l-4 border-l-amber-700 rounded-lg p-6 md:p-8 my-10">
   <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 items-center">
     <div>
@@ -27,3 +53,4 @@
     </div>
   </div>
 </section>
+)}
