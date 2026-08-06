@@ -1,78 +1,95 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What should I look for in a sauna backrest?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Verify that the manufacturer identifies the backrest for sauna use, then compare its dimensions with your bench and wall. Look for an unfinished surface, stable contact points, airflow between slats, and a return policy.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does a freestanding sauna backrest need installation?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Many ergonomic sauna backrests are freestanding and do not require wall fasteners, but designs vary. Follow the manufacturer instructions and make sure the backrest cannot slide or interfere with heater clearances.',
+      },
+    },
+  ],
+};
 ---
 <Base
-  title="Best Sauna Backrest (2025): Top Picks for Comfort and Safety"
-  description="The best sauna backrests for barrel and cabin saunas. Ergonomic picks in cedar and aspen that hold up to heat and humidity."
+  title="Best Sauna Backrest (2026): What to Verify Before Buying"
+  description="Compare sauna backrest fit, dimensions, materials, airflow, and stability. See the current Karibu shortlist and verify your bench before ordering."
   canonical="/guides/best-sauna-backrest"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Sauna Backrest (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; reviewed by the Backyard Sauna Pro team</p>
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Sauna Accessories</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best Sauna Backrest: Fit and Safety Before Features</h1>
+      <p class="text-stone-500 text-sm">Reviewed August 2026 &middot; Backyard Sauna Pro</p>
+      <p class="text-lg text-stone-700 mt-4">The best backrest is one designed for sauna use that fits your bench, stays stable, and does not interfere with heater clearances or airflow.</p>
+    </header>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Product availability and sellers can change.
     </div>
 
-    <p class="text-lg text-stone-700 mb-6">Most sauna benches are flat boards. They work fine for sitting upright, but the moment you want to lean back and actually relax, you're pressing your spine against a hard vertical plank. A backrest fixes that in about 30 seconds of setup.</p>
+    <section class="bg-stone-900 text-white rounded-lg p-6 mb-8" aria-labelledby="backrest-fast-pick">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-300 mb-2">Current shortlist</p>
+      <h2 id="backrest-fast-pick" class="text-2xl font-bold mb-2">Karibu Ergonomic Sauna Backrest</h2>
+      <p class="text-stone-300 mb-4">Karibu identifies this as a sauna-wood backrest with a waved profile, anti-slip stops, and dimensions of 37.5 by 51 by 6.5 centimeters. Confirm the marketplace product matches manufacturer item 46707.</p>
+      <AmazonButton search="Karibu ergonomic sauna backrest 46707" label="Check current Amazon options" variant="primary" ctaPosition="above_fold" />
+    </section>
 
-    <p class="text-stone-700 mb-6">Good news: a quality sauna backrest is cheap. It's one of the easiest upgrades you can make to any sauna. The main things to get right are material (only certain woods handle sauna heat safely) and ergonomics (the angle matters more than you'd think).</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Quick Picks</h2>
-
-    <div class="space-y-6 mb-10">
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Karibu Ergonomic Sauna Backrest</h3>
-          </div>
-        </div>
-        <p class="text-stone-600 mb-3">Contoured spruce construction with a curved upper section that actually supports the lumbar and shoulder blades. The open-slat design lets heat circulate through instead of trapping it against your back. Fits any standard bench depth.</p>
-        <ul class="text-stone-600 text-sm space-y-1 mb-4">
-          <li>Material: spruce (splinter-free, heat-stable)</li>
-          <li>Adjustable angle or fixed depending on model</li>
-          <li>Works for barrel and cabin saunas</li>
-        </ul>
-        <AmazonButton asin="B0DWTCK8X9" variant="primary" />
+    <section class="border border-stone-200 rounded-lg p-6 bg-white mb-10" aria-labelledby="backrest-shortlist-heading">
+      <h2 id="backrest-shortlist-heading" class="text-2xl font-bold text-stone-900 mb-3">Why It Made the Shortlist</h2>
+      <p class="text-stone-700 mb-4">The manufacturer provides an identifiable product number, dimensions, intended use, and stability feature. That makes it easier to verify than a generic marketplace listing with no traceable model.</p>
+      <div class="grid sm:grid-cols-2 gap-4 text-sm mb-5">
+        <div class="bg-stone-50 rounded-md p-4"><h3 class="font-bold text-stone-900 mb-2">Documented details</h3><ul class="text-stone-700 space-y-1 list-disc pl-5"><li>Manufacturer item 46707</li><li>37.5 x 51 x 6.5 cm</li><li>Waved ergonomic profile</li><li>Anti-slip stops at top and bottom</li></ul></div>
+        <div class="bg-stone-50 rounded-md p-4"><h3 class="font-bold text-stone-900 mb-2">Check before buying</h3><ul class="text-stone-700 space-y-1 list-disc pl-5"><li>Bench depth and wall clearance</li><li>Exact seller and model identity</li><li>Return policy and shipping region</li><li>Manufacturer placement instructions</li></ul></div>
       </div>
+      <AmazonButton search="Karibu ergonomic sauna backrest 46707" label="Compare current listings" variant="primary" ctaPosition="shortlist" />
+      <p class="text-xs text-stone-500 mt-4">Source checked August 2026: <a href="https://www.karibu.de/rueckenlehne-ergonomisch/46707" target="_blank" rel="noopener" class="text-amber-700 hover:underline">Karibu product 46707</a>. We did not hands-on test this accessory.</p>
+    </section>
 
+    <h2 class="text-2xl font-bold text-stone-900 mb-4">Five Checks That Matter</h2>
+    <ol class="space-y-5 text-stone-700 mb-10 list-decimal pl-5">
+      <li><strong>Intended use:</strong> choose a product whose manufacturer identifies it for sauna use. Do not infer heat suitability from appearance alone.</li>
+      <li><strong>Bench fit:</strong> measure depth, usable width, and the distance to the wall before ordering. Include clearance for your shoulders and movement.</li>
+      <li><strong>Stability:</strong> check how the backrest resists sliding or tipping. Freestanding designs should remain stable without improvised fasteners.</li>
+      <li><strong>Surface and hardware:</strong> inspect for coatings, exposed metal, rough edges, or damaged wood before placing the product in a heated room.</li>
+      <li><strong>Heater clearance:</strong> never place an accessory where it violates the sauna or heater manufacturer's required clearances.</li>
+    </ol>
+
+    <section class="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-10">
+      <h2 class="font-bold text-stone-900 mb-2">Care without guesswork</h2>
+      <p class="text-sm text-stone-700">Follow the product instructions. Let the backrest dry between sessions and inspect it for movement, cracks, rough edges, or hardware changes. Do not add a coating or treatment unless the manufacturer expressly allows it for that product and sauna environment.</p>
+    </section>
+
+    <h2 class="text-2xl font-bold text-stone-900 mb-4">Frequently Asked Questions</h2>
+    <div class="space-y-5 mb-10">
+      <div><h3 class="font-bold text-stone-900 mb-1">What should I look for in a sauna backrest?</h3><p class="text-stone-700">Start with documented sauna use, dimensions, stability, and placement instructions. Comfort claims matter less if the product does not fit your bench.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Does a freestanding backrest need installation?</h3><p class="text-stone-700">Often no, but follow the specific instructions. Do not add wall fasteners or place it near a heater without verifying clearances.</p></div>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Look For</h2>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Material matters</h3>
-    <p class="text-stone-700 mb-4">Only use backrests made from sauna-grade wood. The four safe options are spruce, aspen, cedar, and alder. All of them stay cool to the touch even at 180 degrees and don't leach resins that irritate skin.</p>
-    <p class="text-stone-700 mb-4">Avoid anything with pine (resin bleeds at high heat), hardwoods like oak or beech (they get too hot and splinter), or any painted or stained finishes. Bare, kiln-dried softwood only.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">The angle</h3>
-    <p class="text-stone-700 mb-4">A backrest that sits at 90 degrees defeats the purpose. You want somewhere between 100 and 115 degrees of recline. Anything beyond 115 and you start sliding off the bench. Many backrests are fixed at a single angle, which is fine as long as it's in that range. Adjustable versions give more flexibility but add complexity and joints that can loosen over time.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Slat spacing</h3>
-    <p class="text-stone-700 mb-4">Open slats are better than solid panels. Heat needs to move. A solid backrest traps hot, moist air against your skin, which is uncomfortable and accelerates moisture damage to the wood. Slat gaps of half an inch to an inch are ideal.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Width</h3>
-    <p class="text-stone-700 mb-4">Standard bench width is 20 to 22 inches. Most backrests are built to match. Check the dimensions before ordering if you have an unusually narrow or wide bench. A backrest that overhangs the bench sides is a bruise waiting to happen.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Does a Sauna Backrest Actually Matter?</h2>
-    <p class="text-stone-700 mb-4">It depends on how you use the sauna. If you sit for 10 minutes and leave, probably not. If you're in for 20 to 30 minutes doing multiple rounds, your posture starts to matter a lot. Slumping against a flat vertical board puts pressure on the lower back and makes you want to cut sessions short.</p>
-    <p class="text-stone-700 mb-4">A good backrest extends how long you comfortably stay in, which means you get more out of each session. For a $30 to $60 accessory, that's a strong return.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Care and Maintenance</h2>
-    <p class="text-stone-700 mb-4">Wipe down with a dry cloth after each session. If the wood starts to grey or darken, sand lightly with 120-grit and leave unfinished. Never use oils, varnishes, or stains inside a sauna. The heat will cause them to off-gas and the smell is unpleasant at best.</p>
-    <p class="text-stone-700 mb-6">Store the backrest off the bench between sessions if possible. Letting it air out between uses significantly extends the life of the wood.</p>
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related Guides</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-sauna-bucket-ladle/" class="text-amber-700 hover:underline">Best Sauna Bucket and Ladle Sets</a></li>
-        <li><a href="/guides/best-sauna-thermometer-hygrometer/" class="text-amber-700 hover:underline">Best Sauna Thermometer and Hygrometer</a></li>
-        <li><a href="/guides/best-sauna-stones/" class="text-amber-700 hover:underline">Best Sauna Stones</a></li>
-        <li><a href="/guides/how-to-use-a-sauna/" class="text-amber-700 hover:underline">How to Use a Sauna</a></li>
-      </ul>
-    </div>
-
+    <section class="bg-stone-50 border border-stone-200 rounded-lg p-6">
+      <h2 class="text-xl font-bold text-stone-900 mb-2">Complete the accessory check</h2>
+      <p class="text-stone-700 mb-4">A thermometer, bucket, ladle, and stones each have their own compatibility questions. Verify them individually instead of buying a generic bundle.</p>
+      <div class="flex flex-wrap gap-3 text-sm">
+        <a href="/guides/best-sauna-thermometer-hygrometer/" class="text-amber-700 font-semibold hover:underline">Thermometer guide</a>
+        <a href="/guides/best-sauna-bucket-ladle/" class="text-amber-700 font-semibold hover:underline">Bucket and ladle guide</a>
+        <a href="/guides/best-sauna-stones/" class="text-amber-700 font-semibold hover:underline">Sauna stones guide</a>
+      </div>
+    </section>
   </article>
 </Base>
