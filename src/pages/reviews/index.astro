@@ -1,100 +1,102 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Sauna Reviews Backyard Sauna Pro"
-  description="In-depth reviews of the best backyard saunas. Honest pros, cons, and verdicts on the most popular outdoor sauna kits."
+  title="Sauna Reviews: Brands, Heaters, and Home Saunas (2026)"
+  description="Research-backed sauna reviews organized by brand, heater, and product type, with clear evidence limits and practical checks for homeowners."
   canonical="/reviews"
 >
-  <div class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-2">Sauna Reviews</h1>
+  <article class="max-w-4xl mx-auto">
+    <header class="mb-8">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-3">Independent buyer research</p>
+      <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Reviews for Real Buying Decisions</h1>
+      <p class="text-lg text-stone-600 mb-3">Start with the kind of sauna you are buying. Then compare the details that change the project: room size, heater, electrical requirements, delivery, warranty, and installed cost.</p>
+      <p class="text-sm text-stone-500">Reviewed August 2026 &middot; Backyard Sauna Pro</p>
+    </header>
 
     <AdvertiserDisclosure />
-    <p class="text-stone-500 mb-10">Honest reviews of the most popular backyard sauna kits real pros, cons, and verdicts.</p>
 
     <div class="mb-6 bg-stone-900 text-amber-50 rounded-xl p-5">
       <p class="text-xs font-semibold uppercase tracking-wide text-amber-200 mb-2">Featured for 2026</p>
       <p class="text-sm leading-relaxed">Our 2026 Best Overall pick is the <a href="/guides/best-home-sauna/" class="text-amber-200 underline hover:text-white font-semibold">Sun Home Equinox</a> (premium full-spectrum infrared). See the full <a href="/best-saunas/" class="text-amber-200 underline hover:text-white font-semibold">2026 top picks list</a> for premium, traditional, budget, red light, and outdoor options.</p>
     </div>
 
-    <div class="mb-6 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-stone-600">
-      <span class="font-semibold text-stone-800">Also see: </span>
-      <a href="/reviews/harvia-kip-60b-review/" class="text-amber-700 hover:underline font-medium mr-4">Harvia KIP 60B Electric Heater Review</a>
-      <a href="/reviews/dynamic-saunas-barcelona-review/" class="text-amber-700 hover:underline font-medium">Dynamic Saunas Barcelona Review</a>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-10 text-sm text-stone-700">
+      <strong>What "review" means here:</strong> Unless a page documents firsthand access, it is a desk-researched buyer analysis. We check current manufacturer specifications, manuals, warranty terms, retailer details, and attributable owner feedback. We do not claim hands-on testing that did not happen. <a href="/how-we-review/" class="text-amber-800 underline font-semibold">Read the full methodology.</a>
     </div>
 
-    <div class="space-y-8">
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded">BEST TRADITIONAL</span>
-        <h2 class="text-xl font-bold text-stone-900 mt-3 mb-1">Almost Heaven Pinnacle 4-Person Barrel Sauna</h2>
-        <p class="text-stone-500 text-xs mb-3">Traditional Barrel · Cedar · 4-Person</p>
-        <p class="text-stone-600 text-sm mb-4">The best-selling barrel sauna on Amazon and our overall top pick. Rustic red cedar construction, stainless steel hardware, and a barrel design that heats efficiently and sheds snow beautifully. Assembly takes 4–6 hours for two people and requires a 240V heater (sold separately).</p>
-        <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
-          <div>
-            <p class="font-bold text-green-700 text-xs uppercase mb-1">What We Love</p>
-            <p class="text-stone-600"> Authentic Finnish sauna experience</p>
-            <p class="text-stone-600"> Barrel shape = excellent heat efficiency</p>
-            <p class="text-stone-600"> Cedar handles freeze-thaw cycles for decades</p>
-            <p class="text-stone-600"> Clean, beautiful aesthetic</p>
-          </div>
-          <div>
-            <p class="font-bold text-red-600 text-xs uppercase mb-1">Watch Out For</p>
-            <p class="text-stone-600"> Heater not included budget $400–$600 extra</p>
-            <p class="text-stone-600"> Needs 240V dedicated circuit</p>
-            <p class="text-stone-600"> Takes up real yard space</p>
-          </div>
+    <section class="mb-12">
+      <div class="flex items-end justify-between gap-4 mb-5">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-2">Outdoor sauna brands</p>
+          <h2 class="text-2xl font-bold text-stone-900">Compare the company before the model</h2>
         </div>
-        <p class="text-sm font-semibold text-stone-700 mb-3">Verdict: <span class="text-stone-600 font-normal">The strongest pick for homeowners who want a real outdoor sauna experience with traditional Finnish heat and steam. Buy it, install it well, and you'll use it for 20+ years.</span></p>
-        <AmazonButton asin="B017WJV8SO" price="~$2,199" />
+        <a href="/brands/" class="hidden sm:inline text-sm font-semibold text-amber-800 hover:underline">See all brand reviews</a>
       </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        <a href="/brands/redwood-outdoors-sauna-review/" class="block bg-white border border-stone-200 rounded-lg p-5 hover:border-amber-400 transition-colors">
+          <p class="text-xs font-semibold text-amber-700 uppercase mb-2">Current lineup check</p>
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Redwood Outdoors</h3>
+          <p class="text-sm text-stone-600">Heat-treated hemlock, barrel and cabin formats, freight delivery, and a one-year limited sauna warranty.</p>
+        </a>
+        <a href="/brands/almost-heaven-sauna-review/" class="block bg-white border border-stone-200 rounded-lg p-5 hover:border-amber-400 transition-colors">
+          <p class="text-xs font-semibold text-amber-700 uppercase mb-2">Traditional sauna kits</p>
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Almost Heaven</h3>
+          <p class="text-sm text-stone-600">A model-by-model look at barrel and cabin kits, heater choices, warranty questions, and buyer fit.</p>
+        </a>
+        <a href="/brands/dundalk-leisurecraft-review/" class="block bg-white border border-stone-200 rounded-lg p-5 hover:border-amber-400 transition-colors">
+          <p class="text-xs font-semibold text-amber-700 uppercase mb-2">Canadian-made options</p>
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Dundalk LeisureCraft</h3>
+          <p class="text-sm text-stone-600">A practical review of product formats, materials, site planning, and questions to ask a dealer.</p>
+        </a>
+      </div>
+    </section>
 
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <span class="text-xs font-bold bg-green-100 text-green-800 px-2 py-1 rounded">BEST BUDGET</span>
-        <h2 class="text-xl font-bold text-stone-900 mt-3 mb-1">Dynamic Saunas Barcelona Far Infrared Sauna</h2>
-        <p class="text-stone-500 text-xs mb-3">Infrared · Canadian Hemlock · 1-2 Person</p>
-        <p class="text-stone-600 text-sm mb-4">The best infrared sauna under $1,000. Low-EMF carbon panels, 15-minute heat-up time, plugs into a standard 120V outlet. No electrician needed, no special installation. If you want a real sauna experience without the complexity or cost of a traditional setup, this is the move.</p>
-        <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
-          <div>
-            <p class="font-bold text-green-700 text-xs uppercase mb-1">What We Love</p>
-            <p class="text-stone-600"> Plug-and-play no electrician</p>
-            <p class="text-stone-600"> Heats up in 15 minutes</p>
-            <p class="text-stone-600"> Low EMF certified panels</p>
-            <p class="text-stone-600"> Great for apartments, garages, spare rooms</p>
-          </div>
-          <div>
-            <p class="font-bold text-red-600 text-xs uppercase mb-1">Watch Out For</p>
-            <p class="text-stone-600"> 1-2 person only</p>
-            <p class="text-stone-600"> No steam option</p>
-            <p class="text-stone-600"> Indoor/covered use only</p>
-          </div>
-        </div>
-        <p class="text-sm font-semibold text-stone-700 mb-3">Verdict: <span class="text-stone-600 font-normal">Best value in the sauna market. Not a traditional experience, but delivers real health benefits at a fraction of the cost and complexity.</span></p>
-        <AmazonButton asin="B00A2F99F0" price="~$899" />
+    <section class="mb-12">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-2">Sauna heaters</p>
+      <h2 class="text-2xl font-bold text-stone-900 mb-5">Choose a heater as a complete system</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <a href="/reviews/harvia-kip-60b-review/" class="block bg-white border border-stone-200 rounded-lg p-5 hover:border-amber-400 transition-colors">
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Harvia KIP 60B</h3>
+          <p class="text-sm text-stone-600">Published specifications, room-sizing questions, electrical planning, controls, and limitations.</p>
+        </a>
+        <a href="/brands/huum-sauna-heater-review/" class="block bg-white border border-stone-200 rounded-lg p-5 hover:border-amber-400 transition-colors">
+          <h3 class="text-lg font-bold text-stone-900 mb-2">HUUM DROP vs HIVE</h3>
+          <p class="text-sm text-stone-600">A verification-first comparison of room fit, rock load, controls, clearances, and installed cost.</p>
+        </a>
+        <a href="/brands/harvia-sauna-heater-review/" class="block bg-white border border-stone-200 rounded-lg p-5 hover:border-amber-400 transition-colors">
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Harvia heater range</h3>
+          <p class="text-sm text-stone-600">KIP, M3, Cilindro, and other heater families organized by the project questions that matter.</p>
+        </a>
       </div>
+    </section>
 
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <span class="text-xs font-bold bg-blue-100 text-blue-800 px-2 py-1 rounded">BEST LARGE</span>
-        <h2 class="text-xl font-bold text-stone-900 mt-3 mb-1">Almost Heaven Saunas 6-Person Barrel Sauna</h2>
-        <p class="text-stone-500 text-xs mb-3">Traditional Barrel · Cedar · 6-Person</p>
-        <p class="text-stone-600 text-sm mb-4">For families or those who want serious space, the 6-person barrel is the premium choice. Polished stainless steel hardware, clear-grade western Canadian red cedar, and enough room for two people to lie down comfortably. Built to outlast its owners.</p>
-        <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
-          <div>
-            <p class="font-bold text-green-700 text-xs uppercase mb-1">What We Love</p>
-            <p class="text-stone-600"> Exceptional interior space</p>
-            <p class="text-stone-600"> Premium cedar and hardware quality</p>
-            <p class="text-stone-600"> Built for decades of use</p>
-          </div>
-          <div>
-            <p class="font-bold text-red-600 text-xs uppercase mb-1">Watch Out For</p>
-            <p class="text-stone-600"> Significant yard space required</p>
-            <p class="text-stone-600"> Higher price point</p>
-          </div>
-        </div>
-        <p class="text-sm font-semibold text-stone-700 mb-3">Verdict: <span class="text-stone-600 font-normal">If you're going to do it, do it right. The investment pays off in quality of experience and longevity.</span></p>
-        <AmazonButton asin="B003Z11AXM" price="~$3,499" />
+    <section class="mb-12">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-2">Indoor and infrared</p>
+      <h2 class="text-2xl font-bold text-stone-900 mb-5">Check the experience, power, and room fit</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <a href="/reviews/dynamic-saunas-barcelona-review/" class="block bg-white border border-stone-200 rounded-lg p-5 hover:border-amber-400 transition-colors">
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Dynamic Barcelona</h3>
+          <p class="text-sm text-stone-600">A compact infrared model reviewed through published specifications, setup needs, and buyer limitations.</p>
+        </a>
+        <a href="/brands/dynamic-saunas-review/" class="block bg-white border border-stone-200 rounded-lg p-5 hover:border-amber-400 transition-colors">
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Dynamic Saunas</h3>
+          <p class="text-sm text-stone-600">Compare plug-in infrared models before choosing on price or marketplace ratings alone.</p>
+        </a>
+        <a href="/brands/finnleo-sauna-review/" class="block bg-white border border-stone-200 rounded-lg p-5 hover:border-amber-400 transition-colors">
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Finnleo</h3>
+          <p class="text-sm text-stone-600">A premium indoor sauna overview with product, dealer, installation, and budget questions.</p>
+        </a>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <section class="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+      <p class="text-xs font-semibold uppercase tracking-wide text-emerald-800 mb-2">Before you request quotes</p>
+      <h2 class="text-2xl font-bold text-stone-900 mb-3">Turn the shortlist into a project brief</h2>
+      <p class="text-stone-700 mb-5">A good product can still be wrong for the site. Record your dimensions, budget, delivery access, heater preference, electrical questions, and installation needs before asking a retailer or contractor to price the work.</p>
+      <a href="/sauna-planner/" class="inline-block bg-emerald-800 hover:bg-emerald-900 text-white font-semibold px-5 py-3 rounded-lg" data-cta-position="reviews_hub_bottom">Build a sauna project brief</a>
+      <p class="text-xs text-stone-600 mt-3">The planner is an educational aid, not engineering, electrical, permit, or safety approval.</p>
+    </section>
+  </article>
 </Base>
