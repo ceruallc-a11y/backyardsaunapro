@@ -77,8 +77,24 @@ import Base from '../layouts/Base.astro';
       form.addEventListener('submit', (event) => {
         event.preventDefault();
         const values = Object.fromEntries(new FormData(form).entries());
+        const budgetScore = values.budget === '$20,000+ installed' ? 3 : values.budget === '$10,000-$20,000 installed' ? 2 : values.budget === '$5,000-$10,000 installed' ? 1 : 0;
+        const timelineScore = values.timeline === 'Within 30 days' ? 3 : values.timeline === '1-3 months' ? 2 : values.timeline === '3-6 months' ? 1 : 0;
+        const readinessScore = budgetScore + timelineScore
+          + (values.dimensions ? 1 : 0)
+          + (values.region ? 1 : 0)
+          + (values.electrical === 'Electrician has reviewed the site' || values.electrical === 'Panel capacity is known' ? 2 : 0)
+          + (values.installation !== 'Undecided' ? 1 : 0);
+        const readiness = readinessScore >= 7 ? 'Ready for seller or installer review' : readinessScore >= 4 ? 'Needs a few project details' : 'Early planning stage';
+        const nextStep = readinessScore >= 7
+          ? 'Request written quotes that separate product, freight, site work, electrical or chimney work, permits, and installation.'
+          : readinessScore >= 4
+            ? 'Confirm dimensions, utility capacity, access, and the installed budget before requesting quotes.'
+            : 'Use the buying checklist and cost calculator before choosing a model or seller.';
         const lines = [
           'BACKYARD SAUNA PRO - PROJECT BRIEF',
+          '',
+          `Planning readiness: ${readiness}`,
+          `Recommended next step: ${nextStep}`,
           '',
           `Location: ${values.location}`,
           `Heat type: ${values.heatType}`,
@@ -112,6 +128,7 @@ import Base from '../layouts/Base.astro';
             heat_type: String(values.heatType),
             budget_range: String(values.budget),
             timeline: String(values.timeline),
+            lead_readiness: readinessScore >= 7 ? 'high' : readinessScore >= 4 ? 'medium' : 'early',
           });
         }
       });

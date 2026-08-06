@@ -1,0 +1,10 @@
+source_file,source_line,url,classification,partner,audit_status
+"src/pages/brands/finnish-sauna-builders-review.astro","139","https://finnishsaunabuilders.com","dealer_outbound","finnish_sauna_builders","relationship_unverified"
+"src/pages/brands/redwood-outdoors-sauna-review.astro","94","https://www.redwoodoutdoors.com/collections/barrel-saunas","commerce_outbound","redwood_outdoors","relationship_unverified"
+"src/pages/brands/redwood-outdoors-sauna-review.astro","102","https://www.redwoodoutdoors.com/collections/barrel-saunas","commerce_outbound","redwood_outdoors","relationship_unverified"
+"src/pages/brands/redwood-outdoors-sauna-review.astro","110","https://www.redwoodoutdoors.com/collections/outdoor-saunas","commerce_outbound","redwood_outdoors","relationship_unverified"
+"src/pages/brands/redwood-outdoors-sauna-review.astro","180","https://www.redwoodoutdoors.com","commerce_outbound","redwood_outdoors","relationship_unverified"
+"src/pages/guides/barrel-sauna-costco.astro","91","https://www.amazon.com/dp/B0B7TRM95Y?tag=backyardsauna-20&ascsubtag=bsp_barrel-sauna-costco","affiliate","amazon","verified_parameter"
+"src/pages/guides/barrel-sauna-costco.astro","98","https://www.amazon.com/dp/B0BC8QMSKG?tag=backyardsauna-20&ascsubtag=bsp_barrel-sauna-costco","affiliate","amazon","verified_parameter"
+"src/pages/guides/barrel-sauna-costco.astro","105","https://www.amazon.com/dp/B0FB6SGKJL?tag=backyardsauna-20&ascsubtag=bsp_barrel-sauna-costco","affiliate","amazon","verified_parameter"
+"src/pages/guides/redwood-outdoors-vs-almost-heaven.astro","123","https://www.redwoodoutdoors.com/collections/barrel-saunas","commerce_outbound","redwood_outdoors","relationship_unverified"

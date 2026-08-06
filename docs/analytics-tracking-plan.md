@@ -4,9 +4,11 @@
 
 | Event | Trigger | Required parameters |
 | --- | --- | --- |
-| `affiliate_click` | Click to an affiliate retailer | `page_path`, `page_type`, `partner`, `product`, `brand`, `link_url`, `cta_location` |
+| `affiliate_click` | Click to an affiliate retailer | `page_path`, `page_type`, `partner`, `product`, `brand`, `link_url`, `cta_position` |
+| `commerce_outbound_click` | Click to a retailer without a verified commission relationship | `page_path`, `page_type`, `partner`, `link_url`, `cta_position` |
 | `product_table_click` | Click in a comparison table | Above plus `table_name`, `row_position` |
 | `newsletter_signup` | Kit form submission attempt | `page_path`, `form_location`, `form_id`, `signup_status` |
+| `newsletter_signup_confirmed` | Kit double-opt-in confirmation redirects to the site-owned confirmation page | `page_path`, `form_id`, `signup_status` |
 | `sauna_planner_started` | First project-planner interaction | `page_path` |
 | `sauna_planner_completed` | Local project brief generated | `page_path`, `project_location`, `heat_type`, `budget_range`, `timeline` |
 | `lead_form_submission_intent` | Visitor explicitly opens a prefilled email; does not prove it was sent | `page_path`, `cta_position` |
@@ -23,7 +25,7 @@ Use snake_case. Every site-owned event also receives `site_name=backyard_sauna_p
 ## Current-state corrections
 
 - `affiliate_click` exists globally but needs validated conversion reporting and a stable `page_type` value.
-- `newsletter_signup` fires on form submit with `signup_status=attempted`, not on confirmed subscription. It must not be reported as a subscriber until Kit confirms it.
+- `newsletter_signup` fires on form submit with `signup_status=attempted`. The Kit double-opt-in confirmation redirects to `/newsletter/confirmed/`, which emits `newsletter_signup_confirmed`; only the latter is a GA4 key event.
 - The sauna planner stores nothing and only generates a browser-local brief. `lead_form_submission_intent` means the email action was opened; it is not a server-confirmed lead.
 - The partnership CTA similarly records `partner_inquiry_started`, not a submitted inquiry.
 - Cross-check retailer and affiliate dashboards because browser events do not prove attributed sales.
@@ -39,3 +41,14 @@ Weekly views should cover traffic, audience, affiliate, lead, and sponsorship KP
 ## QA
 
 Use GA DebugView and browser network inspection on staging or local preview. Test one event per CTA type, confirm parameter names, ensure no PII, verify mobile behavior, then compare daily event counts with outbound click logs and affiliate dashboards.
+
+## GA4 key-event configuration
+
+Verified August 5, 2026 in property `backyardsaunapro.com`:
+
+- `affiliate_click`
+- `newsletter_signup_confirmed`
+- `sauna_planner_completed`
+- `calculator_completed`
+
+Do not mark attempted newsletter submits or email-link opens as completed leads.

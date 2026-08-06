@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "audit:affiliates": "node scripts/audit-affiliate-links.mjs",
+    "audit:seo": "node scripts/seo-followup.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.0",

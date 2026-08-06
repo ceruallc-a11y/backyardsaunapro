@@ -108,27 +108,28 @@ const siteUrl = "https://backyardsaunapro.com";
       if (destination.hostname === window.location.hostname) return;
 
       const commerceHosts = {
-        'amazon.com': 'amazon',
-        'www.amazon.com': 'amazon',
-        'sunhomesaunas.com': 'sun_home',
-        'www.sunhomesaunas.com': 'sun_home',
-        'selectsaunas.com': 'select_saunas',
-        'www.selectsaunas.com': 'select_saunas',
-        'redwoodoutdoors.com': 'redwood_outdoors',
-        'www.redwoodoutdoors.com': 'redwood_outdoors',
-        'finnishsaunabuilders.com': 'finnish_sauna_builders',
-        'www.finnishsaunabuilders.com': 'finnish_sauna_builders',
+        'amazon.com': { event: 'affiliate_click', partner: 'amazon' },
+        'www.amazon.com': { event: 'affiliate_click', partner: 'amazon' },
+        'sunhomesaunas.com': { event: 'affiliate_click', partner: 'sun_home' },
+        'www.sunhomesaunas.com': { event: 'affiliate_click', partner: 'sun_home' },
+        'selectsaunas.com': { event: 'affiliate_click', partner: 'select_saunas' },
+        'www.selectsaunas.com': { event: 'affiliate_click', partner: 'select_saunas' },
+        'redwoodoutdoors.com': { event: 'commerce_outbound_click', partner: 'redwood_outdoors' },
+        'www.redwoodoutdoors.com': { event: 'commerce_outbound_click', partner: 'redwood_outdoors' },
+        'finnishsaunabuilders.com': { event: 'dealer_outbound_click', partner: 'finnish_sauna_builders' },
+        'www.finnishsaunabuilders.com': { event: 'dealer_outbound_click', partner: 'finnish_sauna_builders' },
       };
-      const partner = commerceHosts[destination.hostname];
-      if (!partner || typeof window.gtag !== 'function') return;
+      const commerceLink = commerceHosts[destination.hostname];
+      if (!commerceLink || typeof window.gtag !== 'function') return;
 
-      window.gtag('event', 'affiliate_click', {
+      window.gtag('event', commerceLink.event, {
         site_name: 'backyard_sauna_pro',
         site_hostname: window.location.hostname,
-        partner,
+        partner: commerceLink.partner,
         link_url: destination.href,
         link_text: link.textContent?.trim().slice(0, 100) || '',
         page_path: window.location.pathname,
+        page_type: window.location.pathname.includes('/guides/') ? 'guide' : window.location.pathname.includes('/reviews/') || window.location.pathname.includes('/brands/') ? 'commercial_review' : 'site_page',
         cta_position: link.dataset.ctaPosition || 'content',
         product_id: link.dataset.productId || '',
       });
