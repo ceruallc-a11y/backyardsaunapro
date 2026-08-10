@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -73,12 +74,18 @@ const faqSchema = {
       </div>
     </section>
 
+    <PlannerCTA
+      source="best_portable_sauna_above_fold"
+      heading="Compare the portable option with your real space and budget"
+      description="A brief can show whether a tent solves the problem or only delays a cabin purchase. The first 10 complete briefs receive a free manual next-step review."
+    />
+
     <section class="border border-stone-200 rounded-lg p-6 bg-white mb-10" aria-labelledby="serenelife-heading">
       <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-2">Verified catalog details</p>
       <h2 id="serenelife-heading" class="text-2xl font-bold text-stone-900 mb-3">SereneLife Portable Steam Sauna Tent</h2>
-      <p class="text-stone-700 mb-4">The current Amazon listing identifies model SLISAU35BK and describes a 35-by-35-by-70-inch enclosure, a 1600-watt steamer, nine heat settings, a maximum listed temperature of 122 degrees Fahrenheit, and sessions up to 60 minutes.</p>
+      <p class="text-stone-700 mb-4">SereneLife's current model page identifies SLISAU35BK and lists a 35.43-by-35.43-by-70.87-inch enclosure, a 1600-watt steamer, nine heat settings, 120V power, a maximum listed temperature of 122 degrees Fahrenheit, and sessions up to 60 minutes.</p>
       <div class="grid sm:grid-cols-2 gap-4 mb-5 text-sm">
-        <div class="bg-stone-50 p-4 rounded-md"><h3 class="font-bold text-stone-900 mb-2">Why it made the shortlist</h3><ul class="text-stone-700 space-y-1 list-disc pl-5"><li>Full-height enclosure</li><li>Folding chair and remote included</li><li>Low-water automatic shutoff</li><li>Current listing sold and shipped by Amazon when checked</li></ul></div>
+        <div class="bg-stone-50 p-4 rounded-md"><h3 class="font-bold text-stone-900 mb-2">Why it made the shortlist</h3><ul class="text-stone-700 space-y-1 list-disc pl-5"><li>Full-height enclosure</li><li>Folding chair and remote included</li><li>Low-water automatic shutoff</li><li>Model-specific manual available</li></ul></div>
         <div class="bg-stone-50 p-4 rounded-md"><h3 class="font-bold text-stone-900 mb-2">Verify before ordering</h3><ul class="text-stone-700 space-y-1 list-disc pl-5"><li>Current seller and return terms</li><li>Available floor space and outlet placement</li><li>Cleaning and drying routine</li><li>Current manual and included parts</li></ul></div>
       </div>
       <AmazonButton asin="B084GY5CHB" label="View current product details" variant="primary" ctaPosition="shortlist" />
@@ -86,7 +93,7 @@ const faqSchema = {
 
     <section class="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-10" aria-labelledby="research-note-heading">
       <h2 id="research-note-heading" class="font-bold text-stone-900 mb-2">How this shortlist was built</h2>
-      <p class="text-sm text-stone-700">We did not hands-on test this product. We checked the current retailer listing for model identity, included equipment, dimensions, controls, and safety features, then evaluated whether the format solves a clear buyer problem. We do not repeat marketplace wellness claims as proven outcomes.</p>
+      <p class="text-sm text-stone-700">We did not hands-on test this product. We checked the current <a href="https://serenelifehome.com/collections/new-arrivals/products/slisau35bk" target="_blank" rel="noopener" class="text-amber-700 hover:underline">SereneLife model page</a> for model identity, included equipment, dimensions, controls, and listed safety features, then evaluated whether the format solves a clear buyer problem. The direct manufacturer listing showed backordered when reviewed on August 10, 2026; marketplace availability can differ. We do not repeat wellness claims as proven outcomes.</p>
     </section>
 
     <h2 class="text-2xl font-bold text-stone-900 mb-4">What to Verify on Any Portable Sauna</h2>

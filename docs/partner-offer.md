@@ -42,7 +42,7 @@ Verified audience size, geography, device mix, subscriber count, and conversion 
 
 ## Inquiry path
 
-Prospective partners can email `support@backyardsaunapro.com` with:
+Prospective partners can email `info@backyardsaunapro.com` with:
 
 - Company and product category
 - Requested placement or collaboration
@@ -56,4 +56,3 @@ No placement is accepted automatically. Every proposal receives editorial, compl
 ## Media kit source
 
 The public 2025 media kit contains unverified and outdated claims and should not be distributed. A replacement should be generated from this document after current analytics are verified. It should include only sourced metrics, exact measurement dates, disclosure policy, available formats, and contact information.
-

@@ -1,6 +1,16 @@
 # Newsletter Welcome Package
 
-Status: owner-review drafts. Kit is on the free plan, which supports forms and broadcasts but not automated sequences. Do not send these automatically.
+Status: live and verified on August 10, 2026. The account is on Kit's no-charge Newsletter Free plan (`$0/month`, up to 10,000 subscribers). The six-email sequence `Backyard Sauna Buyer Welcome` (`2759832`) is published and active. The visual automation `Form 9452008 -> Buyer Welcome` (`2046141`) is active and enrolls future confirmed subscribers from the `Pine form` (`9452008`). Creator Network and the required Kit-managed Smart Recommendation were accepted as conditions of the free plan. No paid Kit subscription was started.
+
+Approved automation contract:
+
+- Entry: a new subscriber confirms subscription through Kit form `9452008`.
+- Action: enroll the subscriber in the six-email sequence below.
+- Sender: `BackYardSaunaPro <info@backyardsaunapro.com>`.
+- Scope: new confirmed subscribers only; do not backfill existing subscribers without separate approval.
+- Cadence: days 0, 2, 5, 9, 14, and 21.
+- Delivery window: around 11:00 a.m. Central Time, all days.
+- Repeat behavior: each subscriber may receive the sequence only once.
 
 Use `info@backyardsaunapro.com` as the confirmed default sender. Add UTM parameters to every site link before sending.
 
@@ -51,6 +61,6 @@ The review is manual. No homeowner information is sold or routed to a dealer or 
 ## Operating cadence
 
 - Send Email 1 only after the subscriber confirms.
-- Suggested spacing for owner-approved manual broadcasts: days 0, 2, 5, 9, 14, and 21.
+- Sequence spacing: days 0, 2, 5, 9, 14, and 21.
 - Pause the package if complaint, unsubscribe, or deliverability signals are poor.
-- Replace this file with a Kit sequence only if the owner later approves a paid plan and reviews every message.
+- Keep the sequence and automation active on Newsletter Free. Do not upgrade to Creator or Creator Pro without owner approval.

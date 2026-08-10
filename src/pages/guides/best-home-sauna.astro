@@ -4,6 +4,7 @@ import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 import SunHomeButton from '../../components/SunHomeButton.astro';
 import LeadMagnetSignup from '../../components/LeadMagnetSignup.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -14,7 +15,7 @@ const faqSchema = {
       "name": "What is the best home sauna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For most premium buyers, the Sun Home Equinox 2-person full-spectrum infrared sauna is the best home sauna in 2026: full-spectrum infrared, integrated chromotherapy, plug-in install, and a finished design-forward cabin. For buyers who want traditional Finnish heat, the Almost Heaven Pinnacle 4-person barrel sauna is the strongest pick. For apartments and budget buyers, the Dynamic Saunas Barcelona is the best plug-in infrared option at under $1,500."
+        "text": "For most premium buyers, the Sun Home Equinox 2-person full-spectrum infrared sauna is the best home sauna in 2026: full-spectrum infrared, integrated chromotherapy, plug-in install, and a finished design-forward cabin. For buyers who want traditional Finnish heat, the Almost Heaven Pinnacle 4-person barrel sauna is the strongest pick. For compact 120V setups, the Dynamic Saunas Barcelona is the plug-in infrared option in this shortlist."
       }
     },
     {
@@ -22,7 +23,7 @@ const faqSchema = {
       "name": "How much does a home sauna cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Home sauna costs range widely: plug-in infrared units start around $700-$1,200 installed. Pre-cut barrel sauna kits with a heater run $3,500-$6,000 including installation and electrical work. Custom built-in saunas cost $8,000-$20,000+. The main variables are type (infrared vs traditional), size, and whether you hire out the build."
+        "text": "Home sauna project cost depends on the format, freight, unloading, site work, electrical or chimney work, permits, assembly, and the selected heater and controls. Compare a current written quote rather than relying on a generic price range."
       }
     },
     {
@@ -38,7 +39,7 @@ const faqSchema = {
       "name": "Can you put a sauna in your house?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Indoor sauna kits are designed to be installed in a basement, spare room, or garage. They require a 240V dedicated circuit, adequate ventilation, and a floor that can handle moisture. Pre-cut kits from Almost Heaven and similar brands come with pre-dimensioned cedar panels and install in a weekend."
+        "text": "Yes, but the room, floor, ventilation, clearances, and electrical service must match the selected product and local requirements. Use the current manufacturer manual and qualified trades before purchase or installation."
       }
     }
   ]
@@ -46,7 +47,7 @@ const faqSchema = {
 import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Best Home Saunas of 2026: 6 Picks for Every Space & Budget"
+  title="Best Home Saunas of 2026: 4 Picks by Space and Heat Type"
   description="Compare the best home saunas of 2026, including indoor, outdoor, infrared, and traditional picks for apartments, basements, and backyards."
   canonical="/guides/best-home-sauna"
 >
@@ -56,7 +57,7 @@ import AmazonButton from '../../components/AmazonButton.astro';
     <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Home Saunas of 2026</h1>
 
     <AdvertiserDisclosure />
-    <p class="text-stone-500 mb-8">Updated July 2026 &mdash; 12 min read &mdash; Backyard Sauna Pro</p>
+    <p class="text-stone-500 mb-8">Reviewed August 2026 &mdash; 12 min read &mdash; Backyard Sauna Pro</p>
 
     <div class="rounded-xl overflow-hidden mb-8">
       <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Home sauna interior with bench and heater" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
@@ -66,9 +67,9 @@ import AmazonButton from '../../components/AmazonButton.astro';
       <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page also contains affiliate links to Select Saunas. We may earn a commission if you buy through our links, at no extra cost to you.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">A home sauna is one of those things people debate for years and then wonder why they waited. Whether it goes in the backyard, the basement, or a spare room, the right unit makes daily use realistic rather than a special occasion.</p>
+    <p class="text-lg text-stone-700 mb-4">Start with the room, power, heat style, and installed budget. Those constraints usually eliminate more options than a product ranking does.</p>
 
-    <p class="text-stone-700 mb-8">Here are the best options across every setup and budget, with honest takes on what each type actually delivers.</p>
+    <p class="text-stone-700 mb-8">This guide compares four practical paths. It separates manufacturer specifications from our editorial judgment and calls out where a buyer still needs a current manual, written quote, or qualified trade review.</p>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
       <h2 class="text-lg font-bold text-stone-900 mb-3">Quick Picks</h2>
@@ -76,9 +77,7 @@ import AmazonButton from '../../components/AmazonButton.astro';
         <li><span class="font-semibold">Best Overall:</span> Sun Home Equinox</li>
         <li><span class="font-semibold">Best traditional barrel sauna:</span> Almost Heaven Pinnacle 4-Person</li>
         <li><span class="font-semibold">Best infrared home sauna:</span> Dynamic Saunas Barcelona</li>
-        <li><span class="font-semibold">Best indoor kit sauna:</span> Almost Heaven 6-Person Cedar Kit</li>
-        <li><span class="font-semibold">Best portable:</span> SereneLife Portable Infrared Sauna</li>
-        <li><span class="font-semibold">Best heater for a DIY build:</span> Harvia KIP 60B (6kW)</li>
+        <li><span class="font-semibold">Best portable steam option:</span> SereneLife SLISAU35BK</li>
       </ul>
       <div class="flex flex-wrap gap-3 mt-5 pt-5 border-t border-stone-200">
         <SunHomeButton product="equinox" label="See best overall" showCode={false} ctaPosition="above_fold" />
@@ -86,21 +85,23 @@ import AmazonButton from '../../components/AmazonButton.astro';
       </div>
     </div>
 
+    <PlannerCTA source="best_home_sauna_above_fold" />
+
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Which Type of Home Sauna Is Right for You</h2>
     <p class="text-stone-700 mb-4">Before comparing models, the more important question is which type of sauna fits your situation. The three main options have genuinely different experiences, installation requirements, and costs.</p>
 
     <div class="grid grid-cols-1 gap-4 mb-8">
       <div class="bg-white border border-stone-200 rounded-xl p-4">
         <h3 class="font-bold text-stone-900 mb-1">Outdoor barrel sauna</h3>
-        <p class="text-stone-600 text-sm">Traditional Finnish heat, real steam, 160-185°F. Goes in the backyard, requires 240V electrical. Best for the full sauna experience. Starting around $3,500 installed.</p>
+        <p class="text-stone-600 text-sm">Traditional high heat with water used only as the heater manual permits. Electric models commonly need a dedicated circuit; wood-fired models add chimney and clearance requirements. Verify the complete installed scope before ordering.</p>
       </div>
       <div class="bg-white border border-stone-200 rounded-xl p-4">
         <h3 class="font-bold text-stone-900 mb-1">Indoor kit sauna</h3>
-        <p class="text-stone-600 text-sm">Pre-cut cedar panels that install in a basement, garage, or spare room. Requires 240V and ventilation. Same heat experience as outdoor, year-round convenience. $3,000-$7,000 installed.</p>
+        <p class="text-stone-600 text-sm">A permanent indoor room assembled from a kit or custom-cut package. The selected heater, room volume, ventilation approach, floor, clearances, and local code determine the real project requirements.</p>
       </div>
       <div class="bg-white border border-stone-200 rounded-xl p-4">
         <h3 class="font-bold text-stone-900 mb-1">Plug-in infrared sauna</h3>
-        <p class="text-stone-600 text-sm">Standard 120V outlet, no electrician needed, max 140°F. Lower heat than traditional. Good for renters and apartments. $700-$1,500 fully installed by you in an hour.</p>
+        <p class="text-stone-600 text-sm">Some compact infrared cabins use a manufacturer-specified 120V circuit and avoid a separate sauna heater. They deliver a different heat experience from a traditional room and still require confirmed floor space, outlet, delivery, and return details.</p>
       </div>
     </div>
 
@@ -138,23 +139,9 @@ import AmazonButton from '../../components/AmazonButton.astro';
           </div>
           
         </div>
-        <p class="text-stone-600 mb-4">The most recommended residential barrel sauna in North America. Western red cedar construction, pre-cut panels, ships in about two weeks. Heater sold separately, pair it with the Harvia KIP 60B for a complete setup. The 4-person size is right for most backyards and heats up properly without oversizing the room.</p>
+        <p class="text-stone-600 mb-4">Almost Heaven lists the Pinnacle as a four-person, 6-by-6-foot barrel with 63.25-inch benches and a 6kW, 240V hardwired heater configuration. That bench length is more useful for two adults than the capacity label alone. Confirm the selected lumber, door, heater, freight method, site preparation, and current lead time in writing.</p>
         <div class="flex flex-wrap gap-3">
           <AmazonButton asin="B017WJV8SO" variant="primary" />
-          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
-        </div>
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <h3 class="text-xl font-bold text-stone-900">Almost Heaven 6-Person</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 mb-4">Step up in size for families or anyone who wants to lie down comfortably. More bench space, same cedar quality. Needs an 8kW heater (Harvia KIP 80B recommended). Right for buyers who won't compromise on room.</p>
-        <div class="flex flex-wrap gap-3">
-          <AmazonButton asin="B003Z11AXM" variant="primary" />
           <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
         </div>
       </div>
@@ -168,12 +155,12 @@ import AmazonButton from '../../components/AmazonButton.astro';
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
         <div class="flex items-start justify-between mb-2">
           <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Indoor Kit</span>
+            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Compact Infrared Pick</span>
             <h3 class="text-xl font-bold text-stone-900 mt-1">Dynamic Saunas Barcelona (Infrared)</h3>
           </div>
           
         </div>
-        <p class="text-stone-600 mb-4">The most reviewed plug-in infrared sauna at this price. Standard 120V outlet, assembles in about an hour, fits in most spare rooms. Hemlock construction, low-EMF carbon panels, hits 140°F. The right call for renters, apartment dwellers, or anyone who can't run 240V. Not a traditional sauna experience but a real, daily-use infrared unit.</p>
+        <p class="text-stone-600 mb-4">Dynamic currently lists model DYN-6106-01 as a 1-to-2-person hemlock infrared cabin measuring 39 by 36 by 73 inches, with a 120V/15A electrical requirement. Its 36-by-32-inch interior will be tight for two larger adults, so compare the interior dimensions before treating the capacity label as a comfort promise. It is not a traditional rock-and-steam sauna.</p>
         <AmazonButton asin="B00A2F99F0" variant="primary" />
       </div>
 
@@ -184,56 +171,51 @@ import AmazonButton from '../../components/AmazonButton.astro';
     <div class="border border-stone-200 rounded-xl p-5 bg-white mb-10">
       <div class="flex items-start justify-between mb-2">
         <div>
-          <h3 class="text-xl font-bold text-stone-900">SereneLife Portable Infrared Sauna</h3>
+          <h3 class="text-xl font-bold text-stone-900">SereneLife SLISAU35BK Portable Steam Sauna</h3>
         </div>
         
       </div>
-      <p class="text-stone-600 mb-4">A single-person tent-style sauna. Not a proper sauna room, but the cheapest way to get regular infrared sessions at home. Folds flat for storage. Works well as a supplemental recovery tool or for people in small apartments. Head stays out, so not a full-body experience. See our <a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline">portable sauna guide</a> for more options.</p>
+      <p class="text-stone-600 mb-4">This is a full-height steam tent, not an infrared cabin or traditional sauna room. SereneLife lists a 4-liter steamer, 120V power, nine heat levels, and a 35.43-by-35.43-by-70.87-inch enclosure. It solves a storage and upfront-cost problem, but it also needs a deliberate cleaning and drying routine. See our <a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline">portable sauna guide</a> for the format tradeoffs.</p>
       <AmazonButton asin="B084GY5CHB" variant="primary" />
     </div>
 
     <LeadMagnetSignup />
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How Much Does a Home Sauna Cost?</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Build the Installed Budget Before Comparing Prices</h2>
     <div class="overflow-x-auto mb-6">
       <table class="text-sm w-full">
         <thead>
           <tr class="text-left text-stone-500 border-b border-stone-200">
             <th class="pb-2 pr-6">Type</th>
-            <th class="pb-2 pr-6">Unit Cost</th>
-            <th class="pb-2">Total Installed</th>
+            <th class="pb-2 pr-6">Costs to include</th>
+            <th class="pb-2">Commonly missed check</th>
           </tr>
         </thead>
         <tbody class="text-stone-700">
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6">Portable infrared tent</td>
-            <td class="py-2 pr-6">$100–$300</td>
-            <td class="py-2">$100–$300</td>
+            <td class="py-2 pr-6">Portable steam or infrared tent</td>
+            <td class="py-2 pr-6">Product, tax, cleaning supplies, replacement parts</td>
+            <td class="py-2">Outlet placement, drying space, seller and return terms</td>
           </tr>
           <tr class="border-b border-stone-100">
             <td class="py-2 pr-6">Plug-in infrared cabin</td>
-            <td class="py-2 pr-6">$700–$1,500</td>
-            <td class="py-2">$700–$1,500</td>
+            <td class="py-2 pr-6">Cabin, freight, unloading, assembly, floor protection</td>
+            <td class="py-2">Interior fit versus the advertised capacity</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6">Outdoor barrel sauna kit</td>
-            <td class="py-2 pr-6">$2,000–$4,500</td>
-            <td class="py-2">$3,500–$6,500</td>
+            <td class="py-2 pr-6">Traditional kit</td>
+            <td class="py-2 pr-6">Room, heater and controls, freight, base, trades, permits, assembly</td>
+            <td class="py-2">Whether the quote includes heater, stones, controls, and unloading</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6">Indoor pre-cut kit</td>
-            <td class="py-2 pr-6">$2,500–$5,000</td>
-            <td class="py-2">$3,500–$7,000</td>
-          </tr>
-          <tr>
-            <td class="py-2 pr-6">Custom built-in sauna</td>
-            <td class="py-2 pr-6">N/A</td>
-            <td class="py-2">$8,000–$25,000+</td>
+            <td class="py-2 pr-6">Custom built-in room</td>
+            <td class="py-2 pr-6">Design, framing, insulation, interior, ventilation, heater, controls, trades</td>
+            <td class="py-2">Scope gaps between designer, supplier, electrician, and installer</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="text-stone-600 text-sm mb-6">Installed cost includes the heater, foundation/pad, and electrical work (hired out). See our <a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">sauna buying checklist</a> for a full breakdown of what to budget for.</p>
+    <p class="text-stone-600 text-sm mb-6">Prices and promotions change. Use the <a href="/tools/sauna-cost-calculator/" class="text-amber-700 hover:underline">project cost calculator</a> to build your own current estimate, then use the <a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">buying checklist</a> before requesting written quotes.</p>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Look for in a Home Sauna</h2>
 
@@ -244,7 +226,7 @@ import AmazonButton from '../../components/AmazonButton.astro';
     <p class="text-stone-700 mb-4">Match the heater kW to the room's cubic footage. Too small and it won't reach temperature; too large and it overshoots and cycles constantly. Our <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">heater sizing guide</a> walks through the math.</p>
 
     <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Electrical requirements</h3>
-    <p class="text-stone-700 mb-6">Traditional saunas require a dedicated 240V circuit, budget $300-$600 for an electrician. Infrared units under 2kW run on standard 120V. This is often the deciding factor for renters or anyone in an apartment.</p>
+    <p class="text-stone-700 mb-6">Use the selected model's current manual. Traditional electric heaters commonly require a dedicated 240V hardwired circuit, while some compact infrared cabins specify 120V service. A licensed electrician should verify panel capacity, circuit size, disconnects, and local requirements before purchase.</p>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
@@ -254,16 +236,21 @@ import AmazonButton from '../../components/AmazonButton.astro';
       </div>
       <div>
         <h3 class="font-bold text-stone-900 mb-1">How much does a home sauna cost?</h3>
-        <p class="text-stone-700">$700-$1,500 for a plug-in infrared unit you set up yourself. $3,500-$6,500 total for an outdoor barrel sauna including foundation and electrical. Custom built-in saunas run $8,000-$25,000+.</p>
+        <p class="text-stone-700">There is no reliable universal range. Compare the current product price with freight, unloading, site preparation, electrical or chimney work, permits, assembly, and tax. A written installed quote is more useful than a generic online estimate.</p>
       </div>
       <div>
         <h3 class="font-bold text-stone-900 mb-1">Can you put a sauna in your house?</h3>
-        <p class="text-stone-700">Yes. Indoor kits install in a basement, spare room, or garage. They need 240V, ventilation, and a moisture-tolerant floor. Pre-cut kits assemble in a weekend.</p>
+        <p class="text-stone-700">Yes, when the room, floor, ventilation, clearances, and electrical service match the selected product and local requirements. Verify those details with the current manual and qualified trades.</p>
       </div>
       <div>
         <h3 class="font-bold text-stone-900 mb-1">What type of home sauna is best?</h3>
         <p class="text-stone-700">Outdoor barrel or indoor kit for the traditional experience. Plug-in infrared for easier setup and lower temperatures. The right choice depends on your space, budget, and how you want to use it.</p>
       </div>
+    </div>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-5 mt-10 text-sm text-stone-700">
+      <strong class="block text-stone-900 mb-2">Specification sources checked August 2026</strong>
+      Non-sponsored product details were checked against the current <a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Almost Heaven Pinnacle page</a>, <a href="https://dynamicsaunasdirect.com/products/barcelona-1-2-person-low-emf-far-infrared-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Dynamic Barcelona page</a>, and <a href="https://serenelifehome.com/collections/new-arrivals/products/slisau35bk" rel="noopener" target="_blank" class="text-amber-700 hover:underline">SereneLife model page</a>. We did not hands-on test these products. Verify the current configuration and seller before ordering.
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">

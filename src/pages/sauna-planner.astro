@@ -17,6 +17,11 @@ import Base from '../layouts/Base.astro';
       <strong>Privacy:</strong> This tool does not submit or store your answers. Choosing "Email this brief" opens your email app with the summary filled in; you decide whether to send it.
     </div>
 
+    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
+      <strong class="block text-stone-900 mb-1">First 10 complete briefs reviewed free</strong>
+      During this pilot, we will manually review the first 10 complete project briefs and reply with practical questions to verify before you request quotes. We will not send your information to a seller or installer without separate consent.
+    </div>
+
     <form id="sauna-planner" class="bg-white border border-stone-200 rounded-xl p-5 md:p-7 space-y-6">
       <div class="grid md:grid-cols-2 gap-5">
         <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Project location</span><select name="location" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>Outdoor</option><option>Indoor</option><option>Undecided</option></select></label>
@@ -42,7 +47,7 @@ import Base from '../layouts/Base.astro';
       <textarea id="planner-summary" rows="16" readonly class="w-full border border-stone-300 rounded-md px-3 py-3 text-sm bg-stone-50"></textarea>
       <div class="flex flex-wrap gap-3 mt-4">
         <button id="copy-brief" type="button" class="bg-stone-200 hover:bg-stone-300 text-stone-900 font-semibold px-5 py-3 rounded-md">Copy brief</button>
-        <a id="email-brief" href="mailto:support@backyardsaunapro.com" data-track-event="lead_form_submission_intent" data-cta-position="sauna_planner" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-5 py-3 rounded-md">Email this brief for review</a>
+        <a id="email-brief" href="mailto:info@backyardsaunapro.com" data-track-event="lead_form_submission_intent" data-cta-position="sauna_planner" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-5 py-3 rounded-md">Email this brief for review</a>
       </div>
       <p id="copy-status" class="text-sm text-stone-600 mt-3" aria-live="polite"></p>
     </section>
@@ -59,6 +64,7 @@ import Base from '../layouts/Base.astro';
     const emailLink = document.getElementById('email-brief');
     const copyButton = document.getElementById('copy-brief');
     const copyStatus = document.getElementById('copy-status');
+    const campaignSource = new URLSearchParams(window.location.search).get('utm_content') || 'direct';
     let started = false;
 
     if (form instanceof HTMLFormElement) {
@@ -70,6 +76,7 @@ import Base from '../layouts/Base.astro';
             site_name: 'backyard_sauna_pro',
             site_hostname: window.location.hostname,
             page_path: window.location.pathname,
+            acquisition_source: campaignSource,
           });
         }
       });
@@ -114,7 +121,7 @@ import Base from '../layouts/Base.astro';
 
         if (summary instanceof HTMLTextAreaElement) summary.value = text;
         if (emailLink instanceof HTMLAnchorElement) {
-          emailLink.href = `mailto:support@backyardsaunapro.com?subject=${encodeURIComponent('Sauna project brief')}&body=${encodeURIComponent(text)}`;
+          emailLink.href = `mailto:info@backyardsaunapro.com?subject=${encodeURIComponent('Sauna project brief')}&body=${encodeURIComponent(text)}`;
         }
         result?.classList.remove('hidden');
         result?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -129,6 +136,7 @@ import Base from '../layouts/Base.astro';
             budget_range: String(values.budget),
             timeline: String(values.timeline),
             lead_readiness: readinessScore >= 7 ? 'high' : readinessScore >= 4 ? 'medium' : 'early',
+            acquisition_source: campaignSource,
           });
         }
       });

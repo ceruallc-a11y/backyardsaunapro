@@ -1,0 +1,29 @@
+---
+export interface Props {
+  source: string;
+  heading?: string;
+  description?: string;
+}
+
+const {
+  source,
+  heading = "Turn your shortlist into a quote-ready brief",
+  description = "The first 10 complete project briefs in this pilot receive a free manual next-step review. Your answers stay in your browser until you choose to email them.",
+} = Astro.props;
+
+const href = `/sauna-planner/?utm_source=buyer_guide&utm_medium=site&utm_campaign=planner_first_10&utm_content=${encodeURIComponent(source)}`;
+---
+<aside class="border border-emerald-200 bg-emerald-50 rounded-lg p-5 md:p-6 my-8" aria-label="Free sauna planning review">
+  <p class="text-xs font-bold uppercase tracking-wide text-emerald-800 mb-2">Free pilot: first 10 project briefs</p>
+  <h2 class="text-xl font-bold text-stone-900 mb-2">{heading}</h2>
+  <p class="text-sm text-stone-700 mb-4">{description}</p>
+  <a
+    href={href}
+    class="inline-flex min-h-12 items-center justify-center bg-emerald-800 hover:bg-emerald-900 text-white font-semibold px-5 py-3 rounded-md transition-colors"
+    data-track-event="planner_cta_clicked"
+    data-cta-position={source}
+  >
+    Create my free project brief
+  </a>
+  <p class="text-xs text-stone-600 mt-3">No dealer routing or information sharing without separate consent.</p>
+</aside>

@@ -9,8 +9,9 @@
 | `product_table_click` | Click in a comparison table | Above plus `table_name`, `row_position` |
 | `newsletter_signup` | Kit form submission attempt | `page_path`, `form_location`, `form_id`, `signup_status` |
 | `newsletter_signup_confirmed` | Kit double-opt-in confirmation redirects to the site-owned confirmation page | `page_path`, `form_id`, `signup_status` |
+| `planner_cta_clicked` | Click from a buyer guide into the first-10 planning pilot | `page_path`, `cta_position`, `campaign`, `link_url` |
 | `sauna_planner_started` | First project-planner interaction | `page_path` |
-| `sauna_planner_completed` | Local project brief generated | `page_path`, `project_location`, `heat_type`, `budget_range`, `timeline` |
+| `sauna_planner_completed` | Local project brief generated | `page_path`, `project_location`, `heat_type`, `budget_range`, `timeline`, `acquisition_source` |
 | `lead_form_submission_intent` | Visitor explicitly opens a prefilled email; does not prove it was sent | `page_path`, `cta_position` |
 | `partner_inquiry_started` | Visitor opens the partnership email action; does not prove it was sent | `page_path`, `cta_position` |
 | `advertise_page_view` | View of partner page | `page_path`, `traffic_source` |
@@ -25,8 +26,9 @@ Use snake_case. Every site-owned event also receives `site_name=backyard_sauna_p
 ## Current-state corrections
 
 - `affiliate_click` exists globally but needs validated conversion reporting and a stable `page_type` value.
+- The global `window.gtag` function is initialized before site-owned listeners. A prior module-scoped helper allowed pageviews but caused every listener guarded by `window.gtag` to exit without recording its event.
 - `newsletter_signup` fires on form submit with `signup_status=attempted`. The Kit double-opt-in confirmation redirects to `/newsletter/confirmed/`, which emits `newsletter_signup_confirmed`; only the latter is a GA4 key event.
-- The sauna planner stores nothing and only generates a browser-local brief. `lead_form_submission_intent` means the email action was opened; it is not a server-confirmed lead.
+- The sauna planner stores nothing and only generates a browser-local brief. `lead_form_submission_intent` means the email action was opened; it is not a server-confirmed lead. `acquisition_source` carries the guide CTA's `utm_content`, never a homeowner identifier.
 - The partnership CTA similarly records `partner_inquiry_started`, not a submitted inquiry.
 - Cross-check retailer and affiliate dashboards because browser events do not prove attributed sales.
 
@@ -40,7 +42,7 @@ Weekly views should cover traffic, audience, affiliate, lead, and sponsorship KP
 
 ## QA
 
-Use GA DebugView and browser network inspection on staging or local preview. Test one event per CTA type, confirm parameter names, ensure no PII, verify mobile behavior, then compare daily event counts with outbound click logs and affiliate dashboards.
+Use GA DebugView and browser network inspection on staging or local preview. Test one event per CTA type, confirm parameter names, ensure no PII, verify mobile behavior, then compare daily event counts with outbound click logs and affiliate dashboards. The build regression check must also confirm that `window.gtag` is present in generated HTML and that all three pilot guides contain the `planner_first_10` campaign marker.
 
 ## GA4 key-event configuration
 

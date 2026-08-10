@@ -1,6 +1,6 @@
 # SEO Follow-up Monitor
 
-Checked: 2026-08-06T01:33:01.519Z
+Checked: 2026-08-10T21:22:48.846Z
 
 | URL | HTTP | Canonical | Title | Result |
 | --- | ---: | --- | --- | --- |

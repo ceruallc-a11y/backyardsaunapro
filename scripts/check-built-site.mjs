@@ -26,6 +26,66 @@ for (const file of htmlFiles) {
   if (relative === '/index.html') pages.add('/');
 }
 
+const requiredMarkers = [
+  {
+    file: 'index.html',
+    pattern: /window\.gtag\s*=/,
+    label: 'globally available GA event function',
+  },
+  {
+    file: 'guides/best-home-sauna/index.html',
+    pattern: /planner_first_10/,
+    label: 'best-home-sauna planner campaign',
+  },
+  {
+    file: 'guides/best-2-person-outdoor-sauna/index.html',
+    pattern: /planner_first_10/,
+    label: 'best-2-person planner campaign',
+  },
+  {
+    file: 'guides/best-portable-sauna/index.html',
+    pattern: /planner_first_10/,
+    label: 'best-portable planner campaign',
+  },
+  {
+    file: 'sauna-planner/index.html',
+    pattern: /mailto:info@backyardsaunapro\.com/,
+    label: 'monitored planner inbox',
+  },
+  {
+    file: 'guides/best-home-sauna/index.html',
+    pattern: /sun-home-equinox-2-person-full-spectrum-infrared-sauna/,
+    label: 'protected Sun Home Equinox destination',
+  },
+  {
+    file: 'guides/best-2-person-outdoor-sauna/index.html',
+    pattern: /2-person-outdoor-infrared-sauna/,
+    label: 'protected Sun Home Luminar destination',
+  },
+];
+
+for (const marker of requiredMarkers) {
+  const file = path.join(dist, marker.file);
+  const html = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
+  if (!marker.pattern.test(html)) {
+    findings.push({ type: 'missing_required_marker', route: `/${marker.file}`, value: marker.label });
+  }
+}
+
+const staleClaims = [
+  ['guides/best-2-person-outdoor-sauna/index.html', 'best 2-person sauna under $1,000 full stop'],
+  ['guides/best-2-person-outdoor-sauna/index.html', "Most experienced sauna users wish they'd sized up"],
+  ['guides/best-home-sauna/index.html', '$700-$1,500 for a plug-in infrared unit'],
+];
+
+for (const [relative, claim] of staleClaims) {
+  const file = path.join(dist, relative);
+  const html = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
+  if (html.toLowerCase().includes(claim.toLowerCase())) {
+    findings.push({ type: 'stale_claim', route: `/${relative}`, value: claim });
+  }
+}
+
 const findings = [];
 const titles = new Map();
 
@@ -69,5 +129,4 @@ const counts = findings.reduce((summary, finding) => {
 }, {});
 
 console.log(JSON.stringify({ htmlPages: htmlFiles.length, counts, findings }, null, 2));
-process.exitCode = findings.some((finding) => finding.type === 'broken_local_reference' || finding.type === 'duplicate_title') ? 1 : 0;
-
+process.exitCode = findings.some((finding) => ['broken_local_reference', 'duplicate_title', 'missing_required_marker', 'stale_claim'].includes(finding.type)) ? 1 : 0;

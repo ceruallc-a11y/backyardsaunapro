@@ -4,6 +4,7 @@ import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
 import SunHomeButton from '../../components/SunHomeButton.astro';
 import LeadMagnetSignup from '../../components/LeadMagnetSignup.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const picks = [
   {
@@ -26,42 +27,42 @@ const picks = [
     asin: "B017WJV8SO",
     name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
     
-    rating: "4.5/5",
+    rating: "Specs checked August 2026",
     tag: "BEST TRADITIONAL BARREL",
     tagColor: "bg-amber-100 text-amber-800",
     type: "Traditional Barrel",
     capacity: "Rated 4-person, ideal for 2",
-    summary: "Buying a 4-person barrel sauna for two people sounds excessive it isn't. The extra space makes sessions dramatically more comfortable. You can lie down, stretch out, and have a proper experience.",
-    pros: ["Lie-flat space for 2", "Cedar handles cold climates", "Easy 4-6hr assembly", "Great heat retention"],
-    cons: ["Heater sold separately", "Needs 240V electrical", "Bigger footprint"]
+    summary: "Almost Heaven lists the Pinnacle as a 6-by-6-foot barrel with 63.25-inch benches. It is rated for four, but the bench dimensions make it a more realistic traditional-sauna comparison for two adults than a capacity label alone.",
+    pros: ["63.25-inch benches listed", "6kW heater configuration available", "Stainless bands and hardware", "Tempered-glass options"],
+    cons: ["240V/30A hardwire requirement listed", "Freight, unloading, and base must be planned", "Rated capacity does not guarantee comfort", "Outdoor wood needs maintenance"]
   },
   {
     rank: 3,
     asin: "B00A2F99F0",
     name: "Dynamic Saunas Barcelona Far Infrared",
     
-    rating: "4.4/5",
-    tag: "BEST VALUE",
+    rating: "Specs checked August 2026",
+    tag: "INDOOR PLUG-IN ALTERNATIVE",
     tagColor: "bg-green-100 text-green-800",
     type: "Infrared / Indoor",
     capacity: "1-2 person",
-    summary: "The best 2-person sauna under $1,000 full stop. Heats in 15 minutes, plugs into any standard outlet, and the low-EMF carbon panels deliver a real session. Best for indoor or covered outdoor use.",
-    pros: ["No electrician needed", "15-min heat-up", "Low EMF certified", "Compact footprint"],
-    cons: ["No steam option", "1-2 person only", "Indoor/covered use only"]
+    summary: "This is an indoor infrared alternative, not an outdoor sauna. Dynamic lists a 39-by-36-by-73-inch exterior, a 36-by-32-inch interior, and a 120V/15A electrical requirement. The interior dimensions matter: two larger adults may find it tight.",
+    pros: ["120V/15A requirement listed", "Compact 39-by-36-inch footprint", "Roof vent and control panels", "No separate sauna heater"],
+    cons: ["Not an outdoor product", "Tight interior for two larger adults", "No rocks or steam", "Verify seller and return terms"]
   },
   {
     rank: 4,
-    asin: "B003Z11AXM",
-    name: "Almost Heaven Saunas 6-Person Barrel Sauna",
+    officialUrl: "https://almostheaven.com/products/princeton-6-person-barrel-sauna",
+    name: "Almost Heaven Princeton 6-Person Barrel Sauna",
     
-    rating: "4.4/5",
-    tag: "BEST PREMIUM",
+    rating: "Specs checked August 2026",
+    tag: "ROOMIEST TRADITIONAL",
     tagColor: "bg-purple-100 text-purple-800",
     type: "Traditional Barrel",
     capacity: "Rated 6-person, spacious for 2",
-    summary: "If you want the ultimate two-person retreat room for both people to lie fully flat, lounge comfortably, and have a spa-level experience the 6-person barrel is the way to go.",
-    pros: ["Exceptional space for 2", "Highest quality cedar", "True Finnish sauna experience", "Built to last decades"],
-    cons: ["High price", "Significant yard space required", "Longer heat-up time"]
+    summary: "Almost Heaven lists the Princeton at 78 inches wide by 94 inches deep, with 86.375-inch benches and an 8kW heater configuration. That creates genuine length for two people, but it also turns a small-yard purchase into a larger site, freight, and electrical project.",
+    pros: ["86.375-inch benches listed", "More room for two people to stretch out", "8kW heater configuration available", "Tempered-glass options"],
+    cons: ["240V/40A hardwire requirement listed", "Flatbed freight preparation", "Much larger footprint", "Higher total project scope"]
   }
 ];
 ---
@@ -76,9 +77,9 @@ const picks = [
       <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
         Best 2-Person Outdoor Sauna Kits (2026)
       </h1>
-      <p class="text-stone-500 text-sm">Updated July 2026 &middot; 8 min read</p>
+      <p class="text-stone-500 text-sm">Reviewed August 2026 &middot; 8 min read</p>
       <p class="text-lg text-stone-600 mt-4">
-        Two-person saunas are the sweet spot for couples and small yards. But "rated for 2 people" varies wildly some feel like a phone booth, others are genuinely comfortable. Here's what to actually buy.
+        A capacity label does not tell you whether two adults can sit comfortably, stretch out, or reach the site without a delivery problem. Compare interior dimensions, heat format, power, and installed scope first.
       </p>
     </header>
 
@@ -94,8 +95,15 @@ const picks = [
 
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-2">Pro Tip: Size Up</h2>
-      <p class="text-sm text-stone-700">If you're buying for 2 people, strongly consider a 4-person sauna. The price difference is modest, but the comfort difference is dramatic. You go from sitting shoulder-to-shoulder to having room to lie down and actually relax. Most experienced sauna users wish they'd sized up.</p>
+      <h2 class="font-bold text-stone-800 mb-2">Compare the Bench, Not Just the Capacity Label</h2>
+      <p class="text-sm text-stone-700">A larger stated capacity can provide more bench length for two people, but it also increases footprint, freight, heater, and site requirements. Check the current interior and bench dimensions before sizing up.</p>
+    </div>
+
+    <PlannerCTA source="best_2_person_outdoor_above_fold" heading="Know your space and power before requesting quotes" />
+
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
+      <strong class="block text-stone-900 mb-2">How the non-sponsored picks were checked</strong>
+      We did not hands-on test them. Specifications were checked against the current <a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Pinnacle</a>, <a href="https://dynamicsaunasdirect.com/products/barcelona-1-2-person-low-emf-far-infrared-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Barcelona</a>, and <a href="https://almostheaven.com/products/princeton-6-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Princeton</a> manufacturer pages in August 2026. Current configurations, prices, and lead times can change.
     </div>
 
     <h2 class="text-2xl font-bold mb-6 text-stone-900">Our Top Picks</h2>
@@ -124,18 +132,22 @@ const picks = [
           <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
             <div>
               <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
-              {pick.pros.map(p => <p class="text-stone-600"> {p}</p>)}
+              <ul class="text-stone-600 list-disc pl-5 space-y-1">{pick.pros.map(p => <li>{p}</li>)}</ul>
             </div>
             <div>
               <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
-              {pick.cons.map(c => <p class="text-stone-600"> {c}</p>)}
+              <ul class="text-stone-600 list-disc pl-5 space-y-1">{pick.cons.map(c => <li>{c}</li>)}</ul>
             </div>
           </div>
-          <p class="text-xs text-stone-400 mb-2">Rating: {pick.rating}</p>
+          <p class="text-xs text-stone-500 mb-3">{pick.sponsor === 'sun-home' ? 'Rating' : 'Verification'}: {pick.rating}</p>
           {pick.sponsor === 'sun-home' ? (
             <SunHomeButton product={pick.sunHomeProduct} label="See Sun Home Luminar" />
+          ) : 'asin' in pick && pick.asin ? (
+            <AmazonButton asin={pick.asin} />
+          ) : 'officialUrl' in pick && pick.officialUrl ? (
+            <a href={pick.officialUrl} target="_blank" rel="noopener" class="inline-flex min-h-12 items-center justify-center border border-stone-300 text-stone-900 hover:bg-stone-50 font-semibold px-5 py-3 rounded-md">Verify current manufacturer specifications</a>
           ) : (
-            <AmazonButton asin={pick.asin} price={pick.price} />
+            <span class="text-sm text-stone-500">Verify the current model before ordering.</span>
           )}
           </div>
         </div>
@@ -148,10 +160,10 @@ const picks = [
       <h2 class="text-2xl font-bold mb-4 text-stone-900">What to Look for in a 2-Person Sauna</h2>
       <div class="space-y-3">
         {[
-          ["Interior width", "For two people to sit comfortably, you want at least 48 inches (4 feet) of bench width. Less than that and you're touching elbows."],
-          ["Bench depth", "18 inches minimum for sitting. 20+ inches allows you to tuck your legs up. 24 inches lets you lie down a major upgrade."],
-          ["Ceiling height", "Standard is 6–7 feet. Anything less feels claustrophobic for two people."],
-          ["Heater placement", "In a 2-person sauna, heater placement matters more. A poorly placed heater creates hot spots. Look for centered placement with good airflow."],
+          ["Usable bench", "Compare the published bench length and depth with how both people expect to sit or recline. Do not treat rated capacity as a comfort measurement."],
+          ["Interior versus exterior", "Check both sets of dimensions. The exterior must fit the site, while the interior determines comfort."],
+          ["Heater and power", "Use the current heater and room manuals for sizing, circuit, clearances, controls, and ventilation. Have qualified trades verify the site."],
+          ["Delivery and base", "Confirm freight method, unloading equipment, gate width, route to the pad, foundation requirements, and weather protection before ordering."],
         ].map(([title, text]) => (
           <div class="border-l-4 border-amber-400 pl-4">
             <h3 class="font-semibold text-stone-800 text-sm">{title}</h3>
@@ -165,7 +177,7 @@ const picks = [
       <h3 class="text-xl font-bold mb-2">See All Our Top Sauna Picks</h3>
       <p class="text-stone-300 mb-4">Full rankings across all sizes and budgets.</p>
       <a href="/best-saunas/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-        Best Saunas of 2025 →
+        Best Saunas of 2026 →
       </a>
     </div>
   </article>
@@ -181,7 +193,7 @@ const picks = [
       "name": "What is the best 2-person outdoor sauna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Almost Heaven Pinnacle 4-Person Barrel Sauna is the best choice for two people. Buying a 4-person sauna for two gives you room to lie down and stretch out properly. For a budget option, the Dynamic Saunas Barcelona infrared sauna at around $899 is excellent for 1-2 people and requires no electrician."
+        "text": "The best choice depends on heat format, usable bench dimensions, site access, and power. The Almost Heaven Pinnacle is the traditional barrel option in this shortlist. The Dynamic Barcelona is an indoor 120V infrared alternative, not an outdoor sauna."
       }
     },
     {
@@ -189,7 +201,7 @@ const picks = [
       "name": "How much space does a 2-person outdoor sauna need?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A 2-person barrel sauna typically needs a footprint of about 5x6 feet, plus 2-3 feet of clearance on all sides. Total space needed is roughly 9x10 feet. The sauna also needs electrical access for a 240V circuit unless you choose a wood-burning or plug-in infrared model."
+        "text": "Use the selected model's assembled dimensions, required clearances, door swing, service access, delivery route, and foundation instructions. Clearance and utility requirements vary by model and local code."
       }
     },
     {
@@ -197,7 +209,7 @@ const picks = [
       "name": "Do 2-person saunas need a special electrical connection?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Traditional electric sauna heaters require a dedicated 240V/30A circuit installed by a licensed electrician. However, plug-in infrared saunas like the Dynamic Saunas Barcelona run on standard 120V household outlets and need no special wiring."
+        "text": "Many traditional electric heaters require a dedicated 240V hardwired circuit, while some compact infrared cabins specify 120V service. Use the current product manual and have a licensed electrician verify the exact circuit and local requirements."
       }
     }
   ]
