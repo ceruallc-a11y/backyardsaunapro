@@ -34,8 +34,27 @@ const derivedSlug =
     .pop() ?? "home");
 const ascsubtag = `bsp_${derivedSlug}`;
 
+// These older cabin/tent ASINs have produced unavailable or mismatched product
+// pages. Search links preserve attribution while showing current matching stock.
+const availabilitySearches: Record<string, string> = {
+  B000R2PTHG: "Almost Heaven Allegheny barrel sauna",
+  B003YH9DXG: "Dynamic Saunas Andora 1 person infrared sauna",
+  B003Z11AXM: "Almost Heaven 6 person barrel sauna",
+  B00A2F99F0: "Dynamic Saunas Barcelona 1-2 person infrared sauna",
+  B017WJV8SO: "Almost Heaven Pinnacle 4 person barrel sauna",
+  B07RLPBK5V: "Dynamic Saunas Lugano 3 person infrared sauna",
+  B07T9WBMSG: "portable infrared sauna cabin",
+  B084FCQHBG: "Radiant Saunas 2 person infrared sauna",
+  B084GY5CHB: "SereneLife full size portable steam sauna",
+  B0DPG3R7PR: "outdoor barrel sauna wood stove kit",
+};
+const availabilitySearch = asin ? availabilitySearches[asin] : undefined;
+const effectiveLabel = availabilitySearch ? "Compare Current Amazon Listings" : label;
+
 let url: string;
-if (asin) {
+if (availabilitySearch) {
+  url = `https://www.amazon.com/s?k=${encodeURIComponent(availabilitySearch)}&tag=${tag}&ascsubtag=${ascsubtag}`;
+} else if (asin) {
   url = `https://www.amazon.com/dp/${asin}?tag=${tag}&ascsubtag=${ascsubtag}`;
 } else if (search) {
   url = `https://www.amazon.com/s?k=${encodeURIComponent(search)}&tag=${tag}&ascsubtag=${ascsubtag}`;
@@ -68,6 +87,7 @@ const arrow = variant === "default" ? " \u2192" : "";
   class={cls}
   data-cta-position={ctaPosition}
   data-product-id={asin || search || derivedSlug}
+  data-link-mode={availabilitySearch ? "availability_search" : asin ? "exact_product" : search ? "search" : "external"}
 >
-  {label}{arrow}
+  {effectiveLabel}{arrow}
 </a>

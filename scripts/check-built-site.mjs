@@ -18,6 +18,7 @@ const files = walk(dist);
 const htmlFiles = files.filter((file) => file.endsWith('.html'));
 const relativeFiles = new Set(files.map((file) => `/${path.relative(dist, file).replaceAll('\\', '/')}`));
 const pages = new Set();
+const findings = [];
 
 for (const file of htmlFiles) {
   const relative = `/${path.relative(dist, file).replaceAll('\\', '/')}`;
@@ -86,8 +87,20 @@ for (const [relative, claim] of staleClaims) {
   }
 }
 
-const findings = [];
 const titles = new Map();
+
+const availabilitySearchAsins = [
+  'B000R2PTHG',
+  'B003YH9DXG',
+  'B003Z11AXM',
+  'B00A2F99F0',
+  'B017WJV8SO',
+  'B07RLPBK5V',
+  'B07T9WBMSG',
+  'B084FCQHBG',
+  'B084GY5CHB',
+  'B0DPG3R7PR',
+];
 
 const resolveLocal = (value) => {
   const clean = value.split('#')[0].split('?')[0];
@@ -106,6 +119,16 @@ for (const file of htmlFiles) {
   if (!title) findings.push({ type: 'missing_title', route });
   if (!description) findings.push({ type: 'missing_description', route });
   if (!canonical) findings.push({ type: 'missing_canonical', route });
+
+  for (const asin of availabilitySearchAsins) {
+    if (html.includes(`amazon.com/dp/${asin}`)) {
+      findings.push({ type: 'retired_direct_amazon_link', route, value: asin });
+    }
+  }
+
+  if (html.includes('data-link-mode="availability_search"') && !html.includes('Compare Current Amazon Listings')) {
+    findings.push({ type: 'misleading_availability_cta', route });
+  }
 
   if (title) {
     const existing = titles.get(title);
@@ -129,4 +152,11 @@ const counts = findings.reduce((summary, finding) => {
 }, {});
 
 console.log(JSON.stringify({ htmlPages: htmlFiles.length, counts, findings }, null, 2));
-process.exitCode = findings.some((finding) => ['broken_local_reference', 'duplicate_title', 'missing_required_marker', 'stale_claim'].includes(finding.type)) ? 1 : 0;
+process.exitCode = findings.some((finding) => [
+  'broken_local_reference',
+  'duplicate_title',
+  'missing_required_marker',
+  'stale_claim',
+  'retired_direct_amazon_link',
+  'misleading_availability_cta',
+].includes(finding.type)) ? 1 : 0;

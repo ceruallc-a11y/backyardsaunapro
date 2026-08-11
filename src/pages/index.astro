@@ -17,14 +17,18 @@ const featuredPicks = [
   },
   {
     asin: "B017WJV8SO",
+    image: "/images/editorial/outdoor-barrel-sauna-representative.webp",
+    imageAlt: "Representative outdoor barrel sauna on a gravel base",
     name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
     price: "",
     rating: "4.5/5",
-    blurb: "The most popular outdoor barrel sauna on Amazon. Canadian red cedar, solid hardware, and a genuine Finnish experience with rocks and steam.",
+    blurb: "A traditional outdoor barrel with 63.25-inch benches, 240V heater configurations, and water-on-stones heat when the selected heater permits it.",
     tag: "BEST TRADITIONAL"
   },
   {
     asin: "B00A2F99F0",
+    image: "/images/editorial/indoor-infrared-sauna-representative.webp",
+    imageAlt: "Representative compact indoor infrared sauna cabin",
     name: "Dynamic Saunas Barcelona Far Infrared",
     price: "",
     rating: "4.4/5",
@@ -141,12 +145,18 @@ const secondaryPicks = featuredPicks.slice(1);
 
       <div class="home-feature overflow-hidden divide-y divide-[#d4ddd7]">
         {secondaryPicks.map(pick => (
-          <article class="p-6 md:p-7 flex flex-col min-h-[250px]">
-            <span class="text-xs font-bold text-[#1c4a39] mb-3">{pick.tag}</span>
-            <h3 class="text-xl font-bold leading-snug mb-2">{pick.name}</h3>
-            <p class="text-sm text-[#5a6962] leading-relaxed mb-4 flex-grow">{pick.blurb}</p>
-            <p class="text-xs text-[#5a6962] mb-4">Rating: {pick.rating}</p>
-            <AmazonButton asin={pick.asin} price={pick.price} class="w-full text-center" />
+          <article class="grid sm:grid-cols-[0.8fr_1.2fr] min-h-[250px]">
+            <div class="bg-[#eef2ef] min-h-[180px] sm:min-h-full">
+              <img src={pick.image} alt={pick.imageAlt} class="w-full h-full object-cover" loading="lazy" width="1536" height="1024" />
+            </div>
+            <div class="p-6 md:p-7 flex flex-col">
+              <span class="text-xs font-bold text-[#1c4a39] mb-3">{pick.tag}</span>
+              <h3 class="text-xl font-bold leading-snug mb-2">{pick.name}</h3>
+              <p class="text-sm text-[#5a6962] leading-relaxed mb-4 flex-grow">{pick.blurb}</p>
+              <p class="text-xs text-[#5a6962] mb-1">Rating: {pick.rating}</p>
+              <p class="text-xs text-[#6f7d76] mb-4">Representative setup; not the exact model.</p>
+              <AmazonButton asin={pick.asin} price={pick.price} class="w-full text-center" />
+            </div>
           </article>
         ))}
       </div>

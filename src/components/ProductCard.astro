@@ -22,6 +22,7 @@ export interface Props {
   image?: string;
   imageAlt?: string;
   imageContain?: boolean;
+  imageCaption?: string;
   verdict: string;
   bestFor: string;
   avoidIf: string;
@@ -46,6 +47,7 @@ const {
   image,
   imageAlt,
   imageContain = false,
+  imageCaption,
   verdict,
   bestFor,
   avoidIf,
@@ -89,6 +91,7 @@ const specRows: [string, string | undefined][] = [
         width="1600"
         height="1067"
       />
+      {imageCaption && <p class="px-4 py-2 text-xs text-stone-500 bg-stone-50 border-t border-stone-100">{imageCaption}</p>}
     </div>
   )}
   <div class="p-6">

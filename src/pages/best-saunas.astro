@@ -3,10 +3,10 @@ import Base from '../layouts/Base.astro';
 import AdvertiserDisclosure from '../components/AdvertiserDisclosure.astro';
 import ProductCard from '../components/ProductCard.astro';
 
-const updated = "May 15, 2026";
-const priceChecked = "May 15, 2026";
+const updated = "August 11, 2026";
+const availabilityReviewed = "August 11, 2026";
 const datePublished = "2026-01-15";
-const dateModified = "2026-05-15";
+const dateModified = "2026-08-11";
 const pageUrl = "https://backyardsaunapro.com/best-saunas/";
 
 const picks = [
@@ -47,6 +47,9 @@ const picks = [
     rank: 2,
     tag: "Best Traditional",
     name: "Almost Heaven Pinnacle 4-Person Barrel",
+    image: "/images/editorial/outdoor-barrel-sauna-representative.webp",
+    imageAlt: "Representative outdoor barrel sauna on a gravel base",
+    imageCaption: "Representative barrel-sauna setup; not the exact Almost Heaven model.",
     asin: "B017WJV8SO",
     selectSaunasCollection: "barrel-saunas",
     verdict: "Default North American residential barrel for a reason. Canadian red cedar, panels that line up, install process documented everywhere.",
@@ -125,6 +128,9 @@ const picks = [
     rank: 5,
     tag: "Best Budget",
     name: "Dynamic Saunas Barcelona 1-2 Person Far Infrared",
+    image: "/images/editorial/indoor-infrared-sauna-representative.webp",
+    imageAlt: "Representative compact indoor infrared sauna cabin",
+    imageCaption: "Representative infrared-cabin setup; not the exact Dynamic model.",
     asin: "B00A2F99F0",
     verdict: "Most reviewed plug-in infrared at its price. Honest build, real 120V install, assembly in about an hour.",
     bestFor: "First-time buyers, renters, and anyone trying infrared before committing to a premium cabin.",
@@ -148,7 +154,9 @@ const picks = [
     rank: 6,
     tag: "Best Premium Traditional",
     name: "Dundalk LeisureCraft Harmony 2-Person",
-    asin: "B017WJV8SO",
+    image: "/images/editorial/outdoor-barrel-sauna-representative.webp",
+    imageAlt: "Representative outdoor wood sauna on a prepared base",
+    imageCaption: "Representative outdoor-sauna setup; not the exact Dundalk model.",
     selectSaunasCollection: "outdoor-saunas",
     verdict: "Canadian white cedar build for buyers who want the traditional Finnish experience with no compromises and decades of life.",
     bestFor: "Serious sauna users who want premium traditional construction outdoors.",
@@ -173,23 +181,26 @@ const picks = [
     tag: "Best Portable",
     name: "SereneLife Portable Steam Sauna",
     asin: "B084GY5CHB",
-    verdict: "Tent style with your head out. Cheapest path to regular sessions for travel, rentals, or recovery.",
-    bestFor: "Renters, travelers, athletes, or trial buyers.",
-    avoidIf: "You want a real cabin experience or whole-body heat.",
+    image: "/images/editorial/portable-steam-sauna-representative.webp",
+    imageAlt: "Representative portable steam sauna tent with steamer",
+    imageCaption: "Representative steam-tent setup; not the exact SereneLife model.",
+    verdict: "A full-height steam tent, not a traditional or infrared cabin. The manufacturer listing was backordered when checked, so compare current sellers and return terms before ordering.",
+    bestFor: "Renters, small spaces, and buyers who prioritize storage and lower upfront cost.",
+    avoidIf: "You want infrared emitters, a heated wood room, or a currently confirmed in-stock manufacturer listing.",
     specs: {
-      type: "Portable tent-style",
+      type: "Portable steam tent",
       capacity: "1 person",
-      heatSource: "Steam generator or infrared depending on SKU",
-      maxTemp: "Around 150 °F",
+      heatSource: "1600W steam generator",
+      maxTemp: "122 F listed maximum",
       electrical: "120V standard outlet",
-      dimensions: "Approximately 31 x 27 x 38 in seated",
-      warranty: "1 yr limited",
+      dimensions: "35.43 x 35.43 x 70.87 in",
+      warranty: "3 yr listed by manufacturer",
       priceBand: "Budget",
     },
-    whyItWon: "Most consistent portable in the under-$200 tier. Folds flat, ships in a single box.",
-    tradeoffs: ["Head sticks out", "Limited lifespan", "No real sauna ritual"],
-    ownerComplaints: ["Zipper failure with heavy use", "Foot pad not always included"],
-    installationNotes: "No install. Unfold, plug in, sit.",
+    whyItWon: "It makes the category tradeoff clear: lower cost and foldable storage in exchange for a steam-tent experience rather than a heated wood room.",
+    tradeoffs: ["Steam tent, not infrared or traditional sauna", "Needs drying after each use", "Manufacturer listing was backordered when checked"],
+    ownerComplaints: ["Fabric and zipper wear matter more than cabin materials", "Seller-specific bundles may include different accessories"],
+    installationNotes: "No permanent install. Confirm outlet placement, floor protection, ventilation, and a drying routine.",
   },
 ];
 
@@ -266,7 +277,7 @@ const faqSchema = {
         Best Home Saunas of 2026
       </h1>
       <p class="text-sm text-stone-500 italic mb-4">
-        By <a href="/about/" class="hover:text-amber-700 underline-offset-2 hover:underline">Aurec Senenoi</a> · Updated {updated} · Price checked {priceChecked}
+        By <a href="/about/" class="hover:text-amber-700 underline-offset-2 hover:underline">Aurec Senenoi</a> · Updated {updated} · Retail links reviewed {availabilityReviewed}
       </p>
       <p class="text-lg text-stone-600">
         The home-sauna category covers more ground than it used to. Premium full-spectrum infrared cabins, traditional outdoor barrels, plug-in budget units, and portable tents share the same Google searches and almost nothing else. This is the decision hub. Find your buyer-path below, then jump to the category guide that fits.
@@ -335,7 +346,7 @@ const faqSchema = {
           <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Sun Home Eclipse</td><td class="p-2">Best Red Light + Infrared</td><td class="p-2">RLT + infrared</td><td class="p-2">2</td><td class="p-2">~165 °F</td><td class="p-2">120V</td><td class="p-2">$8k-$11k</td><td class="p-2">Integrated RLT</td><td class="p-2">Only want one</td></tr>
           <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Dynamic Barcelona</td><td class="p-2">Best Budget</td><td class="p-2">Far-only infrared</td><td class="p-2">1-2</td><td class="p-2">~140 °F</td><td class="p-2">120V</td><td class="p-2">$1.2k-$1.5k</td><td class="p-2">First-time buyers</td><td class="p-2">Want full-spectrum</td></tr>
           <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Dundalk Harmony</td><td class="p-2">Best Premium Traditional</td><td class="p-2">Cedar outdoor</td><td class="p-2">2</td><td class="p-2">~195 °F</td><td class="p-2">240V</td><td class="p-2">$6k-$9k</td><td class="p-2">Premium traditional</td><td class="p-2">Want plug-and-play</td></tr>
-          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">SereneLife Portable</td><td class="p-2">Best Portable</td><td class="p-2">Tent-style</td><td class="p-2">1</td><td class="p-2">~150 °F</td><td class="p-2">120V</td><td class="p-2">Under $200</td><td class="p-2">Travel, trial</td><td class="p-2">Want real cabin</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">SereneLife Portable</td><td class="p-2">Best Portable</td><td class="p-2">Steam tent</td><td class="p-2">1</td><td class="p-2">122 F listed</td><td class="p-2">120V</td><td class="p-2">Budget</td><td class="p-2">Foldable setup</td><td class="p-2">Want a cabin</td></tr>
         </tbody>
       </table>
     </div>

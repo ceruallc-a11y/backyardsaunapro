@@ -3,10 +3,10 @@ import Base from '../../layouts/Base.astro';
 import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
 import ProductCard from '../../components/ProductCard.astro';
 
-const updated = "May 15, 2026";
-const priceChecked = "May 15, 2026";
+const updated = "August 11, 2026";
+const availabilityReviewed = "August 11, 2026";
 const datePublished = "2026-01-15";
-const dateModified = "2026-05-15";
+const dateModified = "2026-08-11";
 const pageUrl = "https://backyardsaunapro.com/guides/best-infrared-sauna-of-2026/";
 
 const products = [
@@ -85,6 +85,9 @@ const products = [
     tag: "Best Budget Plug-In",
     name: "Dynamic Saunas Barcelona 1-2 Person",
     asin: "B00A2F99F0",
+    image: "/images/editorial/indoor-infrared-sauna-representative.webp",
+    imageAlt: "Representative compact indoor infrared sauna cabin",
+    imageCaption: "Representative infrared-cabin setup; not the exact Dynamic model.",
     verdict: "The most reviewed plug-in infrared at its price point. Honest build, real 120V install, and assembly in about an hour.",
     bestFor: "Renters, apartment dwellers, buyers who cannot run 240V, and anyone trying infrared before committing to a premium cabin.",
     avoidIf: "You want full-spectrum emitters, premium fit and finish, or room for three or more.",
@@ -116,6 +119,9 @@ const products = [
     tag: "Best 1-Person Compact",
     name: "Dynamic Saunas Andora 1-Person",
     asin: "B003YH9DXG",
+    image: "/images/editorial/indoor-infrared-sauna-representative.webp",
+    imageAlt: "Representative compact one-person infrared sauna cabin",
+    imageCaption: "Representative infrared-cabin setup; not the exact Dynamic model.",
     verdict: "The cleanest 1-person infrared if floor space is the binding constraint. Same plug-in design, smaller footprint.",
     bestFor: "Studio apartments, small spare rooms, or tight basement corners where a 2-person unit will not fit.",
     avoidIf: "You ever want a second person inside, or you want to stretch out.",
@@ -142,33 +148,36 @@ const products = [
   },
   {
     rank: 5,
-    tag: "Best Portable / Tent Style",
-    name: "SereneLife Portable Infrared Sauna",
+    tag: "Portable Alternative (Steam)",
+    name: "SereneLife Portable Steam Sauna",
     asin: "B084GY5CHB",
-    verdict: "Not a real cabin. A tent with an infrared element and your head sticks out. We say that up front. Cheapest path to regular sessions.",
-    bestFor: "Renters, travelers, athletes using it as a supplemental tool, or buyers in tight spaces who want to try infrared before spending four figures.",
-    avoidIf: "You want a real sauna experience, sitting upright with the door closed and the heat surrounding your whole body.",
+    image: "/images/editorial/portable-steam-sauna-representative.webp",
+    imageAlt: "Representative portable sauna tent with external steamer",
+    imageCaption: "Representative portable steam-tent setup; not the exact SereneLife model.",
+    verdict: "This is a steam tent, not an infrared sauna. It is included as a lower-cost portable alternative so buyers do not confuse the two formats.",
+    bestFor: "Renters and small-space buyers who prioritize foldable storage and moist heat over a permanent cabin.",
+    avoidIf: "You specifically want infrared emitters, a heated wood room, or a currently confirmed in-stock manufacturer listing.",
     specs: {
-      type: "Portable tent-style infrared",
+      type: "Portable steam tent",
       capacity: "1 person",
-      heatSource: "Far-infrared panels inside a fabric enclosure",
-      maxTemp: "Around 150 °F",
+      heatSource: "1600W steam generator",
+      maxTemp: "122 F listed maximum",
       electrical: "120V standard outlet",
-      dimensions: "Approximately 31 x 27 x 38 in seated",
-      warranty: "1 yr limited",
+      dimensions: "35.43 x 35.43 x 70.87 in",
+      warranty: "3 yr listed by manufacturer",
       priceBand: "Budget",
     },
-    whyItWon: "The most consistent portable in the under-$200 tier. Folds flat for storage, ships in a single box, and gets you to regular sessions without a cabin install.",
+    whyItWon: "It is the clearest portable counterexample to an infrared cabin: foldable and less expensive, but powered by steam and built around different tradeoffs.",
     tradeoffs: [
-      "Head sticks out, no whole-body heat",
-      "Limited lifespan compared to a cabin",
-      "No löyly, no real sauna ritual",
+      "Not an infrared product",
+      "Requires cleaning and thorough drying",
+      "Manufacturer listing was backordered when checked",
     ],
     ownerComplaints: [
-      "Foot pad and chair are not included on all SKUs",
-      "Zipper is the first failure point with heavy use",
+      "Fabric and zipper wear matter more than cabin materials",
+      "Seller-specific bundles may include different accessories",
     ],
-    installationNotes: "No install required. Unfold, plug in, sit.",
+    installationNotes: "No permanent install. Confirm outlet placement, floor protection, ventilation, and a drying routine.",
   },
 ];
 
@@ -253,7 +262,7 @@ const faqSchema = {
         Best Infrared Sauna of 2026
       </h1>
       <p class="text-sm text-stone-500 italic mb-4">
-        By <a href="/about/" class="hover:text-amber-700 underline-offset-2 hover:underline">Aurec Senenoi</a> · Updated {updated} · Price checked {priceChecked}
+        By <a href="/about/" class="hover:text-amber-700 underline-offset-2 hover:underline">Aurec Senenoi</a> · Updated {updated} · Retail links reviewed {availabilityReviewed}
       </p>
       <p class="text-lg text-stone-600">
         Infrared saunas have stopped being a niche curiosity. They are now the default home-sauna purchase for buyers who do not want to run 240V, build a foundation, or wait six months for delivery. The market is crowded, prices range from $700 to $14,000, and the spec sheets blur together. This guide cuts through it.
@@ -273,7 +282,7 @@ const faqSchema = {
         <li><span class="font-semibold">Best Red Light + Infrared:</span> Sun Home Eclipse. Pick if you want serious RLT integrated with infrared. Skip if you only want one or the other.</li>
         <li><span class="font-semibold">Best Budget:</span> Dynamic Saunas Barcelona. Pick if you want a real infrared cabin under $1,500. Skip if you want full-spectrum or premium fit.</li>
         <li><span class="font-semibold">Best Compact:</span> Dynamic Saunas Andora. Pick if floor space is tight. Skip if you ever want a second person inside.</li>
-        <li><span class="font-semibold">Best Portable:</span> SereneLife. Pick if you want sub-$200 infrared for travel or recovery. Skip if you want a real cabin experience.</li>
+        <li><span class="font-semibold">Portable contrast:</span> SereneLife is a steam tent, not infrared. Compare it only if foldable storage and moist heat matter more than a cabin.</li>
       </ul>
     </section>
 
@@ -298,7 +307,7 @@ const faqSchema = {
           <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Sun Home Eclipse</td><td class="p-2">Best Red Light + Infrared</td><td class="p-2">RLT + infrared</td><td class="p-2">2</td><td class="p-2">~165 °F</td><td class="p-2">120V</td><td class="p-2">$8k-$11k</td><td class="p-2">Integrated RLT</td><td class="p-2">Only want one</td></tr>
           <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Dynamic Barcelona</td><td class="p-2">Best Budget</td><td class="p-2">Far-only carbon</td><td class="p-2">1-2</td><td class="p-2">~140 °F</td><td class="p-2">120V</td><td class="p-2">$1.2k-$1.5k</td><td class="p-2">First-time buyers</td><td class="p-2">Want full-spectrum</td></tr>
           <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Dynamic Andora</td><td class="p-2">Best Compact</td><td class="p-2">Solo far-infrared</td><td class="p-2">1</td><td class="p-2">~140 °F</td><td class="p-2">120V</td><td class="p-2">$1k-$1.3k</td><td class="p-2">Tight spaces</td><td class="p-2">Want two-person</td></tr>
-          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">SereneLife Portable</td><td class="p-2">Best Portable</td><td class="p-2">Tent-style</td><td class="p-2">1</td><td class="p-2">~150 °F</td><td class="p-2">120V</td><td class="p-2">Under $200</td><td class="p-2">Travel, trial</td><td class="p-2">Want real cabin</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">SereneLife Portable</td><td class="p-2">Portable contrast</td><td class="p-2">Steam tent</td><td class="p-2">1</td><td class="p-2">122 F listed</td><td class="p-2">120V</td><td class="p-2">Budget</td><td class="p-2">Foldable setup</td><td class="p-2">Want infrared</td></tr>
         </tbody>
       </table>
     </div>
