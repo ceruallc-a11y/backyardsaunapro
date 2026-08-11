@@ -54,6 +54,16 @@ const requiredMarkers = [
     label: 'monitored planner inbox',
   },
   {
+    file: 'sauna-planner/index.html',
+    pattern: /name="location"[^>]*required[^>]*>[\s\S]*?<option>Unsure<\/option>/,
+    label: 'planner unsure location option',
+  },
+  {
+    file: 'sauna-planner/index.html',
+    pattern: /name="region"[^>]*required/,
+    label: 'required planner ZIP or region field',
+  },
+  {
     file: 'guides/best-home-sauna/index.html',
     pattern: /sun-home-equinox-2-person-full-spectrum-infrared-sauna/,
     label: 'protected Sun Home Equinox destination',
