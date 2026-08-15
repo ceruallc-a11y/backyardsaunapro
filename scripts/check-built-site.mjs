@@ -114,19 +114,12 @@ for (const [relative, claim] of staleClaims) {
 }
 
 const titles = new Map();
-
-const availabilitySearchAsins = [
-  'B000R2PTHG',
-  'B003YH9DXG',
-  'B003Z11AXM',
-  'B00A2F99F0',
-  'B017WJV8SO',
-  'B07RLPBK5V',
-  'B07T9WBMSG',
-  'B084FCQHBG',
-  'B084GY5CHB',
-  'B0DPG3R7PR',
-];
+const commerceRoutes = JSON.parse(
+  fs.readFileSync(path.join(root, 'src/data/product-commerce-routes.json'), 'utf8'),
+);
+const retiredDirectAmazonAsins = Object.entries(commerceRoutes)
+  .filter(([, route]) => route.mode !== 'amazon_exact')
+  .map(([asin]) => asin);
 
 const resolveLocal = (value) => {
   const clean = value.split('#')[0].split('?')[0];
@@ -146,7 +139,7 @@ for (const file of htmlFiles) {
   if (!description) findings.push({ type: 'missing_description', route });
   if (!canonical) findings.push({ type: 'missing_canonical', route });
 
-  for (const asin of availabilitySearchAsins) {
+  for (const asin of retiredDirectAmazonAsins) {
     if (html.includes(`amazon.com/dp/${asin}`)) {
       findings.push({ type: 'retired_direct_amazon_link', route, value: asin });
     }

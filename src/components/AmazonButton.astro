@@ -1,4 +1,6 @@
 ---
+import commerceRoutes from "../data/product-commerce-routes.json";
+
 export interface Props {
   asin?: string;
   search?: string;
@@ -34,26 +36,28 @@ const derivedSlug =
     .pop() ?? "home");
 const ascsubtag = `bsp_${derivedSlug}`;
 
-// These older cabin/tent ASINs have produced unavailable or mismatched product
-// pages. Search links preserve attribution while showing current matching stock.
-const availabilitySearches: Record<string, string> = {
-  B000R2PTHG: "Almost Heaven Allegheny barrel sauna",
-  B003YH9DXG: "Dynamic Saunas Andora 1 person infrared sauna",
-  B003Z11AXM: "Almost Heaven 6 person barrel sauna",
-  B00A2F99F0: "Dynamic Saunas Barcelona 1-2 person infrared sauna",
-  B017WJV8SO: "Almost Heaven Pinnacle 4 person barrel sauna",
-  B07RLPBK5V: "Dynamic Saunas Lugano 3 person infrared sauna",
-  B07T9WBMSG: "portable infrared sauna cabin",
-  B084FCQHBG: "Radiant Saunas 2 person infrared sauna",
-  B084GY5CHB: "SereneLife full size portable steam sauna",
-  B0DPG3R7PR: "outdoor barrel sauna wood stove kit",
+type CommerceRoute = {
+  mode: "amazon_exact" | "amazon_search" | "select_saunas";
+  query?: string;
+  url?: string;
+  label?: string;
 };
-const availabilitySearch = asin ? availabilitySearches[asin] : undefined;
-const effectiveLabel = availabilitySearch ? "Compare Current Amazon Listings" : label;
+const commerceRoute = asin
+  ? (commerceRoutes as Record<string, CommerceRoute>)[asin]
+  : undefined;
+const effectiveLabel = commerceRoute?.label ?? label;
+let partner = "amazon";
+let linkMode = asin ? "exact_product" : search ? "search" : "external";
 
 let url: string;
-if (availabilitySearch) {
-  url = `https://www.amazon.com/s?k=${encodeURIComponent(availabilitySearch)}&tag=${tag}&ascsubtag=${ascsubtag}`;
+if (commerceRoute?.mode === "select_saunas" && commerceRoute.url) {
+  const sep = commerceRoute.url.includes("?") ? "&" : "?";
+  url = `${commerceRoute.url}${sep}sca_ref=10752576.S2huPg7gFg`;
+  partner = "select_saunas";
+  linkMode = "verified_alternate";
+} else if (commerceRoute?.mode === "amazon_search" && commerceRoute.query) {
+  url = `https://www.amazon.com/s?k=${encodeURIComponent(commerceRoute.query)}&tag=${tag}&ascsubtag=${ascsubtag}`;
+  linkMode = "availability_search";
 } else if (asin) {
   url = `https://www.amazon.com/dp/${asin}?tag=${tag}&ascsubtag=${ascsubtag}`;
 } else if (search) {
@@ -87,7 +91,8 @@ const arrow = variant === "default" ? " \u2192" : "";
   class={cls}
   data-cta-position={ctaPosition}
   data-product-id={asin || search || derivedSlug}
-  data-link-mode={availabilitySearch ? "availability_search" : asin ? "exact_product" : search ? "search" : "external"}
+  data-link-mode={linkMode}
+  data-partner={partner}
 >
   {effectiveLabel}{arrow}
 </a>

@@ -1,0 +1,80 @@
+{
+  "B000R2PTHG": {
+    "productName": "Almost Heaven Allegheny barrel sauna",
+    "mode": "amazon_search",
+    "query": "Almost Heaven Allegheny barrel sauna",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B003YH9DXG": {
+    "productName": "Dynamic Saunas Andora 1-person infrared sauna",
+    "mode": "amazon_search",
+    "query": "Dynamic Saunas Andora 1 person infrared sauna",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B003Z11AXM": {
+    "productName": "Almost Heaven six-person barrel sauna",
+    "mode": "amazon_search",
+    "query": "Almost Heaven 6 person barrel sauna",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "unavailable"
+  },
+  "B00A2F99F0": {
+    "productName": "Dynamic Saunas Barcelona 1-2 person infrared sauna",
+    "mode": "amazon_exact",
+    "label": "Check Current Amazon Listing",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "available"
+  },
+  "B017WJV8SO": {
+    "productName": "Almost Heaven Pinnacle 4-person barrel sauna",
+    "mode": "select_saunas",
+    "url": "https://selectsaunas.com/products/almost-heaven-pinnacle-morgan-4-person-classic-barrel-sauna-6x6-ft",
+    "label": "View Current Pinnacle Listing",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "amazon_unavailable_alternate_available"
+  },
+  "B07RLPBK5V": {
+    "productName": "Dynamic Saunas Lugano 3-person infrared sauna",
+    "mode": "amazon_search",
+    "query": "Dynamic Saunas Lugano 3 person infrared sauna",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B07T9WBMSG": {
+    "productName": "Portable infrared sauna cabin",
+    "mode": "amazon_search",
+    "query": "portable infrared sauna cabin",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B084FCQHBG": {
+    "productName": "Radiant Saunas 2-person infrared sauna",
+    "mode": "amazon_search",
+    "query": "Radiant Saunas 2 person infrared sauna",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B084GY5CHB": {
+    "productName": "SereneLife portable steam sauna",
+    "mode": "amazon_exact",
+    "label": "Check Current Amazon Listing",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "available"
+  },
+  "B0DPG3R7PR": {
+    "productName": "AURGOD outdoor barrel sauna with wood stove",
+    "mode": "amazon_search",
+    "query": "outdoor barrel sauna wood stove kit",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "no_featured_offer"
+  }
+}
