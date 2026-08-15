@@ -1,6 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
+
+const drop6Url = 'https://selectsaunas.com/products/huum-drop-6kw';
+const hiveMini9Url = 'https://selectsaunas.com/products/huum-hive-mini-9-kw';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -50,7 +53,7 @@ const faqSchema = {
     </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate, Backyard Sauna Pro earns from qualifying purchases. This page also links to HUUM's official documentation so you can verify specifications before buying.
+      <strong>Affiliate disclosure:</strong> Backyard Sauna Pro may earn a commission if you buy through a retailer link on this page. We also link to HUUM's official documentation so you can verify specifications before buying.
     </div>
 
     <p class="text-lg text-stone-700 mb-4">HUUM's exposed-stone heaters are visually distinctive, but appearance is only one part of this purchase. The exact room volume, voltage, controller, electrical service, clearances, stones, listing documentation, and installer support determine whether a model is a practical fit.</p>
@@ -58,9 +61,12 @@ const faqSchema = {
 
     <section class="bg-stone-900 text-white rounded-xl p-6 mb-8">
       <p class="text-amber-300 text-sm font-semibold uppercase tracking-wide mb-2">Start with the exact model</p>
-      <h2 class="text-2xl font-bold mb-3">Compare current HUUM listings</h2>
-      <p class="text-stone-200 mb-5">Use the model name and voltage from your installer-approved plan. Do not substitute a similar-looking heater without rechecking the manual.</p>
-      <AmazonButton search="HUUM sauna heater DROP HIVE" variant="primary" label="Compare HUUM heaters on Amazon" ctaPosition="above_fold" />
+      <h2 class="text-2xl font-bold mb-3">Compare two exact residential models</h2>
+      <p class="text-stone-200 mb-5">Use the model name and voltage from your installer-approved plan. These are heater listings, not proof that either model fits your room or includes every required component.</p>
+      <div class="grid sm:grid-cols-2 gap-x-4">
+        <SelectSaunasButton href={drop6Url} label="View HUUM DROP 6" ctaPosition="above_fold_drop" />
+        <SelectSaunasButton href={hiveMini9Url} label="View HIVE Mini 9" ctaPosition="above_fold_hive" />
+      </div>
     </section>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Quick decision: DROP or HIVE?</h2>
@@ -69,20 +75,20 @@ const faqSchema = {
         <thead>
           <tr class="text-left text-stone-500 border-b border-stone-200">
             <th class="pb-2 pr-6">Decision factor</th>
-            <th class="pb-2 pr-6">DROP</th>
-            <th class="pb-2">HIVE</th>
+            <th class="pb-2 pr-6">DROP 6</th>
+            <th class="pb-2">HIVE Mini 9</th>
           </tr>
         </thead>
         <tbody class="text-stone-700">
           <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-medium">Mounting</td><td class="py-3 pr-6">Wall-mounted</td><td class="py-3">Floor-standing</td></tr>
-          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-medium">Typical project</td><td class="py-3 pr-6">Smaller residential sauna</td><td class="py-3">Larger room or commercial-scale layout</td></tr>
-          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-medium">Official rock capacity</td><td class="py-3 pr-6">55 kg</td><td class="py-3">250 kg for current HIVE 12/15/18 models</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-medium">Official room range</td><td class="py-3 pr-6">177-353 ft3</td><td class="py-3">About 283-459 ft3</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-medium">Official rock capacity</td><td class="py-3 pr-6">Up to 132 lb</td><td class="py-3">Up to 330 lb</td></tr>
           <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-medium">Control</td><td class="py-3 pr-6">Compatible UKU system required</td><td class="py-3">Compatible UKU system required</td></tr>
-          <tr><td class="py-3 pr-6 font-medium">Best reason to choose it</td><td class="py-3 pr-6">Exposed-stone design without a large floor footprint</td><td class="py-3">Large stone mass for a room sized to the model</td></tr>
+          <tr><td class="py-3 pr-6 font-medium">Project fit</td><td class="py-3 pr-6">Exposed-stone design without a floor footprint</td><td class="py-3">Floor layout built around a much larger stone load</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="text-sm text-stone-600 mb-8">Sources: HUUM's current <a href="https://huumsauna.com/product/drop-electric-sauna-heater/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">DROP specifications</a> and <a href="https://huumsauna.com/product/hive-electric-sauna-heater/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">HIVE specifications</a>. Specifications can change; use the manual supplied for the exact product.</p>
+    <p class="text-sm text-stone-600 mb-8">Sources: HUUM's current <a href="https://huumsauna.com/product/drop-electric-sauna-heater/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">DROP specifications</a> and <a href="https://huumsauna.com/product/hive-mini-electric-sauna-heater/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">HIVE Mini specifications</a>. Specifications can change; use the North American manual supplied for the exact product.</p>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What the heater price does not tell you</h2>
     <p class="text-stone-700 mb-4">A HUUM project may also require a UKU control system, the specified quantity and size of sauna stones, heat-resistant cable, safety railing or other guards, and installation labor. Larger models can materially affect electrical-service planning and project cost.</p>
