@@ -49,9 +49,9 @@ const requiredMarkers = [
     label: 'best-portable planner campaign',
   },
   {
-    file: 'sauna-planner/index.html',
-    pattern: /mailto:info@backyardsaunapro\.com/,
-    label: 'monitored planner inbox',
+    file: null,
+    pattern: /backyard-sauna-leads\.adunyadeth\.workers\.dev\/v1\/leads/,
+    label: 'server-backed planner endpoint',
   },
   {
     file: 'sauna-planner/index.html',
@@ -62,6 +62,21 @@ const requiredMarkers = [
     file: 'sauna-planner/index.html',
     pattern: /name="region"[^>]*required/,
     label: 'required planner ZIP or region field',
+  },
+  {
+    file: 'sauna-planner/index.html',
+    pattern: /name="contactConsent"[^>]*required/,
+    label: 'required review contact consent',
+  },
+  {
+    file: 'sauna-planner/index.html',
+    pattern: /name="partnerConsent"/,
+    label: 'separate optional partner-sharing consent',
+  },
+  {
+    file: null,
+    pattern: /window\.gtag\(["']event["'],["']lead_submitted["']/,
+    label: 'server-confirmed lead analytics event',
   },
   {
     file: 'guides/best-home-sauna/index.html',
@@ -76,10 +91,11 @@ const requiredMarkers = [
 ];
 
 for (const marker of requiredMarkers) {
-  const file = path.join(dist, marker.file);
-  const html = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
-  if (!marker.pattern.test(html)) {
-    findings.push({ type: 'missing_required_marker', route: `/${marker.file}`, value: marker.label });
+  const content = marker.file
+    ? (fs.existsSync(path.join(dist, marker.file)) ? fs.readFileSync(path.join(dist, marker.file), 'utf8') : '')
+    : files.filter((file) => file.endsWith('.js')).map((file) => fs.readFileSync(file, 'utf8')).join('\n');
+  if (!marker.pattern.test(content)) {
+    findings.push({ type: 'missing_required_marker', route: marker.file ? `/${marker.file}` : '/assets/*.js', value: marker.label });
   }
 }
 

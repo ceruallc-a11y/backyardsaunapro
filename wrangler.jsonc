@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "backyard-sauna-leads",
+  "main": "worker/lead-api.mjs",
+  "compatibility_date": "2026-08-15",
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "backyard-sauna-leads",
+      "database_id": "8e4c18e0-dc05-48fb-8aaf-0dd30aa11d9c"
+    }
+  ]
+}

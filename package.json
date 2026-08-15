@@ -6,6 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "check": "npm run build && node scripts/check-built-site.mjs",
+    "test:worker": "node --test worker/lead-api.test.mjs",
+    "check:all": "npm run test:worker && npm run check",
     "preview": "astro preview",
     "astro": "astro",
     "audit:affiliates": "node scripts/audit-affiliate-links.mjs",

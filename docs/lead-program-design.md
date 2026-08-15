@@ -80,6 +80,6 @@ Do not set pricing until the pilot measures acceptance rate, quote rate, close r
 
 ## Current implementation boundary
 
-The local `/sauna-planner` route is a pre-lead planning tool, not a launched lead marketplace. It creates a project brief entirely in the browser and does not store, submit, or automatically share the answers. A visitor may explicitly open a prefilled email to Backyard Sauna Pro. Analytics records planner start, planner completion, and email intent without sending ZIP or free text.
+The `/sauna-planner` route creates its initial brief entirely in the browser. A separate review form can submit the contact and project fields to the `backyard-sauna-leads` Cloudflare Worker, which validates the request and stores it in a restricted D1 database. A successful database write returns a receipt ID and triggers the non-PII `lead_submitted` analytics event.
 
-Server-confirmed lead capture, photo upload, phone collection, CRM storage, qualification status, and partner routing remain unimplemented until the launch gates above are approved and a secure processor is selected.
+The API records contact consent and optional partner-sharing consent separately. It does not automatically send or sell a lead, and it exposes no public lead-reading endpoint. Manual review remains mandatory. Photo upload, automated CRM routing, automated partner distribution, and customer-facing accounts remain unimplemented.

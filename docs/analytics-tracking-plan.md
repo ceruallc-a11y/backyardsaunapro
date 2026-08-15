@@ -13,6 +13,7 @@
 | `sauna_planner_started` | First project-planner interaction | `page_path` |
 | `sauna_planner_completed` | Local project brief generated | `page_path`, `project_location`, `heat_type`, `budget_range`, `timeline`, `acquisition_source` |
 | `lead_form_submission_intent` | Visitor explicitly opens a prefilled email; does not prove it was sent | `page_path`, `cta_position` |
+| `lead_submitted` | Lead API confirms a successful D1 receipt | `page_path`, `partner_sharing_consent`, `acquisition_source` |
 | `partner_inquiry_started` | Visitor opens the partnership email action; does not prove it was sent | `page_path`, `cta_position` |
 | `advertise_page_view` | View of partner page | `page_path`, `traffic_source` |
 | `calculator_completed` | Valid result generated | `page_path`, `calculator`, `result_band` |
@@ -28,7 +29,7 @@ Use snake_case. Every site-owned event also receives `site_name=backyard_sauna_p
 - `affiliate_click` exists globally but needs validated conversion reporting and a stable `page_type` value.
 - The global `window.gtag` function is initialized before site-owned listeners. A prior module-scoped helper allowed pageviews but caused every listener guarded by `window.gtag` to exit without recording its event.
 - `newsletter_signup` fires on form submit with `signup_status=attempted`. The Kit double-opt-in confirmation redirects to `/newsletter/confirmed/`, which emits `newsletter_signup_confirmed`; only the latter is a GA4 key event.
-- The sauna planner stores nothing and only generates a browser-local brief. `lead_form_submission_intent` means the email action was opened; it is not a server-confirmed lead. `acquisition_source` carries the guide CTA's `utm_content`, never a homeowner identifier.
+- Creating a sauna brief remains browser-local. The separate review form sends a minimal consented project request to Cloudflare D1. `lead_submitted` fires only after the API confirms receipt. `acquisition_source` carries the guide CTA's `utm_content`, never a homeowner identifier.
 - The partnership CTA similarly records `partner_inquiry_started`, not a submitted inquiry.
 - Cross-check retailer and affiliate dashboards because browser events do not prove attributed sales.
 
@@ -53,4 +54,4 @@ Verified August 5, 2026 in property `backyardsaunapro.com`:
 - `sauna_planner_completed`
 - `calculator_completed`
 
-Do not mark attempted newsletter submits or email-link opens as completed leads.
+Do not mark attempted newsletter submits, planner completions, or email-link opens as completed leads. Mark `lead_submitted` as the lead key event after live receipt testing succeeds.

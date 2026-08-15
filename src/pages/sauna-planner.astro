@@ -10,11 +10,11 @@ import Base from '../layouts/Base.astro';
     <header class="mb-8">
       <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Free planning tool</p>
       <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Build a sauna project brief before you contact sellers</h1>
-      <p class="text-lg text-stone-700">Turn the basic decisions into one summary you can use for quotes. Your answers stay in this browser unless you explicitly copy or email the brief.</p>
+      <p class="text-lg text-stone-700">Turn the basic decisions into one summary you can use for quotes. Your planning answers stay in this browser unless you explicitly request a review.</p>
     </header>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Privacy:</strong> This tool does not submit or store your answers. Choosing "Email this brief" opens your email app with the summary filled in; you decide whether to send it.
+      <strong>Privacy:</strong> Creating the brief does not submit or store it. If you request a review, Backyard Sauna Pro securely stores the contact and project information you choose to send. Partner sharing is separate and optional.
     </div>
 
     <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
@@ -47,9 +47,31 @@ import Base from '../layouts/Base.astro';
       <textarea id="planner-summary" rows="16" readonly class="w-full border border-stone-300 rounded-md px-3 py-3 text-sm bg-stone-50"></textarea>
       <div class="flex flex-wrap gap-3 mt-4">
         <button id="copy-brief" type="button" class="bg-stone-200 hover:bg-stone-300 text-stone-900 font-semibold px-5 py-3 rounded-md">Copy brief</button>
-        <a id="email-brief" href="mailto:info@backyardsaunapro.com" data-track-event="lead_form_submission_intent" data-cta-position="sauna_planner" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-5 py-3 rounded-md">Email this brief for review</a>
       </div>
       <p id="copy-status" class="text-sm text-stone-600 mt-3" aria-live="polite"></p>
+
+      <div class="border-t border-stone-200 mt-7 pt-7">
+        <h3 class="text-xl font-bold text-stone-900 mb-2">Request a free manual review</h3>
+        <p class="text-sm text-stone-600 mb-5">Send the brief to Backyard Sauna Pro. We will review it before any possible introduction to a seller or installer.</p>
+        <form id="lead-review-form" class="space-y-5">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">First name</span><input name="firstName" type="text" autocomplete="given-name" maxlength="60" required class="w-full border border-stone-300 rounded-md px-3 py-3" /></label>
+            <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Email</span><input name="email" type="email" autocomplete="email" maxlength="160" required class="w-full border border-stone-300 rounded-md px-3 py-3" /></label>
+            <label class="block sm:col-span-2"><span class="block text-sm font-semibold text-stone-900 mb-2">Phone <span class="font-normal text-stone-500">(optional)</span></span><input name="phone" type="tel" autocomplete="tel" maxlength="40" class="w-full border border-stone-300 rounded-md px-3 py-3" /></label>
+          </div>
+          <label class="hidden" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+          <label class="flex gap-3 text-sm text-stone-700">
+            <input name="contactConsent" type="checkbox" required class="mt-1 h-4 w-4 shrink-0" />
+            <span>I want Backyard Sauna Pro to review this project and contact me about it. <a href="/privacy/" class="text-amber-700 underline">Privacy details</a>.</span>
+          </label>
+          <label class="flex gap-3 text-sm text-stone-700">
+            <input name="partnerConsent" type="checkbox" class="mt-1 h-4 w-4 shrink-0" />
+            <span>After manual review, Backyard Sauna Pro may share this project and my contact details with one relevant seller or installer. This is optional.</span>
+          </label>
+          <button id="submit-review" type="submit" class="w-full sm:w-auto bg-amber-600 hover:bg-amber-700 disabled:bg-stone-400 text-white font-semibold px-6 py-3 rounded-md">Send for review</button>
+          <p id="lead-status" class="text-sm text-stone-700" aria-live="polite"></p>
+        </form>
+      </div>
     </section>
 
     <div class="mt-10 text-sm text-stone-600">
@@ -61,11 +83,15 @@ import Base from '../layouts/Base.astro';
     const form = document.getElementById('sauna-planner');
     const result = document.getElementById('planner-result');
     const summary = document.getElementById('planner-summary');
-    const emailLink = document.getElementById('email-brief');
     const copyButton = document.getElementById('copy-brief');
     const copyStatus = document.getElementById('copy-status');
+    const leadForm = document.getElementById('lead-review-form');
+    const leadStatus = document.getElementById('lead-status');
+    const leadSubmit = document.getElementById('submit-review');
+    const leadEndpoint = 'https://backyard-sauna-leads.adunyadeth.workers.dev/v1/leads';
     const campaignSource = new URLSearchParams(window.location.search).get('utm_content') || 'direct';
     let started = false;
+    let plannerValues = {};
 
     if (form instanceof HTMLFormElement) {
       form.addEventListener('input', () => {
@@ -84,6 +110,7 @@ import Base from '../layouts/Base.astro';
       form.addEventListener('submit', (event) => {
         event.preventDefault();
         const values = Object.fromEntries(new FormData(form).entries());
+        plannerValues = values;
         const budgetScore = values.budget === '$20,000+ installed' ? 3 : values.budget === '$10,000-$20,000 installed' ? 2 : values.budget === '$5,000-$10,000 installed' ? 1 : 0;
         const timelineScore = values.timeline === 'Within 30 days' ? 3 : values.timeline === '1-3 months' ? 2 : values.timeline === '3-6 months' ? 1 : 0;
         const readinessScore = budgetScore + timelineScore
@@ -120,9 +147,6 @@ import Base from '../layouts/Base.astro';
         const text = lines.join('\n');
 
         if (summary instanceof HTMLTextAreaElement) summary.value = text;
-        if (emailLink instanceof HTMLAnchorElement) {
-          emailLink.href = `mailto:info@backyardsaunapro.com?subject=${encodeURIComponent('Sauna project brief')}&body=${encodeURIComponent(text)}`;
-        }
         result?.classList.remove('hidden');
         result?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
@@ -152,5 +176,60 @@ import Base from '../layouts/Base.astro';
         if (copyStatus) copyStatus.textContent = 'Select and copy the highlighted brief.';
       }
     });
+
+    if (leadForm instanceof HTMLFormElement) {
+      leadForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (!leadForm.reportValidity() || !Object.keys(plannerValues).length) return;
+
+        const contact = new FormData(leadForm);
+        const payload = {
+          ...plannerValues,
+          firstName: String(contact.get('firstName') || ''),
+          email: String(contact.get('email') || ''),
+          phone: String(contact.get('phone') || ''),
+          website: String(contact.get('website') || ''),
+          contactConsent: contact.get('contactConsent') === 'on',
+          partnerConsent: contact.get('partnerConsent') === 'on',
+          sourcePath: window.location.pathname,
+          acquisitionSource: campaignSource,
+        };
+
+        if (leadSubmit instanceof HTMLButtonElement) {
+          leadSubmit.disabled = true;
+          leadSubmit.textContent = 'Sending...';
+        }
+        if (leadStatus) leadStatus.textContent = '';
+
+        try {
+          const response = await fetch(leadEndpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const data = await response.json();
+          if (!response.ok || !data.ok) throw new Error(data.error || 'We could not receive the request.');
+
+          if (leadStatus) leadStatus.textContent = `Received. Your reference is ${data.receiptId}. We will review the project before any partner introduction.`;
+          leadForm.reset();
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'lead_submitted', {
+              site_name: 'backyard_sauna_pro',
+              site_hostname: window.location.hostname,
+              page_path: window.location.pathname,
+              partner_sharing_consent: payload.partnerConsent ? 'yes' : 'no',
+              acquisition_source: campaignSource,
+            });
+          }
+        } catch (error) {
+          if (leadStatus) leadStatus.textContent = error instanceof Error ? `${error.message} Please try again or contact info@backyardsaunapro.com.` : 'We could not receive the request. Please try again.';
+        } finally {
+          if (leadSubmit instanceof HTMLButtonElement) {
+            leadSubmit.disabled = false;
+            leadSubmit.textContent = 'Send for review';
+          }
+        }
+      });
+    }
   </script>
 </Base>
