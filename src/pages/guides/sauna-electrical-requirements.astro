@@ -1,144 +1,134 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "What electrical requirements does a sauna need?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most electric sauna heaters require a dedicated 240V circuit. The amperage depends on the heater's kW rating: a 6kW heater needs a 30-amp circuit, an 8-9kW heater needs a 40-amp circuit, and a 10-12kW heater needs a 50-amp circuit. All sauna electrical work should be done by a licensed electrician and inspected. The NEC requires a GFCI breaker for sauna installations in most jurisdictions."
-      }
+      '@type': 'Question',
+      name: 'What electrical circuit does a sauna need?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Use the current installation manual and nameplate for the exact heater or cabin. Voltage, phase, current, conductor, overcurrent protection, controls, disconnecting means, and GFCI instructions vary by model and jurisdiction. A qualified electrician should design and permit the installation.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "How much does it cost to wire a sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Expect $800-$1,500 for a dedicated 240V sauna circuit installation by a licensed electrician. Variables include distance from the panel to the sauna, whether the panel has capacity for a new 240V circuit, local labor rates, and whether the run is exposed or requires going through finished walls or underground. Budget $1,000 as a baseline for planning."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Does every electric sauna heater need GFCI protection?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Do not rely on a universal online answer. Manufacturer instructions can differ, and the authority having jurisdiction applies the locally adopted electrical code. Give the exact manual and certification information to the electrician and ask the permit authority to resolve any conflict before equipment is purchased or connected.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does it cost to wire a sauna?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A reliable price requires the exact heater, panel capacity, route, distance, trenching or finish work, controls, permit and inspection requirements, and local labor. Obtain written quotes after an electrician reviews the site and equipment documentation.',
+      },
+    },
+  ],
 };
 ---
 <Base
-  title="Sauna Electrical Requirements: What You Need to Know Before Installing"
-  description="What circuit a sauna needs, amp requirements by heater kW, GFCI rules, installation costs, and what to ask an electrician."
+  title="Sauna Electrical Requirements: A Manual-First Planning Guide"
+  description="Prepare the heater manual, panel information, cable route, controls, permits, and inspection questions a qualified electrician needs for a sauna installation."
   canonical="/guides/sauna-electrical-requirements"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Electrical Requirements: The Complete Guide</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Installation planning</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Sauna Electrical Requirements</h1>
+      <p class="text-stone-500 text-sm">Reviewed August 2026 &middot; 8 min read</p>
+      <p class="text-lg text-stone-700 mt-4">Start with the exact heater or prebuilt cabin. Its current manual and certification determine the electrical conversation. A generic kilowatt-to-breaker chart cannot safely replace that documentation.</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Sauna electrical installation" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Electric sauna heater inside a finished sauna room" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page may contain affiliate links.
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-8">
+      <h2 class="font-bold text-stone-900 mb-2">Do not buy the breaker first</h2>
+      <p class="text-sm text-stone-700">Model numbers that look similar may use different voltage, phase, control, conductor, and protection requirements. Confirm that the exact equipment is intended and certified for the country where it will be installed.</p>
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Sauna electrical is not a DIY job in most jurisdictions — a licensed electrician and a permit are required for 240V sauna circuits in nearly every US state and Canadian province. Here is what the installation involves and what it will cost.</p>
+    <PlannerCTA
+      source="sauna_electrical_requirements_after_summary"
+      heading="Put the electrical questions into the full project brief"
+      description="Record the sauna type, location, dimensions, electrical status, budget, and timeline before requesting quotes. Your answers stay in your browser unless you explicitly submit them for manual review."
+    />
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Circuit Requirements by Heater Size</h2>
-    <div class="overflow-x-auto mb-8">
-      <table class="text-sm w-full">
-        <thead>
-          <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-6">Heater Size</th>
-            <th class="pb-2 pr-6">Voltage</th>
-            <th class="pb-2 pr-6">Circuit (amps)</th>
-            <th class="pb-2">Wire Size</th>
-          </tr>
-        </thead>
-        <tbody class="text-stone-700">
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">3-4.5 kW</td>
-            <td class="py-2 pr-6">240V</td>
-            <td class="py-2 pr-6">20A dedicated</td>
-            <td class="py-2">#12 AWG</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">6 kW</td>
-            <td class="py-2 pr-6">240V</td>
-            <td class="py-2 pr-6">30A dedicated</td>
-            <td class="py-2">#10 AWG</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">8-9 kW</td>
-            <td class="py-2 pr-6">240V</td>
-            <td class="py-2 pr-6">40A dedicated</td>
-            <td class="py-2">#8 AWG</td>
-          </tr>
-          <tr>
-            <td class="py-2 pr-6 font-semibold">10-12 kW</td>
-            <td class="py-2 pr-6">240V</td>
-            <td class="py-2 pr-6">50A dedicated</td>
-            <td class="py-2">#6 AWG</td>
-          </tr>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-5">The information your electrician needs</h2>
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full min-w-[680px] border-collapse text-sm">
+        <thead><tr class="bg-stone-100 text-left"><th class="p-3 border-b border-stone-300">Input</th><th class="p-3 border-b border-stone-300">Where to get it</th><th class="p-3 border-b border-stone-300">Why it matters</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Exact model and item number</td><td class="p-3 border-b border-stone-200">Quote, product label, and current manufacturer page.</td><td class="p-3 border-b border-stone-200">The family name alone may cover different electrical versions.</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Installation manual</td><td class="p-3 border-b border-stone-200">Manufacturer's official support or product page.</td><td class="p-3 border-b border-stone-200">Contains the wiring diagram, protection, controls, clearances, and location limits.</td></tr>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Certification and country version</td><td class="p-3 border-b border-stone-200">Nameplate, manufacturer, and certification database.</td><td class="p-3 border-b border-stone-200">A similarly named overseas model may not be suitable for a North American installation.</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Panel and service information</td><td class="p-3 border-b border-stone-200">Panel labels and electrician's load calculation.</td><td class="p-3 border-b border-stone-200">An empty breaker space does not prove the service has capacity.</td></tr>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Route and site conditions</td><td class="p-3 border-b border-stone-200">Measured path, site photos, finished surfaces, and utility locations.</td><td class="p-3 border-b border-stone-200">Distance, exposure, trenching, wet locations, and access affect the design and quote.</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Controls and accessories</td><td class="p-3 border-b border-stone-200">Complete equipment schedule.</td><td class="p-3 border-b border-stone-200">Separate controllers, sensors, lights, and remote functions can change the installation.</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="text-stone-500 text-xs mb-8">Note: Always verify with your specific heater's installation manual and your local electrician. Actual requirements may vary by jurisdiction and heater model.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The GFCI Requirement</h2>
-    <p class="text-stone-700 mb-4">The National Electrical Code (NEC 680) requires GFCI protection for sauna installations. This means the breaker at the panel that feeds your sauna circuit must be a GFCI breaker. Standard breakers do not satisfy this requirement. Your electrician will handle this, but it is worth confirming before they start work — some older electricians are not current on sauna-specific NEC requirements.</p>
-    <p class="text-stone-700 mb-6">Note that some sauna heaters have internal controls that do not work reliably with certain GFCI breakers. Harvia and a few other manufacturers have published compatibility notes. Check your heater manual or contact the manufacturer before the electrician sources the breaker.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Why heater size alone is not enough</h2>
+    <p class="text-stone-700 mb-4">Power is one input. The exact equipment documentation must also identify voltage, phase, current, conductor arrangement, permitted controls, disconnecting means, clearances, and any special installation limits.</p>
+    <p class="text-stone-700 mb-8">For example, Harvia's current U.S. listing for one KIP80B identifies an 8 kW, 240 VAC, single-phase, UL-certified model and tells buyers to check the current manual. That does not make every heater labeled "KIP80" electrically interchangeable.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Panel Capacity</h2>
-    <p class="text-stone-700 mb-4">Before calling an electrician, check your panel. A 6kW sauna heater on a 30A circuit requires 30 amps of available capacity. Most modern 200A residential panels have room. Older 100A panels may not — especially if you have electric heat, EV charging, or other large loads.</p>
-    <p class="text-stone-700 mb-6">Your electrician will assess panel capacity before pulling the permit. If the panel is at or near capacity, a panel upgrade ($1,500-$3,000) may be required before the sauna circuit can be added.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Underground vs Above-Ground Runs</h2>
-    <p class="text-stone-700 mb-4">For outdoor saunas, the electrical run from the house to the sauna can go either above-ground (in conduit on the exterior) or underground (buried conduit). Underground is cleaner and more permanent — use Schedule 40 PVC or rigid conduit buried at the required depth (18-24 inches for most residential direct-burial or conduit applications, check your local code).</p>
-    <p class="text-stone-700 mb-6">Underground runs cost more in labor due to trenching, but they look better and do not require conduit along the house exterior. For a permanent sauna installation, underground is worth the extra cost.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cost Breakdown</h2>
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <ul class="space-y-2">
-        <li><span class="font-semibold">Short run (&lt;30 ft, above-ground):</span> $600-$900</li>
-        <li><span class="font-semibold">Medium run (30-60 ft):</span> $900-$1,300</li>
-        <li><span class="font-semibold">Long run (&gt;60 ft) or underground:</span> $1,300-$2,000</li>
-        <li><span class="font-semibold">GFCI breaker add-on:</span> $80-$150 parts + included in labor above</li>
-        <li><span class="font-semibold">Panel upgrade if needed:</span> $1,500-$3,000 additional</li>
-      </ul>
-      <p class="text-stone-500 text-xs mt-3">Estimates for US labor rates in 2025. Get 2-3 quotes from local licensed electricians before committing.</p>
+    <div class="border border-stone-200 bg-white rounded-lg p-5 mb-8">
+      <h3 class="font-bold text-stone-900 mb-2">Verify the exact product</h3>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <a href="https://www.harvia.com/en-US/products/JH80B2401/kip80b-8-kw-240vac-1ph" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Harvia KIP80B U.S. product page</a>
+        <a href="https://www.ul.com/software/product-sourcing-and-certifications-database" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">UL Product iQ information</a>
+      </div>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Ask Your Electrician</h2>
-    <ul class="space-y-2 text-stone-700 mb-8 ml-4 text-sm">
-      <li>Does my panel have capacity for a new 240V circuit at [your heater's amperage]?</li>
-      <li>Will you pull a permit and schedule inspection?</li>
-      <li>What GFCI breaker are you planning to use? (Get the brand/model for compatibility check)</li>
-      <li>Underground or above-ground run — which do you recommend for this installation?</li>
-      <li>What is the total including permit fees?</li>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The GFCI question must be resolved for the exact installation</h2>
+    <p class="text-stone-700 mb-4">A blanket statement that every sauna heater either requires or prohibits GFCI protection is unreliable. Manufacturer instructions, product certification, and locally adopted requirements must be reviewed together.</p>
+    <p class="text-stone-700 mb-4">The North American HUUM STEEL manual, for example, recommends connecting without a GFCI breaker. That is precisely why a buyer should not choose protection hardware from a generic article. Give the exact manual to the electrician and permit authority, then resolve the installation before ordering equipment.</p>
+    <a href="https://huumsauna.com/wp-content/uploads/2023/06/huum-steel-manual-us.pdf" target="_blank" rel="noopener" class="inline-flex min-h-11 items-center rounded-md border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:border-stone-500">Read the North American HUUM STEEL manual</a>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Panel capacity requires a load calculation</h2>
+    <p class="text-stone-700 mb-4">Do not estimate service capacity by counting open spaces. The electrician should evaluate the service, panel, existing loads, equipment rating, and locally adopted rules. EV charging, electric HVAC, cooking, water heating, and other large loads can affect the design.</p>
+    <p class="text-stone-700 mb-8">Ask for alternatives when capacity is tight. The right answer may be a different heater, load-management equipment where permitted, service work, or a different project scope. It is not automatically a panel replacement.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Outdoor routes need site-specific design</h2>
+    <p class="text-stone-700 mb-4">An outdoor sauna may involve wet or damp locations, exposed equipment, underground or exterior routing, physical protection, disconnect placement, utility locating, and coordination with the foundation. Burial depths and wiring methods depend on the complete installation and local requirements.</p>
+    <div class="border-l-4 border-amber-500 bg-stone-50 p-5 mb-8 text-sm text-stone-700">Coordinate the electrical route before the foundation is finished. Otherwise, a clean design can become expensive surface work or unnecessary demolition.</div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How to get a useful electrical quote</h2>
+    <ol class="space-y-4 mb-10">
+      <li class="flex gap-3"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 font-bold text-stone-900">1</span><div><h3 class="font-bold text-stone-900">Send the exact manual</h3><p class="text-sm text-stone-700">Do not send only a retailer screenshot or heater family name.</p></div></li>
+      <li class="flex gap-3"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 font-bold text-stone-900">2</span><div><h3 class="font-bold text-stone-900">Show the proposed location</h3><p class="text-sm text-stone-700">Include the panel, route, sauna, controller, foundation, and any finished surfaces.</p></div></li>
+      <li class="flex gap-3"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 font-bold text-stone-900">3</span><div><h3 class="font-bold text-stone-900">Request a complete scope</h3><p class="text-sm text-stone-700">Ask whether permits, inspections, trenching, patching, controls, disconnects, startup, and taxes are included.</p></div></li>
+      <li class="flex gap-3"><span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 font-bold text-stone-900">4</span><div><h3 class="font-bold text-stone-900">Identify assumptions</h3><p class="text-sm text-stone-700">Have the electrician label what was verified and what could change after access or inspection.</p></div></li>
+    </ol>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Questions to ask the electrician</h2>
+    <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700 mb-10">
+      <li>Have you reviewed the current manual and nameplate for this exact item number?</li>
+      <li>Is this model certified and suitable for the proposed country and location?</li>
+      <li>Does the service have capacity based on a load calculation?</li>
+      <li>How will manufacturer instructions and local GFCI requirements be reconciled?</li>
+      <li>Which permits and inspections are included in the quote?</li>
+      <li>Who coordinates trenching, utility locating, foundation penetrations, controls, and startup?</li>
+      <li>What is excluded, and which amounts are allowances rather than fixed prices?</li>
     </ul>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What electrical requirements does a sauna need?</h3>
-        <p class="text-stone-700">A dedicated 240V circuit sized to the heater's kW rating. Most 4-6 person saunas use a 6kW heater requiring a 30A circuit with #10 AWG wire and a GFCI breaker at the panel.</p>
+    <div class="bg-stone-900 text-white rounded-lg p-6 mt-10">
+      <h2 class="text-xl font-bold mb-2">Price the complete electrical scope</h2>
+      <p class="text-stone-200 mb-4">A low quote may omit trenching, controls, permits, inspection, patching, or panel work. Put every category into the project budget before comparing bids.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/tools/sauna-cost-calculator/" class="inline-flex min-h-11 items-center rounded-md bg-amber-400 px-5 py-3 font-semibold text-stone-900 hover:bg-amber-500">Build the project budget</a>
+        <a href="/guides/outdoor-sauna-permits/" class="inline-flex min-h-11 items-center rounded-md border border-stone-500 px-5 py-3 font-semibold text-white hover:border-stone-300">Prepare permit questions</a>
       </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How much does it cost to wire a sauna?</h3>
-        <p class="text-stone-700">$800-$1,500 for most residential installations. Budget $1,000 as a baseline.</p>
-      </div>
-    </div>
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
-        <li><a href="/guides/how-to-build-a-sauna/" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
-        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">How Much Does a Sauna Cost?</a></li>
-        <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
-      </ul>
     </div>
   </article>
 </Base>
