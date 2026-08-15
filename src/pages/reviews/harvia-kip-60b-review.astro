@@ -1,137 +1,142 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+
+const harviaProductUrl = 'https://www.harvia.com/en-US/products/JH60BU1UL/kip60b-6-kw-240vac-steel-ul';
+const selectSaunasUrl = 'https://selectsaunas.com/products/harvia-kip60b-6-0kw-electric-sauna-heater-w-built-in-controls';
 ---
 <Base
-  title="Harvia KIP 60B Review: Specifications, Installation, Pros and Cons"
-  description="Harvia KIP 60B review based on published specifications, installation requirements, warranty information, and attributable owner feedback."
+  title="Harvia KIP60B Review: Sizing, Electrical, and Buyer Checklist"
+  description="A source-backed Harvia KIP60B buyer guide covering current room sizing, controls, electrical planning, stone requirements, installation limits, and questions to verify before ordering."
   canonical="/reviews/harvia-kip-60b-review"
 >
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Sauna Heater Reviews</p>
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Product research</p>
       <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Harvia KIP 60B Review
+        Harvia KIP60B: what to verify before buying
       </h1>
-      <p class="text-stone-500 text-sm">Last reviewed August 2026 &middot; 8 min read</p>
-
-      <div class="bg-stone-100 rounded-xl p-5 mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
-        {[["Overall", "4.6/5"], ["Heat Performance", "4.7/5"], ["Build Quality", "4.6/5"], ["Value", "4.5/5"]].map(([label, score]) => (
-          <div>
-            <div class="text-2xl font-bold text-amber-700">{score}</div>
-            <div class="text-stone-500 text-xs mt-1">{label}</div>
-          </div>
-        ))}
-      </div>
+      <p class="text-stone-500 text-sm">Reviewed August 15, 2026 &middot; 8 min read</p>
     </header>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    <div class="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6 text-sm text-stone-700">
+      <strong>Research scope:</strong> This is a desk-researched buyer guide, not a hands-on heater test. We checked Harvia's current North American product information, electrical guidance, and a current authorized-retailer listing. We have not installed or measured this heater ourselves.
     </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <p class="font-semibold text-stone-800 mb-1">Bottom Line</p>
-      <p class="text-stone-600 text-sm">The Harvia KIP 60B is a straightforward 6 kW wall-mounted heater for appropriately sized home sauna rooms. Its appeal is a simple control setup and a long-established manufacturer, but the final fit depends on room volume, construction, clearances, and electrical requirements.</p>
+      <h2 class="font-bold text-stone-900 mb-2">The short answer</h2>
+      <p class="text-stone-700">The KIP60B is a sensible shortlist option for an indoor sauna room that falls inside Harvia's published 169-300 cubic-foot range and needs simple built-in dials. It is the wrong shortcut for an unmeasured room, an outdoor location, or a project whose electrical service and clearances have not been checked against the current manual.</p>
     </div>
 
-    <AmazonButton asin="B0B7TRM95Y" price="~$579" label="Check Price on Amazon" />
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">The Specs</h2>
-    <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm mb-8">
-      <div class="divide-y divide-stone-100 text-sm">
-        {[
-          ["Output", "6kW"],
-          ["Room size", "Up to 265 cu ft"],
-          ["Voltage", "240V / 30A circuit required"],
-          ["Controls", "External dial controller (included)"],
-          ["Stone capacity", "11 lbs of sauna stones included"],
-          ["Dimensions", "15\" x 9\" x 16\" (H)"],
-          ["Weight", "24 lbs"],
-          ["Warranty", "2 years"],
-          ["Made in", "Finland"],
-        ].map(([label, value]) => (
-          <div class="grid grid-cols-2 px-5 py-3">
-            <span class="text-stone-500">{label}</span>
-            <span class="font-medium text-stone-800">{value}</span>
-          </div>
-        ))}
-      </div>
+    <div class="flex flex-wrap gap-3 mb-9">
+      <AmazonButton asin="B0B7TRM95Y" label="View current KIP60B listing" ctaPosition="review_intro" />
+      <a href="/sauna-planner/?utm_source=kip60b_review&utm_medium=onsite&utm_campaign=planner_first_10" class="inline-block border border-stone-300 text-stone-800 font-semibold px-5 py-2.5 rounded-lg text-sm hover:bg-stone-50 transition-colors">Check the project fit first</a>
     </div>
 
-    <h2 class="text-2xl font-bold mb-4 text-stone-900">Heat Performance</h2>
-    <p class="text-stone-600 text-sm mb-4">Harvia publishes the KIP 60B as a 6 kW heater for a defined room-volume range. Actual heat-up time and maximum temperature vary with insulation, glass and masonry surfaces, ambient temperature, ventilation, and control settings.</p>
-    <p class="text-stone-600 text-sm mb-4">The stone basket is designed for water to be applied according to Harvia's instructions. Use only suitable sauna stones and follow the manual's loading, clearance, and water-use guidance.</p>
-    <p class="text-stone-600 text-sm mb-4">Do not size a heater from a roundup alone. Confirm the current manufacturer sizing table and have the room construction and electrical plan reviewed by qualified professionals.</p>
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Current published specifications</h2>
+    <p class="text-stone-600 mb-5">Harvia lists more than one North American item number under the KIP60B name. Match the item number, voltage, phase, manual, and nameplate to the unit offered by the seller.</p>
 
-    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">Build Quality</h2>
-    <p class="text-stone-600 text-sm mb-4">Published product information describes a steel wall-mounted enclosure and Finnish manufacturing. Long-term durability varies by installation, water quality, maintenance, operating conditions, and component availability.</p>
-    <p class="text-stone-600 text-sm mb-4">Inspect the current product manual and warranty before purchase because controls, included parts, finishes, and warranty terms can change.</p>
-
-    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">Installation</h2>
-    <p class="text-stone-600 text-sm mb-4">The KIP requires a 240V / 30A dedicated circuit. You need a licensed electrician for this. Budget $300-$600 depending on distance from your panel. This is not a plug-and-play heater.</p>
-    <p class="text-stone-600 text-sm mb-4">The physical installation is straightforward. The heater mounts to the wall on a bracket that comes in the box. The external controller mounts separately and connects with the included cable. Full installation takes 1-2 hours if the electrical is already run.</p>
-    <p class="text-stone-600 text-sm mb-4">Important: sauna heaters require minimum clearances from walls, benches, and the ceiling. The KIP documentation is clear about this. Follow it. Clearance requirements are safety requirements.</p>
-
-    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">Pros and Cons</h2>
-    <div class="grid grid-cols-2 gap-4 mb-8">
-      <div class="bg-green-50 rounded-xl p-4">
-        <p class="font-semibold text-green-800 mb-3">Pros</p>
-        <ul class="space-y-2 text-sm text-stone-600">
-          {[
-            "Made in Finland, proven brand",
-            "Hits 180-195°F reliably",
-            "Excellent build quality",
-            "Included controller is clean",
-            "Widely compatible with most sauna builds",
-            "Parts readily available",
-          ].map(p => <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">+</span>{p}</li>)}
-        </ul>
-      </div>
-      <div class="bg-red-50 rounded-xl p-4">
-        <p class="font-semibold text-red-700 mb-3">Cons</p>
-        <ul class="space-y-2 text-sm text-stone-600">
-          {[
-            "Requires 240V / electrician",
-            "Basic dial only, no smart controls",
-            "Heater guard sold separately",
-            "Stones could be better quality",
-            "Not ideal for rooms over 265 cu ft",
-          ].map(c => <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">-</span>{c}</li>)}
-        </ul>
-      </div>
+    <div class="grid md:grid-cols-2 gap-3 mb-8 text-sm">
+      {[
+        ['Type', 'Wall-mounted electric heater'],
+        ['Output', '6 kW'],
+        ['Published room range', '169-300 cu. ft.'],
+        ['Controls', 'Built-in time and temperature dials'],
+        ['Electrical configuration', '240VAC, single phase, 60Hz'],
+        ['Published supply cable', '10 AWG for listed 240V model'],
+        ['Heater size', '23.6 in. H x 16.1 in. W x 11 in. D'],
+        ['Published stone amount', '44 lb; stones are seller-dependent'],
+        ['Net weight', '30.8 lb for item JH60BU1UL'],
+        ['Certification shown', 'UL, CE, and EAC'],
+      ].map(([label, value]) => (
+        <div class="bg-white border border-stone-200 rounded-lg p-4">
+          <p class="text-stone-500 text-xs uppercase font-semibold mb-1">{label}</p>
+          <p class="font-medium text-stone-900">{value}</p>
+        </div>
+      ))}
     </div>
 
-    <h2 class="text-2xl font-bold mb-4 text-stone-900">Who Should Buy the Harvia KIP 60B</h2>
-    <div class="space-y-3 mb-8">
-      <div class="bg-green-50 border border-green-200 rounded-xl p-4 text-sm">
-        <p class="font-semibold text-green-800 mb-1">Buy it if:</p>
-        <ul class="space-y-1 text-stone-600">
-          <li>Your sauna room is 100-265 cubic feet</li>
-          <li>You want a reliable heater that doesn't require babysitting</li>
-          <li>You're pairing it with an Almost Heaven or similar barrel/cabin sauna kit</li>
-          <li>You value long-term reliability over smart features</li>
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Size the room before choosing the heater</h2>
+    <p class="text-stone-600 mb-4">The published volume range is a starting point, not a substitute for the manual. Measure the finished hot room. Then account for glass, masonry, insulation, ceiling height, ventilation, and outdoor exposure using the current Harvia sizing instructions.</p>
+    <p class="text-stone-600 mb-8">Do not buy the 6 kW model because a kit is described as "four person." Capacity labels describe seating, not heat loss. If the adjusted room falls outside the KIP60B range, select a different output instead of expecting longer runtime to correct a sizing mismatch.</p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Electrical work is part of the purchase decision</h2>
+    <p class="text-stone-600 mb-4">The current North American listing is a 240V single-phase heater. Harvia publishes a 10 AWG supply cable and minimum protection information for one listed configuration, but the exact nameplate, manual, local code, conductor route, disconnect, controls, and panel capacity govern the installation.</p>
+    <p class="text-stone-600 mb-4">Harvia's support guidance says the connection and servicing should be completed by an authorized electrical professional or another qualified person allowed under local rules. Send the electrician the exact item number and current manual before ordering. That is especially important when a retailer title and a manufacturer item number do not match perfectly.</p>
+    <p class="mb-8"><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 font-semibold hover:underline">Use the sauna electrical planning checklist</a></p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Built-in controls: simple, but not remote</h2>
+    <p class="text-stone-600 mb-4">Harvia describes the left dial as the temperature control and the right dial as the on/off and delay timer. The delay can be set up to eight hours, and the heater shuts off after 60 minutes of operation. This is useful if you prefer controls on the heater and do not need an app or wall-mounted digital panel.</p>
+    <p class="text-stone-600 mb-8">If the heater location makes low-mounted dials awkward to reach, compare the KIP60W or another model designed for a separate control unit. Do not assume the B and W suffixes are interchangeable.</p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Stones, clearances, and what arrives</h2>
+    <p class="text-stone-600 mb-4">Harvia lists the heater, installation bracket, instructions, and screws in the manufacturer delivery contents. It lists a 44-pound stone amount, but stones are not included in that delivery list. The current retailer also says a compatible stone box is required. Confirm whether the seller bundles it before checkout.</p>
+    <p class="text-stone-600 mb-8">Harvia publishes model-specific distances from combustible materials, the floor, and the ceiling. Use the dimensions in the manual attached to the exact item number; do not copy a clearance from another KIP variant or from a review page.</p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Good fit and poor fit</h2>
+    <div class="grid md:grid-cols-2 gap-4 mb-8">
+      <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+        <h3 class="font-semibold text-green-800 mb-3">Shortlist it when</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+          <li>The adjusted room volume falls within the exact model's published range.</li>
+          <li>You want built-in mechanical time and temperature controls.</li>
+          <li>The electrician confirms the service, route, and clearances before purchase.</li>
+          <li>You have checked the seller's included parts, stones, warranty, and return terms.</li>
         </ul>
       </div>
-      <div class="bg-stone-50 border border-stone-200 rounded-xl p-4 text-sm">
-        <p class="font-semibold text-stone-800 mb-1">Consider something else if:</p>
-        <ul class="space-y-1 text-stone-600">
-          <li>Your room is over 300 cu ft (look at 9kW options)</li>
-          <li>You want Wi-Fi / app controls (look at Harvia Xenio or Tylo)</li>
-          <li>Budget is tight (the Vevor 9kW is a budget alternative)</li>
+      <div class="bg-stone-100 border border-stone-200 rounded-xl p-5">
+        <h3 class="font-semibold text-stone-900 mb-3">Compare another model when</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+          <li>The adjusted room volume is below or above the listed range.</li>
+          <li>You need remote, app, or eye-level wall controls.</li>
+          <li>The installation is outdoors or otherwise outside the listed environment.</li>
+          <li>You cannot verify the item number or electrical configuration being sold.</li>
         </ul>
       </div>
     </div>
 
-    <AmazonButton asin="B0B7TRM95Y" price="~$579" label="Check Price on Amazon" />
+    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Questions to answer before checkout</h2>
+    <ol class="list-decimal pl-5 space-y-3 text-stone-700 mb-8">
+      <li>What is the Harvia item number and type code on this exact listing?</li>
+      <li>Which current manual and electrical table apply to that item number?</li>
+      <li>What is the adjusted volume of the finished sauna room?</li>
+      <li>Are suitable stones included, or must they be ordered separately?</li>
+      <li>Can the required clearances be maintained around the planned benches and guard?</li>
+      <li>What warranty, return, freight-damage, and replacement-part terms apply through this seller?</li>
+      <li>Has a qualified electrical professional confirmed the project before the return window closes?</li>
+    </ol>
 
-    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h3 class="font-bold text-stone-900 mb-3">Compare other heaters</h3>
+    <div class="bg-stone-800 text-white rounded-xl p-6 mb-10">
+      <h2 class="text-xl font-bold text-white mb-2">Our verdict</h2>
+      <p class="text-stone-200 text-sm mb-4">The KIP60B is a practical manual-control heater when the exact room, electrical plan, and seller configuration line up. The strongest reason to pass is not a missing smart feature; it is an unresolved sizing or installation question. Confirm those first, then compare delivered price and support.</p>
+      <AmazonButton asin="B0B7TRM95Y" label="Check the current configuration" ctaPosition="review_verdict" />
+    </div>
+
+    <PlannerCTA
+      title="Check the heater inside the whole project"
+      body="Record the room dimensions, construction, electrical readiness, site, budget, and timeline before asking a retailer or electrician for a quote."
+      campaign="kip60b_review"
+      ctaPosition="article_footer"
+    />
+
+    <section class="mt-12 border-t border-stone-200 pt-8">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">Sources checked</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline font-medium">Best Electric Sauna Heaters (Full Roundup)</a></li>
-        <li><a href="/guides/best-wood-burning-sauna-heaters/" class="text-amber-700 hover:underline font-medium">Best Wood-Burning Sauna Heaters</a></li>
-        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline font-medium">Sauna Electrical Requirements Guide</a></li>
+        <li><a href={harviaProductUrl} target="_blank" rel="noopener" class="text-amber-700 hover:underline">Harvia: current North American KIP60B product data</a></li>
+        <li><a href="https://support.harvia.com/hc/en-us/articles/19469322350866-Can-anyone-connect-an-electric-heater-to-the-power-grid" target="_blank" rel="noopener" class="text-amber-700 hover:underline">Harvia support: who may connect an electric heater</a></li>
+        <li><a href={selectSaunasUrl} target="_blank" rel="noopener" class="text-amber-700 hover:underline">Select Saunas: current authorized-retailer listing</a></li>
       </ul>
-    </div>
+      <p class="text-xs text-stone-500 mt-4">Model data, stock, price, warranty, and included parts can change. Recheck the item number and current manufacturer documents before purchase.</p>
+    </section>
 
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">Compare the full heater decision</h2>
+      <ul class="space-y-2">
+        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Compare electric sauna-heater formats</a></li>
+        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Work through the heater-sizing inputs</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Prepare for the electrician conversation</a></li>
+      </ul>
+    </section>
   </article>
 </Base>
