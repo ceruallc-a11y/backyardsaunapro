@@ -179,6 +179,9 @@ for (const file of htmlFiles) {
   for (const match of html.matchAll(/(?:href|src)=["']([^"']+)["']/gi)) {
     const local = resolveLocal(match[1]);
     if (!local) continue;
+    if (local !== '/' && !local.endsWith('/') && !path.posix.extname(local)) {
+      findings.push({ type: 'noncanonical_internal_link', route, target: local });
+    }
     const candidates = [local, `${local.replace(/\/$/, '')}/index.html`, `${local}.html`];
     if (!candidates.some((candidate) => pages.has(candidate) || relativeFiles.has(candidate))) {
       findings.push({ type: 'broken_local_reference', route, target: local });
@@ -201,4 +204,5 @@ process.exitCode = findings.some((finding) => [
   'misleading_availability_cta',
   'untracked_planner_cta',
   'unattributed_planner_cta',
+  'noncanonical_internal_link',
 ].includes(finding.type)) ? 1 : 0;
