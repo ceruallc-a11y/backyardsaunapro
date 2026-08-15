@@ -7,6 +7,14 @@
     "lastChecked": "2026-08-15",
     "observedStatus": "not_found"
   },
+  "B002NM6LT2": {
+    "productName": "Sauna thermometer and hygrometer",
+    "mode": "amazon_search",
+    "query": "sauna thermometer hygrometer wooden",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "wrong_product"
+  },
   "B000R2PTHG": {
     "productName": "Almost Heaven Allegheny barrel sauna",
     "mode": "amazon_search",
@@ -37,6 +45,21 @@
     "label": "Check Current Amazon Listing",
     "lastChecked": "2026-08-15",
     "observedStatus": "available"
+  },
+  "B00R52X6U2": {
+    "productName": "The Sauna Place 45 lb replacement olivine stones",
+    "mode": "amazon_exact",
+    "label": "Check Current Amazon Listing",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "available"
+  },
+  "B01N9SE8SZ": {
+    "productName": "15-minute wooden sauna sand timer",
+    "mode": "amazon_search",
+    "query": "15 minute wooden sauna sand timer",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "wrong_product"
   },
   "B01FY6PZYU": {
     "productName": "Harvia M3 wood-burning sauna heater",
@@ -85,6 +108,30 @@
     "lastChecked": "2026-08-15",
     "observedStatus": "not_found"
   },
+  "B079N9NXBH": {
+    "productName": "Sauna bench cushion set",
+    "mode": "amazon_search",
+    "query": "sauna bench cushion washable set",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B07MJDFHKG": {
+    "productName": "Sauna wood cleaner and protector",
+    "mode": "amazon_search",
+    "query": "sauna wood cleaner cedar bench",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B07PXGQC9T": {
+    "productName": "Finnish birch sauna whisk",
+    "mode": "amazon_search",
+    "query": "Finnish birch sauna whisk vihta",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
   "B07WQHQ4BF": {
     "productName": "VEVOR 9 kW electric sauna heater",
     "mode": "amazon_search",
@@ -97,6 +144,30 @@
     "productName": "Portable infrared sauna cabin",
     "mode": "amazon_search",
     "query": "portable infrared sauna cabin",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B07YCQ4TCZ": {
+    "productName": "Cedar sauna headrest set",
+    "mode": "amazon_search",
+    "query": "cedar sauna headrest set",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "wrong_product"
+  },
+  "B08B3XHXSD": {
+    "productName": "Heat-resistant sauna LED light",
+    "mode": "amazon_search",
+    "query": "heat resistant sauna LED light wet rated",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B08JHR3XBN": {
+    "productName": "Cedar sauna backrest",
+    "mode": "amazon_search",
+    "query": "cedar sauna backrest",
     "label": "Compare Current Amazon Listings",
     "lastChecked": "2026-08-15",
     "observedStatus": "not_found"
@@ -123,6 +194,36 @@
     "label": "View Current KIP60B Listing",
     "lastChecked": "2026-08-15",
     "observedStatus": "amazon_not_found_alternate_available"
+  },
+  "B0BC8QMSKG": {
+    "productName": "Amocane 2-in-1 sauna thermometer and hygrometer",
+    "mode": "amazon_exact",
+    "label": "Check Current Amazon Listing",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "available"
+  },
+  "B0DKJVC1D3": {
+    "productName": "Sauna accessories bundle",
+    "mode": "amazon_search",
+    "query": "sauna accessories bundle bucket ladle thermometer",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B0DWTCK8X9": {
+    "productName": "Almost Heaven cedar sauna backrest",
+    "mode": "amazon_exact",
+    "label": "Check Current Amazon Listing",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "available"
+  },
+  "B0FB6SGKJL": {
+    "productName": "Almost Heaven olivine diabase sauna rocks",
+    "mode": "amazon_search",
+    "query": "olivine diabase sauna stones 40 lb",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "unavailable"
   },
   "B0DPG3R7PR": {
     "productName": "AURGOD outdoor barrel sauna with wood stove",
