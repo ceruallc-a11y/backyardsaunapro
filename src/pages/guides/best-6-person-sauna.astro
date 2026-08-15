@@ -1,133 +1,149 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
+
+const reviewedAt = 'August 15, 2026';
+
+const picks = [
+  {
+    label: 'Indoor traditional path',
+    name: 'Almost Heaven Bridgeport 6-Person Indoor Sauna',
+    reviewedPrice: '$5,993',
+    href: 'https://selectsaunas.com/products/almost-heaven-bridgeport-braxton-6-person-indoor-traditional-sauna',
+    fit: 'A buyer with an indoor room, a suitable finished floor, and a path for an 850-pound shipment plus the specified hardwired heater service.',
+    facts: ['Up to six people (published)', '86 x 63 x 78-inch exterior', '81 x 58 x 77-inch interior', '81 x 22-inch upper bench', '8kW heater; 240V / 40A hardwired service'],
+    questions: ['Will six intended users fit the published bench layout?', 'Can the floor, room, doorway, and delivery route handle the package?', 'Which lumber, heater, lead time, assembly scope, and warranty terms are in the final order?'],
+  },
+  {
+    label: 'Outdoor barrel path',
+    name: 'SaunaLife E8 6-Person Barrel Sauna',
+    reviewedPrice: '$6,940',
+    href: 'https://selectsaunas.com/products/saunalife-model-e8-sauna-barrel-6-person-ergo-series-sauna-barrel-87x-81-ready-to-ship',
+    fit: 'An outdoor buyer who wants a current six-person barrel listing and is ready to define the heater, base, power or chimney, freight, and assembly as a complete project.',
+    facts: ['Up to six bathers (published)', '87-inch length and 81-inch diameter', '78.5-inch interior length and 77-inch interior diameter', 'Thermo-Spruce shell and Thermo-Aspen seating', 'Shingle roof kit and dual floor drains listed'],
+    questions: ['Which heater, controls, stones, and guard are included in the selected package?', 'What unloading equipment and assembly help are required?', 'What base, roof details, drainage, clearances, power, and permits apply to the site?'],
+  },
+  {
+    label: 'Outdoor cabin path',
+    name: 'Almost Heaven Timberline 6-Person Outdoor Cabin Sauna',
+    reviewedPrice: '$10,199',
+    href: 'https://selectsaunas.com/products/almost-heaven-timberline-6-person-outdoor-cabin-sauna',
+    fit: 'A buyer who values a cabin layout, multi-level benches, and a covered porch enough to accept a larger site, shipment, and project scope.',
+    facts: ['Four to six people (published)', '75 x 70 x 88-inch interior', '75 x 36-inch upper bench and 75 x 18-inch lower bench', 'Standard KIP80B listing: 8kW, 240V / 40A hardwired', 'Roofing shingles are not included'],
+    questions: ['Does the four-to-six-person bench layout work for the intended group?', 'Who supplies roofing, base work, unloading, assembly, and electrical service?', 'Is the electric or wood-burning configuration documented in the final quote?'],
+  },
+  {
+    label: 'Made-to-order cedar path',
+    name: 'Dundalk Leisurecraft Tranquility MP 2-6 Person Barrel Sauna',
+    reviewedPrice: '$8,220',
+    href: 'https://selectsaunas.com/products/dundalk-leisurecraft-tranquility-mp-barrel-sauna',
+    fit: 'A buyer who wants an Eastern White Cedar barrel with panoramic windows and is comfortable confirming a made-to-order package with the dealer.',
+    facts: ['Two to six people (published)', 'Eastern White Cedar construction', 'Panoramic bronze-tempered-glass windows and door', 'Front porch and removable cedar floor listed', 'Heater and rocks are not included in the base kit'],
+    questions: ['Which exact heater, controls, rocks, roof, and accessories should be quoted?', 'What dimensions and bench lengths apply to the selected configuration?', 'Which warranty, freight, installation, and service terms will be written into the order?'],
+  },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "How big is a 6-person sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A genuine 6-person sauna needs roughly 72-90 square feet of floor area (12-15 sq ft per person), or a barrel sauna at least 7-8 feet long with a 6-7 foot diameter. For cabin builds, plan on 8x9 or 8x10 feet of interior space so six adults have real bench room without crowding."
-      }
+      '@type': 'Question',
+      name: 'How big is a 6-person sauna?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'There is no single six-person footprint. Current examples range from the Bridgeport indoor room at 86 by 63 inches outside to the Timberline outdoor cabin at 128 by 112 inches with its porch. Compare interior and bench dimensions, not capacity alone.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "What heater size do I need for a 6-person sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A 6-person sauna typically runs 400-600 cubic feet of interior volume, which calls for a 9-12kW electric heater. The Harvia KIP 90B (9kW) is the entry point; step up to the KIP 105B (10.5kW) or a 12kW unit for outdoor installs in cold climates. Wood-burning stoves should be sized for 500+ cubic feet, such as the Harvia M3 or Legend 150."
-      }
+      '@type': 'Question',
+      name: 'What heater does a 6-person sauna need?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Use the exact room and heater manuals. The current Bridgeport and Timberline listings specify an 8kW heater with 240V and 40A hardwired service. Other six-person models and glass-heavy or cold-climate configurations may differ.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Is a 6-person sauna worth it over a 4-person?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, if you have four or more regular users. The cost difference between a 4-person and 6-person barrel is usually $800-$1,500, and the heater step-up adds maybe $200. The experience difference is much larger: real bench length, room to lie down, and the ability to host friends without anyone feeling squeezed. Buy the size you will grow into, not the minimum that fits today."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Will six adults be comfortable in a 6-person sauna?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A six-person label is a published maximum, not a comfort guarantee. Compare usable bench length, bench depth, seating levels, door clearance, and the intended users before ordering.',
+      },
+    },
+  ],
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Best 6-Person Sauna (2025): Top Picks for Families and Large Groups"
-  description="The best 6-person saunas for families, group retreats, and larger backyards in 2025. Outdoor barrel, cabin, and infrared picks plus sizing and heater requirements."
+  title="Best 6-Person Saunas (2026): Current Model Shortlist"
+  description="Compare current 6-person indoor rooms, outdoor barrels, and outdoor cabins using exact listings, published dimensions, electrical requirements, and project-scope questions."
   canonical="/guides/best-6-person-sauna"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best 6-Person Sauna (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Capacity Buying Guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best 6-Person Saunas</h1>
+      <p class="text-stone-500 text-sm">Listings reviewed {reviewedAt} · 10 min read</p>
+      <p class="text-lg text-stone-700 mt-4">At six-person scale, the product is only one part of the purchase. Bench geometry, heater configuration, freight, unloading, base work, power or chimney scope, and assembly can decide whether the project works.</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Large outdoor cabin sauna sized for 6 people" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <AdvertiserDisclosure />
+
+    <div class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Representative large outdoor cabin sauna" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
-    </div>
+    <aside class="border-y border-stone-200 py-6 mb-8">
+      <h2 class="text-2xl font-bold text-stone-900 mb-2">Six people is a bench question</h2>
+      <p class="text-stone-700 mb-3">Capacity labels usually describe maximum seated occupancy. They do not promise elbow room, lie-down space, equal access to the upper bench, or a comfortable door path.</p>
+      <p class="text-sm text-stone-600">Prices below are retailer snapshots from {reviewedAt}. Confirm stock, configuration, freight, tax, lead time, and final price before ordering.</p>
+    </aside>
 
-    <p class="text-lg text-stone-700 mb-4">A 6-person sauna is the sweet spot for families, group retreats, and anyone with a backyard big enough to host. At this size you are buying real social space, not a personal wellness pod. Outdoor barrels and cabin kits dominate the category because indoor electrical and floor-loading constraints get unforgiving fast. Here is what to buy, and the sizing trap most buyers fall into.</p>
+    <PlannerCTA source="best_6_person_sauna_above_fold" heading="Scope the six-person project before requesting quotes" />
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-900 mb-2">Quick Picks</h2>
-      <ul class="space-y-2 text-stone-700 text-sm">
-        <li><span class="font-semibold">Best overall outdoor barrel:</span> Almost Heaven Pinnacle 7-Person (~$4,000-$5,500)</li>
-        <li><span class="font-semibold">Best value:</span> Almost Heaven Allegheny 6-Person Barrel (~$3,200-$4,000)</li>
-        <li><span class="font-semibold">Best premium build:</span> Dundalk LeisureCraft 7-Person Barrel</li>
-        <li><span class="font-semibold">Best cabin / traditional:</span> 8x8 or 8x10 cabin kit (or DIY build)</li>
-        <li><span class="font-semibold">Best infrared:</span> Sun Home Equinox or comparable large cabin</li>
-        <li><span class="font-semibold">Recommended heater pairing:</span> Harvia KIP 90B (9kW) or KIP 105B (10.5kW)</li>
-      </ul>
-    </div>
+    <section class="mt-12" aria-labelledby="six-person-shortlist">
+      <h2 id="six-person-shortlist" class="text-3xl font-bold text-stone-900 mb-3">Four current model paths</h2>
+      <p class="text-stone-600 max-w-3xl mb-8">These are not arbitrary rankings. Each model represents a different location, construction, and delivery decision.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The 6-Person Capacity Reality Check</h2>
-    <p class="text-stone-700 mb-6">Manufacturer "6-person" labels assume six adults seated upright, shoulder-to-shoulder, no one lying down. That is not how families actually use a sauna. If you want six adults to fit with elbow room and one or two people stretched out, shop the 7-person or 8-person tier. The footprint penalty is a foot or two, the heater step-up is modest, and the experience is dramatically better. This is the single most useful tip on this page.</p>
+      <div class="space-y-10">
+        {picks.map((pick) => (
+          <section class="border-t border-stone-300 pt-7" aria-label={pick.name}>
+            <div class="md:flex md:items-start md:justify-between gap-6 mb-4">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">{pick.label}</p>
+                <h3 class="text-2xl font-bold text-stone-900">{pick.name}</h3>
+              </div>
+              <p class="text-sm text-stone-600 mt-2 md:mt-1 shrink-0">Listed at review: <strong class="text-stone-900">{pick.reviewedPrice}</strong></p>
+            </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Picks for a 6-Person Sauna</h2>
+            <p class="text-stone-700 mb-5"><strong>Who it may fit:</strong> {pick.fit}</p>
 
-    <div class="space-y-5 mb-10">
+            <div class="grid md:grid-cols-2 gap-6 mb-5">
+              <div>
+                <h4 class="font-semibold text-stone-900 mb-2">Documented listing details</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {pick.facts.map((fact) => <li class="flex gap-2"><span aria-hidden="true">+</span><span>{fact}</span></li>)}
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-stone-900 mb-2">Resolve before buying</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {pick.questions.map((item) => <li class="flex gap-2"><span aria-hidden="true">-</span><span>{item}</span></li>)}
+                </ul>
+              </div>
+            </div>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Pinnacle 7-Person Barrel</h3>
-          </div>
-        </div>
-        <p class="text-stone-600 mb-4">The step-up that turns a "fits six tightly" sauna into a "fits six comfortably" sauna. Western red cedar, well-documented assembly, longer benches than the 6-person model, and enough length that one person can lie down while five others sit. Heater sold separately; pair with the Harvia KIP 90B (9kW) for most installs or the 105B (10.5kW) for cold-climate outdoor use. Pros: proven build, generous interior, fair price for the size. Cons: barrel shape still limits headroom at the curve; needs a flat pad and a real assembly weekend. Read our <a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven full review</a>.</p>
-        <AmazonButton asin="B003Z11AXM" variant="primary" />
+            <SelectSaunasButton href={pick.href} label="Check current listing" ctaPosition="best_6_person_shortlist" />
+          </section>
+        ))}
       </div>
+    </section>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Value</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Allegheny 6-Person Barrel</h3>
-          </div>
-        </div>
-        <p class="text-stone-600 mb-4">The budget pick that actually holds up. Same cedar, same Almost Heaven assembly system, slightly shorter overall length than the Pinnacle 7. If your group is genuinely four-to-six and you do not need lie-down capacity, this is the smart spend. Pros: lowest-cost real 6-person option, easy to source, simple assembly. Cons: tight at full capacity; no real headroom for a top bench layout.</p>
-        <AmazonButton asin="B003Z11AXM" variant="primary" label="View Almost Heaven Barrels on Amazon" />
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Premium</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Dundalk LeisureCraft 7-Person Barrel</h3>
-          </div>
-        </div>
-        <p class="text-stone-600 mb-4">Canadian-made, thicker staves, heavier hardware, tighter door seal. The right buy if you plan to put this in the backyard and forget about it for a decade. Six adults fit with the kind of structural confidence that a thinner-walled barrel just cannot offer. Pros: top-tier longevity, premium fit and finish, dealer-handled delivery. Cons: noticeably more expensive than Almost Heaven; not always available on Amazon. Read our <a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk full review</a>.</p>
-        <p class="text-stone-400 text-xs italic">Available through Dundalk dealers</p>
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Cabin / Traditional</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">8x8 or 8x10 Cabin Kit (or DIY Build)</h3>
-          </div>
-        </div>
-        <p class="text-stone-600 mb-4">A square cabin gives six adults full standing headroom and a proper two-tier bench layout, which a barrel cannot match. Prefab kits in the 8x8 to 8x10 footprint are widely available, and if you have carpentry chops the DIY route saves real money. See our <a href="/guides/how-to-build-a-sauna/" class="text-amber-700 hover:underline">how to build a sauna guide</a> for the full walkthrough. Pros: real headroom, classic Finnish layout, indoor or outdoor friendly. Cons: longer build, larger footprint, higher total cost than a barrel of equivalent capacity.</p>
-        <p class="text-stone-400 text-xs italic">Kits available from multiple manufacturers; DIY plans in our build guide</p>
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Wood-Fired</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Harvia M3 or Legend 150 (paired with a 6-7 person barrel or cabin)</h3>
-          </div>
-        </div>
-        <p class="text-stone-600 mb-4">For the off-grid crowd or anyone who refuses to deal with a 240V/50A circuit. The Harvia M3 covers smaller 6-person rooms; step up to the Legend 150 for larger cabins in the 500-700 cubic foot range. Authentic wood-fired heat, steady stones, and proper loyly. Pros: no electrical install, classic experience, dependable Finnish build. Cons: chimney install, fire safety planning, someone has to tend the fire; check local code first.</p>
-        <AmazonButton asin="B07ZQK5R7Y" variant="primary" label="View Harvia M3 on Amazon" />
-      </div>
-
+    <div class="border-t border-stone-300 pt-7 mt-10">
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
         <div class="flex items-start justify-between mb-2">
           <div>
@@ -138,61 +154,53 @@ import AmazonButton from '../../components/AmazonButton.astro';
         <p class="text-stone-600 mb-4">Honest caveat: infrared scales poorly past four people. To genuinely heat six bodies, you need a wall of emitters on every panel, which pushes the price into traditional-sauna territory without delivering traditional-sauna heat. That said, if a 240V circuit is impossible (apartment, basement, rental), large infrared cabins like the Sun Home Equinox are the practical workaround. Pros: easier electrical, faster warmup, indoor-friendly. Cons: no real loyly, lower top temperature (120-140°F vs 170-195°F traditional), expensive at this capacity, and the heater count starts to feel excessive.</p>
         <p class="text-stone-400 text-xs italic">Available direct from Sun Home Saunas</p>
       </div>
-
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Buying Guide: What 6-Person Sauna Buyers Get Wrong</h2>
-
-    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">1. Heater capacity, not just kilowatts</h3>
-    <p class="text-stone-700 mb-4">A 6-person sauna interior typically runs 400-600 cubic feet. That puts you in 9-12kW electric territory: 9kW for well-insulated indoor rooms, 10.5kW for most outdoor installs, and 12kW for cold climates or tall ceilings. Undersizing is the most common mistake in this size class; an 8kW heater in a 500 cu ft room means 75-minute warmups and a sauna that never holds 180°F when full.</p>
-
-    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">2. Floor space per person</h3>
-    <p class="text-stone-700 mb-4">Plan for 12-15 square feet per person of total floor area. Six people means 72-90 sq ft, the difference between everyone fitting and everyone actually relaxing. Bench length matters more than floor area: aim for at least 7 feet of bench length per side, with a second tier if the room geometry allows.</p>
-
-    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">3. Ventilation</h3>
-    <p class="text-stone-700 mb-4">At six occupants, CO2 and humidity build up fast. You need a fresh-air inlet near the heater and a high exhaust vent on the opposite wall, both adjustable. Most quality barrel and cabin kits include functional vents; cheap import kits often do not. Verify before you buy.</p>
-
-    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">4. Structural floor support</h3>
-    <p class="text-stone-700 mb-4">Six adults plus benches plus a heater plus the sauna shell can run 2,000-2,800 lbs total live load. Outdoor barrels on a gravel pad or concrete slab are fine. Indoor, basement, or rooftop installs need a structural review; a typical residential floor is rated for 40 lbs per sq ft live load, and a packed 6-person sauna will push past that on a small footprint.</p>
-
-    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">5. Electrical reality</h3>
-    <p class="text-stone-700 mb-6">A 9-12kW heater needs a dedicated 240V circuit, typically 50A for a 10.5kW unit and 60A for a 12kW. That is not a casual DIY job; budget $800-$2,000 for an electrician unless your panel is right next to the sauna. If your panel is already maxed out, factor in a possible service upgrade before you click "buy" on the heater.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Heater Pairing for a 6-Person Sauna</h2>
-    <p class="text-stone-700 mb-6">The standard pairing is the <a href="/brands/harvia-sauna-heater-review/" class="text-amber-700 hover:underline">Harvia KIP 90B (9kW)</a> for most 6-person barrels, stepping up to the KIP 105B (10.5kW) for outdoor cold-climate installs or cabin builds above 500 cu ft. Confirm against your specific room volume using our <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">heater sizing guide</a>.</p>
-
-    <AmazonButton asin="B0B7TRM95Y" variant="outline" label="View Harvia KIP Series on Amazon" class="mb-10" />
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How big is a 6-person sauna?</h3>
-        <p class="text-stone-700">Roughly 72-90 sq ft of floor area, or a barrel 7-8 feet long with a 6-7 foot diameter. Cabin builds typically run 8x9 or 8x10. Plan for 12-15 sq ft per person if you want comfort instead of just capacity.</p>
+    <section class="mt-14 border-t border-stone-300 pt-8">
+      <h2 class="text-2xl font-bold text-stone-900 mb-4">The project checks that matter most</h2>
+      <div class="grid md:grid-cols-2 gap-6 text-sm text-stone-700">
+        <div>
+          <h3 class="font-bold text-stone-900 mb-2">Bench and entry</h3>
+          <p>Compare usable bench lengths, depths, levels, heater clearances, door width, and the actual body sizes and seating positions you expect.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-stone-900 mb-2">Heater and ventilation</h3>
+          <p>Use the selected room and heater manuals. Glass area, room volume, construction, clearances, ventilation, and climate can change the requirement.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-stone-900 mb-2">Freight and site access</h3>
+          <p>Get the package dimensions, shipment weight, unloading method, carry path, damage process, and assembly scope in writing.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-stone-900 mb-2">Base, power, and approvals</h3>
+          <p>Confirm the final base plan, drainage, roofing, electrical or chimney work, property clearances, and local permit or inspection requirements.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What heater size do I need for a 6-person sauna?</h3>
-        <p class="text-stone-700">9-12kW electric. The Harvia KIP 90B is the entry point; step up to the 105B or a 12kW unit for outdoor cold-climate installs or larger cabin volumes. Wood-burning users want the Harvia M3 for smaller rooms or the Legend 150 for larger cabins.</p>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold text-stone-900 mb-5">Frequently asked questions</h2>
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">How big is a 6-person sauna?</h3><p class="text-stone-700 text-sm">There is no universal size. The Bridgeport indoor room is listed at 86 by 63 inches outside. The Timberline cabin reaches 128 by 112 inches with its porch. Compare the exact model and bench layout.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">What heater does a 6-person sauna need?</h3><p class="text-stone-700 text-sm">The manual decides. The current Bridgeport and Timberline listings specify an 8kW heater with 240V / 40A hardwired service. Do not transfer that requirement to another model without checking its room and heater documents.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">Will six adults be comfortable?</h3><p class="text-stone-700 text-sm">A published six-person maximum does not guarantee comfort. Compare bench length, depth, levels, door clearance, and the intended users before buying.</p></div>
       </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is a 6-person sauna worth it over a 4-person?</h3>
-        <p class="text-stone-700">Yes, if you have four or more regular users. The cost step-up is modest ($800-$1,500 plus a slightly larger heater), and the experience difference is enormous: real bench length, lie-down room, and host capacity without anyone feeling squeezed.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Should I buy a 6-person or 7-person sauna?</h3>
-        <p class="text-stone-700">Buy the 7-person if your real-world peak group is six. Manufacturer capacity ratings assume tight seating; the next tier up gives six adults real elbow room with minimal extra footprint or heating cost.</p>
-      </div>
+    </section>
+
+    <div class="bg-stone-900 text-white rounded-lg p-6 md:p-8 mt-12">
+      <h2 class="text-2xl font-bold mb-2">Estimate the installed project</h2>
+      <p class="text-stone-300 mb-5">Separate the sauna price from freight, unloading, foundation, electrical or chimney work, assembly, roofing, permits, and accessories.</p>
+      <a href="/tools/sauna-cost-calculator/" class="inline-flex min-h-12 items-center justify-center bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-md transition-colors">Open the project calculator</a>
     </div>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+    <div class="bg-stone-50 border border-stone-200 rounded-lg p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Related guides</h2>
       <ul class="space-y-2 text-sm">
         <li><a href="/guides/best-5-person-sauna/" class="text-amber-700 hover:underline">Best 5-Person Sauna</a></li>
         <li><a href="/guides/best-4-person-sauna/" class="text-amber-700 hover:underline">Best 4-Person Sauna</a></li>
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-        <li><a href="/guides/how-to-build-a-sauna/" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
         <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Sauna Foundation Guide</a></li>
       </ul>
     </div>
-
   </article>
 </Base>
