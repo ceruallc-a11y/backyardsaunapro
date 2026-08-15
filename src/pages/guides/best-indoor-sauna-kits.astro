@@ -3,6 +3,10 @@ import Base from '../../layouts/Base.astro';
 import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
 import SunHomeButton from '../../components/SunHomeButton.astro';
 import LeadMagnetSignup from '../../components/LeadMagnetSignup.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
+
+const bridgeportUrl = 'https://selectsaunas.com/products/almost-heaven-bridgeport-braxton-6-person-indoor-traditional-sauna';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -21,7 +25,7 @@ const faqSchema = {
       "name": "How much does an indoor sauna kit cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Plug-in infrared indoor saunas start around $800 to $1,500. Pre-cut traditional indoor sauna kits (wood panels, door, benches) range from $2,000 to $5,000 before the heater. A full installed indoor sauna with framing, vapor barrier, heater, and finish work typically runs $4,000 to $10,000 depending on size and materials."
+        "text": "There is no reliable universal range. Compare the current cabin price with freight, unloading, electrical work, floor preparation, assembly, permits, ventilation, accessories, and tax. A written delivered-and-installed scope is more useful than an old list price."
       }
     },
     {
@@ -29,7 +33,7 @@ const faqSchema = {
       "name": "Do indoor saunas need special electrical?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Infrared plug-in saunas run on standard 120V outlets and need no electrical work. Traditional electric heater saunas typically require a dedicated 240V circuit, similar to an electric dryer. You'll need an electrician for that installation unless you already have a 240V outlet available."
+        "text": "Some compact infrared cabins use a dedicated 120V circuit, while traditional electric-heater rooms commonly use hardwired 240V service. The exact product nameplate, manual, circuit load, local code, and existing panel determine what is required. Have a qualified electrician review the exact model before purchase."
       }
     }
   ]
@@ -37,8 +41,8 @@ const faqSchema = {
 import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="7 Best Indoor Sauna Kits (2026): Infrared & Traditional Picks"
-  description="Compare the best indoor sauna kits for 2026, from plug-in infrared cabins to traditional steam kits. See prices, electrical needs, and our top picks."
+  title="Best Indoor Sauna Kits: 5 Current Formats Compared"
+  description="Compare five current indoor sauna formats, from compact infrared cabins and portable steam tents to a full traditional room, with electrical, space, delivery, and buyer-fit checks."
   canonical="/guides/best-indoor-sauna-kits"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -46,12 +50,16 @@ import AmazonButton from '../../components/AmazonButton.astro';
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
       <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">7 Best Indoor Sauna Kits (2026)</h1>
-      <p class="text-stone-500 text-sm">Updated July 2026 &middot; 9 min read</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best indoor sauna kits: five formats to compare</h1>
+      <p class="text-stone-500 text-sm">Reviewed August 15, 2026 &middot; 10 min read</p>
       <p class="text-lg text-stone-600 mt-4">Indoor saunas split into two very different categories: plug-in infrared units that go anywhere, and traditional steam saunas that need dedicated space and electrical work. Knowing which one you actually want before you buy saves a lot of frustration.</p>
     </header>
 
     <AdvertiserDisclosure />
+
+    <div class="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Research scope:</strong> This is a desk-researched buying guide, not a hands-on test. We checked current manufacturer specifications and live retailer pages for the non-sponsored products below. Availability, included equipment, and electrical requirements can change by configuration.
+    </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
       <p class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-2">Fast decision</p>
@@ -64,8 +72,8 @@ import AmazonButton from '../../components/AmazonButton.astro';
     </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-2">Infrared vs Traditional: Pick First</h2>
-      <p class="text-sm text-stone-700">Infrared saunas run cooler (120-140°F), plug into any outlet, and are ready in 15 minutes. Traditional saunas run hotter (160-195°F), need 240V electrical, and let you add steam with water on the rocks. They're genuinely different experiences. Decide which you want before comparing models.</p>
+      <h2 class="font-bold text-stone-800 mb-2">Choose the heat format first</h2>
+      <p class="text-sm text-stone-700">An infrared cabin heats the user with emitters and is often sold as a compact finished appliance. A traditional room heats air and stones, and the applicable manual may allow water on the stones. Portable steam tents are a third category. Compare the exact temperature range, circuit, ventilation, moisture, clearances, and controls in each model's current documentation rather than applying one setup rule to the whole category.</p>
     </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
@@ -116,94 +124,102 @@ import AmazonButton from '../../components/AmazonButton.astro';
 
       <div class="border border-stone-200 rounded-xl overflow-hidden bg-white">
         <div class="bg-amber-50 px-5 pt-4 pb-2">
-          <span class="text-xs font-semibold text-amber-700 uppercase tracking-wide">Best Value Infrared</span>
+          <span class="text-xs font-semibold text-amber-700 uppercase tracking-wide">Compact infrared option</span>
           <h3 class="text-xl font-bold text-stone-900 mt-1">Dynamic Saunas Barcelona 1-2 Person</h3>
-          <p class="text-stone-500 text-sm">Plug-in 120V &middot; Canadian Hemlock</p>
+          <p class="text-stone-500 text-sm">120V / 15A listed service &middot; Natural hemlock</p>
         </div>
         <div class="p-5">
-          <p class="text-stone-700 mb-4">The most reviewed plug-in infrared sauna in this price range. Six low-EMF carbon heating panels, Bluetooth audio, chromotherapy lighting, and a Canadian hemlock interior. Heats to 140°F in about 15 minutes. Fits in most spare bedrooms, basements, or large closets. Assembles in about an hour with basic tools, no electrician needed.</p>
+          <p class="text-stone-700 mb-4">The Barcelona is a finished hemlock infrared cabin with six carbon heating panels, Bluetooth audio, interior controls, a roof vent, tempered glass, and colored cabin lighting. The manufacturer lists a 120V / 15A electrical requirement and exterior dimensions of 39 by 36 by 73 inches.</p>
+          <p class="text-stone-700 mb-4">Dynamic markets the panels as low EMF but does not publish a complete measurement method or numerical test table on the product page we reviewed. Treat that phrase as a manufacturer claim until the seller supplies documentation that answers your measurement questions.</p>
           <div class="grid grid-cols-2 gap-3 text-sm mb-4">
             <div>
-              <p class="font-semibold text-stone-800 mb-1">Pros</p>
+              <p class="font-semibold text-stone-800 mb-1">Useful fit</p>
               <ul class="text-stone-600 space-y-1">
-                <li>Standard 120V outlet</li>
-                <li>No installation costs</li>
-                <li>Ready in 15 minutes</li>
-                <li>Moves if you relocate</li>
+                <li>Compact published footprint</li>
+                <li>Finished infrared cabin</li>
+                <li>Built-in audio and controls</li>
+                <li>Exact Amazon listing currently available</li>
               </ul>
             </div>
             <div>
-              <p class="font-semibold text-stone-800 mb-1">Cons</p>
+              <p class="font-semibold text-stone-800 mb-1">Verify first</p>
               <ul class="text-stone-600 space-y-1">
-                <li>Max 140°F (not traditional temps)</li>
-                <li>No steam option</li>
-                <li>Snug for two people</li>
+                <li>Dedicated-circuit availability</li>
+                <li>Interior fit for two users</li>
+                <li>EMF test method and distance</li>
+                <li>Freight path and assembly help</li>
               </ul>
             </div>
           </div>
-          <AmazonButton asin="B00A2F99F0" variant="primary" />
+          <div class="flex flex-wrap gap-3">
+            <AmazonButton asin="B00A2F99F0" variant="primary" label="Check current Barcelona listing" />
+            <a href="/reviews/dynamic-saunas-barcelona-review/" class="inline-block border border-stone-300 text-stone-800 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-stone-50">Read the buyer checklist</a>
+          </div>
         </div>
       </div>
 
       <div class="border border-stone-200 rounded-xl overflow-hidden bg-white">
         <div class="bg-stone-50 px-5 pt-4 pb-2">
-          <span class="text-xs font-semibold text-stone-600 uppercase tracking-wide">Best Traditional Indoor</span>
-          <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven 6-Person Indoor Kit</h3>
-          <p class="text-stone-500 text-sm">Requires 240V &middot; Canadian Red Cedar</p>
+          <span class="text-xs font-semibold text-stone-600 uppercase tracking-wide">Large traditional room option</span>
+          <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Bridgeport 6-Person Indoor Sauna</h3>
+          <p class="text-stone-500 text-sm">8 kW heater &middot; 240V / 40A listed service</p>
         </div>
         <div class="p-5">
-          <p class="text-stone-700 mb-4">Almost Heaven's indoor kits are pre-cut cedar panels that assemble into a freestanding sauna room you can place in a basement or large room. The 6-person is the most popular size for home use, giving you real space to lie down, stretch out, or use with a couple of guests. Pair it with a Harvia KIP heater for a complete traditional setup.</p>
+          <p class="text-stone-700 mb-4">The Bridgeport is a freestanding indoor traditional sauna with preassembled wall and roof sections, three benches, multi-level seating, tempered glass, and an 8 kW Harvia heater configuration. The current listing shows exterior dimensions of 86 by 63 by 78 inches and an assembled weight of 845 pounds.</p>
+          <p class="text-stone-700 mb-4">That makes the surrounding project part of the purchase: verify the floor, ceiling clearance, room access, freight unloading, assembly area, lighting service, dedicated heater circuit, and whether the listed configuration includes the lumber and heater options you expect.</p>
           <div class="grid grid-cols-2 gap-3 text-sm mb-4">
             <div>
-              <p class="font-semibold text-stone-800 mb-1">Pros</p>
+              <p class="font-semibold text-stone-800 mb-1">Useful fit</p>
               <ul class="text-stone-600 space-y-1">
-                <li>Full traditional experience</li>
-                <li>Add steam with water on rocks</li>
-                <li>Real cedar smell and feel</li>
-                <li>Proven brand, good support</li>
+                <li>Multi-level bench layout</li>
+                <li>Published 81-inch upper bench</li>
+                <li>Preassembled room sections</li>
+                <li>Current authorized-retailer listing</li>
               </ul>
             </div>
             <div>
-              <p class="font-semibold text-stone-800 mb-1">Cons</p>
+              <p class="font-semibold text-stone-800 mb-1">Verify first</p>
               <ul class="text-stone-600 space-y-1">
-                <li>Needs 240V dedicated circuit</li>
-                <li>Heater sold separately</li>
-                <li>Full day assembly</li>
+                <li>Electrical and panel capacity</li>
+                <li>850-pound curbside shipment</li>
+                <li>Doorway and stair access</li>
+                <li>Exact lumber and heater options</li>
               </ul>
             </div>
           </div>
-          <AmazonButton asin="B003Z11AXM" variant="primary" />
+          <SelectSaunasButton href={bridgeportUrl} label="View current Bridgeport configuration" ctaPosition="traditional_pick" />
         </div>
       </div>
 
       <div class="border border-stone-200 rounded-xl overflow-hidden bg-white">
         <div class="bg-stone-50 px-5 pt-4 pb-2">
-          <span class="text-xs font-semibold text-stone-600 uppercase tracking-wide">Best Budget Infrared</span>
+          <span class="text-xs font-semibold text-stone-600 uppercase tracking-wide">Portable steam format</span>
           <h3 class="text-xl font-bold text-stone-900 mt-1">SereneLife Portable Sauna Tent</h3>
-          <p class="text-stone-500 text-sm">Plug-in 120V &middot; Steam-Based</p>
+          <p class="text-stone-500 text-sm">Portable enclosure &middot; External steam generator</p>
         </div>
         <div class="p-5">
-          <p class="text-stone-700 mb-4">A full-body sauna tent you sit inside with your head out. Not infrared, it uses steam from a small generator. The head-out design is more comfortable for people who find enclosed saunas claustrophobic, and the price makes it an easy first step before committing to a permanent unit. Most reviewed portable sauna in the category.</p>
+          <p class="text-stone-700 mb-4">This is a collapsible steam enclosure, not an infrared cabin or a traditional hot room. The format is useful when storage and portability matter more than a finished room. Check the current listing for the exact generator, chair, controller, dimensions, cleaning instructions, and replacement-part availability.</p>
           <div class="grid grid-cols-2 gap-3 text-sm mb-4">
             <div>
-              <p class="font-semibold text-stone-800 mb-1">Pros</p>
+              <p class="font-semibold text-stone-800 mb-1">Useful fit</p>
               <ul class="text-stone-600 space-y-1">
-                <li>Under $150</li>
-                <li>Head stays out</li>
-                <li>Setup in minutes</li>
-                <li>Stores in a bag</li>
+                <li>Small stored footprint</li>
+                <li>Head-out enclosure</li>
+                <li>No permanent room build</li>
+                <li>Current Amazon listing available</li>
               </ul>
             </div>
             <div>
-              <p class="font-semibold text-stone-800 mb-1">Cons</p>
+              <p class="font-semibold text-stone-800 mb-1">Verify first</p>
               <ul class="text-stone-600 space-y-1">
-                <li>Steam not infrared</li>
-                <li>Flimsy long-term</li>
-                <li>Limited to one person</li>
+                <li>Drying and sanitation routine</li>
+                <li>Generator and hose condition</li>
+                <li>Surface protection from moisture</li>
+                <li>Heat and burn precautions</li>
               </ul>
             </div>
           </div>
-          <AmazonButton asin="B084GY5CHB" variant="primary" />
+          <AmazonButton asin="B084GY5CHB" variant="primary" label="Check current SereneLife listing" />
         </div>
       </div>
 
@@ -211,32 +227,50 @@ import AmazonButton from '../../components/AmazonButton.astro';
 
     <LeadMagnetSignup />
 
+    <PlannerCTA
+      title="Check whether the room and electrical plan fit"
+      body="Record the available dimensions, access path, floor, circuit, ventilation, budget, and preferred heat format before comparing checkout prices."
+      campaign="indoor_sauna_kits"
+      ctaPosition="after_picks"
+    />
+
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Know Before You Buy</h2>
 
     <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Space requirements</h3>
-    <p class="text-stone-700 mb-4">A 1-2 person infrared unit needs roughly 4x4 feet of floor space plus a few inches of clearance on all sides. A 4-person traditional kit needs about 5x6 feet minimum. Measure your space before buying, including ceiling height (most kits need 7 feet minimum).</p>
+    <p class="text-stone-700 mb-4">Use the exact exterior dimensions and required clearances from the current manual. Also measure the delivery path, doorways, stairs, ceiling obstructions, and service access. A cabin that fits the final room can still be impossible to move into place.</p>
 
     <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Electrical requirements</h3>
-    <p class="text-stone-700 mb-4">Infrared saunas in the 1-2 person range run on standard 120V, 15-20A circuits. Most homes have these available in any room. Traditional heater saunas need a dedicated 240V circuit, similar to an electric dryer or range. Budget $200-500 for an electrician to run one if you don't already have it.</p>
+    <p class="text-stone-700 mb-4">Do not treat "120V" as permission to use any convenient receptacle. Confirm the product load, dedicated-circuit language, plug type, extension-cord restrictions, and the other loads already on that circuit. A traditional electric heater commonly requires hardwired 240V service. A qualified electrician should review the exact manual, panel capacity, route, controls, and local requirements before purchase.</p>
 
     <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Ventilation</h3>
-    <p class="text-stone-700 mb-6">Plug-in infrared saunas don't require dedicated ventilation. Traditional indoor saunas need a fresh air intake (low, near or behind the heater) and an exhaust vent (low on the opposite wall). Without proper ventilation, moisture builds up and damages the wood and surrounding space over time.</p>
+    <p class="text-stone-700 mb-6">Follow the ventilation arrangement in the exact cabin or heater manual. Room layout, heater type, mechanical exhaust, door gap, and surrounding-room moisture conditions affect the plan. Portable steam units also need a drying and surface-protection routine after use.</p>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
       <div>
         <h3 class="font-bold text-stone-900 mb-1">What is the best indoor sauna kit?</h3>
-        <p class="text-stone-700">Dynamic Saunas Barcelona for plug-in infrared convenience. Almost Heaven 6-person indoor kit for a full traditional build. Both are well-reviewed with strong warranty support.</p>
+        <p class="text-stone-700">The useful shortlist starts with the heat format and the room. Compare a finished infrared cabin for compact installation, a traditional room for heated stones and multi-level seating, or a portable steam enclosure when storage matters most. Then verify the exact circuit, dimensions, delivery, controls, and included equipment.</p>
       </div>
       <div>
         <h3 class="font-bold text-stone-900 mb-1">How much does an indoor sauna kit cost?</h3>
-        <p class="text-stone-700">Plug-in infrared: $800 to $1,500. Traditional pre-cut kits: $2,000 to $5,000 before the heater. Full installed build: $4,000 to $10,000 depending on size and finish.</p>
+        <p class="text-stone-700">There is no durable universal range. Price the current cabin, freight, unloading, electrical work, floor preparation, assembly, permits, ventilation, accessories, and tax. Compare written total-project scopes rather than old product-only prices.</p>
       </div>
       <div>
         <h3 class="font-bold text-stone-900 mb-1">Do indoor saunas need special electrical?</h3>
-        <p class="text-stone-700">Infrared plug-in models run on standard 120V. Traditional heaters need a dedicated 240V circuit and an electrician if you don't have one available.</p>
+        <p class="text-stone-700">Some compact cabins list 120V service, while traditional electric-heater rooms commonly use hardwired 240V service. The exact product manual, load, circuit, panel, and local code decide what is required. Have a qualified electrician review the selected model.</p>
       </div>
     </div>
+
+    <section class="mt-12 border-t border-stone-200 pt-8">
+      <h2 class="text-2xl font-bold text-stone-900 mb-4">Independent product sources checked</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="https://dynamicsaunasdirect.com/products/barcelona-1-2-person-low-emf-far-infrared-sauna" target="_blank" rel="noopener" class="text-amber-700 hover:underline">Dynamic Saunas: Barcelona specifications</a></li>
+        <li><a href="https://almostheaven.com/products/bridgeport-6-person-indoor-sauna" target="_blank" rel="noopener" class="text-amber-700 hover:underline">Almost Heaven: Bridgeport configuration and specifications</a></li>
+        <li><a href={bridgeportUrl} target="_blank" rel="noopener" class="text-amber-700 hover:underline">Select Saunas: current authorized-retailer Bridgeport listing</a></li>
+        <li><a href="https://serenelifehome.com/collections/new-arrivals/products/slisau35bk" target="_blank" rel="noopener" class="text-amber-700 hover:underline">SereneLife: portable steam-sauna product information</a></li>
+      </ul>
+      <p class="text-xs text-stone-500 mt-4">We did not hands-on test these products. Recheck current manuals, seller stock, included equipment, and warranty terms before ordering.</p>
+    </section>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
       <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
