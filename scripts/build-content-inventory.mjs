@@ -136,7 +136,8 @@ const rows = files.map((file) => {
   const pageType = classify(file, source);
   const health = pageType === 'health information';
   const reviewed = source.includes('Reviewed August 2026');
-  const unsupportedClaim = /actually built one|we(?:'ve| have)? tested|personally tested|written by sauna owners/i.test(source);
+  const claimSource = source.replace(/\b(?:we\s+(?:have\s+not|haven't)|not|never)\s+(?:personally\s+)?tested\b/gi, '');
+  const unsupportedClaim = /actually built one|we(?:'ve| have)? tested|personally tested|written by sauna owners/i.test(claimSource);
   const monetization = [
     source.includes('AmazonButton') && 'Amazon',
     source.includes('SunHomeButton') && 'Sun Home',
