@@ -1,168 +1,163 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
+const reviewedAt = 'August 15, 2026';
+
+const buyerPaths = [
+  {
+    label: 'Compact electric barrel',
+    name: 'Almost Heaven Pinnacle 4-Person Barrel Sauna',
+    price: '$6,002',
+    href: 'https://selectsaunas.com/collections/traditional-saunas/products/almost-heaven-pinnacle-morgan-4-person-classic-barrel-sauna-6x6-ft',
+    fit: 'A buyer with a 6-by-6-foot room footprint who wants opposing benches and can provide the listed hardwired heater service.',
+    facts: ['72 x 72 x 77-inch exterior', 'Two 64 x 18-inch benches', '6kW heater; 240V / 30A hardwired service', 'Made-to-order listing'],
+  },
+  {
+    label: 'Outdoor cabin',
+    name: 'SaunaLife G2 4-Person Outdoor Cabin Sauna',
+    price: '$5,940',
+    href: 'https://selectsaunas.com/products/saunalife-g2-4-person-outdoor-traditional-sauna',
+    fit: 'A buyer who values upright cabin space and wants to select the heater after confirming the complete room and site plan.',
+    facts: ['92 x 72 x 92-inch exterior envelope', '59 x 66 x 85-inch interior', 'Nordic Spruce room and Aspen benches', 'Roofing felt and foundation beams listed'],
+  },
+  {
+    label: 'Full-glass cube',
+    name: 'SaunaLife CL5G 4-Person Outdoor Cube Sauna',
+    price: '$6,940',
+    href: 'https://selectsaunas.com/products/saunalife-model-cl5g-cube-series-outdoor-home-sauna-kit-up-to-4-persons',
+    fit: 'A buyer who prioritizes a full-glass front, contoured seating, and a complete shingle kit over the simpler geometry of a barrel.',
+    facts: ['Up to four people (published)', 'Thermo-Spruce shell and Thermo-Aspen seating', '76-inch back-wall bench', 'Bronze-tempered-glass front and shingle roof kit'],
+  },
+  {
+    label: 'Six-person barrel',
+    name: 'SaunaLife E8 6-Person Barrel Sauna',
+    price: '$6,940',
+    href: 'https://selectsaunas.com/products/saunalife-model-e8-sauna-barrel-6-person-ergo-series-sauna-barrel-87x-81-ready-to-ship',
+    fit: 'A buyer who expects three or four regular bathers and would rather buy more bench room than rely on a tight four-person label.',
+    facts: ['Up to six bathers (published)', '87-inch length and 81-inch diameter', 'Thermo-Spruce shell and Thermo-Aspen seating', 'Shingle roof kit and dual floor drains listed'],
+  },
+  {
+    label: 'Outdoor infrared',
+    name: 'SunRay Cayenne 4-Person Outdoor Infrared Sauna',
+    price: '$4,290',
+    href: 'https://selectsaunas.com/products/sunray-cayenne-hl400d',
+    fit: 'A buyer who specifically wants outdoor infrared heat and can supply the dedicated circuit specified by the listing.',
+    facts: ['79 x 52 x 83-inch exterior', '65 x 48 x 68-inch interior', 'Eight ceramic heaters; published maximum of 140 deg F', '120V AC / 30A plug listed'],
+  },
+];
+
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "Where can I buy an outdoor sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Outdoor saunas are available on Amazon (Almost Heaven, Dundalk, and barrel sauna brands ship nationwide), through brand-direct websites (Almost Heaven, Dundalk LeisureCraft, SaunaLife), and through specialty sauna retailers. Amazon typically has the best prices and fastest shipping for mainstream models. For premium Canadian-made saunas (Dundalk), ordering direct or through an authorized dealer is better."
-      }
+      '@type': 'Question',
+      name: 'Where can I buy an outdoor sauna?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Buy from a manufacturer or authorized specialty retailer that can document the exact room, heater, freight, warranty, replacement-parts, and service terms. Local dealers may add site and installation support. Compare the complete project, not only the room price.' },
     },
     {
-      "@type": "Question",
-      "name": "How much is an outdoor sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A basic 2-person barrel sauna kit starts around $1,500. A popular 4-person model (Almost Heaven Pinnacle) runs $2,199. Premium Canadian-made saunas (Dundalk) start at $3,500. Add $500-$650 for a heater and $800-$1,500 for electrical installation. Total all-in for a 4-person setup: $3,500-$5,000 for a well-equipped system."
-      }
+      '@type': 'Question',
+      name: 'How much does an outdoor sauna cost?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Current room listings span several thousand dollars before the full project is known. Add the selected heater, controls, freight, unloading, base, electrical or chimney work, roofing, assembly, permits, tax, and accessories to calculate the installed total.' },
     },
     {
-      "@type": "Question",
-      "name": "What is the best outdoor sauna to buy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For most buyers: the Almost Heaven Pinnacle 4-person barrel sauna (~$2,199) paired with a Harvia KIP 60B heater (~$579). It is the best balance of quality, price, and availability. For buyers who want premium build quality and do not mind paying more, Dundalk LeisureCraft is the step up."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'What is the best outdoor sauna to buy?',
+      acceptedAnswer: { '@type': 'Answer', text: 'There is no universal best model. Start with the intended users, available footprint, bench layout, heat preference, climate, power or chimney path, delivery access, and installed budget. Then compare exact current listings that fit those constraints.' },
+    },
+  ],
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Outdoor Sauna for Sale: Best Picks and Where to Buy in 2025"
-  description="The best outdoor saunas available in 2025, where to buy them, what they cost installed, and how to avoid the common buying mistakes."
+  title="Outdoor Saunas for Sale (2026): Current Buyer Paths"
+  description="Compare current outdoor barrel, cabin, cube, and infrared sauna listings, then scope heater, freight, base, power, assembly, and weather work before buying."
   canonical="/guides/outdoor-sauna-for-sale"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Outdoor Sauna for Sale: Best Picks in 2025</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Outdoor Sauna Buying Guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Outdoor Saunas for Sale</h1>
+      <p class="text-stone-500 text-sm">Listings reviewed {reviewedAt} · 10 min read</p>
+      <p class="text-lg text-stone-700 mt-4">The listed room price is not the project price. Choose a room that fits the people and site, then define the heater, freight, unloading, base, power or chimney, roofing, assembly, and local approvals.</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Outdoor barrel sauna for sale" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <AdvertiserDisclosure />
+
+    <div class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Representative outdoor barrel sauna in a field" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    <aside class="border-y border-stone-200 py-6 mb-8">
+      <h2 class="text-2xl font-bold text-stone-900 mb-2">Start with constraints, not a ranked list</h2>
+      <p class="text-stone-700 mb-3">A barrel, cabin, cube, and infrared room solve different problems. The best fit depends on seating, available space, climate, heat preference, electrical or chimney work, delivery access, and the installed budget.</p>
+      <p class="text-sm text-stone-600">Prices below are retailer snapshots from {reviewedAt}. Confirm stock, configuration, freight, tax, lead time, and final price before ordering.</p>
+    </aside>
+
+    <PlannerCTA source="outdoor_sauna_for_sale_above_fold" heading="Build a project brief before contacting dealers" />
+
+    <section class="mt-12" aria-labelledby="current-outdoor-paths">
+      <h2 id="current-outdoor-paths" class="text-3xl font-bold text-stone-900 mb-3">Five current buyer paths</h2>
+      <p class="text-stone-600 max-w-3xl mb-8">Each link goes to the exact model page reviewed. These paths are grouped by project fit rather than assigned an unsupported overall ranking.</p>
+
+      <div class="space-y-10">
+        {buyerPaths.map((item) => (
+          <section class="border-t border-stone-300 pt-7" aria-label={item.name}>
+            <div class="md:flex md:items-start md:justify-between gap-6 mb-4">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">{item.label}</p>
+                <h3 class="text-2xl font-bold text-stone-900">{item.name}</h3>
+              </div>
+              <p class="text-sm text-stone-600 mt-2 md:mt-1 shrink-0">Listed at review: <strong class="text-stone-900">{item.price}</strong></p>
+            </div>
+            <p class="text-stone-700 mb-4"><strong>Who it may fit:</strong> {item.fit}</p>
+            <ul class="grid md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-stone-700 mb-5">
+              {item.facts.map((fact) => <li class="flex gap-2"><span aria-hidden="true">+</span><span>{fact}</span></li>)}
+            </ul>
+            <SelectSaunasButton href={item.href} label="Check current listing" ctaPosition="outdoor_sauna_for_sale_shortlist" />
+          </section>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-14 border-t border-stone-300 pt-8">
+      <h2 class="text-2xl font-bold text-stone-900 mb-4">Put these items in the quote</h2>
+      <div class="grid md:grid-cols-2 gap-6 text-sm text-stone-700">
+        <div><h3 class="font-bold text-stone-900 mb-2">Room and heater</h3><p>Exact room model, lumber, bench layout, heater, controls, stones, guard, ventilation details, clearances, and warranty.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Freight and site access</h3><p>Package dimensions, shipment weight, delivery method, liftgate or equipment, carry path, storage, and damage process.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Base and weather</h3><p>Foundation, drainage, finished roofing, flashing, stain or seal requirements, snow and wind conditions, and setbacks.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Trades and approvals</h3><p>Electrical or chimney work, assembly labor, crane or equipment needs, permits, inspections, taxes, and the responsible contractor.</p></div>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold text-stone-900 mb-5">Frequently asked questions</h2>
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">Where should I buy an outdoor sauna?</h3><p class="text-stone-700 text-sm">Use a manufacturer or authorized retailer that can document the exact room, heater, freight, warranty, replacement-parts, and service terms. A local dealer may be worth more if it adds site and installation support.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">How much does an outdoor sauna cost?</h3><p class="text-stone-700 text-sm">The room is only the starting figure. Add the final heater package, freight, unloading, base, electrical or chimney work, roofing, assembly, permits, tax, and accessories.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">Which outdoor sauna is best?</h3><p class="text-stone-700 text-sm">The one whose bench, footprint, heat source, climate requirements, delivery path, and installed scope fit your property. A generic ranking cannot answer those questions.</p></div>
+      </div>
+    </section>
+
+    <div class="bg-stone-900 text-white rounded-lg p-6 md:p-8 mt-12">
+      <h2 class="text-2xl font-bold mb-2">Estimate the project before placing an order</h2>
+      <p class="text-stone-300 mb-5">Use separate line items for the room, heater, freight, site work, trades, assembly, approvals, and accessories.</p>
+      <a href="/tools/sauna-cost-calculator/" class="inline-flex min-h-12 items-center justify-center bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-md transition-colors">Open the project calculator</a>
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">If you're ready to buy, here is the short version: Almost Heaven Pinnacle for best value, Dundalk for premium quality, Dynamic Saunas Barcelona for plug-in indoor. Below is a full breakdown with prices, what is included, and what you'll still need to budget.</p>
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-900 mb-3">All-In Budget Estimates (2025)</h2>
-      <ul class="space-y-2 text-stone-700 text-sm">
-        <li><span class="font-semibold">Basic setup (Almost Heaven + Harvia + electrical):</span> $3,500-$4,200</li>
-        <li><span class="font-semibold">Premium setup (Dundalk + Harvia + electrical):</span> $5,500-$7,000</li>
-        <li><span class="font-semibold">Plug-in infrared (no electrician):</span> $899-$1,500</li>
-      </ul>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Outdoor Saunas Available Now</h2>
-
-    <div class="space-y-5 mb-10">
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Value</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Pinnacle 4-Person Barrel</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 mb-2 text-sm">Western red cedar. Pre-cut assembly kit. The most-sold residential barrel sauna in North America. Heater sold separately — pair with Harvia KIP 60B.</p>
-        <p class="text-stone-500 text-xs mb-3">Ships from Amazon. Prime eligible. Assembly: 1 full day, 2 people.</p>
-        <div class="flex flex-wrap gap-3">
-          <AmazonButton asin="B017WJV8SO" variant="primary" />
-          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
-        </div>
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Step Up</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven 6-Person Barrel</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 mb-3 text-sm">Larger interior — genuinely comfortable for 3-4 people. Same cedar quality as the Pinnacle, more bench space and headroom. Pairs with Harvia KIP 80B (8kW).</p>
-        <div class="flex flex-wrap gap-3">
-          <AmazonButton asin="B003Z11AXM" variant="primary" />
-          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
-        </div>
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Premium Quality</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Dundalk LeisureCraft Outdoor Barrel</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 mb-3 text-sm">Canadian-made white cedar with noticeably thicker staves and better hardware. Built to last 30+ years. Read our full <a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk review</a>.</p>
-        <SelectSaunasButton collection="outdoor-saunas" label="Shop Dundalk on Select Saunas" />
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Modern Design</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">AURGOD Barrel Sauna</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 mb-3 text-sm">A newer option with a cleaner aesthetic and solid reviews. Worth considering if the Almost Heaven look feels dated and you want something more modern at a lower price than Dundalk.</p>
-        <AmazonButton asin="B0DPG3R7PR" variant="outline" />
-      </div>
-
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Recommended Heater to Buy With It</h2>
-    <p class="text-stone-700 mb-4">Most barrel sauna kits ship without a heater. Budget $500-$650 for a Harvia KIP — the industry-standard pairing. Use our <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">heater sizing guide</a> to confirm the right kW for your specific model.</p>
-    <AmazonButton asin="B0B7TRM95Y" variant="primary" label="Harvia KIP 60B on Amazon" class="mb-8" />
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Buying Mistakes to Avoid</h2>
-    <ul class="space-y-3 text-stone-700 mb-8 ml-4 text-sm">
-      <li><span class="font-semibold">Forgetting the heater:</span> Most barrel kits are sold without one. Budget $500-$650 separately.</li>
-      <li><span class="font-semibold">Forgetting electrical:</span> A 240V dedicated circuit adds $800-$1,500. Get an electrician quote before you order the sauna.</li>
-      <li><span class="font-semibold">Buying too small:</span> The "2-person" rating on most kits means two people can technically fit, not comfortably use. Size up at least one tier.</li>
-      <li><span class="font-semibold">Skipping the foundation:</span> Setting a barrel sauna directly on dirt or grass leads to wood rot within a few years. Gravel pad minimum. See our <a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">gravel pad guide</a>.</li>
-    </ul>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Where can I buy an outdoor sauna?</h3>
-        <p class="text-stone-700">Amazon for Almost Heaven and mainstream brands (best prices, fast shipping). Brand-direct for Dundalk and premium options. Local sauna dealers exist in most metro areas.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How much is an outdoor sauna?</h3>
-        <p class="text-stone-700">All-in: $3,500-$5,000 for a well-equipped 4-person setup (kit + heater + electrical). Kit alone starts at $2,199 for Almost Heaven Pinnacle.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is the best outdoor sauna to buy?</h3>
-        <p class="text-stone-700">Almost Heaven Pinnacle + Harvia KIP 60B is the standard recommendation for value. Dundalk for those who want premium quality and plan to own it for 30 years.</p>
-      </div>
-    </div>
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+    <div class="bg-stone-50 border border-stone-200 rounded-lg p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Related guides</h2>
       <ul class="space-y-2 text-sm">
         <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">How Much Does a Sauna Cost?</a></li>
-        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Sauna Review</a></li>
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
+        <li><a href="/guides/best-4-person-outdoor-sauna/" class="text-amber-700 hover:underline">Best 4-Person Outdoor Saunas</a></li>
+        <li><a href="/guides/best-6-person-sauna/" class="text-amber-700 hover:underline">Best 6-Person Saunas</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Sauna Foundation Guide</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Requirements</a></li>
       </ul>
     </div>
-
   </article>
 </Base>
