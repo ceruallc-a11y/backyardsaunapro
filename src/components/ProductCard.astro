@@ -28,14 +28,17 @@ export interface Props {
   avoidIf: string;
   specs: Specs;
   whyItWon: string;
+  selectionLabel?: string;
   tradeoffs: string[];
   ownerComplaints?: string[];
+  ownerComplaintsLabel?: string;
   installationNotes?: string;
   sponsor?: 'sun-home' | null;
   sunHomeProduct?: string;
   sunHomeLabel?: string;
   asin?: string;
   selectSaunasCollection?: string;
+  selectSaunasHref?: string;
   selectSaunasLabel?: string;
 }
 
@@ -53,14 +56,17 @@ const {
   avoidIf,
   specs,
   whyItWon,
+  selectionLabel = 'Why it won',
   tradeoffs,
   ownerComplaints = [],
+  ownerComplaintsLabel = 'Owner-complaint patterns',
   installationNotes,
   sponsor,
   sunHomeProduct,
   sunHomeLabel,
   asin,
   selectSaunasCollection,
+  selectSaunasHref,
   selectSaunasLabel = 'Shop on Select Saunas',
 } = Astro.props;
 
@@ -132,7 +138,7 @@ const specRows: [string, string | undefined][] = [
     </div>
 
     <div class="mb-4">
-      <h4 class="text-sm font-bold text-green-700 mb-1">Why it won</h4>
+      <h4 class="text-sm font-bold text-green-700 mb-1">{selectionLabel}</h4>
       <p class="text-sm text-stone-700">{whyItWon}</p>
     </div>
 
@@ -145,7 +151,7 @@ const specRows: [string, string | undefined][] = [
 
     {ownerComplaints.length > 0 && (
       <div class="mb-4">
-        <h4 class="text-sm font-bold text-red-600 mb-1">Owner-complaint patterns</h4>
+        <h4 class="text-sm font-bold text-red-600 mb-1">{ownerComplaintsLabel}</h4>
         <ul class="text-sm text-stone-700 list-disc pl-5 space-y-1">
           {ownerComplaints.map(c => <li>{c}</li>)}
         </ul>
@@ -165,7 +171,7 @@ const specRows: [string, string | undefined][] = [
       ) : (
         <>
           {asin && <AmazonButton asin={asin} />}
-          {selectSaunasCollection && <SelectSaunasButton collection={selectSaunasCollection} label={selectSaunasLabel} />}
+          {(selectSaunasHref || selectSaunasCollection) && <SelectSaunasButton href={selectSaunasHref} collection={selectSaunasCollection} label={selectSaunasLabel} />}
         </>
       )}
     </div>

@@ -3,10 +3,10 @@ import Base from '../layouts/Base.astro';
 import AdvertiserDisclosure from '../components/AdvertiserDisclosure.astro';
 import ProductCard from '../components/ProductCard.astro';
 
-const updated = "August 11, 2026";
-const availabilityReviewed = "August 11, 2026";
+const updated = "August 15, 2026";
+const availabilityReviewed = "August 15, 2026";
 const datePublished = "2026-01-15";
-const dateModified = "2026-08-11";
+const dateModified = "2026-08-15";
 const pageUrl = "https://backyardsaunapro.com/best-saunas/";
 
 const picks = [
@@ -45,30 +45,31 @@ const picks = [
   },
   {
     rank: 2,
-    tag: "Best Traditional",
+    tag: "Traditional shortlist",
     name: "Almost Heaven Pinnacle 4-Person Barrel",
     image: "/images/editorial/outdoor-barrel-sauna-representative.webp",
     imageAlt: "Representative outdoor barrel sauna on a gravel base",
     imageCaption: "Representative barrel-sauna setup; not the exact Almost Heaven model.",
-    asin: "B017WJV8SO",
-    selectSaunasCollection: "barrel-saunas",
-    verdict: "Default North American residential barrel for a reason. Canadian red cedar, panels that line up, install process documented everywhere.",
-    bestFor: "Buyers who want real Finnish heat with rocks and steam and are comfortable wiring a 240V circuit.",
-    avoidIf: "You want a finished plug-and-play cabin, the simplest possible install, or you do not have outdoor space.",
+    selectSaunasHref: "https://selectsaunas.com/products/almost-heaven-pinnacle-morgan-4-person-classic-barrel-sauna-6x6-ft",
+    selectSaunasLabel: "View current Pinnacle listing",
+    verdict: "A compact cedar barrel kit to compare when its published bench dimensions, 240V heater requirement, delivery scope, and outdoor site all fit the project.",
+    bestFor: "Buyers who want a traditional outdoor barrel kit and can prepare a level base plus the electrical service required by the selected heater manual.",
+    avoidIf: "You need an insulated severe-weather cabin, expect four adults to lounge comfortably, or want a turnkey price that includes site and electrical work.",
     specs: {
       type: "Traditional outdoor barrel",
-      capacity: "4 people (2-3 comfortable)",
-      heatSource: "Electric heater + rocks (6kW Harvia KIP typical)",
-      maxTemp: "180-195 °F",
-      electrical: "240V dedicated 30A circuit",
-      dimensions: "72 in diameter x 72 in length",
-      warranty: "5 yr structural",
+      capacity: "Up to 4 people (published)",
+      heatSource: "6kW electric heater with stones",
+      electrical: "240V / 30A, hardwired",
+      dimensions: "78 W x 71 D x 81.5 H in",
+      warranty: "Limited lifetime room; separate heater terms",
       priceBand: "Mid",
     },
-    whyItWon: "Years of consistent build quality, broad heater compatibility, and barrel shape that retains heat better than a flat-wall cabin of the same volume.",
-    tradeoffs: ["Heater is a separate purchase", "Needs 240V install", "Foundation pad required"],
-    ownerComplaints: ["Bands need re-tighten after first 30 days", "Door alignment can drift after first winter"],
-    installationNotes: "Gravel pad at least 4 in deep, or pavers. 240V dedicated circuit. Assembly 4-6 hours.",
+    selectionLabel: "Why it may fit",
+    whyItWon: "Almost Heaven publishes the room, bench, heater, and electrical dimensions needed for a real pre-purchase fit check, and an authorized retailer maintains an exact-model listing.",
+    tradeoffs: ["Published four-person capacity may feel tight", "Outdoor base and freight handling need planning", "Electrical work follows the exact heater manual"],
+    ownerComplaintsLabel: "Questions to resolve",
+    ownerComplaints: ["Which configuration and heater are included in the current price?", "Who handles unloading, assembly, weather protection, and any freight damage?"],
+    installationNotes: "Read the current construction and heater manuals before preparing the base or booking electrical work. Assembly time varies with the crew, site, weather, and selected configuration.",
   },
   {
     rank: 3,
@@ -126,59 +127,60 @@ const picks = [
   },
   {
     rank: 5,
-    tag: "Best Budget",
+    tag: "Compact infrared shortlist",
     name: "Dynamic Saunas Barcelona 1-2 Person Far Infrared",
     image: "/images/editorial/indoor-infrared-sauna-representative.webp",
     imageAlt: "Representative compact indoor infrared sauna cabin",
     imageCaption: "Representative infrared-cabin setup; not the exact Dynamic model.",
     asin: "B00A2F99F0",
-    verdict: "Most reviewed plug-in infrared at its price. Honest build, real 120V install, assembly in about an hour.",
-    bestFor: "First-time buyers, renters, and anyone trying infrared before committing to a premium cabin.",
-    avoidIf: "You want full-spectrum, premium finish, or space for three.",
+    verdict: "A compact indoor infrared cabin to compare when the published 36-by-32-inch interior and 120V/15A requirement fit your room and circuit.",
+    bestFor: "Buyers who specifically want a small infrared cabin and can verify the room, delivery path, circuit, and current model documents.",
+    avoidIf: "You want traditional stones and steam, need more interior room, or require independently documented EMF or light-therapy performance.",
     specs: {
       type: "Budget indoor infrared",
       capacity: "1-2 people",
-      heatSource: "Low-EMF far-infrared carbon panels",
-      maxTemp: "Around 140 °F",
-      electrical: "120V standard outlet",
-      dimensions: "Approximately 35 x 35 x 75 in",
-      warranty: "5 yr heater, 1 yr controls",
+      heatSource: "Six carbon infrared panels",
+      electrical: "120V / 15A",
+      dimensions: "39 W x 36 D x 73 H in",
       priceBand: "Budget",
     },
-    whyItWon: "Years of consistent owner reviews and panels that actually run low-EMF at a price-to-quality ratio nothing else at this tier matches.",
-    tradeoffs: ["Far-only emitters", "Hemlock not cedar", "Compact for two adults", "Basic controls"],
-    ownerComplaints: ["Door magnets weaken over years", "Basic audio quality"],
-    installationNotes: "120V outlet, dedicated circuit recommended. Assembly 60-90 min with two people.",
+    selectionLabel: "Why it may fit",
+    whyItWon: "The manufacturer publishes the model number, interior and exterior dimensions, weight, electrical requirement, and panelized assembly format needed for a practical fit check.",
+    tradeoffs: ["Infrared format does not provide water-on-stones steam", "Published two-person capacity is tight", "The product page does not document a maximum temperature"],
+    ownerComplaintsLabel: "Questions to resolve",
+    ownerComplaints: ["Which model revision, manual, warranty, and return terms apply?", "What measured EMF or light specifications support any seller claims?"],
+    installationNotes: "Confirm the current manual, circuit restrictions, delivery route, panel dimensions, room clearances, and number of people needed for assembly.",
   },
   {
     rank: 6,
-    tag: "Best Premium Traditional",
-    name: "Dundalk LeisureCraft Harmony 2-Person",
+    tag: "Outdoor collection shortlist",
+    name: "Dundalk LeisureCraft Outdoor Saunas",
     image: "/images/editorial/outdoor-barrel-sauna-representative.webp",
     imageAlt: "Representative outdoor wood sauna on a prepared base",
     imageCaption: "Representative outdoor-sauna setup; not the exact Dundalk model.",
     selectSaunasCollection: "outdoor-saunas",
-    verdict: "Canadian white cedar build for buyers who want the traditional Finnish experience with no compromises and decades of life.",
-    bestFor: "Serious sauna users who want premium traditional construction outdoors.",
-    avoidIf: "You want plug-and-play, budget pricing, or no install work.",
+    verdict: "A broad Canadian-made catalog worth comparing by exact model, wood, heater, roof, glass, delivery scope, and warranty rather than by the brand name alone.",
+    bestFor: "Buyers who want to compare multiple outdoor formats and can get the selected model, options, installation scope, and warranty in writing.",
+    avoidIf: "You need a single plug-in specification, a turnkey installed price, or a product choice without dealer and site coordination.",
     specs: {
-      type: "Premium outdoor traditional",
-      capacity: "2 people",
-      heatSource: "Electric or wood (separate)",
-      maxTemp: "180-200 °F",
-      electrical: "240V dedicated circuit (if electric)",
-      dimensions: "Approximately 70 x 70 x 84 in",
-      warranty: "5 yr structural",
+      type: "Outdoor traditional collection",
+      capacity: "Varies by model",
+      heatSource: "Electric or wood options vary",
+      electrical: "Depends on selected heater",
+      dimensions: "Varies by model",
+      warranty: "Confirm the model-specific document",
       priceBand: "Premium",
     },
-    whyItWon: "Canadian white cedar at a build standard above the volume barrel category, with steam retention and finish that hold up for decades.",
-    tradeoffs: ["Premium price", "Requires install effort", "Heater is separate"],
-    ownerComplaints: ["Lead times can be long for custom configurations"],
-    installationNotes: "Level pad and 240V (if electric). Assembly is a weekend project.",
+    selectionLabel: "Why it may fit",
+    whyItWon: "LeisureCraft publishes barrel, cabin, pod, Luna, and cube collections with model manuals that let buyers compare the actual project instead of relying on a single generic format.",
+    tradeoffs: ["Package contents vary by model and retailer", "Freight, unloading, base, heater, and assembly need explicit scope", "Published warranty materials are not fully consistent"],
+    ownerComplaintsLabel: "Questions to resolve",
+    ownerComplaints: ["Which exact model, wood, roof, glass, heater, controls, and benches are included?", "Which warranty document applies, and who handles labor, freight, and claims?"],
+    installationNotes: "Use the selected model and heater manuals to define the base, delivery, assembly, electrical or chimney work, clearances, and inspection requirements.",
   },
   {
     rank: 7,
-    tag: "Best Portable",
+    tag: "Portable steam shortlist",
     name: "SereneLife Portable Steam Sauna",
     asin: "B084GY5CHB",
     image: "/images/editorial/portable-steam-sauna-representative.webp",
@@ -197,9 +199,11 @@ const picks = [
       warranty: "3 yr listed by manufacturer",
       priceBand: "Budget",
     },
-    whyItWon: "It makes the category tradeoff clear: lower cost and foldable storage in exchange for a steam-tent experience rather than a heated wood room.",
+    selectionLabel: "Why it may fit",
+    whyItWon: "Its published format solves a narrow problem: a full-height, foldable steam tent for buyers who value storage and lower upfront cost more than a permanent cabin.",
     tradeoffs: ["Steam tent, not infrared or traditional sauna", "Needs drying after each use", "Manufacturer listing was backordered when checked"],
-    ownerComplaints: ["Fabric and zipper wear matter more than cabin materials", "Seller-specific bundles may include different accessories"],
+    ownerComplaintsLabel: "Questions to resolve",
+    ownerComplaints: ["Is the exact model currently in stock from this seller?", "Which accessories, return terms, and warranty apply to this listing?"],
     installationNotes: "No permanent install. Confirm outlet placement, floor protection, ventilation, and a drying routine.",
   },
 ];
@@ -240,14 +244,14 @@ const itemListSchema = {
 };
 
 const faqs = [
-  { q: "Indoor vs outdoor sauna, which should I buy?", a: "Indoor saunas (typically infrared cabins) plug into 120V, install in a basement or spare room, and avoid weather concerns. Outdoor saunas (typically traditional barrel or cabin builds) need a foundation pad, often a 240V circuit, and deliver the higher heat and löyly that infrared cannot. If you have outdoor space and want real Finnish heat, go outdoor traditional. If space is tight and you want daily wellness sessions, go indoor infrared." },
-  { q: "Infrared vs traditional sauna, what is the difference?", a: "Infrared saunas heat your body directly with infrared light at ambient temperatures of 120-150 °F. Traditional saunas heat the air to 170-195 °F with a rock-and-element heater and let you throw water on rocks for steam. Infrared sessions run 30-45 minutes and feel gentler. Traditional sessions run 10-20 minutes and feel intense. Neither is objectively better." },
-  { q: "What is the best sauna under $3,000?", a: "Under $3,000, your strongest options are a plug-in indoor infrared cabin like the Dynamic Saunas Barcelona or a budget outdoor barrel kit. Premium full-spectrum infrared and premium outdoor cabins do not fit this budget. If you cannot run 240V, infrared is the right call. If you have outdoor space and a friend with an electrician's license, a budget barrel sauna becomes viable." },
-  { q: "What should I skip when buying a sauna?", a: "Skip any cabin that does not publish EMF ratings, skip cedar premiums on infrared cabins that never exceed 140 °F (cedar matters at traditional temperatures), skip strip-LED 'red light' marketing that is not backed by published irradiance numbers, and skip extended warranties on portable units where the failure point is usually the zipper anyway." },
-  { q: "Do I need 240V for a home sauna?", a: "For traditional saunas, almost always yes (typically 30A for 6kW, 40A for 8kW). For infrared cabins under 2kW, no, a standard 120V outlet works. Portable tent-style units run 120V. If running 240V is a dealbreaker, that narrows your decision tree to infrared or portable." },
-  { q: "How much space does a home sauna need?", a: "Plan for the cabin footprint plus 12 in of clearance on all sides for airflow, plus full door swing clearance. A 2-person infrared needs about 4 ft x 4 ft of floor space. A 4-person outdoor barrel needs about 7 ft x 7 ft of pad, plus access for assembly. See our space planning guide for full breakdowns." },
-  { q: "How long do home saunas last?", a: "Quality cedar barrel saunas with normal maintenance last 15-20 years. Premium infrared cabins are designed for similar lifespans, though the category is too young in the market for clean longevity data. Budget plug-in infrared cabins typically run 7-12 years before electronics need replacement. Portable units run 2-4 years with regular use." },
-  { q: "What maintenance does a home sauna need?", a: "Indoor infrared cabins need a wipe-down after sessions and the occasional vacuum. Outdoor cedar barrels need a band re-tighten in the first 30 days, exterior treatment every 1-2 years, and a heater rock replacement every 2-3 years. Wood-burning units add chimney cleaning and ash management. None of it is heavy work; it is just real work." },
+  { q: "Indoor or outdoor sauna: how should I decide?", a: "Start with the available site, weather exposure, delivery route, power or fuel, ventilation, drainage, permits, and the kind of heat you want. Indoor and outdoor models can use infrared or traditional heaters, so the location alone does not determine the heating format. Compare the exact model manual and local requirements before choosing." },
+  { q: "What is the practical difference between infrared and traditional sauna?", a: "Infrared cabins use emitters and do not provide water-on-stones steam. Traditional saunas heat the room with a purpose-built heater and stones; whether water may be used depends on the heater instructions. Temperature, electrical load, ventilation, and session guidance vary by product, so use the selected model's current manual instead of a category-wide number." },
+  { q: "Can I choose a sauna from the product price alone?", a: "No. Compare the delivered product with freight, unloading, foundation or flooring, electrical or chimney work, assembly, permits, tax, weather protection, and maintenance. A lower kit price can produce a higher completed-project cost when those items are excluded." },
+  { q: "Which sauna claims should I verify before buying?", a: "Verify exact dimensions, comfortable capacity, heater and electrical requirements, delivery scope, assembly, warranty, returns, and current availability. Request model-specific documentation for EMF, red-light, performance, or therapeutic claims instead of relying on a marketplace badge or unsourced number." },
+  { q: "Do home saunas require 240V?", a: "It depends on the exact heater. The Pinnacle configuration reviewed here publishes a 6kW, 240V, 30A hardwired heater, while the Dynamic Barcelona publishes 120V/15A service. Other models differ. Give the current heater manual and site plan to a qualified electrician before ordering." },
+  { q: "How much space should I reserve?", a: "Use the product's current exterior dimensions, required clearances, door swing, ventilation, service access, and delivery path. Outdoor projects also need a base sized for the selected model and room for drainage and maintenance. Do not apply one generic clearance to every sauna." },
+  { q: "How long will a home sauna last?", a: "We cannot support one reliable lifespan for an entire sauna category. Climate, wood, finish, heater use, ventilation, water management, installation quality, replacement-part availability, and maintenance all matter. Ask how the manufacturer supports the room, heater, controls, and replacement parts separately." },
+  { q: "What maintenance should I plan for?", a: "Follow the room and heater manuals for cleaning, drying, fasteners, exterior finish, stones, ventilation, and electrical inspection. The tasks and intervals differ by product and climate. Save the manuals and warranty version that apply to the unit you receive." },
 ];
 
 const faqSchema = {
@@ -261,8 +265,8 @@ const faqSchema = {
 };
 ---
 <Base
-  title="Best Home Saunas of 2026: Top Picks for Every Budget"
-  description="Our top home sauna picks for 2026. Premium infrared, traditional barrels, budget plug-ins, and portables. Real picks, honest tradeoffs, decision tree to find your fit."
+  title="Best Home Saunas of 2026: A Buyer-Fit Shortlist"
+  description="Compare current home sauna formats by space, electrical needs, site work, delivery, and buyer fit. Includes documented limitations and questions to verify before ordering."
   canonical="/best-saunas"
 >
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
@@ -334,26 +338,32 @@ const faqSchema = {
             <th class="p-2">Capacity</th>
             <th class="p-2">Max temp</th>
             <th class="p-2">Electrical</th>
-            <th class="p-2">Typical installed</th>
+            <th class="p-2">Project-price check</th>
             <th class="p-2">Best for</th>
             <th class="p-2">Avoid if</th>
           </tr>
         </thead>
         <tbody class="text-stone-700">
           <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Sun Home Equinox</td><td class="p-2">Best Overall Infrared</td><td class="p-2">Premium full-spectrum</td><td class="p-2">2</td><td class="p-2">~165 °F</td><td class="p-2">120V</td><td class="p-2">$7k-$10k</td><td class="p-2">Daily wellness use</td><td class="p-2">Want löyly</td></tr>
-          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH Pinnacle 4P</td><td class="p-2">Best Traditional</td><td class="p-2">Cedar barrel</td><td class="p-2">4</td><td class="p-2">~190 °F</td><td class="p-2">240V/30A</td><td class="p-2">$4k-$6k</td><td class="p-2">Real Finnish heat</td><td class="p-2">No 240V access</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">AH Pinnacle 4P</td><td class="p-2">Traditional shortlist</td><td class="p-2">Cedar barrel</td><td class="p-2">Up to 4</td><td class="p-2">Check heater manual</td><td class="p-2">240V/30A listed</td><td class="p-2">Price full project</td><td class="p-2">Outdoor barrel kit</td><td class="p-2">Need turnkey scope</td></tr>
           <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Sun Home Luminar</td><td class="p-2">Best Outdoor Infrared</td><td class="p-2">Premium outdoor infrared</td><td class="p-2">2</td><td class="p-2">~140 °F</td><td class="p-2">120V</td><td class="p-2">$8k-$12k</td><td class="p-2">Finished outdoor cabin</td><td class="p-2">Want löyly</td></tr>
           <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Sun Home Eclipse</td><td class="p-2">Best Red Light + Infrared</td><td class="p-2">RLT + infrared</td><td class="p-2">2</td><td class="p-2">~165 °F</td><td class="p-2">120V</td><td class="p-2">$8k-$11k</td><td class="p-2">Integrated RLT</td><td class="p-2">Only want one</td></tr>
-          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Dynamic Barcelona</td><td class="p-2">Best Budget</td><td class="p-2">Far-only infrared</td><td class="p-2">1-2</td><td class="p-2">~140 °F</td><td class="p-2">120V</td><td class="p-2">$1.2k-$1.5k</td><td class="p-2">First-time buyers</td><td class="p-2">Want full-spectrum</td></tr>
-          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Dundalk Harmony</td><td class="p-2">Best Premium Traditional</td><td class="p-2">Cedar outdoor</td><td class="p-2">2</td><td class="p-2">~195 °F</td><td class="p-2">240V</td><td class="p-2">$6k-$9k</td><td class="p-2">Premium traditional</td><td class="p-2">Want plug-and-play</td></tr>
-          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">SereneLife Portable</td><td class="p-2">Best Portable</td><td class="p-2">Steam tent</td><td class="p-2">1</td><td class="p-2">122 F listed</td><td class="p-2">120V</td><td class="p-2">Budget</td><td class="p-2">Foldable setup</td><td class="p-2">Want a cabin</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Dynamic Barcelona</td><td class="p-2">Compact infrared shortlist</td><td class="p-2">Far-infrared</td><td class="p-2">1-2 published</td><td class="p-2">Not published on source checked</td><td class="p-2">120V/15A</td><td class="p-2">Check current seller</td><td class="p-2">Small indoor footprint</td><td class="p-2">Want stones and steam</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">Dundalk LeisureCraft</td><td class="p-2">Outdoor collection shortlist</td><td class="p-2">Multiple outdoor formats</td><td class="p-2">Varies</td><td class="p-2">Varies by heater</td><td class="p-2">Varies by heater</td><td class="p-2">Get exact-model quote</td><td class="p-2">Compare outdoor formats</td><td class="p-2">Need one fixed spec</td></tr>
+          <tr class="border-t border-stone-200"><td class="p-2 font-semibold">SereneLife Portable</td><td class="p-2">Portable steam shortlist</td><td class="p-2">Steam tent</td><td class="p-2">1</td><td class="p-2">122 F listed</td><td class="p-2">120V</td><td class="p-2">Check current seller</td><td class="p-2">Foldable setup</td><td class="p-2">Want a cabin</td></tr>
         </tbody>
       </table>
     </div>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How we choose</h2>
-    <p class="text-stone-700 mb-4">Every sauna on this list was evaluated on build quality and materials, ease of assembly, real customer reviews (we read the three-star ones), energy efficiency, warranty, and long-term durability reports. We do not recommend products we would not stand behind.</p>
+    <p class="text-stone-700 mb-4">This is a desk-researched buyer-fit shortlist, not a hands-on test or a universal ranking. For non-partner products, we checked current manufacturer materials, manuals, warranty language, and live retailer pages where available. We prioritized documented dimensions, electrical requirements, delivery and installation scope, limitations, and the questions a buyer still needs answered. Pricing, stock, configurations, and warranty terms can change, so recheck the exact listing and documents before ordering.</p>
     <p class="text-stone-700 mb-8">Sun Home appears in three slots because Sun Home actually wins those categories: Equinox for premium indoor infrared, Eclipse for integrated red-light and infrared, Luminar for outdoor infrared. We do not co-elevate them with traditional picks and we do not stack them into categories that do not fit.</p>
+
+    <div class="bg-stone-900 text-white rounded-xl p-6 mb-10">
+      <h2 class="text-xl font-bold text-white mb-2">Not sure which format fits the project?</h2>
+      <p class="text-sm text-stone-200 mb-4">Build a private project brief with your space, budget, heat preference, electrical readiness, delivery constraints, and timeline. Nothing is submitted unless you choose manual review.</p>
+      <a href="/sauna-planner/?utm_source=best_saunas&utm_medium=onsite&utm_campaign=buyer_fit" class="inline-flex min-h-11 items-center rounded-md bg-amber-400 px-5 py-3 font-semibold text-stone-900 hover:bg-amber-500" data-track-event="planner_cta_clicked" data-cta-position="best_saunas_before_products">Build your sauna brief</a>
+    </div>
 
     {picks.map(p => <ProductCard {...p} />)}
 
