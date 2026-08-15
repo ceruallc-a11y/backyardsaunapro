@@ -1,6 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
+
+const pinnacleUrl = 'https://selectsaunas.com/products/almost-heaven-pinnacle-morgan-4-person-classic-barrel-sauna-6x6-ft';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -8,181 +11,146 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is Almost Heaven a good sauna brand?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Almost Heaven is one of the best value barrel sauna brands available in the US. Their saunas use Canadian red cedar, ship as flat-pack kits that most people can assemble in a weekend, and hold up well with basic maintenance. They're not Finnish import quality, but they're a significant step above no-name Amazon brands."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "Where are Almost Heaven saunas made?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Almost Heaven Saunas is based in Renick, West Virginia. Their saunas are assembled and finished in the US, though some components are sourced internationally."
+        "text": "Almost Heaven says it has made saunas in West Virginia's Greenbrier Valley since 1977. Its current lineup also includes a separate Harvia Collection described as crafted in Europe, so verify the country of origin on the exact product page."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the best Almost Heaven sauna?",
+      "name": "Do Almost Heaven sauna kits include a heater?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Almost Heaven Pinnacle 4-Person Barrel Sauna is their most popular model and a strong all-around pick for most buyers. For a larger group, the Grandview 6-Person is the step up. For a more cabin-style look, the Shenandoah is worth considering."
+        "text": "Almost Heaven says an electric heater is standard with every sauna it sells, and most kits use a Harvia KIP sized for the room. Some models offer other electric or wood-burning configurations. Check the selected variant because controls, stones, and heater upgrades can change the package."
       }
     },
     {
       "@type": "Question",
-      "name": "What heater does Almost Heaven use?",
+      "name": "What does the Almost Heaven warranty cover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Almost Heaven saunas typically come with their own branded heater or a Harvia-sourced unit. Many buyers upgrade to a standalone Harvia KIP or Harvia M3 wood-burning heater for better performance."
+        "text": "Almost Heaven currently describes a limited lifetime warranty against manufacturing defects on the sauna room. It separately lists one year for heater elements and five years for other heater components. Normal wear, rot, discoloration, and minor lumber splintering are among the stated exclusions."
       }
     }
   ]
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Almost Heaven Saunas Review (2025): Brand Overview and Best Models"
-  description="An honest look at Almost Heaven Saunas, quality, value, best models, and how they compare to the competition."
+  title="Almost Heaven Saunas Review: Models, Heaters and Buying Checks"
+  description="A source-backed Almost Heaven brand guide covering current barrel and cabin options, heater packages, delivery, warranty, and questions to resolve before buying."
   canonical="/brands/almost-heaven-sauna-review"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Almost Heaven Saunas: Brand Review (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated November 2024 &mdash; Backyard Sauna Pro</p>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-chimney.jpg" alt="Barrel sauna with chimney outdoors" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
+    <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-3">Brand decision guide</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Almost Heaven Saunas: what to compare before buying</h1>
+    <p class="text-stone-500 mb-8">Last reviewed August 15, 2026</p>
 
+    <div class="rounded-xl overflow-hidden mb-3">
+      <img src="/images/lifestyle/barrel-sauna-chimney.jpg" alt="Representative outdoor barrel sauna with a chimney" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+    <p class="text-xs text-stone-500 mb-8">Representative barrel-sauna setting; not a photo of one specific Almost Heaven configuration.</p>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page also contains affiliate links to Select Saunas. We may earn a commission if you buy through our links, at no extra cost to you.
+      <strong>Research scope:</strong> This is a desk-researched brand guide, not a hands-on factory or product test. We checked current manufacturer product pages, support and warranty language, installation details, and an authorized retailer listing. Configurations and availability can change.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Almost Heaven is the brand most first-time outdoor sauna buyers end up researching. They've been around since the 1970s, they're based in West Virginia, and they sit at a sweet spot where quality is meaningfully better than no-name imports but the price hasn't crossed into Finnish luxury territory.</p>
+    <p class="text-lg text-stone-700 mb-4">Almost Heaven is not one barrel sauna repeated in different sizes. Its current catalog spans classic barrels, canopy barrels, indoor rooms, infrared cabins, and a Europe-crafted Harvia Collection. Start with the format and installation plan. Then compare exact configurations.</p>
+    <p class="text-stone-700 mb-8">The brand says it has built saunas in West Virginia's Greenbrier Valley since 1977 and joined the Harvia family in 2019. That relationship matters because current kits use Harvia heater packages, but the heater and controls still vary by model and option.</p>
 
-    <p class="text-stone-700 mb-8">This review covers who they're right for, what their best models are, where they fall short, and what you need to know before buying.</p>
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="text-lg font-bold text-stone-900 mb-3">Quick Verdict</h2>
-      <ul class="space-y-2 text-stone-700 text-sm">
-        <li><span class="font-semibold text-green-700">Best for:</span> First-time outdoor sauna buyers who want real cedar quality without Finnish import prices</li>
-        <li><span class="font-semibold text-stone-700">Price range:</span> $1,800 to $5,000+ depending on size and model</li>
-        <li><span class="font-semibold text-stone-700">Wood:</span> Canadian red cedar (most models)</li>
-        <li><span class="font-semibold text-stone-700">Top model:</span> Pinnacle 4-Person Barrel Sauna</li>
-        <li><span class="font-semibold text-red-700">Watch out for:</span> Heater upgrade often needed, assembly takes a full weekend</li>
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-9">
+      <h2 class="text-lg font-bold text-stone-900 mb-3">Shortlist by project, not by rank</h2>
+      <ul class="space-y-3 text-stone-700 text-sm">
+        <li><strong>Pinnacle:</strong> compact 6-by-6-foot classic barrel with a current 6 kW electric configuration.</li>
+        <li><strong>Grandview:</strong> larger canopy barrel with electric and eligible wood-burning configurations; freight and site access need more planning.</li>
+        <li><strong>Indoor and Harvia Collection:</strong> cabin-style choices for buyers who do not want a traditional American barrel format.</li>
       </ul>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Best Almost Heaven Models</h2>
-
-    <div class="space-y-6 mb-10">
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="mb-2">
-          <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Most Popular</span>
-          <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Pinnacle 4-Person Barrel Sauna</h3>
-        </div>
-        <p class="text-stone-600 mb-3">The Pinnacle is their flagship barrel. Five-foot diameter, Canadian red cedar, and enough interior space to fit four people, though two or three is more comfortable for a genuine sauna session. Ships as a flat-pack kit with detailed instructions. Most buyers report a 6 to 10 hour assembly with two people.</p>
-        <p class="text-stone-600 mb-4">The included heater works, but many buyers swap it for a Harvia KIP 60B for better heat output and reliability. Budget an extra $500-$600 for that upgrade if you want the best experience.</p>
-        <div class="grid md:grid-cols-2 gap-3 text-sm mb-4">
-          <div>
-            <p class="font-semibold text-stone-800 mb-1">Key specs</p>
-            <ul class="text-stone-600 space-y-1">
-              <li>5-foot diameter barrel</li>
-              <li>Canadian red cedar</li>
-              <li>4-person capacity (2-3 comfortable)</li>
-              <li>Requires 240V/30A electric</li>
-              <li>Ships freight (large pallet)</li>
-            </ul>
-          </div>
-          <div>
-            <p class="font-semibold text-stone-800 mb-1">Price range</p>
-            <ul class="text-stone-600 space-y-1">
-              <li>Around $2,000-$2,500 on Amazon</li>
-              <li>Add $500 for heater upgrade</li>
-              <li>Add $500-1,500 for electrical</li>
-            </ul>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-3">
-          <AmazonButton asin="B017WJV8SO" variant="primary" />
-          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
-        </div>
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="mb-2">
-          <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best for Groups</span>
-          <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Grandview 6-Person Barrel Sauna</h3>
-        </div>
-        <p class="text-stone-600 mb-3">The Grandview steps up to a six-person capacity in a larger barrel format. If you regularly have four or more people sauna together, this is the right move. The larger interior also means you can lie flat on the bench, which many people prefer for longer sessions.</p>
-        <p class="text-stone-600 mb-4">The larger interior requires a bigger heater, budget accordingly and match your heater kW to the cubic footage using our <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">heater sizing guide</a>.</p>
-        <div class="flex flex-wrap gap-3">
-          <AmazonButton asin="B003Z11AXM" variant="primary" />
-          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
-        </div>
-      </div>
-
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Pinnacle: the compact barrel reference point</h2>
+    <p class="text-stone-700 mb-4">Almost Heaven currently lists the Pinnacle as a four-person, 6-by-6-foot barrel. The published configuration uses a 6 kW, 240V, 30A hardwired heater and a separate 120V lighting connection. Its 63.25-inch benches are more useful than the capacity label when you judge comfort.</p>
+    <p class="text-stone-700 mb-5">The product configurator currently offers different lumber, door, window, and heater choices. Confirm which one is in the quoted price and which manuals apply. Do not assume an old Amazon package matches the current direct-sale configuration.</p>
+    <div class="flex flex-wrap gap-3 mb-9">
+      <SelectSaunasButton href={pinnacleUrl} label="View current Pinnacle listing" ctaPosition="brand_pinnacle" />
+      <a href="/reviews/almost-heaven-pinnacle-review/" class="inline-flex items-center justify-center border border-stone-300 text-stone-800 font-semibold px-5 py-3 rounded-lg hover:bg-stone-50">Read the Pinnacle buyer checklist</a>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Almost Heaven Does Well</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Grandview: more room and more delivery scope</h2>
+    <p class="text-stone-700 mb-4">The current Grandview is a 4-to-6-person canopy barrel with a one-foot exterior canopy. Almost Heaven lists 8 or 9 kW electric options and an eligible M3 wood-burning package. The manufacturer also warns that this unit ships by flatbed and publishes an 8-to-12-week lead-time estimate.</p>
+    <p class="text-stone-700 mb-4">That makes delivery access part of the buying decision. Verify the current packed dimensions, truck requirements, unloading responsibility, route from curb to pad, and damage-reporting deadline before ordering.</p>
+    <a href="https://almostheaven.com/products/grandview-4-6-person-canopy-barrel-sauna" rel="noopener" class="text-amber-700 font-semibold hover:underline">Review the current Grandview configurations</a>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Canadian red cedar</h3>
-    <p class="text-stone-700 mb-4">Almost Heaven uses genuine Canadian red cedar on their primary barrel line. Cedar handles outdoor moisture exposure better than most alternatives, has natural oils that resist rot, and stays cool enough to sit against even at high temperatures. The smell during a session is also genuinely nice. This matters because cheaper brands sometimes substitute white wood or hemlock and market it loosely.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Indoor rooms and the Harvia Collection</h2>
+    <p class="text-stone-700 mb-4">Almost Heaven's catalog now extends beyond its USA-made barrel line. The Harvia Collection is described by the company as crafted in Europe and includes indoor and outdoor cabin designs. Country of origin, construction, heater package, freight, and installation scope can therefore differ across the brand.</p>
+    <p class="text-stone-700 mb-4">If you are comparing an indoor room with a barrel, do not compare capacity and sale price alone. Compare bench dimensions, insulation, glass area, heater and controls, floor requirements, ventilation plan, delivery, and assembly.</p>
+    <a href="https://almostheaven.com/collections/heritage-collection" rel="noopener" class="text-amber-700 font-semibold hover:underline">Explore the current Harvia Collection</a>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">US-based support</h3>
-    <p class="text-stone-700 mb-4">Based in Renick, West Virginia, Almost Heaven has real customer service, phone, email, and actual warranty support. When you buy a $2,000 outdoor sauna from a no-name Amazon brand, warranty service often means emailing a Chinese address and hoping for the best. With Almost Heaven, there's an actual company to call.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The heater is part of the configured kit</h2>
+    <p class="text-stone-700 mb-4">Almost Heaven's current FAQ says an electric heater is standard with every sauna it sells and that most kits use a KIP heater sized for the room. Current upgrade options can include KIP manual or digital packages, The Wall, Cilindro, Virta, and Virta Combi. Some larger outdoor models can be configured for wood heat.</p>
+    <p class="text-stone-700 mb-4">That is different from the old advice to immediately replace the included heater. Instead, compare the exact package: heater item number, controls, sensors, stones, power unit, electrical requirements, clearances, and warranty. Changing heaters later can affect fit, controls, electrical work, and the manufacturer's installation requirements.</p>
+    <p class="mb-8"><a href="/brands/harvia-sauna-heater-review/" class="text-amber-700 font-semibold hover:underline">Compare current Harvia heater formats</a></p>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Kit design</h3>
-    <p class="text-stone-700 mb-4">Their flat-pack assembly system is well-designed. The staves fit together with a tongue-and-groove system using metal bands to hold the barrel shape. Most buyers with basic handiness can assemble one with a friend in a day. The instructions are clear and parts are labeled.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Warranty: read the exclusions and remedies</h2>
+    <p class="text-stone-700 mb-4">Almost Heaven currently advertises a limited lifetime warranty against manufacturing defects on the sauna room. It separately lists one year for heater elements and five years for other heater components.</p>
+    <p class="text-stone-700 mb-8">The company also says the room warranty does not cover normal wear, rot, discoloration, or minor lumber splintering. Read the full warranty that applies on the purchase date. Check who pays shipping, which records are required, whether labor is covered, and how outdoor maintenance affects a claim.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where Almost Heaven Falls Short</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to resolve before checkout</h2>
+    <ol class="list-decimal pl-5 space-y-3 text-stone-700 mb-8">
+      <li>Which exact lumber, door, window, finish, heater, controls, and stones are included?</li>
+      <li>What are the current interior and bench dimensions, not just the capacity label?</li>
+      <li>Which construction and heater manuals apply to this configuration?</li>
+      <li>What foundation, drainage, ventilation, and clearance work is required?</li>
+      <li>What are the packed dimensions, freight method, unloading responsibility, and current lead time?</li>
+      <li>What electrical or chimney work must be finished before assembly?</li>
+      <li>What warranty exclusions, maintenance obligations, and shipping costs apply?</li>
+    </ol>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Heater quality</h3>
-    <p class="text-stone-700 mb-4">The included heater is the most common complaint. It works, but it's not remarkable. Serious sauna enthusiasts almost always swap it for a Harvia unit. If you want the best experience from day one, buy the sauna without a heater package and add a <a href="/reviews/harvia-kip-60b-review/" class="text-amber-700 hover:underline">Harvia KIP 60B</a> or a Harvia M3 (wood-burning).</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Assembly time</h3>
-    <p class="text-stone-700 mb-4">Six to ten hours for two people is realistic, sometimes more. This is a full project, not an afternoon. Clear your weekend and have someone to help with the heavy lifting.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Not Finnish quality</h3>
-    <p class="text-stone-700 mb-4">Almost Heaven is excellent value for a US-made product at this price point. It is not the same as a Tylohelo, Narvi, or Finnish-built sauna that costs three to five times as much. The wood thickness, joinery, and longevity are simply at a different level in the premium category. If you want the very best and money isn't the constraint, look at Finnish imports. If you want a genuinely good outdoor sauna that lasts 15-20 years with maintenance, Almost Heaven is a smart buy.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Heater to Pair With It</h2>
-    <p class="text-stone-700 mb-4">For the Pinnacle (4-person), a 6kW heater covers the space well. The <a href="/reviews/harvia-kip-60b-review/" class="text-amber-700 hover:underline">Harvia KIP 60B</a> is the go-to recommendation, it's reliable, well-made, UL listed, and widely stocked in the US. For a wood-burning experience instead of electric, the <a href="/guides/best-wood-burning-sauna-heaters/" class="text-amber-700 hover:underline">Harvia M3</a> is the top pick.</p>
+    <PlannerCTA
+      title="Turn the model into a complete project brief"
+      body="Capture your site, dimensions, power, delivery access, budget, and timeline before asking a retailer or installer for a written quote."
+      campaign="almost_heaven_brand_guide"
+      ctaPosition="article_mid"
+    />
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is Almost Heaven a good sauna brand?</h3>
-        <p class="text-stone-700">Yes, for the price range they occupy, they're one of the better options available in the US. Real cedar, US-based support, and a solid assembly kit.</p>
-      </div>
+    <div class="space-y-6">
       <div>
         <h3 class="font-bold text-stone-900 mb-1">Where are Almost Heaven saunas made?</h3>
-        <p class="text-stone-700">Almost Heaven is based in Renick, West Virginia. Saunas are assembled and finished in the US.</p>
+        <p class="text-stone-700">The company says it has manufactured saunas in West Virginia's Greenbrier Valley since 1977. Its current Harvia Collection is described as crafted in Europe, so check the exact product's country of origin.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is the best Almost Heaven sauna?</h3>
-        <p class="text-stone-700">The Pinnacle 4-Person Barrel Sauna is their most popular and the best starting point for most buyers. The Grandview is the right call if you want more space.</p>
+        <h3 class="font-bold text-stone-900 mb-1">Do Almost Heaven sauna kits include a heater?</h3>
+        <p class="text-stone-700">Almost Heaven says an electric heater is standard with every sauna it sells. The model and controls vary, and select larger outdoor saunas can use wood-burning packages.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">What heater should I use with an Almost Heaven sauna?</h3>
-        <p class="text-stone-700">The Harvia KIP 60B for electric, or the Harvia M3 for wood-burning. Both outperform the included heater.</p>
+        <h3 class="font-bold text-stone-900 mb-1">What does the warranty cover?</h3>
+        <p class="text-stone-700">The current summary describes limited-lifetime coverage for manufacturing defects in the sauna room, one year for heater elements, and five years for other heater components. Read the full terms and exclusions before purchase.</p>
       </div>
     </div>
+
+    <section class="mt-12 border-t border-stone-200 pt-8">
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Primary sources</h2>
+      <ul class="space-y-2 text-sm text-stone-600">
+        <li><a href="https://almostheaven.com/pages/about-us" rel="noopener" class="text-amber-700 hover:underline">Almost Heaven company history and current product scope</a></li>
+        <li><a href="https://almostheaven.com/pages/faq" rel="noopener" class="text-amber-700 hover:underline">Almost Heaven heater and warranty FAQ</a></li>
+        <li><a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" rel="noopener" class="text-amber-700 hover:underline">Current Pinnacle product page</a></li>
+        <li><a href="https://almostheaven.com/products/grandview-4-6-person-canopy-barrel-sauna" rel="noopener" class="text-amber-700 hover:underline">Current Grandview product page</a></li>
+        <li><a href="https://almostheaven.com/collections/heritage-collection" rel="noopener" class="text-amber-700 hover:underline">Current Harvia Collection</a></li>
+        <li><a href={pinnacleUrl} rel="noopener" class="text-amber-700 hover:underline">Current authorized-retailer Pinnacle listing</a></li>
+      </ul>
+      <p class="text-xs text-stone-500 mt-4">Product configurations, pricing, availability, lead times, and warranty terms can change. Recheck the documents tied to the exact order.</p>
+    </section>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue planning</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/reviews/almost-heaven-pinnacle-review/" class="text-amber-700 hover:underline">Almost Heaven Pinnacle Full Review</a></li>
-        <li><a href="/reviews/harvia-kip-60b-review/" class="text-amber-700 hover:underline">Harvia KIP 60B Heater Review</a></li>
-        <li><a href="/guides/best-4-person-outdoor-sauna/" class="text-amber-700 hover:underline">Best 4-Person Outdoor Saunas</a></li>
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
-        <li><a href="/guides/how-to-assemble-barrel-sauna/" class="text-amber-700 hover:underline">How to Assemble a Barrel Sauna</a></li>
+        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Compare barrel-sauna formats</a></li>
+        <li><a href="/guides/barrel-sauna-vs-cabin-sauna/" class="text-amber-700 hover:underline">Barrel versus cabin planning guide</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Sauna foundation guide</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Electrical planning checklist</a></li>
       </ul>
     </div>
-
   </article>
 </Base>
