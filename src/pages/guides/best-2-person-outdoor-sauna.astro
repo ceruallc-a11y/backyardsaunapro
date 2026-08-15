@@ -5,6 +5,7 @@ import AmazonButton from '../../components/AmazonButton.astro';
 import SunHomeButton from '../../components/SunHomeButton.astro';
 import LeadMagnetSignup from '../../components/LeadMagnetSignup.astro';
 import PlannerCTA from '../../components/PlannerCTA.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
 const picks = [
   {
@@ -32,23 +33,29 @@ const picks = [
     tagColor: "bg-amber-100 text-amber-800",
     type: "Traditional Barrel",
     capacity: "Rated 4-person, ideal for 2",
+    image: "/images/editorial/outdoor-barrel-sauna-representative.webp",
+    imageAlt: "Representative outdoor barrel sauna on a prepared base",
+    imageCaption: "Representative barrel-sauna setup; not the exact Pinnacle configuration.",
     summary: "Almost Heaven lists the Pinnacle as a 6-by-6-foot barrel with 63.25-inch benches. It is rated for four, but the bench dimensions make it a more realistic traditional-sauna comparison for two adults than a capacity label alone.",
     pros: ["63.25-inch benches listed", "6kW heater configuration available", "Stainless bands and hardware", "Tempered-glass options"],
     cons: ["240V/30A hardwire requirement listed", "Freight, unloading, and base must be planned", "Rated capacity does not guarantee comfort", "Outdoor wood needs maintenance"]
   },
   {
     rank: 3,
-    asin: "B00A2F99F0",
-    name: "Dynamic Saunas Barcelona Far Infrared",
+    selectUrl: "https://selectsaunas.com/products/almost-heaven-salem-2-person-barrel-sauna",
+    name: "Almost Heaven Salem 2-Person Barrel Sauna",
     
     rating: "Specs checked August 2026",
-    tag: "INDOOR PLUG-IN ALTERNATIVE",
+    tag: "TRUE 2-PERSON BARREL",
     tagColor: "bg-green-100 text-green-800",
-    type: "Infrared / Indoor",
-    capacity: "1-2 person",
-    summary: "This is an indoor infrared alternative, not an outdoor sauna. Dynamic lists a 39-by-36-by-73-inch exterior, a 36-by-32-inch interior, and a 120V/15A electrical requirement. The interior dimensions matter: two larger adults may find it tight.",
-    pros: ["120V/15A requirement listed", "Compact 39-by-36-inch footprint", "Roof vent and control panels", "No separate sauna heater"],
-    cons: ["Not an outdoor product", "Tight interior for two larger adults", "No rocks or steam", "Verify seller and return terms"]
+    type: "Traditional Barrel",
+    capacity: "Rated 2-person",
+    image: "/images/lifestyle/barrel-sauna-chimney.jpg",
+    imageAlt: "Representative compact outdoor barrel sauna with a chimney",
+    imageCaption: "Representative compact barrel-sauna setting; not the exact Salem configuration.",
+    summary: "Almost Heaven lists the Salem as a compact 6-by-4-foot barrel with a 71-by-39-inch interior and two 39-inch benches. It is a genuine two-person outdoor format, but the shorter benches are for upright seating rather than stretching out.",
+    pros: ["True two-person outdoor format", "Compact 72-by-47-inch listed footprint", "6kW heater package listed", "Stones included in the current retailer package"],
+    cons: ["39-inch benches limit reclining", "240V/30A hardwire requirement listed", "LTL delivery and base must be planned", "Outdoor wood needs maintenance"]
   },
   {
     rank: 4,
@@ -60,6 +67,9 @@ const picks = [
     tagColor: "bg-purple-100 text-purple-800",
     type: "Traditional Barrel",
     capacity: "Rated 6-person, spacious for 2",
+    image: "/images/lifestyle/barrel-sauna-field.jpg",
+    imageAlt: "Representative full-size outdoor barrel sauna in a grassy setting",
+    imageCaption: "Representative full-size barrel sauna; not the exact Princeton configuration.",
     summary: "Almost Heaven lists the Princeton at 78 inches wide by 94 inches deep, with 86.375-inch benches and an 8kW heater configuration. That creates genuine length for two people, but it also turns a small-yard purchase into a larger site, freight, and electrical project.",
     pros: ["86.375-inch benches listed", "More room for two people to stretch out", "8kW heater configuration available", "Tempered-glass options"],
     cons: ["240V/40A hardwire requirement listed", "Flatbed freight preparation", "Much larger footprint", "Higher total project scope"]
@@ -67,15 +77,15 @@ const picks = [
 ];
 ---
 <Base
-  title="Best 2-Person Outdoor Saunas of 2026: 4 Top Picks"
-  description="Compare the best 2-person outdoor saunas of 2026 for couples and small yards. See our top barrel and infrared picks, prices, and buyer fit."
+  title="Best 2-Person Outdoor Saunas (2026): 4 Buyer Fits"
+  description="Compare four current outdoor sauna formats for two people by bench length, heat type, footprint, power, and installation scope."
   canonical="/guides/best-2-person-outdoor-sauna"
 >
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
       <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
       <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best 2-Person Outdoor Sauna Kits (2026)
+        Best 2-Person Outdoor Saunas: Four Different Buyer Fits
       </h1>
       <p class="text-stone-500 text-sm">Reviewed August 2026 &middot; 8 min read</p>
       <p class="text-lg text-stone-600 mt-4">
@@ -103,10 +113,10 @@ const picks = [
 
     <div class="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
       <strong class="block text-stone-900 mb-2">How the non-sponsored picks were checked</strong>
-      We did not hands-on test them. Specifications were checked against the current <a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Pinnacle</a>, <a href="https://dynamicsaunasdirect.com/products/barcelona-1-2-person-low-emf-far-infrared-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Barcelona</a>, and <a href="https://almostheaven.com/products/princeton-6-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Princeton</a> manufacturer pages in August 2026. Current configurations, prices, and lead times can change.
+      We did not hands-on test them. Specifications were checked against the current <a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Pinnacle</a>, <a href="https://almostheaven.com/products/salem-2-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Salem</a>, and <a href="https://almostheaven.com/products/princeton-6-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Princeton</a> manufacturer pages in August 2026. Current configurations, prices, and lead times can change.
     </div>
 
-    <h2 class="text-2xl font-bold mb-6 text-stone-900">Our Top Picks</h2>
+    <h2 class="text-2xl font-bold mb-6 text-stone-900">Compare Four Buyer Fits</h2>
 
     <div class="space-y-8">
       {picks.map(pick => (
@@ -114,6 +124,12 @@ const picks = [
           {pick.sponsor === 'sun-home' && (
             <div class="overflow-hidden">
               <img src="/images/sun-home/luminar.jpg" alt="Sun Home Luminar 2-Person Outdoor Infrared sauna in a backyard" class="w-full h-auto object-cover max-h-72" loading="lazy" width="1600" height="1067" />
+            </div>
+          )}
+          {pick.sponsor !== 'sun-home' && 'image' in pick && pick.image && (
+            <div class="overflow-hidden bg-stone-50">
+              <img src={pick.image} alt={pick.imageAlt} class="w-full h-auto object-cover max-h-72" loading="lazy" width="1200" height="800" />
+              <p class="px-4 py-2 text-xs text-stone-500">{pick.imageCaption}</p>
             </div>
           )}
           <div class="p-6">
@@ -144,6 +160,8 @@ const picks = [
             <SunHomeButton product={pick.sunHomeProduct} label="See Sun Home Luminar" />
           ) : 'asin' in pick && pick.asin ? (
             <AmazonButton asin={pick.asin} />
+          ) : 'selectUrl' in pick && pick.selectUrl ? (
+            <SelectSaunasButton href={pick.selectUrl} label="View current Salem listing" ctaPosition="salem_product" />
           ) : 'officialUrl' in pick && pick.officialUrl ? (
             <a href={pick.officialUrl} target="_blank" rel="noopener" class="inline-flex min-h-12 items-center justify-center border border-stone-300 text-stone-900 hover:bg-stone-50 font-semibold px-5 py-3 rounded-md">Verify current manufacturer specifications</a>
           ) : (
@@ -193,7 +211,7 @@ const picks = [
       "name": "What is the best 2-person outdoor sauna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The best choice depends on heat format, usable bench dimensions, site access, and power. The Almost Heaven Pinnacle is the traditional barrel option in this shortlist. The Dynamic Barcelona is an indoor 120V infrared alternative, not an outdoor sauna."
+        "text": "The best choice depends on heat format, usable bench dimensions, site access, and power. The Sun Home Luminar is the sponsored outdoor infrared option. The Almost Heaven Salem is a compact two-person barrel, while the Pinnacle offers longer benches for two adults."
       }
     },
     {
