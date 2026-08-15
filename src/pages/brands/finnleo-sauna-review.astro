@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -7,148 +8,160 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is Finnleo a good sauna brand?",
+      "name": "Is Finnleo a good fit for a homeowner who wants local installation help?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Finnleo is one of the most respected traditional sauna brands in North America. They're owned by TyloHelo (the same group as Harvia) and have a 75-year history in the sauna industry. Their products are well-built, use quality materials, and they have a strong dealer network in the US and Canada. The main downside is price — Finnleo saunas cost more than comparable options from other brands."
+        "text": "It can be. Finnleo sells through authorized dealers and directs buyers to those dealers for sales, design, installation, service, and warranty questions. The quality of that local relationship should be evaluated before purchase."
       }
     },
     {
       "@type": "Question",
-      "name": "Where are Finnleo saunas made?",
+      "name": "Does Finnleo make traditional and infrared saunas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Finnleo is a Finnish brand originally, now owned by TyloHelo and with US distribution and some US manufacturing operations. Their heaters and sauna packages are available throughout North America through authorized dealers."
+        "text": "Yes. Finnleo's current catalog includes traditional indoor saunas, traditional outdoor saunas, infrared rooms, combination InfraSaunas, and custom installations."
       }
     },
     {
       "@type": "Question",
-      "name": "How much does a Finnleo sauna cost?",
+      "name": "Does Finnleo publish sauna prices online?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Finnleo saunas range from around $3,000 for a basic indoor kit to $15,000 or more for a custom outdoor sauna with their premium materials and design work. Their mid-range pre-built indoor saunas typically run $4,000 to $8,000 installed."
+        "text": "Finnleo's official product pages do not provide a single reliable installed-price range for every project. Ask an authorized dealer for a written equipment and installation scope, then compare the complete project cost."
       }
     }
   ]
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Finnleo Sauna Review (2025): Quality, Pricing, and Who It's For"
-  description="An honest look at Finnleo saunas, their quality, product lineup, pricing, how they compare to Almost Heaven and Harvia, and who should buy one."
+  title="Finnleo Sauna Review: Product Lines, Dealer Model, and Buyer Fit"
+  description="A source-backed Finnleo buyer's guide covering its current traditional, outdoor, infrared, and custom sauna options, plus dealer, warranty, and quote questions."
   canonical="/brands/finnleo-sauna-review"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Finnleo Sauna Review (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated March 2025 &mdash; Backyard Sauna Pro</p>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Premium sauna interior with window" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Desk-researched brand guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Finnleo Sauna Review</h1>
+      <p class="text-stone-500 text-sm">Reviewed August 2026 &middot; 9 min read</p>
+      <p class="text-lg text-stone-700 mt-4">Finnleo is worth considering when you want a dealer involved in design, installation, and service. The brand also covers more project types than a simple kit seller. The tradeoff is that meaningful price and installation comparisons require local quotes.</p>
+    </header>
+
+    <div class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Finished traditional sauna interior with an electric heater and window" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
-
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    <div class="bg-stone-50 border border-stone-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
+      <p><strong>Review boundary:</strong> This is a desk-researched buyer analysis, not a hands-on product test. Product facts come from Finnleo's current catalog, manuals, dealer information, and warranty materials. We do not have a paid or affiliate relationship with Finnleo.</p>
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Finnleo has been making saunas for over 75 years and is among the most recognized names in the North American sauna market. They sit at the premium end of the price spectrum and earn that positioning through build quality and materials, but the price gap over competitors like Almost Heaven and Harvia is real and worth thinking about before you commit.</p>
+    <section class="bg-stone-900 text-white rounded-lg p-6 mb-8">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-300 mb-2">Short answer</p>
+      <h2 class="text-2xl font-bold mb-3">Strong fit for a dealer-led project. Less useful for one-click price shopping.</h2>
+      <p class="text-stone-200 mb-5">Finnleo's catalog is broad: portable traditional rooms, Minnesota-built NorthStar models, outdoor rooms, infrared rooms, combination InfraSaunas, and custom installations. Its dealer model can reduce coordination work, but the buyer still needs a detailed scope and a local service check.</p>
+      <a href="https://www.finnleo.com/products" target="_blank" rel="noopener" class="inline-flex min-h-11 items-center rounded-md bg-amber-400 px-5 py-3 font-semibold text-stone-900 hover:bg-amber-500" data-track-event="brand_outbound_click" data-cta-position="finnleo_above_fold">See Finnleo's current product catalog</a>
+    </section>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="text-lg font-bold text-stone-900 mb-3">Quick Verdict</h2>
-      <ul class="space-y-2 text-stone-700 text-sm">
-        <li><span class="font-semibold text-green-700">Best for:</span> Buyers who want premium North American brand support and aren't price-sensitive</li>
-        <li><span class="font-semibold text-stone-700">Made in:</span> Finland / TyloHelo group (US distribution)</li>
-        <li><span class="font-semibold text-stone-700">Price range:</span> $3,000 to $15,000+</li>
-        <li><span class="font-semibold text-stone-700">Heater brand:</span> Finlandia (their own line) and compatible Harvia/TyloHelo units</li>
-        <li><span class="font-semibold text-red-700">Watch out for:</span> Premium pricing; comparable quality available for less from other brands</li>
-      </ul>
-    </div>
+    <PlannerCTA
+      source="finnleo_review_after_verdict"
+      heading="Prepare your project before contacting a dealer"
+      description="Put your dimensions, location, heat preference, electrical status, budget, and timeline into one brief. Your answers stay in your browser unless you explicitly submit them for manual review."
+    />
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Finnleo Does Well</h2>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Build quality</h3>
-    <p class="text-stone-700 mb-4">Finnleo saunas are well-built. The joinery is tight, the wood selection is consistent, and the overall fit and finish is noticeably higher than budget-tier kits. For an indoor sauna installation where you'll be looking at the same walls every day for years, the quality difference is visible.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Dealer network and support</h3>
-    <p class="text-stone-700 mb-4">One of Finnleo's real advantages is their US and Canadian dealer network. You can work with a local dealer who handles design, installation, and warranty service rather than coordinating everything yourself. For buyers who want a turnkey experience, that's worth a lot. Brands like Almost Heaven and Dundalk have great products but you're handling more of the process independently.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Infrared lineup</h3>
-    <p class="text-stone-700 mb-4">Finnleo's InfraSauna line combines traditional and infrared heating in one unit, which is relatively unusual and appeals to buyers who want flexibility. It's a legitimate product differentiator rather than a gimmick.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Price Question</h2>
-    <p class="text-stone-700 mb-4">A Finnleo indoor 2-person sauna typically retails for $4,000 to $6,000 before installation. An <a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven</a> comparable unit runs $1,800 to $3,000. The gap is real. Both are quality products using similar woods and construction methods.</p>
-    <p class="text-stone-700 mb-6">Whether the Finnleo premium is worth it depends on how much the dealer relationship, local support, and brand cachet matters to you. For buyers who just want the best sauna experience per dollar, the price premium is hard to justify. For buyers doing a full home renovation with a contractor and want one trusted vendor handling everything, Finnleo's dealer model earns its keep.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Finnleo vs Competitors</h2>
-    <div class="overflow-x-auto mb-6">
-      <table class="text-sm w-full">
-        <thead>
-          <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-6">Brand</th>
-            <th class="pb-2 pr-6">Price Range</th>
-            <th class="pb-2 pr-6">Build Quality</th>
-            <th class="pb-2">Best For</th>
-          </tr>
-        </thead>
-        <tbody class="text-stone-700">
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Finnleo</td>
-            <td class="py-2 pr-6">$$$$$</td>
-            <td class="py-2 pr-6 text-green-700">Excellent</td>
-            <td class="py-2">Turnkey installations, premium buyers</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium"><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven</a></td>
-            <td class="py-2 pr-6">$$$</td>
-            <td class="py-2 pr-6 text-green-700">Very Good</td>
-            <td class="py-2">Best value outdoor barrel saunas</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium"><a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk LeisureCraft</a></td>
-            <td class="py-2 pr-6">$$$</td>
-            <td class="py-2 pr-6 text-green-700">Very Good</td>
-            <td class="py-2">Canadian cedar outdoor saunas</td>
-          </tr>
-          <tr>
-            <td class="py-2 pr-6 font-medium">Harvia (heaters)</td>
-            <td class="py-2 pr-6">$$</td>
-            <td class="py-2 pr-6 text-green-700">Excellent</td>
-            <td class="py-2">Best standalone electric heater value</td>
-          </tr>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-5">What Finnleo currently sells</h2>
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full min-w-[700px] border-collapse text-sm">
+        <thead><tr class="bg-stone-100 text-left"><th class="p-3 border-b border-stone-300">Product path</th><th class="p-3 border-b border-stone-300">What the official catalog shows</th><th class="p-3 border-b border-stone-300">Who should investigate it</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Traditional indoor</td><td class="p-3 border-b border-stone-200">Hallmark portable rooms, Minnesota-built NorthStar rooms, Designer models, and custom installations.</td><td class="p-3 border-b border-stone-200">Buyers choosing between a defined room and a built-in project.</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Traditional outdoor</td><td class="p-3 border-b border-stone-200">NorthStar, customizable Euro rooms, and custom interiors for a framed structure.</td><td class="p-3 border-b border-stone-200">Homeowners who can coordinate foundation, access, permits, and electrical work.</td></tr>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Infrared</td><td class="p-3 border-b border-stone-200">Portable S-Series rooms and custom infrared installations.</td><td class="p-3 border-b border-stone-200">Buyers who prefer infrared heat and have checked the exact electrical and room requirements.</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">InfraSauna</td><td class="p-3 border-b border-stone-200">Rooms that combine a traditional electric heater with infrared emitters, in portable and custom formats.</td><td class="p-3 border-b border-stone-200">Households that genuinely expect to use both heat types.</td></tr>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Custom</td><td class="p-3 border-b border-stone-200">Dealer-assisted design followed by drawings, component selection, manufacturing, and installation coordination.</td><td class="p-3 border-b border-stone-200">Renovations, new construction, unusual rooms, and buyers prioritizing design flexibility.</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Finlandia Heater Line</h2>
-    <p class="text-stone-700 mb-4">Finlandia is Finnleo's in-house heater brand. Their FLB series is a reliable mid-range electric heater that competes with the Harvia KIP and similar units. UL listed, good stone capacity, solid warranty. If you're buying a Finnleo sauna package it includes a Finlandia heater by default. If you're building or buying a sauna from another brand, the Finlandia FLB-60 is worth knowing about as a standalone purchase.</p>
-    <AmazonButton asin="B000N4RSFO" variant="primary" label="Check Finlandia FLB-60 on Amazon" class="mb-8" />
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The dealer model is the central buying decision</h2>
+    <p class="text-stone-700 mb-4">Finnleo says its saunas are sold through authorized dealers. It directs buyers to those dealers for research, sales, design, installation, service, and warranty questions. That can be valuable when the dealer actually manages the full project.</p>
+    <p class="text-stone-700 mb-6">It also means the local dealer matters almost as much as the product line. Before paying a deposit, identify who owns site measurement, permits, electrical coordination, delivery, assembly, startup, and warranty labor. Get those responsibilities in writing.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is Finnleo a good sauna brand?</h3>
-        <p class="text-stone-700">Yes, genuinely well-built products with strong US dealer support. The price premium over competitors is real, but the quality and service model backs it up.</p>
+    <div class="border border-stone-200 bg-white rounded-lg p-5 mb-8">
+      <h3 class="font-bold text-stone-900 mb-2">Check local support first</h3>
+      <p class="text-sm text-stone-700 mb-4">Use the official locator, then ask whether the listed dealer installs your preferred series and serves your ZIP code.</p>
+      <a href="https://www.finnleo.com/find-a-dealer" target="_blank" rel="noopener" class="inline-flex min-h-11 items-center rounded-md border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:border-stone-500" data-track-event="dealer_outbound_click" data-cta-position="finnleo_dealer_section">Find an authorized Finnleo dealer</a>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What can be verified from current materials</h2>
+    <ul class="list-disc pl-5 space-y-3 text-stone-700 mb-8">
+      <li><strong>U.S. base:</strong> Finnleo says it was founded in Cokato, Minnesota, in 1984 and identifies U.S. manufacturing headquarters there.</li>
+      <li><strong>NorthStar production:</strong> Finnleo describes its current NorthStar indoor rooms as built in Minnesota.</li>
+      <li><strong>Combination heat:</strong> Current IS440 and IS565 InfraSauna rooms combine a traditional electric heater with infrared emitters.</li>
+      <li><strong>Custom workflow:</strong> Finnleo describes dealer-led planning, drawings for custom projects, pre-cut interior materials, prebuilt benches, a heater, controls, and installation components.</li>
+      <li><strong>Published support documents:</strong> The company maintains installation guides, owner manuals, and warranty documents for current and archived models.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What this review cannot verify</h2>
+    <div class="border-l-4 border-amber-500 bg-amber-50 p-5 mb-8 text-sm text-stone-700">
+      <p class="mb-3">We have not inspected Finnleo joinery, measured heat-up performance, compared local dealer installation quality, or tested warranty service. We also cannot publish one dependable price range because product, freight, site work, labor, and dealer scope vary.</p>
+      <p>Ask the dealer to separate product, delivery, site work, electrical work, installation, permit costs, tax, and optional upgrades. A complete written quote is more useful than a broad online price estimate.</p>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Warranty questions to settle before purchase</h2>
+    <p class="text-stone-700 mb-4">Finnleo's published warranty page says coverage applies to the original purchaser, is non-transferable, requires registration within 60 days of installation, and depends on purchase through an authorized dealer plus installation and maintenance requirements. The complete warranty controls, not a sales summary.</p>
+    <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700 mb-6">
+      <li>Which warranty document applies to the exact room, heater, control, and accessories?</li>
+      <li>Who pays diagnostic, removal, shipping, travel, and reinstallation costs?</li>
+      <li>Who performs authorized service in your ZIP code?</li>
+      <li>What registration and maintenance records must you keep?</li>
+      <li>How are finish, glass, lighting, controls, and labor treated?</li>
+    </ul>
+    <div class="flex flex-wrap gap-3 mb-10">
+      <a href="https://www.finnleo.com/downloads" target="_blank" rel="noopener" class="inline-flex min-h-11 items-center rounded-md border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:border-stone-500">Open Finnleo manuals and warranty files</a>
+      <a href="https://www.finnleo.com/warranty-registration" target="_blank" rel="noopener" class="inline-flex min-h-11 items-center rounded-md border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:border-stone-500">Review current warranty terms</a>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Who should shortlist Finnleo?</h2>
+    <div class="grid md:grid-cols-2 gap-4 mb-10">
+      <div class="border border-emerald-200 bg-emerald-50 rounded-lg p-5">
+        <h3 class="font-bold text-stone-900 mb-3">Shortlist it when</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+          <li>A qualified local dealer can manage a meaningful part of the project.</li>
+          <li>You want traditional, infrared, or combination options from one catalog.</li>
+          <li>You need custom sizing, materials, or integration into a renovation.</li>
+          <li>You value current manuals and a documented service path.</li>
+        </ul>
       </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Where are Finnleo saunas made?</h3>
-        <p class="text-stone-700">Finnish brand, now owned by TyloHelo (same group as Harvia), with US distribution and dealer network.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How much does a Finnleo sauna cost?</h3>
-        <p class="text-stone-700">$3,000 to $15,000+ depending on size and configuration. Mid-range indoor 2 to 4 person saunas typically run $4,000 to $8,000 before installation.</p>
+      <div class="border border-stone-200 bg-stone-50 rounded-lg p-5">
+        <h3 class="font-bold text-stone-900 mb-3">Keep comparing when</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+          <li>You need transparent online pricing before speaking with a dealer.</li>
+          <li>The nearest authorized dealer cannot install or service your location.</li>
+          <li>You want a simple direct-to-consumer kit and plan to coordinate trades yourself.</li>
+          <li>The quote does not separate product and project costs.</li>
+        </ul>
       </div>
     </div>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Sauna Review</a></li>
-        <li><a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk LeisureCraft Review</a></li>
-        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Best Electric Sauna Heaters</a></li>
-        <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
-      </ul>
-    </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Questions for the Finnleo dealer</h2>
+    <ol class="list-decimal pl-5 space-y-3 text-stone-700 mb-10">
+      <li>Which exact series and model fit the measured space and normal number of users?</li>
+      <li>Which parts are made or assembled in each location for this model?</li>
+      <li>What is included in the quote, and what remains the homeowner's responsibility?</li>
+      <li>Who confirms heater sizing, electrical requirements, ventilation, clearances, and permits?</li>
+      <li>What delivery access and site preparation are required?</li>
+      <li>Who handles warranty diagnosis and labor after installation?</li>
+      <li>Which alternatives would reduce cost without compromising the buyer's main priorities?</li>
+    </ol>
 
+    <div class="bg-stone-900 text-white rounded-lg p-6 mt-10">
+      <h2 class="text-xl font-bold mb-2">Compare the complete project, not just the room</h2>
+      <p class="text-stone-200 mb-4">Use the same scope for every quote: equipment, freight, foundation or flooring, electrical work, assembly, permits, tax, accessories, and exclusions.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/tools/sauna-cost-calculator/" class="inline-flex min-h-11 items-center rounded-md bg-amber-400 px-5 py-3 font-semibold text-stone-900 hover:bg-amber-500" data-track-event="calculator_cta_clicked" data-cta-position="finnleo_bottom">Build the project budget</a>
+        <a href="/how-we-review/" class="inline-flex min-h-11 items-center rounded-md border border-stone-500 px-5 py-3 font-semibold text-white hover:border-stone-300">Read our review method</a>
+      </div>
+    </div>
   </article>
 </Base>
