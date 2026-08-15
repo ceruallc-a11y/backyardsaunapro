@@ -1,188 +1,227 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
+
+const reviewedAt = 'August 15, 2026';
 
 const picks = [
   {
-    rank: 1,
-    asin: "B017WJV8SO",
-    name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
-    
-    rating: "4.5/5",
-    tag: "BEST OVERALL",
-    tagColor: "bg-amber-100 text-amber-800",
-    type: "Traditional Barrel",
-    capacity: "Rated 4-person",
-    summary: "The Pinnacle is the sweet spot. It's not the cheapest option in this price range, but it delivers a genuine Finnish sauna experience that cheaper alternatives can't match. Cedar construction, durable hardware, and a session that actually gets hot.",
-    pros: ["True traditional heat experience", "Canadian red cedar construction", "Straightforward 4-6 hour assembly", "Excellent heat retention"],
-    cons: ["Heater sold separately (budget ~$400-600 more)", "Needs 240V electrical", "Larger footprint than barrel saunas"],
-    selectSaunasCollection: "barrel-saunas"
+    label: 'Compact indoor full-spectrum path',
+    name: 'Dynamic Gracia 1-2 Person Full Spectrum Infrared Sauna',
+    reviewedPrice: '$2,899',
+    href: 'https://selectsaunas.com/products/dynamic-gracia-1-2-person-full-spectrum-near-zero-emf-far-ir-sauna-canadian-hemlock-2026-model',
+    fit: 'One regular user who wants a compact indoor cabin, with occasional room for a second person and money left for room preparation.',
+    facts: [
+      'Published 1-2 person capacity',
+      '36 x 39 x 75-inch exterior',
+      '120V / 15A service; dedicated outlet recommended by the listing',
+      'Four far-infrared panels and two near-infrared elements',
+      'Indoor use only',
+    ],
+    questions: [
+      'Will the 32 x 35-inch interior fit the intended users comfortably?',
+      'Does the room have the outlet, ventilation, floor clearance, and delivery path required by the manual?',
+      'If EMF terminology matters, ask for the test method; we have not independently measured this model.',
+    ],
   },
   {
-    rank: 2,
-    asin: "B00A2F99F0",
-    name: "Dynamic Saunas Barcelona Far Infrared",
-    
-    rating: "4.4/5",
-    tag: "BEST VALUE",
-    tagColor: "bg-green-100 text-green-800",
-    type: "Infrared Indoor",
-    capacity: "1-2 person",
-    summary: "If you want the health benefits without the installation headache, the Barcelona is your answer. Plug it into a standard 120V outlet and it's ready in 15 minutes. The low-EMF carbon panels generate a deep, penetrating heat that feels different from traditional steam.",
-    pros: ["No electrician required", "Heats up in 15 minutes", "Low-EMF carbon panels certified", "Under $1,000 with free shipping"],
-    cons: ["Infrared only, no steam", "Indoor or covered use only", "1-2 person capacity"]
+    label: 'Roomier indoor infrared path',
+    name: 'Golden Designs 3-Person Full-Spectrum Infrared Sauna',
+    reviewedPrice: '$4,999',
+    href: 'https://selectsaunas.com/products/golden-designs-3-person-full-spectrum-puretech%E2%84%A2-near-zero-emf-far-infrared-sauna-w-himalayan-salt-bar',
+    fit: 'A household that wants more shoulder room than a compact cabin and can provide the listed dedicated 20-amp circuit.',
+    facts: [
+      'Published three-person capacity',
+      '61 x 41 x 75-inch exterior; add five inches for the roof overhang',
+      '56 x 36 x 68-inch interior',
+      '120V / 20A electrical service',
+      'Three carbon panels and five near-infrared elements listed',
+    ],
+    questions: [
+      'Does the usable bench width work for the actual users, rather than the capacity label alone?',
+      'Can a licensed electrician provide the specified 20-amp outlet and breaker?',
+      'Confirm the exact model, stock, delivery service, and final price before checkout.',
+    ],
   },
   {
-    rank: 3,
-    asin: "B003Z11AXM",
-    name: "Almost Heaven Saunas 6-Person Barrel Sauna",
-    
-    rating: "4.4/5",
-    tag: "BEST FOR GROUPS",
-    tagColor: "bg-blue-100 text-blue-800",
-    type: "Traditional Barrel",
-    capacity: "6-person",
-    summary: "This is the one you buy when you mean business. Six people fit comfortably. The barrel design circulates heat naturally so the whole space heats evenly. Built from the same quality cedar as the Pinnacle, just scaled up considerably.",
-    pros: ["True 6-person capacity", "Barrel design for even heat", "Cedar construction", "Same Almost Heaven quality as smaller models"],
-    cons: ["Heater and installation cost extra", "Needs a large footprint", "Higher total cost with electrical"],
-    selectSaunasCollection: "barrel-saunas"
-  }
+    label: 'Outdoor infrared path',
+    name: 'SunRay Cayenne 4-Person Outdoor Infrared Sauna',
+    reviewedPrice: '$4,290',
+    href: 'https://selectsaunas.com/products/sunray-cayenne-hl400d',
+    fit: 'A buyer who specifically wants an outdoor infrared cabin and can support its footprint and unusual 120V / 30A electrical requirement.',
+    facts: [
+      'Published four-person capacity',
+      '79 x 52 x 83-inch exterior',
+      'Eight ceramic heaters; published maximum of 140 deg F',
+      '120V / 30A plug listed',
+      'Pitched roof and weather cover listed for outdoor use',
+    ],
+    questions: [
+      'Can a licensed electrician provide the specified dedicated receptacle and circuit?',
+      'Do the lower temperature and single-level bench match the intended sauna experience?',
+      'What base, drainage, cover, winter-use, freight, and warranty terms apply at the property?',
+    ],
+  },
+  {
+    label: 'Traditional barrel path',
+    name: 'Almost Heaven Salem 2-Person Barrel Sauna',
+    reviewedPrice: '$4,964',
+    href: 'https://selectsaunas.com/products/almost-heaven-salem-2-person-barrel-sauna',
+    fit: 'One or two buyers who want traditional electric heat and steam in a compact barrel, with a separate budget for the base, electrical work, and assembly.',
+    facts: [
+      'Published two-person capacity',
+      '72 x 47 x 77-inch assembled exterior',
+      'Two opposing 39-inch benches',
+      'Standard 6kW heater; 240V / 30A hardwired service',
+      'Current listing describes the heater and stones with the room',
+    ],
+    questions: [
+      'Which lumber, door, window, heater, and control options are included in the final quote?',
+      'What foundation, weather protection, drainage, clearances, permits, and electrical work remain?',
+      'Can the property accept a 540-pound curbside freight shipment and move it to the build site?',
+    ],
+  },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can a complete sauna project stay under $5,000?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Some indoor infrared cabins can stay below $5,000 before tax and room preparation. An outdoor or traditional listing below $5,000 can still exceed the budget after freight, unloading, foundation, electrical work, weather protection, assembly, permits, and tax.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does a 120V sauna use a standard household outlet?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Not always. The models in this guide list different amperage and circuit requirements, including 15A, 20A, and 30A service. Follow the exact product manual and a licensed electrician rather than voltage alone.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are capacity labels comfort guarantees?',
+      acceptedAnswer: { '@type': 'Answer', text: 'No. Capacity is a published maximum. Compare interior dimensions, usable bench length and depth, heater clearances, and the intended users before ordering.' },
+    },
+  ],
+};
 ---
 <Base
-  title="Best Saunas Under $5,000 (2025) Top Picks for Every Style"
-  description="The best outdoor and indoor saunas under $5,000. Honest picks for every buyer traditional barrel, infrared, and everything in between."
+  title="Best Saunas Under $5,000 (2026): Four Current Buyer Paths"
+  description="Compare four current sauna listings below $5,000 using exact prices, dimensions, electrical requirements, buyer fit, and full-project budget warnings."
   canonical="/guides/best-saunas-under-5000"
 >
-  <article class="max-w-3xl mx-auto">
-    <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Saunas Under $5,000 (2025)
-      </h1>
-      <p class="text-stone-500 text-sm">Updated December 2024 · 8 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        Five thousand dollars sounds like a lot. For a sauna, it's actually the sweet spot. You get real construction, real heat, and something that lasts 20 years. Here are the best options at every price point under that ceiling.
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Budget Buying Guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best Saunas Under $5,000</h1>
+      <p class="text-stone-500 text-sm">Retailer listings reviewed {reviewedAt} · 10 min read</p>
+      <p class="text-lg text-stone-700 mt-4">
+        Five thousand dollars opens more useful choices, but it still buys very different projects. A compact indoor cabin may be close to complete. A traditional barrel at the same price can still need a base, hardwired power, freight handling, and assembly.
       </p>
     </header>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Modern wooden outdoor sauna cabins" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+
+    <AdvertiserDisclosure />
+
+    <div class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Representative outdoor sauna cabins in a landscaped setting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
+    <section class="border-y border-stone-200 py-6 mb-8" aria-labelledby="budget-rule">
+      <h2 id="budget-rule" class="text-2xl font-bold text-stone-900 mb-3">Use two budgets, not one</h2>
+      <div class="grid md:grid-cols-2 gap-6 text-sm text-stone-700">
+        <div>
+          <p class="font-semibold text-stone-900 mb-1">Product ceiling</p>
+          <p>Every listing below was priced at or below $5,000 on the review date. Prices, stock, options, shipping, and promotions can change.</p>
+        </div>
+        <div>
+          <p class="font-semibold text-stone-900 mb-1">Project ceiling</p>
+          <p>Tax, freight exceptions, unloading, foundation, electrical work, weather protection, assembly, permits, and accessories sit outside the sticker price unless the quote says otherwise.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">Quick Picks</h2>
-      <div class="space-y-2 text-sm">
-        {[
-          ["Best Overall", "Almost Heaven Pinnacle 4-Person Barrel", "~$2,199"],
-          ["Best Value", "Dynamic Saunas Barcelona Infrared", "~$899"],
-          ["Best for Groups", "Almost Heaven 6-Person Barrel", "~$3,499"],
-        ].map(([label, name, price]) => (
-          <div class="flex justify-between items-center bg-white rounded-lg px-4 py-2">
-            <span class="text-amber-700 font-semibold text-xs uppercase tracking-wide w-32">{label}</span>
-            <span class="text-stone-700 font-medium flex-1 mx-3">{name}</span>
-            <span class="text-stone-500 font-semibold">{price}</span>
-          </div>
+    <PlannerCTA
+      source="best_saunas_under_5000_above_fold"
+      heading="Check the site and project total before comparing finishes"
+      description="Build a private planning brief first. Your information stays in your browser unless you explicitly submit it for a manual review."
+    />
+
+    <section class="mt-12" aria-labelledby="under-five-shortlist">
+      <h2 id="under-five-shortlist" class="text-3xl font-bold text-stone-900 mb-3">Four current configurations to compare</h2>
+      <p class="text-stone-600 max-w-3xl mb-8">These are buyer paths, not arbitrary first-through-fourth rankings. The right choice depends on placement, heat style, usable seating, power, and the work still missing from the quote.</p>
+
+      <div class="space-y-10">
+        {picks.map((pick) => (
+          <section class="border-t border-stone-300 pt-7" aria-label={pick.name}>
+            <div class="md:flex md:items-start md:justify-between gap-6 mb-4">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">{pick.label}</p>
+                <h3 class="text-2xl font-bold text-stone-900">{pick.name}</h3>
+              </div>
+              <p class="text-sm text-stone-600 mt-2 md:mt-1 shrink-0">Listed at review: <strong class="text-stone-900">{pick.reviewedPrice}</strong></p>
+            </div>
+
+            <p class="text-stone-700 mb-5"><strong>Who it may fit:</strong> {pick.fit}</p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-5">
+              <div>
+                <h4 class="font-semibold text-stone-900 mb-2">Documented listing details</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {pick.facts.map((fact) => <li class="flex gap-2"><span aria-hidden="true">+</span><span>{fact}</span></li>)}
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-stone-900 mb-2">Resolve before buying</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {pick.questions.map((item) => <li class="flex gap-2"><span aria-hidden="true">-</span><span>{item}</span></li>)}
+                </ul>
+              </div>
+            </div>
+
+            <SelectSaunasButton href={pick.href} label="Check current listing" ctaPosition="under_5000_shortlist" />
+          </section>
         ))}
       </div>
-    </div>
+    </section>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-600">
-      <p class="font-semibold text-stone-800 mb-2">What's NOT included in the price</p>
-      <p>Most barrel sauna kits don't include the heater. Budget an extra $400-$800 for a quality electric heater, plus $300-$800 for a licensed electrician to run a 240V circuit. Add $300-$700 for a gravel or patio block foundation. Total installed cost is typically $1,000-$2,000 above the kit price.</p>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">The Top Picks</h2>
-
-    <div class="space-y-8">
-      {picks.map((pick) => (
-        <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
-          <div class="bg-stone-50 border-b border-stone-200 px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <span class="text-stone-400 font-bold text-lg">#{pick.rank}</span>
-              <h3 class="text-lg font-bold text-stone-900">{pick.name}</h3>
-            </div>
-            <span class={`text-xs font-bold px-3 py-1 rounded-full ${pick.tagColor}`}>{pick.tag}</span>
-          </div>
-          <div class="p-6">
-            <div class="flex gap-6 mb-4 text-sm text-stone-500">
-              <span>Type: <strong class="text-stone-700">{pick.type}</strong></span>
-              <span>Capacity: <strong class="text-stone-700">{pick.capacity}</strong></span>
-              <span>Rating: <strong class="text-stone-700">{pick.rating}</strong></span>
-            </div>
-            <p class="text-stone-600 mb-4">{pick.summary}</p>
-            <div class="grid grid-cols-2 gap-4 mb-5 text-sm">
-              <div>
-                <p class="font-semibold text-green-700 mb-2">Pros</p>
-                <ul class="space-y-1">
-                  {pick.pros.map(p => <li class="flex items-start gap-2 text-stone-600"><span class="text-green-500 mt-0.5">+</span>{p}</li>)}
-                </ul>
-              </div>
-              <div>
-                <p class="font-semibold text-red-600 mb-2">Cons</p>
-                <ul class="space-y-1">
-                  {pick.cons.map(c => <li class="flex items-start gap-2 text-stone-600"><span class="text-red-400 mt-0.5">-</span>{c}</li>)}
-                </ul>
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <AmazonButton asin={pick.asin} price={pick.price} />
-              {pick.selectSaunasCollection && <SelectSaunasButton collection={pick.selectSaunasCollection} label="Shop on Select Saunas" />}
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold mt-12 mb-4 text-stone-900">How to Choose the Right One</h2>
-
-    <div class="space-y-6">
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Traditional vs Infrared</h3>
-        <p class="text-stone-600 text-sm">Traditional barrel saunas get hotter. We're talking 160-200°F with real steam when you pour water on the rocks. The experience is different. More intense, more social, more Finnish.</p>
-        <p class="text-stone-600 text-sm mt-3">Infrared runs cooler (120-140°F) but heats your body from the inside out. Many people prefer it for daily use. It's also much easier to install. No electrician needed if you pick the right model.</p>
-        <p class="text-stone-600 text-sm mt-3">Both are real saunas. Neither is better. It depends on what kind of session you want.</p>
+    <section class="mt-14 border-t border-stone-300 pt-8" aria-labelledby="budget-comparison">
+      <h2 id="budget-comparison" class="text-2xl font-bold text-stone-900 mb-4">What changes across this price range</h2>
+      <div class="grid md:grid-cols-2 gap-6 text-sm text-stone-700">
+        <div><h3 class="font-bold text-stone-900 mb-2">Indoor infrared</h3><p>The room is usually the main purchase. Confirm circuit, floor, clearances, delivery access, and assembly before treating the listing price as the total.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Outdoor infrared</h3><p>Outdoor placement adds drainage, weather exposure, cover, and winter-use questions. The electrical requirement may still be specialized.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Traditional electric</h3><p>Expect hardwired power and a more involved site plan. Confirm the heater, stones, controls, base, assembly, and weather scope line by line.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Capacity</h3><p>A one-to-two or three-to-four person label is not a comfort measurement. Interior dimensions and usable bench geometry matter more.</p></div>
       </div>
+    </section>
 
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Don't Forget the Total Budget</h3>
-        <p class="text-stone-600 text-sm">A $2,200 barrel sauna kit is rarely a $2,200 project. Here's what people miss:</p>
-        <ul class="mt-3 space-y-2 text-sm text-stone-600">
-          {[
-            ["Sauna heater", "$400-$800 (not included in most kits)"],
-            ["240V electrical install", "$300-$800 (licensed electrician required)"],
-            ["Foundation (gravel, pavers, or deck)", "$300-$700 DIY"],
-            ["Accessories (bucket, ladle, thermometer)", "$100-$200"],
-          ].map(([item, cost]) => (
-            <li class="flex justify-between border-b border-stone-100 pb-2">
-              <span>{item}</span>
-              <span class="font-semibold text-amber-700">{cost}</span>
-            </li>
-          ))}
-        </ul>
-        <p class="text-sm text-stone-500 mt-3">Total installed: add $1,100-$2,500 to whatever kit you buy. Budget accordingly.</p>
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold text-stone-900 mb-5">Frequently asked questions</h2>
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">Can the whole project stay under $5,000?</h3><p class="text-stone-700 text-sm">Sometimes for a compact indoor infrared cabin. Outdoor and traditional projects can cross the cap after electrical work, foundation, freight handling, weather protection, assembly, permits, and tax.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">Does 120V mean a normal outlet will work?</h3><p class="text-stone-700 text-sm">No. These listings include 15A, 20A, and 30A requirements. Follow the exact manual and a licensed electrician rather than voltage alone.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">Are EMF labels independently verified here?</h3><p class="text-stone-700 text-sm">No. We identify retailer or manufacturer terminology and do not present it as our own testing. Ask for the measurement method if that specification drives the purchase.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">Should I trust the listed capacity?</h3><p class="text-stone-700 text-sm">Use it as a starting point only. Compare interior dimensions, bench length and depth, heater clearances, and the people who will actually use the room.</p></div>
       </div>
+    </section>
 
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Size Matters More Than You Think</h3>
-        <p class="text-stone-600 text-sm">Manufacturers rate capacity generously. A "4-person" sauna is comfortable for two people who want to actually relax. For solo use, it gives you room to lie down. For a couple, it's perfect.</p>
-        <p class="text-stone-600 text-sm mt-3">If you genuinely want to use the sauna with 3-4 people regularly, size up. The 6-person option is worth the extra cost.</p>
-      </div>
-
+    <div class="bg-stone-900 text-white rounded-lg p-6 md:p-8 mt-12">
+      <h2 class="text-2xl font-bold mb-2">Price the whole project</h2>
+      <p class="text-stone-300 mb-5 max-w-2xl">Keep the sauna price separate from freight, unloading, foundation, power, weather work, assembly, permits, tax, and accessories.</p>
+      <a href="/tools/sauna-cost-calculator/" class="inline-flex min-h-12 items-center justify-center bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-md transition-colors">Open the project calculator</a>
     </div>
 
-    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h3 class="font-bold text-stone-900 mb-2">Need more help choosing?</h3>
-      <p class="text-stone-600 text-sm mb-4">These guides go deeper on specific decisions:</p>
+    <div class="bg-stone-50 border border-stone-200 rounded-lg p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Related guides</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline font-medium">Infrared vs Traditional Sauna: Which Is Right for You?</a></li>
-        <li><a href="/guides/outdoor-sauna-cost/" class="text-amber-700 hover:underline font-medium">Full Outdoor Sauna Cost Breakdown (All Hidden Costs)</a></li>
-        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline font-medium">Best Electric Sauna Heaters (Separate Buying Guide)</a></li>
-        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline font-medium">Sauna Electrical Requirements: What You Need to Know</a></li>
+        <li><a href="/guides/best-saunas-under-3000/" class="text-amber-700 hover:underline">Best Saunas Under $3,000</a></li>
+        <li><a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">Infrared vs Traditional Sauna</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Requirements</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Sauna Foundation Guide</a></li>
       </ul>
     </div>
-
   </article>
 </Base>
