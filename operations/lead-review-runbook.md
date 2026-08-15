@@ -13,7 +13,7 @@ The `backyard-sauna-leads` Worker stores planner review requests in the restrict
 7. Contact the homeowner from `info@backyardsaunapro.com` when clarification is needed.
 8. Share with a partner only when `partner_consent = 1` and the fit has been manually verified.
 
-The command-line report excludes names, email addresses, phone numbers, and notes. It is intended for routine monitoring without spreading contact data into terminals, logs, or exports.
+The command-line report excludes names, email addresses, phone numbers, ZIP or region, and notes. It shows only the receipt ID, review age, status, non-identifying project-readiness fields, lead score, consent state, and acquisition source. It is intended for routine monitoring without spreading contact data into terminals, logs, or exports.
 
 ```powershell
 $env:CLOUDFLARE_API_TOKEN = '<temporary-token>'

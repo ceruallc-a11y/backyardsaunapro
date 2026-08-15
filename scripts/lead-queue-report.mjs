@@ -14,14 +14,17 @@ const sql = `
     id AS receipt_id,
     created_at,
     status,
-    zip_region,
     project_location,
     heat_type,
+    expected_users,
     budget,
     timeline,
+    project_type,
+    electrical_status,
     installation_help,
     lead_score,
-    partner_consent
+    partner_consent,
+    acquisition_source
   FROM leads
   WHERE status IN ('new', 'needs_review', 'missing_information', 'qualified')
   ORDER BY
@@ -59,20 +62,39 @@ if (rows.length === 0) {
   process.exit(0);
 }
 
+const now = Date.now();
 const report = rows.map((row) => ({
   receipt_id: row.receipt_id,
   created_at: row.created_at,
+  age_hours: Math.max(0, Math.floor((now - Date.parse(`${row.created_at}Z`)) / 3_600_000)),
   status: row.status,
-  region: row.zip_region,
+  priority: row.lead_score >= 60 || row.timeline === 'Within 30 days'
+    ? 'urgent'
+    : row.lead_score >= 45 || row.timeline === '1-3 months'
+      ? 'high'
+      : 'normal',
   location: row.project_location,
   heat: row.heat_type,
+  users: row.expected_users,
   budget: row.budget,
   timeline: row.timeline,
+  project_type: row.project_type,
+  electrical: row.electrical_status,
   installation_help: row.installation_help,
   score: row.lead_score,
   partner_consent: row.partner_consent === 1 ? 'yes' : 'no',
+  source: row.acquisition_source,
 }));
 
 console.log(`Lead review queue: ${report.length} item${report.length === 1 ? '' : 's'}`);
+const countBy = (items, keyFor) => items.reduce((counts, item) => {
+  const key = keyFor(item);
+  counts[key] = (counts[key] || 0) + 1;
+  return counts;
+}, {});
+const priorityCounts = countBy(report, (row) => row.priority);
+const sourceCounts = countBy(report, (row) => row.source || 'direct');
+console.log(`Review priority: ${Object.entries(priorityCounts).map(([key, count]) => `${key}=${count}`).join(', ')}`);
+console.log(`Acquisition sources: ${Object.entries(sourceCounts).map(([key, count]) => `${key}=${count}`).join(', ')}`);
 console.table(report);
-console.log('Contact details remain excluded. Open the exact receipt in D1 only when manual review is required.');
+console.log('Names, contact details, ZIP or region, and project notes remain excluded. Open the exact receipt in D1 only when manual review is required.');
