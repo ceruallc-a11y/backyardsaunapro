@@ -1,143 +1,126 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the best foundation for an outdoor sauna?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The right foundation depends on the exact sauna model, total loaded weight, cradle or base-frame layout, soil, drainage, frost conditions, and local requirements. Manufacturer guidance commonly allows a concrete pad, structurally adequate deck or platform, compacted gravel, or properly prepared pavers. Follow the current manual for the model you buy.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can an outdoor sauna sit directly on grass or soil?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Manufacturers commonly advise against placing an outdoor sauna directly on grass or bare soil. The surface can settle, hold moisture, and leave the sauna out of level. Use a firm, stable, well-drained base that supports the complete loaded weight.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can an outdoor sauna go on a deck?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A deck can work only if its structure and footings can support the sauna, heater, occupants, and other loads. Use the current product weight and dimensions, then have the existing deck reviewed by a qualified local professional before installation.',
+      },
+    },
+  ],
+};
 ---
 <Base
-  title="Sauna Foundation Guide: Base Options for Outdoor Saunas (2025)"
-  description="The best foundation options for outdoor barrel and cabin saunas. Concrete pads, gravel bases, deck mounting, and what to avoid complete guide with costs."
+  title="Outdoor Sauna Foundation Guide: Concrete, Gravel, Deck, or Pavers"
+  description="Compare outdoor sauna foundation options and learn what to verify in the product manual, site drainage, loaded weight, deck structure, and local requirements."
   canonical="/guides/sauna-foundation-guide"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Installation Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Sauna Foundation Guide: Base Options for Outdoor Saunas
-      </h1>
-      <p class="text-stone-500 text-sm">Updated November 2024 · 8 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        Nobody gets excited about a foundation. You want to talk about cedar and steam and the perfect heat. Understood. But this is the part that determines whether your $3,000 sauna lasts 30 years or starts rotting in three. Get it wrong and everything else goes wrong with it. So let's do this right and move on.
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Installation guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Outdoor Sauna Foundation Guide</h1>
+      <p class="text-stone-500 text-sm">Reviewed August 2026 &middot; 8 min read</p>
+      <p class="text-lg text-stone-700 mt-4">
+        Start with the sauna you may actually buy. Its footprint, support points, loaded weight, and manual should decide the base. A generic pad built first can leave you paying to modify it later.
       </p>
     </header>
 
-    <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-red-800 mb-2"> Never Do This</h2>
-      <ul class="text-sm text-red-700 space-y-1">
-        <li> Place sauna directly on soil or grass it will rot from the bottom up</li>
-        <li> Use an unlevel base even 1 inch of tilt causes door alignment problems and water pooling</li>
-        <li> Skip drainage planning trapped moisture under the sauna destroys the floor</li>
-        <li> Use untreated lumber in contact with ground it won't last 2 seasons</li>
-      </ul>
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-8">
+      <h2 class="font-bold text-stone-900 mb-2">The short answer</h2>
+      <p class="text-sm text-stone-700">
+        Current manufacturer guidance consistently calls for a firm, stable, level, well-drained surface that supports the sauna and its occupants. Depending on the model, acceptable options may include concrete, a structurally adequate deck or platform, compacted gravel, or prepared pavers. The model-specific manual controls.
+      </p>
     </div>
 
-    <h2 class="text-2xl font-bold mt-8 mb-6 text-stone-900">Foundation Options Compared</h2>
+    <PlannerCTA
+      source="sauna_foundation_guide_after_summary"
+      heading="Check the foundation against the rest of your project"
+      description="Add your location, sauna type, dimensions, budget, and installation needs to one quote-ready brief. A manual review can flag questions to resolve before you order materials or a sauna kit."
+    />
 
-    <div class="space-y-6 mb-10">
-      {[
-        {
-          name: "Poured Concrete Pad",
-          cost: "$500–$2,000 (professional pour)",
-          difficulty: "Hard hire a pro",
-          best_for: "Permanent installs, cabin saunas, heavy loads",
-          pros: ["Most stable long-term", "Handles any weight", "Frost-resistant if properly footed", "Easy to drain"],
-          cons: ["Most expensive", "Permanent can't relocate sauna", "Requires permits in some areas"],
-          verdict: "The gold standard for a permanent sauna. If you're spending $3,000+ on a sauna, don't cheap out on the foundation."
-        },
-        {
-          name: "Compacted Gravel Pad",
-          cost: "$150–$500 DIY",
-          difficulty: "Medium DIY friendly",
-          best_for: "Barrel saunas, most residential installs",
-          pros: ["Excellent drainage", "DIY-friendly", "No permits needed", "Can be leveled easily", "Allows some relocation"],
-          cons: ["Can settle over time", "Needs occasional re-leveling", "Not ideal for very heavy saunas"],
-          verdict: "Our recommended option for most barrel sauna installs. Cheap, drains perfectly, easy to DIY."
-        },
-        {
-          name: "Pressure-Treated Timber Frame",
-          cost: "$200–$600 DIY",
-          difficulty: "Easy-Medium",
-          best_for: "Slightly uneven ground, raised installs",
-          pros: ["Levels uneven terrain easily", "Good airflow under sauna", "DIY friendly", "Relocatable"],
-          cons: ["Timber degrades over 15–20 years", "Must use ground-contact rated lumber", "Less stable than concrete"],
-          verdict: "Good option if your ground isn't level or you might relocate the sauna. Use 4×4 or 6×6 PT lumber only."
-        },
-        {
-          name: "Deck Mounting",
-          cost: "Varies depends on existing deck",
-          difficulty: "Hard requires structural assessment",
-          best_for: "Homeowners with an existing deck",
-          pros: ["Convenient if deck is already there", "Elevated = good drainage"],
-          cons: ["Deck must be structurally rated (800–1,500 lbs)", "May require reinforcement", "Fire clearance from house required"],
-          verdict: "Only viable if your deck can handle the weight. Get a structural engineer to confirm before proceeding."
-        },
-        {
-          name: "Concrete Pavers",
-          cost: "$100–$400 DIY",
-          difficulty: "Easy",
-          best_for: "Smaller saunas, temporary installs",
-          pros: ["Cheapest solid option", "Easy to level", "No permits", "Look nice"],
-          cons: ["Can shift in freeze-thaw cycles", "Not ideal for heavier saunas", "Gaps can collect debris"],
-          verdict: "Fine for smaller infrared units or as a temporary solution. Not recommended for traditional barrel saunas in cold climates."
-        },
-      ].map(opt => (
-        <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-xl font-bold text-stone-900">{opt.name}</h3>
-            <span class="text-sm font-semibold text-amber-700">{opt.cost}</span>
-          </div>
-          <p class="text-xs text-stone-400 mb-3">Difficulty: {opt.difficulty} · Best for: {opt.best_for}</p>
-          <div class="grid md:grid-cols-2 gap-3 mb-3 text-sm">
-            <div>
-              <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
-              {opt.pros.map(p => <p class="text-stone-600"> {p}</p>)}
-            </div>
-            <div>
-              <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
-              {opt.cons.map(c => <p class="text-stone-600"> {c}</p>)}
-            </div>
-          </div>
-          <p class="text-sm text-stone-700 bg-stone-50 rounded-lg p-3 border border-stone-200 mt-2">
-            <strong>Verdict:</strong> {opt.verdict}
-          </p>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Step-by-Step: Building a Gravel Pad</h2>
-    <p class="text-stone-600 mb-4">This is the method we recommend for most barrel sauna installs. Here's exactly how to do it:</p>
-    <ol class="space-y-3 mb-6">
-      {[
-        ["Mark the area", "Mark out a footprint 12 inches larger than your sauna on all sides. For a standard 6×7 ft barrel sauna, that's an 8×9 ft pad."],
-        ["Excavate 4–6 inches", "Dig down 4–6 inches across the entire marked area. This removes organic material and gives room for your gravel layers."],
-        ["Add landscape fabric", "Line the excavated area with weed barrier fabric. This prevents vegetation from pushing up through the gravel over time."],
-        ["Fill with gravel base", "Add a 3-inch layer of compactable gravel (class 5 or crushed stone). Spread evenly."],
-        ["Compact thoroughly", "Use a plate compactor (rent from any hardware store) to compress the gravel. Don't skip this it's what prevents settling."],
-        ["Top layer of pea gravel", "Add a 1–2 inch finish layer of pea gravel or crushed granite. This drains well and looks clean."],
-        ["Level carefully", "Use a long level and rake to ensure the pad is perfectly flat. Check in multiple directions. This is critical."],
-        ["Let it settle", "Wait 24–48 hours before placing the sauna. Walk the pad, check level again, adjust if needed."],
-      ].map(([step, text], i) => (
-        <li class="flex gap-3">
-          <span class="flex-shrink-0 w-7 h-7 bg-amber-400 text-stone-900 rounded-full flex items-center justify-center text-sm font-bold">{i+1}</span>
-          <div>
-            <p class="font-semibold text-stone-800">{step}</p>
-            <p class="text-stone-600 text-sm">{text}</p>
-          </div>
-        </li>
-      ))}
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to verify before choosing a base</h2>
+    <ol class="space-y-4 mb-10">
+      <li class="flex gap-3">
+        <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 font-bold text-stone-900">1</span>
+        <div><h3 class="font-bold text-stone-900">Exact model and current manual</h3><p class="text-sm text-stone-700">Confirm the finished footprint, cradle or base-frame positions, required clearances, drainage direction, and any moisture-barrier detail. Do not size the base from a category label such as "four-person barrel."</p></div>
+      </li>
+      <li class="flex gap-3">
+        <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 font-bold text-stone-900">2</span>
+        <div><h3 class="font-bold text-stone-900">Complete loaded weight</h3><p class="text-sm text-stone-700">Include the sauna, heater, stones, occupants, accessories, and any snow or site loads that apply. A product page may list only the shipped or empty weight.</p></div>
+      </li>
+      <li class="flex gap-3">
+        <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 font-bold text-stone-900">3</span>
+        <div><h3 class="font-bold text-stone-900">Soil, frost, and drainage</h3><p class="text-sm text-stone-700">A surface can look level and still settle or collect water. Local soil conditions, frost depth, grading, and runoff determine the preparation below the visible finish.</p></div>
+      </li>
+      <li class="flex gap-3">
+        <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 font-bold text-stone-900">4</span>
+        <div><h3 class="font-bold text-stone-900">Permits and utilities</h3><p class="text-sm text-stone-700">Check local building, zoning, HOA, electrical, and wood-stove requirements before work begins. Coordinate conduit, drainage, and access before the finished base blocks the practical route.</p></div>
+      </li>
     </ol>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Drainage: Don't Ignore It</h2>
-    <p class="text-stone-600 mb-4">Water is the enemy of outdoor saunas. You'll be pouring water on the rocks regularly, and rain will hit the structure. Make sure:</p>
-    <ul class="list-disc pl-5 text-stone-600 text-sm space-y-1 mb-6">
-      <li>The foundation has positive drainage water should flow away from the sauna, not pool under it</li>
-      <li>There's at least 2 inches of airspace between the sauna floor and the foundation surface</li>
-      <li>For barrel saunas with a floor drain, ensure the drain has somewhere to go</li>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-5">Foundation options compared</h2>
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full min-w-[680px] border-collapse text-sm">
+        <thead><tr class="bg-stone-100 text-left"><th class="p-3 border-b border-stone-300">Option</th><th class="p-3 border-b border-stone-300">Useful when</th><th class="p-3 border-b border-stone-300">Verify first</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Concrete pad</td><td class="p-3 border-b border-stone-200">A permanent, low-movement surface fits the model and site.</td><td class="p-3 border-b border-stone-200">Thickness, reinforcement, drainage, frost design, finish elevation, anchors, and moisture control.</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Deck or reinforced platform</td><td class="p-3 border-b border-stone-200">The sauna needs convenient access close to the house.</td><td class="p-3 border-b border-stone-200">Structural capacity, footings, lateral stability, clearances, drainage, and heater or chimney requirements.</td></tr>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Compacted gravel</td><td class="p-3 border-b border-stone-200">A well-drained, serviceable base suits the manufacturer's support layout.</td><td class="p-3 border-b border-stone-200">Excavation, subgrade, aggregate specification, compaction, edging, finished level, and settlement risk.</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Pavers or patio stone</td><td class="p-3 border-b border-stone-200">A prepared patio can remain stable beneath every support point.</td><td class="p-3 border-b border-stone-200">Compacted base, freeze-thaw movement, drainage, full support, and model-specific cradle placement.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Concrete is not automatically the best choice</h2>
+    <p class="text-stone-700 mb-4">Concrete can be durable and predictable, but only when the assembly matches the site and the sauna. A slab that is too small, sits at the wrong elevation, traps water, or misses required support points is an expensive mistake.</p>
+    <p class="text-stone-700 mb-8">Redwood Outdoors specifically discusses moisture control for base-frame saunas placed on concrete. That is a reminder to check the selected manual rather than assuming that "concrete" finishes the decision.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Putting a sauna on an existing deck</h2>
+    <p class="text-stone-700 mb-4">Do not judge a deck by whether it feels solid under a few people. The relevant question is whether the framing, connections, posts, and footings can carry the sauna's concentrated and total loads at the proposed location.</p>
+    <div class="border-l-4 border-amber-500 bg-stone-50 p-5 mb-8 text-sm text-stone-700">
+      Use the current model weight and support layout, then ask a qualified local professional to review the deck. Redwood Outdoors also recommends professional review before placing a full sauna on a deck.
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Manufacturer guidance used for this review</h2>
+    <ul class="list-disc pl-5 space-y-3 text-sm text-stone-700 mb-10">
+      <li><a class="text-amber-700 font-semibold hover:underline" href="https://almostheaven.com/pages/download-our-manuals-guides" rel="noopener" target="_blank">Almost Heaven manuals and guides</a>: use the current manual for the exact barrel, cabin, cube, or heater.</li>
+      <li><a class="text-amber-700 font-semibold hover:underline" href="https://almostheaven.com/blogs/news/tips-for-building-your-barrel-sauna" rel="noopener" target="_blank">Almost Heaven barrel assembly guidance</a>: begin on a level solid surface rather than directly on the ground.</li>
+      <li><a class="text-amber-700 font-semibold hover:underline" href="https://leisurecraft.com/wp-content/uploads/2024/06/Assembly-Instructions-3.pdf" rel="noopener" target="_blank">LeisureCraft Trinity assembly instructions</a>: describes a level base with drainage and lists concrete, deck, crushed stone, and paver options.</li>
+      <li><a class="text-amber-700 font-semibold hover:underline" href="https://www.redwoodoutdoors.com/pages/faqs-sauna-assembly-foundations" rel="noopener" target="_blank">Redwood Outdoors foundation FAQ</a>: covers loaded weight, deck review, concrete, pavers, and moisture control.</li>
     </ul>
 
-    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-10">
-      <h3 class="text-xl font-bold mb-2">Ready to Choose Your Sauna?</h3>
-      <p class="text-stone-300 mb-4">Now that the foundation is sorted, pick the right sauna for your space and budget.</p>
-      <a href="/best-saunas/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-        See Best Saunas of 2025 →
-      </a>
+    <div class="bg-stone-900 text-white rounded-lg p-6 mt-10">
+      <h2 class="text-xl font-bold mb-2">Before anyone pours or excavates</h2>
+      <p class="text-stone-200 mb-4">Ask the sauna seller to confirm the current footprint, support points, loaded weight, and foundation requirements in writing. Then compare that information with the site and local requirements.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/guides/outdoor-sauna-permits/" class="inline-flex min-h-11 items-center bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-5 py-3 rounded-md">Review permit questions</a>
+        <a href="/guides/outdoor-sauna-cost/" class="inline-flex min-h-11 items-center border border-stone-500 hover:border-stone-300 text-white font-semibold px-5 py-3 rounded-md">Build the full budget</a>
+      </div>
     </div>
   </article>
 </Base>

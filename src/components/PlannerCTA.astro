@@ -8,7 +8,7 @@ export interface Props {
 const {
   source,
   heading = "Turn your shortlist into a quote-ready brief",
-  description = "The first 10 complete project briefs in this pilot receive a free manual next-step review. Your answers stay in your browser until you choose to email them.",
+  description = "The first 10 complete project briefs in this pilot receive a free manual next-step review. Your answers stay in your browser unless you explicitly send them for review.",
 } = Astro.props;
 
 const href = `/sauna-planner/?utm_source=buyer_guide&utm_medium=site&utm_campaign=planner_first_10&utm_content=${encodeURIComponent(source)}`;

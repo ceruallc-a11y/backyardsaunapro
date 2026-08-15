@@ -1,130 +1,132 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do I need a permit for an outdoor sauna?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It depends on the property address, structure, size, height, use, foundation, heat source, electrical or plumbing work, zoning, site constraints, and local code adoption. Ask the local building and zoning authorities about the exact project before ordering.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does a small-building exemption mean no approvals are needed?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. An exemption from one structural building permit does not automatically waive zoning, setbacks, lot coverage, electrical, mechanical, plumbing, fire, environmental, historic-district, or HOA requirements.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What information should I give the permit office?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Provide the property address, site plan, sauna dimensions and height, distance from property lines and buildings, foundation, heat source, electrical or chimney plan, plumbing or drain information, product listing and manual, and whether the structure is attached, movable, or intended for business use.',
+      },
+    },
+  ],
+};
 ---
 <Base
-  title="Do You Need a Permit for an Outdoor Sauna? (2025 Guide)"
-  description="A clear guide to outdoor sauna permits, zoning rules, setback requirements, and electrical permits. Know what you need before you build."
+  title="Outdoor Sauna Permits: What to Ask Before You Buy"
+  description="Prepare the exact questions and project details needed to check building, zoning, electrical, chimney, HOA, and site requirements for an outdoor sauna."
   canonical="/guides/outdoor-sauna-permits"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Do You Need a Permit for an Outdoor Sauna?
-      </h1>
-      <p class="text-stone-500 text-sm">Updated November 2024 · 7 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        Most people skip this step. Then they find out after the sauna is up that they needed a permit. The good news: permits for backyard saunas are usually straightforward. Here's what you actually need to know.
-      </p>
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Do You Need a Permit for an Outdoor Sauna?</h1>
+      <p class="text-stone-500 text-sm">Reviewed August 2026 &middot; 8 min read</p>
+      <p class="text-lg text-stone-700 mt-4">Maybe. The answer depends on the address and the complete design, not simply whether the sauna is small or arrives as a kit.</p>
     </header>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">The Short Answer</h2>
-      <div class="space-y-2 text-sm text-stone-700">
-        {[
-          ["Building permit", "Often required for permanent structures over a certain size (typically 120-200 sq ft threshold)"],
-          ["Electrical permit", "Almost always required when running a new 240V circuit your electrician handles this"],
-          ["Zoning approval", "Required in some municipalities for accessory structures, check setback rules"],
-          ["HOA approval", "Required if you live in an HOA check your CC&Rs before ordering anything"],
-        ].map(([type, note]) => (
-          <div class="flex gap-3 bg-white rounded-lg px-4 py-3">
-            <span class="font-semibold text-stone-800 w-40 shrink-0">{type}</span>
-            <span class="text-stone-600">{note}</span>
-          </div>
-        ))}
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-8">
+      <h2 class="font-bold text-stone-900 mb-2">The short answer</h2>
+      <p class="text-sm text-stone-700">Check building, zoning, and the relevant trade permits before ordering. A project can be exempt from a structural building permit and still need zoning approval, setbacks, electrical or mechanical permits, inspections, or HOA review.</p>
+    </div>
+
+    <PlannerCTA
+      source="outdoor_sauna_permits_after_summary"
+      heading="Bring the permit questions into your project brief"
+      description="Record the location, project type, dimensions, heat source, electrical status, and installation needs in one place before contacting the local authority or requesting quotes."
+    />
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Why a national square-foot rule is unreliable</h2>
+    <p class="text-stone-700 mb-4">Local rules differ, and the intended use matters. Two current city examples show why a generic threshold can mislead:</p>
+    <div class="grid md:grid-cols-2 gap-4 mb-8">
+      <div class="border border-stone-200 bg-white rounded-lg p-5">
+        <h3 class="font-bold text-stone-900 mb-2">Seattle example</h3>
+        <p class="text-sm text-stone-700 mb-3">Seattle's shed guidance describes a narrow no-permit path for a detached, single-story structure whose roof footprint is 120 square feet or less and is used for storage, plant growing, or a similar generally unoccupied use. An occupied sauna should not be assumed to fit that exemption.</p>
+        <a href="https://web5.seattle.gov/sdci/permits/common-projects/sheds" target="_blank" rel="noopener" class="text-sm font-semibold text-amber-700 hover:underline">Read Seattle's official guidance</a>
+      </div>
+      <div class="border border-stone-200 bg-white rounded-lg p-5">
+        <h3 class="font-bold text-stone-900 mb-2">Portland example</h3>
+        <p class="text-sm text-stone-700 mb-3">Portland describes a structural permit exemption for some detached non-habitable accessory structures at 200 square feet or less, but says zoning and applicable trade permits may still be required. It also publishes a separate interpretation for heated accessory structures.</p>
+        <a href="https://www.portland.gov/ppd/residential-permitting/home-projects/garage-shed-and-accessory-structures" target="_blank" rel="noopener" class="text-sm font-semibold text-amber-700 hover:underline">Read Portland's official guidance</a>
       </div>
     </div>
 
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Building Permits</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-5">Approvals to ask about</h2>
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full min-w-[680px] border-collapse text-sm">
+        <thead><tr class="bg-stone-100 text-left"><th class="p-3 border-b border-stone-300">Review</th><th class="p-3 border-b border-stone-300">What may trigger it</th><th class="p-3 border-b border-stone-300">Ask this</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Building</td><td class="p-3 border-b border-stone-200">Structure, size, height, foundation, occupancy or use, attachment, and local code.</td><td class="p-3 border-b border-stone-200">Does this exact sauna and foundation need a building permit?</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Zoning</td><td class="p-3 border-b border-stone-200">Setbacks, lot coverage, height, location, easements, overlays, and accessory-use rules.</td><td class="p-3 border-b border-stone-200">Is this location allowed, even if the structure is permit-exempt?</td></tr>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Electrical</td><td class="p-3 border-b border-stone-200">New circuit, panel work, trenching, disconnect, controls, and equipment connection.</td><td class="p-3 border-b border-stone-200">Which permit, listing, clearances, and inspection apply?</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Mechanical or fire</td><td class="p-3 border-b border-stone-200">Wood-fired heater, chimney, combustion clearances, or other fuel-burning equipment.</td><td class="p-3 border-b border-stone-200">Which listed system, installation instructions, and inspections are required?</td></tr>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Plumbing or drainage</td><td class="p-3 border-b border-stone-200">Water supply, floor drain, wastewater connection, or site discharge.</td><td class="p-3 border-b border-stone-200">Is the proposed water or drainage method allowed?</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Property-specific</td><td class="p-3 border-b border-stone-200">HOA, historic district, floodplain, wildfire, shoreland, septic, wetland, slope, or utility easement.</td><td class="p-3 border-b border-stone-200">Which overlays or private restrictions affect this address?</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <div class="space-y-5">
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Prepare this information before you call</h2>
+    <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-stone-700 mb-8">
+      <li>[ ] Property address and parcel number</li>
+      <li>[ ] Site plan with proposed location</li>
+      <li>[ ] Exterior dimensions and total height</li>
+      <li>[ ] Distance to property lines and buildings</li>
+      <li>[ ] Foundation or support method</li>
+      <li>[ ] Electric, wood-fired, infrared, or other heat</li>
+      <li>[ ] Heater and sauna product documentation</li>
+      <li>[ ] Electrical, chimney, plumbing, and drain plan</li>
+      <li>[ ] Attached, detached, movable, or on skids</li>
+      <li>[ ] Personal, rental, or business use</li>
+    </ul>
 
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">When You Probably Don't Need One</h3>
-        <p class="text-stone-600 text-sm">Many municipalities exempt small accessory structures from building permits if they're under a certain square footage. Common thresholds are 120 sq ft or 200 sq ft. A 2-person barrel sauna is typically under 50 sq ft. A 4-person barrel sauna is typically 60-80 sq ft.</p>
-        <p class="text-stone-600 text-sm mt-3">If your sauna is on skids or a gravel pad (not a permanent foundation like concrete), some jurisdictions classify it as a temporary structure and exempt it from permit requirements entirely.</p>
+    <div class="border-l-4 border-amber-500 bg-stone-50 p-5 mb-10">
+      <h3 class="font-bold text-stone-900 mb-2">Use the word "sauna"</h3>
+      <p class="text-sm text-stone-700">Do not ask only whether a shed of the same size needs a permit. Explain that people will occupy the heated structure and identify the proposed heater, foundation, utilities, and distance to other structures.</p>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">A copy-ready question for the local authority</h2>
+    <blockquote class="border border-stone-200 bg-white rounded-lg p-5 text-sm text-stone-700 mb-8">I am considering a detached outdoor sauna at [address]. It would be approximately [width] by [length] by [height], located [distance] from the nearest property lines and buildings, on a [foundation type]. The heat source would be [electric or wood-fired], with [electrical, chimney, plumbing, or drain work]. Which building, zoning, trade, fire, environmental, or other approvals and inspections apply before I order or begin site work?</blockquote>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What a permit exemption does not mean</h2>
+    <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700 mb-10">
+      <li>It does not authorize a zoning violation or placement in a restricted setback.</li>
+      <li>It does not waive electrical, mechanical, plumbing, fire, or environmental rules.</li>
+      <li>It does not replace the manufacturer instructions or product listing.</li>
+      <li>It does not override an HOA, easement, historic-district rule, or other private restriction.</li>
+      <li>It does not mean unpermitted work will be accepted by an insurer or future buyer.</li>
+    </ul>
+
+    <div class="bg-stone-900 text-white rounded-lg p-6 mt-10">
+      <h2 class="text-xl font-bold mb-2">Resolve the site before ordering</h2>
+      <p class="text-stone-200 mb-4">A short conversation with the correct local offices can change the allowable location, foundation, heater, drawings, and total project budget.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/guides/sauna-foundation-guide/" class="inline-flex min-h-11 items-center rounded-md bg-amber-400 px-5 py-3 font-semibold text-stone-900 hover:bg-amber-500">Compare foundation options</a>
+        <a href="/guides/outdoor-sauna-cost/" class="inline-flex min-h-11 items-center rounded-md border border-stone-500 px-5 py-3 font-semibold text-white hover:border-stone-300">Build the total budget</a>
       </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">When You Probably Do Need One</h3>
-        <p class="text-stone-600 text-sm">Larger structures (6-person and up), saunas on permanent foundations, structures in jurisdictions with strict accessory building rules, and any sauna in a municipality that treats all outdoor structures as requiring permits regardless of size.</p>
-        <p class="text-stone-600 text-sm mt-3">The permit process for a small outdoor sauna is usually simple: submit a site plan showing placement and dimensions, pay a fee ($50-200 typically), and get an inspection when the electrical is done. Most people who go through it say it's less painful than they expected.</p>
-      </div>
-
     </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Electrical Permits</h2>
-    <p class="text-stone-600 text-sm mb-4">This one is almost universal. Any time a licensed electrician runs a new circuit, they pull an electrical permit. This is standard practice, not something you have to chase down yourself. When you hire an electrician for your 240V sauna circuit, they handle the permit as part of the job.</p>
-    <p class="text-stone-600 text-sm mb-4">The electrical inspection happens after the work is done. The electrician schedules it. You don't need to be there.</p>
-    <p class="text-stone-600 text-sm mb-4">If you're using a plug-in infrared sauna that runs on a standard 120V outlet, there's no electrical permit involved. That's one of the underrated advantages of infrared saunas for people who want to avoid the permitting process entirely.</p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Zoning and Setback Requirements</h2>
-    <p class="text-stone-600 text-sm mb-4">Setback rules determine how close an accessory structure can be to property lines, fences, and your main dwelling. Typical setbacks are 5-10 feet from the property line. Some zones require 20 feet from the main house.</p>
-    <p class="text-stone-600 text-sm mb-4">In a small backyard, setback rules can genuinely constrain your options. A 10-foot setback on all four sides of a 30x40 foot backyard leaves you a 10x20 foot usable area. Know your numbers before you pick a spot.</p>
-    <p class="text-stone-600 text-sm mb-4">Call your local planning or building department. Give them the address, describe the structure, and ask what applies. Takes 10 minutes and eliminates all uncertainty.</p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">HOA Rules</h2>
-    <p class="text-stone-600 text-sm mb-4">If you live in a neighborhood with a homeowners association, check your CC&Rs (Covenants, Conditions, and Restrictions) before ordering anything. Some HOAs prohibit outdoor accessory structures entirely. Others require architectural review board approval for anything visible from the street.</p>
-    <p class="text-stone-600 text-sm mb-4">HOA rules are enforced independently from municipal permits. You can be fully permitted by the city and still be in violation of your HOA. Check both.</p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">How to Check Your Local Requirements</h2>
-    <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm mb-6">
-      <ol class="space-y-3 text-sm text-stone-600 list-decimal list-inside">
-        <li><span class="font-semibold text-stone-800">Call your building department.</span> Search "[your city] building department" and call the permit counter. Describe the structure outdoor sauna, approximate square footage, on gravel pad. They'll tell you what's required.</li>
-        <li><span class="font-semibold text-stone-800">Ask about setback requirements.</span> Specifically ask: minimum distance from property lines, from the main dwelling, and from any fence or structure.</li>
-        <li><span class="font-semibold text-stone-800">Check your HOA documents.</span> Look for "accessory structures" or "outbuildings" in your CC&Rs. When in doubt, email the HOA board before you order.</li>
-        <li><span class="font-semibold text-stone-800">Coordinate with your electrician.</span> They'll pull the electrical permit. Confirm they're doing this before work starts.</li>
-      </ol>
-    </div>
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8 text-sm">
-      <p class="font-semibold text-stone-800 mb-2">What happens if you don't get permits?</p>
-      <p class="text-stone-600">At best, nothing. At worst: a neighbor reports it, you get a stop-work or removal order, and you have to tear it down or retroactively permit it at higher cost. Unpermitted structures can also cause issues when you sell the house. The permit process for a small sauna is usually 1-2 phone calls and a modest fee. It's worth doing.</p>
-    </div>
-
-    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h3 class="font-bold text-stone-900 mb-3">Ready to plan your build?</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-location-backyard-sauna/" class="text-amber-700 hover:underline font-medium">Best Location for a Backyard Sauna</a></li>
-        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline font-medium">Sauna Foundation Guide</a></li>
-        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline font-medium">Sauna Electrical Requirements</a></li>
-        <li><a href="/guides/outdoor-sauna-cost/" class="text-amber-700 hover:underline font-medium">Full Outdoor Sauna Cost Breakdown</a></li>
-      </ul>
-    </div>
-
   </article>
 </Base>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Do you need a permit for an outdoor sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It depends on your municipality. Many areas exempt small accessory structures under 120-200 square feet from building permits. However, electrical permits are almost always required when running a new 240V circuit. Zoning setback requirements also apply regardless of permit status. Call your local building department to get the definitive answer for your address."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How close can an outdoor sauna be to a fence or property line?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Typical setback requirements are 5-10 feet from property lines and fences. Some municipalities require 20 feet from the main dwelling. Requirements vary significantly by location. Check with your local planning or building department for the exact rules in your area."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you need an HOA approval for an outdoor sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "If you live in a neighborhood with an HOA, you likely need approval before installing an outdoor sauna. HOA rules are enforced independently from municipal permits you can be fully permitted by the city and still be in violation of your HOA. Check your CC&Rs for accessory structure rules and get written approval from your HOA board before ordering."
-      }
-    }
-  ]
-}
-</script>
