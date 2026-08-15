@@ -21,7 +21,7 @@ const featuredPicks = [
     imageAlt: "Representative outdoor barrel sauna on a gravel base",
     name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
     price: "",
-    rating: "4.5/5",
+    format: "Traditional outdoor barrel",
     blurb: "A traditional outdoor barrel with 63.25-inch benches, 240V heater configurations, and water-on-stones heat when the selected heater permits it.",
     tag: "BEST TRADITIONAL"
   },
@@ -31,8 +31,8 @@ const featuredPicks = [
     imageAlt: "Representative compact indoor infrared sauna cabin",
     name: "Dynamic Saunas Barcelona Far Infrared",
     price: "",
-    rating: "4.4/5",
-    blurb: "Plugs into a standard outlet. Heats in 15 minutes. Low-EMF carbon panels. The easiest budget path to a real sauna experience without the installation complexity.",
+    format: "Compact 120V infrared cabin",
+    blurb: "A compact indoor infrared cabin that uses a standard 120V receptacle. Check the room, dedicated-circuit guidance, delivery route, and current seller before ordering.",
     tag: "BEST BUDGET"
   }
 ];
@@ -78,7 +78,7 @@ const secondaryPicks = featuredPicks.slice(1);
 ---
 
 <Base
-  title="Backyard Sauna Pro | Best Outdoor Saunas Reviewed (2026)"
+  title="Home Sauna Buying Advice | Backyard Sauna Pro"
   description="Practical sauna buying, planning, and installation guidance for homeowners comparing indoor and outdoor saunas."
   canonical="/"
   mainClass="home-page"
@@ -94,8 +94,8 @@ const secondaryPicks = featuredPicks.slice(1);
           Compare types, budget the full project, and prepare for installation before you buy.
         </p>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="/best-saunas/" class="home-action home-action-primary">Compare top picks</a>
-          <a href="/guides/outdoor-sauna-cost/" class="home-action home-action-secondary">Estimate costs</a>
+          <a href="/sauna-planner/" class="home-action home-action-primary">Build your project brief</a>
+          <a href="/best-saunas/" class="home-action home-action-secondary">Compare saunas</a>
         </div>
       </div>
     </div>
@@ -153,7 +153,7 @@ const secondaryPicks = featuredPicks.slice(1);
               <span class="text-xs font-bold text-[#1c4a39] mb-3">{pick.tag}</span>
               <h3 class="text-xl font-bold leading-snug mb-2">{pick.name}</h3>
               <p class="text-sm text-[#5a6962] leading-relaxed mb-4 flex-grow">{pick.blurb}</p>
-              <p class="text-xs text-[#5a6962] mb-1">Rating: {pick.rating}</p>
+              <p class="text-xs text-[#5a6962] mb-1">Format: {pick.format}</p>
               <p class="text-xs text-[#6f7d76] mb-4">Representative setup; not the exact model.</p>
               <AmazonButton asin={pick.asin} price={pick.price} class="w-full text-center" />
             </div>
