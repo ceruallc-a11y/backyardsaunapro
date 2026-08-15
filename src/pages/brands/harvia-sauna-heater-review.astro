@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -7,208 +8,185 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Are Harvia sauna heaters good?",
+      "name": "Which Harvia sauna heater should I choose?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Harvia is one of the most respected sauna heater brands in the world. Founded in Finland in 1950, they manufacture electric heaters, wood-burning stoves, and steam generators used in both residential and commercial saunas globally. Their heaters are known for reliability, precise temperature control, and long service life. The KIP series is the standard recommendation for residential electric sauna heaters."
+        "text": "Start with the calculated room volume, then match the exact heater item number to its current manual. The KIP60B is a compact 6 kW wall heater with built-in manual controls. The KIP60W uses a separate control unit. The Cilindro PC90E is a 9 kW pillar heater with a much larger stone capacity and separate controls. The M3 burns wood and requires a compliant chimney installation."
       }
     },
     {
       "@type": "Question",
-      "name": "Which Harvia heater should I buy?",
+      "name": "Does the Harvia KIP60B include controls?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For most home saunas: the Harvia KIP 60B (6kW) for rooms up to 265 cubic feet, and the KIP 80B (8kW) for rooms up to 353 cubic feet. For a wood-burning sauna, the Harvia M3 is the best-selling residential wood stove. For a premium integrated experience, the Harvia Cilindro or Harvia Legend series offer more stone capacity and faster recovery."
+        "text": "Yes. Harvia lists item JH60BU1UL, type KIP60B, with built-in manual temperature and timer controls. The similarly named KIP60W uses a separate control unit, so the suffix and item number matter."
       }
     },
     {
       "@type": "Question",
-      "name": "Where is Harvia made?",
+      "name": "Can I install a Harvia electric sauna heater myself?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Harvia is a Finnish company headquartered in Muurame, Finland. Their heaters are manufactured in Finland and Estonia. Harvia is publicly traded on the Nasdaq Helsinki exchange and is considered the largest sauna heater manufacturer in the world by volume."
+        "text": "Harvia says electrical connection and service must be completed by an authorized electrical professional or another qualified person permitted by local regulations. Confirm the exact heater manual, circuit, wire size, clearances, and local code before buying."
       }
     }
   ]
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Harvia Sauna Heaters Review (2025): KIP, M3, Cilindro and More"
-  description="Complete Harvia sauna heater review: KIP series, M3 wood stove, Cilindro, and Legend. Which model fits your sauna and why Harvia leads the market."
+  title="Harvia Sauna Heater Guide: KIP, Cilindro, M3 and Legend"
+  description="Compare current Harvia KIP, Cilindro, M3, and Legend heater formats by controls, room range, stone capacity, and installation needs."
   canonical="/brands/harvia-sauna-heater-review"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Harvia Sauna Heaters Review (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+    <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-3">Heater decision guide</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Harvia sauna heaters: how the current lines differ</h1>
+    <p class="text-stone-500 mb-8">Last reviewed August 15, 2026</p>
 
     <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Sauna interior with Harvia stones and heater" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Sauna benches beside a stone-filled electric heater" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+      <strong>How we researched this guide:</strong> We compared current North American Harvia product pages, item numbers, listed room ranges, control types, dimensions, and installation documents. We have not personally tested every heater on this page. Final sizing and installation must follow the manual for the exact item you buy.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Harvia is the default recommendation for residential sauna heaters for a reason. Founded in Finland in 1950, they are the largest sauna heater manufacturer in the world. Their electric heaters power more home saunas in North America than any other brand. Here is a full breakdown of each model line and which one belongs in your sauna.</p>
+    <p class="text-lg text-stone-700 mb-4">Harvia sells several heaters with similar names but very different controls and installation requirements. The useful question is not whether one line is "best." It is which exact item number fits your room, electrical plan, desired controls, and preferred amount of exposed stone.</p>
+    <p class="text-stone-700 mb-8">Use the table for a shortlist. Then have the room calculation and installation plan checked before ordering. Glass, masonry, and other uninsulated surfaces can change the effective sauna volume.</p>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-900 mb-2">Quick Picks by Use Case</h2>
-      <ul class="space-y-2 text-stone-700 text-sm">
-        <li><span class="font-semibold">Best overall electric:</span> Harvia KIP 60B (6kW) or KIP 80B (8kW)</li>
-        <li><span class="font-semibold">Best wood-burning:</span> Harvia M3</li>
-        <li><span class="font-semibold">Best premium electric:</span> Harvia Cilindro</li>
-        <li><span class="font-semibold">Best large room:</span> Harvia Legend 240SL (24kW)</li>
-      </ul>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Harvia KIP Series (Electric)</h2>
-    <p class="text-stone-700 mb-4">The KIP is Harvia's workhorse residential heater and the one we recommend most often. Clean design, reliable thermostat, suitable stone capacity, and available in sizes from 3.5kW to 9kW to cover virtually any home sauna. The KIP includes a built-in timer and thermostat; pair it with the Harvia Griffin WiFi controller if you want remote preheat.</p>
-
-    <div class="space-y-4 mb-8">
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Most Popular</span>
-            <h3 class="text-lg font-bold text-stone-900 mt-1">Harvia KIP 60B — 6kW</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 mb-3 text-sm">Covers rooms up to 265 cubic feet. The standard pairing for Almost Heaven Pinnacle 4-person and similar mid-size barrel saunas. 240V/25A circuit required. Built-in thermostat and timer, 15-20 kg stone capacity.</p>
-        <AmazonButton asin="B0B7TRM95Y" variant="small" />
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Larger Rooms</span>
-            <h3 class="text-lg font-bold text-stone-900 mt-1">Harvia KIP 80B — 8kW</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 mb-3 text-sm">Covers rooms up to 353 cubic feet. The right choice for larger barrel saunas and 4-6 person indoor kits. 240V/30A circuit. Same controls as the 60B.</p>
-        <p class="text-stone-400 text-xs">Available on Amazon and sauna specialty retailers</p>
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Harvia M3 (Wood-Burning)</h2>
-    <p class="text-stone-700 mb-4">The M3 is the best-selling residential wood-burning sauna stove in Finland and one of the most popular in North America. Cast iron and steel construction, large stone basket (up to 40 kg), and a distinctive design that has not changed much since the original. The M3 requires a properly installed chimney flue and is the right choice for off-grid saunas or anywhere electric is not an option.</p>
-
-    <div class="border border-stone-200 rounded-xl p-5 bg-white mb-8">
-      <div class="flex items-start justify-between mb-2">
-        <div>
-          <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Wood Stove</span>
-          <h3 class="text-lg font-bold text-stone-900 mt-1">Harvia M3 Wood-Burning Sauna Stove</h3>
-        </div>
-        
-      </div>
-      <p class="text-stone-600 mb-3 text-sm">For rooms up to 530 cubic feet. Authentic wood-fired sauna experience. Large stone capacity means excellent loyly (steam). Requires chimney installation — factor in $300-800 for flue kit if not already present.</p>
-      <AmazonButton asin="B01FY6PZYU" variant="small" />
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Harvia Cilindro (Premium Electric)</h2>
-    <p class="text-stone-700 mb-6">The Cilindro is Harvia's design-forward premium heater — the cylindrical stainless steel form is distinctive, it has a large stone capacity for better steam, and the overall build quality is noticeably higher than the KIP. Available in 8kW and 10kW versions. Costs roughly double the KIP but the loyly quality is meaningfully better due to the larger stone mass. Worth it for a dedicated sauna room where aesthetics and performance both matter.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Harvia Legend Series (Commercial / Large)</h2>
-    <p class="text-stone-700 mb-4">For large rooms and commercial applications. The Legend 240SL (24kW, three-phase) handles up to 1,500+ cubic feet. Rarely needed for residential use, but relevant for large custom sauna rooms or retreat centers. The <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">heater sizing guide</a> will tell you if you are in this territory.</p>
-
-    <div class="border border-stone-200 rounded-xl p-5 bg-white mb-8">
-      <h3 class="text-lg font-bold text-stone-900 mb-1">Harvia Legend 240SL — 24kW</h3>
-      <p class="text-stone-600 mb-3 text-sm">For very large rooms. Three-phase 240V. Used in commercial and high-end residential installations.</p>
-      <AmazonButton asin="B01FY9T0B6" variant="outline" />
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Makes Harvia the Default Recommendation</h2>
-    <div class="grid md:grid-cols-2 gap-4 mb-8">
-      <div class="bg-green-50 border border-green-200 rounded-xl p-4">
-        <h3 class="font-bold text-green-900 mb-2 text-sm">Pros</h3>
-        <ul class="space-y-1 text-green-800 text-sm">
-          <li>Genuine Finnish manufacture — not rebadged Chinese hardware</li>
-          <li>Widely available parts and service in North America</li>
-          <li>Consistent thermostat accuracy across all KIP models</li>
-          <li>Stone capacity sized correctly for the stated wattage</li>
-          <li>Long service life — 15-20 years is normal with basic maintenance</li>
-        </ul>
-      </div>
-      <div class="bg-red-50 border border-red-200 rounded-xl p-4">
-        <h3 class="font-bold text-red-900 mb-2 text-sm">Cons</h3>
-        <ul class="space-y-1 text-red-800 text-sm">
-          <li>More expensive than Vevor / generic brands</li>
-          <li>KIP design is functional but not exciting</li>
-          <li>WiFi control (Griffin) sold separately</li>
-          <li>Installation requires a licensed electrician in most jurisdictions</li>
-        </ul>
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Harvia vs Competitors</h2>
-    <div class="overflow-x-auto mb-8">
-      <table class="text-sm w-full">
+    <div class="overflow-x-auto mb-10">
+      <table class="text-sm w-full min-w-[680px]">
         <thead>
           <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-6">Brand</th>
-            <th class="pb-2 pr-6">Origin</th>
-            <th class="pb-2 pr-6">Price Range</th>
-            <th class="pb-2">Best For</th>
+            <th class="pb-3 pr-5">Example model</th>
+            <th class="pb-3 pr-5">Format</th>
+            <th class="pb-3 pr-5">Controls</th>
+            <th class="pb-3 pr-5">Listed room range</th>
+            <th class="pb-3">Planning distinction</th>
           </tr>
         </thead>
         <tbody class="text-stone-700">
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Harvia</td>
-            <td class="py-2 pr-6">Finland</td>
-            <td class="py-2 pr-6">$500-$1,500</td>
-            <td class="py-2">Most home saunas — reliable default</td>
+            <td class="py-3 pr-5 font-semibold">KIP60B</td>
+            <td class="py-3 pr-5">6 kW wall-mounted electric</td>
+            <td class="py-3 pr-5">Built-in manual switches</td>
+            <td class="py-3 pr-5">Confirm exact item manual</td>
+            <td class="py-3">Compact wall format; no remote operation</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6"><a href="/brands/huum-sauna-heater-review/" class="text-amber-700 hover:underline">HUUM</a></td>
-            <td class="py-2 pr-6">Estonia</td>
-            <td class="py-2 pr-6">$1,200-$2,000</td>
-            <td class="py-2">Premium, design-forward, large stone capacity</td>
+            <td class="py-3 pr-5 font-semibold">KIP60W</td>
+            <td class="py-3 pr-5">6 kW wall-mounted electric</td>
+            <td class="py-3 pr-5">Separate control unit</td>
+            <td class="py-3 pr-5">170-300 ft3</td>
+            <td class="py-3">Control package must be planned separately</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6">Finnleo / Tylo</td>
-            <td class="py-2 pr-6">Finland/Sweden</td>
-            <td class="py-2 pr-6">$800-$1,800</td>
-            <td class="py-2">High-end residential and commercial</td>
+            <td class="py-3 pr-5 font-semibold">Cilindro PC90E</td>
+            <td class="py-3 pr-5">9 kW floor-standing electric</td>
+            <td class="py-3 pr-5">Separate control unit</td>
+            <td class="py-3 pr-5">141-494 ft3</td>
+            <td class="py-3">Pillar format with 200 lb listed stone capacity</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-3 pr-5 font-semibold">M3</td>
+            <td class="py-3 pr-5">16.5 kW wood-burning</td>
+            <td class="py-3 pr-5">Fire and air controls</td>
+            <td class="py-3 pr-5">212-459 ft3</td>
+            <td class="py-3">Needs a compliant flue, shielding, and clearances</td>
           </tr>
           <tr>
-            <td class="py-2 pr-6">Vevor / generic</td>
-            <td class="py-2 pr-6">China</td>
-            <td class="py-2 pr-6">$150-$400</td>
-            <td class="py-2">Budget builds — shorter lifespan</td>
+            <td class="py-3 pr-5 font-semibold">Legend PO70E</td>
+            <td class="py-3 pr-5">6.8 kW floor-standing electric</td>
+            <td class="py-3 pr-5">Separate digital control</td>
+            <td class="py-3 pr-5">212-353 ft3</td>
+            <td class="py-3">Large 220.5 lb listed stone capacity</td>
           </tr>
         </tbody>
       </table>
     </div>
 
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">KIP60B: simple controls in a compact wall heater</h2>
+    <p class="text-stone-700 mb-4">The North American KIP60B item JH60BU1UL is a 6 kW, 240 VAC single-phase heater with manual controls on the unit. Harvia lists a temperature dial, an on/off timer with a delayed-start setting, 23.6 x 16.1 x 11-inch dimensions, and a 44-pound stone capacity.</p>
+    <p class="text-stone-700 mb-5">This is the clearest fit when you want a conventional wall heater without a separate digital controller. It is not a remote-control model. Confirm the exact room range and electrical requirements in the manual tied to the retailer's item number; Harvia has more than one North American KIP60B record.</p>
+    <div class="border border-stone-200 rounded-xl p-5 bg-white mb-8">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Current verified buying path</h3>
+      <p class="text-stone-600 mb-4 text-sm">Our button routes to the current authorized Select Saunas listing because the previously linked Amazon listing is no longer available. Check the retailer item number against Harvia's current documentation before purchase.</p>
+      <AmazonButton asin="B0B7TRM95Y" variant="small" />
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">KIP60W: similar heater, separate controls</h2>
+    <p class="text-stone-700 mb-4">The KIP60W looks similar to the KIP60B, but Harvia lists item JH60WU1MUL as a separate-control model for rooms from 170 to 300 cubic feet. That single letter changes the control plan. Before ordering, ask which compatible control and power components are included and which are separate.</p>
+    <a href="https://www.harvia.com/en-US/products/JH60WU1MUL/kip60w-60-kw-240v-black" rel="noopener" class="text-amber-700 font-semibold hover:underline">Review the official KIP60W specifications</a>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cilindro PC90E: more exposed stone, more planning</h2>
+    <p class="text-stone-700 mb-4">The North American Cilindro PC90E item HPCS9U1HUL is a 9 kW, 240 VAC pillar heater controlled by a separate unit. Harvia lists a 141-494 cubic-foot room range and 200 pounds of stones. Its open pillar format creates a much larger stone surface than the KIP, but it also changes the purchase list, placement, guard, and control decisions.</p>
+    <p class="text-stone-700 mb-4">Do not treat the full published range as a shortcut around heat-loss calculations. The final heater size still depends on the room construction and the exact manual.</p>
+    <a href="https://www.harvia.com/en-US/products/HPCS9U1HUL/cilindro-pc90e-90-kw-240-vac-steel" rel="noopener" class="text-amber-700 font-semibold hover:underline">Review the official Cilindro PC90E specifications</a>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">M3: wood heat with a different installation scope</h2>
+    <p class="text-stone-700 mb-4">The M3, item WKM3, is a 16.5 kW wood-burning heater listed for 212-459 cubic feet. Harvia lists 66.2 pounds of stones, a glass door, and specific clearances on every side. It does not replace the need for chimney design, hearth protection, permits, and local fire-code review.</p>
+    <p class="text-stone-700 mb-4">Choose wood because it fits the site and the way you want to operate the sauna, not because it appears easier than electrical work. The flue and clearance plan can be the larger part of the installation decision.</p>
+    <a href="https://www.harvia.com/en-US/products/WKM3/m3-black" rel="noopener" class="text-amber-700 font-semibold hover:underline">Review the official Harvia M3 specifications</a>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Legend: check the fuel type before comparing</h2>
+    <p class="text-stone-700 mb-4">"Legend" is a family name, not one heater. Harvia currently lists electric and wood-burning Legend models. The electric PO70E, for example, is a 6.8 kW pillar heater for 212-353 cubic feet with a separate digital control and 220.5 pounds of stones. A Legend 240 SL is a 21 kW wood-burning model for a much larger room. Those are different projects.</p>
+    <a href="https://www.harvia.com/en-US/products/HPOE704/electric-sauna-heater-harvia-legend-po70e-68-kw-black" rel="noopener" class="text-amber-700 font-semibold hover:underline">Review the official electric Legend PO70E specifications</a>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to verify before paying</h2>
+    <ul class="space-y-3 text-stone-700 mb-8 list-disc pl-5">
+      <li><strong>Exact item number:</strong> model-family names alone do not establish the controls, certification, or electrical configuration.</li>
+      <li><strong>Calculated room volume:</strong> include the adjustment required by the manufacturer for glass, masonry, or uninsulated surfaces.</li>
+      <li><strong>Control package:</strong> confirm whether controls, sensors, contactors, and door devices are built in, included, or sold separately.</li>
+      <li><strong>Electrical plan:</strong> have a qualified professional confirm voltage, phase, breaker, conductor, disconnect, and local code requirements.</li>
+      <li><strong>Clearances and guards:</strong> use the current manual for the exact item rather than a reseller summary.</li>
+      <li><strong>Stone quantity:</strong> verify whether stones are included and buy the size and quantity specified for that heater.</li>
+    </ul>
+
+    <div class="bg-stone-900 text-white rounded-xl p-6 my-10">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-300 mb-2">Not sure which format fits?</p>
+      <h2 class="text-2xl font-bold mb-3">Build a room and installation brief first</h2>
+      <p class="text-stone-200 mb-5">The free planner organizes your room size, power, budget, and installation needs before you compare exact heater packages.</p>
+      <a href="/sauna-planner/?source=harvia-guide" class="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-400 text-stone-950 font-semibold px-5 py-3 rounded-lg">Start the sauna planner</a>
+    </div>
+
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
+    <div class="space-y-6">
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">Are Harvia sauna heaters good?</h3>
-        <p class="text-stone-700">Yes — Harvia is the global market leader in sauna heaters for a reason. Finnish manufacture, reliable thermostats, widely available parts, and long service life.</p>
+        <h3 class="font-bold text-stone-900 mb-1">Which Harvia sauna heater should I choose?</h3>
+        <p class="text-stone-700">Start with calculated room volume and fuel type. Then compare the exact item number, controls, stone capacity, clearances, and complete installation package. A model-family name by itself is not enough.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">Which Harvia heater should I buy?</h3>
-        <p class="text-stone-700">KIP 60B for rooms up to 265 cubic feet. KIP 80B for up to 353 cubic feet. M3 for wood-burning. Cilindro for premium electric. Use the <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">sizing guide</a> to confirm.</p>
+        <h3 class="font-bold text-stone-900 mb-1">Does the Harvia KIP60B include controls?</h3>
+        <p class="text-stone-700">Harvia lists item JH60BU1UL with built-in manual controls. The similarly named KIP60W uses a separate control unit, so confirm the suffix and item number.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">Where is Harvia made?</h3>
-        <p class="text-stone-700">Finland and Estonia. Harvia is a publicly traded Finnish company, not a rebadge of Chinese hardware.</p>
+        <h3 class="font-bold text-stone-900 mb-1">Can I install a Harvia electric heater myself?</h3>
+        <p class="text-stone-700">Harvia says the electrical connection and service must be completed by an authorized electrical professional or another qualified person permitted by local regulations. Use the current manual and local code.</p>
       </div>
     </div>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
-        <li><a href="/brands/huum-sauna-heater-review/" class="text-amber-700 hover:underline">HUUM Sauna Heater Review</a></li>
-        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Sauna Review</a></li>
-        <li><a href="/guides/best-sauna-stones/" class="text-amber-700 hover:underline">Best Sauna Stones for Harvia Heaters</a></li>
-        <li><a href="/guides/best-4-person-sauna/" class="text-amber-700 hover:underline">Best 4-Person Sauna</a></li>
+    <div class="border-t border-stone-200 mt-10 pt-8">
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Primary sources</h2>
+      <ul class="space-y-2 text-sm text-stone-600">
+        <li><a href="https://www.harvia.com/en-US/products/JH60BU1UL/kip60b-6-kw-240vac-steel-ul" rel="noopener" class="text-amber-700 hover:underline">Harvia KIP60B, item JH60BU1UL</a></li>
+        <li><a href="https://www.harvia.com/en-US/products/JH60WU1MUL/kip60w-60-kw-240v-black" rel="noopener" class="text-amber-700 hover:underline">Harvia KIP60W, item JH60WU1MUL</a></li>
+        <li><a href="https://www.harvia.com/en-US/products/HPCS9U1HUL/cilindro-pc90e-90-kw-240-vac-steel" rel="noopener" class="text-amber-700 hover:underline">Harvia Cilindro PC90E, item HPCS9U1HUL</a></li>
+        <li><a href="https://www.harvia.com/en-US/products/WKM3/m3-black" rel="noopener" class="text-amber-700 hover:underline">Harvia M3, item WKM3</a></li>
+        <li><a href="https://www.harvia.com/en-US/products/HPOE704/electric-sauna-heater-harvia-legend-po70e-68-kw-black" rel="noopener" class="text-amber-700 hover:underline">Harvia Legend PO70E, item HPOE704</a></li>
+        <li><a href="https://support.harvia.com/hc/en-us/articles/19469322350866-Can-anyone-connect-an-electric-heater-to-the-power-grid" rel="noopener" class="text-amber-700 hover:underline">Harvia electrical-installation guidance</a></li>
       </ul>
     </div>
 
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue planning</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna heater sizing guide</a></li>
+        <li><a href="/brands/huum-sauna-heater-review/" class="text-amber-700 hover:underline">HUUM sauna heater guide</a></li>
+        <li><a href="/guides/best-sauna-stones/" class="text-amber-700 hover:underline">Sauna stones guide</a></li>
+        <li><a href="/sauna-planner/?source=harvia-guide-related" class="text-amber-700 hover:underline">Build a sauna project brief</a></li>
+      </ul>
+    </div>
   </article>
 </Base>
