@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
 const faqSchema = {
@@ -8,163 +9,129 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is Dundalk LeisureCraft a good sauna brand?",
+      "name": "What is the difference between LeisureCraft's Dundalk and Canadian Timber collections?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Dundalk LeisureCraft is one of the best mid-to-premium outdoor sauna brands available in North America. They're Canadian-made, use thick clear white cedar, and their construction quality is a noticeable step above most US-assembled barrel sauna kits. They cost more than Almost Heaven but the quality difference is real."
+        "text": "LeisureCraft says the Dundalk Collection uses Western Red Cedar, while Canadian Timber primarily uses Eastern White Cedar at a more accessible price point. Both are built in the company's Ontario factory, but model details and warranties should be checked individually."
       }
     },
     {
       "@type": "Question",
-      "name": "Where are Dundalk LeisureCraft saunas made?",
+      "name": "Are LeisureCraft saunas delivered assembled?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dundalk LeisureCraft saunas are made in Ontario, Canada. They've been building outdoor leisure products since 1975."
+        "text": "Many LeisureCraft saunas are sold as prefabricated kits for on-site assembly. The exact crate, delivery, assembly, heater, roofing, and installation scope depends on the model and retailer."
       }
     },
     {
       "@type": "Question",
-      "name": "How does Dundalk compare to Almost Heaven?",
+      "name": "How long is the LeisureCraft sauna warranty?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dundalk uses thicker cedar staves, tighter joinery, and higher-grade materials than Almost Heaven. The trade-off is price — Dundalk runs $500-$1,500 more for comparable sizes. Both are good saunas. Dundalk is the right choice if you want something that lasts 25-30+ years and don't mind paying for it."
+        "text": "Do not rely on one generic number. LeisureCraft's published limited-warranty document and current collection pages are not fully consistent. Ask the seller to identify the exact warranty document for the selected model and put covered parts, exclusions, labor, and claim handling in writing."
       }
     }
   ]
 };
 ---
 <Base
-  title="Dundalk LeisureCraft Sauna Review (2025): Worth It?"
-  description="An honest look at Dundalk LeisureCraft saunas, build quality, best models, and how they compare to Almost Heaven and other barrel sauna brands."
+  title="Dundalk LeisureCraft Sauna Review: Collections, Kits, and Buyer Fit"
+  description="A source-backed Dundalk LeisureCraft review covering current sauna collections, wood choices, kit assembly, warranties, retailer questions, and total project cost."
   canonical="/brands/dundalk-leisurecraft-review"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Dundalk LeisureCraft Sauna Review (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated December 2024 &mdash; Backyard Sauna Pro</p>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Barrel sauna in a grassy field" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Desk-researched brand guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Dundalk LeisureCraft Sauna Review</h1>
+      <p class="text-stone-500 text-sm">Reviewed August 2026 &middot; 9 min read</p>
+      <p class="text-lg text-stone-700 mt-4">LeisureCraft offers a broad Canadian-made outdoor sauna catalog. The strongest reason to shortlist it is choice: barrel, cabin, pod, Luna, and modern cube formats across different wood and design collections. The hard part is comparing the exact package, not the brand name.</p>
+    </header>
+
+    <div class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Representative outdoor barrel sauna in a grassy setting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
-
-    <p class="text-lg text-stone-700 mb-4">Dundalk LeisureCraft is where you end up when Almost Heaven isn't enough. The Ontario-based company has been building outdoor leisure products since 1975, and their barrel and cabin saunas are considered among the best non-Finnish options available in North America.</p>
-
-    <p class="text-stone-700 mb-8">They cost more. The quality justifies it. Here's the full picture.</p>
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="text-lg font-bold text-stone-900 mb-3">Quick Verdict</h2>
-      <ul class="space-y-2 text-stone-700 text-sm">
-        <li><span class="font-semibold text-green-700">Best for:</span> Buyers who want premium-grade construction without Finnish import pricing</li>
-        <li><span class="font-semibold text-stone-700">Price range:</span> $3,000 to $8,000+ depending on size and style</li>
-        <li><span class="font-semibold text-stone-700">Wood:</span> Clear white cedar (thicker staves than most competitors)</li>
-        <li><span class="font-semibold text-stone-700">Made in:</span> Ontario, Canada</li>
-        <li><span class="font-semibold text-red-700">Watch out for:</span> Lead times can run 6-12 weeks for popular models</li>
-      </ul>
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
+      <p><strong>Commercial disclosure:</strong> We may earn a commission when you buy through the Select Saunas link on this page. This is a desk-researched buyer analysis, not a hands-on test. The image above is representative and is not presented as a specific LeisureCraft model.</p>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Makes Dundalk Different</h2>
+    <section class="bg-stone-900 text-white rounded-lg p-6 mb-8">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-300 mb-2">Short answer</p>
+      <h2 class="text-2xl font-bold mb-3">A useful shortlist when the exact collection, model, and installer fit.</h2>
+      <p class="text-stone-200 mb-5">LeisureCraft now organizes its sauna catalog into Dundalk, Canadian Timber, and Pure Cube collections. Wood, wall construction, glass, roofing, heater options, bench layout, and assembly details vary. Treat each model as its own project.</p>
+      <a href="https://leisurecraft.com/all-saunas" target="_blank" rel="noopener" class="inline-flex min-h-11 items-center rounded-md bg-amber-400 px-5 py-3 font-semibold text-stone-900 hover:bg-amber-500" data-track-event="brand_outbound_click" data-cta-position="dundalk_above_fold">See LeisureCraft's current sauna catalog</a>
+    </section>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Thicker staves</h3>
-    <p class="text-stone-700 mb-4">The most noticeable difference between Dundalk and entry-level barrel saunas is the stave thickness. Dundalk uses 1.75-inch thick clear white cedar staves on their barrel models. Many comparable-priced competitors use 1.5-inch or even 1.25-inch staves. Thicker staves mean better insulation, less heat loss, and a sauna that holds temperature with less heater effort. Over years of use, that translates to lower electricity bills and faster heat-up times.</p>
+    <PlannerCTA
+      source="dundalk_review_after_verdict"
+      heading="Prepare the site before comparing kit quotes"
+      description="Put your location, dimensions, heat preference, electrical status, installation needs, budget, and timeline into one project brief. Your answers stay in your browser unless you explicitly submit them for manual review."
+    />
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Clear cedar grade</h3>
-    <p class="text-stone-700 mb-4">Dundalk uses clear white cedar, the grade where knots are minimal to absent. Knots aren't just cosmetic. In sauna wood, a knot is a point of density difference that heats unevenly and can become a hot spot on a bench or wall that's uncomfortable to sit or lean against. Clear cedar costs more to source but produces a more consistent, comfortable sauna interior.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Joinery and fit</h3>
-    <p class="text-stone-700 mb-4">Dundalk barrels fit together tighter than most kit competitors. The barrel stave tolerances are closer, which means less gap-filling needed during assembly and a better seal against the elements once complete. This matters most in cold climates where air infiltration through loose stave joints costs heat.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Popular Dundalk Models</h2>
-
-    <div class="space-y-5 mb-10">
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <h3 class="text-lg font-bold text-stone-900 mb-2">Canadian Timber Series</h3>
-        <p class="text-stone-600">Their flagship barrel line. Available in 4, 6, and 8-person capacities with multiple length options. The 4-person is the entry point at around $3,500-$4,500. Multiple optional add-ons: change rooms, porch extensions, moon window, and heater packages.</p>
-      </div>
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <h3 class="text-lg font-bold text-stone-900 mb-2">Luna and Peace Series</h3>
-        <p class="text-stone-600">Cabin-style rectangular saunas with a more traditional look. Good option if you want the durability of Dundalk construction in a shape that fits a specific backyard footprint or looks more like a structure than a barrel.</p>
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Dundalk vs Almost Heaven</h2>
-    <p class="text-stone-700 mb-4">This is the comparison most buyers are making. Both are legitimate saunas that will serve you well. The differences come down to budget and longevity expectations.</p>
-
-    <div class="overflow-x-auto mb-6">
-      <table class="text-sm w-full">
-        <thead>
-          <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-6">Factor</th>
-            <th class="pb-2 pr-6">Dundalk</th>
-            <th class="pb-2">Almost Heaven</th>
-          </tr>
-        </thead>
-        <tbody class="text-stone-700">
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Stave thickness</td>
-            <td class="py-2 pr-6">1.75"</td>
-            <td class="py-2">1.5"</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Cedar grade</td>
-            <td class="py-2 pr-6">Clear</td>
-            <td class="py-2">Standard (some knots)</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Made in</td>
-            <td class="py-2 pr-6">Ontario, Canada</td>
-            <td class="py-2">West Virginia, USA</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Expected lifespan</td>
-            <td class="py-2 pr-6">25-35 years</td>
-            <td class="py-2">15-25 years</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">4-person price</td>
-            <td class="py-2 pr-6">~$4,000-$5,000</td>
-            <td class="py-2">~$2,000-$2,500</td>
-          </tr>
-          <tr>
-            <td class="py-2 pr-6 font-medium">Amazon availability</td>
-            <td class="py-2 pr-6">Limited</td>
-            <td class="py-2">Wide</td>
-          </tr>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-5">Understand the three collections</h2>
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full min-w-[720px] border-collapse text-sm">
+        <thead><tr class="bg-stone-100 text-left"><th class="p-3 border-b border-stone-300">Collection</th><th class="p-3 border-b border-stone-300">Current manufacturer description</th><th class="p-3 border-b border-stone-300">Buyer question</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Dundalk</td><td class="p-3 border-b border-stone-200">Western Red Cedar in barrel, panoramic barrel, cabin, Luna, POD, and indoor formats.</td><td class="p-3 border-b border-stone-200">Which model, cedar grade, roof, windows, benches, and heater are included?</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Canadian Timber</td><td class="p-3 border-b border-stone-200">Primarily Eastern White Cedar, positioned as the more accessible line with barrel, cabin, Luna, MiniPOD, and related wellness products.</td><td class="p-3 border-b border-stone-200">Which lower price comes from material, options, warranty, or retailer scope?</td></tr>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Pure Cube</td><td class="p-3 border-b border-stone-200">Modern designs with larger glass areas and different exterior and wall configurations.</td><td class="p-3 border-b border-stone-200">How do glass, insulation, privacy, foundation, and heater sizing affect this site?</td></tr>
         </tbody>
       </table>
     </div>
 
-    <p class="text-stone-700 mb-6">If you're buying your one and only outdoor sauna and want to be done with it for 30 years, Dundalk is worth the premium. If budget is the primary constraint or you're not sure outdoor sauna is for you yet, Almost Heaven is a solid starting point at half the price.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What can be verified</h2>
+    <ul class="list-disc pl-5 space-y-3 text-stone-700 mb-8">
+      <li><strong>Canadian manufacturing:</strong> LeisureCraft describes its operation as a Canadian manufacturer and identifies its factory in Melancthon, Ontario.</li>
+      <li><strong>Collection-level wood distinction:</strong> Current LeisureCraft materials separate Western Red Cedar in the Dundalk line from primarily Eastern White Cedar in Canadian Timber.</li>
+      <li><strong>Kit assembly:</strong> The company publishes model-specific assembly instructions and videos for prefabricated kits.</li>
+      <li><strong>Multiple heater paths:</strong> Current manuals show that exact models may support electric or wood-burning options. The selected heater manual still controls its installation.</li>
+      <li><strong>Product variety:</strong> Current catalogs include barrel, cabin, Luna, POD, and cube-style outdoor rooms rather than a single construction type.</li>
+    </ul>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where to Buy</h2>
-    <p class="text-stone-700 mb-4">Dundalk saunas are sold through their website (dundalkleisurecraft.com) and select specialty retailers. Amazon availability is limited. <strong>Select Saunas</strong> carries the full Dundalk lineup with good stock and US-based support. Lead times vary — popular models in peak season (February through May) can run 8-12 weeks. Order early if you want delivery before summer.</p>
-    <SelectSaunasButton collection="outdoor-saunas" label="Shop Dundalk on Select Saunas" />
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is Dundalk LeisureCraft a good sauna brand?</h3>
-        <p class="text-stone-700">Yes, one of the best barrel sauna brands in North America. Thick clear cedar, tight construction, and Canadian manufacturing quality that shows in longevity.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Where are Dundalk saunas made?</h3>
-        <p class="text-stone-700">Ontario, Canada. In production since 1975.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How does Dundalk compare to Almost Heaven?</h3>
-        <p class="text-stone-700">Better cedar grade, thicker staves, tighter joinery, and $1,500-$2,500 more expensive for comparable sizes. Both are good. Dundalk is the 30-year buy; Almost Heaven is the smart budget buy.</p>
-      </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What this review cannot verify</h2>
+    <div class="border-l-4 border-amber-500 bg-amber-50 p-5 mb-8 text-sm text-stone-700">
+      <p class="mb-3">We have not measured stave tolerances, heat loss, heat-up time, bench temperature, installed lifespan, or warranty service. We also cannot support the old article's claim that one brand lasts a fixed number of years longer than another.</p>
+      <p>Manufacturer construction claims are useful inputs. They are not a substitute for the exact drawing, manual, quote, delivered bill of materials, and site-specific installation plan.</p>
     </div>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Saunas Review</a></li>
-        <li><a href="/guides/best-4-person-outdoor-sauna/" class="text-amber-700 hover:underline">Best 4-Person Outdoor Saunas</a></li>
-        <li><a href="/guides/barrel-sauna-vs-cabin-sauna/" class="text-amber-700 hover:underline">Barrel Sauna vs Cabin Sauna</a></li>
-        <li><a href="/guides/cedar-vs-hemlock-sauna/" class="text-amber-700 hover:underline">Cedar vs Hemlock: Which Wood Is Better?</a></li>
-      </ul>
-    </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Assembly is part of the product decision</h2>
+    <p class="text-stone-700 mb-4">LeisureCraft's published manuals are detailed enough to show that these are real installation projects. The work can include base preparation, wall or stave assembly, benches, roof components, vents, lights, and heater coordination. The exact sequence changes by model.</p>
+    <p class="text-stone-700 mb-6">Before ordering, decide who receives the freight, checks for damage, moves parts from the curb, protects them from weather, verifies the base, assembles the room, installs the roof, and coordinates the heater. A low product price can become an expensive project when those tasks are left undefined.</p>
+    <a href="https://leisurecraft.com/catalog" target="_blank" rel="noopener" class="inline-flex min-h-11 items-center rounded-md border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:border-stone-500">Open the current LeisureCraft catalog</a>
 
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Resolve the warranty before paying</h2>
+    <p class="text-stone-700 mb-4">There is a discrepancy in current official material. LeisureCraft's published limited-warranty document states five years for products it manufactures and excludes service, labor, and installation costs. The current Canadian Timber collection page mentions a three-year warranty. That may reflect a collection-specific term, a content update, or another distinction.</p>
+    <p class="text-stone-700 mb-6">Do not guess. Ask the retailer to attach the exact warranty document for the model and order date. Confirm the covered components, original-owner rules, registration, exclusions, replacement-parts process, freight, labor, heater warranty, and who handles the claim.</p>
+    <a href="https://leisurecraft.com/wp-content/uploads/2022/01/Assembly-Instructions-1-2.pdf" target="_blank" rel="noopener" class="inline-flex min-h-11 items-center rounded-md border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:border-stone-500">Read LeisureCraft's published limited warranty</a>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Questions for the retailer</h2>
+    <ol class="list-decimal pl-5 space-y-3 text-stone-700 mb-10">
+      <li>What is the exact collection, model number, wood species, grade, and bill of materials?</li>
+      <li>Which roof, floor, porch, changeroom, windows, benches, and accessories are included?</li>
+      <li>Is the heater included? If so, what exact model, control, stones, guard, and chimney or electrical scope apply?</li>
+      <li>What are the crate dimensions, freight method, unloading requirement, and damage-reporting deadline?</li>
+      <li>Which foundation drawings and site tolerances must be met before delivery?</li>
+      <li>Who provides assembly, electrical or chimney work, permits, inspection, and startup?</li>
+      <li>Which warranty document applies to every major component?</li>
+      <li>What is in stock now, what is made to order, and which date is a commitment rather than an estimate?</li>
+    </ol>
+
+    <section class="bg-emerald-50 border border-emerald-200 rounded-lg p-6 mb-10">
+      <h2 class="text-xl font-bold text-stone-900 mb-2">Compare current retailer listings</h2>
+      <p class="text-sm text-stone-700 mb-4">Select Saunas currently maintains a dedicated Dundalk LeisureCraft collection. Prices, stock, bundles, and delivery terms can change. Confirm the exact model and total project scope before buying.</p>
+      <SelectSaunasButton collection="dundalk-leisurecraft" label="See current Dundalk listings" ctaPosition="dundalk_current_collection" />
+    </section>
+
+    <div class="bg-stone-900 text-white rounded-lg p-6 mt-10">
+      <h2 class="text-xl font-bold mb-2">Compare installed cost, not catalog price</h2>
+      <p class="text-stone-200 mb-4">Put the sauna, heater, freight, unloading, foundation, roofing, electrical or chimney work, assembly, permits, tax, and maintenance into the same budget.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/tools/sauna-cost-calculator/" class="inline-flex min-h-11 items-center rounded-md bg-amber-400 px-5 py-3 font-semibold text-stone-900 hover:bg-amber-500" data-track-event="calculator_cta_clicked" data-cta-position="dundalk_bottom">Build the project budget</a>
+        <a href="/guides/barrel-sauna-vs-cabin-sauna/" class="inline-flex min-h-11 items-center rounded-md border border-stone-500 px-5 py-3 font-semibold text-white hover:border-stone-300">Compare barrel and cabin formats</a>
+      </div>
+    </div>
   </article>
 </Base>
