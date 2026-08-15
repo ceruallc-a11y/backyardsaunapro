@@ -1,5 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
+
+const kenovaUrl = "https://selectsaunas.com/products/almost-heaven-kenova-4-6-person-barrel-sauna-6x7-ft";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -127,11 +130,11 @@ import AmazonButton from '../../components/AmazonButton.astro';
       <AmazonButton asin="B017WJV8SO" variant="primary" />
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The 6-Person — For Families</h2>
-    <p class="text-stone-700 mb-4">The 6-person model has a noticeably larger bench layout — two full-length benches where people can lie down rather than sit. If you regularly sauna with 3+ people or want to lie down and stretch out, this is the right model. It requires an 8kW heater (vs 6kW for the Pinnacle) and takes longer to preheat, but the extra space is the kind of thing owners are happy they paid for.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Kenova 4-6 Person Barrel</h2>
+    <p class="text-stone-700 mb-4">The current Kenova listing expands the barrel to a 6-by-7-foot room with two opposing benches and an 8kW heater package. Treat the published 4-6 person capacity as a maximum. Compare the actual bench dimensions, intended users, final heater, freight, base, power, weather protection, and assembly scope before ordering.</p>
 
     <div class="border border-stone-200 rounded-xl p-5 bg-white mb-6">
-      <AmazonButton asin="B003Z11AXM" variant="primary" label="Check 6-Person Price on Amazon" />
+      <SelectSaunasButton href={kenovaUrl} label="Check the current Kenova listing" ctaPosition="almost_heaven_barrel_kenova" />
     </div>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Which Heater to Pair With It</h2>

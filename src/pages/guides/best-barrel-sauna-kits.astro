@@ -2,6 +2,8 @@
 import Base from '../../layouts/Base.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
+const kenovaUrl = "https://selectsaunas.com/products/almost-heaven-kenova-4-6-person-barrel-sauna-6x7-ft";
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -113,14 +115,13 @@ import AmazonButton from '../../components/AmazonButton.astro';
         <div class="flex items-start justify-between mb-2">
           <div>
             <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best for Large Groups</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven 6-Person</h3>
+            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Kenova 4-6 Person</h3>
           </div>
           
         </div>
-        <p class="text-stone-600 mb-3">More bench space and enough room to lie down — a meaningful upgrade for families or anyone who wants to host. Same cedar quality as the Pinnacle, needs an 8kW heater. Takes more time to heat the larger volume but maintains temperature well once it's up.</p>
+        <p class="text-stone-600 mb-3">The current Kenova listing expands the barrel to a 6-by-7-foot room with two opposing benches and an 8kW heater. It is a larger-space comparison path, but the published 4-6 person capacity still needs to be checked against the intended users and bench dimensions.</p>
         <div class="flex flex-wrap gap-3">
-          <AmazonButton asin="B003Z11AXM" variant="primary" />
-          <SelectSaunasButton collection="barrel-saunas" label="Shop Almost Heaven on Select Saunas" />
+          <SelectSaunasButton href={kenovaUrl} label="Check the current Kenova listing" ctaPosition="best_barrel_kits_kenova" />
         </div>
       </div>
 

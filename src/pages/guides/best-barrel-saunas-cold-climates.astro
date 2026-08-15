@@ -1,17 +1,17 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
 const candidates = [
   {
     name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
-    asin: "B017WJV8SO",
+    href: "https://selectsaunas.com/collections/traditional-saunas/products/almost-heaven-pinnacle-morgan-4-person-classic-barrel-sauna-6x6-ft",
     bestFor: "Buyers comparing a smaller barrel footprint",
     verify: ["Current outdoor-use warranty", "Included heater and control package", "Required foundation dimensions", "Roof or rain-jacket options", "Electrical requirements"]
   },
   {
-    name: "Almost Heaven 6-Person Barrel Sauna",
-    asin: "B003Z11AXM",
+    name: "Almost Heaven Kenova 4-6 Person Barrel Sauna",
+    href: "https://selectsaunas.com/products/almost-heaven-kenova-4-6-person-barrel-sauna-6x7-ft",
     bestFor: "Buyers who need more bench room and can support the larger footprint",
     verify: ["Actual seated bench dimensions", "Package and delivery dimensions", "Manufacturer-rated heater range", "Snow and wind requirements", "Assembly access"]
   }
@@ -91,7 +91,7 @@ const faqSchema = {
           <ul class="list-disc pl-5 space-y-1 text-stone-600 text-sm mb-5">
             {candidate.verify.map(item => <li>{item}</li>)}
           </ul>
-          <AmazonButton asin={candidate.asin} />
+          <SelectSaunasButton href={candidate.href} label="Check current listing" ctaPosition="cold_climate_shortlist" />
         </section>
       ))}
     </div>

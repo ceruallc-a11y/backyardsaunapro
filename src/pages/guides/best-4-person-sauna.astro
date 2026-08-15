@@ -1,5 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
+
+const kenovaUrl = "https://selectsaunas.com/products/almost-heaven-kenova-4-6-person-barrel-sauna-6x7-ft";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -79,12 +82,12 @@ import AmazonButton from '../../components/AmazonButton.astro';
         <div class="flex items-start justify-between mb-2">
           <div>
             <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Step Up</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven 6-Person</h3>
+            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Kenova 4-6 Person Barrel</h3>
           </div>
           
         </div>
-        <p class="text-stone-600 mb-4">The right model if four adults using it comfortably is a real priority. Longer bench, more standing room, enough space to lie down. Pairs with the Harvia KIP 80B (8kW). Same cedar quality as the Pinnacle, just more room inside.</p>
-        <AmazonButton asin="B003Z11AXM" variant="primary" />
+        <p class="text-stone-600 mb-4">A current step-up path when a four-person label looks too tight. The Kenova listing publishes a 6-by-7-foot barrel, two opposing benches, and an 8kW heater. Compare the bench dimensions and intended users rather than assuming the 4-6 person label guarantees comfort.</p>
+        <SelectSaunasButton href={kenovaUrl} label="Check the current Kenova listing" ctaPosition="best_4_person_step_up" />
       </div>
 
       <div class="border border-stone-200 rounded-xl p-5 bg-white">
