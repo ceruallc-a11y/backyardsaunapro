@@ -1,170 +1,191 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
-const picks = [
-  {
-    rank: 1,
-    asin: "B0B7TRM95Y",
-    name: "Harvia KIP 60B Electric Sauna Heater",
-    
-    rating: "4.6/5",
-    tag: "BEST OVERALL",
-    tagColor: "bg-amber-100 text-amber-800",
-    size: "Up to 265 cu ft",
-    watts: "6kW",
-    summary: "The Harvia KIP is the most popular sauna heater in Finland and for good reason. Rock-solid build quality, reliable controls, and even heat distribution. Our top pick for most home sauna builds.",
-    pros: ["Excellent heat distribution", "Simple, reliable controls", "Great rocks included", "Well-priced for Finnish quality"],
-    cons: ["Requires 240V/40A circuit", "Basic timer (no smart controls)"]
-  },
-  {
-    rank: 2,
-    asin: "B000N4RSFO",
-    name: "Finlandia FLB-60 Electric Sauna Heater",
-    
-    rating: "4.4/5",
-    tag: "BEST VALUE",
-    tagColor: "bg-green-100 text-green-800",
-    size: "Up to 210 cu ft",
-    watts: "6kW",
-    summary: "Finlandia has been making sauna heaters since 1964. This model is a workhorse simple, durable, and competitively priced. Perfect for first-time builders who don't want to overthink it.",
-    pros: ["Proven brand with decades of history", "Straightforward installation", "Holds heat well", "Affordable price point"],
-    cons: ["Styling is dated", "Smaller rock capacity than premium models"]
-  },
-  {
-    rank: 3,
-    asin: "B07WQHQ4BF",
-    name: "Vevor Electric Sauna Heater 9KW",
-    
-    rating: "4.2/5",
-    tag: "BEST BUDGET",
-    tagColor: "bg-blue-100 text-blue-800",
-    size: "Up to 530 cu ft",
-    watts: "9kW",
-    summary: "If budget is the priority, Vevor delivers solid performance at a price that's hard to argue with. Included digital controller, adjustable temperature, and external dial make it easy to run.",
-    pros: ["Comes with digital controller", "Large capacity for the price", "Good for larger sauna rooms", "Easy temperature adjustment"],
-    cons: ["Build quality not on par with Finnish brands", "Mixed long-term reliability reports"]
-  },
-  {
-    rank: 4,
-    asin: "B005XZWMDE",
-    name: "Tylo Sense Combi 6 Electric Sauna Heater",
-    
-    rating: "4.7/5",
-    tag: "BEST PREMIUM",
-    tagColor: "bg-purple-100 text-purple-800",
-    size: "Up to 530 cu ft",
-    watts: "6kW",
-    summary: "Swedish-made, ultra-reliable, and designed to last 20+ years. The Sense Combi also functions as a steam generator rare in this category. If you're building a permanent sauna and want the best, this is it.",
-    pros: ["Dual function: sauna + steam", "Exceptional build quality", "Long lifespan", "Elegant design"],
-    cons: ["Premium price", "More complex installation"]
-  }
-];
+const cilindroUrl = 'https://selectsaunas.com/products/harvia-cilindro-pc90e-9kw-electric-sauna-heater';
+const huumDropUrl = 'https://selectsaunas.com/products/huum-drop-6kw';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best electric sauna heater?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no single best heater for every room. A Harvia KIP60B is a practical compact option when built-in manual controls fit the plan. A Harvia Cilindro PC90E suits buyers who want a floor-standing pillar and separate controls. A HUUM DROP 6 suits buyers who want a wall-mounted design with a large exposed stone mass and a separate UKU control package. The exact room calculation and manual must decide the size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I size an electric sauna heater?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calculate the room volume and then follow the selected manufacturer's sizing method, including adjustments for glass, masonry, and other uninsulated surfaces. Do not use a universal watts-per-cubic-foot shortcut in place of the exact heater manual."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do electric sauna heaters include controls and stones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the exact package. Some heaters have built-in manual controls. Others require a separate control, sensor, and power unit. Stones may also be separate. Confirm every included and required component in writing before ordering."
+      }
+    }
+  ]
+};
 ---
 <Base
-  title="Best Electric Sauna Heaters for Home Use (2025) Tested & Ranked"
-  description="The best electric sauna heaters for backyard and home saunas in 2025. Expert picks from budget to premium, with installation tips and sizing guide."
+  title="Best Electric Sauna Heaters? Compare 3 Current Formats"
+  description="Compare current Harvia KIP60B, Harvia Cilindro PC90E, and HUUM DROP 6 electric sauna heaters by controls, room range, stone load, and installation scope."
   canonical="/guides/best-electric-sauna-heaters"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Electric Sauna Heaters for Home Use (2025)
-      </h1>
-      <p class="text-stone-500 text-sm">Updated December 2024 · 10 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        Everything else in your sauna the wood, the benches, the rocks is just furniture. The heater is what makes it work. Pick the wrong one and you're stuck with a room that never gets hot enough, or one that costs a fortune to run. We compared published sizing, controls, installation requirements, warranty information, and buyer feedback to narrow the options.
-      </p>
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Electric heater buying guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best electric sauna heaters? Compare three current formats</h1>
+      <p class="text-stone-500 text-sm">Last reviewed August 15, 2026</p>
     </header>
+
     <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Sauna interior with electric heater and stones" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Electric sauna heater filled with stones beside wooden benches" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
-
-    <div class="bg-stone-100 rounded-xl p-5 mb-10">
-      <h2 class="font-bold text-stone-800 mb-3">How to Size Your Heater</h2>
-      <p class="text-sm text-stone-600 mb-3">The general rule: <strong>1 kW per 45 cubic feet</strong> of sauna space. Add 25–30% more for glass walls, concrete, or tile (they absorb heat).</p>
-      <div class="grid grid-cols-3 gap-3 text-sm text-center">
-        {[["Small (up to 200 cu ft)", "4–5 kW"], ["Medium (200–400 cu ft)", "6–8 kW"], ["Large (400–600 cu ft)", "9–12 kW"]].map(([size, kw]) => (
-          <div class="bg-white rounded-lg p-3 border border-stone-200">
-            <p class="font-semibold text-stone-800">{kw}</p>
-            <p class="text-stone-500 text-xs mt-1">{size}</p>
-          </div>
-        ))}
-      </div>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Research scope:</strong> This is a desk-researched comparison, not a hands-on test. We checked current manufacturer specifications, manuals, control types, listed room ranges, and authorized-retailer packages. We did not assign scores because the right heater depends on the exact room and installation plan.
     </div>
 
-    <h2 class="text-2xl font-bold mb-6 text-stone-900">Our Top Picks</h2>
+    <p class="text-lg text-stone-700 mb-4">The best electric heater is the one whose current manual fits your calculated room, construction, available power, controls, and clearances. A ranking that ignores those constraints is not useful.</p>
+    <p class="text-stone-700 mb-8">These three models show the main residential choices clearly. The KIP60B puts manual controls on a compact wall heater. The Cilindro PC90E uses a floor-standing pillar and separate controls. The HUUM DROP 6 combines wall mounting with a much larger exposed stone mass and a separate control package.</p>
 
-    <div class="space-y-8">
-      {picks.map(pick => (
-        <div class="bg-white border border-stone-200 rounded-xl shadow-sm p-6">
-          <div class="flex items-center gap-2 mb-3">
-            <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>
-            <span class="text-xs text-stone-400">{pick.watts} · {pick.size}</span>
-          </div>
-          <h3 class="text-xl font-bold text-stone-900 mb-2">{pick.name}</h3>
-          <p class="text-stone-600 text-sm mb-4">{pick.summary}</p>
-          <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
-            <div>
-              <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
-              {pick.pros.map(p => <p class="text-stone-600"> {p}</p>)}
-            </div>
-            <div>
-              <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
-              {pick.cons.map(c => <p class="text-stone-600"> {c}</p>)}
-            </div>
-          </div>
-          <p class="text-xs text-stone-400 mb-2">Rating: {pick.rating}</p>
-          <AmazonButton asin={pick.asin} price={pick.price} />
-        </div>
-      ))}
+    <div class="overflow-x-auto mb-10">
+      <table class="text-sm w-full min-w-[700px]">
+        <thead>
+          <tr class="text-left text-stone-500 border-b border-stone-200">
+            <th class="pb-3 pr-5">Model</th>
+            <th class="pb-3 pr-5">Power and format</th>
+            <th class="pb-3 pr-5">Controls</th>
+            <th class="pb-3 pr-5">Listed room range</th>
+            <th class="pb-3">Listed stone amount</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700">
+          <tr class="border-b border-stone-100">
+            <td class="py-3 pr-5 font-semibold">Harvia KIP60B</td>
+            <td class="py-3 pr-5">6 kW wall heater</td>
+            <td class="py-3 pr-5">Built-in manual</td>
+            <td class="py-3 pr-5">Confirm exact item manual</td>
+            <td class="py-3">44 lb</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-3 pr-5 font-semibold">Harvia Cilindro PC90E</td>
+            <td class="py-3 pr-5">9 kW floor pillar</td>
+            <td class="py-3 pr-5">Separate control</td>
+            <td class="py-3 pr-5">141-494 ft3</td>
+            <td class="py-3">200 lb</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-5 font-semibold">HUUM DROP 6</td>
+            <td class="py-3 pr-5">6 kW wall heater</td>
+            <td class="py-3 pr-5">Separate UKU control</td>
+            <td class="py-3 pr-5">177-353 ft3</td>
+            <td class="py-3">Up to 132 lb</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <section class="mt-12">
-      <h2 class="text-2xl font-bold mb-4 text-stone-900">Installation: What You Need to Know</h2>
-      <p class="text-stone-600 mb-4">Most home sauna heaters require a dedicated <strong>240V circuit</strong> typically 30–60A depending on the heater's wattage. This is not a DIY job unless you're comfortable with electrical work. Budget $150–$400 for an electrician to run the circuit if you don't already have one.</p>
-      <p class="text-stone-600 mb-4">
-        Always follow the manufacturer's minimum clearance requirements. Most heaters need at least 8–12 inches of clearance from walls and ceiling. Don't skip this it's a fire safety issue.
-      </p>
-      <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-900">
-        <strong>Pro tip:</strong> If you're also buying a sauna kit, check whether the kit includes a heater. Many barrel sauna kits (like Almost Heaven) are sold heater-optional. Buying the heater separately gives you more flexibility but make sure the wattage matches your room volume.
-      </div>
-    </section>
+    <PlannerCTA
+      title="Size the room before comparing packages"
+      body="Build a project brief with the room, glass area, power, controls, budget, and installation needs before you request a heater quote."
+      campaign="electric_heater_guide"
+      ctaPosition="above_models"
+    />
 
-    <section class="mt-10">
-      <h2 class="text-2xl font-bold mb-4 text-stone-900">Frequently Asked Questions</h2>
-      <div class="space-y-5">
-        {[
-          ["Can I use any electric sauna heater outdoors?", "Most electric sauna heaters are designed for use inside an insulated sauna room, not exposed to the elements. As long as your outdoor sauna is properly built and insulated, any of the heaters on this list will work."],
-          ["How long does it take to heat up?", "A properly sized electric heater will bring your sauna to temperature in 30–45 minutes. Undersized heaters take longer and may never reach ideal temperature."],
-          ["Do electric sauna heaters allow steam (löyly)?", "Yes all the heaters on this list have rocks that you can pour water over. The Tylo Sense Combi also has a built-in steam generator for a more intense steam experience."],
-          ["What's the cost to run an electric sauna heater?", "A 6kW heater running for 1 hour costs roughly $0.75–$1.20 depending on your electricity rate. A typical 2-hour sauna session costs about $1.50–$2.50."],
-        ].map(([q, a]) => (
-          <div class="border-b border-stone-200 pb-4">
-            <h3 class="font-semibold text-stone-800 mb-1">{q}</h3>
-            <p class="text-stone-600 text-sm">{a}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <h2 class="text-2xl font-bold mb-4 mt-10 text-stone-900">Harvia KIP60B: compact with built-in manual controls</h2>
+    <p class="text-stone-700 mb-4">Harvia's North American item JH60BU1UL is a 6 kW, 240 VAC single-phase wall heater. The controls are on the heater: one dial for temperature and one for operation and delayed start. Harvia lists dimensions of 23.6 by 16.1 by 11 inches and a 44-pound stone amount.</p>
+    <p class="text-stone-700 mb-5">This format keeps the purchase list simple when manual controls and the heater's control location work for the room. It does not support remote operation. Match the exact item number to the current manual because Harvia publishes more than one North American KIP60B record.</p>
+    <div class="border border-stone-200 rounded-xl p-5 bg-white mb-10">
+      <p class="text-sm text-stone-600 mb-4">The previous Amazon listing is unavailable, so this button routes to the current authorized Select Saunas KIP60B listing.</p>
+      <AmazonButton asin="B0B7TRM95Y" variant="primary" />
+    </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mt-8">
-      <h3 class="font-bold text-stone-900 mb-3">Related guides</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/reviews/harvia-kip-60b-review/" class="text-amber-700 hover:underline font-medium">Harvia KIP 60B In-Depth Review</a></li>
-        <li><a href="/guides/best-wood-burning-sauna-heaters/" class="text-amber-700 hover:underline font-medium">Best Wood-Burning Sauna Heaters</a></li>
-        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline font-medium">Sauna Electrical Requirements Guide</a></li>
+    <h2 class="text-2xl font-bold mb-4 text-stone-900">Harvia Cilindro PC90E: a floor-standing pillar</h2>
+    <p class="text-stone-700 mb-4">Harvia lists North American item HPCS9U1HUL as a 9 kW, 240 VAC pillar heater for 141-494 cubic feet. It uses a separate control unit and holds 200 pounds of stones. The large range does not remove the need to calculate heat loss and use the manual tied to the room.</p>
+    <p class="text-stone-700 mb-5">This format makes sense when the pillar placement, separate controller, stone quantity, guard, and floor plan are intentional. Confirm whether the retailer package includes the controller and stones. Product-page package language can be inconsistent, so ask for an itemized quote.</p>
+    <SelectSaunasButton href={cilindroUrl} label="View current Cilindro PC90E listing" ctaPosition="cilindro_model" />
+
+    <h2 class="text-2xl font-bold mb-4 mt-10 text-stone-900">HUUM DROP 6: wall mounting with a larger stone mass</h2>
+    <p class="text-stone-700 mb-4">The North American HUUM brochure and current authorized-retailer listing describe the DROP 6 as a 6 kW wall heater for 177-353 cubic feet. The heater holds up to 132 pounds of stones and requires a separate UKU control package.</p>
+    <p class="text-stone-700 mb-5">Choose this format when the design, wall placement, clearances, stone load, and external controls all fit the room. The heater-only price is not the project price. Include the control, sensors, stones, safety rail if needed, electrical work, and installation accessories.</p>
+    <SelectSaunasButton href={huumDropUrl} label="View current HUUM DROP 6 listing" ctaPosition="huum_drop_model" />
+
+    <h2 class="text-2xl font-bold mb-4 mt-10 text-stone-900">How to size the heater without a bad shortcut</h2>
+    <ol class="list-decimal pl-5 space-y-3 text-stone-700 mb-8">
+      <li>Measure the finished interior length, width, and height.</li>
+      <li>Calculate the room volume.</li>
+      <li>Apply the selected manufacturer's adjustment for glass, masonry, tile, or other uninsulated surfaces.</li>
+      <li>Use the resulting adjusted volume to select an allowed model from the current manual.</li>
+      <li>Have the electrical load, conductor, breaker, controls, clearances, and local code reviewed before purchase.</li>
+    </ol>
+    <p class="text-stone-700 mb-8">Do not automatically “size up.” An oversized heater can also create control, clearance, or comfort problems. Follow the listed range and the exact manufacturer's method. Our <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 font-semibold hover:underline">heater sizing guide</a> organizes the inputs.</p>
+
+    <h2 class="text-2xl font-bold mb-4 text-stone-900">Compare the complete package</h2>
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
+      <ul class="space-y-3 text-sm text-stone-700">
+        <li><strong>Heater:</strong> exact item number, voltage, phase, power, certification, and room range.</li>
+        <li><strong>Controls:</strong> built in or separate, plus any power unit, sensors, door device, cables, and remote-use requirements.</li>
+        <li><strong>Stones:</strong> required type, size, quantity, and whether they are included.</li>
+        <li><strong>Installation:</strong> clearances, guard, floor or wall support, ventilation, electrician, permits, and final inspection.</li>
+        <li><strong>Warranty:</strong> separate coverage for the heater, controls, and elements, including labor and shipping exclusions.</li>
       </ul>
     </div>
 
-    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-6">
-      <h3 class="text-xl font-bold mb-2">Also Shopping for a Sauna Kit?</h3>
-      <p class="text-stone-300 mb-4">See our full guide to the best backyard sauna kits to pair with your heater choice.</p>
-      <a href="/best-saunas/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-        See Best Sauna Kits →
-      </a>
+    <h2 class="text-2xl font-bold mb-4 text-stone-900">Operating-cost formula</h2>
+    <p class="text-stone-700 mb-4">A useful estimate is heater kW multiplied by hours of operation multiplied by your electricity rate. A thermostat may cycle the elements after warm-up, so the result is a planning ceiling rather than a guaranteed bill.</p>
+    <p class="mb-8"><a href="/tools/sauna-electricity-cost-calculator/" class="text-amber-700 font-semibold hover:underline">Estimate monthly and annual electricity cost</a></p>
+
+    <h2 class="text-2xl font-bold mb-4 text-stone-900">FAQ</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What is the best electric sauna heater?</h3>
+        <p class="text-stone-700">There is no universal winner. Match the room and installation first. Then choose among built-in controls, separate controls, wall or floor placement, stone capacity, and the complete package cost.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How do I size an electric sauna heater?</h3>
+        <p class="text-stone-700">Calculate the finished room volume and apply the selected manufacturer's adjustments for uninsulated surfaces. Use the exact product manual, not one universal rule of thumb.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Do controls and stones come with the heater?</h3>
+        <p class="text-stone-700">Sometimes. Some units have built-in controls, while others require a separate control package. Stones may be separate even when required for operation. Get an itemized package list.</p>
+      </div>
+    </div>
+
+    <section class="mt-12 border-t border-stone-200 pt-8">
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Primary sources</h2>
+      <ul class="space-y-2 text-sm text-stone-600">
+        <li><a href="https://www.harvia.com/en-US/products/JH60BU1UL/kip60b-6-kw-240vac-steel-ul" rel="noopener" class="text-amber-700 hover:underline">Harvia KIP60B, item JH60BU1UL</a></li>
+        <li><a href="https://www.harvia.com/en-US/products/HPCS9U1HUL/cilindro-pc90e-90-kw-240-vac-steel" rel="noopener" class="text-amber-700 hover:underline">Harvia Cilindro PC90E, item HPCS9U1HUL</a></li>
+        <li><a href="https://huumsauna.com/wp-content/uploads/2023/12/he0050106_v4_huum_usa-brochure_2023_all_products_210x297mm_print.pdf" rel="noopener" class="text-amber-700 hover:underline">HUUM North American heater brochure</a></li>
+        <li><a href={cilindroUrl} rel="noopener" class="text-amber-700 hover:underline">Current authorized-retailer Cilindro PC90E listing</a></li>
+        <li><a href={huumDropUrl} rel="noopener" class="text-amber-700 hover:underline">Current authorized-retailer HUUM DROP 6 listing</a></li>
+      </ul>
+      <p class="text-xs text-stone-500 mt-4">Specifications, package contents, availability, and pricing can change. Recheck the exact item and current manual before purchase.</p>
+    </section>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue planning</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/reviews/harvia-kip-60b-review/" class="text-amber-700 hover:underline">Harvia KIP60B buyer guide</a></li>
+        <li><a href="/brands/harvia-sauna-heater-review/" class="text-amber-700 hover:underline">Compare current Harvia heater lines</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna electrical planning checklist</a></li>
+        <li><a href="/guides/best-wood-burning-sauna-heaters/" class="text-amber-700 hover:underline">Wood-burning heater guide</a></li>
+      </ul>
     </div>
   </article>
 </Base>

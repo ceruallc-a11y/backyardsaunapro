@@ -81,6 +81,10 @@ function resolveAsin(asin, slug) {
 const rows = [];
 for (const file of await listFiles(sourceRoot)) {
   const source = await fs.readFile(file, 'utf8');
+  const stringConstants = new Map(
+    [...source.matchAll(/\bconst\s+([A-Za-z_$][\w$]*)\s*=\s*["'](https?:\/\/[^"']+)["']\s*;/g)]
+      .map((match) => [match[1], match[2]]),
+  );
   for (const match of source.matchAll(/href\s*=\s*["'](https?:\/\/[^"']+)["']/g)) {
     const result = classify(match[1]);
     if (!result) continue;
@@ -94,6 +98,40 @@ for (const file of await listFiles(sourceRoot)) {
       classification: result[0],
       partner: result[1],
       audit_status: result[2],
+      observed_status: '',
+      last_checked: '',
+    });
+  }
+
+  for (const match of source.matchAll(/<SelectSaunasButton\b[^>]*\bhref\s*=\s*(?:["']([^"']+)["']|\{([A-Za-z_$][\w$]*)\})[^>]*\/>/g)) {
+    const baseUrl = match[1] || stringConstants.get(match[2]);
+    if (!baseUrl) continue;
+    const line = source.slice(0, match.index).split('\n').length;
+    rows.push({
+      source_file: path.relative(process.cwd(), file).replaceAll('\\', '/'),
+      source_line: line,
+      source_kind: 'select_saunas_component',
+      product_id: new URL(baseUrl).pathname.split('/').filter(Boolean).at(-1) ?? '',
+      url: appendParameter(baseUrl, 'sca_ref', selectSaunasRef),
+      classification: 'affiliate',
+      partner: 'select_saunas',
+      audit_status: 'verified_component',
+      observed_status: '',
+      last_checked: '',
+    });
+  }
+
+  for (const match of source.matchAll(/<SelectSaunasButton\b[^>]*\bcollection\s*=\s*["']([^"']+)["'][^>]*\/>/g)) {
+    const line = source.slice(0, match.index).split('\n').length;
+    rows.push({
+      source_file: path.relative(process.cwd(), file).replaceAll('\\', '/'),
+      source_line: line,
+      source_kind: 'select_saunas_collection',
+      product_id: match[1],
+      url: appendParameter(`https://selectsaunas.com/collections/${match[1]}`, 'sca_ref', selectSaunasRef),
+      classification: 'affiliate',
+      partner: 'select_saunas',
+      audit_status: 'verified_component',
       observed_status: '',
       last_checked: '',
     });
