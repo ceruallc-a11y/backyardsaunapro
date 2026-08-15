@@ -1,4 +1,12 @@
 {
+  "B000N4RSFO": {
+    "productName": "Finlandia FLB-60 6 kW electric sauna heater",
+    "mode": "amazon_search",
+    "query": "Finlandia FLB-60 6 kW sauna heater",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
   "B000R2PTHG": {
     "productName": "Almost Heaven Allegheny barrel sauna",
     "mode": "amazon_search",
@@ -30,6 +38,21 @@
     "lastChecked": "2026-08-15",
     "observedStatus": "available"
   },
+  "B01FY6PZYU": {
+    "productName": "Harvia M3 wood-burning sauna heater",
+    "mode": "amazon_exact",
+    "label": "Check Current Amazon Listing",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "available"
+  },
+  "B01FY9T0B6": {
+    "productName": "Harvia Legend 240SL wood-burning sauna heater",
+    "mode": "amazon_search",
+    "query": "Harvia Legend 240SL wood burning sauna heater",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
   "B017WJV8SO": {
     "productName": "Almost Heaven Pinnacle 4-person barrel sauna",
     "mode": "select_saunas",
@@ -42,6 +65,30 @@
     "productName": "Dynamic Saunas Lugano 3-person infrared sauna",
     "mode": "amazon_search",
     "query": "Dynamic Saunas Lugano 3 person infrared sauna",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B07CZ4NN1P": {
+    "productName": "Eucalyptus sauna scent concentrate",
+    "mode": "amazon_search",
+    "query": "eucalyptus sauna scent concentrate",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B07FKQB3LB": {
+    "productName": "Wooden sauna bucket and ladle set",
+    "mode": "amazon_search",
+    "query": "wooden sauna bucket and ladle set",
+    "label": "Compare Current Amazon Listings",
+    "lastChecked": "2026-08-15",
+    "observedStatus": "not_found"
+  },
+  "B07WQHQ4BF": {
+    "productName": "VEVOR 9 kW electric sauna heater",
+    "mode": "amazon_search",
+    "query": "VEVOR 9 kW electric sauna heater digital controller",
     "label": "Compare Current Amazon Listings",
     "lastChecked": "2026-08-15",
     "observedStatus": "not_found"
