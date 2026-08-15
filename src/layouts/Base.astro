@@ -81,6 +81,7 @@ const isCurrent = (href: string) => href === "/" ? currentPath === "/" : current
           <a
             href={href}
             aria-current={isCurrent(href) ? "page" : undefined}
+            data-navigation="primary"
             class:list={["site-nav-link px-3 py-2 rounded-md transition-colors", label === "Plan a Sauna" && "site-nav-cta"]}
           >
             {label}
@@ -97,7 +98,7 @@ const isCurrent = (href: string) => href === "/" ? currentPath === "/" : current
     <!-- Mobile nav drawer -->
     <nav id="mobile-menu" class="hidden lg:hidden flex-col max-w-7xl mx-auto border-t border-white/15 py-3" aria-label="Mobile navigation">
       {navItems.map(([href, label]) => (
-        <a href={href} aria-current={isCurrent(href) ? "page" : undefined} class="site-mobile-link block py-3 text-sm transition-colors">
+        <a href={href} aria-current={isCurrent(href) ? "page" : undefined} data-navigation="mobile" class="site-mobile-link block py-3 text-sm transition-colors">
           {label}
         </a>
       ))}

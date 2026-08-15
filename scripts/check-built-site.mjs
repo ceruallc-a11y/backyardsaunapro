@@ -159,6 +159,17 @@ for (const file of htmlFiles) {
     findings.push({ type: 'misleading_availability_cta', route });
   }
 
+  for (const match of html.matchAll(/<a\b[^>]*href=["']([^"']*\/sauna-planner\/[^"']*)["'][^>]*>/gi)) {
+    const [anchor, href] = match;
+    if (anchor.includes('data-navigation=')) continue;
+    if (!anchor.includes('data-track-event="planner_cta_clicked"')) {
+      findings.push({ type: 'untracked_planner_cta', route, target: href });
+    }
+    if (!href.includes('utm_content=')) {
+      findings.push({ type: 'unattributed_planner_cta', route, target: href });
+    }
+  }
+
   if (title) {
     const existing = titles.get(title);
     if (existing) findings.push({ type: 'duplicate_title', route, target: existing, value: title });
@@ -188,4 +199,6 @@ process.exitCode = findings.some((finding) => [
   'stale_claim',
   'retired_direct_amazon_link',
   'misleading_availability_cta',
+  'untracked_planner_cta',
+  'unattributed_planner_cta',
 ].includes(finding.type)) ? 1 : 0;
