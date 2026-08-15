@@ -1,198 +1,185 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
-const picks = [
-  {
-    rank: 1,
-    asin: "B01FY6PZYU",
-    name: "Harvia M3 Wood-Burning Sauna Heater",
-    
-    rating: "4.6/5",
-    tag: "BEST OVERALL",
-    tagColor: "bg-amber-100 text-amber-800",
-    capacity: "212-459 cu ft",
-    output: "16.5kW",
-    summary: "The M3 is the gold standard for home wood-burning saunas. Harvia has been making these in Finland since 1950, and this model has been refined to near-perfection. It heats fast, holds temperature well, and the stainless steel construction will outlast almost anything else in your backyard.",
-    pros: ["Made in Finland, proven 70+ year brand", "Heats 212-459 cu ft efficiently", "Stainless steel with graphite finish", "Simple to use, nothing to break"],
-    cons: ["Chimney and installation cost extra", "Wood sourcing is ongoing", "No thermostat control like electric"]
-  },
-  {
-    rank: 2,
-    asin: "B096T61VPY",
-    name: "HUUM Hive Wood 13kW Sauna Stove",
-    
-    rating: "4.5/5",
-    tag: "BEST PREMIUM",
-    tagColor: "bg-purple-100 text-purple-800",
-    capacity: "210-460 cu ft",
-    output: "13kW",
-    summary: "The Hive looks like modern art and performs like a workhorse. Estonian design, 198 lbs of olivine stones included, and that distinctive round basket that radiates heat evenly in all directions. If your sauna is going to be a showpiece, this is the heater.",
-    pros: ["198 lbs of olivine stones included", "Stunning open-top design", "Even heat radiation from stone basket", "Premium Estonian craftsmanship"],
-    cons: ["More expensive than Harvia", "Heavier to install", "Open stone basket requires care around children"]
-  },
-  {
-    rank: 3,
-    asin: "B01FY9T0B6",
-    name: "Harvia Legend 240SL Wood-Burning Heater",
-    
-    rating: "4.5/5",
-    tag: "BEST LARGE CAPACITY",
-    tagColor: "bg-blue-100 text-blue-800",
-    capacity: "Up to 600 cu ft",
-    output: "20kW",
-    summary: "For larger sauna rooms, the Legend is the move. Twenty kilowatts gets a big space to temperature fast. The side-loading door on the SL variant means you can feed wood without bending. Built for the long term, this heater will outlast the sauna itself.",
-    pros: ["20kW for large rooms up to 600 cu ft", "Side-loading door for easy wood feeding", "Classic Finnish design, built to last", "Handles heavy use sessions"],
-    cons: ["Overkill for small rooms", "Requires more wood per session", "Premium price point"]
-  }
-];
+const harviaM3Url = 'https://selectsaunas.com/products/harvia-m3-wood-burning-sauna-stove';
+const huumFlowMiniUrl = 'https://selectsaunas.com/products/huum';
+const harviaLegendUrl = 'https://selectsaunas.com/products/harvia-legend-240-sl-21kw-wood-burning-sauna-stove-w-fire-chamber-extension';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best wood-burning sauna heater?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no single best wood-burning heater. The right model must fit the manufacturer's calculated room range, required clearances, chimney system, loading location, stone load, and local approval requirements. The Harvia M3, HUUM HIVE Flow Mini, and Harvia Legend 240 SL represent three different project formats."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I size a wood-burning sauna heater?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Measure the finished interior volume and apply the selected manufacturer's adjustments for glass, masonry, log walls, and other uninsulated surfaces. Use the current manual for the exact model. Do not automatically oversize the heater."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a wood sauna heater include the chimney and stones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often it does not. Confirm the stove, required stone type and quantity, chimney components, floor and wall protection, safety rail, flashing, and installation labor as separate line items before ordering."
+      }
+    }
+  ]
+};
 ---
 <Base
-  title="Best Wood-Burning Sauna Heaters (2025) Top Stoves Reviewed"
-  description="The best wood-burning sauna heaters for home use. Honest reviews of Harvia, HUUM, and more. Know what to buy before you build."
+  title="Best Wood-Burning Sauna Heaters? Compare 3 Current Formats"
+  description="Compare the Harvia M3, HUUM HIVE Flow Mini, and Harvia Legend 240 SL by room range, loading format, stone amount, and installation scope."
   canonical="/guides/best-wood-burning-sauna-heaters"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Wood-Burning Sauna Heaters (2025)
-      </h1>
-      <p class="text-stone-500 text-sm">Updated January 2025 · 9 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        Wood-burning is the original sauna experience. The crackle of the fire, the smell of birch smoke, the ritual of feeding logs between rounds. Electric is convenient. Wood is an experience. If you're building an outdoor sauna and want to do it right, this guide covers the best stoves you can buy today.
-      </p>
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Wood heater buying guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best wood-burning sauna heaters? Compare three current formats</h1>
+      <p class="text-stone-500 text-sm">Last reviewed August 15, 2026</p>
     </header>
+
     <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-wood-stove-interior.jpg" alt="Traditional sauna with wood-burning stove" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+      <img src="/images/lifestyle/sauna-wood-stove-interior.jpg" alt="Wood-burning sauna stove installed beside wooden benches" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
-
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">Quick Picks</h2>
-      <div class="space-y-2 text-sm">
-        {[
-          ["Best Overall", "Harvia M3", "~$799"],
-          ["Best Premium", "HUUM Hive Wood 13kW", "~$1,299"],
-          ["Best Large Room", "Harvia Legend 240SL", "~$1,099"],
-        ].map(([label, name, price]) => (
-          <div class="flex justify-between items-center bg-white rounded-lg px-4 py-2">
-            <span class="text-amber-700 font-semibold text-xs uppercase tracking-wide w-32">{label}</span>
-            <span class="text-stone-700 font-medium flex-1 mx-3">{name}</span>
-            <span class="text-stone-500 font-semibold">{price}</span>
-          </div>
-        ))}
-      </div>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Research scope:</strong> This is a desk-researched comparison, not a hands-on test. We checked current manufacturer product data, North American manuals, listed room ranges, stone loads, loading formats, and authorized-retailer packages. We did not assign ratings or a universal winner.
     </div>
+
+    <p class="text-lg text-stone-700 mb-4">A wood stove is part of a fire, chimney, ventilation, and clearance system. Choose the system first. Then choose the model whose current manual fits it.</p>
+    <p class="text-stone-700 mb-8">The three heaters below solve different problems. The Harvia M3 is a compact in-room-loading stove. The HUUM HIVE Flow Mini pairs a similar listed room range with a much larger stone mass. The Harvia Legend 240 SL serves larger rooms and loads from the other side of a wall.</p>
+
+    <div class="overflow-x-auto mb-10">
+      <table class="text-sm w-full min-w-[740px]">
+        <thead>
+          <tr class="text-left text-stone-500 border-b border-stone-200">
+            <th class="pb-3 pr-5">Model</th>
+            <th class="pb-3 pr-5">Listed room range</th>
+            <th class="pb-3 pr-5">Listed stone amount</th>
+            <th class="pb-3 pr-5">Firewood loading</th>
+            <th class="pb-3">Project fit</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700">
+          <tr class="border-b border-stone-100">
+            <td class="py-3 pr-5 font-semibold">Harvia M3</td>
+            <td class="py-3 pr-5">212-459 ft3</td>
+            <td class="py-3 pr-5">66.2 lb</td>
+            <td class="py-3 pr-5">Inside sauna</td>
+            <td class="py-3">Compact, conventional layout</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-3 pr-5 font-semibold">HUUM HIVE Flow Mini</td>
+            <td class="py-3 pr-5">212-494 ft3</td>
+            <td class="py-3 pr-5">231 lb</td>
+            <td class="py-3 pr-5">Inside sauna</td>
+            <td class="py-3">High stone mass and open-frame design</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-5 font-semibold">Harvia Legend 240 SL</td>
+            <td class="py-3 pr-5">353-848 ft3</td>
+            <td class="py-3 pr-5">441 lb</td>
+            <td class="py-3 pr-5">Through-wall extension</td>
+            <td class="py-3">Larger room with external loading plan</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <PlannerCTA
+      title="Plan the room and chimney before choosing a stove"
+      body="Build a project brief with finished dimensions, uninsulated surfaces, loading location, chimney path, budget, and installation needs."
+      campaign="wood_heater_guide"
+      ctaPosition="above_models"
+    />
+
+    <h2 class="text-2xl font-bold mb-4 mt-10 text-stone-900">Harvia M3: compact, in-room loading</h2>
+    <p class="text-stone-700 mb-4">Harvia lists the M3, item WKM3, as a 16.5 kW floor stove for sauna rooms from 212 to 459 cubic feet. It measures 15.35 inches wide, 16.93 inches deep, and 27.95 inches high, with a listed stone amount of 66.2 pounds.</p>
+    <p class="text-stone-700 mb-5">This format is the simplest of the three when the fire can be tended inside the sauna and the exact manual's clearances work. The current retailer listing says the stones are required and sold separately. Treat the chimney, protective bedding or sheath, stones, and installation as part of the purchase scope.</p>
+    <SelectSaunasButton href={harviaM3Url} label="View current Harvia M3 listing" ctaPosition="harvia_m3_model" />
+
+    <h2 class="text-2xl font-bold mb-4 mt-10 text-stone-900">HUUM HIVE Flow Mini: high stone mass in a compact range</h2>
+    <p class="text-stone-700 mb-4">HUUM lists the HIVE Flow Mini at 8.5 kW for sauna rooms from 212 to 494 cubic feet. It holds about 231 pounds of stones and accepts firewood up to roughly 11.8 inches long. Its current North American product data lists a 4.49-inch flue diameter.</p>
+    <p class="text-stone-700 mb-5">The main tradeoff is visible in the package weight and room plan. The large stone quantity adds thermal mass, but it also adds cost, floor load, handling, and guard considerations. Confirm every clearance dimension from the US manual because a compact stove body does not mean a compact total safety envelope.</p>
+    <SelectSaunasButton href={huumFlowMiniUrl} label="View current HIVE Flow Mini listing" ctaPosition="huum_flow_mini_model" />
+
+    <h2 class="text-2xl font-bold mb-4 mt-10 text-stone-900">Harvia Legend 240 SL: external loading for a larger room</h2>
+    <p class="text-stone-700 mb-4">Harvia lists the Legend 240 SL, item WKLE20SLM, as a 21 kW stove for 353 to 848 cubic feet. The SL fire-chamber extension lets the user load wood from another room or outside the sauna. The stove holds 441 pounds of stones and is substantially larger and heavier than the M3.</p>
+    <p class="text-stone-700 mb-5">This is a project-specific format, not an automatic upgrade. The wall penetration, loading-side fire protection, chimney, floor support, stone handling, and clearances all need to be resolved before purchase. Use it when the room and operating plan genuinely benefit from external loading.</p>
+    <SelectSaunasButton href={harviaLegendUrl} label="View current Legend 240 SL listing" ctaPosition="harvia_legend_model" />
+
+    <h2 class="text-2xl font-bold mb-4 mt-10 text-stone-900">The six checks that decide the purchase</h2>
+    <ol class="list-decimal pl-5 space-y-3 text-stone-700 mb-8">
+      <li><strong>Calculated room:</strong> measure finished volume and apply the selected manufacturer's adjustment for glass, masonry, log walls, and other uninsulated surfaces.</li>
+      <li><strong>Local acceptance:</strong> confirm the exact stove, chimney, listing or certification, permit, inspection, and solid-fuel rules with the authority having jurisdiction.</li>
+      <li><strong>Clearance envelope:</strong> lay out the stove, door swing, protective surfaces, safety rail, benches, and service access using the current manual.</li>
+      <li><strong>Chimney system:</strong> match connector and chimney components to the stove manual, building, roof, and local code. Do not assemble a system from generic diameter advice.</li>
+      <li><strong>Combustion air and ventilation:</strong> coordinate both with the heater manual and the sauna design. A sauna exhaust plan is not automatically a complete combustion-air plan.</li>
+      <li><strong>Complete package:</strong> price the stove, stones, chimney, flashings, protective bedding and walls, guard, freight, labor, permits, and inspection.</li>
+    </ol>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">Wood vs Electric: The Real Difference</h2>
-      <div class="grid grid-cols-2 gap-4 text-sm">
-        <div>
-          <p class="font-semibold text-amber-700 mb-2">Wood-Burning</p>
-          <ul class="space-y-1 text-stone-600">
-            <li>+ Traditional Finnish experience</li>
-            <li>+ No electricity needed</li>
-            <li>+ Higher peak temperatures</li>
-            <li>+ Ritual, atmosphere, ambiance</li>
-            <li>- Requires chimney installation</li>
-            <li>- Ongoing wood cost and sourcing</li>
-            <li>- Longer heat-up time (45-90 min)</li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-semibold text-blue-700 mb-2">Electric</p>
-          <ul class="space-y-1 text-stone-600">
-            <li>+ Set-and-forget thermostat</li>
-            <li>+ Faster heat-up (30-45 min)</li>
-            <li>+ Easier to install indoors</li>
-            <li>+ No chimney required</li>
-            <li>- Monthly electricity cost</li>
-            <li>- Less authentic feel</li>
-            <li>- Requires 240V circuit</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">The Top Wood-Burning Heaters</h2>
-
-    <div class="space-y-8">
-      {picks.map((pick) => (
-        <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
-          <div class="bg-stone-50 border-b border-stone-200 px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <span class="text-stone-400 font-bold text-lg">#{pick.rank}</span>
-              <h3 class="text-lg font-bold text-stone-900">{pick.name}</h3>
-            </div>
-            <span class={`text-xs font-bold px-3 py-1 rounded-full ${pick.tagColor}`}>{pick.tag}</span>
-          </div>
-          <div class="p-6">
-            <div class="flex gap-6 mb-4 text-sm text-stone-500">
-              <span>Capacity: <strong class="text-stone-700">{pick.capacity}</strong></span>
-              <span>Output: <strong class="text-stone-700">{pick.output}</strong></span>
-              <span>Rating: <strong class="text-stone-700">{pick.rating}</strong></span>
-            </div>
-            <p class="text-stone-600 mb-4">{pick.summary}</p>
-            <div class="grid grid-cols-2 gap-4 mb-5 text-sm">
-              <div>
-                <p class="font-semibold text-green-700 mb-2">Pros</p>
-                <ul class="space-y-1">
-                  {pick.pros.map(p => <li class="flex items-start gap-2 text-stone-600"><span class="text-green-500 mt-0.5">+</span>{p}</li>)}
-                </ul>
-              </div>
-              <div>
-                <p class="font-semibold text-red-600 mb-2">Cons</p>
-                <ul class="space-y-1">
-                  {pick.cons.map(c => <li class="flex items-start gap-2 text-stone-600"><span class="text-red-400 mt-0.5">-</span>{c}</li>)}
-                </ul>
-              </div>
-            </div>
-            <AmazonButton asin={pick.asin} price={pick.price} />
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold mt-12 mb-6 text-stone-900">What to Know Before You Buy</h2>
-
-    <div class="space-y-6">
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Size Your Heater Correctly</h3>
-        <p class="text-stone-600 text-sm">Wood heaters are sized by cubic footage, not square footage. Measure your sauna's length, width, and ceiling height. Multiply all three. That's your cubic footage.</p>
-        <p class="text-stone-600 text-sm mt-3">Add 20% if your walls aren't well insulated. Outdoor saunas lose heat faster than indoor ones. An undersized heater will struggle to reach temperature on cold days. It's better to have too much power than not enough.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Chimney Installation is Not Optional</h3>
-        <p class="text-stone-600 text-sm">Every wood-burning heater needs a proper chimney. This isn't a DIY shortcut situation. A bad chimney installation is a fire hazard. Budget $500-$1,500 for a quality chimney kit and professional installation if you're not experienced.</p>
-        <p class="text-stone-600 text-sm mt-3">For outdoor barrel saunas, chimney kits are typically sold separately from the stove. Make sure you know what clearances are required before you install.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Wood Type Matters</h3>
-        <p class="text-stone-600 text-sm">Hardwoods burn hotter and longer. Birch, oak, alder, and ash are ideal. Birch is the traditional Finnish choice. It burns clean and doesn't produce excessive smoke.</p>
-        <p class="text-stone-600 text-sm mt-3">Avoid softwoods like pine and cedar in the firebox. They produce creosote, which builds up in the chimney and creates a fire risk. Save the cedar for your benches and walls.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Harvia vs HUUM: Which Brand?</h3>
-        <p class="text-stone-600 text-sm">Harvia is the safe choice. It's the most popular sauna brand in Finland, with decades of reliability data. Parts are widely available. The M3 and Legend have been refined over many generations.</p>
-        <p class="text-stone-600 text-sm mt-3">HUUM is the design-forward option. Estonian-made, striking aesthetics, and excellent stone mass. If you want a heater that looks as good as it works, HUUM delivers. Both brands are excellent. It really comes down to budget and aesthetics.</p>
-      </div>
-
-    </div>
-
-    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h3 class="font-bold text-stone-900 mb-2">More buying guides</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline font-medium">Best Electric Sauna Heaters (If You Want the Easy Route)</a></li>
-        <li><a href="/guides/electric-vs-wood-fired-sauna/" class="text-amber-700 hover:underline font-medium">Electric vs Wood-Fired Sauna: Full Comparison</a></li>
-        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline font-medium">Sauna Electrical Requirements Guide</a></li>
-        <li><a href="/guides/best-2-person-outdoor-sauna/" class="text-amber-700 hover:underline font-medium">Best 2-Person Outdoor Saunas</a></li>
+      <h2 class="text-lg font-bold text-stone-900 mb-3">Do not rely on these shortcuts</h2>
+      <ul class="space-y-3 text-sm text-stone-700">
+        <li><strong>&ldquo;Bigger is safer.&rdquo;</strong> An oversized stove can create its own comfort, clearance, and operating problems.</li>
+        <li><strong>&ldquo;The stove price is the project price.&rdquo;</strong> Required chimney, stone, protection, freight, and labor can materially change the total.</li>
+        <li><strong>&ldquo;All wood stoves use the same clearances.&rdquo;</strong> Clearances are model-specific and can change with approved protective accessories.</li>
+        <li><strong>&ldquo;No electricity means no permit.&rdquo;</strong> Solid-fuel appliances, chimneys, wall penetrations, and structures may still require local approval.</li>
       </ul>
     </div>
 
+    <h2 class="text-2xl font-bold mb-4 text-stone-900">FAQ</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What is the best wood-burning sauna heater?</h3>
+        <p class="text-stone-700">There is no universal winner. The M3 suits a compact conventional layout, the HIVE Flow Mini emphasizes stone mass and design, and the Legend 240 SL serves a larger external-loading plan. The room calculation and installation constraints decide.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How do I size a wood-burning sauna heater?</h3>
+        <p class="text-stone-700">Calculate the finished room volume, include the manufacturer's adjustment for uninsulated surfaces, and use the exact current manual. Do not replace that process with a universal shortcut.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Does the stove include the chimney and stones?</h3>
+        <p class="text-stone-700">Often it does not. Get an itemized package that identifies every required component, freight charge, installation task, and warranty boundary.</p>
+      </div>
+    </div>
+
+    <section class="mt-12 border-t border-stone-200 pt-8">
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Primary sources</h2>
+      <ul class="space-y-2 text-sm text-stone-600">
+        <li><a href="https://www.harvia.com/en-US/products/WKM3/m3-black" rel="noopener" class="text-amber-700 hover:underline">Harvia M3, item WKM3</a></li>
+        <li><a href="https://huumsauna.com/products/hive-flow-wood-burning-stove/" rel="noopener" class="text-amber-700 hover:underline">HUUM HIVE Flow product data and US manual</a></li>
+        <li><a href="https://www.harvia.com/en-US/products/WKLE20SLM/legend-240-sl-black" rel="noopener" class="text-amber-700 hover:underline">Harvia Legend 240 SL, item WKLE20SLM</a></li>
+        <li><a href="https://www.harvia.com/en/ideas-and-trends/products/how-do-you-choose-the-right-wood-burning-heater/" rel="noopener" class="text-amber-700 hover:underline">Harvia wood-heater selection guidance</a></li>
+        <li><a href={harviaM3Url} rel="noopener" class="text-amber-700 hover:underline">Current authorized-retailer Harvia M3 listing</a></li>
+        <li><a href={huumFlowMiniUrl} rel="noopener" class="text-amber-700 hover:underline">Current authorized-retailer HIVE Flow Mini listing</a></li>
+        <li><a href={harviaLegendUrl} rel="noopener" class="text-amber-700 hover:underline">Current authorized-retailer Legend 240 SL listing</a></li>
+      </ul>
+      <p class="text-xs text-stone-500 mt-4">Specifications, package contents, availability, pricing, and local requirements can change. Recheck the exact model, current manual, and local approval path before purchase.</p>
+    </section>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue planning</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/best-sauna-heater/" class="text-amber-700 hover:underline">Choose between electric and wood heat</a></li>
+        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Organize heater-sizing inputs</a></li>
+        <li><a href="/guides/sauna-ventilation/" class="text-amber-700 hover:underline">Plan sauna ventilation</a></li>
+        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Compare current electric-heater formats</a></li>
+      </ul>
+    </div>
   </article>
 </Base>
