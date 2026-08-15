@@ -163,9 +163,18 @@ const isCurrent = (href: string) => href === "/" ? currentPath === "/" : current
     document.addEventListener('submit', (event) => {
       const form = event.target;
       if (!(form instanceof HTMLFormElement) || !form.matches('.kit-form')) return;
-      if (typeof window.gtag !== 'function') return;
 
       const formLocation = form.dataset.formLocation || 'unknown';
+      try {
+        window.localStorage.setItem('bsp_newsletter_signup_pending', JSON.stringify({
+          createdAt: Date.now(),
+          formId: form.dataset.svForm || '',
+        }));
+      } catch {
+        // Newsletter submission still works when browser storage is unavailable.
+      }
+
+      if (typeof window.gtag !== 'function') return;
       window.gtag('event', 'newsletter_signup', {
         site_name: 'backyard_sauna_pro',
         site_hostname: window.location.hostname,

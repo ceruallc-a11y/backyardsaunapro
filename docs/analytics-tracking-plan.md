@@ -8,7 +8,7 @@
 | `commerce_outbound_click` | Click to a retailer without a verified commission relationship | `page_path`, `page_type`, `partner`, `link_url`, `cta_position` |
 | `product_table_click` | Click in a comparison table | Above plus `table_name`, `row_position` |
 | `newsletter_signup` | Kit form submission attempt | `page_path`, `form_location`, `form_id`, `signup_status` |
-| `newsletter_signup_confirmed` | Kit double-opt-in confirmation redirects to the site-owned confirmation page | `page_path`, `form_id`, `signup_status` |
+| `newsletter_signup_confirmed` | A browser with a recent pending Kit submission reaches the site-owned confirmation page | `page_path`, `form_id`, `signup_status`, `confirmation_method` |
 | `planner_cta_clicked` | Click from a buyer guide into the first-10 planning pilot | `page_path`, `cta_position`, `campaign`, `link_url` |
 | `sauna_planner_started` | First project-planner interaction | `page_path` |
 | `sauna_planner_completed` | Local project brief generated | `page_path`, `project_location`, `heat_type`, `budget_range`, `timeline`, `acquisition_source` |
@@ -28,7 +28,7 @@ Use snake_case. Every site-owned event also receives `site_name=backyard_sauna_p
 
 - `affiliate_click` exists globally but needs validated conversion reporting and a stable `page_type` value.
 - The global `window.gtag` function is initialized before site-owned listeners. A prior module-scoped helper allowed pageviews but caused every listener guarded by `window.gtag` to exit without recording its event.
-- `newsletter_signup` fires on form submit with `signup_status=attempted`. The Kit double-opt-in confirmation redirects to `/newsletter/confirmed/`, which emits `newsletter_signup_confirmed`; only the latter is a GA4 key event.
+- `newsletter_signup` fires on form submit with `signup_status=attempted` and stores a non-identifying pending marker in that browser for up to 30 days. The Kit double-opt-in confirmation redirects to `/newsletter/confirmed/`, which emits `newsletter_signup_confirmed` only when it can consume that marker. Refreshes and direct visits no longer inflate the key event. Cross-device confirmations can be missed, so Kit remains the source of truth for subscriber totals.
 - Creating a sauna brief remains browser-local. The separate review form sends a minimal consented project request to Cloudflare D1. `lead_submitted` fires only after the API confirms receipt. `acquisition_source` carries the guide CTA's `utm_content`, never a homeowner identifier.
 - The partnership CTA similarly records `partner_inquiry_started`, not a submitted inquiry.
 - Cross-check retailer and affiliate dashboards because browser events do not prove attributed sales.
@@ -47,11 +47,12 @@ Use GA DebugView and browser network inspection on staging or local preview. Tes
 
 ## GA4 key-event configuration
 
-Verified August 5, 2026 in property `backyardsaunapro.com`:
+Verified August 2026 in property `backyardsaunapro.com`:
 
 - `affiliate_click`
 - `newsletter_signup_confirmed`
-- `sauna_planner_completed`
 - `calculator_completed`
+- `lead_submitted`
+- `purchase`
 
-Do not mark attempted newsletter submits, planner completions, or email-link opens as completed leads. Mark `lead_submitted` as the lead key event after live receipt testing succeeds.
+Do not mark attempted newsletter submits, local planner completions, or email-link opens as completed leads. `lead_submitted` is reserved for a successful D1 receipt from the live lead API.

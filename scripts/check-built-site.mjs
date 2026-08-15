@@ -79,6 +79,16 @@ const requiredMarkers = [
     label: 'server-confirmed lead analytics event',
   },
   {
+    file: 'index.html',
+    pattern: /localStorage\.setItem\(["']bsp_newsletter_signup_pending["']/,
+    label: 'pending newsletter signup state',
+  },
+  {
+    file: 'newsletter/confirmed/index.html',
+    pattern: /localStorage\.getItem\([^)]*\)[\s\S]*confirmation_method:["']pending_browser_signup["']/,
+    label: 'pending-state newsletter confirmation guard',
+  },
+  {
     file: 'guides/best-home-sauna/index.html',
     pattern: /sun-home-equinox-2-person-full-spectrum-infrared-sauna/,
     label: 'protected Sun Home Equinox destination',

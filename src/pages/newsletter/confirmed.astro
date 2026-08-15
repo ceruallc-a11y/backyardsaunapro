@@ -16,14 +16,37 @@ import Base from '../../layouts/Base.astro';
     </div>
   </article>
   <script>
-    if (typeof window.gtag === 'function') {
+    const pendingKey = 'bsp_newsletter_signup_pending';
+    const maximumPendingAge = 30 * 24 * 60 * 60 * 1000;
+    let hasRecentPendingSignup = false;
+
+    try {
+      const pendingSignup = JSON.parse(window.localStorage.getItem(pendingKey) || 'null');
+      hasRecentPendingSignup = pendingSignup?.formId === '9452008'
+        && Number.isFinite(pendingSignup?.createdAt)
+        && Date.now() - pendingSignup.createdAt >= 0
+        && Date.now() - pendingSignup.createdAt <= maximumPendingAge;
+    } catch {
+      hasRecentPendingSignup = false;
+    }
+
+    if (hasRecentPendingSignup && typeof window.gtag === 'function') {
       window.gtag('event', 'newsletter_signup_confirmed', {
         site_name: 'backyard_sauna_pro',
         site_hostname: window.location.hostname,
         form_id: '9452008',
         page_path: window.location.pathname,
         signup_status: 'confirmed',
+        confirmation_method: 'pending_browser_signup',
       });
+
+      try {
+        window.localStorage.removeItem(pendingKey);
+      } catch {
+        // The event is still valid when browser storage cleanup is unavailable.
+      }
     }
+
+    document.documentElement.dataset.newsletterConfirmation = hasRecentPendingSignup ? 'recorded' : 'ignored';
   </script>
 </Base>
