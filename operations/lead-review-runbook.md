@@ -4,8 +4,29 @@ The `backyard-sauna-leads` Worker stores planner review requests in the restrict
 
 ## Daily review
 
+1. Set `CLOUDFLARE_API_TOKEN` in the current shell. Do not save it in the repository.
+2. Run `npm run leads:queue` for a read-only, contact-free queue summary.
+3. Open Cloudflare D1 and select `backyard-sauna-leads` only when a receipt needs manual review.
+4. Run the detailed queue query below if contact information is needed.
+5. Check consent, geography, heat type, budget, timeline, and completeness.
+6. Update the status and review notes.
+7. Contact the homeowner from `info@backyardsaunapro.com` when clarification is needed.
+8. Share with a partner only when `partner_consent = 1` and the fit has been manually verified.
+
+The command-line report excludes names, email addresses, phone numbers, and notes. It is intended for routine monitoring without spreading contact data into terminals, logs, or exports.
+
+```powershell
+$env:CLOUDFLARE_API_TOKEN = '<temporary-token>'
+npm run leads:queue
+Remove-Item Env:CLOUDFLARE_API_TOKEN
+```
+
+The token needs read access to the `backyard-sauna-leads` D1 database. If the command fails, it exits non-zero and prints the Cloudflare error without falling back to a cached result.
+
+## Detailed manual review
+
 1. Open Cloudflare D1 and select `backyard-sauna-leads`.
-2. Run the queue query below.
+2. Run the query below.
 3. Check consent, geography, heat type, budget, timeline, and completeness.
 4. Update the status and review notes.
 5. Contact the homeowner from `info@backyardsaunapro.com` when clarification is needed.

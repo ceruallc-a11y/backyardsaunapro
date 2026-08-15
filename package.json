@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "audit:affiliates": "node scripts/audit-affiliate-links.mjs",
-    "audit:seo": "node scripts/seo-followup.mjs"
+    "audit:seo": "node scripts/seo-followup.mjs",
+    "leads:queue": "node scripts/lead-queue-report.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.0",
