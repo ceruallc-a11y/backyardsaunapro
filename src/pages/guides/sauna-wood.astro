@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -7,142 +8,141 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is the best wood for a sauna?",
+      "name": "What is the best wood for sauna benches?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Western red cedar is the most popular choice in North America — it resists moisture, resists warping, smells pleasant, and stays cooler to the touch than many other species. Nordic spruce and aspen are the traditional Finnish choices and have low resin content and a clean scent. Hemlock is a common budget alternative to cedar with good durability. Avoid softwoods with high resin content (pine) for bench surfaces — resin drips are hot and sticky."
+        "text": "There is no single best species for every project. Aspen, alder, abachi, spruce, cedar, and thermally modified woods all appear in current sauna systems. Choose clear, smooth material intended for bench use, then compare surface comfort, durability, appearance, sourcing, and maintenance."
       }
     },
     {
       "@type": "Question",
-      "name": "What wood should you not use in a sauna?",
+      "name": "Can pine or spruce be used in a sauna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Avoid pressure-treated lumber (toxic chemicals off-gas at sauna temperatures), pine with high resin content (drips when hot), and any composite or engineered wood products (adhesives off-gas at heat). Also avoid tropical hardwoods — they are often too dense and retain too much surface heat, making bench contact uncomfortable."
+        "text": "Yes, in appropriate applications. Current manufacturers use spruce and heat-treated pine in sauna products. Species name alone is not enough; grade, knots, resin, thermal modification, surface location, and the system manufacturer's instructions all matter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should sauna interior wood be sealed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Follow the sauna-system and finish manufacturer's instructions. Some sauna interiors are left untreated, while approved sauna-specific products may be used on certain surfaces. Do not substitute an ordinary interior or exterior coating without confirming its intended use in a hot sauna."
       }
     }
   ]
 };
 ---
 <Base
-  title="Sauna Wood: Best Species for Walls, Benches, and Framing (2025)"
-  description="What wood to use in a sauna for benches, walls, and framing. Cedar vs spruce vs hemlock vs aspen — and what to avoid."
+  title="Sauna Wood Guide: Choose Benches, Paneling, Framing, and Exterior"
+  description="A source-backed sauna wood guide for benches, hot-room paneling, framing, and outdoor cladding, with practical questions for builders and kit sellers."
   canonical="/guides/sauna-wood"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Wood: Best Species for Every Part of the Build</h1>
-    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Materials planning</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Sauna Wood: Choose by Surface, Not by Species Alone</h1>
+      <p class="text-stone-500 text-sm">Reviewed August 2026 &middot; 8 min read</p>
+      <p class="text-lg text-stone-700 mt-4">The right bench wood is not automatically the right wall, frame, floor, or exterior. Start with the surface. Then compare the exact lumber grade, moisture condition, profile, fasteners, finish, climate, and maintenance plan.</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-interior-forest-view.jpg" alt="Cedar sauna interior walls and benches" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-forest-view.jpg" alt="Wood sauna interior with benches, wall paneling, and a forest-facing window" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page may contain affiliate links.
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
+      <strong>Planning boundary:</strong> This guide helps compare materials. It is not a structural specification or permission to substitute lumber in a tested sauna kit. Follow the current room, heater, finish, and local building requirements for the exact project.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Sauna wood selection matters more than most people think. The wrong species leads to warping, dripping resin, splinters, or uncomfortable bench temperatures. Here is the definitive breakdown by application.</p>
+    <section class="bg-stone-900 text-white rounded-lg p-6 mb-8">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-300 mb-2">The useful answer</p>
+      <h2 class="text-2xl font-bold mb-3">Match the wood to the job.</h2>
+      <p class="text-stone-200">Benches need comfortable, smooth contact surfaces. Interior paneling must tolerate repeated heat and moisture cycles. Framing carries loads behind the finish. Outdoor cladding faces rain, sun, snow, and drainage details. One species can serve several roles, but no species removes the need for good design and drying.</p>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Best Wood by Sauna Application</h2>
+    <PlannerCTA
+      source="sauna_wood_after_summary"
+      heading="Put material choices into the whole project plan"
+      description="Record the sauna location, format, dimensions, heat source, budget, and installation status before requesting a material quote. Your answers stay in your browser unless you explicitly submit them for manual review."
+    />
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Benches</h3>
-    <p class="text-stone-700 mb-4">Bench wood needs to stay cool to the touch, resist splintering, and handle constant moisture exposure. The best options:</p>
-    <ul class="space-y-2 text-stone-700 mb-4 ml-4 text-sm">
-      <li><span class="font-semibold">Aspen:</span> The Finnish standard. Low density, low resin, stays cool at sauna temperatures, very light color. The most common bench wood in Scandinavian saunas.</li>
-      <li><span class="font-semibold">Abachi (African whitewood):</span> Very low thermal conductivity — stays noticeably cooler than cedar on the bench surface. Used in many European premium saunas. White color, smooth grain.</li>
-      <li><span class="font-semibold">Western red cedar:</span> Popular in North America, pleasant scent, naturally moisture-resistant. Slightly higher thermal conductivity than aspen but comfortable for most users. Widely available.</li>
-      <li><span class="font-semibold">Nordic spruce:</span> Traditional in Finland, good moisture resistance, neutral scent. Can develop minor checking over time but holds up well with proper ventilation.</li>
-    </ul>
-    <p class="text-stone-700 mb-6">Avoid bench surfaces made from pine (resin bleeds at heat, can cause burns), mahogany or tropical hardwoods (retain too much surface heat), or any treated/stained lumber.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Wall Paneling and Ceiling</h3>
-    <p class="text-stone-700 mb-4">Same considerations as benches but with slightly more flexibility since you are not in direct contact. Cedar and spruce are the most common. Standard tongue-and-groove paneling in 1x4 or 1x6 profile works well. The gap between boards allows expansion and contraction with humidity changes without buckling.</p>
-    <p class="text-stone-700 mb-6">Ceiling paneling sees the most heat and humidity — use the same species as the bench for consistency. Thinner boards (5/8" to 3/4") work better than thick planks on the ceiling because they flex more and are less prone to checking.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Framing</h3>
-    <p class="text-stone-700 mb-4">Standard kiln-dried 2x4 or 2x6 construction lumber is fine for framing. The framing is behind the vapor barrier and paneling — it does not need to be the same species as the finish surfaces. Do not use pressure-treated lumber anywhere inside the sauna envelope; the chemicals used in treatment off-gas at sauna temperatures.</p>
-    <p class="text-stone-700 mb-6">For outdoor saunas on a raised foundation, pressure-treated lumber is appropriate for floor framing below the vapor barrier layer where it contacts the ground or is exposed to weather.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Exterior</h3>
-    <p class="text-stone-700 mb-6">Cedar or redwood for exterior siding — both resist rot and weather naturally without treatment. Many barrel saunas are left with raw cedar exterior that weathers to silver-gray over time. For painted or stained exteriors, use standard exterior grade cedar or spruce and finish it with a quality exterior stain.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Species Comparison</h2>
-    <div class="overflow-x-auto mb-8">
-      <table class="text-sm w-full">
-        <thead>
-          <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-6">Species</th>
-            <th class="pb-2 pr-6">Best For</th>
-            <th class="pb-2 pr-6">Resin</th>
-            <th class="pb-2">Notes</th>
-          </tr>
-        </thead>
-        <tbody class="text-stone-700 text-sm">
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Western Red Cedar</td>
-            <td class="py-2 pr-6">Bench, wall, exterior</td>
-            <td class="py-2 pr-6">Low-Medium</td>
-            <td class="py-2">Most popular in N. America; pleasant scent</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Aspen</td>
-            <td class="py-2 pr-6">Bench, wall</td>
-            <td class="py-2 pr-6">Very Low</td>
-            <td class="py-2">Traditional Finnish choice; stays coolest</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Abachi</td>
-            <td class="py-2 pr-6">Bench</td>
-            <td class="py-2 pr-6">Very Low</td>
-            <td class="py-2">Coolest surface temp; premium European use</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Nordic Spruce</td>
-            <td class="py-2 pr-6">Wall, bench</td>
-            <td class="py-2 pr-6">Low</td>
-            <td class="py-2">Traditional Finnish; good durability</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Hemlock</td>
-            <td class="py-2 pr-6">Wall, bench</td>
-            <td class="py-2 pr-6">Low</td>
-            <td class="py-2">Budget alternative to cedar; similar properties</td>
-          </tr>
-          <tr>
-            <td class="py-2 pr-6 font-semibold text-red-700">Pine (resinous)</td>
-            <td class="py-2 pr-6 text-red-700">Avoid for benches</td>
-            <td class="py-2 pr-6 text-red-700">High</td>
-            <td class="py-2 text-red-700">Resin drips at heat; burns risk</td>
-          </tr>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-5">Choose each surface separately</h2>
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full min-w-[720px] border-collapse text-sm">
+        <thead><tr class="bg-stone-100 text-left"><th class="p-3 border-b border-stone-300">Surface</th><th class="p-3 border-b border-stone-300">What matters</th><th class="p-3 border-b border-stone-300">Examples in current sauna systems</th></tr></thead>
+        <tbody>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Bench tops and backrests</td><td class="p-3 border-b border-stone-200">Smooth contact, comfortable surface temperature, stable boards, clean edges, and maintainability.</td><td class="p-3 border-b border-stone-200">Aspen, alder, abachi, cedar, spruce, and thermally modified options.</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Walls and ceiling</td><td class="p-3 border-b border-stone-200">Profile, expansion, moisture cycling, appearance, knots, resin behavior, and system details behind the paneling.</td><td class="p-3 border-b border-stone-200">Spruce, aspen, alder, cedar, hemlock, and thermally modified woods.</td></tr>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Bench structure</td><td class="p-3 border-b border-stone-200">Load path, spans, fastener placement, ventilation, access for cleaning, and concealed support.</td><td class="p-3 border-b border-stone-200">Manufacturer-specific structural members with a separate finished bench surface.</td></tr>
+          <tr class="bg-stone-50"><td class="p-3 border-b border-stone-200 font-semibold">Building frame</td><td class="p-3 border-b border-stone-200">Structural design, insulation, air and vapor control, local code, and separation from the hot-room finish.</td><td class="p-3 border-b border-stone-200">Conventional framing or a tested panel system, as specified for the project.</td></tr>
+          <tr><td class="p-3 border-b border-stone-200 font-semibold">Outdoor exterior</td><td class="p-3 border-b border-stone-200">Rain shedding, roof details, drainage, ground clearance, ultraviolet exposure, finish schedule, and climate.</td><td class="p-3 border-b border-stone-200">Project-specific siding, solid timber, or thermally modified cladding.</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cedar vs Hemlock</h2>
-    <p class="text-stone-700 mb-4">Cedar costs 20-40% more than hemlock. Both work well for sauna interiors. Cedar has a stronger natural scent that many people enjoy; hemlock is more neutral. Cedar resists moisture slightly better over time. For most buyers on a budget, hemlock is a perfectly solid choice. See our full <a href="/guides/cedar-vs-hemlock-sauna/" class="text-amber-700 hover:underline">cedar vs hemlock comparison</a> for the detailed breakdown.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is the best wood for a sauna?</h3>
-        <p class="text-stone-700">Aspen or cedar for benches. Cedar or spruce for walls and ceiling. Standard framing lumber for structural framing. Pressure-treated lumber only below the vapor barrier for outdoor ground contact.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What wood should you avoid in a sauna?</h3>
-        <p class="text-stone-700">Pressure-treated lumber (toxic off-gassing), high-resin pine on benches, any composite or engineered wood, and tropical hardwoods that retain surface heat.</p>
-      </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Bench wood: comfort depends on the exact board</h2>
+    <p class="text-stone-700 mb-4">Aspen is common because it is light, smooth, and used by established sauna manufacturers for seating. Harvia, for example, pairs aspen seating boards with a spruce bench frame in a current indoor cabin. SAWO lists both aspen and cedar bench timbers, and Finnleo currently offers abachi in several interior configurations.</p>
+    <p class="text-stone-700 mb-4">That does not make every board interchangeable. A species can include different grades, growth patterns, knots, moisture levels, profiles, and thermal treatments. Ask for the exact bench-board specification and a sample when appearance or touch matters.</p>
+    <div class="border border-stone-200 rounded-lg p-5 mb-8 bg-white">
+      <h3 class="font-bold text-stone-900 mb-2">Bench questions</h3>
+      <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+        <li>Is the material sold and documented for sauna bench use?</li>
+        <li>Are exposed edges eased and fasteners concealed from skin contact?</li>
+        <li>What board grade and knot standard will be delivered?</li>
+        <li>How will the bench dry, and can it be lifted or accessed for cleaning?</li>
+        <li>Which maintenance or sauna-specific treatment is allowed?</li>
+      </ul>
     </div>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/guides/cedar-vs-hemlock-sauna/" class="text-amber-700 hover:underline">Cedar vs Hemlock Sauna</a></li>
-        <li><a href="/guides/how-to-build-a-sauna/" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
-        <li><a href="/guides/sauna-insulation/" class="text-amber-700 hover:underline">Sauna Insulation Guide</a></li>
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-      </ul>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Walls and ceilings: the assembly matters more than the label</h2>
+    <p class="text-stone-700 mb-4">Current sauna catalogs use spruce, aspen, alder, cedar, hemlock, and thermally modified woods. The panel profile and complete wall assembly matter alongside species. Confirm insulation, air and vapor control, furring or ventilation space, fastening, clearances, and how the paneling can move through heat and humidity cycles.</p>
+    <p class="text-stone-700 mb-8">Do not assume a tongue-and-groove profile creates a waterproof wall. A sauna enclosure must manage heat, moisture, drainage, and drying as a system.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Pine, spruce, and resin need a specific answer</h2>
+    <p class="text-stone-700 mb-4">The old version of this guide said to avoid pine. That was too broad. Harvia identifies spruce as an outdoor-sauna option and lists heat-treated pine among responsible bench-material choices. Other manufacturers use spruce in walls, frames, and benches.</p>
+    <p class="text-stone-700 mb-8">The real question is whether the exact board, grade, treatment, knot content, and surface location are suitable. Visible resin pockets or rough knots may be unacceptable on a contact surface even when the broader species appears elsewhere in the room.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cedar, hemlock, and scent</h2>
+    <p class="text-stone-700 mb-4">Western red cedar is widely used in North American sauna interiors and outdoor kits. Hemlock is also offered by established sauna manufacturers. Cedar's color and aroma can be part of the decision, while hemlock is often chosen for a lighter, more neutral presentation.</p>
+    <p class="text-stone-700 mb-8">Do not reduce the comparison to a fixed price percentage. Grade, dimensions, waste, shipping, availability, and whether benches are prebuilt can matter more than the species name. Compare complete material packages on the same scope.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Thermally modified wood</h2>
+    <p class="text-stone-700 mb-4">Thermal modification changes wood using controlled heat. Manufacturers use thermally modified alder, aspen, pine, spruce, hemlock, and other species in sauna products. Claims about stability, decay resistance, or moisture behavior should be tied to the specific process and supplier documentation.</p>
+    <p class="text-stone-700 mb-8">It is not a substitute for a roof, drainage, ventilation, proper foundation, or maintenance. Ask which surfaces are modified, whether the color runs through the board, how the material should be fastened, and what finish schedule applies outdoors.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Finishes and treated products</h2>
+    <p class="text-stone-700 mb-4">Use only products documented for the intended sauna surface and temperature. Some current sauna products leave interior wood untreated; others permit specific sauna waxes or finishes. An ordinary deck, furniture, or wall coating is not automatically suitable inside a hot room.</p>
+    <p class="text-stone-700 mb-8">Likewise, do not improvise with pressure-treated lumber, composite panels, adhesives, or coatings inside the hot-room envelope. If a product is proposed, ask for written technical documentation covering that exact use. Exterior and below-floor structural applications are separate decisions.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Source checks for a material quote</h2>
+    <div class="grid md:grid-cols-2 gap-4 mb-8">
+      <a href="https://www.harvia.com/en-US/ideas-and-trends/products/choosing-sauna-benches/" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+        <h3 class="font-bold text-stone-900 mb-2">Harvia bench guidance</h3>
+        <p class="text-sm text-stone-700">Current discussion of material choice, outdoor conditions, maintenance, and sustainable sourcing.</p>
+      </a>
+      <a href="https://www.finnleo.com/custom-freestanding-saunas" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+        <h3 class="font-bold text-stone-900 mb-2">Finnleo custom-room materials</h3>
+        <p class="text-sm text-stone-700">Examples of current wall, ceiling, and bench-material combinations in a complete sauna system.</p>
+      </a>
+      <a href="https://www.sawo.com/sauna-rooms/wood-panels-timbers/" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+        <h3 class="font-bold text-stone-900 mb-2">SAWO panel and bench profiles</h3>
+        <p class="text-sm text-stone-700">Published profiles and dimensions for cedar, aspen, and spruce sauna materials.</p>
+      </a>
+      <a href="https://thermoryusa.com/downloads/" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+        <h3 class="font-bold text-stone-900 mb-2">Thermory technical downloads</h3>
+        <p class="text-sm text-stone-700">Product sheets, specifications, and drawings for sauna wall and bench materials.</p>
+      </a>
+    </div>
+
+    <div class="bg-stone-900 text-white rounded-lg p-6 mt-10">
+      <h2 class="text-xl font-bold mb-2">Ask for a material schedule, not a wood nickname</h2>
+      <p class="text-stone-200 mb-4">A useful quote identifies species, grade, profile, dimensions, quantity, thermal modification, finish, fasteners, waste, delivery, and the surface where each product will be used.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/guides/cedar-vs-hemlock-sauna/" class="inline-flex min-h-11 items-center rounded-md bg-amber-400 px-5 py-3 font-semibold text-stone-900 hover:bg-amber-500">Compare cedar and hemlock</a>
+        <a href="/guides/how-to-build-a-sauna/" class="inline-flex min-h-11 items-center rounded-md border border-stone-500 px-5 py-3 font-semibold text-white hover:border-stone-300">Plan the whole build</a>
+      </div>
     </div>
   </article>
 </Base>
