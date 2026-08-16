@@ -1,145 +1,200 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
+
+const reviewedAt = 'August 15, 2026';
+
+const options = [
+  {
+    label: 'Short barrel footprint',
+    name: 'SaunaLife E6 3-Person Barrel Sauna',
+    retailerHref: 'https://selectsaunas.com/products/saunalife-model-e6-sauna-barrel-ergo-series-sauna-barrel-59x81',
+    manufacturerHref: 'https://saunalife.com/saunas/ergo-series-model-e6/',
+    fit: 'A buyer who can accommodate an 81-inch-diameter barrel but wants to limit the room length to 59 inches.',
+    facts: [
+      'Published capacity: up to three people',
+      'Manufacturer dimensions: 81-inch diameter by 59-inch length',
+      'Thermo-Spruce staves with Thermo-Aspen benches and backrests',
+      '17.8-inch published bench depth',
+      'Manufacturer-listed shipment weight: 1,103 pounds',
+      'Black roof-shingle kit and lighting system listed with the room kit',
+    ],
+    questions: [
+      'Does the full exterior envelope fit after local setbacks, heater or chimney clearances, drainage, and maintenance access?',
+      'Can the delivery route, unloading equipment, base, and assembly crew support the listed shipment?',
+      'Which heater, controls, stones, guard, power or chimney components, and final weather work are included?',
+    ],
+  },
+  {
+    label: 'Rectangular full-glass footprint',
+    name: 'SaunaLife CL5G 4-Person Cube Sauna',
+    retailerHref: 'https://selectsaunas.com/products/saunalife-model-cl5g-cube-series-outdoor-home-sauna-kit-up-to-4-persons',
+    manufacturerHref: 'https://saunalife.com/saunas/cube-series-model-cl5g/',
+    fit: 'A buyer who prefers straight walls and two bench levels, and can fit a 63-by-80.7-inch exterior plus the site-specific access and clearance envelope.',
+    facts: [
+      'Published capacity: up to four people',
+      'Exterior: 63 inches deep by 80.7 inches wide by 82.7 inches high',
+      'Interior: 55.1 inches deep by 77.2 inches wide by 74.8 inches high',
+      'Thermo-Spruce exterior with Thermo-Aspen seating',
+      '8 mm bronze-tempered-glass front and listed shingle roof kit',
+      'Manufacturer-listed weight: 1,680 pounds',
+    ],
+    questions: [
+      'Does the glass area change the heater range for the selected climate and room configuration?',
+      'Do the published bench dimensions work for the intended users rather than only the capacity label?',
+      'What freight, unloading, base, assembly, electrical, permit, and warranty scope remains outside the room quote?',
+    ],
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much space does a small backyard sauna need?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Start with the exact exterior dimensions, then add the manufacturer-required service and heater clearances, local setbacks, drainage, delivery and assembly access, and a safe approach to the door. There is no universal extra-clearance number that applies to every sauna and site.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is a barrel or cube better for a small backyard?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Neither shape wins automatically. Compare the full exterior envelope, usable bench layout, door approach, heater and weather requirements, shipment weight, and complete project cost for the specific models.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a sauna go on an existing deck?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Do not assume an existing deck can support a sauna. Obtain the configured sauna weight and footprint, account for occupants and equipment, and have a qualified local professional evaluate the existing structure and applicable requirements.',
+      },
+    },
+  ],
+};
 ---
 <Base
-  title="Best Sauna for a Small Backyard (2025) Compact Options That Work"
-  description="The best saunas for small backyards and tight spaces. Minimum footprints, compact barrel saunas, and what to look for when space is limited."
+  title="Best Sauna for a Small Backyard: Two Compact Paths"
+  description="Compare two current compact outdoor sauna formats using exact dimensions, listed weight, bench details, and the site checks that determine whether either one truly fits."
   canonical="/guides/best-sauna-for-small-backyard"
 >
-  <article class="max-w-3xl mx-auto">
-    <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Sauna for a Small Backyard (2025)
-      </h1>
-      <p class="text-stone-500 text-sm">Updated January 2025 · 8 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        Limited space doesn't mean no sauna. A 2-person barrel sauna fits in a 5x6 foot footprint. Some infrared options go smaller. The trick is knowing what actually matters in a tight space and what you can skip.
-      </p>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Small-site buying guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best Sauna for a Small Backyard</h1>
+      <p class="text-stone-500 text-sm">Manufacturer and retailer information reviewed {reviewedAt} · 9 min read</p>
+      <p class="text-lg text-stone-700 mt-4">A compact shell is only the beginning. The sauna also needs a workable door approach, delivery path, base, drainage, utilities, clearances, setbacks, and maintenance access. Measure that whole site envelope before comparing finishes.</p>
     </header>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-chimney.jpg" alt="Compact barrel sauna in outdoor setting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
 
+    <AdvertiserDisclosure />
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">Minimum Space Requirements by Type</h2>
-      <div class="space-y-2 text-sm">
-        {[
-          ["1-2 person barrel sauna", "5' x 6' footprint", "Smallest outdoor option"],
-          ["2-person infrared (indoor/covered)", "4' x 4' footprint", "Requires covered area"],
-          ["2-person cabin sauna", "5' x 5' footprint", "More headroom, squarer shape"],
-          ["4-person barrel sauna", "6' x 7' footprint", "Comfortable 2-person use"],
-        ].map(([type, size, note]) => (
-          <div class="flex items-center gap-3 bg-white rounded-lg px-4 py-2">
-            <span class="text-stone-700 font-medium w-48 shrink-0">{type}</span>
-            <span class="text-amber-700 font-semibold w-36 shrink-0">{size}</span>
-            <span class="text-stone-500 text-xs">{note}</span>
-          </div>
+    <figure class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/barrel-sauna-chimney.jpg" alt="Representative compact outdoor barrel sauna" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
+      <figcaption class="text-xs text-stone-500 mt-2">Representative outdoor setting. It is not a photo of either exact configuration compared below.</figcaption>
+    </figure>
+
+    <aside class="border-y border-stone-200 py-6 mb-8">
+      <h2 class="text-2xl font-bold text-stone-900 mb-2">Two useful starting points</h2>
+      <p class="text-stone-700 mb-3">The SaunaLife E6 limits barrel length to 59 inches, but its 81-inch diameter still controls the width and height. The CL5G uses a 63-by-80.7-inch rectangular exterior and publishes two bench levels. Neither is the universal small-yard winner.</p>
+      <p class="text-sm text-stone-600">We have not personally tested these saunas. Capacity is manufacturer-published, not a comfort guarantee. Confirm the exact configuration, current price, stock, freight, and installation scope before ordering.</p>
+    </aside>
+
+    <PlannerCTA source="small_backyard_above_fold" heading="Map the sauna to the actual yard" description="Build a project brief with the site, capacity, budget, utilities, and timeline before you request a quote." />
+
+    <section class="mt-12" aria-labelledby="small-yard-options">
+      <h2 id="small-yard-options" class="text-3xl font-bold text-stone-900 mb-3">Two current compact formats</h2>
+      <p class="text-stone-600 max-w-3xl mb-8">These options solve different layout problems. Compare the documented room first. Then ask the seller to complete the missing project scope in writing.</p>
+
+      <div class="space-y-10">
+        {options.map((option) => (
+          <section class="border-t border-stone-300 pt-7" aria-label={option.name}>
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">{option.label}</p>
+            <h3 class="text-2xl font-bold text-stone-900 mb-4">{option.name}</h3>
+            <p class="text-stone-700 mb-5"><strong>Who it may fit:</strong> {option.fit}</p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-5">
+              <div>
+                <h4 class="font-semibold text-stone-900 mb-2">Documented listing details</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {option.facts.map((fact) => <li class="flex gap-2"><span aria-hidden="true">+</span><span>{fact}</span></li>)}
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-stone-900 mb-2">Resolve before buying</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {option.questions.map((question) => <li class="flex gap-2"><span aria-hidden="true">-</span><span>{question}</span></li>)}
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <SelectSaunasButton href={option.retailerHref} label="Check current retailer listing" ctaPosition="small_backyard_shortlist" />
+              <a href={option.manufacturerHref} target="_blank" rel="noopener" class="text-sm font-semibold text-amber-700 hover:underline" data-track-event="brand_outbound_click" data-cta-position="small_backyard_manufacturer" data-partner="saunalife">Review manufacturer specifications</a>
+            </div>
+          </section>
         ))}
       </div>
-      <p class="text-xs text-stone-400 mt-3">Add 2-3 feet clearance on each side for safety and ventilation.</p>
-    </div>
+    </section>
 
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Best Picks for Small Spaces</h2>
-
-    <div class="space-y-8">
-
-      <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
-        <div class="bg-amber-50 border-b border-amber-200 px-6 py-4 flex items-center justify-between">
-          <h3 class="text-lg font-bold text-stone-900">Almost Heaven Pinnacle 4-Person Barrel</h3>
-          <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-100 text-amber-800">BEST OVERALL</span>
-        </div>
-        <div class="p-6">
-          <p class="text-stone-600 text-sm mb-4">The barrel shape is the key advantage here. Barrel saunas have a smaller footprint than cabin saunas of equivalent capacity. The Pinnacle is rated for 4 people but fits comfortably in many small yards. The curved exterior also sheds rain and snow without extra roofing.</p>
-          <div class="grid grid-cols-3 gap-3 mb-4 text-sm">
-            <div class="bg-stone-50 rounded-lg p-3 text-center">
-              <div class="font-bold text-stone-800">~6' x 7'</div>
-              <div class="text-stone-500 text-xs mt-1">Footprint</div>
-            </div>
-            <div class="bg-stone-50 rounded-lg p-3 text-center">
-              
-              <div class="text-stone-500 text-xs mt-1">Kit price</div>
-            </div>
-            <div class="bg-stone-50 rounded-lg p-3 text-center">
-              <div class="font-bold text-stone-800">4-6 hrs</div>
-              <div class="text-stone-500 text-xs mt-1">Assembly</div>
-            </div>
-          </div>
-          <AmazonButton asin="B017WJV8SO" price="~$2,199" />
-        </div>
+    <section class="mt-14 border-t border-stone-300 pt-8" aria-labelledby="site-envelope">
+      <h2 id="site-envelope" class="text-2xl font-bold text-stone-900 mb-3">Measure the site envelope, not just the shell</h2>
+      <div class="grid md:grid-cols-2 gap-6 text-sm text-stone-700 mt-6">
+        <div><h3 class="font-bold text-stone-900 mb-2">Property rules</h3><p>Confirm zoning, setbacks, lot coverage, building and trade permits, utility easements, HOA rules, and any wildfire, wind, snow, or flood requirements that apply to the address.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Product clearances</h3><p>Use the exact room, heater, control, and chimney manuals. Do not borrow a clearance number from another sauna, heater, or jurisdiction.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Delivery and assembly</h3><p>Measure gates, turns, slopes, overhead limits, staging space, crate access, unloading equipment, and the working room the assembly crew needs.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Daily use and service</h3><p>Leave a safe route to the outward-opening door. Plan drainage, lighting, weather exposure, cleaning, roof access, electrical or chimney service, and winter snow management.</p></div>
       </div>
+    </section>
 
-      <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
-        <div class="bg-green-50 border-b border-green-200 px-6 py-4 flex items-center justify-between">
-          <h3 class="text-lg font-bold text-stone-900">Dynamic Saunas Barcelona Infrared</h3>
-          <span class="text-xs font-bold px-3 py-1 rounded-full bg-green-100 text-green-800">SMALLEST FOOTPRINT</span>
-        </div>
-        <div class="p-6">
-          <p class="text-stone-600 text-sm mb-4">If you need something indoors or in a covered patio, the Barcelona has the smallest real footprint of any quality sauna option. Plugs into a standard outlet. No electrician, no foundation, no chimney. Move it if you need to. It's not an outdoor sauna, but for anyone with a covered deck or garage space, it's the most practical small-space solution.</p>
-          <div class="grid grid-cols-3 gap-3 mb-4 text-sm">
-            <div class="bg-stone-50 rounded-lg p-3 text-center">
-              <div class="font-bold text-stone-800">3.5' x 3.5'</div>
-              <div class="text-stone-500 text-xs mt-1">Footprint</div>
-            </div>
-            <div class="bg-stone-50 rounded-lg p-3 text-center">
-              
-              <div class="text-stone-500 text-xs mt-1">Kit price</div>
-            </div>
-            <div class="bg-stone-50 rounded-lg p-3 text-center">
-              <div class="font-bold text-stone-800">120V</div>
-              <div class="text-stone-500 text-xs mt-1">Standard outlet</div>
-            </div>
-          </div>
-          <AmazonButton asin="B00A2F99F0" price="~$899" />
-        </div>
+    <section class="mt-14 border-t border-stone-300 pt-8" aria-labelledby="small-yard-deck">
+      <h2 id="small-yard-deck" class="text-2xl font-bold text-stone-900 mb-3">An existing deck is not automatically a foundation</h2>
+      <p class="text-stone-700 mb-4">The room, heater, stones, occupants, and accessories create a concentrated load. Obtain the configured weight and bearing footprint. Then have a qualified local deck professional or structural engineer evaluate the existing framing, connections, footings, condition, and local requirements.</p>
+      <p class="text-sm text-stone-600">Do not rely on a generic pounds-per-square-foot rule or add posts, pads, joists, or hardware from an online article without a site-specific design.</p>
+    </section>
+
+    <section class="mt-14 border-t border-stone-300 pt-8" aria-labelledby="small-yard-budget">
+      <h2 id="small-yard-budget" class="text-2xl font-bold text-stone-900 mb-3">Price the space-saving project, not only the room</h2>
+      <p class="text-stone-700 mb-5">A compact room can still require freight, unloading, site work, a foundation, electrical or chimney work, roofing, assembly, permits, tax, and weather protection. Put every line beside the room quote before deciding which footprint is cheaper.</p>
+      <a href="/tools/sauna-cost-calculator/?utm_source=small_backyard&utm_medium=onsite&utm_campaign=project_budget" class="inline-flex min-h-11 items-center justify-center rounded-md bg-stone-900 px-5 py-3 font-semibold text-white hover:bg-stone-800" data-track-event="calculator_cta_clicked" data-cta-position="small_backyard_project_budget">Build the full project budget</a>
+    </section>
+
+    <section class="mt-14 border-t border-stone-300 pt-8" aria-labelledby="small-yard-faq">
+      <h2 id="small-yard-faq" class="text-2xl font-bold text-stone-900 mb-5">Frequently asked questions</h2>
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">How much extra space should I leave?</h3><p class="text-stone-700 text-sm">There is no safe universal number. Combine the exact exterior dimensions with manufacturer-required clearances, local setbacks, drainage, delivery and assembly access, service access, and a safe path to the door.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">Is a smaller barrel always more space-efficient?</h3><p class="text-stone-700 text-sm">No. Barrel diameter can control the total width and height even when the room is short. Compare the complete exterior envelope and usable bench dimensions against a compact cube or cabin.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">Should I choose electric or wood heat?</h3><p class="text-stone-700 text-sm">Choose after checking the exact heater or stove manual, available utility service, chimney route, clearances, fuel storage, local permitting, and how you expect to use the sauna. A tight site does not make either heat source automatically correct.</p></div>
       </div>
+    </section>
 
-    </div>
+    <section class="mt-12 bg-stone-50 border border-stone-200 rounded-lg p-6" aria-labelledby="small-yard-sources">
+      <h2 id="small-yard-sources" class="text-lg font-bold text-stone-900 mb-3">Primary sources used</h2>
+      <ul class="space-y-2 text-sm text-stone-700">
+        <li><a href="https://saunalife.com/saunas/ergo-series-model-e6/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">SaunaLife E6 product specifications</a></li>
+        <li><a href="https://saunalife.com/saunas/cube-series-model-cl5g/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">SaunaLife CL5G product specifications</a></li>
+        <li><a href="https://saunalife.com/technical-information/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">SaunaLife technical information and installation documents</a></li>
+      </ul>
+    </section>
 
-    <h2 class="text-2xl font-bold mt-12 mb-6 text-stone-900">Small Backyard Sauna Strategies</h2>
-
-    <div class="space-y-5">
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Go Barrel, Not Cabin</h3>
-        <p class="text-stone-600 text-sm">For tight spaces, barrel saunas win every time. A rectangular cabin sauna rated for 2 people needs a 5x5 footprint plus clearances. A barrel sauna rated for 4 uses roughly the same space but gives you more actual seating. The curved shape is inherently space-efficient.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Use a Corner</h3>
-        <p class="text-stone-600 text-sm">Corners of a backyard are often underused. A barrel sauna tucks into a corner well. Position the door facing the yard, not the fence, and you create a natural flow. Add a small bench or shower nearby and it becomes a proper wellness corner even in a compact yard.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Foundation Matters More in Small Spaces</h3>
-        <p class="text-stone-600 text-sm">In a small yard, you can't afford to redo a bad foundation placement. Measure twice. Consider drainage direction. Leave 18-24 inches of clearance behind the sauna for ventilation and cleaning access. Gravel is the easiest small-space foundation. It drains well and doesn't require concrete work.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Electric Over Wood-Burning for Tight Spots</h3>
-        <p class="text-stone-600 text-sm">Wood-burning heaters need chimney clearances from structures, trees, and fences. In a small yard, hitting those clearances can be difficult or impossible. Electric heaters have no such requirements. One less constraint in an already constrained space.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Check Local Setback Rules First</h3>
-        <p class="text-stone-600 text-sm">Most municipalities require structures to be set back a certain distance from property lines. This applies to saunas. Check with your local planning office before ordering anything. A typical setback is 5-10 feet from the fence line, which can eat significantly into a small yard. Know this number before you pick a spot.</p>
-      </div>
-
-    </div>
-
-    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h3 class="font-bold text-stone-900 mb-3">More useful guides</h3>
+    <div class="bg-stone-50 border border-stone-200 rounded-lg p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue planning</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/how-much-space-for-backyard-sauna/" class="text-amber-700 hover:underline font-medium">How Much Space Do You Need for a Backyard Sauna?</a></li>
-        <li><a href="/guides/best-location-backyard-sauna/" class="text-amber-700 hover:underline font-medium">Best Location for a Backyard Sauna</a></li>
-        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline font-medium">Sauna Foundation Guide</a></li>
-        <li><a href="/guides/best-2-person-outdoor-sauna/" class="text-amber-700 hover:underline font-medium">Best 2-Person Outdoor Saunas</a></li>
-        <li><a href="/guides/best-cube-sauna/" class="text-amber-700 hover:underline font-medium">Compare Current Cube Sauna Formats</a></li>
-        <li><a href="/guides/outdoor-sauna-cost/" class="text-amber-700 hover:underline font-medium">Full Outdoor Sauna Cost Breakdown</a></li>
+        <li><a href="/guides/best-cube-sauna/" class="text-amber-700 hover:underline">Compare Current Cube Sauna Formats</a></li>
+        <li><a href="/guides/best-2-person-outdoor-sauna/" class="text-amber-700 hover:underline">Best 2-Person Outdoor Saunas</a></li>
+        <li><a href="/guides/how-much-space-for-backyard-sauna/" class="text-amber-700 hover:underline">How Much Space Do You Need?</a></li>
+        <li><a href="/guides/best-location-backyard-sauna/" class="text-amber-700 hover:underline">Best Location for a Backyard Sauna</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Sauna Foundation Guide</a></li>
+        <li><a href="/guides/outdoor-sauna-permits/" class="text-amber-700 hover:underline">Outdoor Sauna Permits</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

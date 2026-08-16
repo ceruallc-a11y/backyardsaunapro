@@ -15,6 +15,10 @@ const url = href
   : collection
   ? `${base}/collections/${collection}?sca_ref=${ref}`
   : `${base}?sca_ref=${ref}`;
+
+const productId = collection || (href
+  ? new URL(href, base).pathname.split('/').filter(Boolean).pop()
+  : 'store') || 'store';
 ---
 <div class="my-4">
   <a
@@ -23,7 +27,7 @@ const url = href
     rel="nofollow noopener sponsored"
     class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow"
     data-cta-position={ctaPosition}
-    data-product-id={collection || "store"}
+    data-product-id={productId}
   >
     {label} &rarr;
   </a>
