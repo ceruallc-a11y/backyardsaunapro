@@ -9,14 +9,15 @@
 | `product_table_click` | Click in a comparison table | Above plus `table_name`, `row_position` |
 | `newsletter_signup` | Kit form submission attempt | `page_path`, `form_location`, `form_id`, `signup_status` |
 | `newsletter_signup_confirmed` | A browser with a recent pending Kit submission reaches the site-owned confirmation page | `page_path`, `form_id`, `signup_status`, `confirmation_method` |
-| `planner_cta_clicked` | Click from a buyer guide into the first-10 planning pilot | `page_path`, `cta_position`, `campaign`, `link_url` |
+| `planner_cta_clicked` | Click from a buyer guide into the first-10 planning pilot | `page_path`, `cta_position`, `acquisition_source`, `acquisition_campaign`, `acquisition_content`, `link_url` |
 | `sauna_planner_started` | First project-planner interaction | `page_path` |
-| `sauna_planner_completed` | Local project brief generated | `page_path`, `project_location`, `heat_type`, `budget_range`, `timeline`, `acquisition_source` |
-| `lead_form_started` | First interaction with the optional manual-review contact step | `page_path`, `acquisition_source` |
+| `sauna_planner_completed` | Local project brief generated | `page_path`, `project_location`, `heat_type`, `budget_range`, `timeline`, `acquisition_source`, `acquisition_campaign`, `acquisition_content` |
+| `lead_form_started` | First interaction with the optional manual-review contact step | `page_path`, `acquisition_source`, `acquisition_campaign`, `acquisition_content` |
 | `lead_form_submission_intent` | Visitor explicitly opens a prefilled email; does not prove it was sent | `page_path`, `cta_position` |
-| `lead_submitted` | Lead API confirms a successful D1 receipt | `page_path`, `partner_sharing_consent`, `acquisition_source` |
+| `lead_submitted` | Lead API confirms a successful D1 receipt | `page_path`, `partner_sharing_consent`, `acquisition_source`, `acquisition_campaign`, `acquisition_content` |
 | `partner_inquiry_started` | Visitor opens the partnership email action; does not prove it was sent | `page_path`, `cta_position` |
 | `advertise_page_view` | View of partner page | `page_path`, `traffic_source` |
+| `calculator_cta_clicked` | Click from a guide into a site-owned calculator | `page_path`, `cta_position`, `acquisition_source`, `acquisition_campaign`, `acquisition_content`, `link_url` |
 | `calculator_completed` | Valid result generated | `page_path`, `calculator`, `result_band` |
 | `comparison_tool_used` | Valid comparison rendered | `page_path`, `product_count`, `category` |
 | `email_click` | Tagged newsletter click | `campaign`, `link_type`, `destination_path` |
@@ -30,7 +31,7 @@ Use snake_case. Every site-owned event also receives `site_name=backyard_sauna_p
 - `affiliate_click` exists globally and is useful as a funnel diagnostic. It does not prove a sale, a lead, or attributable revenue and should remain an ordinary event rather than a GA4 key event.
 - The global `window.gtag` function is initialized before site-owned listeners. A prior module-scoped helper allowed pageviews but caused every listener guarded by `window.gtag` to exit without recording its event.
 - `newsletter_signup` fires on form submit with `signup_status=attempted` and stores a non-identifying pending marker in that browser for up to 30 days. The Kit double-opt-in confirmation redirects to `/newsletter/confirmed/`, which emits `newsletter_signup_confirmed` only when it can consume that marker. Refreshes and direct visits no longer inflate the key event. Cross-device confirmations can be missed, so Kit remains the source of truth for subscriber totals.
-- Creating a sauna brief remains browser-local. The separate review form sends a minimal consented project request to Cloudflare D1. `lead_submitted` fires only after the API confirms receipt. `acquisition_source` carries the guide CTA's `utm_content`, never a homeowner identifier.
+- Creating a sauna brief remains browser-local. The separate review form sends a minimal consented project request to Cloudflare D1. `lead_submitted` fires only after the API confirms receipt. Internal links use first-party `ref`, `campaign`, and `placement` parameters so they do not overwrite GA's external campaign attribution. The planner still accepts `utm_source`, `utm_campaign`, and `utm_content` on inbound newsletter or partner links. These fields never contain a homeowner identifier.
 - The partnership CTA similarly records `partner_inquiry_started`, not a submitted inquiry.
 - Cross-check retailer and affiliate dashboards because browser events do not prove attributed sales.
 

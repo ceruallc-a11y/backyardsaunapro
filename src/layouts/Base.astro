@@ -207,7 +207,10 @@ const isCurrent = (href: string) => href === "/" ? currentPath === "/" : current
         destination_type: link.protocol === 'mailto:' ? 'email' : 'link',
         link_url: link.href,
         link_text: link.textContent?.trim().slice(0, 100) || '',
-        campaign: destination.searchParams.get('utm_campaign') || '',
+        acquisition_source: destination.searchParams.get('ref') || destination.searchParams.get('utm_source') || '',
+        acquisition_campaign: destination.searchParams.get('campaign') || destination.searchParams.get('utm_campaign') || '',
+        acquisition_content: destination.searchParams.get('placement') || destination.searchParams.get('utm_content') || '',
+        campaign: destination.searchParams.get('campaign') || destination.searchParams.get('utm_campaign') || '',
         partner: trackedPartner,
         product_id: link.dataset.productId || '',
         ...(eventName === 'dealer_outbound_click' ? {

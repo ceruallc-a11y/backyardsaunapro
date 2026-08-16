@@ -11,7 +11,7 @@ const {
   description = "The first 10 complete project briefs in this pilot receive a free manual next-step review. Your answers stay in your browser unless you explicitly send them for review.",
 } = Astro.props;
 
-const href = `/sauna-planner/?utm_source=buyer_guide&utm_medium=site&utm_campaign=planner_first_10&utm_content=${encodeURIComponent(source)}`;
+const href = `/sauna-planner/?ref=buyer_guide&campaign=planner_first_10&placement=${encodeURIComponent(source)}`;
 ---
 <aside class="border border-emerald-200 bg-emerald-50 rounded-lg p-5 md:p-6 my-8" aria-label="Free sauna planning review">
   <p class="text-xs font-bold uppercase tracking-wide text-emerald-800 mb-2">Free pilot: first 10 project briefs</p>

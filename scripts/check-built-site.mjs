@@ -89,7 +89,7 @@ const requiredMarkers = [
   },
   {
     file: 'guides/best-indoor-sauna-kits/index.html',
-    pattern: /utm_content=indoor_sauna_kits_above_fold/,
+    pattern: /placement=indoor_sauna_kits_above_fold/,
     label: 'indoor-sauna-kits planner attribution',
   },
   {
@@ -706,14 +706,14 @@ for (const file of htmlFiles) {
     if (!anchor.includes('data-track-event="planner_cta_clicked"')) {
       findings.push({ type: 'untracked_planner_cta', route, target: href });
     }
-    if (!href.includes('utm_content=')) {
+    if (!href.includes('placement=')) {
       findings.push({ type: 'unattributed_planner_cta', route, target: href });
     }
     const ctaPosition = anchor.match(/data-cta-position=["']([^"']+)["']/i)?.[1];
     const decodedHref = href.replaceAll('&#38;', '&').replaceAll('&amp;', '&');
-    const campaignContent = new URL(decodedHref, 'https://backyardsaunapro.com').searchParams.get('utm_content');
-    if (anchor.includes('data-track-event="planner_cta_clicked"') && ctaPosition !== campaignContent) {
-      findings.push({ type: 'mismatched_planner_cta_attribution', route, target: href, value: `${ctaPosition ?? 'missing'} != ${campaignContent ?? 'missing'}` });
+    const placement = new URL(decodedHref, 'https://backyardsaunapro.com').searchParams.get('placement');
+    if (anchor.includes('data-track-event="planner_cta_clicked"') && ctaPosition !== placement) {
+      findings.push({ type: 'mismatched_planner_cta_attribution', route, target: href, value: `${ctaPosition ?? 'missing'} != ${placement ?? 'missing'}` });
     }
   }
 
@@ -734,7 +734,12 @@ for (const file of htmlFiles) {
   }
 
   for (const match of html.matchAll(/(?:href|src)=["']([^"']+)["']/gi)) {
-    const local = resolveLocal(match[1]);
+    const reference = match[1].replaceAll('&#38;', '&').replaceAll('&amp;', '&');
+    const destination = new URL(reference, 'https://backyardsaunapro.com');
+    if (destination.hostname === 'backyardsaunapro.com' && [...destination.searchParams.keys()].some((key) => key.startsWith('utm_'))) {
+      findings.push({ type: 'internal_utm_parameter', route, target: reference });
+    }
+    const local = resolveLocal(reference);
     if (!local) continue;
     if (local !== '/' && !local.endsWith('/') && !path.posix.extname(local)) {
       findings.push({ type: 'noncanonical_internal_link', route, target: local });
@@ -766,4 +771,5 @@ process.exitCode = findings.some((finding) => [
   'invalid_planner_cta_source',
   'duplicate_planner_cta_source',
   'mismatched_planner_cta_attribution',
+  'internal_utm_parameter',
 ].includes(finding.type)) ? 1 : 0;
