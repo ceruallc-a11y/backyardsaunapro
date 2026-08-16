@@ -1,197 +1,210 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+
+const reviewedAt = 'August 15, 2026';
+
+const products = [
+  {
+    label: 'Compact thermowood format',
+    name: 'SaunaLife CL5G Cube Sauna',
+    href: 'https://saunalife.com/saunas/cube-series-model-cl5g/',
+    productId: 'saunalife_cl5g',
+    fit: 'A buyer comparing a compact four-person listing, full-glass front, curved seating, and a manufacturer-supplied roofing system.',
+    facts: [
+      'Published capacity: up to four people',
+      'Exterior: 63 inches deep by 80.7 inches wide by 82.7 inches high',
+      'Interior: 55.1 inches deep by 77.2 inches wide by 74.8 inches high',
+      'Thermo-Spruce exterior with Thermo-Aspen seating',
+      '8 mm bronze-tempered-glass front and listed shingle roof kit',
+      'Manufacturer-listed weight: 1,680 pounds',
+    ],
+    questions: [
+      'Which heater and control package matches the documented room, glass area, climate, and local electrical requirements?',
+      'Can the delivery route, unloading plan, base, and assembly crew handle the listed weight?',
+      'Do the two bench levels fit the people who will use the sauna, rather than only the published capacity?',
+    ],
+  },
+  {
+    label: 'Clear-cedar dealer format',
+    name: 'LeisureCraft CU580 Pure Cube Sauna',
+    href: 'https://leisurecraft.com/cu580-outdoor-pure-cube-sauna-clear-red-cedar',
+    productId: 'leisurecraft_cu580',
+    fit: 'A buyer who wants a clear-red-cedar cube and prefers to configure glass, privacy, heater, and installation details with a dealer.',
+    facts: [
+      'Published seating range: three to four people',
+      'Manufacturer-listed room volume: 272 cubic feet',
+      'Clear red cedar construction',
+      'Current price available by request rather than published on the product page',
+      'Local-dealer quote and buying path',
+    ],
+    questions: [
+      'What are the final exterior dimensions, shipment weight, crate size, lead time, and unloading requirements for the chosen configuration?',
+      'Which room, door, glass, heater, controls, stones, guard, and roofing items are included in the written quote?',
+      'What site, foundation, electrical or chimney, assembly, weather, and warranty work remains outside the quote?',
+    ],
+  },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "What is a cube sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A cube sauna is an outdoor sauna with a square or near-square footprint, typically 6x6, 7x7, or 8x8 feet. The exterior reads as a clean box rather than the curved silhouette of a barrel sauna. Most cube kits hold 1-4 people and often include a small changing area in the front section."
-      }
+      '@type': 'Question',
+      name: 'What should I compare when buying a cube sauna?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Compare usable bench dimensions, documented room volume, glass and uninsulated surfaces, heater requirements, shipment weight, unloading, foundation, weather protection, assembly, permits, and the complete written quote.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Cube sauna vs barrel sauna vs cabin: which is best?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cube saunas win on aesthetics and footprint efficiency, barrel saunas win on price and faster warmup (less interior volume), and cabin saunas win on capacity and headroom. For a modern backyard with limited space, a 6x6 or 7x7 cube is the cleanest fit. For families of five or more, a cabin pulls ahead."
-      }
+      '@type': 'Question',
+      name: 'How do I size a heater for a cube sauna?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Use the room manufacturer and heater manufacturer instructions for the exact configuration. Glass, log construction, insulation, room volume, and other uninsulated surfaces can change the effective volume and heater range.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "What size heater do I need for a cube sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Use roughly 1kW per 50 cubic feet of interior volume. A 6x6x7 cube runs about 250 cubic feet, which calls for a 6kW heater like the Harvia KIP 60B. A 7x7x7 cube needs roughly 7-8kW (KIP 80B). An 8x8 cube with a 7-foot ceiling pushes to 9kW (KIP 90B). Add a step in capacity for outdoor cold-climate installs."
-      }
+      '@type': 'Question',
+      name: 'Does a cube sauna need a permit?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Permit, zoning, setback, electrical, and solid-fuel requirements vary by location and project. Ask the local authority having jurisdiction about the selected sauna and site before ordering.',
+      },
     },
-    {
-      "@type": "Question",
-      "name": "Do cube saunas need a permit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It depends on your jurisdiction. Many areas exempt accessory structures under 120 sq ft from a building permit, which covers most cube saunas up to 8x8 (64 sq ft) or 10x10 (100 sq ft). Electrical work for a 240V heater circuit almost always needs a permit and inspection. Check your local building department before ordering."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you use a cube sauna year-round?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Cube saunas built from cedar, thermowood, or spruce with proper insulation handle winter use well, including sub-zero climates. The smaller interior volume actually helps in cold weather, since the heater reaches operating temperature faster than in a larger cabin. Clear snow from the roof after heavy storms, and confirm the door seal stays tight."
-      }
-    }
-  ]
+  ],
 };
 ---
 <Base
-  title="Best Cube Sauna (2025): Top Picks + Buyer's Guide"
-  description="The best cube saunas of 2025: outdoor cube-style kits for backyards, with picks for every budget plus heater sizing, foundation, and permit guidance."
+  title="Best Cube Saunas: Two Current Formats to Compare"
+  description="Compare two current outdoor cube sauna formats using documented capacity, dimensions, materials, weight, and the project questions to resolve before ordering."
   canonical="/guides/best-cube-sauna"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Cube Sauna (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Outdoor buying guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best Cube Saunas: Two Current Formats to Compare</h1>
+      <p class="text-stone-500 text-sm">Manufacturer information reviewed {reviewedAt} · 9 min read</p>
+      <p class="text-lg text-stone-700 mt-4">A cube can give you upright walls, full-height seating space, and a modern outdoor profile. Those benefits do not make every cube a good project. The useful comparison is between a documented room, a buildable site, and a complete quote.</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Modern cube-style outdoor sauna in a backyard setting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
+    <AdvertiserDisclosure />
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
-    </div>
+    <figure class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Representative modern outdoor sauna cabins" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
+      <figcaption class="text-xs text-stone-500 mt-2">Representative outdoor sauna setting. It is not a photo of either model compared below.</figcaption>
+    </figure>
 
-    <p class="text-lg text-stone-700 mb-4">Cube saunas have quietly replaced barrels as the default modern backyard build. The boxy silhouette photographs better, the flat roof and walls are easier to insulate, and the square footprint uses yard space more efficiently than a cylinder. Prices now span $1,800 single-pod kits to $7,000+ premium 8x8 builds. Here are the picks worth shortlisting, plus the heater and install details most listings skip.</p>
+    <aside class="border-y border-stone-200 py-6 mb-8">
+      <h2 class="text-2xl font-bold text-stone-900 mb-2">The short answer</h2>
+      <p class="text-stone-700 mb-3">Start with the SaunaLife CL5G if published dimensions, weight, and technical documents are important to your early planning. Start with the LeisureCraft CU580 if clear cedar and dealer-configured glass or privacy options matter more.</p>
+      <p class="text-sm text-stone-600">That is a buyer-fit distinction, not a performance ranking. We have not personally tested either sauna. Confirm the exact configuration, current availability, price, freight, and installation scope with the manufacturer or dealer.</p>
+    </aside>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-900 mb-2">Quick Picks</h2>
-      <ul class="space-y-2 text-stone-700 text-sm">
-        <li><span class="font-semibold">Best overall:</span> Dundalk LeisureCraft cube-style outdoor kit (~$4,500-$6,500)</li>
-        <li><span class="font-semibold">Best value:</span> 6x6 outdoor cube sauna kit (~$2,500-$3,500)</li>
-        <li><span class="font-semibold">Best for small spaces:</span> 4x4 or 5x5 single-person pod (~$1,800-$2,800)</li>
-        <li><span class="font-semibold">Best premium:</span> 8x8 thermowood cube with changing room (~$7,000+)</li>
-        <li><span class="font-semibold">Recommended heater pairing:</span> Harvia KIP 60B (6kW) for 6x6, KIP 80B (8kW) for 7x7+</li>
+    <PlannerCTA source="best_cube_sauna_above_fold" heading="Check whether a cube fits the whole project" description="Build a brief around your site, capacity, budget, utilities, and timeline before requesting dealer quotes." />
+
+    <section class="mt-12" aria-labelledby="cube-shortlist">
+      <h2 id="cube-shortlist" class="text-3xl font-bold text-stone-900 mb-3">Two documented cube formats</h2>
+      <p class="text-stone-600 max-w-3xl mb-8">We included these models because their manufacturers publish meaningful room details. We did not assign numeric ratings or pretend that one configuration fits every yard.</p>
+
+      <div class="space-y-10">
+        {products.map((product) => (
+          <section class="border-t border-stone-300 pt-7" aria-label={product.name}>
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">{product.label}</p>
+            <h3 class="text-2xl font-bold text-stone-900 mb-4">{product.name}</h3>
+            <p class="text-stone-700 mb-5"><strong>Who it may fit:</strong> {product.fit}</p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <h4 class="font-semibold text-stone-900 mb-2">Documented manufacturer details</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {product.facts.map((fact) => <li class="flex gap-2"><span aria-hidden="true">+</span><span>{fact}</span></li>)}
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-stone-900 mb-2">Resolve before paying</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {product.questions.map((question) => <li class="flex gap-2"><span aria-hidden="true">-</span><span>{question}</span></li>)}
+                </ul>
+              </div>
+            </div>
+
+            <a
+              href={product.href}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex min-h-11 items-center justify-center rounded-md bg-amber-400 px-5 py-3 font-semibold text-stone-900 hover:bg-amber-500"
+              data-track-event="brand_outbound_click"
+              data-cta-position={`best_cube_${product.productId}`}
+              data-product-id={product.productId}
+              data-partner={product.productId.startsWith('saunalife') ? 'saunalife' : 'leisurecraft'}
+            >
+              Review the manufacturer page
+            </a>
+          </section>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-14 border-t border-stone-300 pt-8" aria-labelledby="cube-comparison">
+      <h2 id="cube-comparison" class="text-2xl font-bold text-stone-900 mb-5">What the shape changes, and what it does not</h2>
+      <div class="grid md:grid-cols-2 gap-6 text-sm text-stone-700">
+        <div><h3 class="font-bold text-stone-900 mb-2">Usable wall height</h3><p>Straight walls can make upper and lower benches easier to arrange than in a curved barrel. The bench drawings still matter more than the outside silhouette.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Glass and heater sizing</h3><p>A large glass front changes the effective heating load. Do not choose a heater from floor area or a universal watts-per-volume shortcut.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Roof and weather scope</h3><p>A cube still needs the roof, flashing, drainage, finish, wind, snow, and maintenance details required by its manual and site.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-2">Foundation and delivery</h3><p>The exterior footprint is only one constraint. Account for the loaded structure, level support, water movement, crate, unloading equipment, carry path, and assembly access.</p></div>
+      </div>
+    </section>
+
+    <section class="mt-14 border-t border-stone-300 pt-8" aria-labelledby="cube-heater">
+      <h2 id="cube-heater" class="text-2xl font-bold text-stone-900 mb-3">Size the heater from the exact room</h2>
+      <p class="text-stone-700 mb-4">Use the selected room manual and the heater manufacturer's sizing method. Harvia's official calculator asks for room dimensions and adjusts for log construction, a glass door, and other non-insulated surfaces. That is more useful than a blanket kilowatt rule.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://www.harvia.com/en-US/sauna/saunas/sauna-calculator/" target="_blank" rel="noopener" class="inline-flex min-h-11 items-center justify-center rounded-md border border-stone-300 bg-white px-5 py-3 font-semibold text-amber-700 hover:border-stone-500" data-track-event="brand_outbound_click" data-cta-position="best_cube_heater_calculator" data-product-id="harvia_sauna_calculator" data-partner="harvia">Use Harvia's sauna calculator</a>
+        <a href="/guides/sauna-heater-sizing-guide/" class="inline-flex min-h-11 items-center justify-center rounded-md border border-stone-300 bg-white px-5 py-3 font-semibold text-amber-700 hover:border-stone-500">Read the heater-sizing guide</a>
+      </div>
+    </section>
+
+    <section class="mt-14 border-t border-stone-300 pt-8" aria-labelledby="cube-quote">
+      <h2 id="cube-quote" class="text-2xl font-bold text-stone-900 mb-3">Get one complete written quote</h2>
+      <p class="text-stone-700 mb-5">Ask the seller to name every included room, heater, control, stone, guard, lighting, roofing, delivery, and warranty item. Put the remaining site work beside that quote: base, drainage, unloading, assembly, electrical or chimney work, permits, tax, and contingency.</p>
+      <a href="/tools/sauna-cost-calculator/?utm_source=best_cube_sauna&utm_medium=onsite&utm_campaign=project_budget" class="inline-flex min-h-11 items-center justify-center rounded-md bg-stone-900 px-5 py-3 font-semibold text-white hover:bg-stone-800" data-track-event="calculator_cta_clicked" data-cta-position="best_cube_project_budget">Build the full project budget</a>
+    </section>
+
+    <section class="mt-14 border-t border-stone-300 pt-8" aria-labelledby="cube-faq">
+      <h2 id="cube-faq" class="text-2xl font-bold text-stone-900 mb-5">Frequently asked questions</h2>
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">Is a cube better than a barrel?</h3><p class="text-stone-700 text-sm">Not automatically. A cube may offer more usable height near the walls. A barrel may use less material and have a different assembly path. Compare bench geometry, room volume, weather scope, site fit, and the complete quote.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">How large should the cube be?</h3><p class="text-stone-700 text-sm">Start with the people and how they will sit or recline. Then compare usable bench dimensions, heater clearances, doorway space, and exterior site constraints. Treat the manufacturer's capacity as a maximum until the seating plan works for your group.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">Will I need permits?</h3><p class="text-stone-700 text-sm">Possibly. Building, zoning, setback, electrical, and solid-fuel rules vary by location and project. Ask the local authority having jurisdiction about the selected sauna, heater, and site before ordering.</p></div>
+      </div>
+    </section>
+
+    <section class="mt-12 bg-stone-50 border border-stone-200 rounded-lg p-6" aria-labelledby="cube-sources">
+      <h2 id="cube-sources" class="text-lg font-bold text-stone-900 mb-3">Primary sources used</h2>
+      <ul class="space-y-2 text-sm text-stone-700">
+        <li><a href="https://saunalife.com/saunas/cube-series-model-cl5g/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">SaunaLife CL5G product specifications</a></li>
+        <li><a href="https://saunalife.com/technical-information/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">SaunaLife technical information and installation documents</a></li>
+        <li><a href="https://leisurecraft.com/cu580-outdoor-pure-cube-sauna-clear-red-cedar" target="_blank" rel="noopener" class="text-amber-700 hover:underline">LeisureCraft CU580 product information</a></li>
+        <li><a href="https://www.harvia.com/en-US/sauna/saunas/sauna-calculator/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">Harvia sauna calculator</a></li>
       </ul>
-    </div>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Makes a Cube Sauna Different</h2>
-    <p class="text-stone-700 mb-4">Three things separate a cube from a barrel or a long rectangular cabin. First, the geometry. Square walls give you usable headroom across the entire footprint instead of just a strip down the center, which means a real two-tier bench layout fits in a 7x7 cube but barely fits in a comparable barrel. Second, the changing area. Most cube kits in the 7x7 and up range divide the structure into a front porch or vestibule and a rear hot room, so you have somewhere to leave a towel and boots without dragging snow inside. Third, the build complexity. Flat walls and a flat or slightly pitched roof are easier to insulate properly than the curved staves of a barrel, which is why high-end cube kits hit lower steady-state temperatures with less heater wattage.</p>
-    <p class="text-stone-700 mb-6">The tradeoff: cubes use more material per cubic foot of interior space than a barrel, so an entry-level 6x6 cube usually costs $500-$1,000 more than a comparable 6-foot barrel. Most buyers decide the aesthetic and the changing area are worth it.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Cube Sauna Picks</h2>
-
-    <div class="space-y-5 mb-10">
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Dundalk LeisureCraft Cube-Style Outdoor Sauna</h3>
-          </div>
-        </div>
-        <p class="text-stone-600 mb-4">Dundalk's cube-form kits (sometimes sold under the Canadian Timber line) hit the sweet spot: real Eastern white cedar, thick wall panels, a tight-sealing door, and a layout that fits four adults with proper bench depth. Heater sold separately; pair with the Harvia KIP 80B (8kW) for most installs. Price runs $4,500-$6,500 depending on size and accessories. Pros: premium build quality, dealer-handled delivery, holds 180-195°F without struggle. Cons: heater not included, longer lead times than Amazon kits, assembly still takes a real weekend.</p>
-        <p class="text-stone-600 mb-4 text-sm">Approximate price: $4,500-$6,500</p>
-        <AmazonButton search="dundalk leisurecraft cube sauna" variant="primary" label="Check Cube Sauna Kits on Amazon" />
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Value</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">6x6 Outdoor Cube Sauna Kit</h3>
-          </div>
-        </div>
-        <p class="text-stone-600 mb-4">The entry tier into the cube category. Generic 6x6 cube kits, sold on Amazon and through outdoor-living retailers, typically use spruce or hemlock with a thinner wall section than the premium brands. Fits two adults comfortably or three at a squeeze. Most kits in this price band include a 6kW heater pre-wired for a 240V circuit, which removes a real expense from the project. Pros: under $3,500 all-in for a real outdoor sauna, fast shipping, heater usually bundled. Cons: thinner panels mean longer warmup times and slightly higher running costs in cold weather; door hardware is the weakest part on most units.</p>
-        <p class="text-stone-600 mb-4 text-sm">Approximate price: $2,500-$3,500</p>
-        <AmazonButton search="6x6 outdoor cube sauna kit" variant="primary" label="View 6x6 Cube Sauna Kits on Amazon" />
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-sky-700 bg-sky-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best for Small Spaces</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">4x4 or 5x5 Single-Person Cube Pod</h3>
-          </div>
-        </div>
-        <p class="text-stone-600 mb-4">For a balcony, a townhouse patio, or any backyard where 36 square feet of footprint is the ceiling. These compact cube pods sit one adult on a single bench, sometimes two if you do not mind close quarters. The interior volume is small enough that a 4.5kW or 6kW heater hits temperature in 20-30 minutes, and many models run on a 240V/30A circuit instead of the 40-50A that bigger cubes demand. Pros: smallest footprint in the category, quick warmup, modest electrical needs. Cons: no room for a friend, no changing area, harder to throw water on the stones without splashing yourself.</p>
-        <p class="text-stone-600 mb-4 text-sm">Approximate price: $1,800-$2,800</p>
-        <AmazonButton search="single person outdoor cube sauna pod" variant="primary" label="View Small Cube Saunas on Amazon" />
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Premium</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">8x8 Thermowood Cube with Changing Room</h3>
-          </div>
-        </div>
-        <p class="text-stone-600 mb-4">The build you buy if you intend to use the sauna three or four nights a week for the next fifteen years. Thermowood (thermally modified spruce or aspen) resists rot, holds dimension through humidity cycles, and ages to a clean silver-gray without sealants. An 8x8 cube split into a 3x8 changing room and a 5x8 hot room comfortably seats four to five adults with a real top bench. Pair with the Harvia KIP 90B (9kW) or a Huum Drop 9kW for a cleaner aesthetic. Pros: top-tier longevity, real changing space, looks intentional in a designed backyard. Cons: $7,000+ before electrical and pad, dealer-only on most premium brands, freight delivery only.</p>
-        <p class="text-stone-600 mb-4 text-sm">Approximate price: $7,000+</p>
-        <AmazonButton search="8x8 thermowood cube sauna" variant="primary" label="View Premium Cube Saunas on Amazon" />
-      </div>
-
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cube vs Barrel vs Cabin: Which Should You Buy?</h2>
-    <p class="text-stone-700 mb-4"><strong>Pick a cube</strong> if the sauna will be visible from the house or a deck, if you want a changing area built in, or if you value clean modern lines over traditional Scandinavian aesthetics. Cubes also use yard space efficiently, which matters on a small urban lot.</p>
-    <p class="text-stone-700 mb-4"><strong>Pick a barrel</strong> if budget is the dominant constraint or if you want the fastest possible warmup. Less interior volume per occupant means a smaller heater reaches temperature faster, and barrel kits are generally $500-$1,500 cheaper than a comparable cube. The curved silhouette is polarizing; some buyers love it, others find it dated.</p>
-    <p class="text-stone-700 mb-6"><strong>Pick a cabin</strong> if you need to fit five or more people, if you want full standing headroom across the room, or if you plan to build rather than buy a kit. Rectangular cabin footprints (8x10, 8x12) give you the most flexible bench layout, and the larger volume tolerates heater oversizing without overshooting.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Heater Sizing for a Cube Sauna</h2>
-    <p class="text-stone-700 mb-4">The working rule is 1kW per 50 cubic feet of interior volume, with a step up for outdoor installs and cold climates. Measure the hot room only, not the changing area. A 6x6 cube with a 7-foot interior ceiling is 252 cubic feet, which lands squarely in the 6kW band: the Harvia KIP 60B is the right pick and fits most 240V/30A circuits.</p>
-    <p class="text-stone-700 mb-4">A 7x7x7 cube runs 343 cubic feet, calling for 7-8kW. The Harvia KIP 80B (8kW) is the safe choice; bump the circuit to 240V/40A. An 8x8 cube with a 7-foot ceiling hits 448 cubic feet, which pushes you to 9kW (Harvia KIP 90B) on a 50A circuit.</p>
-    <p class="text-stone-700 mb-6">Add roughly 20% capacity for outdoor units in climates with sustained sub-freezing winters, or if the kit ships with thinner wall panels. Undersized heaters in a cube show up as 45+ minute warmups and difficulty holding 180°F when the door has been opened. For the full method, see our <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">sauna heater sizing guide</a>.</p>
-
-    <AmazonButton search="harvia kip electric sauna heater" variant="outline" label="View Harvia KIP Heaters on Amazon" class="mb-10" />
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Installation: Permits, Foundation, and Electrical</h2>
-    <p class="text-stone-700 mb-4"><strong>Permits.</strong> Most jurisdictions exempt accessory structures under 120 sq ft from a building permit, which covers cube saunas through 10x10. Setback rules (typically 3-5 feet from property lines) still apply. The electrical work almost always needs a permit and an inspection, regardless of structure size. Call your local building department before ordering; one phone call saves a lot of regret. See our <a href="/guides/outdoor-sauna-permits/" class="text-amber-700 hover:underline">outdoor sauna permits guide</a> for specifics.</p>
-    <p class="text-stone-700 mb-4"><strong>Foundation.</strong> A compacted gravel pad works for most cube kits up to 7x7. Build the pad 6 inches deep, 12 inches wider than the sauna footprint on each side, with landscape fabric underneath. For 8x8 and larger, or for premium kits with heavier roof systems, pour a 4-inch reinforced concrete slab. Either way, the pad must be dead level; flat-walled cube structures show out-of-level much more visibly than barrels.</p>
-    <p class="text-stone-700 mb-6"><strong>Electrical.</strong> A 6kW heater needs a dedicated 240V/30A circuit. 8kW needs 40A. 9kW needs 50A. Budget $600-$1,500 for an electrician to run the circuit, more if the panel is far from the sauna or if a service upgrade is required. See our <a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">sauna electrical requirements guide</a> for wire gauge and breaker sizing.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is a cube sauna?</h3>
-        <p class="text-stone-700">An outdoor sauna with a square or near-square footprint, typically 6x6, 7x7, or 8x8 feet. The exterior reads as a clean box. Most cube kits hold one to four people; the larger sizes split into a small front changing area and a rear hot room.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Cube sauna vs barrel sauna vs cabin: which is best?</h3>
-        <p class="text-stone-700">Cubes win on aesthetics and footprint efficiency, barrels win on price and warmup speed, cabins win on capacity and headroom. For a modern backyard with limited space, a 6x6 or 7x7 cube is the cleanest fit. For families of five or more, a cabin pulls ahead.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What size heater do I need for a cube sauna?</h3>
-        <p class="text-stone-700">Roughly 1kW per 50 cubic feet of interior volume. A 6x6x7 cube takes the Harvia KIP 60B (6kW), a 7x7x7 takes the KIP 80B (8kW), and an 8x8x7 takes the KIP 90B (9kW). Add 20% for cold-climate outdoor installs.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Do cube saunas need a permit?</h3>
-        <p class="text-stone-700">Often no for the structure itself if the footprint is under 120 sq ft, but the electrical circuit almost always needs a permit and inspection. Check with your local building department before ordering.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Can you use a cube sauna year-round?</h3>
-        <p class="text-stone-700">Yes. Cedar, thermowood, and spruce builds with proper insulation handle winter use including sub-zero climates. The smaller interior volume actually helps in cold weather since the heater reaches operating temperature faster than in a larger cabin.</p>
-      </div>
-    </div>
-
-    <p class="text-stone-700 mt-10">A cube sauna is the right buy for most modern backyards: better aesthetics than a barrel, easier to insulate, and a footprint that respects the rest of the yard. Match the heater to the cubic volume, pour or pack a level pad, run the right electrical circuit, and a quality cube kit will outlive most other backyard investments.</p>
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+    <div class="bg-stone-50 border border-stone-200 rounded-lg p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue planning</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-outdoor-sauna-of-2026/" class="text-amber-700 hover:underline">Best Outdoor Sauna of 2026</a></li>
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
+        <li><a href="/guides/barrel-sauna-vs-cabin-sauna/" class="text-amber-700 hover:underline">Barrel Sauna vs Cabin Sauna</a></li>
+        <li><a href="/guides/best-4-person-outdoor-sauna/" class="text-amber-700 hover:underline">Best 4-Person Outdoor Saunas</a></li>
         <li><a href="/guides/best-sauna-for-small-backyard/" class="text-amber-700 hover:underline">Best Sauna for a Small Backyard</a></li>
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Sauna Foundation Guide</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Requirements</a></li>
         <li><a href="/guides/outdoor-sauna-permits/" class="text-amber-700 hover:underline">Outdoor Sauna Permits</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

@@ -199,6 +199,8 @@ const isCurrent = (href: string) => href === "/" ? currentPath === "/" : current
         link_url: link.href,
         link_text: link.textContent?.trim().slice(0, 100) || '',
         campaign: new URL(link.href, window.location.href).searchParams.get('utm_campaign') || '',
+        partner: link.dataset.partner || '',
+        product_id: link.dataset.productId || '',
       });
     });
   </script>
