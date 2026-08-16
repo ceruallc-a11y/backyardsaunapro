@@ -2,106 +2,115 @@
 import Base from '../../layouts/Base.astro';
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "Do you wear clothes in a sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In Finland and most of Europe, saunas are used nude — it's culturally standard and considered cleaner since swimwear holds chlorine and detergents that release unpleasant vapors at sauna temperatures. In North American public saunas, a towel or swimwear is typical. In your own home sauna, it's entirely your preference."
-      }
+      '@type': 'Question',
+      name: 'What is proper gym sauna etiquette?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Read the posted facility rules first. Shower if required, wear the required attire, use a clean seat towel where expected, protect other users privacy, keep noise low, and leave the heater and controls alone unless the facility expressly permits their use.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Should you shower before sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, especially in shared saunas. A quick rinse removes sweat, sunscreen, and body products that would otherwise off-gas in the heat and affect other users. In a private home sauna it's less critical, but a pre-rinse is still good practice."
-      }
+      '@type': 'Question',
+      name: 'Can you pour water on a gym sauna heater?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only when the facility explicitly allows it and the heater is designed for it. Life Time and Equinox currently prohibit users from pouring water on their sauna heaters. Some Finnish public saunas allow water on stones and ask bathers to check with others first. The posted local rule controls.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Is it rude to talk in a sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In Finland, quiet conversation is normal in a sauna — it's a social space. Loud or animated conversation is less welcome. Phones and screens are generally considered inappropriate. In a private home sauna with friends or family, whatever feels natural to your group is fine."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Can you use a phone in a public sauna?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Many facilities restrict phones, calls, photography, or electronics in saunas and locker-room areas. Check the rule at the door. Even where a device is not expressly banned, protect other users privacy and keep the shared room quiet.',
+      },
+    },
+  ],
 };
 ---
 <Base
-  title="Sauna Etiquette: What to Know Before You Go"
-  description="Sauna etiquette rules for public and home saunas. What to wear, when to talk, how to add water, and what annoys regular users."
+  title="Gym and Public Sauna Etiquette: Follow the Facility First"
+  description="Use a gym or public sauna without guessing: check posted rules for attire, towels, phones, water on the heater, noise, and shared-space conduct."
   canonical="/guides/sauna-etiquette"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Etiquette: What to Know Before You Go</h1>
-    <p class="text-stone-500 mb-8">Updated March 2025 &mdash; Backyard Sauna Pro</p>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-rocks-bucket.jpg" alt="Sauna with rocks, bucket and ladle" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-3">Shared-sauna guide</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Gym and public sauna etiquette: follow the facility first</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 2026 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-rocks-bucket.jpg" alt="Sauna heater stones with a bucket and ladle" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-8">
+      <h2 class="font-bold text-stone-900 mb-2">The rule that prevents most mistakes</h2>
+      <p class="text-sm text-stone-700">Read the sign and follow the facility. A Finnish public sauna, a North American health club, and a hotel dry sauna may have opposite rules about swimwear, phones, and water on the heater. Cultural custom never overrides the posted operating rule.</p>
+    </div>
 
-    <p class="text-lg text-stone-700 mb-4">Sauna culture has rules, most unwritten, some that vary by country, and a few that are genuinely universal. Whether you're visiting a public sauna for the first time or hosting guests in your backyard setup, knowing the norms makes everyone's experience better.</p>
+    <p class="text-lg text-stone-700 mb-8">Good etiquette is not a secret ritual. It is a short sequence: arrive clean, use the room as designed, protect other users privacy and space, and leave when your body tells you to.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Wear</h2>
-    <p class="text-stone-700 mb-4">In Finland, Germany, and most of Northern and Central Europe: nothing. Saunas are traditionally nude spaces and wearing a swimsuit is considered mildly unusual. The practical reason is sensible, synthetic fabrics hold detergents and chlorine that off-gas in heat, and wet swimwear against skin is uncomfortable at high temperatures. A towel to sit on is expected and required.</p>
-    <p class="text-stone-700 mb-4">In North American gym saunas, hotel saunas, and spa facilities: a towel or swimwear is standard. Read the specific facility's rules.</p>
-    <p class="text-stone-700 mb-6">In your own backyard sauna: whatever your group is comfortable with. Most private home sauna users go with a towel.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Before entering</h2>
+    <ol class="list-decimal pl-5 space-y-3 text-stone-700 mb-8">
+      <li><strong>Read the door.</strong> Check attire, age, time, phone, heater-water, and occupancy rules.</li>
+      <li><strong>Shower when required.</strong> Life Time directs users to shower before its sauna, spa, and steam areas. Helsinki's public-sauna guidance also tells users to rinse first.</li>
+      <li><strong>Bring the right seat layer.</strong> Many facilities expect a towel or washable bench cover. Use what the facility provides or requires.</li>
+      <li><strong>Leave excluded items outside.</strong> Equinox keeps phones, food, grooming products, electronics, shoes, and workout clothes out of its sauna and steam-room spaces.</li>
+    </ol>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Sit on a Towel</h2>
-    <p class="text-stone-700 mb-6">Always sit or lie on a clean towel. Your sweat doesn't belong on the bench wood directly, it saturates the wood over time and creates odor. In shared saunas this is non-negotiable. In your own sauna it prolongs the life of the benches. A small hand towel works fine; you don't need a full bath towel.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Water on the heater: never assume</h2>
+    <p class="text-stone-700 mb-4">This is where generic etiquette advice fails. Life Time says users may not pour water, oils, or fragrances on its sauna heaters. Equinox also prohibits water on the stones in the sauna policy we reviewed.</p>
+    <p class="text-stone-700 mb-6">Finnish sauna guidance can be different. MyHelsinki encourages bathers to ask others before adding water where the sauna permits it. If there is no clear sign or instruction, ask staff. Do not test the heater yourself.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Adding Water to the Rocks</h2>
-    <p class="text-stone-700 mb-4">In a shared sauna, ask before adding water. Not everyone tolerates the same steam intensity. A simple "mind if I add some water?" is all it takes. If someone says no or indicates they're about to leave, wait.</p>
-    <p class="text-stone-700 mb-4">Pour slowly and evenly, don't dump a full ladle at once. It creates a brief overwhelming steam burst that's unpleasant for everyone in the room. One or two slow pours, then wait for the room to adjust.</p>
-    <p class="text-stone-700 mb-6">In your own sauna with invited guests, whoever is hosting usually manages the water, but checking in with guests before each pour is still good practice since heat tolerance varies a lot.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Phones, cameras, and privacy</h2>
+    <p class="text-stone-700 mb-4">Treat a shared sauna as a private area. Equinox prohibits phones and electronics in its sauna and steam-room spaces. Life Time prohibits calls in those rooms and restricts photography in private areas.</p>
+    <p class="text-stone-700 mb-6">A silent screen can still make other users wonder whether a camera is active. The simple option is to leave the device in a locked locker and use the room without it.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Phones and Screens</h2>
-    <p class="text-stone-700 mb-4">Leave them outside. This is the most universal sauna norm across cultures. The sauna is a break from everything else, screens are the opposite of that. Also, phone cameras in a sauna are a significant privacy concern in shared environments.</p>
-    <p class="text-stone-700 mb-6">In your own home sauna with close friends, a phone for music is generally accepted. A phone for scrolling is not.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Attire and the seat towel</h2>
+    <p class="text-stone-700 mb-4">There is no worldwide dress code. Life Time requires proper coverage. Equinox tells members to follow its club dress and private-area rules. MyHelsinki explains that mixed public saunas may allow swimwear or a towel, while same-sex pool saunas may use different rules.</p>
+    <p class="text-stone-700 mb-6">Use a clean towel or approved bench cover under your body when the facility requires it. Do not bring shoes, heavily soiled workout clothes, or wet belongings into a room that excludes them.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Conversation</h2>
-    <p class="text-stone-700 mb-4">Sauna is a social space in Finnish culture, quiet conversation is normal and welcome. Loud or animated talk disrupts the meditative quality that most people come for. Match the energy of the room when you walk in.</p>
-    <p class="text-stone-700 mb-6">In a private home sauna with friends, conversation is one of the genuine pleasures, the heat and the setting create unusual openness. Don't feel like silence is required in a private setting.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Noise, space, and the door</h2>
+    <ul class="list-disc pl-5 space-y-2 text-stone-700 mb-8">
+      <li>Match the room's volume. Quiet conversation may be normal in one sauna and disruptive in another.</li>
+      <li>Do not take a call, play speaker audio, or conduct a workout in the hot room.</li>
+      <li>Use one seat when the room is busy. Move bags and clothing outside.</li>
+      <li>Enter and close the door without lingering in the doorway.</li>
+      <li>Do not adjust controls, cover sensors, dry clothing, apply grooming products, or use fragrances unless the facility expressly allows it.</li>
+    </ul>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cleanliness</h2>
-    <p class="text-stone-700 mb-4">Rinse off before entering any shared sauna. Remove sunscreen, body lotion, and heavy fragrances, they all behave differently at high temperatures and affect everyone in the room. Most sauna facilities have showers near the entrance for this reason.</p>
-    <p class="text-stone-700 mb-6">Don't enter a sauna with open wounds, skin infections, or while sick. Heat lowers immune response temporarily and shared sauna surfaces are warm and slightly humid, not the place to be spreading anything.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Time and safety</h2>
+    <p class="text-stone-700 mb-4">Do not rely on one universal session length. Room conditions, health, medications, experience, and facility limits vary. Leave promptly if you feel dizzy, faint, confused, nauseated, unusually weak, or unable to cool down.</p>
+    <p class="text-stone-700 mb-8">Take breaks and follow the facility's posted time limit. If a medical condition or medication could change heat tolerance, ask a qualified clinician before deliberate heat exposure.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Coming and Going</h2>
-    <p class="text-stone-700 mb-4">Enter and exit quickly to preserve the heat. Propping the door open while you decide whether you're staying is inconsiderate. If you need to leave mid-session, move without disrupting others, duck low near the door, step out smoothly.</p>
-    <p class="text-stone-700 mb-6">Don't stay so long you're struggling. Overheating in a shared sauna is dangerous and uncomfortable for everyone nearby. If you need to leave, leave, there's no honor in grinding through dizziness.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Sources checked</h2>
+    <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700 mb-8">
+      <li><a href="https://my.lifetime.life/faq/membership-etiquette.html/1000" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Life Time: current club etiquette</a></li>
+      <li><a href="https://www.equinox.com/landing/club-etiquette" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Equinox: current club etiquette</a></li>
+      <li><a href="https://www.myhelsinki.fi/en/see-and-do/activities/quick-guide-to-finnish-sauna-etiquette" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">City of Helsinki: public sauna etiquette</a></li>
+      <li><a href="https://infofinland.fi/en/leisure/finnish-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">InfoFinland: Finnish sauna instructions</a></li>
+    </ul>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Do you wear clothes in a sauna?</h3>
-        <p class="text-stone-700">In Finland and Europe, saunas are typically nude with a towel to sit on. In North American facilities, swimwear or a towel is standard. In your own home sauna, whatever your group prefers.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Should you shower before sauna?</h3>
-        <p class="text-stone-700">Yes, especially in shared saunas. Rinse off sweat, sunscreen, and products before entering. Good practice in a private sauna too.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is it rude to talk in a sauna?</h3>
-        <p class="text-stone-700">Quiet conversation is normal. Loud or animated talk is generally unwelcome. In a private home sauna with friends, talk as freely as feels right.</p>
-      </div>
+      <div><h3 class="font-bold text-stone-900 mb-1">What is proper gym sauna etiquette?</h3><p class="text-stone-700">Follow the posted rules, arrive clean, use required attire and a seat towel, protect privacy, keep noise low, and do not touch the heater or controls unless expressly allowed.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Can you pour water on a gym sauna heater?</h3><p class="text-stone-700">Only if the facility explicitly permits it. Several major U.S. clubs prohibit it. Ask staff when the rule is unclear.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Can you use a phone in a public sauna?</h3><p class="text-stone-700">Many facilities prohibit phones, calls, photography, or electronics. Even where not expressly banned, leave the device outside to protect privacy and quiet.</p></div>
     </div>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+    <div class="bg-stone-50 border border-stone-200 rounded-lg p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue safely</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/how-to-use-a-sauna/" class="text-amber-700 hover:underline">How to Use a Sauna (First-Timer's Guide)</a></li>
-        <li><a href="/guides/how-long-to-stay-in-sauna/" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
-        <li><a href="/guides/sauna-health-benefits/" class="text-amber-700 hover:underline">Sauna Health Benefits</a></li>
+        <li><a href="/guides/what-to-wear-in-sauna/" class="text-amber-700 hover:underline">What to wear in a sauna</a></li>
+        <li><a href="/guides/contacts-in-sauna/" class="text-amber-700 hover:underline">Contact lenses in a sauna</a></li>
+        <li><a href="/guides/headphones-in-sauna/" class="text-amber-700 hover:underline">Headphones and electronics in a sauna</a></li>
+        <li><a href="/guides/how-long-to-stay-in-sauna/" class="text-amber-700 hover:underline">Sauna duration and stop signs</a></li>
       </ul>
     </div>
-
   </article>
 </Base>
