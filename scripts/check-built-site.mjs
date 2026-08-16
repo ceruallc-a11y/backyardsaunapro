@@ -717,6 +717,30 @@ for (const file of htmlFiles) {
     }
   }
 
+  for (const match of html.matchAll(/<a\b[^>]*data-track-event=["']calculator_cta_clicked["'][^>]*>/gi)) {
+    const [anchor] = match;
+    const href = anchor.match(/href=["']([^"']+)["']/i)?.[1];
+    if (!href) {
+      findings.push({ type: 'invalid_calculator_cta', route, value: 'missing href' });
+      continue;
+    }
+    const decodedHref = href.replaceAll('&#38;', '&').replaceAll('&amp;', '&');
+    const destination = new URL(decodedHref, 'https://backyardsaunapro.com');
+    const ctaPosition = anchor.match(/data-cta-position=["']([^"']+)["']/i)?.[1];
+    const ref = destination.searchParams.get('ref');
+    const campaign = destination.searchParams.get('campaign');
+    const placement = destination.searchParams.get('placement');
+    if (!destination.pathname.includes('/tools/sauna-') || !destination.pathname.includes('calculator/')) {
+      findings.push({ type: 'invalid_calculator_cta', route, target: href, value: 'not a site calculator' });
+    }
+    if (!ref || !campaign || !placement) {
+      findings.push({ type: 'unattributed_calculator_cta', route, target: href });
+    }
+    if (ctaPosition !== placement) {
+      findings.push({ type: 'mismatched_calculator_cta_attribution', route, target: href, value: `${ctaPosition ?? 'missing'} != ${placement ?? 'missing'}` });
+    }
+  }
+
   for (const match of html.matchAll(/<a\b[^>]*data-track-event=["']dealer_outbound_click["'][^>]*>/gi)) {
     const [anchor] = match;
     if (!anchor.includes('data-partner=')) {
@@ -772,4 +796,7 @@ process.exitCode = findings.some((finding) => [
   'duplicate_planner_cta_source',
   'mismatched_planner_cta_attribution',
   'internal_utm_parameter',
+  'invalid_calculator_cta',
+  'unattributed_calculator_cta',
+  'mismatched_calculator_cta_attribution',
 ].includes(finding.type)) ? 1 : 0;
