@@ -14,7 +14,8 @@
     "audit:internal-links": "node scripts/audit-internal-links.mjs",
     "audit:lead-api": "node scripts/lead-api-health.mjs",
     "audit:seo": "node scripts/seo-followup.mjs",
-    "leads:queue": "node scripts/lead-queue-report.mjs"
+    "leads:queue": "node scripts/lead-queue-report.mjs",
+    "notify:indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.0",
