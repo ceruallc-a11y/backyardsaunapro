@@ -1,98 +1,115 @@
 ---
 import Base from '../../layouts/Base.astro';
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Does sauna help with a hangover?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A sauna can help with some hangover symptoms, particularly muscle aches, fatigue, and that general feeling of being wrecked. The heat improves circulation and can ease body aches. However, alcohol is dehydrating, and a sauna causes more fluid loss through sweat. If you go in dehydrated, a sauna makes it worse. You must rehydrate well before and during any sauna session after drinking."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is it safe to use a sauna when hungover?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "With precautions, yes for most healthy people. The risks are dehydration and low blood pressure. Drink 16-24 oz of water before entering, keep sessions short (10-15 minutes max), exit immediately if you feel dizzy or nauseous, and go alone or with someone who can help if needed. Avoid the sauna if you are still intoxicated — alcohol impairs your ability to regulate body temperature."
-      }
-    }
-  ]
-};
+const faqs = [
+  {
+    question: 'Does a sauna cure a hangover?',
+    answer: 'No. NIAAA says there is no hangover cure other than time. A sauna does not speed alcohol metabolism or the brain\'s recovery, and deliberate heat adds more heat strain and sweating.',
+  },
+  {
+    question: 'Is there a safe hangover sauna temperature or time?',
+    answer: 'No evidence establishes a special safe hangover protocol. Do not use a sauna while intoxicated, impaired, vomiting, dizzy, weak, confused, or otherwise unwell. Wait until you have recovered and can use the sauna under its normal instructions; ask a clinician when health history or medication changes the risk.',
+  },
+  {
+    question: 'Can you sweat alcohol out in a sauna?',
+    answer: 'No. Sweating does not meaningfully accelerate the body\'s clearance of alcohol or cure a hangover. NIAAA explains that the body needs time to clear alcohol byproducts, rehydrate, repair irritated tissue, and restore immune and brain activity.',
+  },
+  {
+    question: 'When is a hangover an emergency?',
+    answer: 'Call emergency services if alcohol overdose is possible. NIAAA warning signs include confusion, difficulty staying conscious or waking, vomiting, seizures, slow or irregular breathing, slow heart rate, clammy skin, dulled responses, and very low body temperature, bluish skin, or paleness.',
+  },
+];
 ---
 <Base
-  title="Sauna for Hangover: Does It Actually Help?"
-  description="Can a sauna cure a hangover? What the evidence says, how to do it safely when dehydrated, and when to skip it."
+  title="Does a Sauna Help a Hangover? No Cure, Added Heat Risk"
+  description="A sauna does not cure a hangover or speed alcohol clearance. Learn why heat can add risk, when to skip it, and which alcohol-overdose signs require emergency help."
   canonical="/guides/sauna-for-hangover"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  })} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna for Hangover: Does It Actually Help?</h1>
-    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Alcohol and heat safety</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">A sauna does not cure a hangover</h1>
+      <p class="text-lg text-stone-700 mb-3">NIAAA says time is the only cure. Heat does not clear alcohol faster, and a sauna can add sweating, cardiovascular strain, dizziness, and another setting where impaired judgment or coordination matters.</p>
+      <p class="text-stone-500 text-sm">Medically cautious review &middot; August 16, 2026</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/people-in-sauna.jpg" alt="Person relaxing in sauna" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="bg-red-50 border border-red-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
+      <strong>Do not use a sauna for alcohol overdose.</strong> Confusion, difficulty staying awake, vomiting, seizures, slow or irregular breathing, slow heart rate, clammy skin, dulled responses, or very low body temperature can signal an emergency. Call emergency services. Do not wait for every sign to appear.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">The sauna-as-hangover-cure idea has been around forever in Finnish culture and plenty of other places. There is something to it. There is also a real risk if you do it wrong.</p>
+    <section class="bg-stone-900 text-white rounded-lg p-6 mb-10">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-300 mb-2">Bottom line</p>
+      <h2 class="text-2xl font-bold mb-3">Skip the sauna while intoxicated, impaired, or still unwell.</h2>
+      <p class="text-stone-200">There is no evidence-based amount of water, lower temperature, or shorter timer that turns a hangover into a sauna indication. If you later feel fully recovered, use the sauna as an ordinary session under the exact room rules, not as treatment.</p>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What a Sauna Actually Does for a Hangover</h2>
-    <p class="text-stone-700 mb-4">Alcohol causes inflammation, disrupted sleep, dehydration, and dilated blood vessels that create headache pressure. A sauna does not fix any of those directly. What it does do:</p>
-    <ul class="space-y-2 text-stone-700 mb-6 ml-4">
-      <li><span class="font-semibold">Improves circulation</span> — helps with the sluggish, heavy feeling</li>
-      <li><span class="font-semibold">Relaxes muscles</span> — useful if you drank enough to sleep poorly and wake up stiff</li>
-      <li><span class="font-semibold">Forces you to sit still and breathe</span> — the mental reset is real</li>
-      <li><span class="font-semibold">Light sweat</span> — feels productive even if sweating alcohol out is largely a myth (your liver handles that, not your sweat glands)</li>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What causes a hangover</h2>
+    <p class="text-stone-700 mb-4">NIAAA describes several contributors: mild dehydration, fragmented sleep, stomach irritation, inflammation, acetaldehyde exposure, and short-lived withdrawal effects. That is why “just drink water” is incomplete. Water may address fluid loss, but it does not reverse every process or restore alertness and coordination on demand.</p>
+    <p class="text-stone-700 mb-8">Symptoms often peak when blood alcohol concentration returns to about zero and can last 24 hours or longer. Attention, decision-making, and muscle coordination can remain impaired during a hangover.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Why adding sauna heat is not a remedy</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-10">
+      <section class="border border-stone-200 rounded-lg p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-2">It does not speed clearance</h3>
+        <p class="text-sm text-stone-700">The body still needs time to metabolize alcohol and recover. Sweating is not a meaningful alcohol-removal pathway, and feeling hot or tired is not evidence that a detox process is working.</p>
+      </section>
+      <section class="border border-stone-200 rounded-lg p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-2">It adds heat strain</h3>
+        <p class="text-sm text-stone-700">Sauna raises skin temperature and heart rate and causes sweating. CDC notes that alcohol increases sweating and urination and can impair heat perception.</p>
+      </section>
+      <section class="border border-stone-200 rounded-lg p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-2">Blood pressure can fall</h3>
+        <p class="text-sm text-stone-700">A small study of ten healthy men found that combining alcohol and sauna increased hypotension risk. Its size and population do not establish a broad safety threshold.</p>
+      </section>
+      <section class="border border-stone-200 rounded-lg p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-2">The environment magnifies impairment</h3>
+        <p class="text-sm text-stone-700">A hot room, hard benches, and a walk to the exit are poor places for dizziness, nausea, reduced balance, slowed judgment, or sudden faintness.</p>
+      </section>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Use this decision boundary</h2>
+    <div class="overflow-x-auto border border-stone-200 rounded-lg mb-10">
+      <table class="w-full min-w-[700px] text-sm text-left">
+        <thead class="bg-stone-100 text-stone-900"><tr><th class="px-4 py-3">Condition</th><th class="px-4 py-3">Sauna decision</th><th class="px-4 py-3">Next step</th></tr></thead>
+        <tbody class="divide-y divide-stone-200 text-stone-700">
+          <tr><th scope="row" class="px-4 py-3 text-stone-900">Still drinking or possibly intoxicated</th><td class="px-4 py-3 font-semibold text-red-700">Do not enter</td><td class="px-4 py-3">Stop adding heat risk; stay with a responsible sober person where needed.</td></tr>
+          <tr><th scope="row" class="px-4 py-3 text-stone-900">Confused, hard to wake, vomiting, seizing, or breathing abnormally</th><td class="px-4 py-3 font-semibold text-red-700">Emergency</td><td class="px-4 py-3">Call emergency services for suspected alcohol overdose.</td></tr>
+          <tr><th scope="row" class="px-4 py-3 text-stone-900">Dizzy, weak, nauseated, unsteady, or unable to hydrate normally</th><td class="px-4 py-3 font-semibold text-red-700">Skip heat</td><td class="px-4 py-3">Rest in a safe environment and seek medical advice when symptoms are concerning or persistent.</td></tr>
+          <tr><th scope="row" class="px-4 py-3 text-stone-900">Recovered and considering a later routine session</th><td class="px-4 py-3">No hangover protocol applies</td><td class="px-4 py-3">Follow the exact sauna instructions and ordinary health guidance; do not use heat to “finish” recovery.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary sources checked</h2>
+    <ul class="space-y-3 text-sm text-stone-700 mb-10">
+      <li><a href="https://www.niaaa.nih.gov/publications/brochures-and-fact-sheets/hangovers" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">NIAAA: causes, duration, impairment, myths, and the absence of a hangover cure</a></li>
+      <li><a href="https://www.niaaa.nih.gov/publications/brochures-and-fact-sheets/understanding-dangers-of-alcohol-overdose" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">NIAAA: alcohol-overdose signs and emergency response</a></li>
+      <li><a href="https://www.cdc.gov/heat-health/hcp/clinical-guidance/heat-and-medications-guidance-for-clinicians.html" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">CDC: alcohol can increase sweating and urination and impair heat perception</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/1588256/" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Roine et al.: small alcohol-plus-sauna study and hypotension finding</a></li>
     </ul>
-    <p class="text-stone-700 mb-6">The net effect for most people is feeling better afterward than before, as long as you handle the dehydration issue correctly.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Dehydration Problem</h2>
-    <p class="text-stone-700 mb-6">Alcohol is a diuretic — it dehydrates you. Hangover symptoms are largely dehydration symptoms. A sauna causes more fluid loss. If you go into a sauna already dehydrated and come out more dehydrated, you will feel worse, not better. This is the main way the sauna-for-hangover idea goes wrong. The fix is simple: drink before you go in.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How to Do It Safely</h2>
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-6">
-      <ul class="space-y-3 text-stone-700">
-        <li><span class="font-semibold">Wait until you are fully sober.</span> Never sauna while still intoxicated. Alcohol impairs your ability to detect overheating, which becomes dangerous.</li>
-        <li><span class="font-semibold">Drink 16-24 oz of water before entering.</span> Electrolytes help more than plain water — a sports drink or coconut water is a good choice.</li>
-        <li><span class="font-semibold">Keep sessions short.</span> 10-15 minutes maximum when hungover. Your body is already stressed.</li>
-        <li><span class="font-semibold">Lower temperature than normal.</span> A gentle 160°F session is better than pushing 185°F when you are already depleted.</li>
-        <li><span class="font-semibold">Bring water in with you.</span> Drink during the session if you need to.</li>
-        <li><span class="font-semibold">Exit immediately if dizzy or nauseous.</span> Low blood pressure and dehydration can cause both — do not push through it.</li>
-      </ul>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Frequently asked questions</h2>
+    <div class="space-y-5 mb-10">
+      {faqs.map((faq) => <div><h3 class="font-bold text-stone-900 mb-1">{faq.question}</h3><p class="text-stone-700">{faq.answer}</p></div>)}
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">When to Skip It</h2>
-    <p class="text-stone-700 mb-6">If you are still intoxicated, skip it entirely. If you have a heart condition or blood pressure issues, talk to your doctor before using a sauna regularly, especially in compromised states. If you are vomiting, the dehydration is too severe — water and rest first, sauna later.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Honest Verdict</h2>
-    <p class="text-stone-700 mb-6">A sauna is not a cure. There is no hangover cure. What it does is address some of the physical discomfort — muscle aches, heaviness, low mood — and the ritual of sitting in heat, sweating, and resting has a restorative quality that is hard to quantify but real. Hydrate first, keep it short, and most people come out feeling noticeably better.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Does sauna help with a hangover?</h3>
-        <p class="text-stone-700">It helps with some symptoms — muscle aches, fatigue, general heaviness. It does not remove alcohol from your system faster. Hydrate well before going in or it will make dehydration worse.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is it safe to use a sauna when hungover?</h3>
-        <p class="text-stone-700">Yes with precautions: only when fully sober, well hydrated, short sessions (10-15 min), lower temperature. Exit immediately if dizzy. Never sauna while still drunk.</p>
-      </div>
-    </div>
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+    <div class="bg-stone-50 border border-stone-200 rounded-lg p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue safely</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/how-long-to-stay-in-sauna/" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
-        <li><a href="/guides/sauna-after-workout/" class="text-amber-700 hover:underline">Sauna After Workout</a></li>
-        <li><a href="/guides/sauna-cold-plunge/" class="text-amber-700 hover:underline">Sauna and Cold Plunge</a></li>
-        <li><a href="/guides/sauna-for-weight-loss/" class="text-amber-700 hover:underline">Sauna for Weight Loss</a></li>
+        <li><a href="/guides/how-to-use-a-sauna/" class="text-amber-700 hover:underline">Beginner sauna safety guide</a></li>
+        <li><a href="/guides/how-long-to-stay-in-sauna/" class="text-amber-700 hover:underline">Why session limits depend on the room and person</a></li>
+        <li><a href="/guides/sauna-health-benefits/" class="text-amber-700 hover:underline">Sauna health evidence and limitations</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -7,18 +8,10 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What are the best rocks for a sauna?",
+      "name": "Can any sauna stone be used in any heater?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Olivine (peridotite) is the gold standard for sauna stones. It handles rapid heat cycling without cracking, stores heat efficiently, and lasts years with proper care. Granite and volcanic rock are common alternatives. Never use river rocks, sandstone, limestone, or anything porous — they crack under heat and can shatter dangerously."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How often should sauna stones be replaced?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Quality sauna stones last 3 to 5 years with regular use. Signs they need replacing: visible cracking, crumbling edges, white powdery deposits, or steam that smells dusty or mineral. Inspect them annually and replace any stones that look compromised."
+        "text": "No. Use the material, shape, diameter, quantity, and loading method approved for your exact heater model. Decorative, landscaping, and found stones are not substitutes for stones made and tested for sauna heaters."
       }
     },
     {
@@ -26,130 +19,128 @@ const faqSchema = {
       "name": "How many sauna stones do I need?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most home sauna heaters hold 20-40 lbs of stones. Check your heater's manual for the exact capacity — overfilling restricts airflow through the stone bed and reduces heater efficiency. Underfilling reduces heat storage and steam quality."
+        "text": "Use the stone capacity in the manual for your exact heater model. Capacity varies widely, even between heaters from the same manufacturer, so a general bag count is not reliable."
       }
     },
     {
       "@type": "Question",
-      "name": "Can you use any rocks in a sauna?",
+      "name": "How should sauna stones be arranged?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Many common rocks are dangerous in a sauna heater. River rocks, sedimentary rocks, and porous stones crack or explode when rapidly heated. Only use stones rated and sold specifically for sauna use."
+        "text": "Follow the arrangement instructions in the heater manual. Placement differs by heater design. Preserve the required airflow and do not wedge stones against electric heating elements unless the manufacturer explicitly directs otherwise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should sauna stones be replaced?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Follow the inspection and replacement schedule for your heater and stone type. Replace stones that the manufacturer identifies as crumbling, cracked, discolored, or otherwise unfit, and remove accumulated stone debris before reloading."
       }
     }
   ]
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Best Sauna Stones (2025): Olivine, Granite, and What Actually Works"
-  description="The best sauna stones for electric and wood-burning heaters. Olivine vs granite, how many you need, and which rocks to never use."
+  title="Sauna Heater Stones (2026): Match the Exact Heater"
+  description="Choose sauna heater stones by the exact manual: approved type, diameter, shape, capacity, loading method, and maintenance instructions."
   canonical="/guides/best-sauna-stones"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Sauna Stones (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-stones-closeup.jpg" alt="Close-up of sauna heating stones" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
+    <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-3">Heater compatibility guide</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna heater stones: the manual decides</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 15, 2026 &mdash; Backyard Sauna Pro</p>
 
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-stones-closeup.jpg" alt="Close-up of sauna heater stones" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
       <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Most people don't think about sauna stones until they need to replace them. That's a mistake, the stones you put in your heater directly affect heat quality, steam quality, and how long your heater elements last. The wrong stones crack, crumble, and block airflow through the heater bed.</p>
+    <p class="text-lg text-stone-700 mb-4">Sauna stones are not interchangeable. The right purchase depends on the exact heater model, not just whether a bag says "sauna stones." Diameter, shape, total capacity, and loading pattern can all change from one heater to another.</p>
+    <p class="text-stone-700 mb-8">This is a desk-researched buying guide, not a hands-on product test. Start with the heater manual. Then use the checks below to rule out listings that do not provide enough information.</p>
 
-    <p class="text-stone-700 mb-8">The right stones are dense, crack-resistant, and sized correctly for your heater. Here's what works and what to avoid.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Picks</h2>
-
-    <div class="space-y-6 mb-10">
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="mb-2">
-          <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
-          <h3 class="text-xl font-bold text-stone-900 mt-1">Olivine Sauna Stones (Premium)</h3>
-        </div>
-        <p class="text-stone-600 mb-3">Olivine, also called peridotite, is the preferred stone for serious sauna users. It's dense, handles heat cycling better than most alternatives, and produces a clean steam with no mineral smell. Finnish sauna manufacturers have used olivine as the standard for decades. These premium stones are pre-washed and sized for standard heaters.</p>
-        <ul class="text-stone-600 text-sm space-y-1 mb-4">
-          <li>Material: olivine (peridotite)</li>
-          <li>Size: 2-4 inch diameter (fits most heaters)</li>
-          <li>Weight options: 22 lb, 44 lb bags</li>
-          <li>Works with electric and wood-burning heaters</li>
-        </ul>
-        <AmazonButton asin="B0FB6SGKJL" variant="primary" />
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="mb-2">
-          <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Value Pick</span>
-          <h3 class="text-xl font-bold text-stone-900 mt-1">Olivine Sauna Rocks (Standard)</h3>
-        </div>
-        <p class="text-stone-600 mb-3">Same olivine material at a lower price per pound. Good for first-time buyers who want to try olivine without committing to a premium bag. Slightly more variation in size and shape than the premium option, which doesn't affect performance but looks less uniform in the heater.</p>
-        <AmazonButton asin="B00R52X6U2" variant="primary" />
-      </div>
-
+    <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-10 text-sm text-stone-700">
+      <strong>Do not improvise:</strong> Do not place decorative, landscaping, or found stones in a sauna heater. Use stones made for sauna heaters and approved for the exact model. If the manual is missing, get the model number and obtain the current instructions from the manufacturer before ordering.
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Stone Types: What Works and What Doesn't</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-5">Six checks before you buy</h2>
+    <ol class="space-y-4 mb-10 text-stone-700">
+      <li><strong class="text-stone-900">1. Exact heater model.</strong> Find the model plate and the matching manual. Similar-looking heaters can call for different stones.</li>
+      <li><strong class="text-stone-900">2. Approved stone type.</strong> Confirm the material or manufacturer part number. A familiar stone name alone does not establish compatibility.</li>
+      <li><strong class="text-stone-900">3. Diameter and shape.</strong> Verify the required size range and whether the heater calls for split-face, rounded, or another shape.</li>
+      <li><strong class="text-stone-900">4. Total capacity.</strong> Use the manual's weight or quantity. Convert that requirement into the number of packages only after checking the package weight.</li>
+      <li><strong class="text-stone-900">5. Loading instructions.</strong> Heater geometry determines how the stones should support one another, protect elements, and leave airflow paths.</li>
+      <li><strong class="text-stone-900">6. Maintenance procedure.</strong> Record the installation date and follow the model's inspection, re-stacking, and replacement guidance.</li>
+    </ol>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Olivine (best)</h3>
-    <p class="text-stone-700 mb-4">Olivine is a magnesium iron silicate with high density and excellent thermal stability. It withstands the heat cycling of a sauna heater, heating to 200°F+ and cooling repeatedly, without cracking or crumbling. It's the stone Finnish heater manufacturers like Harvia recommend and often include with their products. If you're buying sauna stones and want one right answer, olivine is it.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-5">Current shopping paths</h2>
+    <p class="text-stone-700 mb-5">These links are shopping starting points, not universal recommendations. Match every listing against the six checks above before buying.</p>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Granite (good)</h3>
-    <p class="text-stone-700 mb-4">Granite is widely available, affordable, and handles sauna temperatures adequately. It's denser than many alternatives but more prone to cracking over time than olivine. A good secondary choice if olivine isn't available, especially for wood-burning heaters where stone turnover is more frequent anyway due to ash exposure.</p>
+    <div class="space-y-6 mb-10">
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-2">Compare current listings</p>
+        <h3 class="text-xl font-bold text-stone-900 mb-2">Olivine diabase sauna stones</h3>
+        <p class="text-stone-600 mb-4">Use this category search when you know the required material, size, shape, and total capacity. Search results can include incompatible products, so verify the listing against the heater manual.</p>
+        <AmazonButton asin="B0FB6SGKJL" variant="primary" ctaPosition="category_search" />
+      </div>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Volcanic rock (acceptable)</h3>
-    <p class="text-stone-700 mb-4">Basalt and other volcanic stones are sometimes sold as sauna stones. They work but are more porous than olivine or granite, which means they absorb more water and eventually deteriorate faster. Not the first choice but usable for the budget-conscious.</p>
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <p class="text-xs font-semibold uppercase tracking-wide text-stone-600 mb-2">Specific listing</p>
+        <h3 class="text-xl font-bold text-stone-900 mb-2">45 lb replacement olivine stone listing</h3>
+        <p class="text-stone-600 mb-4">This listing was available when reviewed. The package weight and material do not prove that the stone diameter, shape, or loading requirements match your heater.</p>
+        <AmazonButton asin="B00R52X6U2" variant="primary" ctaPosition="specific_listing" />
+      </div>
+    </div>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">River rocks, sandstone, limestone (never)</h3>
-    <p class="text-stone-700 mb-4">These are dangerous. River rocks look smooth and tempting but contain trapped moisture and internal fractures from water erosion. When rapidly heated, they crack, sometimes explosively. Sandstone and limestone are sedimentary and porous, crumble under heat, and block heater airflow as they disintegrate. Never use any stone you picked up outside or bought from a non-sauna source.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Loading stones without guessing</h2>
+    <p class="text-stone-700 mb-4">Turn the heater off, allow it to cool completely, and follow the manual's service precautions. Some manufacturers tell owners to wash dust from new stones and place them one by one. That does not make every manufacturer's stacking pattern the same.</p>
+    <p class="text-stone-700 mb-4">Harvia's general guidance emphasizes even, sparse placement that preserves airflow. It also warns against dropping stones, building a high pile, or wedging stones between electric elements. HUUM's current support guidance gives a different model-specific pattern for its open-basket heaters. It calls for larger stones at the bottom and sides, smaller stones in gaps, and coverage of the outer elements while preserving airflow.</p>
+    <p class="text-stone-700 mb-8">Those differences are the point: do not transfer a loading sequence from one brand or heater design to another. Use the current instructions for the unit in front of you.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How Many Stones Do You Need</h2>
-    <p class="text-stone-700 mb-4">Check your heater's manual first, it will specify the recommended stone weight. Most home electric sauna heaters hold 20-40 lbs. A Harvia KIP 60B holds about 33 lbs. The HUUM Drop holds around 50 lbs. Overfilling restricts airflow through the stone bed and makes the heating elements work harder than they should.</p>
-    <p class="text-stone-700 mb-6">When you order stones, add 10-15% extra. You'll discard some during the initial inspection for cracks or odd shapes that don't pack well in the heater.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Inspection and replacement</h2>
+    <p class="text-stone-700 mb-4">There is no useful universal lifespan. Usage, heater design, water, and the manufacturer's stone guidance all matter. Inspect on the schedule stated by the manufacturer and sooner if you find debris below the heater or notice a change in performance.</p>
+    <p class="text-stone-700 mb-8">With the heater cool and safely disconnected as its manual requires, remove and inspect the stones. Replace material the manufacturer identifies as crumbling, cracked, discolored, or otherwise unfit. Clear stone debris, inspect accessible heater parts as directed, and reload only serviceable stones in the prescribed pattern.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How to Load and Arrange Stones</h2>
-    <p class="text-stone-700 mb-4">Wash new stones before loading, rinse with water, no soap, and let them dry fully. Placing wet stones in a heater causes a steam surge that can trip the thermal cutoff on some units.</p>
-    <p class="text-stone-700 mb-4">Load larger stones in the bottom of the heater basket, smaller stones on top. This creates better airflow through the stone mass and more even heat distribution. Don't cram them in, stones need space between them for air and steam to circulate.</p>
-    <p class="text-stone-700 mb-6">After loading, run the heater empty for one full heat cycle before your first session. This burns off any surface residue and lets you check that the stones aren't cracking under initial heat.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">When to Replace Them</h2>
-    <p class="text-stone-700 mb-4">Quality olivine stones last 3-5 years with regular use. Inspect them once a year. Replace any stones that show visible cracking, crumbling edges, white calcium deposits that won't wash off, or any that have noticeably shrunk in size from repeated thermal stress.</p>
-    <p class="text-stone-700 mb-6">If your steam starts smelling dusty or minerally after adding water, that's a sign stones are deteriorating. A full stone replacement fixes it within a session or two.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary manufacturer references</h2>
+    <ul class="space-y-3 text-stone-700 mb-10">
+      <li><a href="https://www.harvia.com/en-US/sauna-heater-stones/" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Harvia: sauna heater stone selection, loading, and maintenance</a></li>
+      <li><a href="https://www.harvia.com/en-US/ideas-and-trends/products/the-easy-guide-to-looking-after-your-sauna-stones/" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Harvia: inspecting and maintaining sauna stones</a></li>
+      <li><a href="https://huumsauna.com/support-category/electric-sauna-heaters/" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">HUUM: model-specific stone capacity, placement, and maintenance</a></li>
+    </ul>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">What are the best rocks for a sauna?</h3>
-        <p class="text-stone-700">Olivine (peridotite) is the gold standard. Dense, crack-resistant, long-lasting. Granite is a solid backup. Never use river rocks, sandstone, or limestone.</p>
+        <h3 class="font-bold text-stone-900 mb-1">Can any sauna stone be used in any heater?</h3>
+        <p class="text-stone-700">No. Match the exact heater's approved material, shape, diameter, quantity, and loading instructions.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">How often should sauna stones be replaced?</h3>
-        <p class="text-stone-700">Every 3-5 years with regular use. Replace sooner if you see cracking, crumbling, mineral deposits, or notice your steam smelling dusty.</p>
+        <h3 class="font-bold text-stone-900 mb-1">How many sauna stones do I need?</h3>
+        <p class="text-stone-700">Use the capacity in your exact model's manual. Heater capacities vary too widely for a general bag count.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">How many stones do I need?</h3>
-        <p class="text-stone-700">Check your heater's manual. Most home heaters hold 20-40 lbs. Order 10-15% extra to account for rejects during inspection.</p>
+        <h3 class="font-bold text-stone-900 mb-1">How should sauna stones be arranged?</h3>
+        <p class="text-stone-700">Follow the heater manual. Preserve airflow and avoid transferring another model's stacking pattern to yours.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">Can you use any rocks in a sauna?</h3>
-        <p class="text-stone-700">No. River rocks, sedimentary stones, and porous rocks are dangerous, they crack or explode under rapid heating. Only use stones sold specifically for sauna heaters.</p>
+        <h3 class="font-bold text-stone-900 mb-1">When should sauna stones be replaced?</h3>
+        <p class="text-stone-700">Use the manufacturer's inspection and replacement schedule. Replace stones that meet the manual's criteria for damage or deterioration.</p>
       </div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related planning guides</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Best Electric Sauna Heaters</a></li>
+        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Compare Electric Sauna Heaters</a></li>
         <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
-        <li><a href="/guides/best-sauna-bucket-ladle/" class="text-amber-700 hover:underline">Best Sauna Bucket and Ladle</a></li>
-        <li><a href="/guides/best-sauna-accessories/" class="text-amber-700 hover:underline">Best Sauna Accessories for Beginners</a></li>
+        <li><a href="/guides/best-sauna-bucket-ladle/" class="text-amber-700 hover:underline">Sauna Bucket and Ladle Sets</a></li>
+        <li><a href="/sauna-planner/?utm_source=sauna_stones&utm_medium=site&utm_campaign=planner_first_10&utm_content=sauna_stones_related" class="text-amber-700 hover:underline" data-track-event="planner_cta_clicked" data-cta-position="sauna_stones_related">Build a Free Sauna Project Brief</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

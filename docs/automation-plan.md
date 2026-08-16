@@ -4,7 +4,8 @@ All automation creates drafts, alerts, or internal records. Publishing, sending,
 
 | Automation | Trigger | Inputs | Process | Output | Approval | Failure handling / security |
 | --- | --- | --- | --- | --- | --- | --- |
-| Broken affiliate-link monitor | Weekly | Published outbound URLs | Check status, redirect destination, and domain | Review queue | Human before replacement | Rate limit; log errors; never follow authenticated links |
+| Broken affiliate-link monitor | Weekly | Published outbound URLs and dated product-route decisions | Check parameters and routing; fail CI when a product availability decision is older than 30 days | Review queue | Human verifies availability before replacing a route | Rate limit; log errors; never follow authenticated links |
+| Lead API availability | Weekly | Public read-only health endpoint | Verify service response, production CORS, and no-store caching | Workflow pass or failure | Owner investigates a failure | Never submit test leads from the monitor |
 | Product-change alert | Weekly | Maintained product source list | Compare title, availability, specs, and visible price language | Diff report | Human verifies source | Store only public data; mark blocked pages unknown |
 | Content staleness report | Weekly | Inventory, review dates, traffic | Rank high-intent stale pages | Priority list | Human selects work | Preserve protected-placement flags |
 | Search anomaly report | Weekly | GSC export/API | Compare 7/28/90-day clicks, impressions, CTR, position | Alert with affected URLs/queries | Human diagnoses | Stop when data incomplete; never invent cause |
@@ -18,4 +19,3 @@ All automation creates drafts, alerts, or internal records. Publishing, sending,
 ## Logging
 
 Each run records timestamp, version, input freshness, items scanned, items changed, exceptions, approval state, and operator. Secrets belong in provider secret storage, never the repository or logs.
-

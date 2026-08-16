@@ -2,106 +2,188 @@
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
 
-const accessories = [
+const accessoryGroups = [
   {
-    category: "Essential",
+    title: "Buy after you confirm compatibility",
+    intro: "These can be useful, but your sauna type and manufacturer instructions decide whether they belong in your setup.",
     items: [
-      { asin: "B07FKQB3LB", name: "Sauna Bucket & Ladle Set (Cedar)",  desc: "You need a bucket and ladle to pour water on the rocks for steam. Cedar doesn't absorb odors and looks great. Don't skip this." },
-      { asin: "B002NM6LT2", name: "Sauna Thermometer & Hygrometer",  desc: "Know your heat and humidity. Essential for getting the temperature right and safe for guests who aren't used to high heat." },
-      { asin: "B01N9SE8SZ", name: "Sauna Sand Timer (15-min)",  desc: "The traditional way to time your rounds. 15 minutes is the standard. Simple, elegant, no electronics to sweat on." },
-    ]
+      {
+        asin: "B07FKQB3LB",
+        name: "Wooden bucket and ladle",
+        desc: "Useful for a traditional heater that permits water on the stones. Skip this for infrared cabins and any heater whose manual says not to add water.",
+        check: "Check the heater manual, bucket capacity, handle length, liner material, and return policy.",
+      },
+      {
+        asin: "B0BC8QMSKG",
+        name: "Separate thermometer and hygrometer",
+        desc: "Helpful when the built-in controls do not show the information you want or when you want a second reference point inside the room.",
+        check: "Follow the sauna or gauge maker's placement instructions. Do not treat a consumer gauge as a substitute for the heater's safety controls.",
+      },
+      {
+        asin: "B01N9SE8SZ",
+        name: "Mechanical sand timer",
+        desc: "A simple visual reminder for people who prefer not to bring a phone into the sauna. It is a convenience item, not a prescription for session length.",
+        check: "Mount only where the timer and sauna manufacturer allow. Leave if you feel unwell, regardless of the timer.",
+      },
+    ],
   },
   {
-    category: "Comfort",
+    title: "Comfort upgrades",
+    intro: "Comfort is personal. Measure first, then choose one upgrade that solves a problem you have actually noticed.",
     items: [
-      { asin: "B07YCQ4TCZ", name: "Cedar Sauna Headrest (2-pack)",  desc: "Lie back properly without craning your neck. Cedar headrests stay cool, resist moisture, and smell amazing." },
-      { asin: "B08JHR3XBN", name: "Sauna Back Rest (Cedar)",  desc: "Keeps your back off the hot wall. Makes longer sessions much more comfortable." },
-      { asin: "B079N9NXBH", name: "Sauna Bench Cushion Set",  desc: "Premium cotton sauna cushions for the bench and backrest. Washable, mold-resistant, and dramatically more comfortable for long sessions." },
-    ]
+      {
+        asin: "B0DWTCK8X9",
+        name: "Cedar sauna backrest",
+        desc: "Creates a gap between your back and the wall. This can make upright seating more comfortable without adding a loose cushion.",
+        check: "Compare width, height, curve, slat spacing, wood species, and the bench depth available in your sauna.",
+        guide: "/guides/best-sauna-backrest/",
+        guideLabel: "Read the sauna backrest guide",
+      },
+      {
+        asin: "B07YCQ4TCZ",
+        name: "Wooden headrest",
+        desc: "Useful if you recline and need neck support. A headrest that is too tall or wide can be less comfortable than no headrest at all.",
+        check: "Measure the intended position and check the maker's cleaning and heat-use instructions.",
+      },
+      {
+        asin: "B079N9NXBH",
+        name: "Washable bench textile",
+        desc: "A towel or sauna-compatible textile can keep skin off a hot bench and simplify cleanup. Start with something easy to wash before buying a fitted set.",
+        check: "Confirm the fabric, care instructions, dimensions, and temperature limits. Remove and dry it after use.",
+      },
+    ],
   },
   {
-    category: "Health & Wellness",
+    title: "Optional ritual and care items",
+    intro: "These are not day-one requirements. Add them only when the use instructions fit your sauna and your routine.",
     items: [
-      { asin: "B07CZ4NN1P", name: "Eucalyptus Sauna Scent Concentrate",  desc: "A few drops in your sauna bucket can add a crisp, spa-like scent to the session. Follow the product's dilution and heater-use directions." },
-      { asin: "B07PXGQC9T", name: "Birch Sauna Whisk (Vihta)",  desc: "A traditional Finnish birch whisk used for gentle tapping during a sauna session. Soak it as directed before use and avoid irritated or broken skin." },
-    ]
+      {
+        asin: "B07CZ4NN1P",
+        name: "Sauna scent concentrate",
+        desc: "Adds fragrance when both the product directions and your heater manual permit it.",
+        check: "Follow the dilution instructions. Never put oil or concentrate directly on heating elements or stones unless the manufacturer explicitly allows that method.",
+      },
+      {
+        asin: "B07PXGQC9T",
+        name: "Birch sauna whisk (vihta or vasta)",
+        desc: "A traditional optional accessory for people who want that specific sauna ritual. It is not necessary for ordinary sauna use.",
+        check: "Follow the seller's soaking, storage, and disposal directions. Avoid irritated or broken skin.",
+      },
+      {
+        asin: "B07MJDFHKG",
+        name: "Sauna wood cleaner",
+        desc: "Useful only when the cleaner is approved for your sauna's wood and finish. Routine drying and light cleaning may be all your manufacturer recommends.",
+        check: "Use the sauna maker's care instructions first. Spot-test any approved product and never mix cleaners.",
+      },
+    ],
   },
-  {
-    category: "Safety & Maintenance",
-    items: [
-      { asin: "B07MJDFHKG", name: "Sauna Wood Cleaner & Protector",  desc: "Cleans and protects cedar benches without harsh chemicals. Extend the life of your interior wood significantly." },
-      { asin: "B08B3XHXSD", name: "Sauna Light (LED, waterproof)",  desc: "Waterproof LED sauna light that handles high heat and humidity. Replaces dim incandescent bulbs and sets a much better mood." },
-    ]
-  }
 ];
 ---
 <Base
-  title="Best Sauna Accessories for Beginners (2025) What You Actually Need"
-  description="The essential sauna accessories for beginners buckets, ladles, thermometers, headrests, and more. What to buy first and what to skip."
+  title="Best Sauna Accessories for Beginners (2026): Buy by Sauna Type"
+  description="A practical sauna accessory guide for beginners: what every owner needs, what depends on sauna type, and what to skip until compatibility is confirmed."
   canonical="/guides/best-sauna-accessories"
 >
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
       <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
       <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Sauna Accessories for Beginners (2025)
+        Sauna accessories for beginners: what you actually need
       </h1>
-      <p class="text-stone-500 text-sm">Updated January 2025 · 8 min read</p>
+      <p class="text-stone-500 text-sm">Reviewed August 15, 2026 &middot; 8 min read</p>
       <p class="text-lg text-stone-600 mt-4">
-        Your sauna kit arrives and you're ready to go but you're missing a few things that make the difference between a good session and a great one. Here's the starter kit every sauna owner should have, in priority order.
+        Most new owners need fewer accessories than a shopping list suggests. Start with the items required by your sauna manual, then add one comfort or ritual item at a time. A traditional heater, infrared cabin, and portable steam tent do not use the same gear.
       </p>
     </header>
+
     <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-rocks-bucket.jpg" alt="Sauna accessories including bucket and ladle" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+      <img src="/images/lifestyle/sauna-rocks-bucket.jpg" alt="Wooden sauna bucket and ladle beside heater stones" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
     </div>
 
-
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-2">The Beginner Starter Kit (~$120 total)</h2>
-      <ul class="text-sm text-stone-700 space-y-1">
-        <li>1. Cedar bucket + ladle (~$35)</li>
-        <li>2. Thermometer + hygrometer (~$25)</li>
-        <li>3. Sand timer (~$18)</li>
-        <li>4. Cedar headrests (~$29)</li>
-        <li>5. Eucalyptus scent concentrate (~$22)</li>
-      </ul>
-      <p class="text-xs text-stone-500 mt-2">These five items cover everything you need for day one. Add more over time.</p>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Research scope:</strong> This is a desk-researched buying guide, not a hands-on product test. We checked current commerce routes on August 15, 2026. Listings, sellers, and availability can change. Confirm every accessory against the instructions for your exact sauna, heater, and controller.
     </div>
 
-    {accessories.map(section => (
-      <section class="mb-10">
-        <h2 class="text-xl font-bold mb-4 text-stone-900 border-b border-stone-200 pb-2">
-          {section.category === "Essential" ? "" : section.category === "Comfort" ? "" : section.category === "Health & Wellness" ? "" : ""} {section.category}
-        </h2>
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">Buy in this order</h2>
+      <div class="overflow-x-auto border border-stone-200 rounded-xl">
+        <table class="w-full text-left text-sm min-w-[620px]">
+          <thead class="bg-stone-100 text-stone-900">
+            <tr>
+              <th class="px-4 py-3 font-semibold">Priority</th>
+              <th class="px-4 py-3 font-semibold">What belongs here</th>
+              <th class="px-4 py-3 font-semibold">Why</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-200 text-stone-700">
+            <tr>
+              <td class="px-4 py-3 font-semibold text-stone-900">1. Required</td>
+              <td class="px-4 py-3">The manual, clean drinking water, and a clean towel or bench cover</td>
+              <td class="px-4 py-3">These support correct operation, hydration, and basic hygiene without assuming a sauna type.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-stone-900">2. Conditional</td>
+              <td class="px-4 py-3">Bucket, gauge, timer, backrest, or headrest</td>
+              <td class="px-4 py-3">Buy only after checking the heater rules, controls, dimensions, and your actual comfort needs.</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-stone-900">3. Later</td>
+              <td class="px-4 py-3">Scents, specialty textiles, vihta, lighting, and decorative accessories</td>
+              <td class="px-4 py-3">These can improve a routine, but none should delay safe setup or replace required equipment.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-10 text-sm text-stone-700">
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Exact-product buttons open a listing we found available during the latest review. Comparison buttons open a category search because individual sellers and products change.
+    </div>
+
+    {accessoryGroups.map((group) => (
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-2 text-stone-900">{group.title}</h2>
+        <p class="text-stone-600 mb-5">{group.intro}</p>
         <div class="space-y-5">
-          {section.items.map(item => (
+          {group.items.map((item) => (
             <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-              <h3 class="font-semibold text-stone-900 mb-1">{item.name}</h3>
-              <p class="text-stone-600 text-sm mb-3">{item.desc}</p>
-              <AmazonButton asin={item.asin} price={item.price} label="Check Price on Amazon" />
+              <h3 class="text-lg font-semibold text-stone-900 mb-2">{item.name}</h3>
+              <p class="text-stone-600 text-sm mb-2">{item.desc}</p>
+              <p class="text-stone-700 text-sm mb-4"><strong>Before buying:</strong> {item.check}</p>
+              <div class="flex flex-wrap gap-3 items-center">
+                <AmazonButton asin={item.asin} variant="small" ctaPosition="accessory_guide" />
+                {item.guide && (
+                  <a href={item.guide} class="text-sm font-semibold text-amber-800 hover:text-amber-900 underline underline-offset-4">
+                    {item.guideLabel} &rarr;
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
       </section>
     ))}
 
-    <section class="mt-4">
-      <h2 class="text-2xl font-bold mb-4 text-stone-900">What You Don't Need (Yet)</h2>
-      <p class="text-stone-600 mb-4">Save money on your first year by skipping these until you know you'll use them:</p>
-      <ul class="text-stone-600 text-sm space-y-2">
-        <li> <strong>Expensive sauna hat</strong> a cheap wool hat from a thrift store works fine</li>
-        <li> <strong>Sauna infusion oils</strong> regular eucalyptus concentrate does the same thing for less</li>
-        <li> <strong>Smart controls</strong> schedule via a simple timer outlet if your heater doesn't have one</li>
-        <li> <strong>Cold plunge tub</strong> start with a cold shower; get the tub once you're hooked</li>
+    <section class="bg-red-50 border border-red-200 rounded-xl p-6 mt-4">
+      <h2 class="text-2xl font-bold mb-4 text-stone-900">What not to buy yet</h2>
+      <ul class="text-stone-700 text-sm space-y-3">
+        <li><strong>A consumer smart plug or timer for the heater:</strong> Never use one unless the exact heater or controller manufacturer explicitly supports it. High-load or hardwired controls belong with the specified equipment and a qualified electrician.</li>
+        <li><strong>Random replacement stones:</strong> Use only the type and size approved for your heater. Incorrect stones can block airflow or damage equipment.</li>
+        <li><strong>Generic oils for the heater:</strong> Do not pour oils directly on elements or stones. Follow both the fragrance and heater instructions.</li>
+        <li><strong>Unverified lights, coatings, or hardware:</strong> Sauna heat and moisture change what is suitable. Use the sauna maker's specifications and applicable electrical requirements.</li>
       </ul>
+      <a href="/guides/best-sauna-lighting/" class="inline-block mt-5 text-sm font-semibold text-amber-800 hover:text-amber-900 underline underline-offset-4">
+        Plan sauna lighting safely &rarr;
+      </a>
     </section>
 
     <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
-      <h3 class="text-xl font-bold mb-2">Still Shopping for a Sauna?</h3>
-      <p class="text-stone-300 mb-4">Find the right sauna kit before you buy accessories.</p>
-      <a href="/best-saunas/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-        See Best Saunas of 2025 →
-      </a>
+      <h2 class="text-xl font-bold mb-2">Still choosing the sauna itself?</h2>
+      <p class="text-stone-300 mb-4">Compare the main sauna formats before buying accessories that may not fit.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/best-saunas/" class="inline-flex min-h-11 items-center bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">Compare sauna types &rarr;</a>
+        <a href="/guides/sauna-gift-ideas/" class="inline-flex min-h-11 items-center border border-stone-500 px-6 py-3 rounded-lg font-semibold text-white hover:border-stone-300">Browse sauna gift ideas</a>
+      </div>
     </div>
   </article>
 </Base>

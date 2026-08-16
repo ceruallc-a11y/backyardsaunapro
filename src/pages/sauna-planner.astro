@@ -23,6 +23,11 @@ import Base from '../layouts/Base.astro';
     </div>
 
     <form id="sauna-planner" class="bg-white border border-stone-200 rounded-xl p-5 md:p-7 space-y-6">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-1">Step 1 of 2</p>
+        <h2 class="text-xl font-bold text-stone-900">Create the private project brief</h2>
+        <p class="text-sm text-stone-600 mt-1">Complete the six required choices and ZIP code. Dimensions, utility status, installation help, and notes can stay unknown.</p>
+      </div>
       <div class="grid md:grid-cols-2 gap-5">
         <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Project location</span><select name="location" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>Outdoor</option><option>Indoor</option><option>Unsure</option></select></label>
         <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Heat type</span><select name="heatType" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>Traditional electric</option><option>Wood-fired</option><option>Infrared</option><option>Steam</option><option>Undecided</option></select></label>
@@ -30,13 +35,13 @@ import Base from '../layouts/Base.astro';
         <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Target budget</span><select name="budget" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>Under $5,000 installed</option><option>$5,000-$10,000 installed</option><option>$10,000-$20,000 installed</option><option>$20,000+ installed</option><option>Not set</option></select></label>
         <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Purchase timeline</span><select name="timeline" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>Within 30 days</option><option>1-3 months</option><option>3-6 months</option><option>6-12 months</option><option>Researching only</option></select></label>
         <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Project type</span><select name="projectType" required class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option value="">Choose one</option><option>Existing space</option><option>New detached structure</option><option>New construction or remodel</option><option>Portable or plug-in unit</option><option>Undecided</option></select></label>
-        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Available dimensions</span><input name="dimensions" type="text" maxlength="80" placeholder="Example: 8 ft x 10 ft area" class="w-full border border-stone-300 rounded-md px-3 py-3" /></label>
-        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">ZIP or region</span><input name="region" type="text" maxlength="20" placeholder="Example: 02139 or Boston, MA" required class="w-full border border-stone-300 rounded-md px-3 py-3" /></label>
-        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Electrical status</span><select name="electrical" class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option>Unknown</option><option>Electrician has reviewed the site</option><option>Panel capacity is known</option><option>Planning wood-fired, not electric</option></select></label>
-        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Installation help</span><select name="installation" class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option>Need full installation help</option><option>Need electrical or chimney work only</option><option>Planning DIY kit assembly</option><option>Have a contractor</option><option>Undecided</option></select></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Available dimensions <span class="font-normal text-stone-500">(optional)</span></span><input name="dimensions" type="text" maxlength="80" placeholder="Example: 8 ft x 10 ft area" class="w-full border border-stone-300 rounded-md px-3 py-3" /></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Project ZIP code</span><input name="region" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?" title="Enter a five-digit U.S. ZIP code or ZIP+4." placeholder="Example: 02139" required class="w-full border border-stone-300 rounded-md px-3 py-3" /></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Electrical status <span class="font-normal text-stone-500">(optional)</span></span><select name="electrical" class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option>Unknown</option><option>Electrician has reviewed the site</option><option>Panel capacity is known</option><option>Planning wood-fired, not electric</option></select></label>
+        <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Installation help <span class="font-normal text-stone-500">(optional)</span></span><select name="installation" class="w-full border border-stone-300 rounded-md px-3 py-3 bg-white"><option>Undecided</option><option>Need full installation help</option><option>Need electrical or chimney work only</option><option>Planning DIY kit assembly</option><option>Have a contractor</option></select></label>
       </div>
 
-      <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Delivery, access, or product preferences</span><textarea name="notes" maxlength="500" rows="4" placeholder="Gate width, stairs, crane concerns, preferred brands, accessibility needs, or other constraints" class="w-full border border-stone-300 rounded-md px-3 py-3"></textarea></label>
+      <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Delivery, access, or product preferences <span class="font-normal text-stone-500">(optional)</span></span><textarea name="notes" maxlength="500" rows="4" placeholder="Gate width, stairs, crane concerns, preferred brands, accessibility needs, or other constraints" class="w-full border border-stone-300 rounded-md px-3 py-3"></textarea></label>
 
       <button type="submit" class="w-full sm:w-auto bg-stone-900 hover:bg-stone-700 text-white font-semibold px-6 py-3 rounded-md">Create my project brief</button>
     </form>
@@ -51,9 +56,10 @@ import Base from '../layouts/Base.astro';
       <p id="copy-status" class="text-sm text-stone-600 mt-3" aria-live="polite"></p>
 
       <div class="border-t border-stone-200 mt-7 pt-7">
+        <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-1">Step 2 of 2 &middot; Optional</p>
         <h3 class="text-xl font-bold text-stone-900 mb-2">Request a free manual review</h3>
         <p class="text-sm text-stone-600 mb-5">Send the brief to Backyard Sauna Pro. We will review it before any possible introduction to a seller or installer.</p>
-        <form id="lead-review-form" class="space-y-5">
+        <form id="lead-review-form" class="space-y-5" data-track-start-event="lead_form_started">
           <div class="grid sm:grid-cols-2 gap-5">
             <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">First name</span><input name="firstName" type="text" autocomplete="given-name" maxlength="60" required class="w-full border border-stone-300 rounded-md px-3 py-3" /></label>
             <label class="block"><span class="block text-sm font-semibold text-stone-900 mb-2">Email</span><input name="email" type="email" autocomplete="email" maxlength="160" required class="w-full border border-stone-300 rounded-md px-3 py-3" /></label>
@@ -91,6 +97,7 @@ import Base from '../layouts/Base.astro';
     const leadEndpoint = 'https://backyard-sauna-leads.adunyadeth.workers.dev/v1/leads';
     const campaignSource = new URLSearchParams(window.location.search).get('utm_content') || 'direct';
     let started = false;
+    let reviewStarted = false;
     let plannerValues = {};
 
     if (form instanceof HTMLFormElement) {
@@ -137,7 +144,7 @@ import Base from '../layouts/Base.astro';
           `Timeline: ${values.timeline}`,
           `Project type: ${values.projectType}`,
           `Available dimensions: ${values.dimensions || 'Not provided'}`,
-          `ZIP or region: ${values.region || 'Not provided'}`,
+          `Project ZIP code: ${values.region || 'Not provided'}`,
           `Electrical status: ${values.electrical}`,
           `Installation help: ${values.installation}`,
           `Other constraints: ${values.notes || 'None provided'}`,
@@ -178,6 +185,19 @@ import Base from '../layouts/Base.astro';
     });
 
     if (leadForm instanceof HTMLFormElement) {
+      leadForm.addEventListener('input', () => {
+        if (reviewStarted) return;
+        reviewStarted = true;
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'lead_form_started', {
+            site_name: 'backyard_sauna_pro',
+            site_hostname: window.location.hostname,
+            page_path: window.location.pathname,
+            acquisition_source: campaignSource,
+          });
+        }
+      });
+
       leadForm.addEventListener('submit', async (event) => {
         event.preventDefault();
         if (!leadForm.reportValidity() || !Object.keys(plannerValues).length) return;
@@ -210,10 +230,14 @@ import Base from '../layouts/Base.astro';
           const data = await response.json();
           if (!response.ok || !data.ok) throw new Error(data.error || 'We could not receive the request.');
 
-          if (leadStatus) leadStatus.textContent = `Received. Your reference is ${data.receiptId}. We will review the project before any partner introduction.`;
+          if (leadStatus) {
+            leadStatus.textContent = data.duplicate
+              ? `We already received this request. Your reference is ${data.receiptId}.`
+              : `Received. Your reference is ${data.receiptId}. We will review the project before any partner introduction.`;
+          }
           leadForm.reset();
           if (typeof window.gtag === 'function') {
-            window.gtag('event', 'lead_submitted', {
+            window.gtag('event', data.duplicate ? 'lead_duplicate_detected' : 'lead_submitted', {
               site_name: 'backyard_sauna_pro',
               site_hostname: window.location.hostname,
               page_path: window.location.pathname,

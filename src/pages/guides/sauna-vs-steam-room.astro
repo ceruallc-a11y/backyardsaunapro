@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -7,18 +8,18 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is a sauna or steam room better for you?",
+      "name": "Is a sauna or steam room better for a home project?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both have documented health benefits, but they work differently. Saunas use dry heat (160-195°F, 10-20% humidity) and are better supported by research on cardiovascular health and longevity. Steam rooms use lower temperatures (110-120°F) with 100% humidity and are often preferred for respiratory benefits and skin hydration. For most people, a sauna is the better home investment — lower maintenance, more durable, and backed by stronger research."
+        "text": "It depends on the room and the experience you want. A sauna is a purpose-built heated room or cabin with heater-specific clearances, ventilation, and controls. A steam shower needs a vapor-tight wet enclosure plus a correctly sized generator, water, power, steam piping, drainage, and service access. Compare complete installed scopes rather than only equipment prices."
       }
     },
     {
       "@type": "Question",
-      "name": "Which burns more calories, sauna or steam room?",
+      "name": "Does a lower displayed temperature make a steam room safer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Neither burns significant calories compared to exercise. Your heart rate rises in both environments and you lose water weight through sweat, but calories burned are modest — roughly equivalent to a slow walk. The sauna vs steam room choice shouldn't be driven by calorie burn expectations."
+        "text": "No. Humidity, exposure time, health, medication, ventilation, controls, and the exact equipment all affect heat strain. Follow the selected system's manual and leave when breathing, balance, alertness, or comfort changes."
       }
     },
     {
@@ -26,119 +27,148 @@ const faqSchema = {
       "name": "Can you build a steam room at home?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, but it's more complex than a home sauna. Steam rooms require a completely waterproof enclosure (floor to ceiling tile or equivalent), a steam generator plumbed to a water supply, proper drainage, and a sealed door. Maintenance is higher because every surface is constantly wet. A home sauna is simpler to install and maintain."
+        "text": "Yes, but do not assume an ordinary shower is steam-ready. The selected generator documentation and the enclosure professional must address vapor control, waterproofing, ceiling and opening details, generator sizing, power, water, steam piping, drainage, controls, and service access."
       }
     }
   ]
 };
 ---
 <Base
-  title="Sauna vs Steam Room: Key Differences and Which One to Buy"
-  description="Sauna vs steam room comparison, temperature, humidity, health benefits, cost, and which makes more sense for a home installation."
+  title="Sauna vs Steam Room: Home Project Comparison (2026)"
+  description="Compare a home sauna and steam shower by room construction, utilities, sizing, maintenance, contractor scope, quote details, and operating requirements."
   canonical="/guides/sauna-vs-steam-room"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna vs Steam Room: What's Actually Different</h1>
-    <p class="text-stone-500 mb-8">Updated March 2025 &mdash; Backyard Sauna Pro</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna vs Steam Room: Which Project Fits Your Home?</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 2026 &mdash; Backyard Sauna Pro</p>
     <div class="rounded-xl overflow-hidden mb-8">
       <img src="/images/lifestyle/sauna-wood-stove-interior.jpg" alt="Traditional sauna with wood-burning stove and benches" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
 
-    <p class="text-lg text-stone-700 mb-4">People use "sauna" and "steam room" interchangeably but they're genuinely different environments. The heat feels different, the health effects differ, the maintenance is different, and the cost to build one at home is very different.</p>
+    <p class="text-lg text-stone-700 mb-4">A sauna and a steam room are not two finishes for the same box. They need different room assemblies, utilities, sizing methods, controls, and maintenance plans.</p>
+    <p class="text-stone-700 mb-8">Choose by project fit. Start with the room you have, the experience you prefer, and the contractors who can document the complete installation.</p>
 
-    <p class="text-stone-700 mb-8">Here's a clear breakdown so you know what you're actually choosing between.</p>
+    <PlannerCTA
+      source="sauna_vs_steam_room_after_intro"
+      heading="Compare the sauna path against your space"
+      description="Build a free sauna project brief with your room, utilities, installation needs, budget, and timeline before requesting quotes."
+    />
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Core Difference</h2>
-    <p class="text-stone-700 mb-4">A sauna runs hot and dry. Temperatures typically range from 160 to 195°F with humidity around 10 to 20 percent. You add water to hot stones to create brief bursts of steam (löyly), but the room itself stays dry between pours.</p>
-    <p class="text-stone-700 mb-6">A steam room runs cooler and completely wet. Temperatures are usually 110 to 120°F but humidity is 100 percent. The air is saturated, you're sitting inside a cloud. That combination feels intense even though the actual temperature is much lower than a sauna.</p>
-
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The systems are different</h2>
     <div class="overflow-x-auto mb-8">
-      <table class="text-sm w-full">
+      <table class="text-sm w-full min-w-[680px]">
         <thead>
           <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-6">Factor</th>
+            <th class="pb-2 pr-6">Decision</th>
             <th class="pb-2 pr-6">Sauna</th>
-            <th class="pb-2">Steam Room</th>
+            <th class="pb-2">Steam shower or room</th>
           </tr>
         </thead>
-        <tbody class="text-stone-700">
+        <tbody class="text-stone-700 align-top">
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Temperature</td>
-            <td class="py-2 pr-6">160 to 195°F</td>
-            <td class="py-2">110 to 120°F</td>
+            <td class="py-3 pr-6 font-medium">Heat system</td>
+            <td class="py-3 pr-6">Purpose-built heater or infrared system; some rock heaters permit water under exact manual rules.</td>
+            <td class="py-3">Generator boils water and sends steam through model-specific piping and a steamhead.</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Humidity</td>
-            <td class="py-2 pr-6">10 to 20%</td>
-            <td class="py-2">100%</td>
+            <td class="py-3 pr-6 font-medium">Room shell</td>
+            <td class="py-3 pr-6">Sauna-rated room or cabin with heater clearances, ventilation, benches, guard, door, and sensor placement.</td>
+            <td class="py-3">Vapor-controlled and waterproof wet enclosure with compatible finishes, penetrations, openings, ceiling, and drainage.</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Construction</td>
-            <td class="py-2 pr-6">Wood panels, simple</td>
-            <td class="py-2">Fully waterproof enclosure</td>
+            <td class="py-3 pr-6 font-medium">Utilities</td>
+            <td class="py-3 pr-6">Model-specific electrical service or a code-compliant wood-burning installation; no generic circuit rule.</td>
+            <td class="py-3">Model-specific power plus water supply, steam line, drain or blowdown provisions, controls, and service access.</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Maintenance</td>
-            <td class="py-2 pr-6">Low</td>
-            <td class="py-2">High (mold risk)</td>
+            <td class="py-3 pr-6 font-medium">Sizing</td>
+            <td class="py-3 pr-6">Room volume, glass, wall materials, insulation, climate, and the selected heater's instructions.</td>
+            <td class="py-3">Adjusted enclosure volume, finish material, exterior walls, ceiling height, windows, voltage, and the generator's sizing method.</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-medium">Home install cost</td>
-            <td class="py-2 pr-6">$1,500 to $5,000+</td>
-            <td class="py-2">$3,000 to $10,000+</td>
+            <td class="py-3 pr-6 font-medium">Routine work</td>
+            <td class="py-3 pr-6">Drying, cleaning, stone inspection or replacement, ventilation checks, and heater-specific service.</td>
+            <td class="py-3">Enclosure cleaning, scale and water management, flushing or draining, steamhead inspection, and generator service.</td>
           </tr>
           <tr>
-            <td class="py-2 pr-6 font-medium">Research backing</td>
-            <td class="py-2 pr-6">Extensive</td>
-            <td class="py-2">More limited</td>
+            <td class="py-3 pr-6 font-medium">Best first document</td>
+            <td class="py-3 pr-6">Exact cabin and heater manuals.</td>
+            <td class="py-3">Exact generator sizing, installation, control, and enclosure specifications.</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Health Benefits</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Do not choose from health marketing</h2>
+    <p class="text-stone-700 mb-4">Neither room replaces exercise or medical care. A lower displayed temperature does not prove that a steam room is safer. Humidity changes heat transfer and comfort, while health, medication, exposure time, ventilation, and the exact controls still matter.</p>
+    <p class="text-stone-700 mb-8">Do not buy either system to treat congestion, a respiratory condition, pain, sleep problems, cardiovascular disease, or weight loss based on a seller's general claim. Ask a clinician about deliberate heat exposure when your health or medication could change heat tolerance.</p>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Sauna</h3>
-    <p class="text-stone-700 mb-4">The research on saunas is substantial. Finnish studies following tens of thousands of people over decades found that regular sauna use (4 to 7 sessions per week) was associated with significantly lower rates of cardiovascular disease and all-cause mortality. The mechanism is similar to moderate aerobic exercise, heart rate rises, blood vessels dilate, and the cardiovascular system gets a real workout.</p>
-    <p class="text-stone-700 mb-4">Heat shock proteins produced during sauna sessions appear to help with muscle recovery, which is why athletes increasingly use sauna after training. There's also decent evidence for improved sleep quality and stress reduction.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Which project fits the room?</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <h3 class="font-bold text-stone-900 mb-2">Existing shower renovation</h3>
+        <p class="text-stone-700 text-sm">A steam system may fit the program when the enclosure professional and generator documentation can address vapor control, waterproofing, finishes, penetrations, generator location, service access, power, water, steam piping, and drainage. An ordinary tiled shower is not automatically steam-ready.</p>
+      </div>
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <h3 class="font-bold text-stone-900 mb-2">Dedicated indoor room</h3>
+        <p class="text-stone-700 text-sm">A sauna may be a clearer path when you can build or install a purpose-designed room around the selected heater, ventilation, door, benches, sensor, guard, clearances, and electrical requirements.</p>
+      </div>
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <h3 class="font-bold text-stone-900 mb-2">Outdoor location</h3>
+        <p class="text-stone-700 text-sm">Start with products expressly rated for the climate and intended location. A sauna still needs a foundation, weather strategy, electrical or chimney scope, drainage, access, and local approval. Do not move an indoor product outside because the shell looks weather-resistant.</p>
+      </div>
+    </div>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Steam Room</h3>
-    <p class="text-stone-700 mb-4">Steam rooms are often preferred for respiratory benefits. The humid air can loosen congestion, soothe irritated airways, and is commonly recommended for people with sinus issues or mild respiratory conditions. Skin hydration is another common reason people prefer steam, the moisture keeps skin from drying out the way dry sauna heat can.</p>
-    <p class="text-stone-700 mb-6">The cardiovascular research base is thinner for steam rooms. The lower temperatures mean a less intense heat stimulus, which likely means less cardiovascular benefit compared to a traditional sauna session.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Compare complete installed quotes</h2>
+    <p class="text-stone-700 mb-4">Equipment price alone is not a project budget. Ask both bidders to include the same boundary: demolition, room shell, finishes, structural work, electrical service, plumbing, drainage, ventilation, controls, permits, delivery, installation, commissioning, cleanup, warranty labor, and service access.</p>
+    <p class="text-stone-700 mb-8">For steam, generator sizing can change with room volume, finish material, exterior walls, ceiling height, and windows. Steamist's current sizing guide makes those adjustments explicit. Sauna heater sizing also depends on the selected manufacturer's method. Do not transfer a sizing rule from one brand or room type to another.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Which Is Easier to Build at Home</h2>
-    <p class="text-stone-700 mb-4">Sauna is significantly easier. A barrel sauna kit can be installed in a day with basic tools. Indoor sauna kits drop into a spare room. The wood construction handles heat cycles well, maintenance is minimal, and there's no plumbing required beyond your electrical hookup.</p>
-    <p class="text-stone-700 mb-4">A steam room is a serious construction project. The entire enclosure needs to be completely waterproof, floor, walls, ceiling, every joint. A steam generator needs a water line and drainage. The door has to seal tightly. Any gap where steam escapes can cause moisture damage to surrounding structures. Mold is an ongoing maintenance concern because every surface is wet after every session.</p>
-    <p class="text-stone-700 mb-6">For most homeowners considering one or the other, a home sauna is the practical choice. Same core experience (heat, sweat, relaxation, health benefits) with a fraction of the installation complexity and ongoing maintenance.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Questions to put in every quote request</h2>
+    <ul class="list-disc pl-6 space-y-2 text-stone-700 mb-8">
+      <li>What exact equipment model, manual revision, voltage, load, controls, and warranty apply?</li>
+      <li>Who is responsible for sizing, permits, electrical work, plumbing, waterproofing, ventilation, and commissioning?</li>
+      <li>Which room dimensions, finishes, glass, exterior walls, ceiling, and climate assumptions were used?</li>
+      <li>Where can the equipment be serviced without demolition?</li>
+      <li>What cleaning, drying, flushing, water-treatment, stone, filter, or scale-maintenance schedule applies?</li>
+      <li>Which labor, freight, water damage, finish, freezing, scale, and access costs are excluded?</li>
+      <li>What happens if the selected room or utilities fail the installer survey?</li>
+    </ul>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">When a Steam Room Makes More Sense</h2>
-    <p class="text-stone-700 mb-6">If respiratory health is your main goal, you have chronic sinus issues, you're already doing a full bathroom renovation and can integrate a steam shower at the same time, or you simply prefer the feeling of humid heat over dry heat, steam room is worth considering. Some people genuinely can't tolerate the dry heat of a traditional sauna and find steam much more comfortable. That's a legitimate reason to choose it.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary and manufacturer sources</h2>
+    <ul class="list-disc pl-6 space-y-2 text-sm text-stone-700 mb-8">
+      <li><a href="https://www.mrsteam.com/residential-guides-specs/" class="text-amber-700 hover:underline" rel="noopener noreferrer">MrSteam: current residential generator, control, and installation manuals</a></li>
+      <li><a href="https://www.mrsteam.com/plan-your-project/" class="text-amber-700 hover:underline" rel="noopener noreferrer">MrSteam: project utilities and installation boundary</a></li>
+      <li><a href="https://steamist.com/steam-generator-sizing-guide/" class="text-amber-700 hover:underline" rel="noopener noreferrer">Steamist: current residential generator sizing method</a></li>
+      <li><a href="https://support.harvia.com/hc/lv/articles/21953036825628-Ventilation-in-the-sauna" class="text-amber-700 hover:underline" rel="noopener noreferrer">Harvia: sauna ventilation and sensor placement</a></li>
+      <li><a href="https://www.harvia.com/en-US/sauna-heater-stones/" class="text-amber-700 hover:underline" rel="noopener noreferrer">Harvia: heater stone selection and manual-first installation</a></li>
+      <li><a href="https://www.cdc.gov/niosh/heat-stress/about/illnesses.html" class="text-amber-700 hover:underline" rel="noopener noreferrer">CDC/NIOSH: heat-related illness warning signs</a></li>
+    </ul>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is a sauna or steam room better for you?</h3>
-        <p class="text-stone-700">Both have real health benefits. Sauna has stronger research behind it, especially for cardiovascular health. Steam rooms have an edge for respiratory benefits and skin hydration. For a home installation, sauna is easier and cheaper to build and maintain.</p>
+        <h3 class="font-bold text-stone-900 mb-1">Is a sauna or steam room better for a home project?</h3>
+        <p class="text-stone-700">It depends on the room and the experience you want. Compare complete installed scopes, model-specific requirements, contractor capability, maintenance, and service access rather than health marketing or equipment price alone.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">Which burns more calories, sauna or steam room?</h3>
-        <p class="text-stone-700">Neither burns significant calories compared to exercise. Heart rate rises in both, but calorie burn is modest. Don't choose based on this.</p>
+        <h3 class="font-bold text-stone-900 mb-1">Does a lower displayed temperature make a steam room safer?</h3>
+        <p class="text-stone-700">No. Humidity, exposure time, health, medication, ventilation, controls, and the exact equipment all affect heat strain. Follow the selected system's manual and leave when breathing, balance, alertness, or comfort changes.</p>
       </div>
       <div>
         <h3 class="font-bold text-stone-900 mb-1">Can you build a steam room at home?</h3>
-        <p class="text-stone-700">Yes, but it's a real construction project requiring a fully waterproof enclosure, steam generator, water line, and drainage. Much more complex than a home sauna kit.</p>
+        <p class="text-stone-700">Yes, but do not assume an ordinary shower is steam-ready. The selected generator documentation and enclosure professional must address the room shell, sizing, utilities, controls, drainage, and service access.</p>
       </div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Continue planning</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/sauna-health-benefits/" class="text-amber-700 hover:underline">Sauna Health Benefits</a></li>
-        <li><a href="/guides/how-long-to-stay-in-sauna/" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
-        <li><a href="/guides/sauna-after-workout/" class="text-amber-700 hover:underline">Sauna After Workout</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Requirements</a></li>
+        <li><a href="/guides/sauna-ventilation/" class="text-amber-700 hover:underline">Sauna Ventilation Planning</a></li>
+        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
         <li><a href="/guides/best-indoor-sauna-kits/" class="text-amber-700 hover:underline">Best Indoor Sauna Kits</a></li>
       </ul>
     </div>

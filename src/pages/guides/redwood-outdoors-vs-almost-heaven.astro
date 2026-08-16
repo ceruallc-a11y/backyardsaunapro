@@ -1,172 +1,184 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "Is Redwood Outdoors or Almost Heaven better?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For most buyers, Almost Heaven is the better choice — lower price, longer warranty (5 years vs 1 year), and a 30-year track record. Redwood Outdoors wins on material quality: their Thermowood construction is more durable outdoors long-term than cedar, especially in wet or cold climates. If budget is flexible and you live somewhere with heavy rain, snow, or freeze-thaw cycles, Redwood Outdoors Thermowood is worth the premium."
-      }
+      '@type': 'Question',
+      name: 'Is Redwood Outdoors or Almost Heaven better?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Neither brand is a universal winner. Compare exact models by bench fit, room dimensions, wood system, heater and controls, included weather components, freight, foundation, assembly, warranty terms, support, and total installed cost.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "How much more does Redwood Outdoors cost vs Almost Heaven?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Significantly more. Almost Heaven's most popular model (Pinnacle 4-Person) starts around $2,199. Redwood Outdoors Thermowood models start around $6,600. That is roughly a $4,000 gap before heater and installation costs. For buyers who want the Thermowood material advantage without the full Redwood Outdoors price, there is no direct middle-ground competitor — it is effectively a choice between value and premium."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'How do Redwood Outdoors and Almost Heaven sauna warranties differ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Redwood Outdoors currently publishes a one-year limited wooden-sauna warranty with stated exclusions. Almost Heaven currently describes a limited lifetime warranty against manufacturing defects on the sauna room, with exclusions, plus separate Harvia heater coverage. Read the full current terms and seller responsibilities before ordering.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Thermowood maintenance-free outdoors?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. The International ThermoWood Association recommends surface treatment against humidity, erosion, and ultraviolet radiation for thermally modified wood exposed to weather, especially in warm and humid climates. It also warns against direct soil or water contact.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should I compare these brands by advertised capacity?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Capacity is not a body-fit standard. Compare the exact interior, bench length and depth, heater and door placement, intended posture, and the actual users. The examples on this page do not carry the same capacity label.',
+      },
+    },
+  ],
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Redwood Outdoors vs Almost Heaven Sauna (2025): Which Should You Buy?"
-  description="Redwood Outdoors vs Almost Heaven head-to-head. Price, materials, warranty, and who each brand is actually for. The honest comparison."
+  title="Redwood Outdoors vs Almost Heaven (2026): Compare Exact Models"
+  description="Compare Redwood Outdoors and Almost Heaven using current barrel-sauna dimensions, materials, included equipment, utilities, freight, warranty terms, and project questions."
   canonical="/guides/redwood-outdoors-vs-almost-heaven"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Redwood Outdoors vs Almost Heaven Sauna (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Brand comparison</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Redwood Outdoors or Almost Heaven?</h1>
+      <p class="text-lg text-stone-700 mb-3">Start with two available models, then compare the installed project. Brand reputation alone does not tell you whether the benches, delivery, foundation, utilities, warranty, or weather details fit your site.</p>
+      <p class="text-stone-500 text-sm">Reviewed August 15, 2026 &mdash; Backyard Sauna Pro</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Outdoor barrel saunas side by side comparison" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="rounded-xl overflow-hidden mb-3">
+      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Outdoor wooden saunas in a landscaped setting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+    <p class="text-xs text-stone-500 mb-8">Illustrative outdoor saunas. The current examples below differ in size, capacity label, construction, and package scope.</p>
+
+    <AdvertiserDisclosure />
+
+    <div class="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Research scope:</strong> We did not hands-on test, assemble, heat-test, energy-test, or weather-test these products. Specifications and availability were checked against current manufacturer pages. Request the final configuration, manual, freight terms, and warranty before paying.
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page may contain affiliate links.
-    </div>
+    <PlannerCTA
+      source="redwood_vs_almost_heaven_above_fold"
+      heading="Compare both brands against your actual site"
+      description="Build a free project brief with your users, dimensions, base, climate, utilities, delivery path, budget, ZIP code, and timeline before requesting comparable quotes."
+    />
 
-    <p class="text-lg text-stone-700 mb-6">Two of the most-searched outdoor sauna brands in North America. Almost Heaven dominates on value and availability. Redwood Outdoors leads on material quality. Here is the full comparison so you can decide which matters more for your situation.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The current examples are not identical products</h2>
+    <p class="text-stone-700 mb-6">Almost Heaven publishes the Pinnacle as an up-to-four-person barrel. Redwood Outdoors publishes its current barrel as four to six people depending on the users and seating arrangement. That difference matters. Use the models to compare scope, not to crown a brand-wide winner.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Side-by-Side Comparison</h2>
-    <div class="overflow-x-auto mb-8">
-      <table class="text-sm w-full">
-        <thead>
-          <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-6">Factor</th>
-            <th class="pb-2 pr-6">Almost Heaven</th>
-            <th class="pb-2">Redwood Outdoors</th>
+    <div class="overflow-x-auto border border-stone-200 rounded-lg mb-10">
+      <table class="w-full min-w-[820px] text-sm text-left">
+        <thead class="bg-stone-100 text-stone-900">
+          <tr>
+            <th scope="col" class="px-4 py-3 font-bold">Published item</th>
+            <th scope="col" class="px-4 py-3 font-bold">Almost Heaven Pinnacle</th>
+            <th scope="col" class="px-4 py-3 font-bold">Redwood Outdoors Barrel Outdoor Sauna</th>
+            <th scope="col" class="px-4 py-3 font-bold">Why it matters</th>
           </tr>
         </thead>
-        <tbody class="text-stone-700">
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Wood type</td>
-            <td class="py-2 pr-6">Western red cedar</td>
-            <td class="py-2">Thermowood (heat-treated) or cedar</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Entry barrel price</td>
-            <td class="py-2 pr-6">~$1,599 (Refuge 2-person)</td>
-            <td class="py-2">~$3,500 (cedar), $6,600+ (Thermowood)</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Warranty</td>
-            <td class="py-2 pr-6">5 years structural</td>
-            <td class="py-2">1 year</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Brand history</td>
-            <td class="py-2 pr-6">30+ years</td>
-            <td class="py-2">Newer, fast-growing</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Amazon availability</td>
-            <td class="py-2 pr-6">Yes — Prime shipping</td>
-            <td class="py-2">Direct only</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Outdoor durability</td>
-            <td class="py-2 pr-6">Good (cedar needs annual treatment)</td>
-            <td class="py-2">Excellent (Thermowood low maintenance)</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold">Heater included</td>
-            <td class="py-2 pr-6">No (sold separately)</td>
-            <td class="py-2">Some models include heater</td>
-          </tr>
-          <tr>
-            <td class="py-2 pr-6 font-semibold">Best for</td>
-            <td class="py-2 pr-6">Value, most budgets, any climate</td>
-            <td class="py-2">Premium, wet/cold climates</td>
-          </tr>
+        <tbody class="divide-y divide-stone-200 text-stone-700">
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Capacity language</th><td class="px-4 py-3">Up to four people</td><td class="px-4 py-3">Four to six, depending on seating arrangement and users</td><td class="px-4 py-3">Neither label proves comfortable fit. Compare benches and posture.</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Exterior</th><td class="px-4 py-3">78 W by 71 D by 81 1/2 H inches</td><td class="px-4 py-3">71 L by 72 3/4 W by 76 1/2 H inches</td><td class="px-4 py-3">Map the complete footprint, door approach, roof access, and clearances.</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Bench data</th><td class="px-4 py-3">Two benches, each 16 W by 63 1/4 L inches</td><td class="px-4 py-3">Confirm the current drawing and manual for bench dimensions</td><td class="px-4 py-3">Published capacity is less useful than seat depth, length, and heater placement.</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Wood description</th><td class="px-4 py-3">Current configurator lists Rustic Red Cedar or Onyx paths</td><td class="px-4 py-3">Heat-treated hemlock</td><td class="px-4 py-3">Compare the ordered material, finish, care instructions, and exposure details.</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Utilities</th><td class="px-4 py-3">6kW heater path: 240V / 30A hardwired; lighting: 120V / 15A plug-in</td><td class="px-4 py-3">240V heater and 120V lighting listed; heater options vary</td><td class="px-4 py-3">Have the exact manual and selected controls reviewed before purchase.</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Listed room items</th><td class="px-4 py-3">Tempered glass, stainless hardware, LED light, and stones listed</td><td class="px-4 py-3">Backrest, rocks, light fixture, shingles, glass door, and two cradles listed</td><td class="px-4 py-3">Confirm heater, controls, guard, roof, finish, freight, and site work in the quote.</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Published weight</th><td class="px-4 py-3">Confirm current shipment and installed weights</td><td class="px-4 py-3">900 pounds listed</td><td class="px-4 py-3">Weight affects freight, unloading, moving, and foundation design.</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Almost Heaven: The Case For It</h2>
-    <p class="text-stone-700 mb-4">Almost Heaven has been making barrel saunas since the 1970s. They are the most-reviewed and most-purchased barrel sauna brand in North America, sold on Amazon with Prime shipping. Their Pinnacle 4-Person is the benchmark that every competitor gets compared against.</p>
-    <p class="text-stone-700 mb-4">Western red cedar is a proven sauna wood — it handles heat and humidity well, smells great, and with basic annual treatment (cedar oil or wood sealant) lasts 15-20+ years outdoors. Most Almost Heaven owners never have a structural problem.</p>
-    <p class="text-stone-700 mb-6">The 5-year structural warranty is also a meaningful advantage. Redwood Outdoors' 1-year warranty is short for a product at this price point.</p>
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <section class="border border-stone-200 rounded-xl p-5 bg-white">
+        <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-1">Current affiliate path</p>
+        <h2 class="text-xl font-bold text-stone-900 mb-3">Almost Heaven Pinnacle</h2>
+        <p class="text-sm text-stone-700 mb-4">The current manufacturer page provides exact room, bench, cradle, heater, lighting, and configuration data plus access to the construction manual. The product route below is retained by the site's availability audit.</p>
+        <AmazonButton asin="B017WJV8SO" variant="primary" label="Check the current Pinnacle route" ctaPosition="redwood_compare_pinnacle" />
+      </section>
 
-    <div class="border border-stone-200 rounded-xl p-5 bg-white mb-8">
-      <h3 class="font-bold text-stone-900 mb-2">Almost Heaven Pinnacle 4-Person</h3>
-      <p class="text-stone-600 text-sm mb-3">The most popular residential barrel sauna in North America. Cedar construction, pre-cut panels, ships in about two weeks. Heater sold separately.</p>
-      <AmazonButton asin="B017WJV8SO" variant="primary" />
+      <section class="border border-stone-200 rounded-xl p-5 bg-white">
+        <p class="text-xs font-semibold uppercase tracking-wide text-stone-600 mb-1">Current manufacturer path</p>
+        <h2 class="text-xl font-bold text-stone-900 mb-3">Redwood Outdoors 6-Person Barrel</h2>
+        <p class="text-sm text-stone-700 mb-4">The current product page lists the room as available, publishes its exterior dimensions, weight, included accessories, utility types, heater options, and support contact, and links the model to current assembly guidance.</p>
+        <a
+          href="https://www.redwoodoutdoors.com/products/6-person-barrel-sauna"
+          target="_blank"
+          rel="noopener"
+          class="inline-block border border-stone-300 hover:border-amber-400 text-stone-800 font-semibold px-5 py-2.5 rounded-lg text-sm"
+          data-product-id="redwood-outdoors-6-person-barrel"
+          data-partner="redwood_outdoors"
+          data-link-mode="manufacturer_direct"
+          data-cta-position="redwood_compare_current_model"
+        >Check the current Redwood model</a>
+      </section>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Redwood Outdoors: The Case For It</h2>
-    <p class="text-stone-700 mb-4">The Thermowood difference is real. Heat-treated Scandinavian wood has lower equilibrium moisture content than cedar, meaning it absorbs and releases moisture more slowly. In climates with heavy rain, salt air, or repeated freeze-thaw cycles, Thermowood holds up better over a 10-20 year period without requiring annual maintenance.</p>
-    <p class="text-stone-700 mb-4">If you live in Seattle, coastal New England, or anywhere that sees 50+ inches of rain per year, the extra cost of Thermowood may be justified by avoided maintenance and a longer effective lifespan. Cedar in a wet climate without regular treatment starts greying and checking within 3-5 years.</p>
-    <p class="text-stone-700 mb-6">The Panorama window model is also a genuine differentiator — no other mainstream brand offers a large panoramic window in a barrel sauna at scale.</p>
-
-    <div class="border border-stone-200 rounded-xl p-5 bg-white mb-8">
-      <h3 class="font-bold text-stone-900 mb-2">Redwood Outdoors Thermowood Barrel</h3>
-      <p class="text-stone-600 text-sm mb-3">Premium Thermowood construction. Confirm current specifications, promotion terms, and delivered cost with the retailer.</p>
-      <a href="https://www.redwoodoutdoors.com/collections/barrel-saunas" target="_blank" rel="noopener" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">View on Redwood Outdoors</a>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Which Should You Buy?</h2>
-    <div class="space-y-4 mb-8">
-      <div class="bg-stone-50 border border-stone-200 rounded-xl p-4">
-        <p class="font-semibold text-stone-900 mb-1">Buy Almost Heaven if:</p>
-        <ul class="text-stone-700 text-sm space-y-1 ml-3">
-          <li>Your budget is under $4,000 total</li>
-          <li>You live in a dry or moderate climate</li>
-          <li>You want Amazon Prime shipping and easy returns</li>
-          <li>You want a longer warranty</li>
-          <li>This is your first sauna and you want proven, well-documented product</li>
-        </ul>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Warranty: compare coverage, exclusions, and seller duties</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-10">
+      <div class="bg-stone-50 border border-stone-200 rounded-xl p-5">
+        <h3 class="font-bold text-stone-900 mb-2">Almost Heaven</h3>
+        <p class="text-sm text-stone-700">Almost Heaven currently describes a limited lifetime warranty against manufacturing defects on the sauna room. Its FAQ excludes normal wear, rot, discoloration, and minor lumber splintering, and lists separate Harvia heater periods. Confirm the full terms, shipping costs, retailer responsibility, and ordered components.</p>
       </div>
-      <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
-        <p class="font-semibold text-stone-900 mb-1">Buy Redwood Outdoors if:</p>
-        <ul class="text-stone-700 text-sm space-y-1 ml-3">
-          <li>Budget is $6,000+ and you want best-in-class materials</li>
-          <li>You live in a wet, coastal, or high-precipitation climate</li>
-          <li>You want low-maintenance outdoor wood long-term</li>
-          <li>The panoramic window model appeals to your setting</li>
-          <li>You want to avoid annual cedar maintenance</li>
-        </ul>
+      <div class="bg-stone-50 border border-stone-200 rounded-xl p-5">
+        <h3 class="font-bold text-stone-900 mb-2">Redwood Outdoors</h3>
+        <p class="text-sm text-stone-700">Redwood Outdoors currently publishes a one-year wooden-sauna warranty for qualifying material or workmanship defects. The terms exclude freight damage, improper storage or installation, normal wear, weather events, environmental exposure inconsistent with intended use, and listed third-party costs. Read the remedy and claim sections before comparing.</p>
       </div>
     </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Thermowood is not a maintenance-free shortcut</h2>
+    <p class="text-stone-700 mb-4">Thermal modification changes wood properties, but it does not erase site design or maintenance. The International ThermoWood Association's 2025 handbook says untreated ThermoWood remains drier than unmodified timber when weather-exposed, while still recommending surface treatment against humidity, erosion, and ultraviolet radiation. It especially calls out warm and humid climates.</p>
+    <p class="text-stone-700 mb-8">The handbook also warns against direct contact with soil or water. Ask Redwood Outdoors for the exact material designation, finish system, base details, care schedule, and warranty-compatible treatment. Ask Almost Heaven the same questions for the selected cedar or finished configuration.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Choose from written answers, not brand adjectives</h2>
+    <ol class="list-decimal pl-5 space-y-3 text-stone-700 mb-10">
+      <li><strong class="text-stone-900">Fit:</strong> Can the intended users sit or recline on the published benches without crowding the heater or door?</li>
+      <li><strong class="text-stone-900">Site:</strong> Does the exact footprint work with setbacks, drainage, access, clearances, anchoring, and a designed foundation?</li>
+      <li><strong class="text-stone-900">Configuration:</strong> Which room, wood, door, windows, heater, controls, stones, guard, lights, roof, and finish are included?</li>
+      <li><strong class="text-stone-900">Logistics:</strong> What are the crate dimensions and weight, carrier type, appointment, curbside duties, unloading equipment, storage needs, and damage window?</li>
+      <li><strong class="text-stone-900">Utilities:</strong> What does the exact manual require for heater power, lighting, controls, disconnects, clearances, ventilation, and commissioning?</li>
+      <li><strong class="text-stone-900">Ownership:</strong> Who handles room, heater, freight, installation, weather, and finish issues, under which current terms?</li>
+      <li><strong class="text-stone-900">Total cost:</strong> Compare current written scopes for the room, heater, freight, unloading, foundation, electrical work, assembly, permits, weather protection, tax, and maintenance.</li>
+    </ol>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary sources checked</h2>
+    <ul class="space-y-3 text-sm text-stone-700 mb-10">
+      <li><a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Almost Heaven: current Pinnacle specifications and manual access</a></li>
+      <li><a href="https://almostheaven.com/pages/faq" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Almost Heaven: current warranty summary, utilities, and maintenance FAQ</a></li>
+      <li><a href="https://almostheaven.com/pages/shipping-policy" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Almost Heaven: current freight, delivery, and return terms</a></li>
+      <li><a href="https://www.redwoodoutdoors.com/products/6-person-barrel-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Redwood Outdoors: current barrel model specifications and configuration</a></li>
+      <li><a href="https://www.redwoodoutdoors.com/pages/warranty-saunas" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Redwood Outdoors: current wooden-sauna warranty terms</a></li>
+      <li><a href="https://www.redwoodoutdoors.com/pages/assembly-saunas-barrel-saunas" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Redwood Outdoors: current barrel manuals and assembly guidance</a></li>
+      <li><a href="https://thermowood.fi/dataflow/thermowood/files/media/thermowood_handbook_2025_web_17.pdf" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">International ThermoWood Association: ThermoWood Handbook 2025</a></li>
+    </ul>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is Redwood Outdoors or Almost Heaven better?</h3>
-        <p class="text-stone-700">Almost Heaven for value and warranty. Redwood Outdoors for material quality in wet climates. Both make good saunas — the right choice depends on budget and where you live.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How much more does Redwood Outdoors cost?</h3>
-        <p class="text-stone-700">Roughly $4,000 more for Thermowood vs Almost Heaven's most popular model. That gap narrows somewhat with Redwood Outdoors' $250 buyer coupon.</p>
-      </div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Which brand is better?</h3><p class="text-stone-700">Neither wins every project. Compare exact models by user fit, site, room, heater, delivery, foundation, warranty, support, and total installed scope.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">How do the warranties differ?</h3><p class="text-stone-700">Redwood Outdoors currently publishes a one-year limited wooden-sauna warranty. Almost Heaven describes limited lifetime room coverage for manufacturing defects with exclusions and separate heater terms. Read the complete current policies.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Is Thermowood maintenance-free?</h3><p class="text-stone-700">No. Official industry guidance still recommends weather-appropriate surface treatment and warns against direct soil or water contact.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Can I compare by capacity?</h3><p class="text-stone-700">Not reliably. Compare bench dimensions, heater and door placement, posture, and the actual users. The examples on this page do not carry the same capacity label.</p></div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Continue comparing</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="/brands/redwood-outdoors-sauna-review/" class="text-amber-700 hover:underline">Full Redwood Outdoors Review</a></li>
-        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Full Almost Heaven Review</a></li>
-        <li><a href="/guides/almost-heaven-barrel-sauna/" class="text-amber-700 hover:underline">Almost Heaven Barrel Sauna Guide</a></li>
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-        <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
+        <li><a href="/brands/redwood-outdoors-sauna-review/" class="text-amber-700 hover:underline">Redwood Outdoors Buyer Checklist</a></li>
+        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Buyer Checklist</a></li>
+        <li><a href="/guides/barrel-sauna-vs-cabin-sauna/" class="text-amber-700 hover:underline">Barrel vs Cabin Sauna</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Sauna Foundation Guide</a></li>
+        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">Total Sauna Project Cost</a></li>
       </ul>
     </div>
   </article>

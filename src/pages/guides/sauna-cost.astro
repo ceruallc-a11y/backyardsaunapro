@@ -1,162 +1,167 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+
+const reviewedAt = 'August 15, 2026';
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "How much does a sauna cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A home sauna ranges from $150 for a portable sauna tent to $50,000+ for a fully custom outdoor cabin. The most common residential options fall in three brackets: plug-in infrared kits ($700-$3,000), outdoor barrel saunas ($2,000-$6,000 including heater), and custom-built rooms ($8,000-$25,000). Electrical installation adds $500-$2,000 depending on panel distance and local labor."
-      }
+      '@type': 'Question',
+      name: 'How much does a home sauna cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The reliable answer is the total of the exact room or product, freight, unloading, site work, electrical or chimney work, assembly, permits, tax, accessories, and contingency. Product format and site conditions can change several of those costs, so a national sticker-price range is not a complete project estimate.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "How much does it cost to run a sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A 6kW electric sauna heater running at full load costs approximately $0.72-$1.20 per hour depending on your electricity rate. A typical 45-minute session (including preheat) costs $0.50-$0.90. Running the sauna 4 times per week adds roughly $8-$15 to your monthly electric bill. Infrared saunas are more efficient, typically costing $0.20-$0.40 per session."
-      }
+      '@type': 'Question',
+      name: 'How do I estimate sauna electricity cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Multiply the equipment power in kilowatts by estimated operating hours and your local electricity rate per kilowatt-hour. Use the nameplate or current manual for power, and treat the result as an estimate because thermostatic cycling and operating conditions can change actual consumption.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Is a home sauna worth the cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For regular users, yes. A $3,000 barrel sauna used three times per week pays for itself within 2-3 years compared to gym sauna access at $50-$100/month. Beyond finances, home access removes the barrier of driving to a gym, which increases actual usage. People who use their home sauna regularly tend to feel it is one of their best home investments."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'What sauna costs are commonly missed?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Commonly missed items include freight, curbside unloading, delivery access, a level base or finished floor, panel or chimney work, controls and sensors, permits, assembly, weather protection, required accessories, return freight, tax, and contingency.',
+      },
+    },
+  ],
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="How Much Does a Sauna Cost? (2025 Pricing Guide)"
-  description="Complete sauna cost breakdown for 2025. Purchase price, installation, electrical, running costs, and how to get the most value for your budget."
+  title="Home Sauna Cost: Build a Complete Project Budget"
+  description="Estimate a home sauna project using current product quotes, site work, electrical or chimney scope, delivery, assembly, tax, and operating costs."
   canonical="/guides/sauna-cost"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">How Much Does a Sauna Cost? (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Sauna project budget guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Home Sauna Cost: Build a Complete Project Budget</h1>
+      <p class="text-stone-500 text-sm">Budget method reviewed {reviewedAt} - 8 min read</p>
+      <p class="text-lg text-stone-700 mt-4">The product price is one line in a sauna budget. Freight, access, site work, power or chimney scope, assembly, permits, tax, and contingency can decide whether the project is affordable.</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Outdoor barrel sauna in backyard" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
+    <AdvertiserDisclosure />
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
-    </div>
+    <figure class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Outdoor barrel sauna on a prepared site" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
+      <figcaption class="text-xs text-stone-500 mt-2">A finished sauna does not show the delivery, base, utility, and labor costs behind it.</figcaption>
+    </figure>
 
-    <p class="text-lg text-stone-700 mb-4">Sauna costs vary enormously depending on type, size, and whether you build or buy. Here is a complete breakdown of purchase price, installation, electrical, and ongoing running costs — plus where you can cut costs without sacrificing much.</p>
+    <section class="border-y border-stone-200 py-7 mb-8" aria-labelledby="cost-answer">
+      <h2 id="cost-answer" class="text-2xl font-bold text-stone-900 mb-3">The honest cost answer</h2>
+      <p class="text-stone-700 mb-4">There is no useful national total without an exact product and site. A portable steam enclosure, indoor infrared cabin, delivered barrel kit, and custom room have different cost structures. Current retailer prices also move.</p>
+      <p class="text-stone-700">A defensible estimate starts with written quotes and current manuals. The calculator below keeps every cost visible and lets you revise the total as real numbers arrive.</p>
+      <a href="/tools/sauna-cost-calculator/?utm_source=sauna_cost&utm_medium=onsite&utm_campaign=project_budget&utm_content=above_fold" class="inline-block mt-5 bg-stone-900 hover:bg-stone-800 text-white font-semibold px-5 py-3 rounded-md" data-cta-position="sauna_cost_calculator_above_fold">Open the project cost calculator</a>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cost by Sauna Type</h2>
-    <div class="overflow-x-auto mb-8">
-      <table class="text-sm w-full">
-        <thead>
-          <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-4">Type</th>
-            <th class="pb-2 pr-4">Purchase Price</th>
-            <th class="pb-2 pr-4">Installation</th>
-            <th class="pb-2">Total Range</th>
-          </tr>
-        </thead>
-        <tbody class="text-stone-700">
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-4">Portable tent sauna</td>
-            <td class="py-2 pr-4">$100-$400</td>
-            <td class="py-2 pr-4">None</td>
-            <td class="py-2">$100-$400</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-4">Infrared 1-2 person kit</td>
-            <td class="py-2 pr-4">$700-$2,000</td>
-            <td class="py-2 pr-4">$0 (plug-in)</td>
-            <td class="py-2">$700-$2,000</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-4">Barrel sauna (4-person)</td>
-            <td class="py-2 pr-4">$2,200-$4,500</td>
-            <td class="py-2 pr-4">$800-$2,000 (electric)</td>
-            <td class="py-2">$3,000-$6,500</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-4">Indoor traditional kit</td>
-            <td class="py-2 pr-4">$2,500-$6,000</td>
-            <td class="py-2 pr-4">$500-$1,500 (electric)</td>
-            <td class="py-2">$3,000-$7,500</td>
-          </tr>
-          <tr>
-            <td class="py-2 pr-4">Custom outdoor cabin</td>
-            <td class="py-2 pr-4">Build cost only</td>
-            <td class="py-2 pr-4">$8,000-$25,000</td>
-            <td class="py-2">$8,000-$50,000+</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <PlannerCTA
+      source="sauna_cost_above_fold"
+      heading="Turn the estimate into a quote-ready brief"
+      description="Capture the site, dimensions, utilities, delivery constraints, format, timeline, and full budget before asking a retailer or installer for a quote."
+    />
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Electrical Installation Cost</h2>
-    <p class="text-stone-700 mb-4">This is the most common hidden cost for first-time buyers. Most electric sauna heaters require a dedicated 240V circuit (20-40A depending on heater size). If your electrical panel is close and accessible, electrician cost runs $500-$1,000. If the panel is far, requires a subpanel, or the work is complex, budget $1,500-$2,500.</p>
-    <p class="text-stone-700 mb-6">Plug-in infrared saunas run on standard 120V outlets and require no electrical work — this is a significant cost advantage for budget buyers. Portable saunas also need no installation. The hidden cost applies mainly to traditional electric and wood-burning saunas.</p>
+    <section class="mt-12" aria-labelledby="budget-lines">
+      <h2 id="budget-lines" class="text-3xl font-bold text-stone-900 mb-3">Nine lines belong in the budget</h2>
+      <p class="text-stone-600 mb-7">Leave an unknown line blank, not zero. A zero implies that someone confirmed there is no cost.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Monthly Running Cost</h2>
-    <p class="text-stone-700 mb-4">A 6kW heater running at full load uses 6 kWh per hour. At the US average electricity rate of $0.16/kWh, that is about $0.96 per hour. A typical session includes 30-45 minutes of preheat plus session time — total run time is typically 60-75 minutes per session. Cost per session: $0.75-$1.20.</p>
-    <p class="text-stone-700 mb-4">At 4 sessions per week, monthly electric cost is roughly $12-$20. Annual cost: $150-$250. Over a 15-year heater lifespan, that is $2,250-$3,750 in electricity — a small fraction of the purchase price for daily users.</p>
-    <p class="text-stone-700 mb-6">Infrared saunas run on 120V and use 1.2-1.8kW. Cost per session is typically $0.20-$0.35. Much cheaper to run than traditional electric.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Value by Budget</h2>
-
-    <div class="space-y-4 mb-10">
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <h3 class="font-bold text-stone-900 mb-1">Under $500: Portable Sauna</h3>
-        <p class="text-stone-600 text-sm mb-3">The <a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline">SereneLife portable sauna</a> costs around $150 on Amazon. No installation, folds flat, runs on a standard outlet. It is not the authentic experience, but it delivers heat therapy at minimal cost.</p>
-        <AmazonButton asin="B084GY5CHB" variant="outline" label="View on Amazon" />
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">1. Room, cabin, or enclosure</h3><p class="text-stone-700 text-sm">Use the exact current product configuration or a written material-and-labor quote. Confirm what the listed price includes.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">2. Heater, controls, sensors, stones, and guard</h3><p class="text-stone-700 text-sm">A room shell may exclude the heating package. A heater listing may exclude controls, a power unit, stones, or a guard.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">3. Freight and unloading</h3><p class="text-stone-700 text-sm">Separate delivery to the property from moving the shipment from curbside to the installation point.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">4. Base, floor, drainage, and weather work</h3><p class="text-stone-700 text-sm">Include a verified structural base, finished floor, drainage plan, roof or cover requirement, and local exposure conditions.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">5. Electrical or chimney scope</h3><p class="text-stone-700 text-sm">Use a site-specific written quote. Panel capacity, route length, trenching, disconnects, controls, chimney penetrations, clearances, and inspection can change the work.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">6. Assembly and finish work</h3><p class="text-stone-700 text-sm">Account for labor, tools, blocking, sealing, trim, lighting, and any work excluded from the kit.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">7. Permits, design, and inspection</h3><p class="text-stone-700 text-sm">Ask the local authority and qualified trades which approvals apply before purchase.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">8. Tax, accessories, and return risk</h3><p class="text-stone-700 text-sm">Include tax, required accessories, floor protection, cleaning supplies, and the cost of returning a large item if the site or product is wrong.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-1">9. Contingency</h3><p class="text-stone-700 text-sm">Keep a separate allowance for hidden site conditions and quote changes. Do not hide uncertainty by forcing every unknown to zero.</p></div>
       </div>
+    </section>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <h3 class="font-bold text-stone-900 mb-1">$700-$1,500: Plug-In Infrared</h3>
-        <p class="text-stone-600 text-sm mb-3">The Dynamic Saunas Barcelona (~$899) is the benchmark at this price — 1-2 person, assembles in 45 minutes, no electrician needed. See our <a href="/guides/best-home-sauna/" class="text-amber-700 hover:underline">best home sauna guide</a> for full options.</p>
-        <AmazonButton asin="B00A2F99F0" variant="small" />
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="format-costs">
+      <h2 id="format-costs" class="text-3xl font-bold text-stone-900 mb-3">How the cost structure changes by format</h2>
+      <div class="overflow-x-auto mt-6">
+        <table class="w-full min-w-[720px] text-sm">
+          <thead>
+            <tr class="border-b border-stone-300 text-left text-stone-600">
+              <th class="pb-3 pr-5">Format</th>
+              <th class="pb-3 pr-5">Main purchase</th>
+              <th class="pb-3 pr-5">Common project costs</th>
+              <th class="pb-3">Common unknown</th>
+            </tr>
+          </thead>
+          <tbody class="text-stone-700">
+            <tr class="border-b border-stone-200"><td class="py-3 pr-5 font-semibold">Portable steam</td><td class="py-3 pr-5">Enclosure and steamer</td><td class="py-3 pr-5">Floor protection, cleaning, storage</td><td class="py-3">Replacement parts and used-product returns</td></tr>
+            <tr class="border-b border-stone-200"><td class="py-3 pr-5 font-semibold">Indoor infrared</td><td class="py-3 pr-5">Finished cabin</td><td class="py-3 pr-5">Delivery, access, assembly, outlet suitability</td><td class="py-3">Large-item freight and room clearance</td></tr>
+            <tr class="border-b border-stone-200"><td class="py-3 pr-5 font-semibold">Outdoor barrel or cabin</td><td class="py-3 pr-5">Room plus selected heater package</td><td class="py-3 pr-5">Freight, unloading, base, assembly, electrical or chimney</td><td class="py-3">Site access and utility scope</td></tr>
+            <tr><td class="py-3 pr-5 font-semibold">Custom room</td><td class="py-3 pr-5">Design, materials, and equipment</td><td class="py-3 pr-5">Trades, ventilation, waterproofing, utilities, permits</td><td class="py-3">Existing conditions and change orders</td></tr>
+          </tbody>
+        </table>
       </div>
+    </section>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <h3 class="font-bold text-stone-900 mb-1">$3,000-$5,000: Outdoor Barrel Sauna</h3>
-        <p class="text-stone-600 text-sm mb-3">Almost Heaven Pinnacle 4-person (~$2,199) plus a Harvia KIP 60B heater (~$579) plus electrical install (~$800-$1,200). Total: $3,500-$4,000. This is the sweet spot — authentic traditional sauna experience, permanent, and adds value to the property.</p>
-        <AmazonButton asin="B017WJV8SO" variant="small" />
-      </div>
-    </div>
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="running-cost">
+      <h2 id="running-cost" class="text-3xl font-bold text-stone-900 mb-3">Estimate electricity with your own rate</h2>
+      <p class="text-stone-700 mb-4"><strong>Estimated energy cost = equipment kW x operating hours x local price per kWh.</strong></p>
+      <p class="text-stone-700 mb-5">Use the nameplate or current manual for equipment power. Include preheat and session time. The simple formula assumes full rated power, so actual consumption can differ when controls cycle the equipment or conditions change.</p>
+      <a href="/tools/sauna-electricity-cost-calculator/?utm_source=sauna_cost&utm_medium=onsite&utm_campaign=operating_cost" class="inline-block border border-stone-900 text-stone-900 hover:bg-stone-50 font-semibold px-5 py-3 rounded-md" data-cta-position="sauna_cost_electricity">Estimate electricity cost</a>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How much does a sauna cost?</h3>
-        <p class="text-stone-700">$150 for a portable tent to $50,000+ for a custom cabin. Most home buyers spend $3,000-$6,000 total for an outdoor barrel sauna with electrical work included.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How much does it cost to run a sauna?</h3>
-        <p class="text-stone-700">A 6kW heater costs $0.75-$1.20 per session. At 4 sessions per week, expect $12-$20 added to your monthly electric bill. Infrared saunas cost $0.20-$0.35 per session.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is a home sauna worth the cost?</h3>
-        <p class="text-stone-700">For regular users, yes. A $3,000 barrel sauna pays for itself vs gym access within 2-3 years, and home convenience increases how often people actually use it.</p>
-      </div>
-    </div>
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="cost-examples">
+      <h2 id="cost-examples" class="text-3xl font-bold text-stone-900 mb-3">Current products for three different budgets</h2>
+      <p class="text-stone-600 mb-7">Use these only to open current listings. Their formats, installation burdens, and delivered totals are different.</p>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="border border-stone-200 rounded-lg p-5">
+          <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">Portable steam</p>
+          <h3 class="font-bold text-stone-900 mb-2">SereneLife SLISAU35BK</h3>
+          <p class="text-sm text-stone-600 mb-4">Budget for the enclosure, floor protection, cleaning, drying, storage, and replacement parts.</p>
+          <AmazonButton asin="B084GY5CHB" label="Check the current listing" variant="outline" ctaPosition="sauna_cost_steam" />
+        </div>
+        <div class="border border-stone-200 rounded-lg p-5">
+          <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">Indoor infrared</p>
+          <h3 class="font-bold text-stone-900 mb-2">Dynamic Barcelona</h3>
+          <p class="text-sm text-stone-600 mb-4">Budget for delivery, room access, assembly clearance, outlet suitability, and return terms.</p>
+          <AmazonButton asin="B00A2F99F0" label="Check the current listing" variant="outline" ctaPosition="sauna_cost_infrared" />
+        </div>
+        <div class="border border-stone-200 rounded-lg p-5">
+          <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">Outdoor traditional</p>
+          <h3 class="font-bold text-stone-900 mb-2">Almost Heaven Pinnacle</h3>
+          <p class="text-sm text-stone-600 mb-4">Budget for freight, unloading, base, assembly, heater package, electrical work, and permits.</p>
+          <AmazonButton asin="B017WJV8SO" label="Check the current configuration" variant="outline" ctaPosition="sauna_cost_traditional" />
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="cost-faq">
+      <h2 id="cost-faq" class="text-3xl font-bold text-stone-900 mb-6">Frequently asked questions</h2>
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-2">How much does a home sauna cost?</h3><p class="text-stone-700">Add the exact product, freight, unloading, site work, utilities, assembly, permits, tax, accessories, and contingency. A product price or national range is not a site-specific project estimate.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-2">How do I estimate electricity cost?</h3><p class="text-stone-700">Multiply the equipment's kilowatts by estimated operating hours and your local electricity price per kilowatt-hour. Use the current manual for power and treat the result as an estimate.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-2">What costs are commonly missed?</h3><p class="text-stone-700">Freight, unloading, access, a base or floor, utility work, controls, permits, assembly, weather protection, required accessories, return freight, tax, and contingency.</p></div>
+      </div>
+    </section>
+
+    <aside class="mt-12 border border-stone-200 rounded-lg p-6">
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Continue planning</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-home-sauna/" class="text-amber-700 hover:underline">Best Home Sauna</a></li>
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-        <li><a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline">Best Portable Sauna</a></li>
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
-        <li><a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">Gravel Pad for Barrel Sauna</a></li>
+        <li><a href="/guides/outdoor-sauna-cost/" class="text-amber-700 hover:underline">Outdoor sauna cost checklist</a></li>
+        <li><a href="/guides/sauna-kits/" class="text-amber-700 hover:underline">Compare complete sauna-kit scopes</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Electrical planning guide</a></li>
+        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Barrel sauna kit comparison</a></li>
+        <li><a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">Base-planning guide</a></li>
       </ul>
-    </div>
-
+    </aside>
   </article>
 </Base>

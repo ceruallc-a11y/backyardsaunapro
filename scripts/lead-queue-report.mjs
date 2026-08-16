@@ -86,6 +86,14 @@ const report = rows.map((row) => ({
   source: row.acquisition_source,
 }));
 
+for (const row of report) {
+  row.review_window = row.age_hours >= 72
+    ? 'stale_72h'
+    : row.age_hours >= 24
+      ? 'overdue_24h'
+      : 'due_today';
+}
+
 console.log(`Lead review queue: ${report.length} item${report.length === 1 ? '' : 's'}`);
 const countBy = (items, keyFor) => items.reduce((counts, item) => {
   const key = keyFor(item);
@@ -94,7 +102,12 @@ const countBy = (items, keyFor) => items.reduce((counts, item) => {
 }, {});
 const priorityCounts = countBy(report, (row) => row.priority);
 const sourceCounts = countBy(report, (row) => row.source || 'direct');
+const reviewWindowCounts = countBy(report, (row) => row.review_window);
 console.log(`Review priority: ${Object.entries(priorityCounts).map(([key, count]) => `${key}=${count}`).join(', ')}`);
+console.log(`Review timing: ${Object.entries(reviewWindowCounts).map(([key, count]) => `${key}=${count}`).join(', ')}`);
 console.log(`Acquisition sources: ${Object.entries(sourceCounts).map(([key, count]) => `${key}=${count}`).join(', ')}`);
 console.table(report);
+if (reviewWindowCounts.stale_72h || reviewWindowCounts.overdue_24h) {
+  console.warn('Review warning: at least one lead has waited more than 24 hours. Open only the listed receipts needed for manual review.');
+}
 console.log('Names, contact details, ZIP or region, and project notes remain excluded. Open the exact receipt in D1 only when manual review is required.');

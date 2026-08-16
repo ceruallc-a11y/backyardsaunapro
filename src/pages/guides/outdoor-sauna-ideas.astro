@@ -1,119 +1,183 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "What are the best outdoor sauna ideas for a backyard?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The most popular outdoor sauna setups are: a cedar barrel sauna on a gravel pad with a small deck, a cabin-style sauna with a changing room anteroom, and a converted garden shed. For small yards, a compact 2-person barrel sauna tucked into a corner with a privacy screen works well. For larger properties, a freestanding sauna cabin with a cold plunge pool nearby is the premium option."
-      }
+      '@type': 'Question',
+      name: 'Which outdoor sauna layout is best for a backyard?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'There is no universal best layout. A barrel can use a compact footprint, a cabin can provide more upright interior space, and a cube can add a broad glass view. Compare the exact room dimensions, benches, heater, delivery, foundation, weather package, and maintenance requirements against the property.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Where should I put an outdoor sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Place the sauna close enough to the house to make the electrical run affordable (within 50-100 feet of your panel ideally), on a level well-draining surface, and positioned for privacy from neighbors. Partial shade from trees helps in summer but avoid placing directly under branches that shed debris onto the roof. A short covered walkway between house and sauna is a worthwhile addition in cold climates."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Where should an outdoor sauna go?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Choose the location only after checking setbacks, drainage, a level supporting surface, delivery and assembly access, privacy, safe year-round walking, electrical or chimney routing, roof runoff, service access, and the exact room manual.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much space does an outdoor sauna need?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Use the exact exterior dimensions plus the manufacturer-required clearances and the working space needed for assembly, doors, electrical or chimney work, roof edges, cleaning, refinishing, and service. The room footprint alone is not the full site envelope.',
+      },
+    },
+  ],
 };
 ---
 <Base
-  title="Outdoor Sauna Ideas: Designs, Layouts, and Backyard Inspiration (2025)"
-  description="Outdoor sauna design ideas for every backyard size. Barrel saunas, cabin builds, placement tips, and what makes a backyard sauna setup actually functional."
+  title="Outdoor Sauna Ideas: Practical Backyard Layouts and Site Plans"
+  description="Compare barrel, cabin, cube, and small-yard outdoor sauna layouts. Plan the base, delivery path, utilities, weather work, privacy, and access before choosing a room."
   canonical="/guides/outdoor-sauna-ideas"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Outdoor Sauna Ideas (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Backyard planning</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-3">Outdoor Sauna Ideas Built Around the Site</h1>
+      <p class="text-stone-500">Reviewed August 2026 &middot; Backyard Sauna Pro</p>
+      <p class="text-lg text-stone-700 mt-4">The room is only one part of the project. A layout becomes practical when delivery, drainage, support, power or chimney work, weather exposure, privacy, and the walk back to the house all make sense.</p>
+    </header>
 
     <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Outdoor sauna cabin in a backyard setting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Representative outdoor sauna cabins in a landscaped site that requires access and foundation planning" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-10 text-sm text-stone-700">
+      <strong>Use the exact room documents:</strong> Foundation, anchoring, clearance, roof, exterior finish, heater, control, ventilation, electrical, chimney, and assembly requirements vary by model. Confirm the current manual and local approvals before preparing the site.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">The best outdoor sauna setups share a few things: good drainage, a short path from the house, enough privacy to actually relax, and a design that fits the property. Here are the most practical ideas across different budgets and yard sizes.</p>
+    <section class="mb-10" aria-labelledby="outdoor-layout-ideas">
+      <h2 id="outdoor-layout-ideas" class="text-2xl font-bold text-stone-900 mb-4">Five useful outdoor layout ideas</h2>
+      <div class="space-y-5">
+        {[
+          ['Compact barrel with a direct path', 'A barrel can work when the site is narrow and the buyer prefers opposing benches. Plan around the exact cradles, outside dimensions, door swing, heater location, roof or rain protection, and room for assembly.'],
+          ['Cabin with a sheltered entry', 'A cabin gives the plan more wall and roof geometry to work with. A porch, overhang, or separate changing zone can improve arrival in rain or snow, but it also increases the foundation, roof, drainage, and permit scope.'],
+          ['Cube with a framed view', 'A broad glass front can face a garden or wooded view. Record the glass area for heater sizing and check privacy, glare, cleaning access, snow or roof runoff, and the exact door approach.'],
+          ['Small-yard corner plan', 'Use the actual site envelope, not a generic capacity label. Preserve access around the room, keep required clearances open, and avoid trapping the service side against a fence or wall.'],
+          ['Sauna and cool-down zone', 'A stable seat, towel storage, lighting, and a non-slip route can make the space easier to use without adding another powered product. Treat any shower, plunge, or tub as a separate water, electrical, drainage, sanitation, and access project.'],
+        ].map(([title, body]) => (
+          <div class="border border-stone-200 rounded-lg p-5">
+            <h3 class="font-bold text-stone-900 mb-2">{title}</h3>
+            <p class="text-sm text-stone-700">{body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Barrel Sauna on a Gravel Pad</h2>
-    <p class="text-stone-700 mb-4">The most popular setup in North America for good reason. A cedar barrel sauna on a compact gravel pad takes one weekend to install, handles drainage naturally, and looks clean in almost any yard. The key details that make it work:</p>
-    <ul class="space-y-2 text-stone-700 mb-6 ml-4 text-sm">
-      <li>Gravel pad at least 2 feet wider and longer than the sauna footprint</li>
-      <li>Flat concrete deck blocks or pavers under the cradle skids to prevent sinking</li>
-      <li>A small cedar deck or stepping stones from the house for year-round access</li>
-      <li>Outdoor lighting on the path — you will use this at night</li>
-    </ul>
-    <p class="text-stone-700 mb-6">See our <a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">gravel pad guide</a> for exact dimensions and materials. Best barrel kits for this setup: <a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Pinnacle</a> ($2,199) or <a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk LeisureCraft</a> ($3,500+).</p>
+    <section class="mb-10" aria-labelledby="outdoor-layout-tradeoffs">
+      <h2 id="outdoor-layout-tradeoffs" class="text-2xl font-bold text-stone-900 mb-4">Match the shape to the real constraint</h2>
+      <div class="overflow-x-auto border border-stone-200 rounded-lg">
+        <table class="w-full min-w-[700px] text-sm border-collapse">
+          <thead><tr class="bg-stone-900 text-white"><th class="text-left p-3">Room idea</th><th class="text-left p-3">Potential advantage</th><th class="text-left p-3">Hidden scope to check</th></tr></thead>
+          <tbody class="text-stone-700">
+            <tr class="bg-white"><td class="p-3 font-semibold border-b border-stone-200">Barrel</td><td class="p-3 border-b border-stone-200">Compact curved shell and a recognizable backyard form.</td><td class="p-3 border-b border-stone-200">Cradle support, weather protection, band or stave care, headroom, bench geometry, and roof runoff.</td></tr>
+            <tr class="bg-stone-50"><td class="p-3 font-semibold border-b border-stone-200">Cabin</td><td class="p-3 border-b border-stone-200">Upright walls and flexible bench or entry layouts.</td><td class="p-3 border-b border-stone-200">Foundation footprint, roof package, exterior finish, assembly, anchoring, and delivery weight.</td></tr>
+            <tr class="bg-white"><td class="p-3 font-semibold border-b border-stone-200">Cube</td><td class="p-3 border-b border-stone-200">Modern profile with a larger view.</td><td class="p-3 border-b border-stone-200">Glass heating load, privacy, cleaning, glare, door approach, and replacement glazing terms.</td></tr>
+            <tr class="bg-stone-50"><td class="p-3 font-semibold">Changing-room plan</td><td class="p-3">A separate dry transition area.</td><td class="p-3">Larger site envelope, extra materials, door circulation, roof and foundation scope, and permit impact.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Barrel sauna on gravel pad in open field" class="w-full object-cover max-h-64" loading="lazy" width="1200" height="800" />
-    </div>
+    <PlannerCTA
+      source="outdoor_sauna_ideas_after_layouts"
+      heading="Test the idea against your yard"
+      description="Capture the location, dimensions, budget, heat preference, timeline, access, and installation needs before asking a retailer or installer for a quote."
+    />
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Sauna With a Cold Plunge</h2>
-    <p class="text-stone-700 mb-4">The combination that most sauna owners eventually build toward. A cold plunge pool or stock tank beside the sauna enables contrast therapy — cycling between heat and cold has strong evidence for recovery, cardiovascular health, and mood. The setup does not have to be elaborate:</p>
-    <ul class="space-y-2 text-stone-700 mb-6 ml-4 text-sm">
-      <li>A galvanized stock tank (300-500 gallon) costs $200-$400 and works well for cold plunge</li>
-      <li>Position it within 10-15 feet of the sauna door so you can move quickly between them</li>
-      <li>A simple deck or paved area connecting the two makes the setup feel intentional</li>
-    </ul>
-    <p class="text-stone-700 mb-6">See our <a href="/guides/sauna-cold-plunge/" class="text-amber-700 hover:underline">sauna and cold plunge guide</a> for the full protocol and setup details.</p>
+    <section class="mt-10 mb-10" aria-labelledby="outdoor-site-sequence">
+      <h2 id="outdoor-site-sequence" class="text-2xl font-bold text-stone-900 mb-4">Plan the site in this order</h2>
+      <ol class="space-y-5 text-stone-700 list-decimal pl-5">
+        <li><strong>Map the property constraints.</strong> Mark boundaries, setbacks, utilities, easements, drainage, slopes, overhead hazards, structures, vegetation, and the route from the house.</li>
+        <li><strong>Confirm the full site envelope.</strong> Add the exact room dimensions, required clearances, door swing, roof edges, heater or chimney zones, assembly space, and future service access.</li>
+        <li><strong>Plan delivery before the base.</strong> Record package sizes and weights, curbside terms, unloading equipment, storage, carry path, crew requirements, and weather protection.</li>
+        <li><strong>Design the support from actual loads.</strong> Use the room manual, site conditions, local requirements, and a qualified professional where needed. The base must stay level and support the complete installed room and occupants.</li>
+        <li><strong>Coordinate utilities and approvals.</strong> Define the heater, controls, lighting, electrical or chimney route, grounding, ventilation, permits, inspections, and responsible trades.</li>
+        <li><strong>Finish the use path.</strong> Add safe lighting, a stable walking surface, privacy, drainage, towel storage, seating, and access for maintenance or emergency response.</li>
+      </ol>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cabin-Style Outdoor Sauna</h2>
-    <p class="text-stone-700 mb-4">A purpose-built outdoor sauna structure with a changing room anteroom is the premium setup. The anteroom serves as a dry space to cool down between rounds, store towels, and change without going back to the house in winter. It also acts as a thermal buffer, reducing heat loss from the sauna room every time the door opens.</p>
-    <p class="text-stone-700 mb-6">Budget for $8,000-$20,000 for a custom cabin build. Some prefab outdoor cabin kits (Dundalk, SaunaLife) are available at $5,000-$8,000 and are a good middle ground. For the sauna room size within the cabin, see our <a href="/guides/sauna-room-ideas/" class="text-amber-700 hover:underline">sauna room ideas guide</a>.</p>
+    <section class="mb-10" aria-labelledby="outdoor-model-checks">
+      <h2 id="outdoor-model-checks" class="text-2xl font-bold text-stone-900 mb-4">What current outdoor manuals reveal</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="border border-stone-200 rounded-lg p-5">
+          <h3 class="font-bold text-stone-900 mb-2">A flat base is only the beginning</h3>
+          <p class="text-sm text-stone-700">Current Finnleo outdoor-room manuals call for a flat, level supporting surface and model-specific anchoring. They also direct buyers back to local requirements. The right base cannot be chosen from appearance alone.</p>
+        </div>
+        <div class="border border-stone-200 rounded-lg p-5">
+          <h3 class="font-bold text-stone-900 mb-2">Delivery format changes the project</h3>
+          <p class="text-sm text-stone-700">SaunaLife publishes both site-assembled rooms and larger units that may require unloading equipment. Check the exact model's technical page and installation manual before assuming a two-person build.</p>
+        </div>
+        <div class="border border-stone-200 rounded-lg p-5">
+          <h3 class="font-bold text-stone-900 mb-2">Weather work is model-specific</h3>
+          <p class="text-sm text-stone-700">Roofing, exterior coatings, drainage details, and maintenance instructions differ between outdoor rooms. Confirm what ships with the room and what must be sourced or completed on site.</p>
+        </div>
+        <div class="border border-stone-200 rounded-lg p-5">
+          <h3 class="font-bold text-stone-900 mb-2">Working room matters</h3>
+          <p class="text-sm text-stone-700">Almost Heaven notes that assembly and electrical work can require more room than the finished barrel occupies. Preserve practical access instead of fitting the shell tightly into a corner.</p>
+        </div>
+      </div>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Small Yard Ideas</h2>
-    <p class="text-stone-700 mb-4">A compact 2-person barrel sauna takes up roughly 4x8 feet of footprint — comparable to a large garden bed. Options for tight spaces:</p>
-    <ul class="space-y-2 text-stone-700 mb-6 ml-4 text-sm">
-      <li>A 4-foot diameter barrel sauna in a corner of the yard with a wooden privacy screen on two sides</li>
-      <li>A deck-mounted setup with the sauna integrated into an existing deck structure</li>
-      <li>A compact cube-style outdoor sauna (several manufacturers now make modern-format square outdoor saunas for tighter footprints)</li>
-    </ul>
-    <p class="text-stone-700 mb-6">Our <a href="/guides/best-2-person-sauna/" class="text-amber-700 hover:underline">best 2-person sauna guide</a> has the top compact options.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Placement Tips That Matter</h2>
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <ul class="space-y-3 text-stone-700 text-sm">
-        <li><span class="font-semibold">Electrical run distance:</span> The closer to your panel, the cheaper the install. Over 100 feet starts adding real cost. Get an electrician quote before committing to a location.</li>
-        <li><span class="font-semibold">Drainage:</span> Water comes out of saunas — from the door, from wet bathers, from steam. Place it where water can drain away naturally or on a gravel pad that absorbs it.</li>
-        <li><span class="font-semibold">Privacy:</span> You will want to step outside briefly between rounds. Position the door toward the house, away from neighbor sightlines, or add a simple wood privacy screen.</li>
-        <li><span class="font-semibold">Tree cover:</span> Partial shade is pleasant in summer. Avoid directly under deciduous trees that drop leaves, pine needles, or seeds onto the roof — these trap moisture and accelerate wood decay.</li>
-        <li><span class="font-semibold">Path from the house:</span> In cold weather you will sprint this barefoot. A covered walkway or at minimum a well-lit path with non-slip stepping stones is worth the small investment.</li>
+    <section class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-10" aria-labelledby="outdoor-stop-checks">
+      <h2 id="outdoor-stop-checks" class="text-lg font-bold text-stone-900 mb-3">Do not order until these are known</h2>
+      <ul class="space-y-2 text-sm text-stone-700">
+        <li>[ ] Exact room, heater, controls, and weather package</li>
+        <li>[ ] Exterior dimensions, clearances, and door or service access</li>
+        <li>[ ] Shipping dimensions, weight, unloading, and assembly plan</li>
+        <li>[ ] Base, anchoring, drainage, roof runoff, and exterior finish</li>
+        <li>[ ] Electrical or chimney route and responsible licensed trade</li>
+        <li>[ ] Permit, inspection, setback, and insurer questions</li>
+        <li>[ ] Installed budget with freight, site work, labor, and tax</li>
       </ul>
-    </div>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What are the best outdoor sauna ideas for a backyard?</h3>
-        <p class="text-stone-700">A cedar barrel sauna on a gravel pad is the most practical and popular. Add a cold plunge and deck for the premium setup. Cabin-style with an anteroom for the full experience.</p>
+    <section class="mb-10" aria-labelledby="outdoor-sources">
+      <h2 id="outdoor-sources" class="text-2xl font-bold text-stone-900 mb-4">Primary sources used</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="https://www.finnleo.com/downloads" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400"><h3 class="font-bold text-stone-900 mb-2">Finnleo outdoor manuals</h3><p class="text-sm text-stone-700">Current NorthStar and Euro room installation documents, plus heater and control manuals.</p></a>
+        <a href="https://almostheaven.com/pages/download-our-manuals-guides" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400"><h3 class="font-bold text-stone-900 mb-2">Almost Heaven resource hub</h3><p class="text-sm text-stone-700">Current barrel, cabin, cube, heater, and site-preparation documents.</p></a>
+        <a href="https://saunalife.com/technical-information/" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400 md:col-span-2"><h3 class="font-bold text-stone-900 mb-2">SaunaLife technical information</h3><p class="text-sm text-stone-700">Model-specific floor plans, installation manuals, diagrams, care guides, and warranties.</p></a>
       </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Where should I put an outdoor sauna?</h3>
-        <p class="text-stone-700">Close to the panel (within 50-100 feet), on level well-draining ground, oriented for privacy, away from tree debris. A short covered path from the house is worth adding in cold climates.</p>
+    </section>
+
+    <section class="mb-10" aria-labelledby="outdoor-faq">
+      <h2 id="outdoor-faq" class="text-2xl font-bold text-stone-900 mb-4">Frequently asked questions</h2>
+      <div class="space-y-5">
+        <div><h3 class="font-bold text-stone-900 mb-1">Which outdoor sauna shape is best?</h3><p class="text-stone-700">The one whose benches, footprint, heater, delivery, weather package, and maintenance fit the property. Compare exact models instead of relying on a shape alone.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-1">Where should it go?</h3><p class="text-stone-700">Choose the location after mapping drainage, access, privacy, setbacks, utilities, clearances, service space, and the route from the house.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-1">How much space is enough?</h3><p class="text-stone-700">Add manufacturer clearances, assembly and service room, door movement, roof edges, utilities, and a safe walking path to the published exterior dimensions.</p></div>
       </div>
+    </section>
+
+    <div class="bg-stone-900 text-white rounded-lg p-6 md:p-8 mt-12">
+      <h2 class="text-2xl font-bold mb-2">Ready to compare actual rooms?</h2>
+      <p class="text-stone-300 mb-5">Use current barrel, cabin, cube, and infrared listings as inputs to the site plan, not as the whole project.</p>
+      <a href="/guides/outdoor-sauna-for-sale/" class="inline-flex min-h-12 items-center justify-center bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-md transition-colors">Compare current outdoor listings</a>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue the site plan</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-        <li><a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">Gravel Pad for Barrel Sauna</a></li>
-        <li><a href="/guides/sauna-cold-plunge/" class="text-amber-700 hover:underline">Sauna and Cold Plunge</a></li>
-        <li><a href="/guides/sauna-room-ideas/" class="text-amber-700 hover:underline">Sauna Room Ideas</a></li>
-        <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
+        <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Outdoor sauna buying checklist</a></li>
+        <li><a href="/guides/best-location-backyard-sauna/" class="text-amber-700 hover:underline">Backyard location guide</a></li>
+        <li><a href="/guides/sauna-privacy-screen/" class="text-amber-700 hover:underline">Privacy sightline and screen-planning guide</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Foundation planning guide</a></li>
+        <li><a href="/guides/best-sauna-for-small-backyard/" class="text-amber-700 hover:underline">Small-backyard sauna guide</a></li>
+        <li><a href="/guides/best-2-person-sauna/" class="text-amber-700 hover:underline">Compare 2-person saunas</a></li>
+        <li><a href="/guides/sauna-room-ideas/" class="text-amber-700 hover:underline">Plan the sauna room layout</a></li>
+        <li><a href="/guides/sauna-cold-plunge/" class="text-amber-700 hover:underline">Sauna and cold-plunge safety guide</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

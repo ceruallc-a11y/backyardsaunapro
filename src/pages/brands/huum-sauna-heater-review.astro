@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
 const drop6Url = 'https://selectsaunas.com/products/huum-drop-6kw';
@@ -58,6 +59,12 @@ const faqSchema = {
 
     <p class="text-lg text-stone-700 mb-4">HUUM's exposed-stone heaters are visually distinctive, but appearance is only one part of this purchase. The exact room volume, voltage, controller, electrical service, clearances, stones, listing documentation, and installer support determine whether a model is a practical fit.</p>
     <p class="text-stone-700 mb-8">Our verdict: shortlist HUUM when its design and control system fit your project, then verify the complete installed system before ordering. We have not hands-on tested these heaters.</p>
+
+    <PlannerCTA
+      source="huum_heater_review_before_models"
+      heading="Size the room and electrical project before choosing a HUUM model"
+      description="Record the finished room, glass and masonry surfaces, voltage, controls, electrical readiness, budget, and installation needs before requesting a package quote."
+    />
 
     <section class="bg-stone-900 text-white rounded-xl p-6 mb-8">
       <p class="text-amber-300 text-sm font-semibold uppercase tracking-wide mb-2">Start with the exact model</p>
@@ -120,6 +127,7 @@ const faqSchema = {
       <h3 class="text-lg font-bold text-stone-900 mb-2">Continue comparing</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="/reviews/harvia-kip-60b-review/" class="text-amber-700 hover:underline">Harvia KIP 60B verification guide</a></li>
+        <li><a href="/brands/finnish-sauna-builders-review/" class="text-amber-700 hover:underline">Review the Finnish Sauna Builders dealer path</a></li>
         <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Electric sauna heater comparison</a></li>
         <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna heater sizing guide</a></li>
         <li><a href="/tools/sauna-cost-calculator/" class="text-amber-700 hover:underline">Sauna project cost calculator</a></li>

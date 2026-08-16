@@ -1,130 +1,179 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a barrel sauna more efficient than a cabin sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shape alone does not establish energy use or heat-up time. Compare the exact room volume, insulation, glazing, air leakage, ventilation, heater, controls, outdoor temperature, target temperature, and session pattern. Request model-level data if operating cost matters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a barrel or cabin sauna provide more usable seating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cabins can support straighter walls, multiple bench levels, and more layout options, but the exact interior and bench dimensions control. Barrel models vary in diameter, length, bench width, heater placement, and porch design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which sauna is easier to install?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the exact kit, site, foundation, delivery, crew, tools, heater, controls, electrical or chimney work, weather package, and local approvals. Review both current manuals and freight scopes before comparing labor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I buy a barrel or cabin sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choose from model-level needs: users and posture, bench layout, exterior size, site, foundation, climate, delivery, utilities, changing space, weather protection, budget, maintenance, and support. Do not choose from shape alone."
+      }
+    }
+  ]
+};
 ---
 <Base
-  title="Barrel Sauna vs Cabin Sauna: Which Should You Buy? (2025)"
-  description="Barrel sauna vs cabin sauna we break down the real differences in heat efficiency, cost, installation, aesthetics, and long-term durability to help you decide."
+  title="Barrel Sauna vs Cabin Sauna (2026): A Model-Level Comparison"
+  description="Compare barrel and cabin saunas by usable benches, room volume, heater, site, foundation, delivery, weather protection, utilities, and total project scope."
   canonical="/guides/barrel-sauna-vs-cabin-sauna"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <article class="max-w-3xl mx-auto">
-    <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Barrel Sauna vs Cabin Sauna: Which Should You Buy?
-      </h1>
-      <p class="text-stone-500 text-sm">Updated December 2024 · 8 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        The barrel looks like a wine barrel. The cabin looks like a tiny house. Beyond aesthetics, they actually behave quite differently and choosing the wrong one for your situation is an expensive mistake. Here's how they stack up on what actually matters.
-      </p>
-    </header>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Modern wooden outdoor sauna cabins" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-3">Format comparison</p>
+    <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-3">Barrel sauna or cabin sauna?</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 15, 2026 &mdash; Backyard Sauna Pro</p>
+
+    <div class="rounded-xl overflow-hidden mb-3">
+      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Outdoor wooden sauna cabins in a landscaped setting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+    <p class="text-xs text-stone-500 mb-8">Illustrative outdoor saunas. Compare exact product drawings and manuals.</p>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page also contains a Select Saunas affiliate path.
     </div>
 
-
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">Quick Summary</h2>
-      <div class="grid md:grid-cols-2 gap-4 text-sm">
-        <div>
-          <p class="font-bold text-stone-700 mb-1"> Barrel Sauna</p>
-          <ul class="text-stone-600 space-y-1">
-            <li> Superior heat efficiency</li>
-            <li> Faster heat-up times</li>
-            <li> Great snow/rain shedding</li>
-            <li> Striking visual aesthetic</li>
-            <li> Less interior space per sq ft</li>
-            <li> Can't customize layout</li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-bold text-stone-700 mb-1">Cabin Sauna</p>
-          <ul class="text-stone-600 space-y-1">
-            <li> More usable interior space</li>
-            <li> Easier to customize</li>
-            <li> More layout flexibility</li>
-            <li> Can add changing room</li>
-            <li> Less thermally efficient</li>
-            <li> More complex installation</li>
-          </ul>
-        </div>
-      </div>
+    <div class="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Research scope:</strong> This is a desk-researched planning comparison, not a controlled heat, energy, assembly, or durability test. Model size, construction, glazing, heater, climate, site, and configuration can matter more than the silhouette.
     </div>
 
-    <h2 class="text-2xl font-bold mt-8 mb-6 text-stone-900">Head-to-Head Comparison</h2>
+    <p class="text-lg text-stone-700 mb-4">A barrel can be compact and visually distinctive. A cabin can provide straighter walls, more bench options, and room for an anteroom or porch. Neither format is automatically faster, cheaper, more efficient, easier to install, or longer-lived.</p>
+    <p class="text-stone-700 mb-8">Compare one configured barrel with one configured cabin for the same users, climate, site, heat format, and project scope.</p>
 
-    <div class="overflow-x-auto mb-8">
-      <table class="w-full text-sm border-collapse">
-        <thead>
-          <tr class="bg-stone-800 text-white">
-            <th class="text-left p-3">Factor</th>
-            <th class="text-left p-3">Barrel Sauna</th>
-            <th class="text-left p-3">Cabin Sauna</th>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What shape changes, and what it does not prove</h2>
+    <div class="overflow-x-auto border border-stone-200 rounded-lg mb-10">
+      <table class="w-full min-w-[760px] text-sm text-left">
+        <thead class="bg-stone-100 text-stone-900">
+          <tr>
+            <th scope="col" class="px-4 py-3 font-bold">Decision</th>
+            <th scope="col" class="px-4 py-3 font-bold">Barrel tendency</th>
+            <th scope="col" class="px-4 py-3 font-bold">Cabin tendency</th>
+            <th scope="col" class="px-4 py-3 font-bold">Verify on the model</th>
           </tr>
         </thead>
-        <tbody>
-          {[
-            ["Heat Efficiency", "Excellent curved walls concentrate heat", "Good flat walls create dead corners"],
-            ["Heat-Up Time", "25–40 min", "35–55 min"],
-            ["Interior Space", "Curved benches lose usable area", "Flat walls = max usable space"],
-            ["Price Range", "$1,500–$5,000", "$2,000–$15,000+"],
-            ["Installation", "2–6 hours, DIY-friendly", "1–3 days, may need help"],
-            ["Changing Room", "Not available (separate structure needed)", "Can be built-in"],
-            ["Aesthetics", "Rustic, distinctive, eye-catching", "Versatile can match home style"],
-            ["Snow Load", "Excellent sheds naturally", "Needs proper roof pitch"],
-            ["Customization", "Limited", "High layout, windows, porch"],
-            ["Lifespan", "20–40 years (cedar)", "20–50+ years (well-built)"],
-          ].map(([factor, barrel, cabin], i) => (
-            <tr class={i % 2 === 0 ? "bg-white" : "bg-stone-50"}>
-              <td class="p-3 font-medium text-stone-700 border-b border-stone-200">{factor}</td>
-              <td class="p-3 text-stone-600 border-b border-stone-200">{barrel}</td>
-              <td class="p-3 text-stone-600 border-b border-stone-200">{cabin}</td>
-            </tr>
-          ))}
+        <tbody class="divide-y divide-stone-200 text-stone-700">
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Bench geometry</th><td class="px-4 py-3">Curved sidewalls can constrain upper space and bench placement.</td><td class="px-4 py-3">Straight walls can allow more bench levels and layouts.</td><td class="px-4 py-3">Interior and bench dimensions, heater and door location, intended posture.</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Exterior and roof</th><td class="px-4 py-3">Curved shell with bands, end walls, and cradles.</td><td class="px-4 py-3">Wall and roof assemblies with more architectural options.</td><td class="px-4 py-3">Weather package, roof details, snow and wind design, anchoring, drainage.</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Foundation</th><td class="px-4 py-3">Loads may transfer through cradles or skids.</td><td class="px-4 py-3">Loads may transfer through a base frame, perimeter, or specified points.</td><td class="px-4 py-3">Support geometry, installed and occupied load, soil, frost, drainage, local design.</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Changing space</th><td class="px-4 py-3">Often a separate structure or canopy area.</td><td class="px-4 py-3">May be integrated into a larger plan.</td><td class="px-4 py-3">Exact floor plan, conditioned or unconditioned space, door and ventilation details.</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 font-semibold text-stone-900">Heat performance</th><td class="px-4 py-3">Shape can reduce upper room volume for some layouts.</td><td class="px-4 py-3">Room geometry can support multi-level benches.</td><td class="px-4 py-3">Volume, insulation, glazing, sealing, ventilation, heater, controls, climate.</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">The Physics of Why Barrel Saunas Heat Better</h2>
-    <p class="text-stone-600 mb-4">
-      It sounds like marketing, but it's real: the barrel shape genuinely heats more efficiently than a box. Hot air naturally rises and circulates in an oval there are no cold corners where heat gets trapped. A barrel sauna heats the entire space more evenly with less energy.
-    </p>
-    <p class="text-stone-600 mb-4">
-      The practical result: a barrel sauna typically uses <strong>15–25% less energy</strong> to reach the same temperature as a comparable cabin sauna. Over years of use, that adds up.
-    </p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">A current example: Pinnacle barrel versus Allegheny cabin</h2>
+    <p class="text-stone-700 mb-5">These are not equivalent-capacity products, so they do not establish a universal winner. They show how quickly the project scope changes when the format and room size change.</p>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">When a Cabin Sauna Makes More Sense</h2>
-    <p class="text-stone-600 mb-4">Despite the efficiency edge, cabin saunas win in a few real scenarios:</p>
-    <ul class="list-disc pl-5 text-stone-600 text-sm space-y-2 mb-6">
-      <li><strong>You want a changing room.</strong> Stepping outside to undress in January isn't fun. A cabin sauna can have an antechamber built in.</li>
-      <li><strong>You need maximum seating.</strong> For 6+ people regularly, a cabin sauna's flat walls and flexible bench layout accommodates more bodies more comfortably.</li>
-      <li><strong>You want it to match your home.</strong> A cabin sauna can be sided to match your house. A barrel sauna always looks like a barrel.</li>
-      <li><strong>You're building a permanent structure.</strong> Cabin saunas can be built on a proper foundation with full electrical, plumbing, and permits more like a real outbuilding.</li>
-    </ul>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Our Top Picks for Each</h2>
-
-    <div class="grid md:grid-cols-2 gap-5 mb-8">
-      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-        <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded">BEST BARREL</span>
-        <h3 class="font-semibold text-stone-900 mt-2 mb-1">Almost Heaven Pinnacle 4-Person</h3>
-        <p class="text-stone-600 text-sm mb-3">The best-selling barrel sauna on Amazon. Rustic cedar, easy assembly, excellent heat retention.</p>
-        <AmazonButton asin="B017WJV8SO" price="~$2,199" />
+    <div class="grid md:grid-cols-2 gap-5 mb-10">
+      <div class="bg-white border border-stone-200 rounded-xl p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-1">Current barrel path</p>
+        <h3 class="text-xl font-bold text-stone-900 mb-2">Almost Heaven Pinnacle</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700 mb-4">
+          <li>78 W x 71 D x 81 1/2 H inches on the configuration checked</li>
+          <li>Two 16 W x 63 1/4 L inch benches</li>
+          <li>6kW, 240V / 30A hardwired heater paths shown</li>
+          <li>54-by-6-inch cradle dimensions published</li>
+        </ul>
+        <AmazonButton asin="B017WJV8SO" variant="primary" label="View the current Pinnacle path" ctaPosition="format_pinnacle" />
       </div>
-      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-        <span class="text-xs font-bold bg-blue-100 text-blue-800 px-2 py-1 rounded">BEST INFRARED CABIN</span>
-        <h3 class="font-semibold text-stone-900 mt-2 mb-1">Dynamic Saunas Barcelona 1-2 Person</h3>
-        <p class="text-stone-600 text-sm mb-3">Compact cabin-style infrared. Best for small spaces, fast heat-up, no installation headaches.</p>
-        <AmazonButton asin="B00A2F99F0" price="~$899" />
+      <div class="bg-white border border-stone-200 rounded-xl p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-1">Current cabin example</p>
+        <h3 class="text-xl font-bold text-stone-900 mb-2">Almost Heaven Allegheny</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700 mb-4">
+          <li>86 W x 125 D x 92 H inches</li>
+          <li>Dual-level benches and front porch</li>
+          <li>8kW, 9kW, or 10.5kW hardwired paths listed</li>
+          <li>Flatbed freight and buyer offload planning required</li>
+        </ul>
+        <a href="https://almostheaven.com/products/allegheny-6-person-cabin-sauna" target="_blank" rel="noopener" class="inline-block border border-stone-300 hover:border-amber-400 text-stone-800 font-semibold px-5 py-2.5 rounded-lg text-sm">Check current Allegheny specifications</a>
       </div>
     </div>
 
-    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-10">
-      <h3 class="text-xl font-bold mb-2">Still deciding?</h3>
-      <p class="text-stone-300 mb-4">See our full ranked list of the best backyard saunas across all styles.</p>
-      <a href="/best-saunas/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-        See Best Saunas of 2025 →
-      </a>
+    <PlannerCTA
+      source="barrel_cabin_compare"
+      heading="Compare both formats as installed projects"
+      description="Record the users, posture, site, foundation, climate, heater, utilities, delivery path, budget, ZIP code, and timeline so the formats can be compared on equal scope."
+    />
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Do not compare these five items generically</h2>
+    <div class="space-y-4 mb-10">
+      <div class="border-l-4 border-amber-400 pl-4"><h3 class="font-bold text-stone-900 mb-1">Heat-up time</h3><p class="text-stone-700">A universal barrel or cabin time ignores heater output, room volume, insulation, glazing, outdoor temperature, ventilation, controls, target temperature, and starting conditions.</p></div>
+      <div class="border-l-4 border-amber-400 pl-4"><h3 class="font-bold text-stone-900 mb-1">Energy use</h3><p class="text-stone-700">Shape does not support a blanket percentage. Ask for model-level test conditions or estimate from the exact heater, session pattern, local utility rate, and measured operating time.</p></div>
+      <div class="border-l-4 border-amber-400 pl-4"><h3 class="font-bold text-stone-900 mb-1">Assembly time</h3><p class="text-stone-700">Manual scope, site readiness, freight, configuration, crew, tools, electrical or chimney work, weather protection, and inspections all matter.</p></div>
+      <div class="border-l-4 border-amber-400 pl-4"><h3 class="font-bold text-stone-900 mb-1">Project price</h3><p class="text-stone-700">Compare configured room, heater, controls, freight, offload, foundation, utilities, labor, roof or exterior treatment, permits, and maintenance on the same date.</p></div>
+      <div class="border-l-4 border-amber-400 pl-4"><h3 class="font-bold text-stone-900 mb-1">Service life</h3><p class="text-stone-700">Avoid fixed year ranges without documented evidence. Exposure, drainage, foundation, materials, detailing, treatment, maintenance, climate, and repair access drive durability.</p></div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Choose a barrel when the model proves</h2>
+    <ul class="list-disc pl-5 space-y-2 text-stone-700 mb-8">
+      <li>The benches fit the intended users and posture.</li>
+      <li>The cradle or support layout works with the designed foundation.</li>
+      <li>The shell, roof or rain protection, anchoring, and maintenance suit the site.</li>
+      <li>The configured heater, controls, circuit, delivery, and assembly plan are resolved.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Choose a cabin when the model proves</h2>
+    <ul class="list-disc pl-5 space-y-2 text-stone-700 mb-10">
+      <li>The straight walls and bench levels materially improve the intended use.</li>
+      <li>The larger exterior, roof, porch or changing space fits the site and local rules.</li>
+      <li>The foundation, delivery, offload, assembly, and weather package are workable.</li>
+      <li>The heater, controls, utilities, ventilation, and total project budget are confirmed.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary sources checked</h2>
+    <ul class="space-y-3 text-sm text-stone-700 mb-10">
+      <li><a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Almost Heaven: current Pinnacle specifications and manual access</a></li>
+      <li><a href="https://almostheaven.com/products/allegheny-6-person-cabin-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Almost Heaven: current Allegheny specifications and shipping scope</a></li>
+      <li><a href="https://www.harvia.com/en-US/sauna/heaters/" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Harvia: current heater catalog and model tools</a></li>
+      <li><a href="https://www.redwoodoutdoors.com/pages/faqs-sauna-assembly-foundations" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Redwood Outdoors: foundation, weight, and deck guidance</a></li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div><h3 class="font-bold text-stone-900 mb-1">Is a barrel more efficient?</h3><p class="text-stone-700">Not by shape alone. Compare exact volume, insulation, glazing, sealing, ventilation, heater, controls, climate, and use.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Which has more usable seating?</h3><p class="text-stone-700">Cabins can support more layouts, but exact interior and bench dimensions decide the result.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Which is easier to install?</h3><p class="text-stone-700">It depends on the kit, site, foundation, delivery, crew, tools, utilities, weather package, and approvals.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Which should I buy?</h3><p class="text-stone-700">Choose the configured model whose benches, site, foundation, climate, utilities, delivery, support, and total budget fit the project.</p></div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Continue comparing</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/almost-heaven-barrel-sauna/" class="text-amber-700 hover:underline">Almost Heaven Barrel Model Guide</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Sauna Foundation Guide</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Planning</a></li>
+        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">Total Sauna Project Cost Guide</a></li>
+      </ul>
     </div>
   </article>
 </Base>

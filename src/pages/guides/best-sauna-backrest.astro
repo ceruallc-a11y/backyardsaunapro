@@ -11,7 +11,7 @@ const faqSchema = {
       name: 'What should I look for in a sauna backrest?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Verify that the manufacturer identifies the backrest for sauna use, then compare its dimensions with your bench and wall. Look for an unfinished surface, stable contact points, airflow between slats, and a return policy.',
+        text: 'Start with a product the manufacturer identifies for sauna use. Then compare its footprint and curve with your bench, wall, shoulders, and preferred sitting position. Check stability, exposed hardware, heater clearances, cleaning instructions, and the return policy before ordering.',
       },
     },
     {
@@ -22,12 +22,20 @@ const faqSchema = {
         text: 'Many ergonomic sauna backrests are freestanding and do not require wall fasteners, but designs vary. Follow the manufacturer instructions and make sure the backrest cannot slide or interfere with heater clearances.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'Will a sauna backrest fit a curved barrel-sauna wall?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Do not assume it will. The current Almost Heaven cedar back rest is described for a flat surface. A curved barrel wall can change the contact points, stability, and usable bench depth. Confirm fit with the manufacturer before ordering.',
+      },
+    },
   ],
 };
 ---
 <Base
   title="Best Sauna Backrest (2026): What to Verify Before Buying"
-  description="Compare sauna backrest fit, dimensions, materials, airflow, and stability. See the current Karibu shortlist and verify your bench before ordering."
+  description="Compare sauna backrest fit, wall shape, bench depth, stability, materials, and heater clearance. See a current exact-product route and verify your room before ordering."
   canonical="/guides/best-sauna-backrest"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -36,9 +44,14 @@ const faqSchema = {
     <header class="mb-8">
       <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Sauna Accessories</p>
       <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best Sauna Backrest: Fit and Safety Before Features</h1>
-      <p class="text-stone-500 text-sm">Reviewed August 2026 &middot; Backyard Sauna Pro</p>
+      <p class="text-stone-500 text-sm">Last reviewed August 15, 2026 &middot; Backyard Sauna Pro</p>
       <p class="text-lg text-stone-700 mt-4">The best backrest is one designed for sauna use that fits your bench, stays stable, and does not interfere with heater clearances or airflow.</p>
     </header>
+
+    <figure class="mb-8 overflow-hidden rounded-lg bg-stone-100">
+      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Representative slatted wooden backrests positioned on sauna benches" class="max-h-96 w-full object-cover" loading="eager" width="1200" height="800" />
+      <figcaption class="px-4 py-3 text-xs text-stone-600">Representative sauna backrests. This is not the exact Almost Heaven product shown below.</figcaption>
+    </figure>
 
     <div class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
       <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. Product availability and sellers can change.
@@ -46,20 +59,23 @@ const faqSchema = {
 
     <section class="bg-stone-900 text-white rounded-lg p-6 mb-8" aria-labelledby="backrest-fast-pick">
       <p class="text-xs font-semibold uppercase tracking-wide text-amber-300 mb-2">Current shortlist</p>
-      <h2 id="backrest-fast-pick" class="text-2xl font-bold mb-2">Karibu Ergonomic Sauna Backrest</h2>
-      <p class="text-stone-300 mb-4">Karibu identifies this as a sauna-wood backrest with a waved profile, anti-slip stops, and dimensions of 37.5 by 51 by 6.5 centimeters. Confirm the marketplace product matches manufacturer item 46707.</p>
-      <AmazonButton search="Karibu ergonomic sauna backrest 46707" label="Check current Amazon options" variant="primary" ctaPosition="above_fold" />
+      <h2 id="backrest-fast-pick" class="text-2xl font-bold mb-2">Almost Heaven Cedar Sauna Back Rest</h2>
+      <p class="text-stone-300 mb-4">The manufacturer describes a freestanding red-cedar backrest with slightly curved slats for use against a flat surface in an indoor or outdoor sauna. Confirm that the exact Amazon item, room shape, bench depth, and return terms fit your installation.</p>
+      <AmazonButton asin="B0DWTCK8X9" label="Check the current Amazon listing" variant="primary" ctaPosition="above_fold" />
     </section>
 
     <section class="border border-stone-200 rounded-lg p-6 bg-white mb-10" aria-labelledby="backrest-shortlist-heading">
       <h2 id="backrest-shortlist-heading" class="text-2xl font-bold text-stone-900 mb-3">Why It Made the Shortlist</h2>
-      <p class="text-stone-700 mb-4">The manufacturer provides an identifiable product number, dimensions, intended use, and stability feature. That makes it easier to verify than a generic marketplace listing with no traceable model.</p>
+      <p class="text-stone-700 mb-4">The product has a current manufacturer page, an available exact Amazon route, and a clearly described use case. That is more useful than a generic search result whose model, material, and heat-room intent cannot be traced.</p>
       <div class="grid sm:grid-cols-2 gap-4 text-sm mb-5">
-        <div class="bg-stone-50 rounded-md p-4"><h3 class="font-bold text-stone-900 mb-2">Documented details</h3><ul class="text-stone-700 space-y-1 list-disc pl-5"><li>Manufacturer item 46707</li><li>37.5 x 51 x 6.5 cm</li><li>Waved ergonomic profile</li><li>Anti-slip stops at top and bottom</li></ul></div>
-        <div class="bg-stone-50 rounded-md p-4"><h3 class="font-bold text-stone-900 mb-2">Check before buying</h3><ul class="text-stone-700 space-y-1 list-disc pl-5"><li>Bench depth and wall clearance</li><li>Exact seller and model identity</li><li>Return policy and shipping region</li><li>Manufacturer placement instructions</li></ul></div>
+        <div class="bg-stone-50 rounded-md p-4"><h3 class="font-bold text-stone-900 mb-2">Manufacturer-documented details</h3><ul class="text-stone-700 space-y-1 list-disc pl-5"><li>Red cedar construction</li><li>Freestanding placement</li><li>Slightly curved wooden slats</li><li>Intended for a flat surface</li><li>Stores beneath a sauna bench when space permits</li></ul></div>
+        <div class="bg-stone-50 rounded-md p-4"><h3 class="font-bold text-stone-900 mb-2">Check before buying</h3><ul class="text-stone-700 space-y-1 list-disc pl-5"><li>Flat or curved wall behind the bench</li><li>Bench depth and shoulder room</li><li>Exact Amazon seller and item identity</li><li>Return policy and delivery region</li><li>Sauna and heater clearances</li></ul></div>
       </div>
-      <AmazonButton search="Karibu ergonomic sauna backrest 46707" label="Compare current listings" variant="primary" ctaPosition="shortlist" />
-      <p class="text-xs text-stone-500 mt-4">Source checked August 2026: <a href="https://www.karibu.de/rueckenlehne-ergonomisch/46707" target="_blank" rel="noopener" class="text-amber-700 hover:underline">Karibu product 46707</a>. We did not hands-on test this accessory.</p>
+      <div class="flex flex-wrap items-center gap-4">
+        <AmazonButton asin="B0DWTCK8X9" label="View the exact Amazon route" variant="primary" ctaPosition="shortlist" />
+        <a href="https://almostheaven.com/products/cedar-sauna-back-rest" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Verify details with Almost Heaven</a>
+      </div>
+      <p class="text-xs text-stone-500 mt-4">Source checked August 15, 2026: Almost Heaven Cedar Sauna Back Rest product page. We did not hands-on test this accessory.</p>
     </section>
 
     <h2 class="text-2xl font-bold text-stone-900 mb-4">Five Checks That Matter</h2>
@@ -79,7 +95,8 @@ const faqSchema = {
     <h2 class="text-2xl font-bold text-stone-900 mb-4">Frequently Asked Questions</h2>
     <div class="space-y-5 mb-10">
       <div><h3 class="font-bold text-stone-900 mb-1">What should I look for in a sauna backrest?</h3><p class="text-stone-700">Start with documented sauna use, dimensions, stability, and placement instructions. Comfort claims matter less if the product does not fit your bench.</p></div>
-      <div><h3 class="font-bold text-stone-900 mb-1">Does a freestanding backrest need installation?</h3><p class="text-stone-700">Often no, but follow the specific instructions. Do not add wall fasteners or place it near a heater without verifying clearances.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Does a freestanding sauna backrest need installation?</h3><p class="text-stone-700">Often no, but follow the specific instructions. Do not add wall fasteners or place it near a heater without verifying clearances.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Will a sauna backrest fit a curved barrel-sauna wall?</h3><p class="text-stone-700">Not necessarily. The Almost Heaven product is described for a flat surface. Ask the manufacturer before using it against a curved wall or in a position that changes its contact points.</p></div>
     </div>
 
     <section class="bg-stone-50 border border-stone-200 rounded-lg p-6">

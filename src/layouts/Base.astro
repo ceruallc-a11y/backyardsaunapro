@@ -148,16 +148,21 @@ const isCurrent = (href: string) => href === "/" ? currentPath === "/" : current
       const commerceLink = commerceHosts[destination.hostname];
       if (!commerceLink || typeof window.gtag !== 'function') return;
 
+      const productId = link.dataset.productId || '';
+      const ctaPosition = link.dataset.ctaPosition || 'content';
+
       window.gtag('event', commerceLink.event, {
         site_name: 'backyard_sauna_pro',
         site_hostname: window.location.hostname,
         partner: commerceLink.partner,
+        brand: link.dataset.brand || commerceLink.partner,
         link_url: destination.href,
         link_text: link.textContent?.trim().slice(0, 100) || '',
         page_path: window.location.pathname,
         page_type: window.location.pathname.includes('/guides/') ? 'guide' : window.location.pathname.includes('/reviews/') || window.location.pathname.includes('/brands/') ? 'commercial_review' : 'site_page',
-        cta_position: link.dataset.ctaPosition || 'content',
-        product_id: link.dataset.productId || '',
+        cta_position: ctaPosition,
+        product_id: productId,
+        product: productId,
       });
     });
 
@@ -190,18 +195,28 @@ const isCurrent = (href: string) => href === "/" ? currentPath === "/" : current
       const link = event.target instanceof Element ? event.target.closest('a[data-track-event]') : null;
       if (!(link instanceof HTMLAnchorElement) || typeof window.gtag !== 'function') return;
 
-      window.gtag('event', link.dataset.trackEvent, {
+      const eventName = link.dataset.trackEvent;
+      const destination = new URL(link.href, window.location.href);
+      const ctaPosition = link.dataset.ctaPosition || 'content';
+      const trackedPartner = link.dataset.partner || destination.hostname.replace(/^www\./, '') || '';
+      const parameters = {
         site_name: 'backyard_sauna_pro',
         site_hostname: window.location.hostname,
         page_path: window.location.pathname,
-        cta_position: link.dataset.ctaPosition || 'content',
+        cta_position: ctaPosition,
         destination_type: link.protocol === 'mailto:' ? 'email' : 'link',
         link_url: link.href,
         link_text: link.textContent?.trim().slice(0, 100) || '',
-        campaign: new URL(link.href, window.location.href).searchParams.get('utm_campaign') || '',
-        partner: link.dataset.partner || '',
+        campaign: destination.searchParams.get('utm_campaign') || '',
+        partner: trackedPartner,
         product_id: link.dataset.productId || '',
-      });
+        ...(eventName === 'dealer_outbound_click' ? {
+          dealer: trackedPartner,
+          cta_location: ctaPosition,
+        } : {}),
+      };
+
+      window.gtag('event', eventName, parameters);
     });
   </script>
 

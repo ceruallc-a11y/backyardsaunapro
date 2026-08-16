@@ -1,5 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -10,154 +12,164 @@ const faqSchema = {
       "name": "Is Dynamic Saunas a good brand?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dynamic Saunas is the top-rated budget infrared sauna brand in North America. Their Barcelona and Andora models consistently top Amazon bestseller lists with thousands of positive reviews. Build quality is solid for the price, though not in the same class as Finnleo or a custom cedar build. For buyers who want a plug-in infrared sauna without spending $2,000+, Dynamic is the reliable choice."
+        "text": "Dynamic is worth comparing when you want a finished indoor infrared cabin and its exact dimensions, electrical requirements, delivery path, and documentation fit your project. Evaluate the model number and revision rather than relying on a brand-wide ranking."
       }
     },
     {
       "@type": "Question",
-      "name": "Where are Dynamic Saunas made?",
+      "name": "What is the difference between Dynamic Saunas model lines?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dynamic Saunas are manufactured in China and sold through North American distributors. The brand is owned by JNH Lifestyles. This is standard for the plug-in infrared sauna category at this price point."
+        "text": "The current catalog separates low-EMF far-infrared, ultra-low-EMF far-infrared, and full-spectrum models. Capacity, dimensions, emitter count and type, electrical requirements, shipping weight, and included features still vary by exact model."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the difference between Dynamic Saunas models?",
+      "name": "Does a Dynamic infrared sauna provide traditional sauna steam?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Barcelona (1-2 person) is the entry-level and most popular. The Andora (2 person) is slightly larger with the same core features. The Avila (1 person) is the most compact option. All share the same low-EMF carbon heating panels and Canadian hemlock construction. The differences are primarily size and capacity."
+        "text": "No. Dynamic's infrared cabins use emitters rather than a traditional heater and stone basket, so they do not provide water-on-stones steam."
       }
     }
   ]
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Dynamic Saunas Review (2025): Barcelona, Andora, and Which to Buy"
-  description="An honest review of Dynamic Saunas infrared models. What they get right, where they cut corners, and who should buy one."
+  title="Dynamic Saunas Review (2026): Compare Current Model Lines"
+  description="Compare Dynamic's current low-EMF, ultra-low-EMF, and full-spectrum infrared sauna lines by model number, dimensions, electrical needs, documentation, and buyer fit."
   canonical="/brands/dynamic-saunas-review"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Dynamic Saunas Review (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+    <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-3">Brand research</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Dynamic Saunas: compare the model, not the brand label</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 15, 2026 &mdash; Backyard Sauna Pro</p>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-interior-forest-view.jpg" alt="Infrared sauna interior" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="rounded-xl overflow-hidden mb-3">
+      <img src="/images/editorial/indoor-infrared-sauna-representative.webp" alt="Representative finished indoor infrared sauna cabin" class="w-full object-cover max-h-80" loading="lazy" width="1536" height="1024" />
     </div>
+    <p class="text-xs text-stone-500 mb-8">Representative infrared cabin; not a specific Dynamic model.</p>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
       <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Dynamic Saunas makes the most reviewed plug-in infrared saunas on Amazon. The Barcelona alone has thousands of verified reviews across multiple years of sales. For a brand selling a $900 sauna, that track record matters more than marketing copy.</p>
-
-    <p class="text-stone-700 mb-8">Here's what they actually get right, where they cut corners, and which model to buy.</p>
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="text-lg font-bold text-stone-900 mb-3">Quick Verdict</h2>
-      <ul class="space-y-2 text-stone-700 text-sm">
-        <li><span class="font-semibold text-green-700">Best for:</span> Apartment dwellers, renters, first-time sauna buyers, anyone without 240V access</li>
-        <li><span class="font-semibold text-stone-700">Made in:</span> China (distributed by JNH Lifestyles, North America)</li>
-        <li><span class="font-semibold text-stone-700">Electrical:</span> Standard 120V outlet, no electrician needed</li>
-        <li><span class="font-semibold text-stone-700">Heat type:</span> Far infrared, low-EMF carbon panels</li>
-        <li><span class="font-semibold text-red-700">Not ideal for:</span> Buyers who want traditional high heat and steam</li>
-      </ul>
+    <div class="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Research scope:</strong> This is a desk-researched brand guide, not a hands-on test. We reviewed the current Dynamic Saunas Direct catalog and model pages. We have not assembled or measured these cabins, tested their emitters, or independently verified EMF or light-therapy marketing labels.
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Dynamic Gets Right</h2>
+    <p class="text-lg text-stone-700 mb-4">Dynamic sells finished indoor infrared cabins across several model lines. That makes the brand useful to compare, but a brand-wide verdict will not tell you whether a particular cabin fits two adults, reaches the final room, works with the available circuit, or includes the technical documentation you care about.</p>
+    <p class="text-stone-700 mb-8">Start with the heat format and model number. Then compare the cabin's published interior, service requirements, shipping weight, emitter specification, warranty, and current revision.</p>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Price to quality ratio</h3>
-    <p class="text-stone-700 mb-4">At $800-$1,200 for a fully assembled infrared sauna, Dynamic is hard to beat. The hemlock construction is solid, the carbon heating panels work well, and the unit heats up in 15 minutes from a standard outlet. Competing brands at this price point tend to use lower-quality materials or have worse assembly experiences.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Low-EMF carbon panels</h3>
-    <p class="text-stone-700 mb-4">Dynamic uses carbon fiber heating panels rather than cheaper ceramic rod heaters. Carbon panels distribute heat more evenly, run at lower surface temperatures, and produce lower EMF readings. For regular use, this matters. The difference in how a session feels compared to a ceramic-element unit is noticeable.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Assembly and portability</h3>
-    <p class="text-stone-700 mb-6">The units assemble in about an hour with basic tools, no technical skills required. They're also designed to disassemble, which matters for renters who might move. A traditional wood sauna is permanent; a Dynamic can go with you.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where They Cut Corners</h2>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Max temperature</h3>
-    <p class="text-stone-700 mb-4">Dynamic saunas top out around 140°F. A traditional Finnish sauna runs 160-195°F. If you want to do proper hot-cold contrast therapy, pour water on rocks, or experience the kind of heat that most people associate with saunas, a Dynamic isn't going to get you there. It's a different (and milder) experience.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Build feel</h3>
-    <p class="text-stone-700 mb-4">The hemlock is decent but the overall construction has a manufactured, flatpack quality. Bench edges are sometimes rough, panel gaps occasionally visible on assembly, and the door hardware is functional rather than refined. It's not a problem in use, but it's apparent you're in a budget unit.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">No steam</h3>
-    <p class="text-stone-700 mb-6">You can't add water to an infrared heater. No löyly, no steam, no aromatherapy with essential oils on the stones. If the steam experience is part of why you want a sauna, look at a traditional electric heater setup instead.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Models Compared</h2>
-
-    <div class="space-y-5 mb-10">
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Most Popular</span>
-            <h3 class="text-lg font-bold text-stone-900 mt-1">Barcelona 1-2 Person</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 text-sm mb-3">The most reviewed model. Fits most spare bedrooms or basements. Six carbon panels, Bluetooth audio, chromotherapy light. Right for solo use or two people who don't mind close quarters.</p>
-        <AmazonButton asin="B00A2F99F0" variant="small" />
+    <section class="bg-stone-900 text-white rounded-xl p-6 mb-10" aria-labelledby="dynamic-current-path">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-300 mb-2">Current available path</p>
+      <h2 id="dynamic-current-path" class="text-2xl font-bold mb-2">Barcelona DYN-6106-01</h2>
+      <p class="text-stone-300 mb-4">The Barcelona is the model we have researched in depth. Its exact Amazon listing was available when checked on August 15, 2026. Read the buyer checklist before treating the 1-2 person capacity label as proof of comfortable two-adult fit.</p>
+      <div class="flex flex-wrap gap-3">
+        <AmazonButton asin="B00A2F99F0" variant="primary" ctaPosition="brand_intro" />
+        <a href="/reviews/dynamic-saunas-barcelona-review/" class="inline-block border border-stone-500 hover:border-stone-300 text-white font-semibold px-5 py-2.5 rounded-lg text-sm">Read the Barcelona buyer checklist</a>
       </div>
+    </section>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <h3 class="text-lg font-bold text-stone-900">Andora 2 Person</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 text-sm mb-3">A few inches wider than the Barcelona, more comfortable for two people. Same core specs. Worth the upgrade if you'll regularly use it with a partner.</p>
-        <p class="text-stone-400 text-xs italic">Available on Amazon and Dynamic Saunas website</p>
-      </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Current model lines</h2>
+    <p class="text-stone-700 mb-5">Dynamic's current catalog groups products by emitter and EMF marketing category. Those labels are a starting point, not a substitute for model-specific technical data.</p>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <h3 class="text-lg font-bold text-stone-900">Avila 1 Person</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 text-sm mb-3">The most compact option. Good for a small bedroom or home office corner. Noticeably tight for anyone over 6 feet tall.</p>
-        <p class="text-stone-400 text-xs italic">Available on Amazon and Dynamic Saunas website</p>
-      </div>
-
+    <div class="overflow-x-auto border border-stone-200 rounded-lg mb-10">
+      <table class="w-full min-w-[680px] text-sm text-left">
+        <thead class="bg-stone-100 text-stone-900">
+          <tr>
+            <th scope="col" class="px-4 py-3 font-bold">Line</th>
+            <th scope="col" class="px-4 py-3 font-bold">Catalog distinction</th>
+            <th scope="col" class="px-4 py-3 font-bold">What to verify</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-stone-200 text-stone-700">
+          <tr class="align-top">
+            <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Low-EMF far infrared</th>
+            <td class="px-4 py-3">The baseline far-infrared line, including current Barcelona and Avila variants.</td>
+            <td class="px-4 py-3">Model number, seated-position EMF documentation, interior fit, circuit, and revision.</td>
+          </tr>
+          <tr class="align-top">
+            <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Ultra-low-EMF far infrared</th>
+            <td class="px-4 py-3">Elite variants with different emitter labeling in the current catalog.</td>
+            <td class="px-4 py-3">Exact numerical measurements, method, distance, frequency range, and model coverage.</td>
+          </tr>
+          <tr class="align-top">
+            <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Full spectrum</th>
+            <td class="px-4 py-3">Models marketed with more than far-infrared output.</td>
+            <td class="px-4 py-3">Emitter locations, wavelength documentation, controls, electrical service, and intended use.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Who Should Buy a Dynamic Sauna</h2>
-    <p class="text-stone-700 mb-4">Dynamic is the right call if you rent, live in an apartment, don't have 240V access, or want to try infrared sauna without committing to a permanent installation. It's also a solid choice if you specifically want the lower-temperature infrared experience for recovery, relaxation, or back pain management.</p>
-    <p class="text-stone-700 mb-6">Skip it if you want traditional high heat, steam, or the experience of a proper Finnish sauna. For that, look at an <a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven barrel sauna</a> or an indoor kit with a <a href="/brands/harvia-sauna-heater-review/" class="text-amber-700 hover:underline">Harvia electric heater</a>.</p>
+    <PlannerCTA
+      source="dynamic_brand_compare"
+      heading="Check the room and circuit before choosing a Dynamic model"
+      description="Record the interior fit, delivery route, circuit, ventilation, budget, and heat-format preference before comparing checkout prices."
+    />
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Six model-level checks</h2>
+    <ol class="list-decimal pl-5 space-y-4 text-stone-700 mb-10">
+      <li><strong>Interior dimensions:</strong> mark the published interior footprint, then assess the intended users rather than trusting a capacity label.</li>
+      <li><strong>Electrical service:</strong> verify voltage, amperage, dedicated-circuit language, plug, outlet location, and extension-cord restrictions in the current manual.</li>
+      <li><strong>Delivery path:</strong> compare box and panel dimensions with doors, stairs, corners, elevators, and the final assembly area.</li>
+      <li><strong>Emitter documentation:</strong> identify the emitter type and count. Request model-specific EMF or spectrum data if those labels affect the decision.</li>
+      <li><strong>Feature specifications:</strong> treat colored cabin lighting as lighting unless wavelength, irradiance, distance, and dose are documented.</li>
+      <li><strong>Seller and revision:</strong> confirm the model number, revision, included parts, warranty contact, return terms, and freight-damage process.</li>
+    </ol>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Barcelona versus Avila</h2>
+    <p class="text-stone-700 mb-4">The current baseline Barcelona and Avila pages both publish a 39-by-36-by-73-inch exterior, a 36-by-32-by-67-inch interior, natural hemlock construction, and 120V/15A service. The product pages list different model numbers and emitter counts: DYN-6106-01 with six panels for Barcelona, and DYN-6103-01 with seven panels for Avila.</p>
+    <p class="text-stone-700 mb-8">That does not establish which feels better or performs better. Compare the exact panel layout, current manual, price, seller, and included revision. For the Barcelona, our detailed review separates published facts from claims that still need documentation.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">When another format fits better</h2>
+    <div class="grid md:grid-cols-2 gap-4 mb-10">
+      <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+        <h3 class="font-bold text-emerald-900 mb-3">Keep Dynamic on the shortlist when</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+          <li>You want a finished indoor infrared cabin.</li>
+          <li>The published interior works for the intended users.</li>
+          <li>The exact circuit and location meet the current manual.</li>
+          <li>You have a workable freight and assembly plan.</li>
+        </ul>
+      </div>
+      <div class="bg-stone-100 border border-stone-200 rounded-xl p-5">
+        <h3 class="font-bold text-stone-900 mb-3">Compare another format when</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+          <li>You want a traditional heater, stones, and water-on-stones steam.</li>
+          <li>The cabin is too tight or cannot reach the final room.</li>
+          <li>The available circuit does not match the selected model.</li>
+          <li>Required technical claims remain undocumented.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary sources checked</h2>
+    <ul class="space-y-3 text-sm text-stone-700 mb-10">
+      <li><a href="https://dynamicsaunasdirect.com/collections/all-saunas" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Dynamic Saunas Direct: current sauna catalog</a></li>
+      <li><a href="https://dynamicsaunasdirect.com/products/barcelona-1-2-person-low-emf-far-infrared-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Dynamic: Barcelona DYN-6106-01</a></li>
+      <li><a href="https://dynamicsaunasdirect.com/products/new-2023-model-avila-1-2-person-low-emf-far-infrared-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Dynamic: Avila DYN-6103-01</a></li>
+      <li><a href="https://dynamicsaunasdirect.com/collections/dynamic-ultra-low-emf-far-infrared-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Dynamic: ultra-low-EMF catalog</a></li>
+      <li><a href="https://dynamicsaunasdirect.com/collections/dynamic-full-spectrum-saunas" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Dynamic: full-spectrum catalog</a></li>
+    </ul>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is Dynamic Saunas a good brand?</h3>
-        <p class="text-stone-700">Yes for the price. Best-reviewed plug-in infrared sauna brand at this price point. Not a traditional sauna but delivers a real infrared session reliably.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Where are Dynamic Saunas made?</h3>
-        <p class="text-stone-700">China, distributed by JNH Lifestyles in North America. Standard for the category at this price.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Barcelona vs Andora, which should I buy?</h3>
-        <p class="text-stone-700">Barcelona if you're mostly solo or on a tighter budget. Andora if you'll use it with a partner regularly, the extra width makes it meaningfully more comfortable for two.</p>
-      </div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Is Dynamic Saunas a good brand?</h3><p class="text-stone-700">It is worth comparing for a finished indoor infrared cabin. The exact model, room, circuit, documentation, delivery, and seller should decide the purchase.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">What is the difference between Dynamic model lines?</h3><p class="text-stone-700">The current catalog separates low-EMF far-infrared, ultra-low-EMF far-infrared, and full-spectrum models. Specifications still vary by exact model and revision.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Does a Dynamic cabin provide traditional sauna steam?</h3><p class="text-stone-700">No. It uses infrared emitters rather than a traditional heater and stone basket.</p></div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Related buyer guides</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="/reviews/dynamic-saunas-barcelona-review/" class="text-amber-700 hover:underline">Dynamic Saunas Barcelona Full Review</a></li>
+        <li><a href="/reviews/dynamic-saunas-barcelona-review/" class="text-amber-700 hover:underline">Dynamic Barcelona Buyer Checklist</a></li>
         <li><a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">Infrared vs Traditional Sauna</a></li>
-        <li><a href="/guides/best-indoor-sauna-kits/" class="text-amber-700 hover:underline">Best Indoor Sauna Kits</a></li>
-        <li><a href="/guides/sauna-for-back-pain/" class="text-amber-700 hover:underline">Sauna for Back Pain</a></li>
+        <li><a href="/guides/best-indoor-sauna-kits/" class="text-amber-700 hover:underline">Indoor Sauna Formats</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Planning</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

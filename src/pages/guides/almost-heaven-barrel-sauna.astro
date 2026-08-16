@@ -1,5 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
 const kenovaUrl = "https://selectsaunas.com/products/almost-heaven-kenova-4-6-person-barrel-sauna-6x7-ft";
@@ -10,197 +12,183 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Are Almost Heaven barrel saunas good?",
+      "name": "Which Almost Heaven barrel sauna should I compare first?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Almost Heaven is one of the most reliable barrel sauna brands in North America. Their kits use western red cedar, ship pre-cut and pre-drilled, and assemble in one day with two people. Quality is solidly mid-range — better than budget Chinese imports, not as heavy-duty as Dundalk LeisureCraft. For most first-time buyers the value is hard to beat."
+        "text": "Start with the exact bench length, exterior dimensions, intended users, heater package, electrical service, delivery method, and foundation. The Pinnacle is a current 6-foot class path, while the Princeton and Kenova provide longer interiors for buyers who need more bench room."
       }
     },
     {
       "@type": "Question",
-      "name": "Which Almost Heaven barrel sauna should I buy?",
+      "name": "Do current Almost Heaven barrel saunas include a heater?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For most buyers: the Pinnacle 4-Person (~$2,199). It is the sweet spot in their lineup — genuinely comfortable for 2-3 people, easy to heat with a 6kW heater, and the most popular model they sell. If you regularly sauna with 4+ people, step up to the 6-Person (~$3,499). The 2-Person is a tight fit for two adults."
+        "text": "Current product pages show selectable heater configurations, and the included package depends on the exact model and option chosen. Confirm the checkout configuration, controls, stones, electrical requirements, and warranty rather than assuming the room and heater are sold separately."
       }
     },
     {
       "@type": "Question",
-      "name": "Does Almost Heaven sauna include a heater?",
+      "name": "How many adults fit in an Almost Heaven barrel sauna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Almost Heaven barrel sauna kits are sold without a heater. You need to purchase and install a sauna heater separately. The Harvia KIP 60B (6kW, ~$579) is the standard pairing for the Pinnacle 4-Person. For the 6-Person model, use the Harvia KIP 80B (8kW)."
+        "text": "Capacity labels are maximums, not comfort measurements. Compare the published interior and bench dimensions with the actual users, desired posture, door and heater layout, and whether anyone wants to recline."
       }
     },
     {
       "@type": "Question",
-      "name": "How long does it take to assemble an Almost Heaven barrel sauna?",
+      "name": "How long does an Almost Heaven barrel sauna take to assemble?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most buyers complete assembly in 6-8 hours with two people. The kit arrives pre-cut and pre-drilled, so no specialty tools are needed. Basic tools: rubber mallet, drill, level, and wrenches. The foundation (gravel pad or deck) should be prepared before the sauna arrives."
+        "text": "Assembly time varies by model, configuration, site preparation, crew, tools, weather, and experience. Review the current manual and delivery scope before scheduling labor; do not rely on a universal one-day estimate."
       }
     }
   ]
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Almost Heaven Barrel Sauna Review (2025): Models & Prices"
-  description="Almost Heaven barrel sauna lineup reviewed: Pinnacle, Refuge, and 6-Person models compared. What is included, what is not, and how they stack up."
+  title="Almost Heaven Barrel Sauna Review (2026): Compare Current Models"
+  description="Compare current Almost Heaven barrel sauna paths by exact dimensions, bench room, heater configuration, electrical service, delivery, foundation, and buyer fit."
   canonical="/guides/almost-heaven-barrel-sauna"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Almost Heaven Barrel Sauna (2025): Full Lineup Review</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+    <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-3">Model comparison</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Almost Heaven barrel saunas: choose by dimensions, not capacity</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 15, 2026 &mdash; Backyard Sauna Pro</p>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Almost Heaven barrel sauna assembled outdoors" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="rounded-xl overflow-hidden mb-3">
+      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Representative outdoor barrel sauna in a grassy setting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
+    <p class="text-xs text-stone-500 mb-8">Representative barrel sauna; model details must come from the current product page and manual.</p>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page also contains affiliate links to Select Saunas.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Almost Heaven is the most commonly purchased barrel sauna brand in the US. They ship nationwide via Amazon, the kits are genuinely beginner-friendly to assemble, and the cedar quality is solid for the price. This page covers their full barrel lineup and tells you which model to buy for your situation.</p>
+    <div class="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Research scope:</strong> This is a desk-researched buying guide, not a hands-on test. We reviewed current manufacturer and authorized-dealer product pages. We have not assembled, heated, measured, or inspected these saunas.
+    </div>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-900 mb-3">Quick Model Comparison</h2>
-      <div class="overflow-x-auto">
-        <table class="text-sm w-full">
-          <thead>
-            <tr class="text-left text-stone-500 border-b border-stone-200">
-              <th class="pb-2 pr-4">Model</th>
-              <th class="pb-2 pr-4">Capacity</th>
-              <th class="pb-2 pr-4">Price</th>
-              <th class="pb-2">Heater (rec.)</th>
-            </tr>
-          </thead>
-          <tbody class="text-stone-700">
-            <tr class="border-b border-stone-100">
-              <td class="py-2 pr-4 font-semibold">Pinnacle 4-Person</td>
-              <td class="py-2 pr-4">2-3 comfortably</td>
-              <td class="py-2 pr-4">~$2,199</td>
-              <td class="py-2">Harvia KIP 60B (6kW)</td>
-            </tr>
-            <tr class="border-b border-stone-100">
-              <td class="py-2 pr-4 font-semibold">Refuge 2-Person</td>
-              <td class="py-2 pr-4">1-2</td>
-              <td class="py-2 pr-4">~$1,599</td>
-              <td class="py-2">Harvia KIP 45B (4.5kW)</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-4 font-semibold">6-Person</td>
-              <td class="py-2 pr-4">4-5 comfortably</td>
-              <td class="py-2 pr-4">~$3,499</td>
-              <td class="py-2">Harvia KIP 80B (8kW)</td>
-            </tr>
-          </tbody>
-        </table>
+    <p class="text-lg text-stone-700 mb-4">Almost Heaven now sells many configurable barrel models. The old shortcut of calling one model the universal "best buy" misses the expensive parts of the decision: usable bench length, heater and controls, circuit, foundation, freight, offload, weather package, and the exact door and window configuration.</p>
+    <p class="text-stone-700 mb-8">Pick a size class first. Then compare the actual configuration that will arrive.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Three current paths</h2>
+    <div class="overflow-x-auto border border-stone-200 rounded-lg mb-8">
+      <table class="w-full min-w-[760px] text-sm text-left">
+        <thead class="bg-stone-100 text-stone-900">
+          <tr>
+            <th scope="col" class="px-4 py-3 font-bold">Model path</th>
+            <th scope="col" class="px-4 py-3 font-bold">Published exterior</th>
+            <th scope="col" class="px-4 py-3 font-bold">Published bench</th>
+            <th scope="col" class="px-4 py-3 font-bold">Current heater path</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-stone-200 text-stone-700">
+          <tr class="align-top">
+            <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Pinnacle 4-Person</th>
+            <td class="px-4 py-3">78 W x 71 D x 81 1/2 H inches on the configuration checked</td>
+            <td class="px-4 py-3">Two 16 W x 63 1/4 L inch benches</td>
+            <td class="px-4 py-3">6kW, 240V / 30A hardwired options shown</td>
+          </tr>
+          <tr class="align-top">
+            <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Princeton 6-Person</th>
+            <td class="px-4 py-3">78 W x 94 D x 75 3/8 H inches</td>
+            <td class="px-4 py-3">Two 16 W x 86 3/8 L inch benches</td>
+            <td class="px-4 py-3">8kW, 240V / 40A hardwired options shown</td>
+          </tr>
+          <tr class="align-top">
+            <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Kenova 4-6 Person</th>
+            <td class="px-4 py-3">6-by-7-foot class dealer listing</td>
+            <td class="px-4 py-3">Compare dealer drawing and selected interior</td>
+            <td class="px-4 py-3">Current dealer package lists an 8kW heater path</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-stone-500 mb-8">Specifications checked August 15, 2026. Recheck the selected configuration before purchase.</p>
+
+    <div class="grid md:grid-cols-2 gap-4 mb-10">
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-1">Current affiliate path</p>
+        <h3 class="text-xl font-bold text-stone-900 mb-2">Pinnacle 4-Person</h3>
+        <p class="text-sm text-stone-700 mb-4">Use the current listing to confirm the configured lumber, door, window, heater, controls, stones, freight, lead time, and warranty. The displayed capacity does not establish four-adult comfort.</p>
+        <AmazonButton asin="B017WJV8SO" variant="primary" ctaPosition="almost_heaven_pinnacle" />
       </div>
-      <p class="text-xs text-stone-500 mt-3">Note: heaters sold separately. Add $500-$650 to kit price.</p>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Pinnacle 4-Person — Best Buy</h2>
-    <p class="text-stone-700 mb-4">This is the model most people should buy. The "4-person" label is generous — it fits 4 people in a squeeze, 2-3 comfortably. For a couple or solo use, it is spacious. Assembly takes a full day for two people but nothing about it is complicated: staves slot into channels, hardware is standard, and the instructions are clear.</p>
-
-    <div class="border border-stone-200 rounded-xl p-5 bg-white mb-6">
-      <div class="grid grid-cols-2 gap-4 mb-4">
-        <div>
-          <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">Pros</p>
-          <ul class="space-y-1 text-sm text-stone-700">
-            <li>Western red cedar throughout</li>
-            <li>Pre-cut, pre-drilled — no major cuts needed</li>
-            <li>Good price-to-quality ratio</li>
-            <li>Ships via Amazon, fast delivery</li>
-            <li>Widely available replacement parts</li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">Cons</p>
-          <ul class="space-y-1 text-sm text-stone-700">
-            <li>Heater not included</li>
-            <li>Thinner staves than Dundalk</li>
-            <li>Hardware is functional but basic</li>
-            <li>Capacity labels run optimistic</li>
-          </ul>
-        </div>
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-1">Longer barrel path</p>
+        <h3 class="text-xl font-bold text-stone-900 mb-2">Kenova 4-6 Person</h3>
+        <p class="text-sm text-stone-700 mb-4">The dealer listing expands the room and heater package. Verify bench dimensions, configured load, electrical service, foundation, weather protection, and offload before treating it as the better group option.</p>
+        <SelectSaunasButton href={kenovaUrl} label="Check the current Kenova listing" ctaPosition="almost_heaven_kenova" />
       </div>
-      <AmazonButton asin="B017WJV8SO" variant="primary" />
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Kenova 4-6 Person Barrel</h2>
-    <p class="text-stone-700 mb-4">The current Kenova listing expands the barrel to a 6-by-7-foot room with two opposing benches and an 8kW heater package. Treat the published 4-6 person capacity as a maximum. Compare the actual bench dimensions, intended users, final heater, freight, base, power, weather protection, and assembly scope before ordering.</p>
+    <PlannerCTA
+      source="almost_heaven_model_compare"
+      heading="Compare the configured project, not just the barrel"
+      description="Record the intended users, bench posture, site, foundation, circuit, delivery path, budget, ZIP code, and timeline before choosing a model."
+    />
 
-    <div class="border border-stone-200 rounded-xl p-5 bg-white mb-6">
-      <SelectSaunasButton href={kenovaUrl} label="Check the current Kenova listing" ctaPosition="almost_heaven_barrel_kenova" />
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What changed from older buying advice</h2>
+    <div class="space-y-4 mb-10">
+      <div class="border-l-4 border-amber-400 pl-4">
+        <h3 class="font-bold text-stone-900 mb-1">The heater is configuration-specific</h3>
+        <p class="text-stone-700">Current product pages show selectable heater packages. Do not budget from an old claim that every room kit excludes the heater. Confirm exactly what the selected checkout option includes.</p>
+      </div>
+      <div class="border-l-4 border-amber-400 pl-4">
+        <h3 class="font-bold text-stone-900 mb-1">List prices are not durable comparison data</h3>
+        <p class="text-stone-700">Prices, promotions, freight, controls, windows, lumber, and heater packages change. Compare the complete configured project on the same day rather than carrying a fixed 2025 price into the decision.</p>
+      </div>
+      <div class="border-l-4 border-amber-400 pl-4">
+        <h3 class="font-bold text-stone-900 mb-1">Capacity is not comfort</h3>
+        <p class="text-stone-700">Use bench length and width, the actual users, heater and door positions, and the desired seated or reclining posture. A maximum capacity label is not a promise of personal space.</p>
+      </div>
+      <div class="border-l-4 border-amber-400 pl-4">
+        <h3 class="font-bold text-stone-900 mb-1">Assembly is a project variable</h3>
+        <p class="text-stone-700">Manual scope, foundation readiness, crew, tools, weather, delivery, configuration, and experience all affect timing. Review the current manual before scheduling a one-day build.</p>
+      </div>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Which Heater to Pair With It</h2>
-    <p class="text-stone-700 mb-4">Almost Heaven does not make their own heaters. The pairing most installers and owners recommend is Harvia KIP:</p>
-    <ul class="space-y-2 text-stone-700 mb-4 ml-4 text-sm">
-      <li><span class="font-semibold">Pinnacle (4-person):</span> Harvia KIP 60B (6kW) — sized exactly right</li>
-      <li><span class="font-semibold">6-Person:</span> Harvia KIP 80B (8kW) — handles the larger volume</li>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Seven checks before checkout</h2>
+    <ol class="list-decimal pl-5 space-y-4 text-stone-700 mb-10">
+      <li><strong>Bench fit:</strong> compare published bench dimensions with the actual users and intended posture.</li>
+      <li><strong>Selected package:</strong> capture the exact lumber, door, windows, heater, controls, stones, accessories, and model revision.</li>
+      <li><strong>Site and foundation:</strong> follow the current manual and site-specific structural, drainage, frost, and anchoring requirements.</li>
+      <li><strong>Electrical:</strong> have a qualified electrician confirm heater, controls, lighting, circuit, panel capacity, disconnects, and permit needs.</li>
+      <li><strong>Freight and offload:</strong> verify crate or pallet details, curbside obligations, appointment, access, storage, damage inspection, and return process.</li>
+      <li><strong>Weather exposure:</strong> identify the exterior treatment, roof or rain protection, drainage, snow and wind needs, and maintenance schedule for the selected model.</li>
+      <li><strong>Warranty responsibility:</strong> confirm who supports the room, heater, controls, freight damage, missing parts, and replacement components.</li>
+    </ol>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Current KIP60B research path</h2>
+    <p class="text-stone-700 mb-4">The Harvia KIP60B remains a current 6kW, 240VAC, single-phase heater with built-in controls. It is not automatically correct for every barrel or configuration. Use the selected room volume, glass and uninsulated surfaces, climate, current manual, controls, and electrical design.</p>
+    <AmazonButton asin="B0B7TRM95Y" variant="outline" label="View the current KIP60B listing" ctaPosition="almost_heaven_kip" />
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary sources checked</h2>
+    <ul class="space-y-3 text-sm text-stone-700 mb-10">
+      <li><a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Almost Heaven: current Pinnacle specifications and manual access</a></li>
+      <li><a href="https://almostheaven.com/products/princeton-6-person-barrel-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Almost Heaven: current Princeton specifications and manual access</a></li>
+      <li><a href="https://selectsaunas.com/products/almost-heaven-kenova-4-6-person-barrel-sauna-6x7-ft?sca_ref=10752576.S2huPg7gFg" target="_blank" rel="nofollow noopener sponsored" class="text-amber-700 font-semibold hover:underline">Select Saunas: current Kenova package</a></li>
+      <li><a href="https://www.harvia.com/en-US/products/JH60BU1UL/kip60b-6-kw-240vac-steel-ul" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Harvia: KIP60B product data and manual access</a></li>
     </ul>
-    <p class="text-stone-700 mb-6">Harvia is Finnish-made, UL-listed for the US, and widely available. See our <a href="/brands/harvia-sauna-heater-review/" class="text-amber-700 hover:underline">Harvia heater review</a> and <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">heater sizing guide</a> for more detail.</p>
-
-    <div class="border border-stone-200 rounded-xl p-5 bg-white mb-8">
-      <h3 class="font-bold text-stone-900 mb-1">Harvia KIP 60B — ~$579</h3>
-      <p class="text-stone-600 text-sm mb-3">The standard pairing for the Pinnacle. Finnish-made, UL-listed, holds 33 lbs of stones. Ships separately from Amazon.</p>
-      <AmazonButton asin="B0B7TRM95Y" variant="small" label="Check Harvia KIP 60B on Amazon" />
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What You Need Beyond the Kit</h2>
-    <ul class="space-y-2 text-stone-700 mb-8 ml-4 text-sm">
-      <li><span class="font-semibold">Foundation:</span> Gravel pad or concrete deck blocks — the kit cannot sit on bare ground. See our <a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">gravel pad guide</a>.</li>
-      <li><span class="font-semibold">Electrical:</span> Dedicated 240V circuit (20-30A depending on heater). Budget $800-$1,500 for electrician install.</li>
-      <li><span class="font-semibold">Heater:</span> $500-$650 for Harvia KIP.</li>
-      <li><span class="font-semibold">Stones:</span> ~$40-$80 for a bag of olivine stones. See our <a href="/guides/best-sauna-stones/" class="text-amber-700 hover:underline">sauna stones guide</a>.</li>
-      <li><span class="font-semibold">Accessories:</span> Bucket, ladle, thermometer — see our <a href="/guides/best-sauna-accessories/" class="text-amber-700 hover:underline">accessories guide</a>.</li>
-    </ul>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Almost Heaven vs Dundalk LeisureCraft</h2>
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <p class="mb-2">Both are legitimate brands. The differences come down to budget and how long you want the sauna to last:</p>
-      <ul class="space-y-2">
-        <li><span class="font-semibold">Almost Heaven:</span> Better value, easier to find, solid 15-20 year lifespan. Good for most buyers.</li>
-        <li><span class="font-semibold">Dundalk LeisureCraft:</span> Canadian-made, thicker staves, heavier hardware, 25-30+ year lifespan. Worth the premium if this is a permanent installation.</li>
-      </ul>
-      <p class="mt-2">See our <a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk full review</a> for the comparison in depth.</p>
-    </div>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Are Almost Heaven barrel saunas good?</h3>
-        <p class="text-stone-700">Yes — solid mid-range quality. Better than budget imports, not as heavy-duty as Dundalk. For most first-time buyers the value is hard to beat.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Which Almost Heaven model should I buy?</h3>
-        <p class="text-stone-700">The Pinnacle 4-Person for most buyers. Step up to the 6-Person if you regularly sauna with 3+ people or want room to lie down.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Does Almost Heaven include a heater?</h3>
-        <p class="text-stone-700">No. Budget $500-$650 separately for a Harvia KIP heater.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How long to assemble?</h3>
-        <p class="text-stone-700">6-8 hours with two people. Pre-cut, pre-drilled — no specialty tools or cuts needed.</p>
-      </div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Which model should I compare first?</h3><p class="text-stone-700">Start with the bench length, exterior dimensions, users, heater package, circuit, delivery, and foundation. The size class should follow those needs.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Does the sauna include a heater?</h3><p class="text-stone-700">Current pages show selectable heater configurations. Confirm the exact checkout package, controls, stones, electrical needs, and warranty.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">How many adults fit?</h3><p class="text-stone-700">Measure comfort from the published benches and actual users. Treat the capacity label as a maximum, not a comfort rating.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">How long does assembly take?</h3><p class="text-stone-700">It varies. Review the current manual and account for site preparation, configuration, crew, tools, weather, and delivery.</p></div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Continue planning</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Sauna Full Brand Review</a></li>
-        <li><a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk LeisureCraft Review</a></li>
-        <li><a href="/brands/harvia-sauna-heater-review/" class="text-amber-700 hover:underline">Harvia Heater Review</a></li>
-        <li><a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">Gravel Pad for Barrel Sauna</a></li>
+        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Brand Research</a></li>
+        <li><a href="/guides/barrel-sauna-costco/" class="text-amber-700 hover:underline">Compare the current Costco barrel bundle</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Sauna Foundation Guide</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Planning</a></li>
         <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
-        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">How Much Does a Sauna Cost?</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

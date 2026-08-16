@@ -1,131 +1,185 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a mobile sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A mobile sauna is a sauna unit built on a trailer or portable platform that can be towed between locations. They are used by sauna rental businesses, event operators, and homeowners who want a sauna they can relocate. Most mobile saunas are barrel-style or cabin-style builds on a utility trailer with a wood-burning stove — no electrical hookup needed."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How much does a mobile sauna cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Purpose-built mobile saunas run $8,000-$25,000+ depending on size and builder. DIY builds on a used trailer can be done for $3,000-$6,000 with time and woodworking skill. Pre-built units from specialty builders (Nordic, Saunabuilt, custom fabricators) start around $12,000 for a 4-6 person model."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you rent out a mobile sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — mobile sauna rental is a growing small business model. A mobile sauna rented for events, corporate retreats, or private sessions can charge $200-$600 per session. With enough bookings a $15,000 investment can break even within one season."
-      }
-    }
-  ]
-};
-import AmazonButton from '../../components/AmazonButton.astro';
+const faqs = [
+  {
+    question: 'How much does a mobile sauna cost in 2026?',
+    answer: 'The three current U.S. examples reviewed here start at $14,900, $14,995, and $14,997. Those are published starting prices, not complete project totals. Delivery, upgrades, taxes, registration, insurance, storage, towing equipment, and site work can add cost.',
+  },
+  {
+    question: 'Is every sauna on a trailer legal to tow on public roads?',
+    answer: 'No. A sauna structure mounted on a trailer is not automatically a compliant road vehicle. Before buying, verify the certification label, VIN, manufacturer information, weight ratings, title documents, and the registration and equipment rules in your state.',
+  },
+  {
+    question: 'Can an SUV tow a mobile sauna?',
+    answer: 'Possibly, but the sauna seller cannot answer that from the vehicle type alone. Compare the completed trailer weight, tongue weight, axle rating, cargo, passengers, hitch equipment, and the exact tow vehicle manufacturer\'s limits. Use the lower applicable limit and get qualified help when the numbers are unclear.',
+  },
+  {
+    question: 'Can a mobile sauna be used as a rental business?',
+    answer: 'It can be operated commercially where local rules and insurance allow, but the purchase alone does not establish demand or profitability. Validate permits, insurance, transport time, setup, cleaning, fuel, storage, payment processing, cancellations, and realistic local demand before treating it as a business investment.',
+  },
+];
 ---
 <Base
-  title="Mobile Sauna for Sale (2025): What to Know Before You Buy"
-  description="Mobile saunas explained: what they cost, where to find them, how the rental business works, and whether building or buying makes more sense."
+  title="Mobile Sauna for Sale (2026): Compare 3 Current Trailer Builds"
+  description="Compare three current mobile sauna buying paths by published starting price, trailer package, stove, capacity claim, delivery area, and paperwork questions."
   canonical="/guides/mobile-sauna-for-sale"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <article class="mx-auto max-w-4xl">
+    <header class="mb-8">
+      <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-amber-700">Mobile sauna buying guide</p>
+      <h1 class="mb-4 text-4xl font-bold leading-tight text-stone-900">Buy the trailer, not just the sauna.</h1>
+      <p class="text-sm text-stone-500">Last reviewed August 15, 2026 · 10 min read</p>
+      <p class="mt-4 max-w-3xl text-lg text-stone-700">A mobile sauna has two systems to evaluate: the hot room and the road vehicle carrying it. The better quote is the one that makes both systems clear before you pay a deposit.</p>
+    </header>
 
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Mobile Sauna for Sale (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
-
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-in-snow.jpg" alt="Mobile sauna on a snowy outdoor setting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="mb-8 overflow-hidden rounded-lg">
+      <img src="/images/lifestyle/sauna-in-snow.jpg" alt="Wood sauna in a snowy outdoor setting" class="max-h-96 w-full object-cover" loading="eager" width="1200" height="800" />
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page may contain affiliate links.
+    <div class="mb-8 border-l-4 border-amber-600 bg-amber-50 p-5 text-sm text-stone-800">
+      <strong>Editorial boundary:</strong> We did not test these trailers and do not rank one as the universal winner. Prices, availability, specifications, delivery, and seller claims were checked against current pages on August 15, 2026. Confirm the signed order and road documents before paying.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Mobile saunas are trailer-mounted sauna units that move. They serve two very different markets: homeowners who want the option to relocate their sauna (rental property, seasonal use, future moves), and entrepreneurs running mobile sauna rental businesses. The buying process and price range differs significantly for each.</p>
+    <PlannerCTA
+      source="mobile_sauna_above_fold"
+      heading="Define the route, tow vehicle, site, and intended use before requesting quotes"
+      description="Build a free project brief with your ZIP code, budget, timeline, desired capacity, delivery limits, and personal or commercial use. Add the tow vehicle and travel plans in the notes if you know them."
+    />
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What a Mobile Sauna Actually Is</h2>
-    <p class="text-stone-700 mb-4">Most mobile saunas are built on a 5x10 or 6x12 utility trailer. The structure is typically a barrel or small cabin sauna, heated by a wood-burning stove rather than an electric heater — no 240V hookup needed, just wood. The trailer has standard 2-inch ball hitch, road lighting, and a tongue for towing with a standard pickup or SUV.</p>
-    <p class="text-stone-700 mb-6">Purpose-built units from specialty fabricators include proper road anchoring, insulated floors, and a stove with an external wood access door so you can reload fuel without entering the sauna. DIY builds on a used Harbor Freight trailer exist and work fine if you have the woodworking skill.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where to Find Mobile Saunas for Sale</h2>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Specialty builders</h3>
-    <p class="text-stone-700 mb-4">The most reliable source. Several US and Canadian builders specialize in mobile sauna fabrication:</p>
-    <ul class="space-y-2 text-stone-700 mb-4 ml-4 text-sm">
-      <li><span class="font-semibold">Nordic Sauna Co:</span> Minnesota-based, well-known in the mobile space, 4-8 person units, $12,000-$22,000</li>
-      <li><span class="font-semibold">Custom fabricators:</span> Search "mobile sauna trailer builder [your state]" — regional builders often have shorter lead times</li>
-      <li><span class="font-semibold">Etsy and local craftsmen:</span> Smaller operations, often good quality at lower prices, longer wait</li>
-    </ul>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Facebook Marketplace and Craigslist</h3>
-    <p class="text-stone-700 mb-4">Used mobile saunas appear regularly. Priced $4,000-$12,000 for decent used units. Inspect the wood thoroughly — moisture damage in the subfloor and stove surround is the most common issue.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">DIY</h3>
-    <p class="text-stone-700 mb-6">A barrel sauna kit on a trailer can work well when the trailer and mounting system are engineered for the load. Add a compact wood-burning heater such as the Harvia M3, then budget separately for the chimney, heat shielding, trailer, and installation materials. The main challenge is securing the sauna so it does not shift in transit.</p>
-
-    <div class="border border-stone-200 rounded-xl p-5 bg-white mb-8">
-      <h3 class="font-bold text-stone-900 mb-1">Harvia M3 Wood-Burning Stove</h3>
-      <p class="text-stone-600 text-sm mb-3">The standard wood stove recommendation for mobile sauna builds. Compact, no electricity needed, 8-13m³ heating volume.</p>
-      <AmazonButton asin="B01FY6PZYU" variant="small" />
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Mobile Sauna as a Business</h2>
-    <p class="text-stone-700 mb-4">The mobile sauna rental model works. Here is the rough math:</p>
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-6 text-sm">
-      <ul class="space-y-2 text-stone-700">
-        <li><span class="font-semibold">Unit cost:</span> $12,000-$18,000 (purpose-built)</li>
-        <li><span class="font-semibold">Session rate:</span> $250-$500 for 2-3 hour private session</li>
-        <li><span class="font-semibold">Operating costs per session:</span> ~$30-$50 (fuel, travel, cleaning)</li>
-        <li><span class="font-semibold">Break-even:</span> ~40-60 sessions at $350 average = $14,000-$21,000 revenue</li>
-        <li><span class="font-semibold">Timeline:</span> Achievable in one active season in a metro area</li>
-      </ul>
-    </div>
-    <p class="text-stone-700 mb-6">Best markets: corporate wellness events, private parties, athletic recovery (CrossFit gyms, sports teams), and cold-climate tourism. Instagram and Airbnb Experiences are common marketing channels.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Check Before Buying Used</h2>
-    <ul class="space-y-2 text-stone-700 mb-8 ml-4 text-sm">
-      <li><span class="font-semibold">Subfloor condition:</span> Pull back any rubber mats and check the floor boards. Water collects here and causes rot first.</li>
-      <li><span class="font-semibold">Stove flashing and seals:</span> The stovepipe exit through the roof is the most common leak point.</li>
-      <li><span class="font-semibold">Trailer frame:</span> Check for rust at the tongue and crossmembers. Surface rust is cosmetic; through-rust on structural members is a deal-breaker.</li>
-      <li><span class="font-semibold">Road lighting:</span> Verify brake lights, turn signals, and running lights all work — getting pulled over with a sauna behind you is a story nobody needs.</li>
-    </ul>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is a mobile sauna?</h3>
-        <p class="text-stone-700">A sauna built on a trailer that can be towed. Most use wood-burning stoves — no electrical hookup needed. Used for personal use, events, and rental businesses.</p>
+    <section class="mt-12" aria-labelledby="paths-heading">
+      <p class="mb-2 text-xs font-bold uppercase tracking-wide text-amber-700">Choose the buying path first</p>
+      <h2 id="paths-heading" class="mb-6 text-3xl font-bold text-stone-900">Three routes carry different risk</h2>
+      <div class="grid gap-5 md:grid-cols-3">
+        <div class="border-t-4 border-stone-900 bg-white p-5 shadow-sm">
+          <h3 class="mb-2 font-bold text-stone-900">Completed trailer sauna</h3>
+          <p class="text-sm text-stone-700">The seller supplies the sauna and trailer as one package. Ask who manufactured and certified the completed trailer, then verify its label, VIN, weight ratings, and title documents.</p>
+        </div>
+        <div class="border-t-4 border-stone-900 bg-white p-5 shadow-sm">
+          <h3 class="mb-2 font-bold text-stone-900">Sauna plus sourced trailer</h3>
+          <p class="text-sm text-stone-700">The sauna builder mounts a structure to your trailer or one sourced separately. Get written responsibility for engineering, attachment, axle loading, certification, warranty, and final road documents.</p>
+        </div>
+        <div class="border-t-4 border-stone-900 bg-white p-5 shadow-sm">
+          <h3 class="mb-2 font-bold text-stone-900">Used mobile sauna</h3>
+          <p class="text-sm text-stone-700">You inherit both sauna wear and trailer history. Inspect the hot room, stove system, chimney, moisture damage, frame, tires, brakes, lights, coupler, safety chains, VIN, title, and service records.</p>
+        </div>
       </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How much does a mobile sauna cost?</h3>
-        <p class="text-stone-700">Purpose-built: $8,000-$25,000. Used: $4,000-$12,000. DIY on a used trailer: $3,000-$6,000 with skill and time.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Can you rent out a mobile sauna?</h3>
-        <p class="text-stone-700">Yes. $250-$500 per session is typical. Break-even in 40-60 sessions is realistic in an active market.</p>
-      </div>
-    </div>
+    </section>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+    <section class="mt-12" aria-labelledby="comparison-heading">
+      <h2 id="comparison-heading" class="mb-6 text-3xl font-bold text-stone-900">Three current U.S. builds to compare</h2>
+      <div class="overflow-x-auto border border-stone-200 bg-white">
+        <table class="w-full min-w-[920px] text-left text-sm">
+          <thead class="bg-stone-900 text-white">
+            <tr>
+              <th class="px-4 py-3">Current listing</th>
+              <th class="px-4 py-3">Published start</th>
+              <th class="px-4 py-3">Trailer and stove</th>
+              <th class="px-4 py-3">Published capacity</th>
+              <th class="px-4 py-3">Important quote question</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-200 text-stone-700">
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">SaltSaun.NW 6 x 10</td><td class="px-4 py-3">$14,995</td><td class="px-4 py-3">Welded steel trailer; standard wood stove</td><td class="px-4 py-3">6-8 adults, seller claim</td><td class="px-4 py-3">Confirm final weight, certification label, VIN, title documents, pickup, and your state requirements.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">NorthUp Curve XL Mobile</td><td class="px-4 py-3">$14,997</td><td class="px-4 py-3">Aluminum trailer; Harvia M3 included</td><td class="px-4 py-3">6-8 adults, seller claim</td><td class="px-4 py-3">Confirm completed weight, certification and title documents, delivery cost, options, and current deposit terms.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Minnesota Mobile Sauna Essential</td><td class="px-4 py-3">$14,900</td><td class="px-4 py-3">6 ft 5 in x 10 ft heavy-duty trailer; wood-fired stove</td><td class="px-4 py-3">No numeric claim on the current buy page</td><td class="px-4 py-3">Confirm the final layout, completed weight, road documents, delivery area, options, and exact payment schedule.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 text-xs text-stone-600">Starting prices are snapshots, not quotes. Capacity labels come from sellers and are not standardized comfort measurements.</p>
+    </section>
+
+    <section class="mt-12" aria-labelledby="models-heading">
+      <h2 id="models-heading" class="mb-6 text-2xl font-bold text-stone-900">Where each listing fits</h2>
+      <div class="space-y-8">
+        <section class="border border-stone-200 bg-white p-6" aria-labelledby="salt-heading">
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-amber-700">Oregon pickup path</p>
+          <h3 id="salt-heading" class="mb-3 text-2xl font-bold text-stone-900">SaltSaun.NW 6 x 10</h3>
+          <p class="mb-4 text-stone-700">SaltSaun publishes a $14,995 price for its 6-by-10 model with a standard stove. It describes a welded steel utility trailer with a VIN and Certificate of Origin, lists a 60-day lead time, and says construction and delivery take place at its Redmond, Oregon facility. Those are seller statements. Ask for the actual certification label, final documents, completed weight, payment terms, and state-specific registration path for your unit.</p>
+          <a href="https://www.saltsaun.com/buying-information" target="_blank" rel="noopener" class="inline-flex min-h-12 items-center justify-center rounded-md border border-stone-900 bg-white px-5 py-3 font-semibold text-stone-900 hover:bg-stone-50" data-track-event="manufacturer_outbound_click" data-partner="saltsaun_nw" data-link-mode="manufacturer_direct" data-cta-position="mobile_sauna_saltsaun">Check current SaltSaun buying details</a>
+        </section>
+
+        <section class="border border-stone-200 bg-white p-6" aria-labelledby="northup-heading">
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-amber-700">Lightweight panoramic format</p>
+          <h3 id="northup-heading" class="mb-3 text-2xl font-bold text-stone-900">NorthUp Curve XL Mobile</h3>
+          <p class="mb-4 text-stone-700">NorthUp currently lists this model at $14,997 with a stove, full assembly, and nationwide delivery. The product page describes an aluminum trailer, a roughly 950-pound completed weight, three 6-foot benches, and seating for 6-8 adults. Treat every number as a seller specification until it appears in your order documents. Confirm the exact stove, freight, completed dimensions, tongue weight, VIN, certification label, warranty, and delivery method.</p>
+          <a href="https://northupsaunas.com/products/northup-sauna-xl-mobile" target="_blank" rel="noopener" class="inline-flex min-h-12 items-center justify-center rounded-md border border-stone-900 bg-white px-5 py-3 font-semibold text-stone-900 hover:bg-stone-50" data-track-event="manufacturer_outbound_click" data-partner="northup_saunas" data-link-mode="manufacturer_direct" data-cta-position="mobile_sauna_northup">Check the current NorthUp listing</a>
+        </section>
+
+        <section class="border border-stone-200 bg-white p-6" aria-labelledby="mn-heading">
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-amber-700">Built-to-order regional format</p>
+          <h3 id="mn-heading" class="mb-3 text-2xl font-bold text-stone-900">Minnesota Mobile Sauna Essential</h3>
+          <p class="mb-4 text-stone-700">The current buy page starts its 6.5-by-10-foot sauna at $14,900. The base package lists a red-cedar hot room, wood-fired stove, upper and lower benches, board-and-batten exterior, steel roof, and heavy-duty trailer. Delivery is centered on Minnesota and northwestern Wisconsin, with buyers outside that area asked to contact the builder. Custom options can change the price quickly, so compare a written base quote with the exact options you need.</p>
+          <a href="https://mnmobilesauna.com/buy/" target="_blank" rel="noopener" class="inline-flex min-h-12 items-center justify-center rounded-md border border-stone-900 bg-white px-5 py-3 font-semibold text-stone-900 hover:bg-stone-50" data-track-event="manufacturer_outbound_click" data-partner="minnesota_mobile_sauna" data-link-mode="manufacturer_direct" data-cta-position="mobile_sauna_minnesota">Review the current Minnesota build</a>
+        </section>
+      </div>
+    </section>
+
+    <section class="mt-12" aria-labelledby="road-heading">
+      <p class="mb-2 text-xs font-bold uppercase tracking-wide text-amber-700">Road-use check</p>
+      <h2 id="road-heading" class="mb-5 text-2xl font-bold text-stone-900">Do not accept "street legal" as the whole answer</h2>
+      <p class="mb-5 text-stone-700">NHTSA warns that trailers sold in the United States must meet federal safety requirements and that a compliant trailer has a certification label. It advises buyers to check whether the manufacturer is listed in its Vehicle Product Information Catalog. State agencies control titling and registration requirements, so a VIN or seller statement alone does not finish the check.</p>
+      <div class="grid gap-x-8 gap-y-5 md:grid-cols-2">
+        {[
+          ['Manufacturer and certification', 'Identify the company responsible for the completed trailer. Inspect the federal certification label and compare its manufacturer, VIN, GVWR, GAWR, tire, and date information with the documents.'],
+          ['Completed weight', 'Get the finished trailer weight and ratings in writing. Ask whether water, stones, wood, batteries, accessories, and personal cargo are included in the published number.'],
+          ['Tow vehicle match', 'Use the exact vehicle manual, hitch and receiver ratings, payload, passengers, cargo, and trailer tongue weight. Vehicle type alone is not a towing calculation.'],
+          ['State and local rules', 'Check the DMV for title, registration, plates, brakes, lighting, and inspections. Also check parking, storage, fire, and site rules where the sauna will operate.'],
+          ['Heat system documents', 'Review the exact stove, chimney, heat-shield, clearance, floor, ventilation, and installation instructions. A road-safe trailer can still have an unsafe hot room.'],
+          ['Insurance and commercial use', 'Tell the insurer exactly how the trailer will be transported and used. Personal property, road liability, commercial guests, and paid events can require different coverage.'],
+        ].map(([title, text]) => (
+          <div class="border-b border-stone-200 pb-5"><h3 class="mb-1 font-bold text-stone-900">{title}</h3><p class="text-sm text-stone-700">{text}</p></div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-12 border border-stone-300 bg-stone-100 p-6" aria-labelledby="business-heading">
+      <h2 id="business-heading" class="mb-3 text-2xl font-bold text-stone-900">Planning commercial use? Build the costs before the revenue forecast.</h2>
+      <p class="mb-4 text-stone-700">We removed the old session-rate and one-season break-even claims because they were not supported by operating records. A useful commercial review starts with local evidence: permitted operating locations, insurance quotes, towing and labor time, setup and cleaning, fuel, storage, maintenance, payment fees, weather cancellations, taxes, and realistic booking demand.</p>
+      <p class="text-sm text-stone-700">Do not buy from a generic revenue example. Ask a qualified attorney, insurer, accountant, and local authorities what your specific operation requires.</p>
+    </section>
+
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="sources-heading">
+      <h2 id="sources-heading" class="mb-4 text-xl font-bold text-stone-900">Sources checked</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-        <li><a href="/guides/outdoor-sauna-for-sale/" class="text-amber-700 hover:underline">Outdoor Sauna for Sale</a></li>
-        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">How Much Does a Sauna Cost?</a></li>
-        <li><a href="/guides/propane-sauna-heater/" class="text-amber-700 hover:underline">Propane Sauna Heaters</a></li>
+        <li><a href="https://www.nhtsa.gov/press-releases/trailers-federal-safety-regulations" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">NHTSA consumer alert on trailer federal safety requirements</a></li>
+        <li><a href="https://vpic.nhtsa.dot.gov/" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">NHTSA Vehicle Product Information Catalog</a></li>
+        <li><a href="https://www.usa.gov/state-motor-vehicle-services" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">USAGov state motor vehicle services directory</a></li>
+        <li><a href="https://www.ftc.gov/business-guidance/blog/2026/06/back-those-earnings-claims-other-lessons-ftcs-labor-task-force-work" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">FTC guidance on substantiating earnings claims</a></li>
+        <li><a href="https://www.saltsaun.com/buying-information" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">SaltSaun.NW buying information</a></li>
+        <li><a href="https://northupsaunas.com/products/northup-sauna-xl-mobile" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">NorthUp Curve XL Mobile product page</a></li>
+        <li><a href="https://mnmobilesauna.com/buy/" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Minnesota Mobile Sauna buy page</a></li>
       </ul>
-    </div>
+    </section>
 
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-2xl font-bold text-stone-900">Mobile sauna buying questions</h2>
+      <div class="mt-4 divide-y divide-stone-200">
+        {faqs.map((faq) => (
+          <div class="py-5"><h3 class="font-bold text-stone-900">{faq.question}</h3><p class="mt-2 text-sm text-stone-700">{faq.answer}</p></div>
+        ))}
+      </div>
+    </section>
+
+    <div class="mt-10 bg-stone-900 p-6 text-white">
+      <h2 class="mb-3 text-xl font-bold">Continue the project check</h2>
+      <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <a href="/guides/sauna-tent/" class="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-stone-900 hover:bg-stone-100">Compare portable sauna tents</a>
+        <a href="/guides/best-wood-burning-sauna-heaters/" class="inline-flex min-h-11 items-center justify-center rounded-md border border-stone-500 px-4 py-2 text-sm font-semibold text-white hover:border-stone-300">Compare wood-fired heater formats</a>
+        <a href="/guides/sauna-cost/" class="inline-flex min-h-11 items-center justify-center rounded-md border border-stone-500 px-4 py-2 text-sm font-semibold text-white hover:border-stone-300">Review total project costs</a>
+        <a href="/tools/sauna-cost-calculator/?utm_source=mobile_sauna&utm_medium=onsite&utm_campaign=project_budget" class="inline-flex min-h-11 items-center justify-center rounded-md border border-stone-500 px-4 py-2 text-sm font-semibold text-white hover:border-stone-300" data-track-event="calculator_cta_clicked" data-cta-position="mobile_sauna_project_budget">Build a project budget</a>
+      </div>
+    </div>
   </article>
 </Base>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+})} />

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -7,123 +8,119 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What essential oils are safe to use in a sauna?",
+      "name": "Can I put essential oil directly on sauna stones?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Eucalyptus, birch, pine, and spruce are the traditional sauna-safe options. Use essences specifically formulated for sauna use — they're diluted for safe diffusion via steam. Never add undiluted essential oils directly to sauna rocks as they can ignite and damage the heater."
+        "text": "No. Heater manufacturers warn that undiluted sauna fragrance or oil can ignite when poured directly onto hot stones. Use only a sauna-designed product, in the location and dilution allowed by both the heater manual and the fragrance instructions."
       }
     },
     {
       "@type": "Question",
-      "name": "How do you use essential oils in a sauna?",
+      "name": "How much sauna fragrance should I use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Add 5 to 10 drops of sauna essence to your water bucket before pouring over the rocks. The steam carries the aroma through the room. Never pour undiluted oil directly onto the heater stones — it can ignite or leave a residue that damages the elements."
+        "text": "Use the amount on the specific fragrance label and heater instructions. Concentrations differ, so a universal number of drops is not reliable. Start no stronger than the stated directions and stop if anyone feels irritated or unwell."
       }
     },
     {
       "@type": "Question",
-      "name": "What does birch sauna essence smell like?",
+      "name": "Can I use sauna fragrance in an infrared sauna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Birch has a fresh, slightly sweet, woodsy scent — less sharp than eucalyptus. It's the most traditionally Finnish sauna aroma and works well for people who find eucalyptus too intense."
+        "text": "Do not put fragrance on infrared emitters or controls. Use only a method explicitly approved by the cabin manufacturer, such as a designated aroma accessory, and follow the fragrance directions."
       }
     }
   ]
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Best Sauna Essential Oils and Essences (2025)"
-  description="The best sauna essences and essential oils for steam aromatherapy. Eucalyptus, birch, pine, what works, how to use them, and what to avoid."
+  title="Sauna Scents and Essential Oils (2026): A Heater-Safe Guide"
+  description="Choose and use sauna fragrance without guessing: compatibility by heater type, label checks, dilution rules, and manufacturer-backed warnings."
   canonical="/guides/best-sauna-essential-oils"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Sauna Essential Oils and Essences (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+    <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-3">Sauna accessory guide</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna scents and essential oils: check the heater first</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 15, 2026 &middot; Backyard Sauna Pro</p>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This is a desk-researched safety and buying guide, not a hands-on product test.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Adding sauna essence to your water before pouring is one of the simplest upgrades you can make to a session. The steam carries the aroma through the room and the effect is immediate. A plain sauna becomes something that genuinely feels like a spa in about 30 seconds.</p>
+    <p class="text-lg text-stone-700 mb-4">The right question is not which scent is "best." It is whether your exact heater and the fragrance label allow the same use method.</p>
+    <p class="text-stone-700 mb-8">Do not pour ordinary essential oil directly on hot stones, heating elements, infrared emitters, a steam reservoir, or controls. Heater designs differ. Some manuals allow a properly diluted sauna fragrance in steam water. Others require a separate scent cup or prohibit fragrance in a reservoir.</p>
 
-    <p class="text-stone-700 mb-8">The key word is "sauna essence", not regular essential oil. There's an important difference, and using the wrong one can damage your heater.</p>
+    <section class="bg-red-50 border border-red-200 rounded-xl p-6 mb-10">
+      <h2 class="text-2xl font-bold text-stone-900 mb-3">The non-negotiable rule</h2>
+      <p class="text-stone-700 mb-3">Use only a product labeled for sauna use, and only when its directions agree with the instructions for your heater or steam system.</p>
+      <p class="text-stone-700">HUUM's HIVE manual warns that undiluted fragrance or oil on stones can catch fire. Harvia likewise advises against chemical additives unless they are designed for sauna use. A product being natural or labeled "essential oil" does not establish heater compatibility.</p>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Picks</h2>
-
-    <div class="space-y-6 mb-10">
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="mb-2">
-          <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
-          <h3 class="text-xl font-bold text-stone-900 mt-1">Eucalyptus Sauna Essence</h3>
-        </div>
-        <p class="text-stone-600 mb-3">Eucalyptus is a familiar sauna scent with a crisp aroma that can feel refreshing in hot air. Use only a product labeled for sauna use, and follow its dilution and heater directions rather than adding undiluted oil to hot stones.</p>
-        <ul class="text-stone-600 text-sm space-y-1 mb-4">
-          <li>Pre-diluted for safe sauna use</li>
-          <li>Follow the product's stated dilution amount</li>
-          <li>Works with any traditional or wood-burning heater</li>
-          <li>Keep the bottle sealed and stored as the label directs</li>
-        </ul>
-        <AmazonButton asin="B07CZ4NN1P" variant="primary" />
-      </div>
-
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Compatibility by sauna type</h2>
+    <div class="overflow-x-auto border border-stone-200 rounded-xl mb-10">
+      <table class="w-full text-left text-sm min-w-[680px]">
+        <thead class="bg-stone-100 text-stone-900">
+          <tr><th class="px-4 py-3 font-semibold">Sauna or heater</th><th class="px-4 py-3 font-semibold">Do this</th><th class="px-4 py-3 font-semibold">Do not assume</th></tr>
+        </thead>
+        <tbody class="divide-y divide-stone-200 text-stone-700">
+          <tr><td class="px-4 py-3 font-semibold text-stone-900">Traditional heater with stones</td><td class="px-4 py-3">If both instructions permit it, mix the sauna fragrance into steam water at the labeled dilution.</td><td class="px-4 py-3">Do not put undiluted oil directly on stones or metal.</td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-stone-900">Combi heater or steam reservoir</td><td class="px-4 py-3">Use only the designated scent cup, channel, or water method named in the exact manual.</td><td class="px-4 py-3">Do not add fragrance to a reservoir just because it holds water; some manuals explicitly prohibit it.</td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-stone-900">Infrared cabin</td><td class="px-4 py-3">Use only a cabin-maker-approved aroma accessory and placement.</td><td class="px-4 py-3">Do not put liquid on emitters, wiring, controls, or hot surfaces.</td></tr>
+          <tr><td class="px-4 py-3 font-semibold text-stone-900">Portable steam tent</td><td class="px-4 py-3">Follow the steam generator and tent instructions, including cleaning requirements.</td><td class="px-4 py-3">Do not add oil to the generator tank unless the manufacturer specifically allows it.</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Sauna Essence vs Essential Oil: The Key Difference</h2>
-    <p class="text-stone-700 mb-4">Sauna essences are pre-diluted specifically for steam diffusion. They're typically 2-5% active oil in a water-soluble carrier. This matters for two reasons: safety and heater protection.</p>
-    <p class="text-stone-700 mb-4">Undiluted essential oils have a flash point, the temperature at which they can ignite. Sauna rocks reach 400-500°F. Pouring concentrated essential oil directly onto rocks is a fire risk. Even if ignition doesn't occur, undiluted oil leaves a waxy residue on heater elements that degrades performance over time.</p>
-    <p class="text-stone-700 mb-6">Always add essence to the water bucket, not directly to the stones. The water dilutes it further and carries it as steam, which is exactly how it's meant to work.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to check before buying</h2>
+    <ol class="list-decimal pl-5 space-y-3 text-stone-700 mb-8">
+      <li><strong>Intended use:</strong> the label should explicitly name sauna use, not only a room diffuser, bath, skin, or massage use.</li>
+      <li><strong>Application method:</strong> confirm whether it belongs in steam water, a scent cup, a channel, or another designated accessory.</li>
+      <li><strong>Product-specific dilution:</strong> follow the stated amount. Concentrations differ, so there is no reliable universal drop count.</li>
+      <li><strong>Warnings and ingredients:</strong> check skin, eye, inhalation, allergy, pet, child, storage, and flammability warnings relevant to your household.</li>
+      <li><strong>Cleaning instructions:</strong> know what must be rinsed or wiped afterward so residue does not build up.</li>
+    </ol>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Best Scents and What They Do</h2>
+    <div class="bg-stone-900 text-white rounded-xl p-6 mb-10">
+      <p class="text-amber-300 text-sm font-semibold uppercase tracking-wide mb-2">Shop the category</p>
+      <h2 class="text-2xl font-bold mb-3">Compare products labeled for sauna use</h2>
+      <p class="text-stone-200 mb-4">The previous exact listing on this page was no longer reliable, so this button opens a current Amazon category search. Read the label and verify heater compatibility before ordering.</p>
+      <AmazonButton asin="B07CZ4NN1P" variant="primary" ctaPosition="sauna_fragrance_guide" />
+    </div>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Eucalyptus</h3>
-    <p class="text-stone-700 mb-4">The most popular sauna scent worldwide. Sharp, cooling, and respiratory-clearing. If you use the sauna after exercise or when congested, eucalyptus is the right choice. Start with 5 drops per ladle, it's potent and a heavy hand makes the air feel harsh.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How to introduce a fragrance</h2>
+    <ul class="list-disc pl-5 space-y-3 text-stone-700 mb-8">
+      <li>Ask everyone using the sauna before adding a scent.</li>
+      <li>Ventilate and prepare the sauna according to its manual.</li>
+      <li>Use no more than the product's stated starting dilution and approved method.</li>
+      <li>Stop using the fragrance and leave the room if anyone develops irritation, dizziness, breathing difficulty, nausea, or another concerning symptom.</li>
+      <li>Store the closed container away from heat and out of reach of children and pets, following the label.</li>
+    </ul>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Birch</h3>
-    <p class="text-stone-700 mb-4">The traditional Finnish choice. Birch has a softer, woodsy-sweet scent that's less medicinal than eucalyptus. If you find eucalyptus too sharp, birch is the natural alternative. It smells like a forest in a sauna rather than a pharmacy, which some people strongly prefer.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Pine and spruce</h3>
-    <p class="text-stone-700 mb-4">Pine gives a clean, resinous forest aroma. Spruce is similar but lighter. Both work well as background scents that don't dominate the room. Good options if you want something subtle rather than the full eucalyptus hit.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Tar (terva)</h3>
-    <p class="text-stone-700 mb-4">Finnish birch tar is polarizing but beloved by traditional sauna users. Dark, smoky, and earthy, it smells like an old-growth forest and nothing else. Worth trying once if you want the most authentically Finnish sauna experience possible. Not for everyone.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">What to avoid</h3>
-    <p class="text-stone-700 mb-4">Citrus oils (lemon, orange, grapefruit) break down quickly under heat and the scent turns sour. Floral oils (lavender, rose) at high temperatures can produce an cloying effect that's overwhelming in an enclosed space. Minty oils like peppermint can cause eye and mucous membrane irritation when concentrated in hot humid air. Stick to the wood and herbal families for sauna use.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How Much to Use</h2>
-    <p class="text-stone-700 mb-4">Start with 5 to 8 drops per ladle of water. Pour one ladle and wait a full round before adding more. The scent intensity depends on your heater temperature, room size, and ventilation, what seems mild at first can build quickly in an enclosed space with repeated pours.</p>
-    <p class="text-stone-700 mb-6">If guests are sensitive to strong scents, skip the essence for their session or use half the usual amount. Some people find concentrated aromatherapy in a small hot room triggers headaches, even with safe scents.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Manufacturer references</h2>
+    <ul class="space-y-3 text-sm text-stone-700 mb-10">
+      <li><a href="https://huumsauna.com/wp-content/uploads/2023/06/huum-hive-manual-us.pdf" target="_blank" rel="noopener" class="text-amber-800 font-semibold hover:underline">HUUM HIVE installation and operation manual</a> &mdash; steam-water and undiluted-oil warning.</li>
+      <li><a href="https://www.harvia.com/en-US/products/SAC25100/healing-with-heat-sauna-and-steam-scent-set" target="_blank" rel="noopener" class="text-amber-800 font-semibold hover:underline">Harvia sauna and steam scent set</a> &mdash; designated application methods and manual-first direction.</li>
+      <li><a href="https://www.harvia.com/en/ideas-and-trends/products/tips-for-maintaining-your-wood-burning-heater/" target="_blank" rel="noopener" class="text-amber-800 font-semibold hover:underline">Harvia wood-burning heater maintenance guidance</a> &mdash; use only additives designed for sauna use.</li>
+      <li><a href="https://www.saunafin.com/uploads/documents/9b173defacd9273c5bce7a873dd563f5045de02d.pdf" target="_blank" rel="noopener" class="text-amber-800 font-semibold hover:underline">Tyl&ouml; Combi heater instructions</a> &mdash; examples of fragrance locations that are allowed or prohibited.</li>
+    </ul>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What essential oils are safe in a sauna?</h3>
-        <p class="text-stone-700">Eucalyptus, birch, pine, and spruce are the traditional safe options. Always use pre-diluted sauna essences, not undiluted essential oils. Add to water, never directly to rocks.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How do you use essential oils in a sauna?</h3>
-        <p class="text-stone-700">Add 5-10 drops to your water bucket before pouring over the rocks. The steam carries the aroma. Never pour undiluted oil directly onto heater stones.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What does birch sauna essence smell like?</h3>
-        <p class="text-stone-700">Fresh, woodsy, slightly sweet, less sharp than eucalyptus. The most traditionally Finnish sauna scent and a great starting point if eucalyptus is too intense for you.</p>
-      </div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Can I put essential oil directly on sauna stones?</h3><p class="text-stone-700">No. Undiluted oil can ignite on hot stones. Use only a sauna-designed product in the dilution and location allowed by both sets of instructions.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">How much sauna fragrance should I use?</h3><p class="text-stone-700">Use the amount on the specific label. Concentrations differ, so a universal number of drops is not reliable.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Can I use fragrance in an infrared sauna?</h3><p class="text-stone-700">Only through a method approved by the cabin manufacturer. Never apply liquid to emitters, wiring, or controls.</p></div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Related guides</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-sauna-bucket-ladle/" class="text-amber-700 hover:underline">Best Sauna Bucket and Ladle</a></li>
-        <li><a href="/guides/best-sauna-stones/" class="text-amber-700 hover:underline">Best Sauna Stones</a></li>
-        <li><a href="/guides/how-to-use-a-sauna/" class="text-amber-700 hover:underline">How to Use a Sauna</a></li>
-        <li><a href="/guides/best-sauna-accessories/" class="text-amber-700 hover:underline">Best Sauna Accessories for Beginners</a></li>
+        <li><a href="/guides/best-sauna-bucket-ladle/" class="text-amber-700 hover:underline">Sauna bucket and ladle guide</a></li>
+        <li><a href="/guides/best-sauna-stones/" class="text-amber-700 hover:underline">Sauna stone guide</a></li>
+        <li><a href="/guides/how-to-use-a-sauna/" class="text-amber-700 hover:underline">How to use a sauna</a></li>
+        <li><a href="/guides/best-sauna-accessories/" class="text-amber-700 hover:underline">Sauna accessories for beginners</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

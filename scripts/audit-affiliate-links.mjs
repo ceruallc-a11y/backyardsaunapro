@@ -8,6 +8,7 @@ const commerceRoutes = JSON.parse(
 );
 const amazonTag = 'backyardsauna-20';
 const selectSaunasRef = '10752576.S2huPg7gFg';
+const maxRouteAgeDays = 30;
 
 async function listFiles(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -176,10 +177,23 @@ const failures = rows.filter((row) =>
   || row.audit_status === 'missing_referral'
   || ['unavailable', 'not_found', 'no_featured_offer'].includes(row.observed_status) && row.audit_status === 'checked_available'
 );
+const now = Date.now();
+for (const [asin, route] of Object.entries(commerceRoutes)) {
+  const checkedAt = Date.parse(`${route.lastChecked ?? ''}T00:00:00Z`);
+  const ageDays = Number.isFinite(checkedAt) ? Math.floor((now - checkedAt) / 86_400_000) : Infinity;
+  if (ageDays > maxRouteAgeDays) {
+    failures.push({
+      source_file: 'src/data/product-commerce-routes.json',
+      source_line: '',
+      product_id: asin,
+      audit_status: 'stale_product_route',
+    });
+  }
+}
 const asinRows = rows.filter((row) => row.source_kind === 'amazon_asin');
 const uniqueAsins = new Set(asinRows.map((row) => row.product_id));
-console.log(`Audited ${rows.length} commerce references, including ${asinRows.length} ASIN placements across ${uniqueAsins.size} products; ${failures.length} routing failures.`);
+console.log(`Audited ${rows.length} commerce references, including ${asinRows.length} ASIN placements across ${uniqueAsins.size} products; ${failures.length} routing or freshness failures.`);
 if (failures.length) {
-  for (const failure of failures) console.error(`${failure.source_file}:${failure.source_line} ${failure.audit_status}`);
+  for (const failure of failures) console.error(`${failure.source_file}:${failure.source_line} ${failure.product_id ?? ''} ${failure.audit_status}`.trim());
   process.exitCode = 1;
 }

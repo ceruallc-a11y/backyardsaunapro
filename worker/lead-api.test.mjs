@@ -23,6 +23,16 @@ const validInput = {
   partnerConsent: false,
 };
 
+const createLeadRequest = (input = validInput) => new Request('https://backyard-sauna-leads.example/v1/leads', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Origin': 'https://backyardsaunapro.com',
+    'CF-Connecting-IP': '203.0.113.8',
+  },
+  body: JSON.stringify(input),
+});
+
 test('validates a complete consented lead', () => {
   const result = validateLead(validInput);
   assert.equal(result.valid, true);
@@ -30,11 +40,16 @@ test('validates a complete consented lead', () => {
   assert.equal(result.lead.email, 'sam@example.com');
 });
 
-test('requires response consent and a valid ZIP or region', () => {
+test('requires response consent and a valid ZIP code', () => {
   const result = validateLead({ ...validInput, contactConsent: false, region: 'x' });
   assert.equal(result.valid, false);
   assert.equal(Boolean(result.errors.contactConsent), true);
   assert.equal(Boolean(result.errors.region), true);
+});
+
+test('accepts ZIP+4 and rejects a city name', () => {
+  assert.equal(validateLead({ ...validInput, region: '02139-1234' }).valid, true);
+  assert.equal(validateLead({ ...validInput, region: 'Boston, MA' }).valid, false);
 });
 
 test('rejects values outside the published planner choices', () => {
@@ -74,17 +89,7 @@ test('stores a consented lead before returning a receipt', async () => {
       };
     },
   };
-  const request = new Request('https://backyard-sauna-leads.example/v1/leads', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Origin': 'https://backyardsaunapro.com',
-      'CF-Connecting-IP': '203.0.113.8',
-    },
-    body: JSON.stringify(validInput),
-  });
-
-  const response = await worker.fetch(request, { DB, RATE_LIMIT_SALT: 'test-only' });
+  const response = await worker.fetch(createLeadRequest(), { DB, RATE_LIMIT_SALT: 'test-only' });
   const result = await response.json();
   const stored = sqlite.prepare('SELECT id, contact_consent, partner_consent, status FROM leads').get();
 
@@ -94,4 +99,34 @@ test('stores a consented lead before returning a receipt', async () => {
   assert.equal(stored.contact_consent, 1);
   assert.equal(stored.partner_consent, 0);
   assert.equal(stored.status, 'new');
+});
+
+test('returns the existing receipt without storing another lead', async () => {
+  const sqlite = new DatabaseSync(':memory:');
+  sqlite.exec(fs.readFileSync(new URL('./schema.sql', import.meta.url), 'utf8'));
+  const DB = {
+    prepare(sql) {
+      return {
+        bind(...params) {
+          return {
+            first: async () => sqlite.prepare(sql).get(...params),
+            run: async () => sqlite.prepare(sql).run(...params),
+          };
+        },
+      };
+    },
+  };
+  const env = { DB, RATE_LIMIT_SALT: 'test-only' };
+
+  const firstResponse = await worker.fetch(createLeadRequest(), env);
+  const first = await firstResponse.json();
+  const duplicateResponse = await worker.fetch(createLeadRequest(), env);
+  const duplicate = await duplicateResponse.json();
+  const storedCount = sqlite.prepare('SELECT COUNT(*) AS total FROM leads').get().total;
+
+  assert.equal(firstResponse.status, 201);
+  assert.equal(duplicateResponse.status, 200);
+  assert.equal(duplicate.duplicate, true);
+  assert.equal(duplicate.receiptId, first.receiptId);
+  assert.equal(storedCount, 1);
 });

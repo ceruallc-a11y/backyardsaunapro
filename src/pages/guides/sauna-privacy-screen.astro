@@ -1,94 +1,130 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Do I need a privacy screen for my outdoor sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It depends on your yard. If your sauna door faces neighbor sightlines or a street, a privacy screen is worth adding. Most users step outside briefly between rounds for cooling — having a shielded area makes that comfortable. You do not need a full enclosure, just a screen that blocks the transition area between the sauna door and the outdoors."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the cheapest way to add privacy to an outdoor sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A cedar fence panel or two positioned in an L-shape around the sauna door costs $60-$120 in materials and installs in a few hours. Bamboo privacy screens on posts are another low-cost option. For a more finished look, a small cedar pergola or partial fence around the sauna area runs $300-$800 in materials and transforms the space significantly."
-      }
-    }
-  ]
-};
-import AmazonButton from '../../components/AmazonButton.astro';
+const faqs = [
+  {
+    question: 'How tall should an outdoor sauna privacy screen be?',
+    answer: 'There is no universal height. Map the actual standing and seated sightlines, then check local fence, accessory-structure, setback, easement, and HOA rules. The screen must also remain structurally stable and preserve the sauna door, vents, utilities, required clearances, and service access.',
+  },
+  {
+    question: 'Can a privacy screen attach to the sauna?',
+    answer: 'Only when the sauna manufacturer and a qualified designer approve the exact attachment. A screen can transfer wind and moisture loads into the room, pierce weatherproofing, obstruct maintenance, or violate clearances. A freestanding screen is not automatically simple either; its posts and footings still need utility locating and site-specific design.',
+  },
+  {
+    question: 'What is the least expensive privacy option?',
+    answer: 'Reorienting the sauna or screening only the exposed sightline may reduce the scope, but no material is always cheapest once posts, footings, wind, finish, drainage, labor, and permits are included. Compare complete installed scopes rather than panel prices.',
+  },
+  {
+    question: 'Can plants provide sauna privacy?',
+    answer: 'Sometimes. Choose plants from mature dimensions, local climate, root behavior, maintenance, fire exposure, leaf or needle drop, and distance from the structure. Preserve airflow, roof and gutter access, utilities, walking space, and the manufacturer-required site envelope.',
+  },
+];
 ---
 <Base
-  title="Outdoor Sauna Privacy: Screens, Fences, and Simple Solutions (2025)"
-  description="How to add privacy to an outdoor sauna. Cedar fence panels, bamboo screens, pergolas, and placement tips that protect your space without major construction."
+  title="Outdoor Sauna Privacy Screen: Sightline and Site Planning"
+  description="Plan outdoor sauna privacy without blocking the door, vents, clearances, utilities, drainage, lighting, service access, or local requirements."
   canonical="/guides/sauna-privacy-screen"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  })} />
 
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Outdoor Sauna Privacy: Simple Solutions That Work</h1>
-    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Outdoor site planning</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Plan sauna privacy from the sightline, not the panel aisle</h1>
+      <p class="text-lg text-stone-700 mb-3">A useful screen blocks the exposed view while keeping the sauna safe and serviceable. Map who can see the door and cooling area, then protect the door path, vents, heater or chimney clearances, utilities, drainage, lighting, and maintenance access.</p>
+      <p class="text-stone-500 text-sm">Reviewed August 16, 2026 &mdash; Backyard Sauna Pro</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Outdoor sauna with privacy screening" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="bg-red-50 border border-red-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
+      <strong>Do not fasten a generic screen to the sauna.</strong> An attachment can transfer wind load, trap water, puncture the weather layer, block ventilation or service access, and affect the room warranty. Use the exact sauna documents and a site-appropriate structural plan.
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page may contain affiliate links.
+    <section class="bg-stone-900 text-white rounded-lg p-6 mb-8">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-300 mb-2">Short answer</p>
+      <h2 class="text-2xl font-bold mb-3">Block the smallest real sightline without shrinking the safe site envelope.</h2>
+      <p class="text-stone-200">Stand at the neighbor window, street, shared path, and house. Mark the view to the sauna door, route, seat, shower, or plunge. A short return screen may solve one view; a changing area may be better for several views. Neither should be placed until the legal and technical constraints are known.</p>
+    </section>
+
+    <PlannerCTA
+      source="sauna_privacy_after_scope"
+      heading="Add privacy to the complete site brief"
+      description="Record the ZIP code, room, location, dimensions, exposed views, door path, utilities, budget, timeline, and installation needs before choosing a screen type."
+    />
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">1. Draw the sightline map</h2>
+    <ol class="list-decimal pl-5 space-y-4 text-stone-700 mb-10">
+      <li><strong class="text-stone-900">Mark the private zone.</strong> Include the door, changing point, cooling seat, towel storage, and the walking path to the house. Add any shower or plunge as a separate water and electrical project.</li>
+      <li><strong class="text-stone-900">Mark the viewers.</strong> Check standing and seated views from neighboring windows, decks, sidewalks, streets, alleys, shared yards, and seasonal gaps in vegetation.</li>
+      <li><strong class="text-stone-900">Test the smallest intervention.</strong> Compare door orientation, one return screen, two offset screens, a detached changing area, or planting. Avoid building a full enclosure when one blocked angle solves the problem.</li>
+      <li><strong class="text-stone-900">Recheck after dark.</strong> Interior and path lighting can turn reflective or dark glazing transparent from outside. Test the actual illuminated view before finalizing the screen.</li>
+    </ol>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">2. Protect the non-negotiable site envelope</h2>
+    <div class="overflow-x-auto border border-stone-200 rounded-lg mb-10">
+      <table class="w-full min-w-[760px] text-sm text-left">
+        <thead class="bg-stone-100 text-stone-900"><tr><th class="px-4 py-3">Constraint</th><th class="px-4 py-3">What to verify</th><th class="px-4 py-3">Failure to avoid</th></tr></thead>
+        <tbody class="divide-y divide-stone-200 text-stone-700">
+          <tr class="align-top"><th scope="row" class="px-4 py-3 text-stone-900">Door and route</th><td class="px-4 py-3">Full door movement, a stable slip-resistant path, lighting, snow or runoff, and emergency access</td><td class="px-4 py-3">A narrow pocket that traps the user or blocks rapid exit</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 text-stone-900">Room and heater</th><td class="px-4 py-3">Manufacturer clearances, exterior care, vents, controls, electrical equipment, chimney, roof edges, and service space</td><td class="px-4 py-3">A screen that becomes a combustible obstruction or prevents maintenance</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 text-stone-900">Underground work</th><td class="px-4 py-3">811 locate request, private utilities, drainage, septic, irrigation, grounding, and the approved excavation area</td><td class="px-4 py-3">Driving a post where a public or private line is present</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 text-stone-900">Legal placement</th><td class="px-4 py-3">Fence or structure rules, height, setbacks, easements, visibility triangles, HOA review, and permits</td><td class="px-4 py-3">Copying a height or setback from another jurisdiction</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 text-stone-900">Wind and support</th><td class="px-4 py-3">Site wind exposure, panel porosity, posts, fasteners, footings, frost, soil, corrosion, and attachments</td><td class="px-4 py-3">Treating a large solid screen as decoration instead of a wind-loaded structure</td></tr>
+          <tr class="align-top"><th scope="row" class="px-4 py-3 text-stone-900">Water and planting</th><td class="px-4 py-3">Grade, drainage, roof runoff, drying, mature plant size, roots, debris, trimming, and fire exposure</td><td class="px-4 py-3">Trapping moisture or losing access behind permanent growth</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">The most-used part of any sauna setup is the cooling area outside the door. A few minutes of privacy there makes the difference between ducking back inside immediately and actually enjoying the contrast. Here are the simplest ways to add it.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">3. Compare screen types by complete scope</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-10">
+      {[
+        ['Reoriented room or door', 'May solve the view without another structure. Recheck delivery, heater layout, wind, roof runoff, path, glazing, and the exact room orientation rules.'],
+        ['Freestanding slatted screen', 'Can target one angle and permit some airflow. It still needs a structural post and footing design, utility locating, corrosion-resistant hardware, and local approval.'],
+        ['Fence return or offset entry', 'Can shield both the door and cooling seat. Keep the route wide, obvious, lit, drainable, and open enough for service and emergency access.'],
+        ['Detached changing shelter', 'Can handle several sightlines and weather exposure. It also adds a larger footprint, roof, foundation, drainage, electrical, and permit scope.'],
+        ['Planting', 'Can soften the view without a solid wall. Base the plan on mature size and seasonal coverage, not the nursery pot, and preserve utilities and structure access.'],
+        ['Temporary screen', 'Useful for testing the sightline before permanent work. Do not place a light panel near hot equipment or use it where wind can send it into the sauna, path, or neighboring property.'],
+      ].map(([title, body]) => (
+        <section class="border border-stone-200 rounded-lg p-5 bg-white">
+          <h3 class="font-bold text-stone-900 mb-2">{title}</h3>
+          <p class="text-sm text-stone-700">{body}</p>
+        </section>
+      ))}
+    </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Why Privacy Matters More Than You Think</h2>
-    <p class="text-stone-700 mb-6">In a traditional sauna session, you step outside between rounds to cool down — sometimes in a towel, sometimes without much on at all. If the sauna door opens directly toward a neighbor's window or a public sightline, that cooling period is uncomfortable or impossible. A well-placed privacy screen turns those 5-10 minutes outdoors into part of the experience rather than an awkward dash back inside.</p>
+    <div class="border-l-4 border-amber-600 bg-amber-50 p-5 mb-10 text-sm text-stone-700">
+      <strong>Price the installed solution, not the panel.</strong> Include design, posts, footings, hardware, excavation, utility locating, finish, drainage, lighting, permits, labor, planting, and long-term maintenance. Fixed national price ranges are not reliable for this site work.
+    </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Options by Budget</h2>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Under $150: Fence Panels or Bamboo Screens</h3>
-    <p class="text-stone-700 mb-4">Two 6-foot cedar fence panels set at a right angle from the sauna door create an effective L-shaped screen. No posts needed if you anchor them to the sauna structure and a single ground stake. Bamboo roll fencing on a simple post frame is even cheaper ($30-$60) but less durable.</p>
-    <AmazonButton search="bamboo privacy screen outdoor fence" variant="outline" label="Browse Privacy Screens on Amazon" class="mb-6" />
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">$150-$500: Cedar Pergola or Partial Fence</h3>
-    <p class="text-stone-700 mb-4">A simple cedar pergola over a small deck area beside the sauna door defines the cooling zone and provides partial overhead cover. With lattice panels on one or two sides it becomes a proper private area. This is the most popular approach for sauna owners who want something that looks intentional rather than improvised.</p>
-    <p class="text-stone-700 mb-6">Cedar pergola kits start around $200-$400 at home centers and install in a weekend. Add a few potted plants or climbing vines on the lattice and it reads as a designed garden feature rather than a privacy workaround.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">$500+: Full Outdoor Room or Enclosed Anteroom</h3>
-    <p class="text-stone-700 mb-6">A changing room anteroom built onto the sauna is the premium solution — enclosed, weather-protected, and doubles as a changing room. Adds $2,000-$5,000 to the build cost but transforms the usability year-round. This is standard in Finnish cabin saunas. See our <a href="/guides/outdoor-sauna-ideas/" class="text-amber-700 hover:underline">outdoor sauna ideas guide</a> for more on this approach.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Placement Tips</h2>
-    <ul class="space-y-2 text-stone-700 mb-8 ml-4 text-sm">
-      <li><span class="font-semibold">Orient the door:</span> Before installing the sauna, orient it so the door faces the house rather than a neighbor boundary. This is the easiest privacy fix and costs nothing.</li>
-      <li><span class="font-semibold">Screen the approach:</span> You only need to block the sightline from outside to the door area — not the entire sauna. A 6-foot panel on the most exposed side is usually enough.</li>
-      <li><span class="font-semibold">Add lighting:</span> A motion-activated light on the path from the house and in the cooling area makes evening sessions usable and safer.</li>
-      <li><span class="font-semibold">Consider a cold plunge:</span> A stock tank cold plunge beside the sauna with a privacy screen on the exposed side is the natural next step. See our <a href="/guides/sauna-cold-plunge/" class="text-amber-700 hover:underline">cold plunge guide</a>.</li>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary sources checked</h2>
+    <ul class="space-y-3 text-sm text-stone-700 mb-10">
+      <li><a href="https://call811.com/811-In-Your-State" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Call 811: state-specific locate requests and advance-notice rules</a></li>
+      <li><a href="https://www.usa.gov/state-local-governments" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">USAGov: find the local government that administers zoning and land-use rules</a></li>
+      <li><a href="https://www.harvia.com/en/products/SLDC01PS/outdoor-sauna-harvia-solide-compact" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Harvia Solide Compact: current outdoor-room specifications and manual access</a></li>
+      <li><a href="https://almostheaven.com/pages/download-our-manuals-guides" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Almost Heaven: current room, heater, foundation, and assembly manuals</a></li>
+      <li><a href="https://www.cpsc.gov/s3fs-public/701.pdf" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">CPSC home-safety checklist: illuminated, maintained, slip-resistant exterior approaches</a></li>
     </ul>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Do I need a privacy screen for my outdoor sauna?</h3>
-        <p class="text-stone-700">Not mandatory, but highly recommended if the door faces neighbor sightlines. The cooling period between rounds is where it matters most.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is the cheapest way to add privacy?</h3>
-        <p class="text-stone-700">Two cedar fence panels in an L-shape, $60-$120 in materials. Or orient the sauna door toward the house when installing — that costs nothing.</p>
-      </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Frequently asked questions</h2>
+    <div class="space-y-5 mb-10">
+      {faqs.map((faq) => <div><h3 class="font-bold text-stone-900 mb-1">{faq.question}</h3><p class="text-stone-700">{faq.answer}</p></div>)}
     </div>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+    <div class="bg-stone-50 border border-stone-200 rounded-lg p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue the site plan</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/outdoor-sauna-ideas/" class="text-amber-700 hover:underline">Outdoor Sauna Ideas</a></li>
-        <li><a href="/guides/sauna-cold-plunge/" class="text-amber-700 hover:underline">Sauna and Cold Plunge</a></li>
-        <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
-        <li><a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">Gravel Pad for Barrel Sauna</a></li>
+        <li><a href="/guides/best-location-backyard-sauna/" class="text-amber-700 hover:underline">Verify the backyard location</a></li>
+        <li><a href="/guides/outdoor-sauna-ideas/" class="text-amber-700 hover:underline">Compare complete outdoor layouts</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Plan the support and drainage</a></li>
+        <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Open the outdoor buying checklist</a></li>
       </ul>
     </div>
   </article>

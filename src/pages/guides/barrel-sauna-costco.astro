@@ -1,5 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -7,134 +9,158 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Does Costco sell barrel saunas?",
+      "name": "Does Costco currently list barrel saunas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, Costco periodically sells barrel saunas, typically online at Costco.com and sometimes in-store in the spring and summer. The most common model stocked is the Almost Heaven 4-person barrel sauna, often at a discount of $500-$1,000 off the regular retail price. Availability is seasonal and varies by year."
+        "text": "Yes. Costco's online sauna category listed Almost Heaven Morgan and Duet outdoor barrel saunas when checked on August 15, 2026. Product availability, price, promotions, delivery eligibility, and configuration can change by date and location."
       }
     },
     {
       "@type": "Question",
-      "name": "Is the Costco barrel sauna a good deal?",
+      "name": "Is a Costco barrel sauna automatically the best deal?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "When Costco carries the Almost Heaven barrel sauna, it is typically the best price available for that model. The sauna itself is the same quality as buying direct — western red cedar, pre-cut panels, weekend assembly. The discount is real and Costco's return policy provides additional buyer protection. The heater is still sold separately."
+        "text": "No. Compare the exact model, heater and controls, stones, delivery and offload, foundation, electrical work, weather protection, warranty, returns, lead time, and installation. A lower room price can still produce a higher or less suitable total project."
       }
     },
     {
       "@type": "Question",
-      "name": "What sauna does Costco sell?",
+      "name": "What is included with Costco's Almost Heaven barrel sauna listings?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Costco most commonly stocks the Almost Heaven Pinnacle or Rainier 4-person barrel sauna. Specific models vary by season. Costco has also stocked infrared sauna cabins from brands like Dynamic Saunas at competitive prices."
+        "text": "The Morgan and Duet comparison pages checked on August 15, 2026 listed a 6kW Harvia heater, sauna stones, and curbside delivery. Confirm the live product page and order summary because bundle scope can change."
       }
     }
   ]
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Costco Barrel Sauna: Is It Worth It? (2025 Review)"
-  description="What Costco sells when it comes to barrel saunas, whether the price is actually a deal, and what to know before buying."
+  title="Costco Barrel Sauna Review (2026): Compare the Live Bundle"
+  description="Costco currently lists Almost Heaven outdoor barrel saunas. Compare the exact Morgan or Duet bundle, heater, delivery, total project cost, returns, and current alternatives."
   canonical="/guides/barrel-sauna-costco"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Costco Barrel Sauna: Is It Worth It?</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+    <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-3">Retailer comparison</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Costco barrel sauna: compare the live bundle, not an old sale</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 15, 2026 &mdash; Backyard Sauna Pro</p>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-chimney.jpg" alt="Outdoor barrel sauna similar to what Costco sells" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="rounded-xl overflow-hidden mb-3">
+      <img src="/images/lifestyle/barrel-sauna-chimney.jpg" alt="Representative outdoor barrel sauna with a chimney" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
+    <p class="text-xs text-stone-500 mb-8">Representative barrel sauna; not a photograph of a current Costco SKU.</p>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page also contains an affiliate alternative through Select Saunas. Costco links are not affiliate links.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Costco occasionally sells barrel saunas, usually in the spring and summer, often at a meaningful discount off regular retail. When they have the Almost Heaven 4-person in stock, it is typically the best price you will find for that model anywhere.</p>
+    <div class="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Availability boundary:</strong> Costco's catalog, price, promotions, member access, delivery area, and stock can change. The current product page and order summary control. We do not monitor Costco inventory in real time.
+    </div>
 
-    <p class="text-stone-700 mb-8">Here is what they sell, whether it is actually a good deal, and what to watch for.</p>
+    <p class="text-lg text-stone-700 mb-4">Costco currently lists outdoor barrel saunas. That makes the retailer worth checking, but it does not make every live offer a complete project or the lowest comparable price. First identify the exact Costco model and included package. Then compare the same scope elsewhere.</p>
+    <p class="text-stone-700 mb-8">The old rule that Costco carries one seasonal Pinnacle and always discounts it by a fixed amount is no longer useful.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Costco Sells</h2>
-    <p class="text-stone-700 mb-4">Costco's most common barrel sauna stocking is the <strong>Almost Heaven 4-person barrel sauna</strong> — typically the Pinnacle or Rainier model. These are the same units sold at regular retail: western red cedar, pre-cut panels, tempered glass door. The discount when Costco carries them is usually $500-$1,000 below the retail list price, which is a real saving on a $2,000+ purchase.</p>
-    <p class="text-stone-700 mb-6">Costco availability is seasonal and inventory-dependent. They are not a regular stocking item. When they show up, they often sell out quickly. Costco has also stocked plug-in infrared sauna cabins from brands like Dynamic Saunas at competitive prices.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Two current Costco barrel paths</h2>
+    <div class="overflow-x-auto border border-stone-200 rounded-lg mb-5">
+      <table class="w-full min-w-[760px] text-sm text-left">
+        <thead class="bg-stone-100 text-stone-900">
+          <tr>
+            <th scope="col" class="px-4 py-3 font-bold">Costco listing</th>
+            <th scope="col" class="px-4 py-3 font-bold">Published exterior</th>
+            <th scope="col" class="px-4 py-3 font-bold">Published weight</th>
+            <th scope="col" class="px-4 py-3 font-bold">Listed package</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-stone-200 text-stone-700">
+          <tr class="align-top">
+            <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Morgan 4-Person, AHMOR66RU</th>
+            <td class="px-4 py-3">72 W x 72 D x 78 H inches</td>
+            <td class="px-4 py-3">685 lb</td>
+            <td class="px-4 py-3">6kW Harvia heater, stones, curbside delivery</td>
+          </tr>
+          <tr class="align-top">
+            <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Duet 2-Person</th>
+            <td class="px-4 py-3">72 W x 47 D x 75 H inches</td>
+            <td class="px-4 py-3">610 lb</td>
+            <td class="px-4 py-3">6kW Harvia heater, stones, curbside delivery</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-stone-500 mb-5">Costco specifications checked August 15, 2026. Published product weight is not a structural approval or the full occupied load.</p>
+    <div class="flex flex-wrap gap-3 mb-10">
+      <a href="https://www.costco.com/CompareProductsDisplay?partNumbers=100481876" target="_blank" rel="noopener" class="inline-block bg-stone-900 hover:bg-stone-800 text-white font-semibold px-5 py-2.5 rounded-lg text-sm">Check the current Morgan page</a>
+      <a href="https://www.costco.com/CompareProductsDisplay?partNumbers=1781021" target="_blank" rel="noopener" class="inline-block border border-stone-300 hover:border-amber-400 text-stone-800 font-semibold px-5 py-2.5 rounded-lg text-sm">Check the current Duet page</a>
+    </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Is the Costco Barrel Sauna a Good Deal?</h2>
-    <p class="text-stone-700 mb-4">When the deal is live, yes. The Almost Heaven sauna is the same product regardless of where you buy it, and a $500-$1,000 discount on a $2,000-$2,500 purchase is significant. Costco's return policy also adds buyer protection that you don't get ordering direct from a smaller retailer.</p>
+    <PlannerCTA
+      source="costco_bundle_compare"
+      heading="Compare the total installed project"
+      description="Record the exact Costco SKU, included heater and controls, delivery scope, site, foundation, electrical work, ZIP code, budget, and timeline before deciding whether the bundle wins."
+    />
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-      <div class="bg-green-50 border border-green-200 rounded-xl p-4">
-        <h3 class="font-bold text-green-800 mb-2">Pros of buying at Costco</h3>
-        <ul class="text-green-700 text-sm space-y-1">
-          <li>Genuine discount vs retail price</li>
-          <li>Costco's return policy and buyer protection</li>
-          <li>Same product quality as buying direct</li>
-          <li>Occasional bundle with accessories</li>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Use a same-scope comparison</h2>
+    <div class="grid md:grid-cols-2 gap-4 mb-10">
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-3">Match these product details</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+          <li>Exact room model, dimensions, supports, and configured weight</li>
+          <li>Lumber, door, windows, benches, lighting, and weather package</li>
+          <li>Heater model, output, controls, stones, and accessories</li>
+          <li>Room, heater, control, and component warranties</li>
+          <li>Current lead time, return terms, and support responsibility</li>
         </ul>
       </div>
-      <div class="bg-red-50 border border-red-200 rounded-xl p-4">
-        <h3 class="font-bold text-red-800 mb-2">Cons / things to know</h3>
-        <ul class="text-red-700 text-sm space-y-1">
-          <li>Availability is seasonal and unpredictable</li>
-          <li>Limited model selection</li>
-          <li>Heater still sold separately</li>
-          <li>Support goes through Almost Heaven, not Costco</li>
+      <div class="border border-stone-200 rounded-xl p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-3">Match these project costs</h3>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+          <li>Freight, appointment, curbside scope, offload, and damage handling</li>
+          <li>Foundation, drainage, anchoring, and site preparation</li>
+          <li>Electrical service, controls, lighting, permits, and inspections</li>
+          <li>Assembly labor, tools, storage, access, and weather delays</li>
+          <li>Exterior treatment, roof or rain protection, and maintenance</li>
         </ul>
       </div>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What You Still Need to Buy Separately</h2>
-    <p class="text-stone-700 mb-4">Confirm the exact Costco bundle before buying because heater and accessory inclusion can change. If the kit does not include a heater, size one from the finished room volume, construction, glass, climate, and current manufacturer manual. A Harvia KIP60B is a 6 kW option for Harvia's published room range, but it is not automatically correct for every product described as a four-person barrel.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Current alternative: Pinnacle / Morgan dealer path</h2>
+    <p class="text-stone-700 mb-4">Select Saunas currently describes its Almost Heaven listing as the Pinnacle / Morgan 4-person classic barrel sauna. That makes it a useful comparison path, but do not assume the Costco and dealer configurations are identical. Match the model, dimensions, heater, controls, lumber, windows, delivery, warranty, and included accessories line by line.</p>
+    <AmazonButton asin="B017WJV8SO" variant="primary" label="View the current Pinnacle / Morgan path" ctaPosition="costco_alternative" />
 
-    <div class="space-y-3 mb-8">
-      <AmazonButton asin="B0B7TRM95Y" variant="outline" label="View current Harvia KIP60B listing" ctaPosition="separate_items" />
-      <a href="https://www.amazon.com/dp/B0BC8QMSKG?tag=backyardsauna-20&ascsubtag=bsp_barrel-sauna-costco" target="_blank" rel="nofollow noopener sponsored" class="flex items-center justify-between border border-stone-200 rounded-xl p-4 hover:border-amber-400 transition-colors bg-white">
-        <div>
-          <p class="font-semibold text-stone-900 text-sm">Sauna Thermometer and Hygrometer</p>
-          
-        </div>
-        <span class="text-amber-600 text-sm font-semibold ml-4">View</span>
-      </a>
-      <a href="https://www.amazon.com/s?k=olivine%20diabase%20sauna%20stones%2040%20lb&tag=backyardsauna-20&ascsubtag=bsp_barrel-sauna-costco" target="_blank" rel="nofollow noopener sponsored" data-cta-position="separate_items" data-product-id="B0FB6SGKJL" data-link-mode="availability_search" data-partner="amazon" class="flex items-center justify-between border border-stone-200 rounded-xl p-4 hover:border-amber-400 transition-colors bg-white">
-        <div>
-          <p class="font-semibold text-stone-900 text-sm">Premium Olivine Sauna Stones</p>
-          
-        </div>
-        <span class="text-amber-600 text-sm font-semibold ml-4">Compare Current Amazon Listings</span>
-      </a>
-    </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Four deal-breakers to resolve before ordering</h2>
+    <ol class="list-decimal pl-5 space-y-4 text-stone-700 mb-10">
+      <li><strong>Curbside is not final placement.</strong> Confirm who unloads, inspects, stores, and moves every package to the assembly site.</li>
+      <li><strong>The heater still needs a compliant installation.</strong> Have a qualified electrician verify the exact circuit, controls, panel capacity, disconnects, and permit needs.</li>
+      <li><strong>The foundation is project-specific.</strong> Use the current room manual, total installed and occupied load, supports, soil, drainage, frost, and local requirements.</li>
+      <li><strong>Returns and warranties have different jobs.</strong> Read the live Costco product terms, Costco's current satisfaction policy, and every manufacturer warranty before purchase. Do not rely on a generic claim that one party handles everything.</li>
+    </ol>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">If the Costco Deal Is Not Available</h2>
-    <p class="text-stone-700 mb-6">If Costco is out of stock, Amazon is the next best place to buy an Almost Heaven barrel sauna. The price is typically close to Costco retail and ships in similar timeframes. See our full <a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven review</a> and our <a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">best barrel sauna kits guide</a> for the full comparison of alternatives.</p>
-
-    <AmazonButton asin="B017WJV8SO" variant="primary" label="Check Almost Heaven Pinnacle on Amazon" class="mb-10" />
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary sources checked</h2>
+    <ul class="space-y-3 text-sm text-stone-700 mb-10">
+      <li><a href="https://www.costco.com/opt/luxury-outdoor-saunas" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Costco: current outdoor sauna category</a></li>
+      <li><a href="https://www.costco.com/CompareProductsDisplay?partNumbers=100481876" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Costco: Morgan 4-person comparison data</a></li>
+      <li><a href="https://www.costco.com/CompareProductsDisplay?partNumbers=1781021" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Costco: Duet 2-person comparison data</a></li>
+      <li><a href="https://www.costco.com/wcsstore/CostcoUSBCCatalogAssetStore/Attachment/CustomerSatisfactionPolicy.pdf" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Costco: current Customer Satisfaction Policy</a></li>
+      <li><a href="https://selectsaunas.com/products/almost-heaven-pinnacle-morgan-4-person-classic-barrel-sauna-6x6-ft?sca_ref=10752576.S2huPg7gFg" target="_blank" rel="nofollow noopener sponsored" class="text-amber-700 font-semibold hover:underline">Select Saunas: current Pinnacle / Morgan affiliate comparison path</a></li>
+    </ul>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Does Costco sell barrel saunas?</h3>
-        <p class="text-stone-700">Yes, seasonally. Most commonly the Almost Heaven 4-person barrel sauna at $500-$1,000 below regular retail. Availability varies by year and sells out quickly.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is the Costco barrel sauna a good deal?</h3>
-        <p class="text-stone-700">When available, yes. Same product quality as buying direct, real discount, and Costco buyer protection. Just check whether the price is actually lower than Amazon before purchasing.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What sauna does Costco sell?</h3>
-        <p class="text-stone-700">Most commonly the Almost Heaven Pinnacle or Rainier 4-person barrel sauna. Specific models and availability change seasonally.</p>
-      </div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Does Costco currently list barrel saunas?</h3><p class="text-stone-700">Yes. Morgan and Duet outdoor barrel listings were visible when checked August 15, 2026. Recheck availability and delivery for your location.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Is Costco automatically the best deal?</h3><p class="text-stone-700">No. Compare the complete configured product and installed project on the same day.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">What does the current bundle include?</h3><p class="text-stone-700">The Morgan and Duet pages checked list a 6kW Harvia heater, stones, and curbside delivery. The live listing and order summary control.</p></div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Continue comparing</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Full Review</a></li>
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
-        <li><a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">Gravel Pad Setup Guide</a></li>
+        <li><a href="/guides/almost-heaven-barrel-sauna/" class="text-amber-700 hover:underline">Almost Heaven Barrel Model Guide</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Sauna Foundation Guide</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Planning</a></li>
+        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">Total Sauna Project Cost Guide</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

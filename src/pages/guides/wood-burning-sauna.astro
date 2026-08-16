@@ -1,174 +1,216 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "Is a wood-burning sauna better than electric?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For most backyard installs, electric wins on convenience. No firewood, no ash cleanup, no preheat oversight — just press a button and walk away. Wood-burning is preferred for off-grid setups, remote cabins, or anyone who values the ritual of building a fire and the distinctive steam quality from a wood stove. Wood sauna steam is generally considered softer and more authentic by experienced users."
-      }
+      '@type': 'Question',
+      name: 'What does a wood-burning sauna installation require?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The complete scope can include the correctly sized stove, listed chimney system, clearances, approved shielding, floor protection, combustion air, sauna ventilation, a safety guard, stones, permits, inspection, insurer review, and qualified installation. Use the current manuals for the exact room and equipment.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "What wood sauna stove should I buy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Harvia M3 is the most commonly recommended wood-burning sauna stove for home use — compact, Finnish-made, heats 8-13 cubic meters. For larger saunas or off-grid setups, the Narvi NC 20 handles up to 20 cubic meters. Both are widely available and have decades of proven reliability."
-      }
+      '@type': 'Question',
+      name: 'Does a wood-burning sauna need electricity?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The stove itself may not need electricity, but lights, controls, fans, or other accessories can. An off-grid project still needs a complete power plan for every electrical load and an approved stove, chimney, clearance, and ventilation plan.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "How long does it take to heat a wood-burning sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Typically 45-90 minutes from a cold start, depending on outside temperature, sauna insulation, and how hot the fire is burning. A well-insulated wood sauna in mild weather reaches 170°F in about an hour. In winter it may take 90 minutes. Electric saunas reach temperature in 30-45 minutes with no oversight required."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'What wood should I burn in a sauna stove?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Follow the exact stove manual. Harvia currently recommends dry hardwood such as birch or alder and warns against treated, painted, glued, or composite wood. Local fuel and emissions rules may add requirements.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does a wood-burning sauna take to heat?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'There is no reliable universal time. Heater output, stone mass, room construction, glazing, ventilation, outdoor conditions, fuel moisture, loading, and target temperature all affect warm-up. Ask for model-level evidence if timing matters.',
+      },
+    },
+  ],
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Wood-Burning Sauna: Stoves, Setup, and Whether It's Worth It"
-  description="Wood-burning sauna stoves compared vs electric. Best stove picks, installation requirements, and when wood actually makes sense over electric."
+  title="Wood-Burning Sauna Planning: Stove, Chimney, and Site Checks"
+  description="Plan a wood-burning sauna around the room, stove, chimney, clearances, combustion air, ventilation, fuel handling, maintenance, permits, and insurance."
   canonical="/guides/wood-burning-sauna"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Wood-Burning Sauna: Is It Worth It?</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Solid-fuel project planning</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-3">Wood-Burning Sauna: Plan the Whole Fire System</h1>
+      <p class="text-stone-500">Reviewed August 2026 &middot; Planning guide, not a stove or chimney manual</p>
+      <p class="text-lg text-stone-700 mt-4">A wood sauna is more than a heater in a wooden room. The stove, chimney, clearances, guards, floor, combustion air, sauna ventilation, fuel storage, permits, insurance, and operating habits must work as one system.</p>
+    </header>
 
     <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-wood-stove-interior.jpg" alt="Wood-burning sauna stove interior" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+      <img src="/images/lifestyle/sauna-wood-stove-interior.jpg" alt="Wood-burning sauna heater installed with a chimney and surrounding room clearances" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Do not order from the stove dimensions alone:</strong> The safety envelope can be much larger than the heater body. Use the exact current stove, room, chimney, shield, and guard instructions, then have the complete plan reviewed through the local approval and insurance process.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Wood-burning saunas are the traditional Finnish approach — and there is a reason they persist. The heat quality is different, the ritual is part of the experience, and for off-grid or remote setups they are simply the only practical option. Here is everything you need to decide.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Wood vs Electric: The Real Comparison</h2>
-    <div class="overflow-x-auto mb-8">
-      <table class="text-sm w-full">
-        <thead>
-          <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-6 w-1/3"></th>
-            <th class="pb-2 pr-6">Wood-Burning</th>
-            <th class="pb-2">Electric</th>
-          </tr>
-        </thead>
-        <tbody class="text-stone-700">
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold text-stone-600">Preheat time</td>
-            <td class="py-2 pr-6">45-90 min</td>
-            <td class="py-2">30-45 min</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold text-stone-600">Electrical hookup</td>
-            <td class="py-2 pr-6">Not required</td>
-            <td class="py-2">240V required</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold text-stone-600">Operating cost</td>
-            <td class="py-2 pr-6">Wood cost ($2-5/session)</td>
-            <td class="py-2">Electricity ($0.50-$2/session)</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold text-stone-600">Convenience</td>
-            <td class="py-2 pr-6">Requires tending</td>
-            <td class="py-2">Set and forget</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold text-stone-600">Steam quality</td>
-            <td class="py-2 pr-6">Soft, traditional</td>
-            <td class="py-2">Clean, consistent</td>
-          </tr>
-          <tr>
-            <td class="py-2 pr-6 font-semibold text-stone-600">Off-grid capable</td>
-            <td class="py-2 pr-6">Yes</td>
-            <td class="py-2">No</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Best Wood-Burning Sauna Stoves</h2>
-
-    <div class="space-y-5 mb-10">
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Harvia M3 Wood Sauna Heater</h3>
+    <section class="mb-10" aria-labelledby="wood-project-screen">
+      <h2 id="wood-project-screen" class="text-2xl font-bold text-stone-900 mb-4">Seven questions that screen the project</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {[
+          ['Is this stove accepted here?', 'Confirm the exact model, certification or listing, emissions rules, permit path, inspection, property insurer, and HOA requirements where applicable.'],
+          ['Does it fit the calculated room?', 'Use finished interior volume plus the manufacturer adjustment for glass, masonry, log walls, and other uninsulated surfaces.'],
+          ['Where can the chimney run?', 'Coordinate connector, chimney, roof or wall penetration, clearances, flashing, termination, snow, wind, and service access as one listed system.'],
+          ['Does the safety envelope fit?', 'Lay out the stove, shields, floor protection, guard, loading door, benches, walking path, and every combustible surface.'],
+          ['Where does combustion air come from?', 'A wood fire consumes room air. Coordinate combustion air with the sauna ventilation design and the exact stove instructions.'],
+          ['How will fuel and ash move?', 'Plan dry fuel storage, a safe carrying route, fire tending, ash removal, cooling, and disposal without crossing occupied or delicate areas.'],
+          ['Who owns maintenance?', 'Identify who will inspect the heater, stones, chimney, vents, guards, seals, and surrounding materials on the required schedule.'],
+        ].map(([title, body]) => (
+          <div class="bg-white border border-stone-200 rounded-lg p-5">
+            <h3 class="font-bold text-stone-900 mb-2">{title}</h3>
+            <p class="text-sm text-stone-700">{body}</p>
           </div>
-          
-        </div>
-        <p class="text-stone-600 mb-2 text-sm">Finnish-made, heats 8-13m³ (about a 4-6 person sauna). Compact enough for a barrel sauna, holds a generous stone load. The standard wood stove recommendation for home use. Widely considered the benchmark in its class.</p>
-        <ul class="text-stone-500 text-xs mb-3 space-y-1">
-          <li>Heating volume: 8-13 m³</li>
-          <li>Stone load: 30 kg</li>
-          <li>Flue: 5" (125mm)</li>
-        </ul>
-        <AmazonButton asin="B01FY6PZYU" variant="primary" />
+        ))}
       </div>
+    </section>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Large Sauna</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Harvia Legend 240SL</h3>
+    <PlannerCTA
+      source="wood_burning_sauna_after_project_screen"
+      heading="Turn the site questions into a reviewable brief"
+      description="Capture the room, property, heat preference, electrical status, budget, timeline, and installation needs before asking a dealer or qualified installer to review the project."
+    />
+
+    <section class="mt-10 mb-10" aria-labelledby="installation-scope">
+      <h2 id="installation-scope" class="text-2xl font-bold text-stone-900 mb-4">Build an itemized installation scope</h2>
+      <div class="overflow-x-auto border border-stone-200 rounded-lg">
+        <table class="w-full min-w-[700px] text-sm border-collapse">
+          <thead>
+            <tr class="bg-stone-900 text-white">
+              <th class="text-left p-3">System</th>
+              <th class="text-left p-3">Document before ordering</th>
+              <th class="text-left p-3">Commonly missed boundary</th>
+            </tr>
+          </thead>
+          <tbody class="text-stone-700">
+            {[
+              ['Room and stove', 'Finished dimensions, uninsulated surfaces, room range, minimum height, clearances, stone type and amount.', 'A nominal room size does not replace the manufacturer calculation.'],
+              ['Chimney', 'Approved components, connection, support, penetration, flashing, termination, clearances, and cleaning access.', 'A matching diameter does not make mixed components an approved chimney system.'],
+              ['Protection', 'Required wall and ceiling shields, floor protection, guard, fasteners, and approved clearance reductions.', 'Generic tile or cement board is not automatically an approved shield assembly.'],
+              ['Air and ventilation', 'Combustion-air route, sauna supply and exhaust, drying path, fan use, and pressure effects.', 'A sauna inlet is not automatically a complete combustion-air plan.'],
+              ['Structure', 'Stove and stone weight, floor support, chimney loads, penetrations, anchorage, and exterior weather details.', 'The heater body is only part of the supported weight.'],
+              ['Operations', 'Fuel specification, storage, lighting, fire-starting, ash handling, shutdown, inspection, and maintenance.', 'Convenient fuel storage can still create a moisture or fire risk.'],
+            ].map(([system, document, missed], index) => (
+              <tr class={index % 2 === 0 ? 'bg-white' : 'bg-stone-50'}>
+                <td class="p-3 font-semibold border-b border-stone-200">{system}</td>
+                <td class="p-3 border-b border-stone-200">{document}</td>
+                <td class="p-3 border-b border-stone-200">{missed}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="model-example">
+      <h2 id="model-example" class="text-2xl font-bold text-stone-900 mb-4">One model shows why generic dimensions fail</h2>
+      <div class="bg-amber-50 border border-amber-200 rounded-lg p-5">
+        <h3 class="font-bold text-stone-900 mb-2">Harvia M3, item WKM3</h3>
+        <p class="text-sm text-stone-700 mb-3">Harvia currently lists the M3 for 212 to 459 cubic feet. Its published front, rear, side, and ceiling distances are not the same, and the listed stone amount adds more than 66 pounds to the installed system. Another stove can have a different room range, safety envelope, connection, and stone load.</p>
+        <p class="text-xs text-stone-600">Use these numbers only for the current WKM3 product example. Check the current manual, approved accessories, and local requirements before design or installation.</p>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="fuel-operation">
+      <h2 id="fuel-operation" class="text-2xl font-bold text-stone-900 mb-4">Fuel and operation are part of the design</h2>
+      <p class="text-stone-700 mb-4">Harvia currently recommends dry hardwood such as birch or alder and warns against treated, painted, plywood, or glued material. The exact stove manual controls acceptable fuel size, loading, firing, ash handling, and prohibited materials. Local fuel or emissions rules may be stricter.</p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white border border-stone-200 rounded-lg p-5">
+          <h3 class="font-bold text-stone-900 mb-2">Before each use</h3>
+          <ul class="space-y-2 text-sm text-stone-700">
+            <li>[ ] Required clearances and guards are unobstructed.</li>
+            <li>[ ] Vents and combustion-air path are open.</li>
+            <li>[ ] Chimney and connector show no visible damage or blockage.</li>
+            <li>[ ] Fuel meets the stove instructions.</li>
+            <li>[ ] Ash and combustible storage are managed safely.</li>
+          </ul>
+        </div>
+        <div class="bg-white border border-stone-200 rounded-lg p-5">
+          <h3 class="font-bold text-stone-900 mb-2">Keep with the sauna</h3>
+          <ul class="space-y-2 text-sm text-stone-700">
+            <li>[ ] Stove, chimney, room, and accessory manuals</li>
+            <li>[ ] Approved plan and equipment schedule</li>
+            <li>[ ] Permit and inspection records</li>
+            <li>[ ] Installation and concealed-work photos</li>
+            <li>[ ] Maintenance and chimney-service log</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="wood-mistakes">
+      <h2 id="wood-mistakes" class="text-2xl font-bold text-stone-900 mb-4">Claims that should not drive the purchase</h2>
+      <div class="space-y-4">
+        {[
+          ['A universal warm-up time', 'Room construction, weather, fuel, loading, heater output, stone mass, ventilation, and target temperature change the result.'],
+          ['A universal cost per session', 'Fuel price misses storage, handling, maintenance, chimney service, and owner time. Compare a complete local operating plan.'],
+          ['Treating steam preference as a universal fact', 'The heater, stones, room, airflow, water application, and operating practice all affect the experience.'],
+          ['No electricity means no approvals', 'The solid-fuel appliance, chimney, structure, penetrations, clearances, and insurer can still require review.'],
+          ['Any non-combustible board solves clearances', 'Only use protection and clearance reductions approved by the exact equipment instructions and local authority.'],
+        ].map(([title, body]) => (
+          <div class="bg-white border border-stone-200 rounded-lg p-5">
+            <h3 class="font-bold text-stone-900 mb-2">{title}</h3>
+            <p class="text-sm text-stone-700">{body}</p>
           </div>
-          
-        </div>
-        <p class="text-stone-600 mb-3 text-sm">For larger sauna rooms (up to 24 m³). Log-loading from outside the sauna is a significant convenience feature — no opening the sauna door to add wood mid-session.</p>
-        <AmazonButton asin="B01FY9T0B6" variant="primary" />
+        ))}
       </div>
-    </div>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Installation Requirements</h2>
-    <ul class="space-y-3 text-stone-700 mb-8 ml-4">
-      <li><span class="font-semibold">Chimney flue:</span> Required — stainless steel double-wall pipe through the roof or wall. Size must match stove specs (typically 5-6 inch). Requires a proper flashing and storm collar for weather sealing.</li>
-      <li><span class="font-semibold">Clearances:</span> Minimum distance to combustible walls varies by stove (typically 8-12 inches to sides, 18+ inches rear). Check your specific stove manual.</li>
-      <li><span class="font-semibold">Floor protection:</span> Non-combustible floor pad (concrete board, tile, stone) under and around the stove.</li>
-      <li><span class="font-semibold">Air supply:</span> Wood stoves need combustion air. A low-wall vent near the stove base handles this — same as the sauna ventilation intake. See our <a href="/guides/sauna-ventilation/" class="text-amber-700 hover:underline">ventilation guide</a>.</li>
-      <li><span class="font-semibold">No 240V needed:</span> The stove itself needs no electricity. If you want a light in the sauna, run standard 120V to a fixture rated for sauna use.</li>
-    </ul>
+    <section class="mb-10" aria-labelledby="wood-sources">
+      <h2 id="wood-sources" class="text-2xl font-bold text-stone-900 mb-4">Primary sources used</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="https://www.harvia.com/en/ideas-and-trends/products/how-do-you-choose-the-right-wood-burning-heater/" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Harvia wood-heater selection guidance</h3>
+          <p class="text-sm text-stone-700">Current guidance on room sizing, dry fuel, prohibited material, chimney planning, installation, and maintenance.</p>
+        </a>
+        <a href="https://www.harvia.com/en-US/products/WKM3/m3-black" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Harvia M3 product data</h3>
+          <p class="text-sm text-stone-700">Current model-level room range, dimensions, stone amount, clearances, and product-manual access.</p>
+        </a>
+        <a href="https://www.finnleo.com/hubfs/FINNLEO/Finnleo%20Downloads/Installation%20Manuals/71-0156_Euro_Outdoor_Room_Rev_D_09-24-2025.pdf" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400 md:col-span-2">
+          <h3 class="font-bold text-stone-900 mb-2">Finnleo Euro Outdoor Room manual</h3>
+          <p class="text-sm text-stone-700">Current room guidance requiring coordination with the heater manual and recommending a licensed, bonded specialist for wood-burning installation.</p>
+        </a>
+      </div>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Best Wood for a Sauna</h2>
-    <p class="text-stone-700 mb-4">Use seasoned hardwood. Oak, birch, and maple burn hot, long, and clean. Softwoods (pine, spruce) produce more creosote and sap — they will foul the stove and chimney faster. Cut wood 12-16 inches long to fit the firebox. Stack it near the sauna with good airflow to stay dry.</p>
-    <p class="text-stone-700 mb-6">Traditional Finnish sauna culture uses birch almost exclusively — it burns clean, smells pleasant, and the birch steam is associated with the classic sauna experience.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is a wood-burning sauna better than electric?</h3>
-        <p class="text-stone-700">Depends on your priorities. Electric wins for convenience and consistency. Wood wins for off-grid use, traditional steam quality, and the ritual experience.</p>
+    <section class="mb-10" aria-labelledby="wood-faq">
+      <h2 id="wood-faq" class="text-2xl font-bold text-stone-900 mb-4">Frequently asked questions</h2>
+      <div class="space-y-5">
+        <div><h3 class="font-bold text-stone-900 mb-1">Does a wood sauna need electricity?</h3><p class="text-stone-700">The stove can avoid the electric heating load. Lighting, fans, controls, or accessories may still need power, so document the whole project rather than labeling it automatically off-grid.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-1">How long does it take to heat?</h3><p class="text-stone-700">There is no reliable universal time. Ask the manufacturer or dealer for evidence tied to the exact room, heater, climate, and operating assumptions if warm-up matters to the purchase.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-1">Which stove should I buy?</h3><p class="text-stone-700">Start with room calculation, certification, clearance envelope, chimney path, loading location, and local acceptance. Then compare current models that pass every check.</p></div>
       </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What wood stove should I buy?</h3>
-        <p class="text-stone-700">Harvia M3 for most home saunas (~$799). Harvia Legend 240SL for larger rooms (~$1,099).</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How long to heat a wood sauna?</h3>
-        <p class="text-stone-700">45-90 minutes from cold. Longer in winter, faster in well-insulated builds.</p>
-      </div>
-    </div>
+    </section>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue the wood-heater plan</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-sauna-heater/" class="text-amber-700 hover:underline">Best Sauna Heaters</a></li>
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
-        <li><a href="/guides/propane-sauna-heater/" class="text-amber-700 hover:underline">Propane Sauna Heaters</a></li>
-        <li><a href="/guides/sauna-ventilation/" class="text-amber-700 hover:underline">Sauna Ventilation Guide</a></li>
-        <li><a href="/guides/best-sauna-stones/" class="text-amber-700 hover:underline">Best Sauna Stones</a></li>
+        <li><a href="/guides/best-sauna-heater/" class="text-amber-700 hover:underline">Open the heater planning hub</a></li>
+        <li><a href="/guides/best-wood-burning-sauna-heaters/" class="text-amber-700 hover:underline">Compare three current wood-heater formats</a></li>
+        <li><a href="/guides/mobile-sauna-for-sale/" class="text-amber-700 hover:underline">Compare current mobile wood-sauna builds</a></li>
+        <li><a href="/guides/electric-vs-wood-fired-sauna/" class="text-amber-700 hover:underline">Compare electric and wood site requirements</a></li>
+        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Organize the room-sizing inputs</a></li>
+        <li><a href="/guides/sauna-ventilation/" class="text-amber-700 hover:underline">Coordinate combustion air and sauna ventilation</a></li>
       </ul>
     </div>
   </article>

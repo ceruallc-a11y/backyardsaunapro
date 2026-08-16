@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const sections = [
   {
@@ -95,6 +96,12 @@ const faqSchema = {
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-10 text-sm text-stone-700">
       <strong>How to use it:</strong> Do not check an item because it seems likely. Save the written answer, drawing, quote, manual page, or approval that proves it.
     </div>
+
+    <PlannerCTA
+      source="outdoor_buying_checklist_after_intro"
+      heading="Turn the checklist into a project brief"
+      description="Record the site, dimensions, heat preference, budget, timeline, and open questions before requesting product or installer quotes."
+    />
 
     {sections.map(section => (
       <section class="mb-10">

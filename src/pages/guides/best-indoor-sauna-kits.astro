@@ -41,8 +41,8 @@ const faqSchema = {
 import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Best Indoor Sauna Kits: 5 Current Formats Compared"
-  description="Compare five current indoor sauna formats, from compact infrared cabins and portable steam tents to a full traditional room, with electrical, space, delivery, and buyer-fit checks."
+  title="Best Indoor Sauna Kits for Home (2026): 5 Formats"
+  description="Compare five current indoor sauna kits for home, including finished infrared cabins, a traditional room kit, and a portable steam tent, with electrical, space, delivery, and buyer-fit checks."
   canonical="/guides/best-indoor-sauna-kits"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -50,9 +50,9 @@ import AmazonButton from '../../components/AmazonButton.astro';
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
       <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best indoor sauna kits: five formats to compare</h1>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best indoor sauna kits for home: five formats to compare</h1>
       <p class="text-stone-500 text-sm">Reviewed August 15, 2026 &middot; 10 min read</p>
-      <p class="text-lg text-stone-600 mt-4">Indoor saunas split into two very different categories: plug-in infrared units that go anywhere, and traditional steam saunas that need dedicated space and electrical work. Knowing which one you actually want before you buy saves a lot of frustration.</p>
+      <p class="text-lg text-stone-600 mt-4">Indoor saunas split into different formats: finished infrared cabins, traditional rooms with heated stones, and portable steam tents. The room, heat experience, electrical path, delivery, and installation scope should decide which format reaches your shortlist.</p>
     </header>
 
     <AdvertiserDisclosure />
@@ -60,6 +60,12 @@ import AmazonButton from '../../components/AmazonButton.astro';
     <div class="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
       <strong>Research scope:</strong> This is a desk-researched buying guide, not a hands-on test. We checked current manufacturer specifications and live retailer pages for the non-sponsored products below. Availability, included equipment, and electrical requirements can change by configuration.
     </div>
+
+    <PlannerCTA
+      source="indoor_sauna_kits_above_fold"
+      heading="Check the room and electrical plan before choosing a kit"
+      description="Record the dimensions, access path, floor, circuit, ventilation, budget, and heat format before comparing checkout prices."
+    />
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
       <p class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-2">Fast decision</p>
@@ -75,6 +81,44 @@ import AmazonButton from '../../components/AmazonButton.astro';
       <h2 class="font-bold text-stone-800 mb-2">Choose the heat format first</h2>
       <p class="text-sm text-stone-700">An infrared cabin heats the user with emitters and is often sold as a compact finished appliance. A traditional room heats air and stones, and the applicable manual may allow water on the stones. Portable steam tents are a third category. Compare the exact temperature range, circuit, ventilation, moisture, clearances, and controls in each model's current documentation rather than applying one setup rule to the whole category.</p>
     </div>
+
+    <section class="mb-8" aria-labelledby="indoor-format-comparison">
+      <h2 id="indoor-format-comparison" class="text-2xl font-bold text-stone-900 mb-3">What “indoor sauna kit” can mean</h2>
+      <p class="text-stone-700 mb-4">These formats are not interchangeable. Decide which room experience and installation scope you want before comparing brands.</p>
+      <div class="overflow-x-auto border border-stone-200 rounded-lg">
+        <table class="w-full min-w-[720px] text-sm text-left">
+          <thead class="bg-stone-100 text-stone-900">
+            <tr>
+              <th scope="col" class="px-4 py-3 font-bold">Format</th>
+              <th scope="col" class="px-4 py-3 font-bold">What usually arrives</th>
+              <th scope="col" class="px-4 py-3 font-bold">Likely fit</th>
+              <th scope="col" class="px-4 py-3 font-bold">Verify before ordering</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-200 text-stone-700">
+            <tr class="align-top">
+              <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Finished infrared cabin</th>
+              <td class="px-4 py-3">Panelized enclosure with emitters, controls, seating, glass, and model-specific electrical requirements.</td>
+              <td class="px-4 py-3">A compact finished room where heated stones and steam are not priorities.</td>
+              <td class="px-4 py-3">Circuit, plug, clearances, seated fit, delivery path, assembly, and warranty service.</td>
+            </tr>
+            <tr class="align-top">
+              <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Traditional room kit</th>
+              <td class="px-4 py-3">Wall, ceiling, bench, trim, door, and heater components; inclusions vary by configuration.</td>
+              <td class="px-4 py-3">Buyers who want heated stones, hotter room air, and multi-level seating.</td>
+              <td class="px-4 py-3">Finished floor, ventilation, room access, freight, assembly, heater package, and hardwired electrical scope.</td>
+            </tr>
+            <tr class="align-top">
+              <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Portable steam enclosure</th>
+              <td class="px-4 py-3">Collapsible enclosure, external steam generator, hose, controls, and model-specific accessories.</td>
+              <td class="px-4 py-3">Temporary use where storage and portability matter more than a finished room.</td>
+              <td class="px-4 py-3">Drying routine, surface protection, generator care, replacement parts, and heat or burn precautions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-stone-600 mt-3">Still choosing a format? Start with <a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">infrared versus traditional sauna</a>, then compare the full project scope in the <a href="/guides/sauna-kits/" class="text-amber-700 hover:underline">sauna kit planning guide</a>.</p>
+    </section>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
       <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
@@ -123,6 +167,10 @@ import AmazonButton from '../../components/AmazonButton.astro';
       </div>
 
       <div class="border border-stone-200 rounded-xl overflow-hidden bg-white">
+        <figure class="bg-stone-100">
+          <img src="/images/editorial/indoor-infrared-sauna-representative.webp" alt="Representative compact indoor infrared sauna cabin in a home room" class="w-full h-auto object-cover max-h-72" loading="lazy" width="1536" height="1024" />
+          <figcaption class="px-5 py-2 text-xs text-stone-600">Representative compact infrared cabin; not the exact Dynamic Barcelona model.</figcaption>
+        </figure>
         <div class="bg-amber-50 px-5 pt-4 pb-2">
           <span class="text-xs font-semibold text-amber-700 uppercase tracking-wide">Compact infrared option</span>
           <h3 class="text-xl font-bold text-stone-900 mt-1">Dynamic Saunas Barcelona 1-2 Person</h3>
@@ -192,6 +240,10 @@ import AmazonButton from '../../components/AmazonButton.astro';
       </div>
 
       <div class="border border-stone-200 rounded-xl overflow-hidden bg-white">
+        <figure class="bg-stone-100">
+          <img src="/images/editorial/portable-steam-sauna-representative.webp" alt="Representative portable steam sauna tent with an external generator" class="w-full h-auto object-cover max-h-72" loading="lazy" width="1536" height="1024" />
+          <figcaption class="px-5 py-2 text-xs text-stone-600">Representative steam-tent setup; not the exact SereneLife model.</figcaption>
+        </figure>
         <div class="bg-stone-50 px-5 pt-4 pb-2">
           <span class="text-xs font-semibold text-stone-600 uppercase tracking-wide">Portable steam format</span>
           <h3 class="text-xl font-bold text-stone-900 mt-1">SereneLife Portable Sauna Tent</h3>
@@ -226,13 +278,6 @@ import AmazonButton from '../../components/AmazonButton.astro';
     </div>
 
     <LeadMagnetSignup />
-
-    <PlannerCTA
-      title="Check whether the room and electrical plan fit"
-      body="Record the available dimensions, access path, floor, circuit, ventilation, budget, and preferred heat format before comparing checkout prices."
-      campaign="indoor_sauna_kits"
-      ctaPosition="after_picks"
-    />
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Know Before You Buy</h2>
 
@@ -278,6 +323,7 @@ import AmazonButton from '../../components/AmazonButton.astro';
         <li><a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">Infrared vs Traditional Sauna</a></li>
         <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Requirements</a></li>
         <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Best Electric Sauna Heaters</a></li>
+        <li><a href="/brands/finnleo-sauna-review/" class="text-amber-700 hover:underline">Finnleo Product Lines and Dealer Model</a></li>
         <li><a href="/guides/best-2-person-outdoor-sauna/" class="text-amber-700 hover:underline">Best 2-Person Outdoor Sauna Kits</a></li>
         <li><a href="/guides/sauna-for-back-pain/" class="text-amber-700 hover:underline">Sauna for Back Pain</a></li>
       </ul>

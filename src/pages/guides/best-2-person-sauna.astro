@@ -1,126 +1,206 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+
+const reviewedAt = 'August 15, 2026';
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "What is the best 2-person sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For an outdoor barrel: the Almost Heaven Refuge 2-Person (~$1,599) is the most common recommendation. For a plug-in indoor sauna: the Dynamic Saunas Barcelona 1-2 Person (~$899) is the best budget option. If you want a slightly larger footprint that is still comfortable for two people, the Almost Heaven Pinnacle 4-Person is a better long-term investment — the '2-person' label on most kits means a tight fit, not a comfortable one."
-      }
+      '@type': 'Question',
+      name: 'Is a two-person sauna comfortable for two adults?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Capacity labels do not describe personal space. Compare the published interior and bench dimensions with both users before buying. The two compact models in this guide have interior widths or bench lengths around 36 to 39 inches, so two adults should expect close side-by-side seating.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "How much does a 2-person sauna cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A 2-person plug-in infrared sauna starts around $899. An outdoor barrel 2-person kit starts around $1,599 (plus $500-$650 for a heater and $800-$1,500 for electrical installation). Total all-in for an outdoor setup: approximately $3,000-$3,800."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Does a two-person sauna use a standard outlet?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It depends on the heat format and exact model. The Dynamic Barcelona manufacturer page lists 120V and 15A service. The Almost Heaven Salem manufacturer page lists a 6kW heater requiring 240V, 30A, and a hardwired connection, plus separate 110V service for its light. Follow the current installation manual and qualified installer guidance.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should a couple buy a two-person or four-person sauna?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Choose a compact two-person model when floor space and project size matter most. Consider a larger model when either user wants more shoulder room or a bench long enough to recline. Compare measured interior and bench dimensions rather than relying on the capacity label.',
+      },
+    },
+  ],
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Best 2-Person Sauna (2025): Outdoor, Indoor, and Plug-In Options"
-  description="The best 2-person saunas in 2025 — outdoor barrel kits, indoor traditional, and plug-in infrared. What to know before buying a small sauna."
+  title="2-Person Saunas: Two Current Compact Paths"
+  description="Compare a compact traditional outdoor sauna and a 120V indoor infrared cabin using current dimensions, electrical requirements, and complete-project checks."
   canonical="/guides/best-2-person-sauna"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best 2-Person Sauna (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Compact sauna buying guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">2-Person Saunas: Two Current Compact Paths</h1>
+      <p class="text-stone-500 text-sm">Product routes reviewed {reviewedAt} - 9 min read</p>
+      <p class="text-lg text-stone-700 mt-4">A two-person label can describe a narrow infrared cabin or a traditional outdoor barrel. Those are different projects. Start with the heat format, then check whether the published interior actually fits both users.</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="2-person sauna interior with bench and stones" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
+    <AdvertiserDisclosure />
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
-    </div>
+    <figure class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Wood sauna bench beside a stone-filled heater" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
+      <figcaption class="text-xs text-stone-500 mt-2">Representative traditional sauna interior. It is not a photo of either exact model below.</figcaption>
+    </figure>
 
-    <p class="text-lg text-stone-700 mb-4">The honest truth about "2-person" sauna labels: most saunas marketed as 2-person are a tight fit for two adults. If you regularly sauna with a partner and want to be comfortable, size up. But if compact is the priority, these are the best picks.</p>
+    <aside class="border-y border-stone-200 py-6 mb-8">
+      <h2 class="text-2xl font-bold text-stone-900 mb-2">The capacity label is only a starting point</h2>
+      <p class="text-stone-700 mb-3">Measure the users and the room. The Salem publishes a 39-inch interior bench length. The Barcelona publishes a 36-inch interior width. Both can seat two, but neither creates generous side-by-side space.</p>
+      <p class="text-sm text-stone-600">We did not hands-on test these products. We checked current manufacturer specifications and the commerce routes shown below. Stock, seller, price, delivery, and warranty terms can change.</p>
+    </aside>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-900 mb-2">Quick Picks</h2>
-      <ul class="space-y-2 text-stone-700 text-sm">
-        <li><span class="font-semibold">Best outdoor barrel:</span> Almost Heaven Refuge 2-Person (~$1,599)</li>
-        <li><span class="font-semibold">Best indoor plug-in:</span> Dynamic Saunas Barcelona (~$899)</li>
-        <li><span class="font-semibold">If budget allows:</span> Almost Heaven Pinnacle 4-Person is more comfortable for two</li>
-      </ul>
-    </div>
+    <PlannerCTA
+      source="two_person_above_fold"
+      heading="Check the fit before choosing the cabin"
+      description="Build a private brief with both users, available space, power, delivery access, heat preference, and total budget before committing to a capacity label."
+    />
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best 2-Person Saunas</h2>
+    <section class="mt-12" aria-labelledby="current-two-person-paths">
+      <h2 id="current-two-person-paths" class="text-3xl font-bold text-stone-900 mb-3">Two current compact paths</h2>
+      <p class="text-stone-600 max-w-3xl mb-8">These options solve different problems. The Salem provides a traditional stone-heater room outdoors. The Barcelona is a smaller indoor infrared cabin with lighter electrical requirements.</p>
 
-    <div class="space-y-5 mb-10">
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
+      <section class="border-t border-stone-300 pt-7" aria-labelledby="salem-option">
+        <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">Traditional outdoor barrel</p>
+        <h3 id="salem-option" class="text-2xl font-bold text-stone-900 mb-3">Almost Heaven Salem 2-Person Barrel</h3>
+        <p class="text-stone-700 mb-5">The Salem fits a buyer who wants a compact traditional sauna and accepts the outdoor base, delivery, assembly, and hardwired electrical work that come with it. The retailer currently lists a heater and stones with the configured package, but confirm the exact cart before paying.</p>
+
+        <div class="grid md:grid-cols-2 gap-7">
           <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Outdoor Barrel</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Refuge 2-Person</h3>
+            <h4 class="font-bold text-stone-900 mb-3">Documented details</h4>
+            <ul class="space-y-2 text-sm text-stone-700 list-disc pl-5">
+              <li>Published assembled size: 72 by 47 by 77 inches</li>
+              <li>Published interior size: 71 by 39 by 71 inches</li>
+              <li>Two 39-inch-long benches and a 540-pound shipping weight</li>
+              <li>Standard 6kW heater listed for 240V, 30A hardwired service</li>
+            </ul>
           </div>
-          
-        </div>
-        <p class="text-stone-600 mb-2 text-sm">Western red cedar barrel kit, compact footprint (4' diameter), works well in tight spaces. Pairs with Harvia KIP 45B (4.5kW). The smallest production barrel sauna from a reliable brand. Real sauna experience, just compact.</p>
-        <p class="text-stone-500 text-xs mb-3">Heater sold separately — add ~$450 for the KIP 45B.</p>
-        <AmazonButton search="almost heaven refuge barrel sauna" variant="primary" />
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
           <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Plug-In Indoor</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Dynamic Saunas Barcelona 1-2 Person</h3>
+            <h4 class="font-bold text-stone-900 mb-3">Verify before checkout</h4>
+            <ul class="space-y-2 text-sm text-stone-700 list-disc pl-5">
+              <li>Selected wood, door, window, heater, controls, stones, and warranty</li>
+              <li>Freight, curbside unloading, assembly access, and lead time</li>
+              <li>Level outdoor base, drainage, weather exposure, and anchoring</li>
+              <li>Current manual, local permits, disconnect, and licensed electrical scope</li>
+            </ul>
           </div>
-          
         </div>
-        <p class="text-stone-600 mb-2 text-sm">120V plug-in, no electrician needed. Pre-assembled infrared panels, Canadian hemlock, assembles in 45 minutes. The benchmark for affordable indoor 2-person saunas. Not a traditional steam sauna — infrared, lower temperature. Good for solo use or a couple who does not mind being cozy.</p>
-        <AmazonButton asin="B00A2F99F0" variant="primary" />
-      </div>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
+        <div class="mt-5 flex flex-wrap items-center gap-4">
+          <a
+            href="https://selectsaunas.com/products/almost-heaven-salem-2-person-barrel-sauna?sca_ref=10752576.S2huPg7gFg"
+            target="_blank"
+            rel="nofollow noopener sponsored"
+            class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
+            data-cta-position="two_person_traditional"
+            data-product-id="almost-heaven-salem-2-person"
+            data-link-mode="verified_product"
+            data-partner="select_saunas"
+          >Check the current Salem configuration</a>
+          <a href="https://almostheaven.com/products/salem-2-person-barrel-sauna" target="_blank" rel="noopener" class="text-sm font-semibold text-amber-700 hover:underline">Review manufacturer specifications</a>
+        </div>
+      </section>
+
+      <section class="border-t border-stone-300 pt-7 mt-10" aria-labelledby="barcelona-option">
+        <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">Indoor infrared cabin</p>
+        <h3 id="barcelona-option" class="text-2xl font-bold text-stone-900 mb-3">Dynamic Saunas Barcelona DYN-6106-01</h3>
+        <p class="text-stone-700 mb-5">The Barcelona fits a buyer who wants a finished indoor cabin with a smaller footprint and published 120V service. It is an infrared product, not a traditional stone-heater sauna, and the 36-inch interior width makes the two-person fit close.</p>
+
+        <div class="grid md:grid-cols-2 gap-7">
           <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Value Upgrade</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Pinnacle 4-Person</h3>
+            <h4 class="font-bold text-stone-900 mb-3">Documented details</h4>
+            <ul class="space-y-2 text-sm text-stone-700 list-disc pl-5">
+              <li>Published exterior size: 39 by 36 by 73 inches</li>
+              <li>Published interior size: 36 by 32 by 67 inches</li>
+              <li>Published electrical service: 120V, 15A</li>
+              <li>Hemlock cabin, six carbon heating panels, tempered glass, and controls</li>
+            </ul>
           </div>
-          
+          <div>
+            <h4 class="font-bold text-stone-900 mb-3">Verify before checkout</h4>
+            <ul class="space-y-2 text-sm text-stone-700 list-disc pl-5">
+              <li>Current seller, stock, delivered price, returns, and warranty</li>
+              <li>Doorway, stairs, ceiling, floor, door swing, and assembly clearance</li>
+              <li>Exact outlet, dedicated-circuit, and extension-cord instructions</li>
+              <li>Any EMF claim's test method, measurement distance, and numerical result</li>
+            </ul>
+          </div>
         </div>
-        <p class="text-stone-600 mb-3 text-sm">Listed as 4-person but genuinely comfortable for 2. Larger interior means room to lie down, proper bench length, and enough space that two people are not on top of each other. If you can afford the extra $600 over the Refuge, the experience gap is substantial.</p>
-        <AmazonButton asin="B017WJV8SO" variant="outline" />
-      </div>
-    </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What "2-Person" Actually Means</h2>
-    <p class="text-stone-700 mb-4">Sauna capacity ratings are optimistic. A "2-person" barrel sauna typically has a bench long enough for two adults to sit shoulder-to-shoulder. That is functional but not comfortable for an hour-long session. A "4-person" barrel is genuinely comfortable for two — bench length allows reclining, there is room to breathe, and the interior does not feel cramped.</p>
-    <p class="text-stone-700 mb-6">If you are buying for a couple and plan regular use, the Pinnacle 4-Person at $2,199 is a better choice than the Refuge 2-Person at $1,599. The $600 difference buys significantly more usable space.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-4">
+          <AmazonButton asin="B00A2F99F0" label="Check the current Barcelona listing" variant="primary" ctaPosition="two_person_infrared" />
+          <a href="https://dynamicsaunasdirect.com/products/barcelona-1-2-person-low-emf-far-infrared-sauna" target="_blank" rel="noopener" class="text-sm font-semibold text-amber-700 hover:underline">Review manufacturer specifications</a>
+        </div>
+      </section>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is the best 2-person sauna?</h3>
-        <p class="text-stone-700">Almost Heaven Refuge for outdoor barrel, Dynamic Barcelona for plug-in indoor. For true comfort for two, size up to the Almost Heaven Pinnacle.</p>
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="two-person-comparison">
+      <h2 id="two-person-comparison" class="text-3xl font-bold text-stone-900 mb-6">Compare the project, not just the capacity</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[680px] text-sm">
+          <thead>
+            <tr class="border-b border-stone-300 text-left text-stone-600">
+              <th class="pb-3 pr-5">Decision</th>
+              <th class="pb-3 pr-5">Salem barrel</th>
+              <th class="pb-3">Barcelona infrared</th>
+            </tr>
+          </thead>
+          <tbody class="text-stone-700">
+            <tr class="border-b border-stone-200"><td class="py-3 pr-5 font-semibold">Heat format</td><td class="py-3 pr-5">Traditional electric heater and stones</td><td class="py-3">Infrared heating panels</td></tr>
+            <tr class="border-b border-stone-200"><td class="py-3 pr-5 font-semibold">Location</td><td class="py-3 pr-5">Indoor or outdoor per current documentation and setup</td><td class="py-3">Indoor cabin</td></tr>
+            <tr class="border-b border-stone-200"><td class="py-3 pr-5 font-semibold">Published power</td><td class="py-3 pr-5">240V, 30A hardwired heater; separate lighting service</td><td class="py-3">120V, 15A</td></tr>
+            <tr><td class="py-3 pr-5 font-semibold">Main constraint</td><td class="py-3 pr-5">Base, freight, assembly, weather, and electrical scope</td><td class="py-3">Close interior fit, indoor clearance, and infrared format</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How much does a 2-person sauna cost?</h3>
-        <p class="text-stone-700">Plug-in infrared: ~$899. Outdoor barrel kit alone: ~$1,599. All-in outdoor setup with heater and electrical: ~$3,000-$3,800.</p>
-      </div>
-    </div>
+    </section>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="size-up-option">
+      <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">Comfort-first alternative</p>
+      <h2 id="size-up-option" class="text-3xl font-bold text-stone-900 mb-3">Size up when two people need more room</h2>
+      <p class="text-stone-700 mb-4">The Almost Heaven Pinnacle is sold as a four-person barrel, but its published 64-inch bench length gives a couple more room than the Salem's 39-inch benches. It also expands the footprint, delivery, base, and project budget, so treat it as a different project rather than an automatic upgrade.</p>
+      <AmazonButton asin="B017WJV8SO" label="Check the current Pinnacle configuration" variant="outline" ctaPosition="two_person_size_up" />
+    </section>
+
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="two-person-budget">
+      <h2 id="two-person-budget" class="text-3xl font-bold text-stone-900 mb-3">Price the usable setup</h2>
+      <p class="text-stone-700 mb-5">Add delivery, unloading, floor or base work, electrical work, assembly, accessories, permits, tax, and future service. A current product price alone does not show the complete project cost.</p>
+      <a href="/tools/sauna-cost-calculator/?utm_source=two_person&utm_medium=onsite&utm_campaign=project_budget" class="inline-block bg-stone-900 hover:bg-stone-800 text-white font-semibold px-5 py-3 rounded-md" data-cta-position="two_person_project_budget">Build the full project budget</a>
+    </section>
+
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="two-person-faq">
+      <h2 id="two-person-faq" class="text-3xl font-bold text-stone-900 mb-6">Frequently asked questions</h2>
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-2">Is a two-person sauna comfortable for two adults?</h3><p class="text-stone-700">It can be, but expect close seating in these compact models. Compare both users with the published interior and bench dimensions before ordering.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-2">Does a two-person sauna use a standard outlet?</h3><p class="text-stone-700">Some infrared models do. Traditional electric heaters often do not. The Barcelona lists 120V, 15A service; the Salem's standard heater lists 240V, 30A hardwired service. Follow the exact manual.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-2">Should a couple buy a two-person or four-person sauna?</h3><p class="text-stone-700">Choose the smaller model when space controls the project. Size up when shoulder room or reclining matters enough to justify the larger footprint and complete cost.</p></div>
+      </div>
+    </section>
+
+    <aside class="mt-12 border border-stone-200 rounded-lg p-6">
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Continue comparing</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-        <li><a href="/guides/best-4-person-sauna/" class="text-amber-700 hover:underline">Best 4-Person Saunas</a></li>
-        <li><a href="/guides/sauna-for-couples/" class="text-amber-700 hover:underline">Sauna for Couples</a></li>
-        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">How Much Does a Sauna Cost?</a></li>
-        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Sauna Review</a></li>
+        <li><a href="/guides/best-1-person-sauna/" class="text-amber-700 hover:underline">One-person sauna guide</a></li>
+        <li><a href="/guides/best-3-person-sauna/" class="text-amber-700 hover:underline">Three-person sauna guide</a></li>
+        <li><a href="/guides/best-4-person-sauna/" class="text-amber-700 hover:underline">Four-person sauna guide</a></li>
+        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Barrel sauna kit comparison</a></li>
+        <li><a href="/reviews/dynamic-saunas-barcelona-review/" class="text-amber-700 hover:underline">Dynamic Barcelona buyer checklist</a></li>
       </ul>
-    </div>
+    </aside>
   </article>
 </Base>

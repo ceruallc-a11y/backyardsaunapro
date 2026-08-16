@@ -1,160 +1,179 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
+
+const martinUrl = 'https://selectsaunas.com/products/dynamic-martin-1-2-person-full-spectrum-near-zero-emf-far-ir-sauna-canadian-hemlock-2026-model';
+
+const faqs = [
+  {
+    question: 'Is infrared or traditional sauna better?',
+    answer: 'Neither format is universally better. Traditional sauna is the clearer fit for people who want heated air, hot stones, and water-generated loyly. Infrared is the clearer fit for people who prefer a lower room temperature and can use an exact indoor cabin that matches their space and electrical service.',
+  },
+  {
+    question: 'Does infrared sauna have better health benefits?',
+    answer: 'Current research does not establish infrared as medically superior to traditional sauna. A systematic review found insufficient evidence to recommend a specific sauna type, temperature, frequency, or duration for a specific health outcome. Treat disease or treatment claims as medical questions, not product-selection shortcuts.',
+  },
+  {
+    question: 'Can an infrared sauna use a standard outlet?',
+    answer: 'Some compact models can. The current Dynamic Martin example lists 120 V and 15 A service with a dedicated outlet recommendation. Larger infrared cabins can have different requirements. The exact product manual, outlet, circuit, room, and local code control.',
+  },
+  {
+    question: 'Can you pour water in an infrared sauna?',
+    answer: 'Not unless the exact manufacturer explicitly allows it. A conventional infrared cabin does not use a rock-filled sauna heater for loyly. Keep water away from emitters and electronics and follow the product manual.',
+  },
+];
 ---
 <Base
-  title="Infrared vs Traditional Sauna: Which Is Right for You? (2025 Guide)"
-  description="Infrared or traditional sauna? We break down the real differences in heat, health benefits, cost, and installation to help you decide."
+  title="Infrared vs Traditional Sauna (2026): A Practical Decision Guide"
+  description="Compare infrared and traditional saunas by heat experience, room temperature, steam, electrical service, location, capacity, upkeep, evidence, and current product formats."
   canonical="/guides/infrared-vs-traditional-sauna"
 >
-  <article class="max-w-3xl mx-auto">
+  <article class="mx-auto max-w-4xl">
     <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Infrared vs Traditional Sauna: Which Is Right for You?
-      </h1>
-      <p class="text-stone-500 text-sm">Updated October 2024 · 8 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        Most people assume one is obviously better. They're wrong. The right choice depends entirely on how you use it, where you live, and what you actually want out of the experience. We've broken it all down so you can decide fast and decide right.
-      </p>
+      <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-amber-700">Heat-format decision guide</p>
+      <h1 class="mb-4 text-4xl font-bold leading-tight text-stone-900">Infrared or traditional? Start with the experience.</h1>
+      <p class="text-sm text-stone-500">Last reviewed August 15, 2026 · 10 min read</p>
+      <p class="mt-4 max-w-3xl text-lg text-stone-700">This is not a contest between beginner and expert saunas. The formats feel different, require different rooms and power, and solve different household problems.</p>
     </header>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-interior-forest-view.jpg" alt="Peaceful sauna interior with forest view" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+
+    <div class="mb-3 overflow-hidden rounded-lg">
+      <img src="/images/lifestyle/sauna-interior-forest-view.jpg" alt="Traditional wood sauna interior with elevated benches and a forest view" class="max-h-96 w-full object-cover" loading="eager" width="1200" height="800" />
+    </div>
+    <p class="mb-8 text-xs text-stone-500">Representative traditional sauna interior. Product specifications come from the current listing and manual.</p>
+
+    <div class="mb-8 border-l-4 border-amber-600 bg-amber-50 p-5 text-sm text-stone-800">
+      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page also contains affiliate links to Select Saunas. We did not hands-on test the two example products.
     </div>
 
+    <PlannerCTA
+      source="infrared_vs_traditional_above_fold"
+      heading="Compare the room, heat preference, users, power, and delivery path together"
+      description="Build a free project brief with the intended location, dimensions, heat preference, electrical information, budget, ZIP code, and timeline before choosing the format."
+    />
 
-    <div class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-2">Quick Summary</h2>
-      <ul class="text-sm text-stone-700 space-y-1">
-        <li> <strong>Infrared:</strong> Lower temps (120–150°F), easier install, lower energy cost, gentle heat</li>
-        <li> <strong>Traditional:</strong> Higher temps (160–195°F), authentic steam option, deeper sweat, cultural experience</li>
-        <li><strong>Our take:</strong> Beginners → infrared. Sauna enthusiasts → traditional.</li>
-      </ul>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">How Each Type Works</h2>
-
-    <h3 class="text-xl font-semibold mt-6 mb-2 text-stone-800">Traditional (Finnish) Sauna</h3>
-    <p class="text-stone-700 mb-4">
-      Traditional saunas heat the <em>air</em> in the room using an electric heater or wood-burning stove with rocks on top. The rocks retain heat, and you can pour water over them to create steam (called <em>löyly</em>). Temperatures typically reach 160–195°F (70–90°C) with 10–20% humidity or higher if you're adding steam.
-    </p>
-
-    <h3 class="text-xl font-semibold mt-6 mb-2 text-stone-800">Infrared Sauna</h3>
-    <p class="text-stone-700 mb-4">
-      Infrared saunas use infrared light panels to heat your body <em>directly</em>, rather than heating the surrounding air. They operate at much lower temperatures typically 120–150°F (49–65°C) but many users report sweating as much or more than in a traditional sauna because the heat penetrates deeper into tissue.
-    </p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Head-to-Head Comparison</h2>
-
-    <div class="overflow-x-auto mb-8">
-      <table class="w-full text-sm border-collapse">
-        <thead>
-          <tr class="bg-stone-800 text-white">
-            <th class="text-left p-3">Factor</th>
-            <th class="text-left p-3">Traditional</th>
-            <th class="text-left p-3">Infrared</th>
-          </tr>
-        </thead>
-        <tbody>
-          {[
-            ["Temperature", "160–195°F", "120–150°F"],
-            ["Heat-up Time", "30–45 minutes", "10–20 minutes"],
-            ["Installation", "Requires ventilation, wiring", "Plug-and-play (most models)"],
-            ["Energy Cost", "Higher (more heat)", "Lower (~1.5–2 kWh/session)"],
-            ["Steam (löyly)", "Yes ", "No "],
-            ["Typical Size", "4–8+ person", "1–4 person"],
-            ["Price Range", "$1,500–$10,000+", "$800–$4,000"],
-            ["Humidity", "Adjustable (dry to steamy)", "Dry only"],
-            ["Maintenance", "Rocks need replacing", "Panels are low-maintenance"],
-          ].map(([factor, trad, ir], i) => (
-            <tr class={i % 2 === 0 ? "bg-white" : "bg-stone-50"}>
-              <td class="p-3 font-medium text-stone-700 border-b border-stone-200">{factor}</td>
-              <td class="p-3 text-stone-600 border-b border-stone-200">{trad}</td>
-              <td class="p-3 text-stone-600 border-b border-stone-200">{ir}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Health Benefits: Is One Better?</h2>
-    <p class="text-stone-700 mb-4">
-      Both types have solid research behind them. Traditional saunas have decades of Finnish studies showing cardiovascular benefits, stress reduction, and improved circulation. Infrared studies are newer but show similar benefits and some research suggests the deeper tissue penetration may be beneficial for muscle recovery and joint pain.
-    </p>
-    <p class="text-stone-700 mb-4">
-      <strong>Bottom line:</strong> The "best" sauna is the one you'll actually use. If the intense heat of a traditional sauna keeps you from staying in, you won't get the benefits.
-    </p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Installation: What's Actually Involved</h2>
-
-    <h3 class="text-xl font-semibold mt-4 mb-2 text-stone-800">Infrared Much Easier</h3>
-    <p class="text-stone-700 mb-4">
-      Most infrared saunas are pre-built panels that bolt together in 2–4 hours. Many plug into a standard 120V outlet, though larger models need a 240V circuit. No special ventilation required. Perfect for garages, spare rooms, or covered patios.
-    </p>
-
-    <h3 class="text-xl font-semibold mt-4 mb-2 text-stone-800">Traditional More Work, More Reward</h3>
-    <p class="text-stone-700 mb-4">
-      Electric traditional saunas need a 240V dedicated circuit. Outdoor barrel saunas require a level foundation and weatherproofing. Wood-burning options need a proper chimney or flue. It's more involved, but the result feels more permanent and authentic.
-    </p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Our Top Picks for Each Type</h2>
-
-    <div class="bg-white border border-stone-200 rounded-xl p-6 mb-6 shadow-sm">
-      <span class="text-xs font-bold bg-green-100 text-green-800 px-2 py-1 rounded">BEST INFRARED</span>
-      <h3 class="text-lg font-semibold mt-2 mb-1 text-stone-900">Dynamic Saunas Barcelona 1-2 Person Far Infrared</h3>
-      <p class="text-stone-600 text-sm mb-3">Heats to 140°F in 15 minutes, low-EMF carbon panels, Canadian hemlock construction. The best value in infrared under $1,000.</p>
-      <AmazonButton asin="B00A2F99F0" price="~$899" label="Check Price on Amazon" />
-    </div>
-
-    <div class="bg-white border border-stone-200 rounded-xl p-6 mb-6 shadow-sm">
-      <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded">BEST TRADITIONAL</span>
-      <h3 class="text-lg font-semibold mt-2 mb-1 text-stone-900">Almost Heaven Pinnacle 2-Person Barrel Sauna</h3>
-      <p class="text-stone-600 text-sm mb-3">Solid cedar construction, fits 2 comfortably, easy assembly for a traditional sauna. The barrel shape retains heat beautifully.</p>
-      <AmazonButton asin="B017WJV8SO" price="~$2,199" label="Check Price on Amazon" />
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">So, Which Should You Choose?</h2>
-
-    <div class="grid md:grid-cols-2 gap-4 mb-8">
-      <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
-        <h3 class="font-bold text-blue-900 mb-2">Choose Infrared If…</h3>
-        <ul class="text-sm text-blue-800 space-y-1">
-          <li> You're new to saunas</li>
-          <li> Budget is a priority</li>
-          <li> You want quick heat-up times</li>
-          <li> Installing in a finished room</li>
-          <li> You prefer lower temperatures</li>
-          <li> Muscle recovery is the goal</li>
-        </ul>
+    <section class="mt-12" aria-labelledby="answer-heading">
+      <p class="mb-2 text-xs font-bold uppercase tracking-wide text-amber-700">Short answer</p>
+      <h2 id="answer-heading" class="mb-6 text-3xl font-bold text-stone-900">Choose the sensation you will actually use</h2>
+      <div class="grid gap-5 md:grid-cols-2">
+        <div class="border-t-4 border-stone-900 bg-white p-6 shadow-sm">
+          <h3 class="mb-3 text-xl font-bold text-stone-900">Traditional sauna</h3>
+          <p class="mb-4 text-stone-700">A heater warms the room and a mass of sauna stones. When the heater manual permits it, water on the hot stones produces loyly: a brief rise in humidity and felt heat.</p>
+          <p class="text-sm text-stone-600"><strong>Start here when:</strong> hot air, stones, loyly, group use, or an outdoor sauna is central to the purchase.</p>
+        </div>
+        <div class="border-t-4 border-amber-600 bg-white p-6 shadow-sm">
+          <h3 class="mb-3 text-xl font-bold text-stone-900">Infrared sauna</h3>
+          <p class="mb-4 text-stone-700">Emitters warm the occupant and surfaces while the room runs at a lower air temperature than a Finnish-style sauna. A conventional infrared cabin has no rock-filled heater and no loyly.</p>
+          <p class="text-sm text-stone-600"><strong>Start here when:</strong> a lower-temperature indoor session and a compact exact-model installation fit the household better.</p>
+        </div>
       </div>
-      <div class="bg-orange-50 border border-orange-200 rounded-lg p-5">
-        <h3 class="font-bold text-orange-900 mb-2">Choose Traditional If…</h3>
-        <ul class="text-sm text-orange-800 space-y-1">
-          <li> You love the steam experience</li>
-          <li> You want the authentic Finnish feel</li>
-          <li> Building outdoors</li>
-          <li> You prefer high temps & intense heat</li>
-          <li> Multiple people will use it regularly</li>
-          <li> You're investing for the long term</li>
-        </ul>
-      </div>
-    </div>
+    </section>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mt-8">
-      <h3 class="font-bold text-stone-900 mb-3">Related guides</h3>
+    <section class="mt-12" aria-labelledby="comparison-heading">
+      <h2 id="comparison-heading" class="mb-6 text-3xl font-bold text-stone-900">The decision factors that change the project</h2>
+      <div class="overflow-x-auto border border-stone-200 bg-white">
+        <table class="w-full min-w-[900px] text-left text-sm">
+          <thead class="bg-stone-900 text-white">
+            <tr><th class="px-4 py-3">Factor</th><th class="px-4 py-3">Traditional</th><th class="px-4 py-3">Infrared</th><th class="px-4 py-3">What to verify</th></tr>
+          </thead>
+          <tbody class="divide-y divide-stone-200 text-stone-700">
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Heat experience</td><td class="px-4 py-3">Heated room, hot stones, and optional loyly</td><td class="px-4 py-3">Radiant heat at a lower room temperature</td><td class="px-4 py-3">Try both formats before buying when possible.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Published research settings</td><td class="px-4 py-3">Often 80-90 C in the 2018 review</td><td class="px-4 py-3">Often 45-60 C in the 2018 review</td><td class="px-4 py-3">Research protocols are not instructions for a consumer product.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Water on stones</td><td class="px-4 py-3">Yes, when the exact heater manual permits it</td><td class="px-4 py-3">No conventional rock-and-water system</td><td class="px-4 py-3">Follow the exact heater or cabin manual.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Electrical path</td><td class="px-4 py-3">Often hardwired for a home electric heater; wood-fired is separate</td><td class="px-4 py-3">Some compact cabins use 120 V; larger models vary</td><td class="px-4 py-3">Circuit, outlet, controls, disconnect, panel, and local code.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Location</td><td class="px-4 py-3">Indoor or outdoor when the room and heater are approved for it</td><td class="px-4 py-3">Many compact cabins are indoor-only</td><td class="px-4 py-3">Product rating, floor, clearances, ventilation, moisture, and access.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Maintenance</td><td class="px-4 py-3">Room cleaning plus heater, stones, controls, and exterior care</td><td class="px-4 py-3">Cabin cleaning plus emitters, controls, glass, and electronics</td><td class="px-4 py-3">Current maintenance schedule, parts, warranty, and support.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt-12" aria-labelledby="examples-heading">
+      <p class="mb-2 text-xs font-bold uppercase tracking-wide text-amber-700">Current format examples</p>
+      <h2 id="examples-heading" class="mb-6 text-3xl font-bold text-stone-900">Compare exact products, not generic categories</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <section class="border border-stone-200 bg-white p-6" aria-labelledby="martin-heading">
+          <img src="/images/editorial/indoor-infrared-sauna-representative.webp" alt="Representative compact indoor infrared sauna cabin" class="mb-5 aspect-[4/3] w-full object-cover" loading="lazy" width="1536" height="1024" />
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-amber-700">Compact indoor infrared path</p>
+          <h3 id="martin-heading" class="mb-3 text-2xl font-bold text-stone-900">Dynamic Martin 1-2 Person</h3>
+          <p class="mb-4 text-sm text-stone-700">The current authorized-dealer page lists this 2026 indoor-only cabin with six emitters, a 120 V / 15 A electrical path, a dedicated outlet recommendation, a 250-pound cabin weight, and a maximum air-temperature claim of 140 degrees F. Its person count is a seller label. Confirm usable interior dimensions, circuit instructions, delivery, assembly, warranty, and availability.</p>
+          <SelectSaunasButton href={martinUrl} label="Check the current Dynamic Martin listing" ctaPosition="infrared_vs_traditional_martin" />
+        </section>
+
+        <section class="border border-stone-200 bg-white p-6" aria-labelledby="pinnacle-heading">
+          <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Representative outdoor barrel sauna in a grassy setting" class="mb-5 aspect-[4/3] w-full object-cover" loading="lazy" width="1200" height="800" />
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-amber-700">Outdoor traditional path</p>
+          <h3 id="pinnacle-heading" class="mb-3 text-2xl font-bold text-stone-900">Almost Heaven Pinnacle 4 Person</h3>
+          <p class="mb-4 text-sm text-stone-700">The current manufacturer page lists a 6 kW, 240 V / 30 A hardwired heater path, separate 110 V / 15 A lighting service, two 63 1/4-inch-long benches, and an outdoor barrel room. Four is the published maximum, not our comfort rating. Confirm the selected heater, controls, glass, foundation, exterior treatment, freight, offload, assembly, and warranty.</p>
+          <AmazonButton asin="B017WJV8SO" variant="primary" label="View the current Pinnacle route" ctaPosition="infrared_vs_traditional_pinnacle" />
+        </section>
+      </div>
+    </section>
+
+    <section class="mt-12" aria-labelledby="health-heading">
+      <p class="mb-2 text-xs font-bold uppercase tracking-wide text-amber-700">Evidence boundary</p>
+      <h2 id="health-heading" class="mb-4 text-2xl font-bold text-stone-900">Do not buy either format from a disease claim</h2>
+      <p class="mb-4 text-stone-700">A 2018 systematic review included both Finnish-style and infrared studies. It found too much variation in study quality, protocols, populations, temperature, frequency, and outcomes to recommend a specific sauna type or routine for a specific health result. It also found insufficient evidence to distinguish particular health differences between repeated Finnish-style and infrared bathing.</p>
+      <p class="mb-4 text-stone-700">A 2026 heat-therapy review adds an important correction to common infrared marketing: recent experiments found that heat penetration diminished with tissue depth, and one 45-minute far-infrared session did not produce an appreciable rise in core temperature. That does not make infrared ineffective as a comfort experience. It means claims such as "deeper detox" are not a responsible buying criterion.</p>
+      <div class="border-l-4 border-red-700 bg-red-50 p-5 text-sm text-stone-800">
+        <strong>Safety:</strong> Heat can cause discomfort, lightheadedness, low blood pressure, dehydration, falls, and heat intolerance. Avoid alcohol. Stop if you feel unwell. Ask a qualified clinician about pregnancy, cardiovascular disease, medications, heat intolerance, or any condition that may change heat safety.
+      </div>
+    </section>
+
+    <section class="mt-12" aria-labelledby="check-heading">
+      <h2 id="check-heading" class="mb-5 text-2xl font-bold text-stone-900">Six checks before choosing the format</h2>
+      <div class="grid gap-x-8 gap-y-5 md:grid-cols-2">
+        {[
+          ['Try the heat', 'Use a reputable traditional sauna and infrared cabin before spending thousands. Preference is difficult to infer from a temperature table.'],
+          ['Measure the users', 'Compare bench length, depth, levels, and emitter placement with the actual users and desired seated or reclining posture.'],
+          ['Confirm the room', 'Check indoor or outdoor rating, exterior dimensions, floor, clearances, ventilation, moisture, ceiling, access, and service space.'],
+          ['Confirm power', 'Use the exact manual. Have a qualified electrician verify the circuit, panel capacity, outlet or hardwire path, controls, disconnect, and permits.'],
+          ['Compare total cost', 'Add freight, offload, base, electrical work, assembly, weather protection, ventilation, accessories, maintenance, and tax.'],
+          ['Audit the claims', 'Separate product specifications from seller wellness language. Ask for the test method, certification, warranty, and evidence behind any unusual claim.'],
+        ].map(([title, text]) => (
+          <div class="border-b border-stone-200 pb-5"><h3 class="mb-1 font-bold text-stone-900">{title}</h3><p class="text-sm text-stone-700">{text}</p></div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="sources-heading">
+      <h2 id="sources-heading" class="mb-4 text-xl font-bold text-stone-900">Sources checked</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/sauna-health-benefits/" class="text-amber-700 hover:underline font-medium">Sauna Health Benefits: What the Science Actually Says</a></li>
-        <li><a href="/guides/best-saunas-under-5000/" class="text-amber-700 hover:underline font-medium">Best Saunas Under $5,000</a></li>
-        <li><a href="/guides/best-2-person-outdoor-sauna/" class="text-amber-700 hover:underline font-medium">Best 2-Person Outdoor Saunas</a></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5941775/" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Clinical Effects of Regular Dry Sauna Bathing: A Systematic Review</a></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12819961/" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Heat Therapy: Targeting Health, Disease, and Disability (2026 review)</a></li>
+        <li><a href={martinUrl} target="_blank" rel="nofollow noopener sponsored" class="font-semibold text-amber-700 hover:underline">Authorized-dealer Dynamic Martin product page and manual link</a></li>
+        <li><a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Almost Heaven Pinnacle product page and construction manual</a></li>
+        <li><a href="https://www.harvia.com/en-US/sauna-heater-stones/" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Harvia heater-stone use and maintenance guidance</a></li>
       </ul>
-    </div>
+    </section>
 
-    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-6">
-      <h3 class="text-xl font-bold mb-2">Ready to Shop?</h3>
-      <p class="text-stone-300 mb-4">See our full curated list of the best backyard saunas for every budget.</p>
-      <a href="/best-saunas/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-        See Best Saunas of 2025 →
-      </a>
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-2xl font-bold text-stone-900">Infrared and traditional sauna questions</h2>
+      <div class="mt-4 divide-y divide-stone-200">
+        {faqs.map((faq) => (
+          <div class="py-5"><h3 class="font-bold text-stone-900">{faq.question}</h3><p class="mt-2 text-sm text-stone-700">{faq.answer}</p></div>
+        ))}
+      </div>
+    </section>
+
+    <div class="mt-10 bg-stone-900 p-6 text-white">
+      <h2 class="mb-3 text-xl font-bold">Continue the decision</h2>
+      <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <a href="/guides/best-indoor-sauna-kits/" class="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-stone-900 hover:bg-stone-100">Compare indoor kit formats</a>
+        <a href="/guides/best-outdoor-sauna-of-2026/" class="inline-flex min-h-11 items-center justify-center rounded-md border border-stone-500 px-4 py-2 text-sm font-semibold text-white hover:border-stone-300">Compare outdoor buyer paths</a>
+        <a href="/tools/sauna-cost-calculator/?utm_source=infrared_vs_traditional&utm_medium=onsite&utm_campaign=project_budget" class="inline-flex min-h-11 items-center justify-center rounded-md border border-stone-500 px-4 py-2 text-sm font-semibold text-white hover:border-stone-300" data-track-event="calculator_cta_clicked" data-cta-position="infrared_vs_traditional_project_budget">Build the project budget</a>
+      </div>
     </div>
   </article>
 </Base>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+})} />

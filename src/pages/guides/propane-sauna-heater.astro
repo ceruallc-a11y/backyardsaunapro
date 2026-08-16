@@ -1,132 +1,200 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "Can you use a propane heater in a sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, propane sauna heaters exist and are used primarily in off-grid and remote cabin settings where running 240V electrical service is impractical or too expensive. Propane heaters require proper combustion ventilation separate from the sauna's air exchange vents, and must be installed with a flue or chimney to vent combustion gases outside the sauna. They are not recommended for enclosed indoor spaces."
-      }
+      '@type': 'Question',
+      name: 'Are propane heaters made specifically for sauna rooms?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Scandia currently lists 40,000 and 80,000 BTU gas sauna heaters with liquid-propane variants. Use only a heater and venting configuration approved for the exact sauna project, not a portable propane space heater.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "What is the best propane sauna heater?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Kuuma Vapor-Fire 100 is the most widely used propane sauna heater in North America for residential and cabin applications. It produces around 36,000 BTU, vents through a standard chimney system, and works reliably in remote settings. Narvi (Finnish brand) also makes well-regarded gas sauna heaters available through specialty retailers."
-      }
+      '@type': 'Question',
+      name: 'Can I install a propane sauna heater myself?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The current Scandia installation guide requires licensed professional installation and directs buyers to a certified plumber or HVAC professional for gas pressure, installation, and connection. Local permits and inspections may also apply.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Is a propane sauna heater safe?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A properly installed propane sauna heater with correct combustion venting is safe. The key requirement is a dedicated flue that vents combustion gases outside — never a propane heater without a chimney or proper exhaust in an occupied space. Installation should follow the manufacturer's specifications and local code requirements for gas appliances."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'How do I size a propane sauna heater?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Start with the exact manufacturer manual, finished room dimensions, ceiling height, insulation, wall construction, outdoor temperature, venting plan, elevation, and gas pressure. Do not choose from BTU output alone.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is propane cheaper than an electric sauna heater?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'There is no universal answer. Compare the complete gas equipment, venting, controls, tank or supply work, licensed labor, permits, fuel delivery, and maintenance against the complete electrical-service and heater project.',
+      },
+    },
+  ],
 };
 ---
 <Base
-  title="Propane Sauna Heaters: How They Work, Top Models, and What to Know"
-  description="Guide to propane sauna heaters for off-grid builds. How they work, safety requirements, top models, and when propane makes sense over electric."
+  title="Propane Sauna Heater Guide: Plan the Complete Gas System"
+  description="Evaluate a propane sauna heater by current models, room range, venting, gas supply, controls, licensed installation, and complete project cost."
   canonical="/guides/propane-sauna-heater"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Propane Sauna Heaters: What to Know Before You Buy</h1>
-    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Gas heater planning guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-3">Propane Sauna Heaters: Plan the Whole Gas System</h1>
+      <p class="text-stone-500">Reviewed August 2026 &middot; Planning guide, not installation instructions</p>
+      <p class="text-lg text-stone-700 mt-4">Propane is a specialized sauna-heating path. The decision includes the exact heater, vent direction, combustion air, gas supply, controls, guard, room construction, permits, and licensed installation. It is not a portable-heater shortcut.</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-wood-stove-interior.jpg" alt="Off-grid sauna interior with alternative heating" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
+      <h2 class="font-bold text-stone-900 mb-2">The market is too narrow for a credible "best" ranking</h2>
+      <p class="text-sm text-stone-700">Our current US manufacturer check found one documented gas-sauna line with liquid-propane variants: Scandia's 40,000 and 80,000 BTU heaters. That supports a project-fit comparison, not a ranked roundup. Confirm current availability and documentation directly with the manufacturer before designing around either model.</p>
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Most home sauna builds use electric heaters. Propane is the exception — used when running 240V service to a remote cabin or off-grid location costs more than the sauna itself. It is a real solution for the right situation, with real requirements you need to understand before buying.</p>
+    <section class="mb-10" aria-labelledby="current-models">
+      <h2 id="current-models" class="text-2xl font-bold text-stone-900 mb-4">Two current propane-capable heater formats</h2>
+      <div class="overflow-x-auto border border-stone-200 rounded-lg">
+        <table class="w-full min-w-[720px] text-sm border-collapse">
+          <thead>
+            <tr class="bg-stone-900 text-white">
+              <th class="text-left p-3">Current model</th>
+              <th class="text-left p-3">Published room range</th>
+              <th class="text-left p-3">Current choices</th>
+              <th class="text-left p-3">Verify before layout</th>
+            </tr>
+          </thead>
+          <tbody class="text-stone-700">
+            <tr class="bg-white">
+              <td class="p-3 font-semibold border-b border-stone-200">Scandia 40K</td>
+              <td class="p-3 border-b border-stone-200">84 to 616 cu. ft. in the current installation guide</td>
+              <td class="p-3 border-b border-stone-200">Natural gas or liquid propane; standing pilot or piezo; horizontal or vertical vent</td>
+              <td class="p-3 border-b border-stone-200">Room inputs, elevation, gas pressure, wall thickness, vent path, clearances, and required accessories</td>
+            </tr>
+            <tr class="bg-stone-50">
+              <td class="p-3 font-semibold border-b border-stone-200">Scandia 80K</td>
+              <td class="p-3 border-b border-stone-200">450 to 1,680 cu. ft. in the current installation guide</td>
+              <td class="p-3 border-b border-stone-200">Natural gas or liquid propane; standing pilot or piezo; horizontal or vertical vent</td>
+              <td class="p-3 border-b border-stone-200">The same project inputs, plus the larger rough-in, guard, and clearance envelope</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-stone-500 mt-3">These ranges are manufacturer data, not our test results. The manual bases sizing on stated room assumptions, including a seven-foot ceiling. The ranges overlap, so room volume alone does not select the model.</p>
+      <div class="flex flex-col sm:flex-row gap-3 mt-5">
+        <a href="https://scandiamfg.com/products/40k-btu-gas-sauna-heater" target="_blank" rel="noopener" class="inline-flex min-h-12 items-center justify-center rounded-md bg-stone-900 px-5 py-3 font-semibold text-white hover:bg-stone-800">Check the current 40K listing</a>
+        <a href="https://scandiamfg.com/products/80k-btu-gas-sauna-heater" target="_blank" rel="noopener" class="inline-flex min-h-12 items-center justify-center rounded-md border border-stone-300 bg-white px-5 py-3 font-semibold text-stone-900 hover:border-stone-500">Check the current 80K listing</a>
+      </div>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">When Propane Makes Sense</h2>
-    <p class="text-stone-700 mb-4">Propane is the right choice when electrical service is the bottleneck. A cabin a quarter mile from the nearest power line, a remote hunting camp, an off-grid property — these are the situations where running electric is either impossible or costs $10,000+ in trenching and infrastructure. Propane sidesteps that entirely.</p>
-    <p class="text-stone-700 mb-6">For a backyard sauna on a property with normal electrical service, propane adds cost and complexity without benefit. Electric is simpler, cheaper to operate, and easier to control. Use electric unless you have a specific reason not to.</p>
+    <PlannerCTA
+      source="propane_heater_after_current_models"
+      heading="Put the gas-heater decision into a project brief"
+      description="Capture the room, location, heat preference, utility status, budget, timeline, and installation needs before asking the manufacturer or a licensed contractor to review the project."
+    />
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How Propane Sauna Heaters Work</h2>
-    <p class="text-stone-700 mb-4">A propane sauna heater burns gas to heat a stone bed, exactly like an electric heater but with combustion instead of electric resistance elements. The critical difference: combustion produces exhaust gases (carbon dioxide, water vapor, carbon monoxide if incomplete combustion) that must be vented outside the sauna through a dedicated flue or chimney.</p>
-    <p class="text-stone-700 mb-6">This is not the same as the sauna's air exchange ventilation. The combustion vent is a separate sealed pathway from the firebox to outside. Never use a propane heater without proper combustion venting in an occupied space.</p>
+    <section class="mt-10 mb-10" aria-labelledby="before-buying">
+      <h2 id="before-buying" class="text-2xl font-bold text-stone-900 mb-4">Confirm these items before buying</h2>
+      <ol class="list-decimal pl-5 space-y-4 text-stone-700">
+        <li><strong>The finished room.</strong> Record inside length, width, height, wall construction, insulation, door fit, glazing, and whether the sauna is indoors or outdoors.</li>
+        <li><strong>The exact fuel configuration.</strong> Liquid propane and natural-gas parts are not interchangeable assumptions. Confirm fuel, pressure, elevation, ignition, and the complete order configuration.</li>
+        <li><strong>The vent direction.</strong> The current line offers horizontal and vertical configurations. The installation guide ties each to specific components and rough-in details.</li>
+        <li><strong>Combustion and room air.</strong> The manufacturer requires adequate fresh air for safe operation and a properly installed, maintained venting system. Sauna room ventilation is a separate project requirement.</li>
+        <li><strong>The licensed trades.</strong> Ask the manufacturer and local authority which HVAC, gas, electrical, permit, and inspection work applies. The current manual does not support self-installation.</li>
+        <li><strong>The complete package.</strong> Confirm the heater, burner, controls, stones, back panel, flashing, vent components, guard, extensions, freight, and every field-supplied part.</li>
+      </ol>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Propane Sauna Heaters</h2>
+    <section class="mb-10" aria-labelledby="safety-boundary">
+      <h2 id="safety-boundary" class="text-2xl font-bold text-stone-900 mb-4">Safety boundary</h2>
+      <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+        <p class="font-bold text-red-900 mb-2">Do not substitute a portable propane heater.</p>
+        <p class="text-sm text-red-800 mb-3">A sauna reaches temperatures and operating conditions outside ordinary room-heater use. Use equipment documented for the sauna, follow the exact current manual, and have the gas and venting system installed and commissioned by qualified professionals.</p>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-red-800">
+          <li>The current Scandia manual warns that improper installation or operation can create carbon monoxide and flue-gas hazards.</li>
+          <li>It requires outside venting, adequate combustion and ventilation air, external controls, local-code compliance, and a heater guard.</li>
+          <li>For indoor installations, the manufacturer strongly recommends suitable carbon monoxide detectors near the appliance and in adjacent occupied spaces.</li>
+          <li>A working vent does not make the risk disappear. Installation, operation, inspection, and maintenance all matter.</li>
+        </ul>
+      </div>
+    </section>
 
-    <div class="space-y-5 mb-10">
+    <section class="mb-10" aria-labelledby="cost-comparison">
+      <h2 id="cost-comparison" class="text-2xl font-bold text-stone-900 mb-4">Compare project cost, not a universal session price</h2>
+      <p class="text-stone-700 mb-4">The old version of this guide gave one propane-consumption range for every sauna. That was not defensible. The manufacturer says consumption changes with room construction, insulation, door fit, outdoor temperature, heater sizing, venting, and use.</p>
+      <p class="text-stone-700 mb-5">Ask the gas supplier or installer to estimate fuel use from the selected model, local gas specification, expected firing pattern, and current delivered fuel price. Then compare the complete gas project with the electrical-service and wood-burning alternatives.</p>
+      <a href="/tools/sauna-cost-calculator/" class="inline-flex min-h-12 items-center justify-center rounded-md bg-stone-900 px-5 py-3 font-semibold text-white hover:bg-stone-800">Build the complete project budget</a>
+    </section>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="mb-2">
-          <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Most Popular in North America</span>
-          <h3 class="text-lg font-bold text-stone-900 mt-1">Kuuma Vapor-Fire 100</h3>
+    <section class="mb-10" aria-labelledby="fit-check">
+      <h2 id="fit-check" class="text-2xl font-bold text-stone-900 mb-4">When propane deserves a closer look</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="border border-stone-200 rounded-lg bg-white p-5">
+          <h3 class="font-bold text-stone-900 mb-3">Continue evaluating propane when...</h3>
+          <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+            <li>A documented gas sauna heater fits the exact room.</li>
+            <li>A qualified professional accepts the gas, combustion-air, and venting path.</li>
+            <li>Fuel storage, delivery, access, and local approvals are practical.</li>
+            <li>The full installed scope is competitive with electric or wood.</li>
+          </ul>
         </div>
-        <p class="text-stone-600 mb-3">36,000 BTU, designed for sauna use, compatible with standard stovepipe chimney systems. The most commonly used propane sauna heater for residential and cabin applications in North America. Large stone capacity, solid build, reasonable operating cost at current propane prices. Requires a 5-6 inch flue system. Available through Kuuma dealers and camping/outdoor retailers.</p>
-        <p class="text-stone-400 text-xs italic">Available through Cabela's, Bass Pro, and Kuuma dealers</p>
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="mb-2">
-          <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Finnish Option</span>
-          <h3 class="text-lg font-bold text-stone-900 mt-1">Narvi Gas Sauna Heater</h3>
+        <div class="border border-stone-200 rounded-lg bg-white p-5">
+          <h3 class="font-bold text-stone-900 mb-3">Choose another path when...</h3>
+          <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+            <li>You want a plug-in or portable setup.</li>
+            <li>No qualified gas installer will approve the project.</li>
+            <li>The room cannot accommodate the rough-in, guard, and clearances.</li>
+            <li>Electric service or an approved wood system is simpler at full project cost.</li>
+          </ul>
         </div>
-        <p class="text-stone-600 mb-3">Finnish-made gas sauna heaters with a strong following in Europe and increasingly available in North America through specialty retailers. Better build quality than most alternatives, solid stone capacity, but harder to find and more expensive than the Kuuma. Worth the premium for buyers who want the best available and don't mind the sourcing effort.</p>
-        <p class="text-stone-400 text-xs italic">Available through sauna specialty retailers</p>
       </div>
+    </section>
 
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Safety Requirements</h2>
-    <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
-      <h3 class="font-bold text-red-800 mb-2">Non-negotiable installation requirements</h3>
-      <ul class="text-red-700 text-sm space-y-1">
-        <li>Dedicated combustion flue venting to outside — no exceptions</li>
-        <li>CO detector mounted outside the sauna door</li>
-        <li>Gas line installed by a licensed plumber or gas fitter</li>
-        <li>Proper clearances per manufacturer specs</li>
-        <li>Automatic shut-off if pilot light fails (most modern units have this)</li>
-      </ul>
-    </div>
-    <p class="text-stone-700 mb-6">Carbon monoxide poisoning is the primary risk with any combustion heater in an enclosed space. A properly installed unit with a working flue eliminates this risk. A poorly installed unit or one with a blocked flue can be fatal. Do not cut corners on combustion venting.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Operating Cost: Propane vs Electric</h2>
-    <p class="text-stone-700 mb-4">At average US propane prices (~$2.50-3.50/gallon), a propane sauna session (1-2 hours including heat-up) typically consumes 1.5-2.5 gallons, costing $4-$9 per session. At average US electricity rates, the same session with a 6kW electric heater costs $1.20-$2.40.</p>
-    <p class="text-stone-700 mb-6">Electric is cheaper to operate when the infrastructure exists. Propane costs more per session but eliminates a potentially large upfront electrical infrastructure cost in remote settings.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Wood-Burning as an Alternative</h2>
-    <p class="text-stone-700 mb-6">For off-grid sauna builds, wood-burning is often a better choice than propane — no fuel delivery required, lower operating cost in areas with available firewood, and the experience many people specifically want from an off-grid sauna. The <a href="/brands/harvia-sauna-heater-review/" class="text-amber-700 hover:underline">Harvia M3 wood-burning heater</a> is the most popular residential option. Consider wood-burning seriously before defaulting to propane for any off-grid build.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Can you use a propane heater in a sauna?</h3>
-        <p class="text-stone-700">Yes, with proper combustion venting (a dedicated flue to outside). Never without. Combustion exhaust venting is separate from the sauna's air exchange ventilation.</p>
+    <section class="mb-10" aria-labelledby="primary-sources">
+      <h2 id="primary-sources" class="text-2xl font-bold text-stone-900 mb-4">Primary sources used</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="https://scandiamfg.com/products/40k-btu-gas-sauna-heater" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Scandia 40K product listing</h3>
+          <p class="text-sm text-stone-700">Current fuel, ignition, vent-direction, room-range, package, and professional-installation information.</p>
+        </a>
+        <a href="https://scandiamfg.com/products/80k-btu-gas-sauna-heater" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Scandia 80K product listing</h3>
+          <p class="text-sm text-stone-700">Current manufacturer listing for the larger gas-heater format and available configurations.</p>
+        </a>
+        <a href="https://cdn.shopify.com/s/files/1/0468/8261/9555/files/SAUNA_GAS_HEATER_INSTALLATION_GUIDE_SCANDIA.pdf?v=1642457182" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400 md:col-span-2">
+          <h3 class="font-bold text-stone-900 mb-2">Scandia gas-heater installation guide</h3>
+          <p class="text-sm text-stone-700">Manufacturer requirements for room inputs, sizing, venting, gas configuration, rough-in, controls, guard, safety, and professional installation.</p>
+        </a>
       </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is the best propane sauna heater?</h3>
-        <p class="text-stone-700">The Kuuma Vapor-Fire 100 for most North American buyers. Narvi for buyers who want premium Finnish quality and can source it.</p>
+    </section>
+
+    <section class="mb-10" aria-labelledby="propane-faq">
+      <h2 id="propane-faq" class="text-2xl font-bold text-stone-900 mb-4">Frequently asked questions</h2>
+      <div class="space-y-5">
+        <div><h3 class="font-bold text-stone-900 mb-1">Can I use a portable propane heater in a sauna?</h3><p class="text-stone-700">No. Choose equipment specifically documented for the sauna project and install it under the current manufacturer instructions and local requirements.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-1">Which propane sauna heater is best?</h3><p class="text-stone-700">The current documented US selection is too narrow for a useful ranking. Compare the Scandia 40K and 80K configurations by the exact room, vent, fuel, rough-in, installer, and package requirements.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-1">Can propane work indoors?</h3><p class="text-stone-700">The current manufacturer manual includes indoor-installation safety requirements. That does not mean every room or jurisdiction qualifies. A licensed professional and local authority must review the exact project.</p></div>
       </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Is a propane sauna heater safe?</h3>
-        <p class="text-stone-700">Yes when properly installed with correct combustion venting and a CO detector outside the door. Have a licensed gas fitter handle the gas line installation.</p>
-      </div>
-    </div>
+    </section>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Compare the other heater paths</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/brands/harvia-sauna-heater-review/" class="text-amber-700 hover:underline">Harvia M3 Wood-Burning Heater</a></li>
-        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Best Electric Sauna Heaters</a></li>
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
-        <li><a href="/guides/how-to-build-a-sauna/" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
-        <li><a href="/guides/sauna-ventilation/" class="text-amber-700 hover:underline">Sauna Ventilation Guide</a></li>
+        <li><a href="/guides/best-sauna-heater/" class="text-amber-700 hover:underline">Open the heater planning hub</a></li>
+        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Compare current electric formats</a></li>
+        <li><a href="/guides/best-wood-burning-sauna-heaters/" class="text-amber-700 hover:underline">Compare wood-burning formats</a></li>
+        <li><a href="/guides/sauna-ventilation/" class="text-amber-700 hover:underline">Coordinate room ventilation</a></li>
+        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Size from the exact room</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

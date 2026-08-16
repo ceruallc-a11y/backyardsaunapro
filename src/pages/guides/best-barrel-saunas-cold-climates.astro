@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const candidates = [
   {
@@ -62,6 +63,12 @@ const faqSchema = {
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
       <strong>Affiliate disclosure:</strong> We may earn a commission from qualifying purchases made through retailer links. Rankings are not sold. Confirm current specifications, price, package contents, and warranty with the seller and manufacturer before ordering.
     </div>
+
+    <PlannerCTA
+      source="cold_climate_barrel_after_disclosure"
+      heading="Build a cold-climate project brief before choosing a model"
+      description="Record the ZIP code, site, heat source, budget, access, timeline, and installation needs so climate questions stay attached to the real project."
+    />
 
     <h2 class="text-2xl font-bold mb-4 text-stone-900">What matters in a cold climate</h2>
     <div class="grid md:grid-cols-2 gap-4 mb-10">

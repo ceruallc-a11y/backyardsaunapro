@@ -1,176 +1,250 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
-const bridgeportUrl = "https://selectsaunas.com/products/almost-heaven-bridgeport-braxton-6-person-indoor-traditional-sauna";
+const e6Url = 'https://selectsaunas.com/products/saunalife-model-e6-sauna-barrel-ergo-series-sauna-barrel-59x81';
+const bridgeportUrl = 'https://selectsaunas.com/products/almost-heaven-bridgeport-braxton-6-person-indoor-traditional-sauna';
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "What is a sauna kit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A sauna kit is a pre-cut, pre-drilled sauna package that includes all the structural components needed to build a sauna — walls, benches, door, and trim — without the heater. Kits come in two main forms: barrel sauna kits (outdoor curved wood cylinders) and traditional room kits (flat wall panels for indoor or outdoor installation). Most residential kits can be assembled by two people in one to two days."
-      }
+      '@type': 'Question',
+      name: 'What is included in a sauna kit?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'There is no universal package. Confirm the room structure, benches, door, fasteners, vents, roof or weather system, floor, lighting, heater, controls, stones, guard, electrical or chimney parts, freight, unloading, assembly, and warranty in the written quote for the exact configuration.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "How much does a sauna kit cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sauna kits range from $1,500 for a basic 1-2 person indoor infrared kit to $6,000+ for a large cedar barrel kit. Most popular 4-person barrel kits (Almost Heaven, Dundalk) run $2,000-$4,500 without the heater. Add $500-$650 for a Harvia KIP heater and $800-$1,500 for electrical installation."
-      }
+      '@type': 'Question',
+      name: 'Does a sauna kit include the heater?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Some packages include a heater, some require it as a configuration choice, and others sell the room separately. Verify the exact heater, controls, stones, guard, power or chimney requirements, and commissioning scope before comparing prices.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Are sauna kits worth it?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes for most buyers. Sauna kits are significantly cheaper than custom-built saunas and still deliver the full experience. The tradeoff is that kits use thinner wood than custom builds and have less flexibility in layout. For most home users, a quality kit from Almost Heaven or Dundalk provides 20+ years of service and costs a fraction of a contractor-built room."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Can I install a sauna kit myself?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Use the exact manufacturer manual to judge room assembly. Delivery, unloading, foundation or floor preparation, electrical or chimney work, permits, inspections, weather protection, and commissioning can require separate qualified help.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How should I compare sauna-kit prices?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Compare written total-project scopes on the same date. Include the configured room, heater, controls, freight, unloading, foundation or flooring, electrical or chimney work, assembly, weather protection, permits, tax, accessories, and maintenance items.',
+      },
+    },
+  ],
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Sauna Kits: Best Outdoor and Indoor Options in 2025"
-  description="The best sauna kits for home use in 2025. Barrel kits, indoor room kits, and what to know about heaters, installation, and which brands are worth buying."
+  title="Sauna Kits (2026): Compare the Complete Project"
+  description="Compare outdoor barrel kits, indoor traditional rooms, and finished infrared cabins by included equipment, dimensions, utilities, delivery, installation, and total project scope."
   canonical="/guides/sauna-kits"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Kits (2025): Best Outdoor and Indoor Options</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Sauna-kit buying guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">A sauna kit is not one standard package</h1>
+      <p class="text-lg text-stone-700 mb-3">The label can describe a barrel room shipped as individual parts, a panelized indoor room, or a finished infrared cabin. Compare the complete installed project, not the word <em>kit</em>.</p>
+      <p class="text-stone-500 text-sm">Reviewed August 15, 2026 &mdash; Backyard Sauna Pro</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-chimney.jpg" alt="Assembled barrel sauna kit in backyard" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="rounded-xl overflow-hidden mb-3">
+      <img src="/images/lifestyle/barrel-sauna-chimney.jpg" alt="Wood barrel sauna installed on a prepared outdoor site" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+    <p class="text-xs text-stone-500 mb-8">Illustrative installation. Confirm the exact room, base, heater, and weather package in the current product documents.</p>
+
+    <AdvertiserDisclosure />
+
+    <div class="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Research scope:</strong> This is a desk-researched buying guide. We did not assemble, heat-test, energy-test, or durability-test these rooms. Manufacturer and retailer descriptions can change, so recheck the exact configuration and manual before ordering.
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+    <PlannerCTA
+      source="sauna_kits_above_fold"
+      heading="Price the kit as a complete project"
+      description="Record the room, users, site, dimensions, utilities, delivery path, budget, ZIP code, and timeline before asking dealers for comparable quotes."
+    />
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Start with the format</h2>
+    <div class="overflow-x-auto border border-stone-200 rounded-lg mb-10">
+      <table class="w-full min-w-[780px] text-sm text-left">
+        <thead class="bg-stone-100 text-stone-900">
+          <tr>
+            <th scope="col" class="px-4 py-3 font-bold">Format</th>
+            <th scope="col" class="px-4 py-3 font-bold">What usually arrives</th>
+            <th scope="col" class="px-4 py-3 font-bold">Project work to verify</th>
+            <th scope="col" class="px-4 py-3 font-bold">Useful buyer fit</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-stone-200 text-stone-700">
+          <tr class="align-top">
+            <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Outdoor room kit</th>
+            <td class="px-4 py-3">Room parts, benches, door, hardware, vents, and model-specific weather components.</td>
+            <td class="px-4 py-3">Freight, unloading, base, drainage, anchoring, heater, electrical or chimney work, assembly, exterior care, and local approvals.</td>
+            <td class="px-4 py-3">A buyer with a suitable site who wants a permanent outdoor traditional room.</td>
+          </tr>
+          <tr class="align-top">
+            <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Panelized indoor room</th>
+            <td class="px-4 py-3">Preassembled wall and roof sections, benches, door, hardware, lighting, and configuration-dependent heater equipment.</td>
+            <td class="px-4 py-3">Freight, doorway and stair access, finished floor, clearances, ventilation, assembly area, hardwired heater service, and lighting circuit.</td>
+            <td class="px-4 py-3">A buyer with indoor space who wants stones, steam bursts, and multi-level seating.</td>
+          </tr>
+          <tr class="align-top">
+            <th scope="row" class="px-4 py-3 font-semibold text-stone-900">Finished infrared cabin</th>
+            <td class="px-4 py-3">Cabin panels with emitters, controls, glass, and model-specific lighting or audio equipment.</td>
+            <td class="px-4 py-3">Room dimensions, delivery path, floor, assembly, receptacle and circuit language, ventilation, warranty, and service access.</td>
+            <td class="px-4 py-3">A buyer who prefers a compact indoor cabin and does not need a traditional stone heater.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">A sauna kit is the practical middle ground between a custom-built sauna ($15,000+) and a cheap portable tent ($150). You get real cedar, real heat, and a permanent installation — without the contractor bill. Here is what to buy and what to know before you order.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Three current examples</h2>
+    <p class="text-stone-700 mb-6">These products are not direct substitutes. They show why capacity labels and old product-only prices are poor shortcuts.</p>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-900 mb-2">Quick Picks</h2>
-      <ul class="space-y-2 text-stone-700 text-sm">
-        <li><span class="font-semibold">Best outdoor barrel kit:</span> Almost Heaven Pinnacle 4-Person (~$2,199)</li>
-        <li><span class="font-semibold">Best premium outdoor:</span> Dundalk LeisureCraft ($3,500+)</li>
-        <li><span class="font-semibold">Best indoor kit:</span> Almost Heaven 6-Person Indoor (~$3,499)</li>
-        <li><span class="font-semibold">Best budget plug-in:</span> Dynamic Saunas Barcelona (~$899)</li>
-        <li><span class="font-semibold">Best heater to pair:</span> Harvia KIP 60B (~$579)</li>
-      </ul>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Types of Sauna Kits</h2>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Outdoor barrel sauna kits</h3>
-    <p class="text-stone-700 mb-4">The most popular type in North America. Curved cedar staves form a barrel shape that heats efficiently, drains naturally, and looks intentional in a backyard. Pre-cut panels mean assembly is straightforward — two people, one day, basic tools. Heater sold separately. The barrel shape is not just aesthetic: the round interior has less dead air volume than a rectangular room of the same floor area, which means faster heat-up and lower energy use.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Indoor traditional sauna kits</h3>
-    <p class="text-stone-700 mb-4">Flat wall panels, floor, ceiling, and bench components that assemble into a rectangular sauna room inside an existing space — basement, garage, bathroom addition. These kits require more planning around electrical, vapor barriers, and ventilation but give you a year-round indoor sauna without dealing with winter conditions. Best for buyers who want the authentic traditional experience inside the home.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Plug-in infrared kits</h3>
-    <p class="text-stone-700 mb-6">Pre-assembled panels with built-in infrared heaters that run on standard 120V. No electrician needed. Fits in a corner of a bedroom or spare room. Lower temperature than traditional saunas (120-140°F vs 160-185°F) but much lower barrier to entry. Best for apartment dwellers or anyone who cannot run a dedicated 240V circuit.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Barrel Sauna Kits</h2>
-
-    <div class="space-y-5 mb-10">
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Pinnacle 4-Person</h3>
-          </div>
-          
+    <div class="space-y-6 mb-10">
+      <section class="border border-stone-200 rounded-xl overflow-hidden bg-white">
+        <div class="bg-amber-50 px-5 pt-4 pb-3">
+          <p class="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-1">Outdoor barrel room</p>
+          <h3 class="text-xl font-bold text-stone-900">SaunaLife E6</h3>
         </div>
-        <p class="text-stone-600 mb-4 text-sm">Western red cedar, pre-cut panels, quality hardware. The standard recommendation for first-time buyers. Heater sold separately — pair with Harvia KIP 60B. Read our <a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">full Almost Heaven review</a>.</p>
-        <AmazonButton asin="B017WJV8SO" variant="primary" />
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Premium</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Dundalk LeisureCraft Outdoor Barrel</h3>
+        <div class="p-5">
+          <p class="text-stone-700 mb-4">SaunaLife lists an 81-inch diameter, 59-inch exterior length, 51-inch interior length, 17.8-inch bench depth, and room capacity of up to three people. The listed room package includes Thermo-Spruce staves, Thermo-Aspen benches and backrest, a bronze-glass door, bands, roof shingles, cradles, vents, two drains, fasteners, lighting components, and installation instructions.</p>
+          <div class="grid md:grid-cols-2 gap-4 text-sm mb-4">
+            <div class="bg-stone-50 rounded-lg p-4">
+              <p class="font-semibold text-stone-900 mb-2">Useful evidence</p>
+              <ul class="list-disc pl-5 space-y-1 text-stone-700">
+                <li>Published shipment weight: 1,103 pounds</li>
+                <li>Published shipping size: 80 by 44 by 34 inches</li>
+                <li>Model page links to a floor plan and installation manual</li>
+              </ul>
+            </div>
+            <div class="bg-stone-50 rounded-lg p-4">
+              <p class="font-semibold text-stone-900 mb-2">Resolve before ordering</p>
+              <ul class="list-disc pl-5 space-y-1 text-stone-700">
+                <li>Heater, controls, stones, guard, and electrical scope</li>
+                <li>Freight access, unloading equipment, base, and assembly crew</li>
+                <li>Setbacks, anchoring, drainage, and exterior maintenance</li>
+              </ul>
+            </div>
           </div>
-          
+          <SelectSaunasButton href={e6Url} label="Check the current E6 configuration" ctaPosition="sauna_kits_e6" />
         </div>
-        <p class="text-stone-600 mb-4 text-sm">Canadian-made white cedar with thicker staves and better hardware than most competitors. Built to last 30+ years. Read our <a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk full review</a>.</p>
-        <p class="text-stone-400 text-xs">Available through Dundalk dealers</p>
-      </div>
+      </section>
+
+      <section class="border border-stone-200 rounded-xl overflow-hidden bg-white">
+        <div class="bg-stone-50 px-5 pt-4 pb-3">
+          <p class="text-xs font-semibold uppercase tracking-wide text-stone-600 mb-1">Indoor traditional room</p>
+          <h3 class="text-xl font-bold text-stone-900">Almost Heaven Bridgeport</h3>
+        </div>
+        <div class="p-5">
+          <p class="text-stone-700 mb-4">Almost Heaven lists exterior dimensions of 86 by 63 by 77 5/8 inches, an 81 1/4-inch upper bench, multi-level seating, preassembled room sections, and an 8kW heater configuration requiring 240V / 40A hardwired service. Lighting is listed separately at 110V / 15A. The standard room uses an existing suitable floor; flooring is not automatically part of every configuration.</p>
+          <div class="grid md:grid-cols-2 gap-4 text-sm mb-4">
+            <div class="bg-stone-50 rounded-lg p-4">
+              <p class="font-semibold text-stone-900 mb-2">Useful evidence</p>
+              <ul class="list-disc pl-5 space-y-1 text-stone-700">
+                <li>Exact exterior, interior, bench, and door dimensions</li>
+                <li>Current manufacturer construction-manual access</li>
+                <li>Retailer lists curbside LTL delivery and an 850-pound shipment</li>
+              </ul>
+            </div>
+            <div class="bg-stone-50 rounded-lg p-4">
+              <p class="font-semibold text-stone-900 mb-2">Resolve before ordering</p>
+              <ul class="list-disc pl-5 space-y-1 text-stone-700">
+                <li>Lumber, door, heater, controls, flooring, and warranty terms</li>
+                <li>Doorways, stairs, ceiling, unloading, and assembly area</li>
+                <li>Dedicated heater circuit, lighting service, and ventilation</li>
+              </ul>
+            </div>
+          </div>
+          <SelectSaunasButton href={bridgeportUrl} label="Check the current Bridgeport configuration" ctaPosition="sauna_kits_bridgeport" />
+        </div>
+      </section>
+
+      <section class="border border-stone-200 rounded-xl overflow-hidden bg-white">
+        <div class="bg-stone-50 px-5 pt-4 pb-3">
+          <p class="text-xs font-semibold uppercase tracking-wide text-stone-600 mb-1">Finished infrared cabin</p>
+          <h3 class="text-xl font-bold text-stone-900">Dynamic Barcelona DYN-6106-01</h3>
+        </div>
+        <div class="p-5">
+          <p class="text-stone-700 mb-4">Dynamic lists a natural-hemlock cabin with six carbon infrared panels, tempered glass, interior and exterior controls, Bluetooth audio, and cabin lighting. Published exterior dimensions are 39 by 36 by 73 inches, plus a two-inch roof overhang at the depth, with listed 120V / 15A service.</p>
+          <div class="grid md:grid-cols-2 gap-4 text-sm mb-4">
+            <div class="bg-stone-50 rounded-lg p-4">
+              <p class="font-semibold text-stone-900 mb-2">Useful evidence</p>
+              <ul class="list-disc pl-5 space-y-1 text-stone-700">
+                <li>Published interior dimensions: 36 by 32 by 67 inches</li>
+                <li>Current manufacturer model number and specification list</li>
+                <li>Exact Amazon route retained by the site's availability audit</li>
+              </ul>
+            </div>
+            <div class="bg-stone-50 rounded-lg p-4">
+              <p class="font-semibold text-stone-900 mb-2">Resolve before ordering</p>
+              <ul class="list-disc pl-5 space-y-1 text-stone-700">
+                <li>Actual interior fit for the intended users</li>
+                <li>Current manual, circuit restrictions, and room ventilation</li>
+                <li>Freight path, assembly help, service, and warranty process</li>
+              </ul>
+            </div>
+          </div>
+          <AmazonButton asin="B00A2F99F0" variant="primary" label="Check the current Barcelona route" ctaPosition="sauna_kits_barcelona" />
+        </div>
+      </section>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Indoor Sauna Kits</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Compare the written scope, line by line</h2>
+    <ol class="list-decimal pl-5 space-y-3 text-stone-700 mb-10">
+      <li><strong class="text-stone-900">Room:</strong> exact model, configuration, materials, interior and exterior dimensions, benches, door, windows, floor, roof, drains, vents, lights, and accessories.</li>
+      <li><strong class="text-stone-900">Heat:</strong> heater or emitters, controls, stones, guard, approved room range, power or chimney requirements, and manufacturer compatibility.</li>
+      <li><strong class="text-stone-900">Site:</strong> indoor room or outdoor location, base or floor, drainage, moisture, weather package, anchoring, setbacks, and service clearances.</li>
+      <li><strong class="text-stone-900">Logistics:</strong> shipment size and weight, carrier type, appointment, curbside or flatbed terms, unloading equipment, storage, damage inspection, and delivery path.</li>
+      <li><strong class="text-stone-900">Labor and approvals:</strong> assembly, electrical or chimney work, permits, inspections, commissioning, and any work excluded from the quote.</li>
+      <li><strong class="text-stone-900">Ownership:</strong> current warranty, exclusions, required maintenance, replacement parts, support contact, and the process for reporting damage or defects.</li>
+    </ol>
 
-    <div class="space-y-5 mb-10">
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Traditional Indoor</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Bridgeport 6-Person Indoor Sauna</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 mb-4 text-sm">A current large indoor-room path with multi-level benches and a listed 8kW, 240V / 40A hardwired heater package. Confirm the selected lumber, finished floor, doorway and delivery path, ventilation, electrical work, assembly, and warranty terms. See our <a href="/guides/best-indoor-sauna-kits/" class="text-amber-700 hover:underline">indoor sauna kits guide</a> for planning details.</p>
-        <SelectSaunasButton href={bridgeportUrl} label="Check the current Bridgeport listing" ctaPosition="sauna_kits_bridgeport" />
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Plug-In Infrared</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Dynamic Saunas Barcelona 1-2 Person</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 mb-4 text-sm">Plug-in 120V, no electrician needed. Assembles in 45 minutes. The benchmark for affordable indoor infrared kits.</p>
-        <AmazonButton asin="B00A2F99F0" variant="primary" />
-      </div>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-10 text-sm text-stone-700">
+      <strong>Do not compare old price ranges.</strong> A room-only price can look cheaper while excluding the heater, controls, freight, unloading, base, utilities, assembly, weather work, permits, or tax. Compare complete written scopes on the same date.
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Sauna Kits Don't Include</h2>
-    <p class="text-stone-700 mb-4">Nearly all barrel and traditional sauna kits are sold without a heater. Budget separately for:</p>
-    <ul class="space-y-2 text-stone-700 mb-6 ml-4 text-sm">
-      <li><span class="font-semibold">Heater:</span> Harvia KIP 60B (~$579) for most 4-person kits</li>
-      <li><span class="font-semibold">Electrical installation:</span> $800-$1,500 for a dedicated 240V circuit</li>
-      <li><span class="font-semibold">Foundation:</span> Gravel pad or deck blocks — see our <a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">gravel pad guide</a></li>
-      <li><span class="font-semibold">Sauna stones:</span> ~$40-$80 for a full load of olivine</li>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary sources checked</h2>
+    <ul class="space-y-3 text-sm text-stone-700 mb-10">
+      <li><a href="https://saunalife.com/saunas/ergo-series-model-e6/" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">SaunaLife: E6 specifications, package contents, diagrams, and manual access</a></li>
+      <li><a href={e6Url} target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Select Saunas: current E6 configuration and freight information</a></li>
+      <li><a href="https://almostheaven.com/products/bridgeport-6-person-indoor-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Almost Heaven: Bridgeport dimensions, electrical requirements, configuration, and manual access</a></li>
+      <li><a href={bridgeportUrl} target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Select Saunas: current Bridgeport configuration and delivery scope</a></li>
+      <li><a href="https://dynamicsaunasdirect.com/products/barcelona-1-2-person-low-emf-far-infrared-sauna" target="_blank" rel="noopener" class="text-amber-700 font-semibold hover:underline">Dynamic Saunas: Barcelona DYN-6106-01 specifications</a></li>
     </ul>
-    <p class="text-stone-700 mb-6">Use our <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">heater sizing guide</a> to confirm the right kW for your specific kit's cubic footage.</p>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is a sauna kit?</h3>
-        <p class="text-stone-700">A pre-cut, pre-drilled package of all structural sauna components — walls, benches, door, trim — assembled by the homeowner. Sold without heater in most cases.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How much does a sauna kit cost?</h3>
-        <p class="text-stone-700">$899 for a plug-in infrared kit up to $6,000+ for a premium cedar barrel kit. Most popular 4-person barrel kits run $2,000-$4,500 before heater and electrical.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Are sauna kits worth it?</h3>
-        <p class="text-stone-700">Yes for most buyers. Significantly cheaper than custom builds with comparable longevity. A quality kit delivers 20+ years of service.</p>
-      </div>
+      <div><h3 class="font-bold text-stone-900 mb-1">What is included in a sauna kit?</h3><p class="text-stone-700">There is no universal package. Confirm every room, heater, utility, freight, installation, and warranty line for the exact configuration.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Does the heater come with the kit?</h3><p class="text-stone-700">Sometimes. Other sellers make it a required option or sell the room separately. Confirm the heater, controls, stones, guard, and installation scope in writing.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">Can I install it myself?</h3><p class="text-stone-700">Use the exact manual to judge room assembly. Delivery, base preparation, utilities, approvals, and commissioning can still require qualified help.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">How should I compare prices?</h3><p class="text-stone-700">Compare current total-project scopes that include the configured room, heat system, freight, site work, utilities, labor, approvals, tax, and maintenance items.</p></div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Continue planning</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-        <li><a href="/guides/best-indoor-sauna-kits/" class="text-amber-700 hover:underline">Best Indoor Sauna Kits</a></li>
-        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
-        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">How Much Does a Sauna Cost?</a></li>
-        <li><a href="/guides/how-to-build-a-sauna/" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
+        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Compare Current Barrel Sauna Kits</a></li>
+        <li><a href="/guides/best-indoor-sauna-kits/" class="text-amber-700 hover:underline">Compare Current Indoor Sauna Formats</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Plan Sauna Electrical Requirements</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Plan an Outdoor Sauna Foundation</a></li>
+        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">Build a Total Project Budget</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

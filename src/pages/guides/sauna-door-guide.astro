@@ -1,104 +1,192 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "What kind of door does a sauna need?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A sauna needs a door designed specifically for high heat and humidity. Standard interior doors will warp and fail. Sauna doors are typically made from cedar, hemlock, or other heat-stable wood, with tempered glass if there is a window. The door should swing outward for safety, seal tightly to hold heat, and have no metal hardware on the interior face since metal gets dangerously hot in a sauna."
-      }
+      '@type': 'Question',
+      name: 'Should a sauna door open inward or outward?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Current Finnleo hot-room instructions require the sauna door to open outward and prohibit a lock or mechanical locking device. Confirm the exact sauna-room manual, approved plans, and local requirements for the project.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Should a sauna door open in or out?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Outward. This is a safety requirement. If a person loses consciousness inside the sauna, a door that opens outward allows someone outside to open it easily. An inward-opening door could be blocked by an incapacitated person and prevent rescue. Most building codes and sauna manufacturer guidelines require outward-opening sauna doors."
-      }
+      '@type': 'Question',
+      name: 'What is the standard sauna door size?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'There is no single standard size that fits every sauna. Current Harvia sauna doors are sold in several frame sizes. Match the selected product to the rough opening, finished floor, drainage slope, required clear opening, handedness, and room instructions.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "What is the standard sauna door size?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most residential sauna doors are 24 inches wide by 72 or 80 inches tall. Narrower doors (24 inches) are common because a smaller door opening means less heat loss when entering and exiting. Some barrel sauna doors are even narrower. Measure your rough opening before ordering a replacement door."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'Can a sauna door have a lock?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Do not assume a lock is permitted on the heated-room door. Finnleo currently prohibits a lock or mechanical locking device on its sauna-room door. Harvia also sells lockable glass doors for dressing rooms, bathrooms, and utility spaces, which are different applications.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should I choose a glass or wood sauna door?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Choose a door documented for the exact sauna-room use. Current Harvia products include tempered safety glass with pine, aspen, alder, or aluminum frames. Compare the complete product, frame, hardware, seals, handedness, dimensions, and installation instructions rather than choosing by material name alone.',
+      },
+    },
+  ],
 };
 ---
 <Base
-  title="Sauna Doors: What to Know, Sizes, and What to Buy"
-  description="Everything about sauna doors: materials, sizing, glass vs wood, outward swing, and how to choose the right door for your sauna."
+  title="Sauna Door Guide: Swing, Sizing, Glass, and Installation Checks"
+  description="Choose a sauna-room door by swing, lock restrictions, rough opening, frame size, glass, floor clearance, and current manufacturer instructions."
   canonical="/guides/sauna-door-guide"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna Doors: Everything You Need to Know</h1>
-    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Hot-room planning</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-3">Sauna Doors: Size the Opening Around the Product</h1>
+      <p class="text-stone-500">Reviewed August 2026 &middot; Verify the room and door manuals</p>
+      <p class="text-lg text-stone-700 mt-4">The heated-room door affects egress, heat loss, floor clearance, ventilation, and layout. Select the actual door first. Then coordinate the opening and nearby equipment.</p>
+    </header>
 
     <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Sauna interior with door visible" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Finished sauna interior where the door, heater, benches, and floor must be coordinated" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">A sauna door is not a standard interior door. The heat and humidity destroy regular wood doors within a season. The hardware gets hot enough to burn. And outward swing is not optional — it is a safety requirement. Here is what to know before you buy or replace a sauna door.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Safety First: The Door Must Open Outward</h2>
-    <p class="text-stone-700 mb-6">This is non-negotiable. If a person loses consciousness inside the sauna, an outward-opening door lets someone outside rescue them. An inward-opening door can be blocked by an incapacitated person and is a documented cause of sauna fatalities. Every sauna manufacturer and most building codes require outward swing. No exceptions.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Door Materials</h2>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Cedar and hemlock</h3>
-    <p class="text-stone-700 mb-4">The standard. Both handle heat-moisture cycles without warping, don't release resins at sauna temperatures, and age well. Most kit saunas include a cedar or hemlock door. If replacing a door, match the wood to your interior cladding for consistency.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Glass panel doors</h3>
-    <p class="text-stone-700 mb-4">Tempered glass in a wood frame is the most popular upgrade for home saunas. The glass must be tempered — never standard float glass, which can shatter. Full-glass doors make a small sauna feel larger, let in natural light, and look clean. The downside is slightly more heat loss through the glass panel compared to a solid wood door.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">What to avoid</h3>
-    <p class="text-stone-700 mb-6">Pine doors warp and weep sap. Standard interior hollow-core doors fail quickly. Any door with metal hardware on the interior face will become too hot to touch. Vinyl weatherstripping degrades in sustained heat — use silicone or leave it off and rely on the door's fit.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Standard Sauna Door Sizes</h2>
-    <p class="text-stone-700 mb-4">Most residential sauna doors are 24 inches wide. The narrow width is intentional — less opening means less heat escapes when entering and exiting. Height is typically 72 or 80 inches (6 or 6.67 feet).</p>
-    <p class="text-stone-700 mb-6">Barrel saunas often have smaller doors — some as narrow as 22 inches. Measure your rough opening before ordering a replacement. Height clearance matters too; some barrel sauna entry points have lower openings than a standard door height.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Hardware Requirements</h2>
-    <p class="text-stone-700 mb-4">Use no metal on the interior-facing side of the door. The handle, hinges, and any latch must be wood, ceramic, or recessed so there is nothing metal projecting inside the sauna. A wood pull-bar on the interior face is standard. The exterior can use standard stainless steel hardware.</p>
-    <p class="text-stone-700 mb-6">The door needs a magnetic or wood latch that can be operated from both sides. A door that cannot be opened from the outside is a safety hazard.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Buying a Replacement Sauna Door</h2>
-    <p class="text-stone-700 mb-6">Sauna specialty retailers stock replacement doors in standard sizes. Measure width, height, and door thickness before ordering. Most kit saunas use 1.5-inch thick doors. If the rough opening is an odd size, contact the original manufacturer — Almost Heaven and Dundalk both sell replacement doors for their kits and can advise on compatible sizes.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What kind of door does a sauna need?</h3>
-        <p class="text-stone-700">A door made from heat-stable wood like cedar or hemlock, with tempered glass if there is a window, no interior metal hardware, and outward swing. Standard interior doors warp and fail.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Should a sauna door open in or out?</h3>
-        <p class="text-stone-700">Outward, always. Safety requirement — an outward-opening door can be opened from outside if someone inside is incapacitated.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is the standard sauna door size?</h3>
-        <p class="text-stone-700">24 inches wide, 72 or 80 inches tall. Barrel sauna doors are often narrower. Measure your rough opening before buying a replacement.</p>
-      </div>
+    <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Distinguish the hot-room door:</strong> A manufacturer may sell lockable doors for dressing rooms, bathrooms, or utility spaces. That does not make the same lock acceptable on the heated-room door. Use the approved sauna-room instructions and local egress requirements.
     </div>
+
+    <section class="mb-10" aria-labelledby="door-nonnegotiables">
+      <h2 id="door-nonnegotiables" class="text-2xl font-bold text-stone-900 mb-4">Start with egress and operation</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white border border-stone-200 rounded-lg p-5">
+          <h3 class="font-bold text-stone-900 mb-2">Outward swing</h3>
+          <p class="text-sm text-stone-700">Finnleo's current Euro outdoor-room manual requires the hot-room door to open outward. Confirm swing direction in the exact room or kit instructions.</p>
+        </div>
+        <div class="bg-white border border-stone-200 rounded-lg p-5">
+          <h3 class="font-bold text-stone-900 mb-2">No lock on the hot room</h3>
+          <p class="text-sm text-stone-700">The same Finnleo manual prohibits locks and mechanical locking devices. If a catch is used, it permits magnetic or spring-loaded operation that opens when pushed or pulled.</p>
+        </div>
+        <div class="bg-white border border-stone-200 rounded-lg p-5">
+          <h3 class="font-bold text-stone-900 mb-2">Clear path</h3>
+          <p class="text-sm text-stone-700">Keep the swing, approach, handle, and required clear opening free from benches, steps, guards, walls, and stored items.</p>
+        </div>
+        <div class="bg-white border border-stone-200 rounded-lg p-5">
+          <h3 class="font-bold text-stone-900 mb-2">Correct application</h3>
+          <p class="text-sm text-stone-700">Verify that the product is documented as a sauna-room door, not only a wet-room, bathroom, or dressing-room door.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="door-size-reality">
+      <h2 id="door-size-reality" class="text-2xl font-bold text-stone-900 mb-4">There is no single sauna-door size</h2>
+      <p class="text-stone-700 mb-4">Current Harvia product pages show several frame sizes and systems. One US-listed clear glass door is about 27.17 inches wide by 6.2 feet high. Another current three-sided-frame model is about 29.13 inches wide by 6.43 feet high. Other families are larger.</p>
+      <p class="text-stone-700 mb-6">Those examples do not define a rough opening. The door manual and approved plans must provide the installation dimensions, tolerances, fastening, floor clearance, and frame position.</p>
+      <div class="overflow-x-auto border border-stone-200 rounded-lg">
+        <table class="w-full min-w-[640px] text-sm border-collapse">
+          <thead><tr class="bg-stone-900 text-white"><th class="text-left p-3">Measure</th><th class="text-left p-3">Why it matters</th><th class="text-left p-3">Where to verify</th></tr></thead>
+          <tbody class="text-stone-700">
+            <tr class="bg-white"><td class="p-3 font-semibold border-b border-stone-200">Frame dimensions</td><td class="p-3 border-b border-stone-200">Product width and height are not automatically the rough opening.</td><td class="p-3 border-b border-stone-200">Door installation manual</td></tr>
+            <tr class="bg-stone-50"><td class="p-3 font-semibold border-b border-stone-200">Finished floor and slope</td><td class="p-3 border-b border-stone-200">The door must clear tile, thresholds, mats, and drainage slope.</td><td class="p-3 border-b border-stone-200">Approved room and floor details</td></tr>
+            <tr class="bg-white"><td class="p-3 font-semibold border-b border-stone-200">Clear opening</td><td class="p-3 border-b border-stone-200">Frame, swing, and hardware reduce usable passage width.</td><td class="p-3 border-b border-stone-200">Local requirements and approved plans</td></tr>
+            <tr class="bg-stone-50"><td class="p-3 font-semibold">Handedness and swing arc</td><td class="p-3">The leaf must avoid walls, controls, steps, and circulation paths.</td><td class="p-3">Door product data and room layout</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <PlannerCTA
+      source="sauna_door_after_size_checks"
+      heading="Put the door into the complete room plan"
+      description="Capture the room location, dimensions, heat source, users, installation needs, and delivery constraints before selecting the opening."
+    />
+
+    <section class="mt-10 mb-10" aria-labelledby="door-materials">
+      <h2 id="door-materials" class="text-2xl font-bold text-stone-900 mb-4">Compare complete door systems, not material slogans</h2>
+      <div class="space-y-4">
+        {[
+          ['Tempered safety glass', 'Current Harvia sauna-door products use tempered safety glass in product-specific thicknesses. Verify the exact glass, markings, edge protection, and installation instructions.'],
+          ['Wood frames', 'Harvia currently offers pine, aspen, and alder frame options in some door families. Suitability depends on the complete documented product, not a blanket species rule.'],
+          ['Aluminum frames', 'Current Harvia aluminum-frame doors are offered for high-humidity applications. Check the exact hinges, seals, fasteners, and room use.'],
+          ['Handles, hinges, and catches', 'Interior contact surfaces and hardware must be supplied or approved for the sauna-door system. Do not substitute a locking latch or ordinary interior-door hardware by appearance alone.'],
+        ].map(([title, body]) => (
+          <div class="border border-stone-200 rounded-lg p-5 bg-white">
+            <h3 class="font-bold text-stone-900 mb-2">{title}</h3>
+            <p class="text-sm text-stone-700">{body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="door-room-coordination">
+      <h2 id="door-room-coordination" class="text-2xl font-bold text-stone-900 mb-4">Coordinate the door with the room</h2>
+      <ol class="space-y-4 text-stone-700 list-decimal pl-5">
+        <li><strong>Choose the exact door.</strong> Record the manufacturer, model, frame, glass, handedness, dimensions, and manual revision.</li>
+        <li><strong>Set the room layout.</strong> Coordinate the heater, guards, benches, steps, controls, lighting, and circulation around the door.</li>
+        <li><strong>Check the floor.</strong> Include tile thickness, slope, threshold, floor gap, cleaning access, and drainage.</li>
+        <li><strong>Check ventilation interaction.</strong> TyloHelo's current build guide coordinates heater and door location for its airflow method. Follow the exact heater and room system rather than copying that arrangement blindly.</li>
+        <li><strong>Confirm the opening.</strong> Build the rough opening only from the approved door details and project tolerances.</li>
+        <li><strong>Test before routine use.</strong> Confirm outward operation, free movement, safe closing force, unobstructed egress, and the absence of an unapproved lock.</li>
+      </ol>
+    </section>
+
+    <section class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-10" aria-labelledby="door-order-checklist">
+      <h2 id="door-order-checklist" class="text-lg font-bold text-stone-900 mb-3">Before ordering</h2>
+      <ul class="space-y-2 text-sm text-stone-700">
+        <li>[ ] Product is documented for a heated sauna room</li>
+        <li>[ ] Door opens outward as required by the room instructions</li>
+        <li>[ ] No prohibited lock or mechanical locking device</li>
+        <li>[ ] Frame and rough-opening dimensions are confirmed separately</li>
+        <li>[ ] Finished floor, slope, threshold, and clearance are coordinated</li>
+        <li>[ ] Handedness and swing arc are shown on the room plan</li>
+        <li>[ ] Glass, frame, hinges, handle, seals, and catch match the product data</li>
+        <li>[ ] Delivery path and safe glass handling are planned</li>
+      </ul>
+    </section>
+
+    <section class="mb-10" aria-labelledby="door-sources">
+      <h2 id="door-sources" class="text-2xl font-bold text-stone-900 mb-4">Primary sources used</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="https://www.finnleo.com/hubfs/FINNLEO/Finnleo%20Downloads/Installation%20Manuals/71-0156_Euro_Outdoor_Room_Rev_D_09-24-2025.pdf" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Finnleo Euro outdoor-room manual</h3>
+          <p class="text-sm text-stone-700">Current outward-swing and no-lock requirements for that sauna-room system.</p>
+        </a>
+        <a href="https://www.harvia.com/en-US/products/D71904M/glass-door-clear-7x19-pine-frame" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Harvia clear glass sauna door</h3>
+          <p class="text-sm text-stone-700">Current frame, tempered-glass, hinge, and product-dimension example.</p>
+        </a>
+        <a href="https://www.tylohelo.com/hubfs/How%20to/Guide%20-%20How%20to%20build%20a%20sauna.pdf" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400 md:col-span-2">
+          <h3 class="font-bold text-stone-900 mb-2">TyloHelo build guide</h3>
+          <p class="text-sm text-stone-700">Room layout guidance linking the door, heater, ventilation, floor, and clearances.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="door-faq">
+      <h2 id="door-faq" class="text-2xl font-bold text-stone-900 mb-4">Frequently asked questions</h2>
+      <div class="space-y-5">
+        <div><h3 class="font-bold text-stone-900 mb-1">Should a sauna door open outward?</h3><p class="text-stone-700">Current Finnleo heated-room instructions say yes. Confirm the same requirement in the exact room or kit manual and approved plans.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-1">Can I use a lockable glass door?</h3><p class="text-stone-700">Not simply because it appears in a sauna manufacturer's catalog. Some lockable Harvia doors are described for dressing rooms, bathrooms, and utility spaces. Verify the intended room.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-1">What size should I order?</h3><p class="text-stone-700">Choose the approved product and use its installation details to coordinate the rough opening, finished floor, clear opening, and swing. Do not rely on a generic “standard” size.</p></div>
+      </div>
+    </section>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue the build plan</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/how-to-build-a-sauna/" class="text-amber-700 hover:underline">How to Build a Sauna</a></li>
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-        <li><a href="/guides/cedar-vs-hemlock-sauna/" class="text-amber-700 hover:underline">Cedar vs Hemlock for Saunas</a></li>
-        <li><a href="/guides/sauna-ventilation/" class="text-amber-700 hover:underline">Sauna Ventilation Guide</a></li>
+        <li><a href="/guides/how-to-build-a-sauna/" class="text-amber-700 hover:underline">Safe sauna build sequence</a></li>
+        <li><a href="/guides/sauna-insulation/" class="text-amber-700 hover:underline">Heat and moisture assembly planning</a></li>
+        <li><a href="/guides/sauna-ventilation/" class="text-amber-700 hover:underline">Ventilation by heater and airflow method</a></li>
+        <li><a href="/guides/sauna-wood/" class="text-amber-700 hover:underline">Sauna wood and material schedule</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

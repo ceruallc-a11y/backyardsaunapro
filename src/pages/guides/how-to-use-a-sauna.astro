@@ -1,171 +1,26 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
----
-<Base
-  title="How to Use a Sauna: A Beginner's Guide (2025)"
-  description="How to use a sauna properly temperature, timing, hydration, etiquette, and how to get the most out of every session. The complete beginner guide."
-  canonical="/guides/how-to-use-a-sauna"
->
-  <article class="max-w-3xl mx-auto">
-    <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Beginner Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        How to Use a Sauna: A Beginner's Complete Guide
-      </h1>
-      <p class="text-stone-500 text-sm">Updated September 2024 · 10 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        The basics are simple. Get in, get hot, get out, cool down, repeat. But there's a lot of nuance between a mediocre session and a genuinely great one. This guide covers everything from your first visit to building a real sauna routine.
-      </p>
-    </header>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/people-in-sauna.jpg" alt="People relaxing in a traditional wooden sauna" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
-
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">The Basic Sauna Protocol</h2>
-      <div class="space-y-2 text-sm">
-        {[
-          ["1", "Hydrate", "Drink 16-24oz of water 30 minutes before"],
-          ["2", "Shower", "Rinse off before entering (hygiene + helps skin open up)"],
-          ["3", "Heat session", "10-20 minutes at temperature"],
-          ["4", "Cool down", "Cold shower, cool air, or cold plunge for 3-5 min"],
-          ["5", "Rest", "10-15 minutes rest between rounds"],
-          ["6", "Repeat", "2-3 rounds is a full session for most people"],
-          ["7", "Rehydrate", "Drink 16-32oz water after your final round"],
-        ].map(([num, step, detail]) => (
-          <div class="flex gap-3 bg-white rounded-lg px-4 py-2">
-            <span class="font-bold text-amber-700 w-4 shrink-0">{num}</span>
-            <span class="font-semibold text-stone-800 w-24 shrink-0">{step}</span>
-            <span class="text-stone-600">{detail}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Temperature and Timing</h2>
-
-    <div class="space-y-5">
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">What Temperature Should a Sauna Be?</h3>
-        <p class="text-stone-600 text-sm">Traditional Finnish saunas run at 170-195°F (77-90°C). That's genuinely hot. Most people find 180-190°F to be the sweet spot intense enough to produce a good sweat but not so aggressive that sessions are cut short.</p>
-        <p class="text-stone-600 text-sm mt-3">Infrared saunas operate at 120-145°F (49-63°C). The lower air temperature is offset by the infrared waves heating your body directly. You'll sweat just as much, often more, at a temperature that feels easier to tolerate.</p>
-        <p class="text-stone-600 text-sm mt-3">Bench height matters. Heat rises. The upper bench is significantly hotter than the lower bench in a traditional sauna. Start on the lower bench if you're new to the heat.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">How Long Should You Stay In?</h3>
-        <p class="text-stone-600 text-sm">For beginners: start with 8-10 minutes per round. Your body needs time to adapt. Trying to push through discomfort on your first sessions is the wrong approach it makes you less likely to continue.</p>
-        <p class="text-stone-600 text-sm mt-3">Experienced users typically do 15-20 minute rounds. The Finnish research that showed cardiovascular benefits used sessions of 15 minutes minimum. Beyond 20 minutes, the marginal benefit decreases while the physical demand increases.</p>
-        <p class="text-stone-600 text-sm mt-3">Leave when you feel ready to leave, not when you think you should leave. Light-headedness, nausea, or feeling faint are your body's signals to exit immediately.</p>
-      </div>
-
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Steam: Using the Kiuas</h2>
-    <p class="text-stone-600 text-sm mb-4">In a traditional sauna, you create steam by pouring water over the hot stones called löyly (pronounced "loo-loo") in Finnish. This is the soul of the sauna experience.</p>
-    <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm mb-6">
-      <h3 class="text-base font-bold text-stone-900 mb-3">How to Pour Löyly Properly</h3>
-      <ul class="space-y-2 text-sm text-stone-600">
-        <li class="flex gap-2"><span class="text-amber-600 font-bold shrink-0">1.</span>Use a ladle and wooden bucket. Never pour directly from a hose or bottle.</li>
-        <li class="flex gap-2"><span class="text-amber-600 font-bold shrink-0">2.</span>Pour slowly over the stones. A small amount goes a long way start with half a ladle.</li>
-        <li class="flex gap-2"><span class="text-amber-600 font-bold shrink-0">3.</span>Wait for the steam to rise and fill the room before adding more.</li>
-        <li class="flex gap-2"><span class="text-amber-600 font-bold shrink-0">4.</span>Never pour water on a cold heater. The stones need to be fully heated first.</li>
-        <li class="flex gap-2"><span class="text-amber-600 font-bold shrink-0">5.</span>Add a few drops of birch or eucalyptus essence to the water for a traditional scent.</li>
-      </ul>
-    </div>
-
-    <div class="grid grid-cols-2 gap-4 mb-8">
-      <div class="bg-white border border-stone-200 rounded-xl p-4 shadow-sm">
-        <p class="font-semibold text-stone-800 text-sm mb-2">Sauna Bucket and Ladle</p>
-        <p class="text-stone-500 text-xs mb-3">Essential for every traditional sauna. Cedar doesn't absorb odors.</p>
-        <AmazonButton asin="B07FKQB3LB" price="~$35" label="View on Amazon" />
-      </div>
-      <div class="bg-white border border-stone-200 rounded-xl p-4 shadow-sm">
-        <p class="font-semibold text-stone-800 text-sm mb-2">Eucalyptus Sauna Essence</p>
-        <p class="text-stone-500 text-xs mb-3">A diluted sauna scent can add a spa-like aroma. Follow the product's directions.</p>
-        <AmazonButton asin="B07CZ4NN1P" price="~$22" label="View on Amazon" />
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">The Cool-Down: Why It Matters</h2>
-    <p class="text-stone-600 text-sm mb-4">The cool-down between rounds is not optional. It's where a significant portion of the benefit happens. The contrast between extreme heat and cold triggers a cascade of physiological responses endorphin release, improved circulation, and the relaxation response that defines the sauna feeling.</p>
-
-    <div class="space-y-3 mb-8">
-      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-        <h3 class="text-base font-bold text-stone-900 mb-1">Cold Shower</h3>
-        <p class="text-stone-600 text-sm">The most accessible option. 30-60 seconds under cold water is enough. Start with cool, not icy, if you're new to it.</p>
-      </div>
-      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-        <h3 class="text-base font-bold text-stone-900 mb-1">Cold Plunge</h3>
-        <p class="text-stone-600 text-sm">The traditional Finnish method. A barrel of cold water, a lake, or a cold plunge tub. Immersion at 50-60°F for 30-90 seconds. Intensely uncomfortable. Worth it.</p>
-      </div>
-      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-        <h3 class="text-base font-bold text-stone-900 mb-1">Cool Air</h3>
-        <p class="text-stone-600 text-sm">Step outside in winter. Stand in the cool evening air in a towel. Less intense than cold water, but the contrast still works and it's often enough for daily use.</p>
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Hydration and Safety</h2>
-    <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm mb-8">
-      <div class="space-y-3 text-sm">
-        {[
-          ["Before your session", "Drink 16-24oz of water. Avoid sauna if dehydrated."],
-          ["During your session", "A small sip between rounds is fine. Avoid drinking heavily mid-session."],
-          ["After your session", "Drink 16-32oz to replenish. Add electrolytes if sessions are long."],
-          ["Avoid alcohol", "Never sauna while drinking or intoxicated. Heat plus alcohol is genuinely dangerous."],
-          ["Medications", "Some medications affect heat tolerance. Check with your doctor if uncertain."],
-          ["Pregnancy", "Avoid high-heat saunas during pregnancy. Consult your doctor."],
-          ["When to leave immediately", "Dizziness, nausea, chest pain, or feeling faint. Exit and cool down."],
-        ].map(([timing, note]) => (
-          <div class="flex gap-3 border-b border-stone-100 pb-3">
-            <span class="font-semibold text-stone-800 w-40 shrink-0">{timing}</span>
-            <span class="text-stone-600">{note}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold mb-4 text-stone-900">Building a Routine</h2>
-    <p class="text-stone-600 text-sm mb-4">The research on cardiovascular benefits used sessions of 4-7 times per week. That's an ambitious target but shows that frequency matters. Even 2-3 times per week produces measurable benefits.</p>
-    <p class="text-stone-600 text-sm mb-4">The most sustainable routine is one that fits your actual life. For most people, that means 3-4 sessions per week, 2-3 rounds of 15-20 minutes each. Build up from shorter sessions as your heat tolerance improves.</p>
-    <p class="text-stone-600 text-sm mb-6">The best time to use a sauna is whenever you'll actually do it consistently. Post-workout is excellent for recovery. Evening sessions (1-2 hours before bed) improve sleep. Morning sessions are energizing. Pick what fits.</p>
-
-    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h3 class="font-bold text-stone-900 mb-3">Ready to buy your own sauna?</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/best-saunas/" class="text-amber-700 hover:underline font-medium">Best Home Saunas 2025 (All Types)</a></li>
-        <li><a href="/guides/best-2-person-outdoor-sauna/" class="text-amber-700 hover:underline font-medium">Best 2-Person Outdoor Saunas</a></li>
-        <li><a href="/guides/outdoor-sauna-cost/" class="text-amber-700 hover:underline font-medium">How Much Does an Outdoor Sauna Cost?</a></li>
-        <li><a href="/guides/sauna-health-benefits/" class="text-amber-700 hover:underline font-medium">Sauna Health Benefits: What the Research Says</a></li>
-        <li><a href="/guides/best-sauna-accessories/" class="text-amber-700 hover:underline font-medium">Best Sauna Accessories for Beginners</a></li>
-      </ul>
-    </div>
-
-  </article>
-</Base>
-
-<script type="application/ld+json">
-{
+const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How long should you stay in a sauna?",
+      "name": "How long should a beginner stay in a sauna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Beginners should start with 8-10 minutes per round. Experienced users typically do 15-20 minutes per round, which aligns with the sessions used in cardiovascular health research. Leave when you feel ready to leave light-headedness or nausea means exit immediately. Most people do 2-3 rounds per session with cool-down breaks between."
+        "text": "There is no universal beginner duration. Follow the exact sauna or heater manual, use a conservative setting, stay near an easy exit, and leave before discomfort becomes a test of endurance. Dizziness, nausea, weakness, headache, confusion, faintness, or unusual breathing are reasons to exit."
       }
     },
     {
       "@type": "Question",
-      "name": "How hot should a sauna be?",
+      "name": "What temperature should a beginner use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Traditional Finnish saunas run at 170-195°F (77-90°C). Most people find 180-190°F to be the sweet spot. Infrared saunas operate at 120-145°F but heat the body directly, producing similar results at lower air temperature. Beginners may find starting at the lower end of the temperature range more sustainable."
+        "text": "Use the operating range and thermometer location in the exact product manual. Sauna type, humidity, bench height, ventilation, sensor placement, health, medication, and experience all affect how the same displayed temperature feels."
       }
     },
     {
@@ -173,17 +28,171 @@ import AmazonButton from '../../components/AmazonButton.astro';
       "name": "Should you shower before or after a sauna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both. Shower before entering to rinse off and help your pores open up. After your sauna session, a cool shower serves as the contrast cool-down that's a key part of the health benefit. In Finnish culture, the cold plunge or cool shower between rounds is as important as the heat itself."
+        "text": "Follow the facility rules. A quick rinse before entering supports shared-space hygiene. After the session, recover somewhere stable and shower when balance and comfort feel normal. Cold water is optional."
       }
     },
     {
       "@type": "Question",
-      "name": "How many times a week should you use a sauna?",
+      "name": "Can you pour water on every sauna heater?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Research shows cardiovascular benefits starting at 2 sessions per week. The Finnish studies showing the strongest results tracked men using saunas 4-7 times per week. For most people, 3-4 times per week is a realistic and effective routine. Consistency matters more than intensity."
+        "text": "No. Pour water only when the exact heater manual permits it. Use the approved water, amount, method, and stone arrangement. Never improvise with an infrared emitter, exposed heating element, or unfamiliar heater."
       }
     }
   ]
-}
-</script>
+};
+---
+<Base
+  title="How to Use a Sauna Safely: Beginner Guide (2026)"
+  description="A practical first-sauna guide covering the product manual, preparation, heat warning signs, cooling down, water on stones, and what to verify before another round."
+  canonical="/guides/how-to-use-a-sauna"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Beginner guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
+        How to Use a Sauna Safely: A Beginner's Guide
+      </h1>
+      <p class="text-stone-500 text-sm">Reviewed August 2026 &mdash; Backyard Sauna Pro</p>
+      <p class="text-lg text-stone-700 mt-4">
+        Your first sauna session should feel controlled, not competitive. The right starting point is the manual for the exact heater or cabin, followed by a clear exit and recovery plan.
+      </p>
+    </header>
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/people-in-sauna.jpg" alt="People relaxing in a traditional wooden sauna" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    </div>
+
+    <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
+      <strong>Leave the heat immediately</strong> if you feel dizzy, faint, nauseated, unusually weak, confused, short of breath, or otherwise unwell. Move to a stable cooler place. Confusion, loss of consciousness, or severe or worsening symptoms require urgent medical help.
+    </div>
+
+    <p class="text-stone-700 mb-4">Generic temperature and timer charts leave out too much. A displayed temperature can mean something different at the upper bench, lower bench, door, or sensor. Humidity, ventilation, sauna type, medication, health, and recent exercise also change the experience.</p>
+    <p class="text-stone-700 mb-8">Use this page as a preparation and decision guide. Use the exact product manual for operating limits.</p>
+
+    <PlannerCTA
+      source="how_to_use_sauna_after_intro"
+      heading="Planning a sauna at home?"
+      description="Build a free project brief with your space, sauna type, electrical service, installation needs, budget, and timeline."
+    />
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Before you enter</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <h3 class="font-bold text-stone-900 mb-2">Read the exact manual</h3>
+        <p class="text-stone-700 text-sm">Confirm the allowed operating range, control sequence, timer behavior, heater clearances, thermometer or sensor location, ventilation, stone requirements, and whether water may be used. A public sauna's posted rules take priority over a general online guide.</p>
+      </div>
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <h3 class="font-bold text-stone-900 mb-2">Check your heat risk</h3>
+        <p class="text-stone-700 text-sm">Do not enter while drinking alcohol, intoxicated, ill, or already overheated or dehydrated. Heat can interact with prescription and over-the-counter medicines. Do not stop or change medication on your own; ask a clinician or pharmacist how your medication and health history affect deliberate heat exposure.</p>
+      </div>
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <h3 class="font-bold text-stone-900 mb-2">Make the exit easy</h3>
+        <p class="text-stone-700 text-sm">Keep the door and walkway clear. Set up a stable room-temperature place to sit or lie down. If you are new, using an unfamiliar sauna, or have any reason to expect difficulty, have another responsible adult nearby.</p>
+      </div>
+      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
+        <h3 class="font-bold text-stone-900 mb-2">Pregnancy needs a separate decision</h3>
+        <p class="text-stone-700 text-sm">The American College of Obstetricians and Gynecologists advises against sauna and hot-tub use early in pregnancy. Ask your obstetric clinician for guidance that fits your pregnancy rather than relying on a generic routine.</p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">A first-session decision path</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="text-sm w-full min-w-[640px]">
+        <thead>
+          <tr class="text-left text-stone-500 border-b border-stone-200">
+            <th class="pb-2 pr-6">Step</th>
+            <th class="pb-2">What to do</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700 align-top">
+          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-semibold">1. Inspect</td><td class="py-3">Check the room, controls, floor, bench, door, guard, thermometer, and recovery route. Do not use damaged or unfamiliar equipment without help.</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-semibold">2. Start conservatively</td><td class="py-3">Use the product's approved range. Choose the more tolerable bench or setting and keep the exit simple. Do not copy another person's timer.</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-semibold">3. Monitor</td><td class="py-3">Notice breathing, balance, alertness, nausea, headache, weakness, and overall comfort. Leave early; there is no prize for reaching a number.</td></tr>
+          <tr class="border-b border-stone-100"><td class="py-3 pr-6 font-semibold">4. Recover</td><td class="py-3">Sit or lie down in a stable cooler area until breathing, balance, and comfort feel normal. Drink according to thirst and any clinician-provided fluid restrictions.</td></tr>
+          <tr><td class="py-3 pr-6 font-semibold">5. Decide again</td><td class="py-3">Another round is optional. Skip it if you are not fully recovered, the equipment is behaving unexpectedly, or the conditions have changed.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Temperature, time, and bench height</h2>
+    <p class="text-stone-700 mb-4">Harvia's current guidance does not name one correct sauna temperature. It says the setting should account for comfort, age, and health. Its support material also shows why sensor placement and ventilation matter: air flowing over a sensor can make the heater read the room incorrectly.</p>
+    <p class="text-stone-700 mb-4">Traditional electric or wood-burning saunas, infrared cabins, steam rooms, and sauna blankets are not interchangeable. They use different heat sources, controls, surfaces, and instructions. A lower air temperature does not prove that one device is safer or that it produces the same physiological response as another.</p>
+    <p class="text-stone-700 mb-8">A timer is a backstop, not a target. Follow the exact manual's maximum operating rules and leave sooner when your body or the room gives you a reason.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Water on sauna stones</h2>
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
+      <p class="text-stone-700 text-sm"><strong>First question:</strong> does the exact heater manual allow water on the stones? If the answer is missing or unclear, do not pour.</p>
+    </div>
+    <ul class="list-disc pl-6 space-y-2 text-stone-700 mb-6">
+      <li>Use the water type and amount allowed by the manufacturer. Finlandia's current manual specifies clean water and warns against pool or spa water.</li>
+      <li>Use the required ladle and method. Keep hands, face, and body clear of the rising steam.</li>
+      <li>Do not pour onto exposed elements, controls, infrared emitters, or any heater not designed for it.</li>
+      <li>Do not add fragrance or oil unless the heater and fragrance instructions explicitly permit the product and dilution.</li>
+      <li>Stop using the heater if water behaves unexpectedly, stones are missing or deteriorated, an overheat control trips, or the manual's required clearances are not met.</li>
+    </ul>
+
+    <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm mb-8 max-w-md">
+      <p class="font-semibold text-stone-800 text-sm mb-2">Sauna bucket and ladle</p>
+      <p class="text-stone-500 text-xs mb-3">For heaters whose exact manual permits water on the stones. Verify material, capacity, and care instructions before ordering.</p>
+      <AmazonButton asin="B07FKQB3LB" price="Check current details" label="View on Amazon" />
+    </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Cooling down after the sauna</h2>
+    <p class="text-stone-700 mb-4">Start with the controllable option: a stable room-temperature place to recover. A comfortable shower may follow when you feel steady.</p>
+    <p class="text-stone-700 mb-8">A cold plunge is a separate exposure with its own risks. It needs a measured water temperature, easy entry and exit, supervision, water care, and product-specific instructions. Do not treat cold water as a required finish. See the <a href="/guides/sauna-cold-plunge/" class="text-amber-700 hover:underline">sauna and cold-plunge safety guide</a>.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">After the last round</h2>
+    <ul class="list-disc pl-6 space-y-2 text-stone-700 mb-8">
+      <li>Shut down or leave the heater operating only as the exact manual directs.</li>
+      <li>Remove wet items and standing water without touching hot surfaces.</li>
+      <li>Use the prescribed ventilation or drying procedure. Harvia notes that cold outside air may not dry a sauna effectively in winter.</li>
+      <li>Record anything unusual: breaker trips, sensor errors, odor, smoke, damaged stones, loose guards, water leaks, or a door that does not operate freely.</li>
+      <li>Keep children away from a hot or cooling heater and from unattended water.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">When to seek help</h2>
+    <p class="text-stone-700 mb-4">CDC heat-illness guidance lists headache, nausea, dizziness, weakness, thirst, heavy sweating, confusion, fainting, and altered speech among warning signs. Leave the heat and do not stay alone with worsening symptoms.</p>
+    <p class="text-stone-700 mb-8">Call emergency services for confusion, loss of consciousness, severe symptoms, or suspected heat stroke. A guide on a sauna website cannot determine whether chest pain, breathing difficulty, fainting, or another symptom is a heat reaction or a medical emergency.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary and official sources</h2>
+    <ul class="list-disc pl-6 space-y-2 text-sm text-stone-700 mb-8">
+      <li><a href="https://www.cdc.gov/niosh/heat-stress/about/illnesses.html" class="text-amber-700 hover:underline" rel="noopener noreferrer">CDC/NIOSH: heat-related illnesses and first-aid warning signs</a></li>
+      <li><a href="https://www.cdc.gov/heat-health/hcp/clinical-guidance/heat-and-medications-guidance-for-clinicians.html" class="text-amber-700 hover:underline" rel="noopener noreferrer">CDC: heat and medication guidance for clinicians</a></li>
+      <li><a href="https://www.acog.org/womens-health/experts-and-stories/ask-acog/can-i-use-a-sauna-or-hot-tub-early-in-pregnancy" class="text-amber-700 hover:underline" rel="noopener noreferrer">ACOG: sauna and hot-tub use early in pregnancy</a></li>
+      <li><a href="https://support.harvia.com/hc/lv/articles/22157936712476-What-is-the-correct-sauna-temperature" class="text-amber-700 hover:underline" rel="noopener noreferrer">Harvia: selecting a sauna temperature</a></li>
+      <li><a href="https://support.harvia.com/hc/en-gb/articles/22159468429212" class="text-amber-700 hover:underline" rel="noopener noreferrer">Harvia: temperature-sensor placement</a></li>
+      <li><a href="https://finlandiasauna.com/wp-content/uploads/FIN_Mechanical_control_manual.pdf" class="text-amber-700 hover:underline" rel="noopener noreferrer">Finlandia: current heater operating and maintenance manual</a></li>
+      <li><a href="https://support.harvia.com/hc/en-gb/articles/22158333579676-Maintaining-your-sauna" class="text-amber-700 hover:underline" rel="noopener noreferrer">Harvia: drying and maintaining a sauna</a></li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">How long should a beginner stay in a sauna?</h3>
+        <p class="text-stone-700">There is no universal duration. Follow the manual, start conservatively, keep an easy exit, and leave before discomfort becomes a test of endurance.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">What temperature should a beginner use?</h3>
+        <p class="text-stone-700">Use the range and thermometer location in the exact product manual. Bench height, humidity, ventilation, sensor placement, health, medication, and experience all matter.</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-stone-900 mb-1">Can you pour water on every sauna heater?</h3>
+        <p class="text-stone-700">No. Pour water only when the exact heater manual permits it. Infrared emitters and unfamiliar or damaged heaters are not places to improvise.</p>
+      </div>
+    </div>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Continue planning</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Requirements</a></li>
+        <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
+        <li><a href="/guides/sauna-cold-plunge/" class="text-amber-700 hover:underline">Sauna and Cold-Plunge Safety Guide</a></li>
+        <li><a href="/guides/sauna-before-or-after-workout/" class="text-amber-700 hover:underline">Sauna timing around exercise</a></li>
+        <li><a href="/guides/sauna-for-hangover/" class="text-amber-700 hover:underline">Alcohol, hangovers, and sauna heat</a></li>
+        <li><a href="/guides/best-sauna-accessories/" class="text-amber-700 hover:underline">Sauna Accessories for Beginners</a></li>
+      </ul>
+    </div>
+  </article>
+</Base>

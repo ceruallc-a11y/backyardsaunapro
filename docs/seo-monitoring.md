@@ -1,20 +1,28 @@
 # SEO Monitoring
 
-Eight revised URLs were submitted manually to Google Search Console on August 5, 2026. Each submission confirmed that the URL was added to a priority crawl queue.
+Eight revised URLs were submitted manually to Google Search Console on August 5, 2026. Each submission confirmed that the URL was added to a priority crawl queue. That is a crawl request, not proof of indexation.
+
+Authenticated inspection on August 15, 2026 still reported `Crawled - currently not indexed` for these four buyer-intent pages:
+
+- `/guides/outdoor-sauna-buying-checklist/`
+- `/guides/best-location-backyard-sauna/`
+- `/guides/best-barrel-saunas-cold-climates/`
+- `/guides/how-to-build-a-sauna/`
 
 ## Automated weekly checks
 
 The `Weekly revenue and SEO monitor` GitHub Actions workflow runs every Monday and can also be started manually. It:
 
-1. Checks HTTP status, final URL, canonical, and title for the eight priority pages.
-2. Regenerates the commerce-link classification inventory.
-3. Uploads both reports as a workflow artifact.
+1. Checks HTTP status, final URL, canonical, index directives, and sitemap inclusion for the eight priority pages.
+2. Verifies the intended sauna-planner path on the four buyer-intent pages.
+3. Regenerates the commerce-link classification inventory.
+4. Uploads both reports as a workflow artifact.
 
 It does not publish, send email, change affiliate links, or request indexing.
 
 ## Authenticated follow-up
 
-Review Search Console around August 12 and August 19 for:
+Review Search Console after a material page update is live for:
 
 - Index status and selected canonical.
 - Impressions, clicks, CTR, and average position.

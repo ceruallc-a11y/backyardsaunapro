@@ -1,5 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -10,164 +12,200 @@ const faqSchema = {
       "name": "Is a sauna better than a hot tub?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Neither is universally better — they serve different purposes. A sauna delivers dry heat, heats up in 20-40 minutes, costs less to maintain, and has stronger evidence for cardiovascular health benefits. A hot tub provides warm water immersion, is immediately usable, and is better for joint pain relief and social use. Most people who own one end up wishing they had the other at some point."
+        "text": "Neither is universally better. Choose a sauna if you want a dry-heat session and prefer ownership without a continuously treated body of water. Choose a hot tub if warm-water soaking, jets, and a more social seating layout matter enough to justify water testing, filtration, and model-specific upkeep. Compare the complete installed project before choosing."
       }
     },
     {
       "@type": "Question",
-      "name": "Which is cheaper to maintain, a sauna or hot tub?",
+      "name": "Which is easier to maintain, a sauna or a hot tub?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Saunas are significantly cheaper to maintain. A sauna has no water, no chemicals, no filters, and no pumps. Annual maintenance costs are minimal — occasional bench treatment, stone replacement every few years. A hot tub typically costs $50-$100/month in chemicals, filter replacements, and electricity. Over 10 years a hot tub can cost $6,000-$12,000 more in running costs than a sauna."
+        "text": "A sauna generally has fewer recurring water-care tasks, but it still needs drying, cleaning, wood and equipment inspection, and heater maintenance. A hot tub adds routine disinfectant and pH testing, filtration, water replacement, and cover care. Follow the exact manufacturer manual for either product."
       }
     },
     {
       "@type": "Question",
-      "name": "Can you have both a sauna and hot tub?",
+      "name": "Which costs less to own, a sauna or a hot tub?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, and many people do — the combination of sauna heat followed by cold water (or hot tub) is a popular contrast therapy approach. A barrel sauna alongside a hot tub is a common backyard setup. Budget roughly $5,000-$10,000 for both: an Almost Heaven barrel sauna ($2,200-$3,500) plus a mid-range hot tub ($3,000-$7,000)."
+        "text": "There is no responsible universal dollar answer. Purchase price, foundation, delivery, electrical work, heater or water-heating demand, climate, use, chemicals, service, and repairs all change the total. Get model-specific quotes and compare the complete installed and operating scope."
       }
     }
   ]
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Sauna vs Hot Tub: Which Is Worth Buying in 2025?"
-  description="Sauna vs hot tub compared on cost, maintenance, health benefits, and which makes more sense for your situation. Real numbers, not marketing fluff."
+  title="Sauna vs Hot Tub: Choose by Site, Use, and Upkeep"
+  description="Compare a sauna and hot tub by experience, site work, utilities, maintenance, safety, and complete project scope before requesting quotes."
   canonical="/guides/sauna-vs-hot-tub"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna vs Hot Tub: Which Is Worth Buying?</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; Backyard Sauna Pro</p>
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Sauna vs Hot Tub: Choose by Site, Use, and Upkeep</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 2026 &mdash; Backyard Sauna Pro</p>
 
     <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Outdoor sauna setup" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+      <img src="/images/lifestyle/sauna-cabins-outdoor.jpg" alt="Outdoor sauna cabins in a planned backyard setting" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
     </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+      <strong>Affiliate disclosure:</strong> Some product links are affiliate links. If you buy through one, we may earn a commission at no extra cost to you. That does not change the comparison criteria below.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Most people frame this as a competition. It is not quite that — they do different things. But if you are choosing one, cost and maintenance alone usually tips it toward the sauna. Here is the full comparison.</p>
+    <p class="text-lg text-stone-700 mb-4">A sauna and a hot tub can occupy similar backyard space, but they create very different ownership jobs. One is a heated room. The other is heated, recirculated water that must stay within its product manual's operating limits.</p>
+    <p class="text-stone-700 mb-6">Do not choose from a generic monthly-cost estimate or a health promise. Start with the experience you will actually use, then compare the site, delivery, utilities, routine work, and repair access for real models.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Side-by-Side Comparison</h2>
+    <PlannerCTA
+      source="sauna_vs_hot_tub_after_intro"
+      heading="Compare both projects against your actual site"
+      description="Build a free brief with your location, space, utilities, budget, timeline, and installation needs before you request sauna or spa quotes."
+    />
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The practical comparison</h2>
     <div class="overflow-x-auto mb-8">
-      <table class="text-sm w-full">
+      <table class="text-sm w-full min-w-[42rem]">
         <thead>
           <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-6 w-1/3"></th>
+            <th class="pb-2 pr-6 w-1/4">Decision</th>
             <th class="pb-2 pr-6">Sauna</th>
-            <th class="pb-2">Hot Tub</th>
+            <th class="pb-2">Hot tub</th>
           </tr>
         </thead>
         <tbody class="text-stone-700">
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold text-stone-600">Purchase price</td>
-            <td class="py-2 pr-6">$2,000-$6,000</td>
-            <td class="py-2">$3,000-$12,000</td>
+            <td class="py-3 pr-6 font-semibold text-stone-700">Core experience</td>
+            <td class="py-3 pr-6">A dry-heat room; traditional heaters can also produce short bursts of humidity when used as directed.</td>
+            <td class="py-3">Warm-water immersion, seating, and jets in a recirculating water system.</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold text-stone-600">Monthly running cost</td>
-            <td class="py-2 pr-6">$10-$20</td>
-            <td class="py-2">$75-$150</td>
+            <td class="py-3 pr-6 font-semibold text-stone-700">Site</td>
+            <td class="py-3 pr-6">A level base, drainage strategy, weather exposure, clearances, and room-specific ventilation.</td>
+            <td class="py-3">A level foundation designed for the filled model and occupants, drainage, service access, and a safe cover plan.</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold text-stone-600">Annual maintenance</td>
-            <td class="py-2 pr-6">$50-$150</td>
-            <td class="py-2">$600-$1,200</td>
+            <td class="py-3 pr-6 font-semibold text-stone-700">Delivery</td>
+            <td class="py-3 pr-6">Kit dimensions, panel or stave path, assembly space, and possible lifting access.</td>
+            <td class="py-3">A route wide and high enough for the complete shell; stairs, gates, turns, and lifting can change the plan.</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold text-stone-600">Ready to use</td>
-            <td class="py-2 pr-6">After 20-40 min preheat</td>
-            <td class="py-2">Always on (or 20 min to heat)</td>
+            <td class="py-3 pr-6 font-semibold text-stone-700">Utilities</td>
+            <td class="py-3 pr-6">Model-specific electrical service, or a listed wood/gas system with its required venting and clearances.</td>
+            <td class="py-3">Model-specific electrical service plus water for filling and a safe place to drain it during maintenance.</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold text-stone-600">Lifespan</td>
-            <td class="py-2 pr-6">20-30+ years</td>
-            <td class="py-2">10-15 years</td>
+            <td class="py-3 pr-6 font-semibold text-stone-700">Routine work</td>
+            <td class="py-3 pr-6">Dry after use, clean surfaces, inspect wood and seals, maintain stones, and service equipment per the manuals.</td>
+            <td class="py-3">Test and adjust disinfectant and pH, maintain filters and circulation, clean the shell, replace water, and care for the cover.</td>
           </tr>
           <tr class="border-b border-stone-100">
-            <td class="py-2 pr-6 font-semibold text-stone-600">Maintenance complexity</td>
-            <td class="py-2 pr-6">Very low</td>
-            <td class="py-2">High (chemicals, filters, water)</td>
+            <td class="py-3 pr-6 font-semibold text-stone-700">Readiness</td>
+            <td class="py-3 pr-6">Preheat depends on the room, heater, weather, starting temperature, and controls.</td>
+            <td class="py-3">Can be kept at a set temperature, but readiness and energy use depend on the model, cover, climate, and settings.</td>
           </tr>
           <tr>
-            <td class="py-2 pr-6 font-semibold text-stone-600">Health research</td>
-            <td class="py-2 pr-6">Strong (cardiovascular, recovery)</td>
-            <td class="py-2">Limited</td>
+            <td class="py-3 pr-6 font-semibold text-stone-700">Best fit</td>
+            <td class="py-3 pr-6">People who specifically want sauna bathing and will maintain a heated wood-lined room.</td>
+            <td class="py-3">People who specifically want warm-water soaking and accept active water-system ownership.</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where Sauna Wins</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">1. Start with the session, not the sales pitch</h2>
+    <p class="text-stone-700 mb-4">Sit in both before buying. A sauna session is heat in an enclosed room, usually followed by a cool-down. A hot tub supports a seated soak in warm water. Jets, seating depth, footwell space, and entry steps can matter more than the capacity number on a brochure.</p>
+    <p class="text-stone-700 mb-6">A medical condition should not decide this purchase from an article. Ask a qualified healthcare professional about personal risks, especially around heat exposure, pregnancy, medications, mobility, or cardiovascular concerns. Then use the product manuals for operating limits.</p>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Maintenance cost — it's not close</h3>
-    <p class="text-stone-700 mb-4">A sauna has no water. That means no chemicals, no filter replacements, no pump servicing, no water testing, no winterization. A traditional barrel sauna needs bench cleaning and an occasional coat of wood treatment. That's it. A hot tub owner spends $50-$100/month on chemicals alone — bromine, shock, pH adjusters, algaecide — plus filter cartridges every few months. Over 10 years the cost difference is $8,000-$15,000.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">2. Price the complete installed project</h2>
+    <p class="text-stone-700 mb-4">Sticker price is only one line. Ask each seller for a written scope that identifies what is included and what remains your responsibility.</p>
+    <div class="grid sm:grid-cols-2 gap-4 mb-6">
+      <section class="border border-stone-200 rounded-lg p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-2">Sauna quote</h3>
+        <ul class="list-disc pl-5 space-y-1 text-sm text-stone-700">
+          <li>Room or kit, heater, controls, and approved stones</li>
+          <li>Freight, unloading, assembly, and weatherproofing</li>
+          <li>Base, drainage, electrical or chimney work, and permits</li>
+          <li>Accessories, commissioning, warranty labor, and service access</li>
+        </ul>
+      </section>
+      <section class="border border-stone-200 rounded-lg p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-2">Hot-tub quote</h3>
+        <ul class="list-disc pl-5 space-y-1 text-sm text-stone-700">
+          <li>Spa, cover, steps, delivery, placement, and startup</li>
+          <li>Foundation, deck review, lifting, and access work</li>
+          <li>Electrical work, water source, drainage, and permits</li>
+          <li>Starter chemicals, filters, cover lift, warranty labor, and service access</li>
+        </ul>
+      </section>
+    </div>
+    <p class="text-stone-700 mb-6">For the sauna side, use our <a href="/tools/sauna-cost-calculator/" class="text-amber-700 hover:underline">project-cost calculator</a> to record product, shipping, electrical, foundation, installation, tax, and maintenance assumptions. Keep hot-tub costs in the same line-item format so the comparison stays honest.</p>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Health evidence</h3>
-    <p class="text-stone-700 mb-4">The research on sauna is substantial. Long-term Finnish population studies (following 2,000+ men for 20 years) found that men who used the sauna 4-7 times per week had 40% lower cardiovascular mortality than those who used it once a week. No comparable long-term research exists for hot tubs. See our <a href="/guides/sauna-health-benefits/" class="text-amber-700 hover:underline">sauna health benefits guide</a> for the full breakdown.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">3. Verify the site before choosing a model</h2>
+    <p class="text-stone-700 mb-4">A Hot Spring pre-delivery guide tells buyers to confirm a structurally sound, level surface, drainage away from electrical equipment, full equipment-panel access, and the filled spa's weight before deck or indoor placement. Jacuzzi likewise tells buyers to map the delivery route and use a foundation capable of supporting the filled tub and occupants.</p>
+    <p class="text-stone-700 mb-6">A sauna has its own model-specific constraints: base, heater clearances, electrical or chimney route, ventilation, drainage, weather exposure, and assembly access. Neither belongs on a deck until a qualified professional confirms the structure for the actual load and installation.</p>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Lifespan</h3>
-    <p class="text-stone-700 mb-6">A well-built cedar sauna lasts 20-30+ years with basic maintenance. Hot tubs typically last 10-15 years before the shell, jets, or pumps need major repair or replacement.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">4. Be honest about the maintenance job</h2>
+    <p class="text-stone-700 mb-4">A sauna avoids a continuously treated water system, but it is not maintenance-free. Drying, cleaning, stone inspection, heater service, exterior care, and seasonal checks all depend on the exact room and equipment. Our <a href="/guides/sauna-maintenance-guide/" class="text-amber-700 hover:underline">sauna maintenance guide</a> organizes those tasks around manufacturer instructions.</p>
+    <p class="text-stone-700 mb-6">A residential hot-tub owner must routinely test and adjust disinfectant and pH. The CDC also directs owners to follow manufacturer directions for water treatment and testing. Filters, circulation, surfaces, water replacement, and the cover add recurring work. Ask the dealer to demonstrate the actual routine and price the supplies for the model you are considering.</p>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where Hot Tub Wins</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">5. Compare safety and access</h2>
+    <ul class="list-disc pl-6 space-y-2 text-stone-700 mb-6">
+      <li><strong>Electrical:</strong> use a qualified electrician and the current product instructions. The CPSC warns about shock and electrocution risks around pools, spas, and hot tubs.</li>
+      <li><strong>Water:</strong> the CDC says hot-tub water should not exceed 104&deg;F and gives disinfectant and pH guidance for owners. A locked safety cover can also be part of the plan.</li>
+      <li><strong>Heat room:</strong> follow the sauna heater and room manuals for clearances, controls, guardrails, ventilation, and safe operation.</li>
+      <li><strong>Mobility:</strong> test the real entry, step, door, bench, seat depth, and exit path. A nominal capacity does not tell you whether the product fits its users.</li>
+      <li><strong>Service:</strong> keep panels, drains, controls, heater components, and shutoffs accessible. A beautiful installation can still be a poor one if routine service requires demolition.</li>
+    </ul>
 
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Joint pain and arthritis</h3>
-    <p class="text-stone-700 mb-4">Warm water immersion with hydrotherapy jets directly targets joint pain in a way dry sauna heat cannot replicate. For people with rheumatoid arthritis, osteoarthritis, or chronic joint pain, a hot tub can be more useful than a sauna on a daily basis. The buoyancy also reduces load on joints during use.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Social experience</h3>
-    <p class="text-stone-700 mb-4">Hot tubs are better for groups. Six adults sitting in a hot tub is comfortable and social; six adults in a sauna is warm and crowded. For families with kids or frequent gatherings, a hot tub is often used more.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Always ready</h3>
-    <p class="text-stone-700 mb-6">A hot tub kept at temperature is instantly usable. A sauna needs 20-40 minutes of preheat. For spontaneous use after work, a hot tub has the advantage.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Verdict</h2>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">A simple decision rule</h2>
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <p class="mb-2"><span class="font-semibold">Choose a sauna if:</span> you prioritize health benefits, want low maintenance, plan to use it solo or with a partner, or you are budget-conscious about ongoing costs.</p>
-      <p class="mb-2"><span class="font-semibold">Choose a hot tub if:</span> joint pain is the primary driver, you have a large family or frequent social gatherings, or you want something always ready without a preheat window.</p>
-      <p><span class="font-semibold">Get both if:</span> you have the space and budget. They complement each other well — sauna heat followed by cold water immersion is a legitimate recovery protocol. A barrel sauna plus a modest hot tub runs $6,000-$10,000 installed.</p>
+      <p class="mb-3"><span class="font-semibold">Choose a sauna when:</span> the dry-heat session is the point, the site supports the heater and room requirements, and you prefer the maintenance profile of a heated room.</p>
+      <p class="mb-3"><span class="font-semibold">Choose a hot tub when:</span> warm-water immersion and seating are the point, and you are prepared to manage the water, cover, filtration, and service access.</p>
+      <p><span class="font-semibold">Pause when:</span> you have not confirmed delivery access, foundation, utilities, drainage, service coverage, or the complete installed quote. Those unknowns can outweigh the product price.</p>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Recommended Saunas</h2>
-    <div class="space-y-4 mb-8">
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <h3 class="font-bold text-stone-900 mb-1">Almost Heaven Pinnacle 4-Person — ~$2,199</h3>
-        <p class="text-stone-600 text-sm mb-3">The standard outdoor barrel sauna recommendation. Cedar, DIY-friendly, pairs with a Harvia KIP heater. Our most-recommended sauna for first-time buyers.</p>
-        <AmazonButton asin="B017WJV8SO" variant="small" />
-      </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">One current sauna benchmark</h2>
+    <div class="border border-stone-200 rounded-xl p-5 bg-white mb-8">
+      <h3 class="font-bold text-stone-900 mb-1">Almost Heaven Pinnacle four-person barrel sauna</h3>
+      <p class="text-stone-600 text-sm mb-3">Use this listing as a concrete sauna-side quote benchmark. Verify the current package, heater, dimensions, delivery terms, site work, electrical scope, warranty, and total installed cost with the seller.</p>
+      <AmazonButton asin="B017WJV8SO" variant="small" />
     </div>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary sources used</h2>
+    <ul class="list-disc pl-6 space-y-2 text-sm text-stone-700 mb-8">
+      <li><a href="https://www.cdc.gov/healthy-swimming/about/home-pool-and-hot-tub-water-treatment-and-testing.html" class="text-amber-700 hover:underline" rel="noopener noreferrer">CDC: Home pool and hot-tub water treatment and testing</a></li>
+      <li><a href="https://www.cdc.gov/healthy-swimming/safety/what-you-can-do-to-stay-healthy-in-hot-tubs.html" class="text-amber-700 hover:underline" rel="noopener noreferrer">CDC: Hot-tub user safety guidance</a></li>
+      <li><a href="https://www.cpsc.gov/Newsroom/News-Releases/2003/Dont-Swim-With-Shocks-CPSC-American-Red-Cross-Warn-of-Electrocutions-in-Swimming-Pools-Hot-Tubs-and-Spas" class="text-amber-700 hover:underline" rel="noopener noreferrer">CPSC: Electrical safety around pools, spas, and hot tubs</a></li>
+      <li><a href="https://www.hotspring.com/learning-center/pre-delivery-instructions" class="text-amber-700 hover:underline" rel="noopener noreferrer">Hot Spring: Current pre-delivery instruction library</a></li>
+      <li><a href="https://www.jacuzzi.com/en-us/HOT-TUB-PREINSTALLATION-CHECKLIST.html" class="text-amber-700 hover:underline" rel="noopener noreferrer">Jacuzzi: Hot-tub pre-installation checklist</a></li>
+      <li><a href="https://support.harvia.com/hc/en-gb/articles/22158333579676-Maintaining-your-sauna" class="text-amber-700 hover:underline" rel="noopener noreferrer">Harvia: Sauna maintenance guidance</a></li>
+    </ul>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
       <div>
         <h3 class="font-bold text-stone-900 mb-1">Is a sauna better than a hot tub?</h3>
-        <p class="text-stone-700">For health benefits, lower maintenance, and long-term cost: sauna wins. For joint pain, social use, and always-ready convenience: hot tub has the edge. They serve different primary purposes.</p>
+        <p class="text-stone-700">No universal winner exists. Choose the experience you will use, then compare the real site, utility, maintenance, and service requirements.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">Which is cheaper to maintain?</h3>
-        <p class="text-stone-700">Sauna by a wide margin. No water, no chemicals, no filters. A hot tub costs $600-$1,200/year in maintenance vs $50-$150 for a sauna.</p>
+        <h3 class="font-bold text-stone-900 mb-1">Which is easier to maintain?</h3>
+        <p class="text-stone-700">A sauna generally has fewer recurring water-care tasks. It still needs drying, cleaning, inspection, and equipment maintenance. A hot tub adds disinfectant and pH testing, filtration, water replacement, and cover care.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">Can you have both?</h3>
-        <p class="text-stone-700">Yes — a barrel sauna plus a mid-range hot tub runs $6,000-$10,000 installed. They complement each other well for contrast therapy and different types of use.</p>
+        <h3 class="font-bold text-stone-900 mb-1">Which costs less to own?</h3>
+        <p class="text-stone-700">Get model-specific quotes. Product price, delivery, foundation, electrical work, climate, use, chemicals, service, and repairs make a universal estimate unreliable.</p>
       </div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Continue planning</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="/guides/sauna-vs-steam-room/" class="text-amber-700 hover:underline">Sauna vs Steam Room</a></li>
-        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Best Barrel Sauna Kits</a></li>
-        <li><a href="/guides/sauna-health-benefits/" class="text-amber-700 hover:underline">Sauna Health Benefits</a></li>
-        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">How Much Does a Sauna Cost?</a></li>
+        <li><a href="/guides/best-barrel-sauna-kits/" class="text-amber-700 hover:underline">Barrel Sauna Kit Buying Guide</a></li>
+        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">Sauna Project Cost Guide</a></li>
         <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Outdoor Sauna Buying Checklist</a></li>
+        <li><a href="/guides/sauna-maintenance-guide/" class="text-amber-700 hover:underline">Sauna Maintenance Guide</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

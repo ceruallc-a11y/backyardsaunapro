@@ -1,184 +1,226 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+
+const faqs = [
+  {
+    question: 'How do I size an electric sauna heater?',
+    answer: 'Start with the room volume: length times width times height. Then use the selected heater manufacturer\'s current method to account for glass, concrete, tile, masonry, or log construction. Choose only a model whose published room-volume range includes the resulting calculated volume.',
+  },
+  {
+    question: 'Can I choose a heater from kilowatts alone?',
+    answer: 'No. Heaters with the same nominal kilowatt rating can publish different room ranges, controls, clearances, voltage requirements, and installation conditions. The exact model page and manual control the decision.',
+  },
+  {
+    question: 'Does a glass door change sauna heater sizing?',
+    answer: 'Usually. Harvia asks buyers to include a glass door and other non-insulated surfaces in its sauna calculator. Other manufacturers may use a different adjustment, so follow the method for the exact heater you are considering.',
+  },
+  {
+    question: 'Who should confirm the final sauna heater choice?',
+    answer: 'Confirm the room calculation with the heater manufacturer or authorized dealer. A qualified electrician and the local permitting authority should review the exact manual, controls, supply, conductor, protection, and installation requirements before purchase or installation.',
+  },
+];
 ---
 <Base
-  title="Sauna Heater Sizing Guide (2025) What Size Heater Do You Need?"
-  description="How to correctly size an electric sauna heater for your room. Calculate cubic footage, account for insulation, and pick the right kW output."
+  title="Sauna Heater Sizing Guide (2026): Room Volume Before kW"
+  description="Size an electric sauna heater from calculated room volume, exposed surfaces, and the exact manufacturer's current room range and manual."
   canonical="/guides/sauna-heater-sizing-guide"
 >
-  <article class="max-w-3xl mx-auto">
+  <article class="mx-auto max-w-4xl">
     <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Sauna Heater Sizing Guide: What Size Do You Actually Need?
-      </h1>
-      <p class="text-stone-500 text-sm">Updated October 2024 · 7 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        An undersized heater struggles to reach temperature. An oversized one burns more energy than necessary. Getting the size right is straightforward once you understand one number: cubic footage.
+      <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-amber-700">Planning guide</p>
+      <h1 class="mb-4 text-4xl font-bold leading-tight text-stone-900">Size the room first. Then choose the heater.</h1>
+      <p class="text-sm text-stone-500">Last reviewed August 15, 2026 · 9 min read</p>
+      <p class="mt-4 max-w-3xl text-lg text-stone-700">
+        A heater's kilowatt rating is not a universal room-size shortcut. Calculate your room, account for heat-loss surfaces using the selected manufacturer's method, and check the exact North American model manual before you buy.
       </p>
     </header>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Wooden sauna interior with large window" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+
+    <div class="mb-8 overflow-hidden rounded-lg">
+      <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Electric sauna heater between wood benches" class="max-h-96 w-full object-cover" loading="eager" width="1200" height="800" />
     </div>
 
+    <div class="mb-8 border-l-4 border-amber-600 bg-amber-50 p-5 text-sm text-stone-800">
+      <strong>Planning boundary:</strong> This guide helps you prepare the room calculation. It does not replace the selected heater's current manual, an authorized dealer, a qualified electrician, or the authority having jurisdiction. Do not order from a generic chart alone.
+    </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">Quick Sizing Reference</h2>
-      <div class="space-y-2 text-sm">
+    <PlannerCTA
+      source="heater_sizing_above_fold"
+      heading="Put the room, surfaces, power, and timeline in one brief"
+      description="Record the dimensions, glass and masonry surfaces, heater preference, available electrical information, ZIP code, budget, and timing before asking a dealer or electrician to review the project."
+    />
+
+    <section class="mt-12" aria-labelledby="three-step-heading">
+      <p class="mb-2 text-xs font-bold uppercase tracking-wide text-amber-700">The useful answer</p>
+      <h2 id="three-step-heading" class="mb-6 text-3xl font-bold text-stone-900">A three-step sizing process</h2>
+
+      <div class="grid gap-5 md:grid-cols-3">
+        <div class="border-t-4 border-stone-900 bg-white p-5 shadow-sm">
+          <p class="mb-2 text-sm font-bold text-amber-700">01</p>
+          <h3 class="mb-2 text-lg font-bold text-stone-900">Measure the heated room</h3>
+          <p class="text-sm text-stone-700">Use interior length, width, and finished ceiling height. Multiply them to get cubic feet.</p>
+        </div>
+        <div class="border-t-4 border-stone-900 bg-white p-5 shadow-sm">
+          <p class="mb-2 text-sm font-bold text-amber-700">02</p>
+          <h3 class="mb-2 text-lg font-bold text-stone-900">Account for the construction</h3>
+          <p class="text-sm text-stone-700">Glass, brick, concrete, tile, and log walls can raise the calculated volume. Use the chosen manufacturer's method, not a blended percentage.</p>
+        </div>
+        <div class="border-t-4 border-stone-900 bg-white p-5 shadow-sm">
+          <p class="mb-2 text-sm font-bold text-amber-700">03</p>
+          <h3 class="mb-2 text-lg font-bold text-stone-900">Match an exact model</h3>
+          <p class="text-sm text-stone-700">The adjusted volume must sit inside that model's published range. Then verify controls, clearances, supply, and installation in its current manual.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12" aria-labelledby="volume-heading">
+      <h2 id="volume-heading" class="mb-4 text-2xl font-bold text-stone-900">Step 1: calculate the base room volume</h2>
+      <p class="mb-5 text-stone-700">Use the finished interior dimensions of the heated room. Do not size from a product's person count or exterior footprint.</p>
+
+      <div class="border border-stone-300 bg-stone-50 p-6 text-center">
+        <p class="text-sm font-semibold text-stone-600">Interior length × interior width × finished height</p>
+        <p class="mt-2 text-2xl font-bold text-stone-900">= base room volume in cubic feet</p>
+      </div>
+
+      <div class="mt-5 grid gap-5 md:grid-cols-2">
+        <div class="border border-stone-200 bg-white p-5">
+          <h3 class="mb-2 font-bold text-stone-900">Example: 5 ft × 7 ft × 7 ft</h3>
+          <p class="text-sm text-stone-700">The base volume is 245 cubic feet. That number is only the starting point; exposed surfaces can change the calculated volume used for heater selection.</p>
+        </div>
+        <div class="border border-stone-200 bg-white p-5">
+          <h3 class="mb-2 font-bold text-stone-900">Measure before selecting equipment</h3>
+          <p class="text-sm text-stone-700">A nominal "four-person" sauna does not identify its interior volume, ceiling height, glazing, insulation, controls, or electrical requirements.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12" aria-labelledby="surfaces-heading">
+      <h2 id="surfaces-heading" class="mb-4 text-2xl font-bold text-stone-900">Step 2: use one manufacturer's adjustment method</h2>
+      <p class="mb-5 text-stone-700">
+        Harvia's current calculator asks for a glass door, log construction, and the area of non-insulated walls. A current Harvia manual explains that brick, glass block, glass, concrete, and tile increase required output, and gives a specific metric adjustment. That method belongs to the Harvia selection process. Do not assume every brand uses the same formula.
+      </p>
+
+      <div class="overflow-x-auto border border-stone-200 bg-white">
+        <table class="w-full min-w-[680px] text-left text-sm">
+          <thead class="bg-stone-900 text-white">
+            <tr><th class="px-4 py-3">Room feature</th><th class="px-4 py-3">Why it matters</th><th class="px-4 py-3">What to do</th></tr>
+          </thead>
+          <tbody class="divide-y divide-stone-200 text-stone-700">
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Glass door or window</td><td class="px-4 py-3">It is not an insulated wood surface.</td><td class="px-4 py-3">Enter it in the selected brand's calculator or follow that model manual.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Brick, concrete, or tile</td><td class="px-4 py-3">These surfaces store heat and can increase the required output.</td><td class="px-4 py-3">Measure the exposed area and apply only the manufacturer's stated method.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Log construction</td><td class="px-4 py-3">Uninsulated log construction changes the calculated volume.</td><td class="px-4 py-3">Use the log-room option or factor published by the heater manufacturer.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Outdoor installation</td><td class="px-4 py-3">Climate, insulation, wind exposure, and construction vary.</td><td class="px-4 py-3">Ask the manufacturer or dealer to review the actual enclosure. Do not add a generic percentage.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt-12" aria-labelledby="models-heading">
+      <h2 id="models-heading" class="mb-4 text-2xl font-bold text-stone-900">Step 3: compare exact North American model ranges</h2>
+      <p class="mb-5 text-stone-700">
+        These examples show why kilowatts alone are not enough. The ranges come from current official product pages or U.S. manuals checked on August 15, 2026. They are examples, not a universal conversion chart.
+      </p>
+
+      <div class="overflow-x-auto border border-stone-200 bg-white">
+        <table class="w-full min-w-[760px] text-left text-sm">
+          <thead class="bg-stone-900 text-white">
+            <tr><th class="px-4 py-3">Exact model</th><th class="px-4 py-3">Published output</th><th class="px-4 py-3">Published room range</th><th class="px-4 py-3">Decision note</th></tr>
+          </thead>
+          <tbody class="divide-y divide-stone-200 text-stone-700">
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Finlandia FLB-45</td><td class="px-4 py-3">4.5 kW</td><td class="px-4 py-3">100-210 ft³</td><td class="px-4 py-3">Built-in controls; verify current manual and room conditions.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Finlandia FLB-60</td><td class="px-4 py-3">6.0 kW</td><td class="px-4 py-3">170-300 ft³</td><td class="px-4 py-3">The range overlaps smaller and larger nominal outputs.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">HUUM STEEL 6 at 240 V</td><td class="px-4 py-3">6.0 kW</td><td class="px-4 py-3">177-318 ft³</td><td class="px-4 py-3">The current U.S. manual lists separate 208 V values.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-stone-900">Harvia KIP80B JH80B2401</td><td class="px-4 py-3">8.0 kW</td><td class="px-4 py-3">251-424 ft³</td><td class="px-4 py-3">Use this exact 240 V, single-phase U.S. listing and its manual.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 grid gap-5 md:grid-cols-2">
+        <div class="border border-stone-200 bg-white p-5">
+          <h3 class="mb-2 text-lg font-bold text-stone-900">Current Harvia KIP60B route</h3>
+          <p class="mb-4 text-sm text-stone-700">Use the current listing to identify the exact model, package, controls, and seller. Confirm room sizing and electrical details against Harvia's current product page and manual.</p>
+          <AmazonButton asin="B0B7TRM95Y" variant="primary" label="View the current KIP60B route" ctaPosition="heater_sizing_kip60b" />
+        </div>
+        <div class="border border-stone-200 bg-white p-5">
+          <h3 class="mb-2 text-lg font-bold text-stone-900">Current Finlandia FLB-60 search</h3>
+          <p class="mb-4 text-sm text-stone-700">Compare current sellers, then verify that the exact model and package match the current Finlandia manual. Search results can mix heater variants and controls.</p>
+          <AmazonButton asin="B000N4RSFO" variant="outline" label="Compare current FLB-60 listings" ctaPosition="heater_sizing_flb60" />
+        </div>
+      </div>
+
+      <p class="mt-4 text-xs text-stone-600"><strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. The audited KIP60B route may use a Select Saunas affiliate link when the exact Amazon listing is unavailable. Product availability and package contents can change.</p>
+    </section>
+
+    <section class="mt-12" aria-labelledby="before-buying-heading">
+      <h2 id="before-buying-heading" class="mb-5 text-2xl font-bold text-stone-900">Before buying, verify the whole installation</h2>
+      <div class="grid gap-x-8 gap-y-5 md:grid-cols-2">
         {[
-          ["Up to 100 cu ft", "3-4 kW", "1-2 person compact sauna"],
-          ["100-200 cu ft", "4.5-6 kW", "2-4 person barrel or cabin sauna"],
-          ["200-300 cu ft", "6-8 kW", "4-person barrel or small cabin"],
-          ["300-450 cu ft", "8-10 kW", "4-6 person larger sauna"],
-          ["450-600 cu ft", "10-14 kW", "6-8 person or large custom build"],
-        ].map(([size, kw, desc]) => (
-          <div class="grid grid-cols-3 gap-2 bg-white rounded-lg px-4 py-2">
-            <span class="font-semibold text-stone-800">{size}</span>
-            <span class="text-amber-700 font-bold">{kw}</span>
-            <span class="text-stone-500 text-xs self-center">{desc}</span>
+          ['Exact model identifier', 'Similar model names can point to different voltage, control, certification, or market versions.'],
+          ['Calculated room range', 'Your adjusted room volume should fall inside the exact model\'s current published range.'],
+          ['Clearances and ceiling height', 'Use the manual dimensions. A generic diagram cannot establish the safe installation.'],
+          ['Controls and sensors', 'Built-in and separate-control versions can require different equipment and planning.'],
+          ['Electrical design', 'Have a qualified electrician review the current manual and the existing service before ordering.'],
+          ['Ventilation and room construction', 'The heater cannot compensate for a room that conflicts with the manufacturer\'s enclosure requirements.'],
+        ].map(([title, text]) => (
+          <div class="border-b border-stone-200 pb-5">
+            <h3 class="mb-1 font-bold text-stone-900">{title}</h3>
+            <p class="text-sm text-stone-700">{text}</p>
           </div>
         ))}
       </div>
-      <p class="text-xs text-stone-400 mt-3">Add 20-25% to your calculated cubic footage if walls are poorly insulated or for outdoor saunas in very cold climates.</p>
-    </div>
+    </section>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Step 1: Calculate Your Cubic Footage</h2>
-    <p class="text-stone-600 text-sm mb-4">Sauna heaters are sized by volume, not floor area. Measure three dimensions and multiply them together.</p>
+    <section class="mt-12" aria-labelledby="mistakes-heading">
+      <h2 id="mistakes-heading" class="mb-5 text-2xl font-bold text-stone-900">Four sizing mistakes that create expensive rework</h2>
+      <ol class="space-y-5">
+        <li class="grid gap-2 border-l-4 border-red-700 pl-5 md:grid-cols-[2rem_1fr]"><span class="font-bold text-red-700">1</span><div><h3 class="font-bold text-stone-900">Shopping by person count</h3><p class="mt-1 text-sm text-stone-700">Capacity labels do not establish interior volume, glazing, ceiling height, or construction.</p></div></li>
+        <li class="grid gap-2 border-l-4 border-red-700 pl-5 md:grid-cols-[2rem_1fr]"><span class="font-bold text-red-700">2</span><div><h3 class="font-bold text-stone-900">Treating every 6 kW heater as interchangeable</h3><p class="mt-1 text-sm text-stone-700">Room ranges, clearances, controls, voltage, and certification can differ by exact model.</p></div></li>
+        <li class="grid gap-2 border-l-4 border-red-700 pl-5 md:grid-cols-[2rem_1fr]"><span class="font-bold text-red-700">3</span><div><h3 class="font-bold text-stone-900">Adding a generic cold-climate percentage</h3><p class="mt-1 text-sm text-stone-700">The actual enclosure, insulation, exposed surfaces, and manufacturer guidance should drive the review.</p></div></li>
+        <li class="grid gap-2 border-l-4 border-red-700 pl-5 md:grid-cols-[2rem_1fr]"><span class="font-bold text-red-700">4</span><div><h3 class="font-bold text-stone-900">Ordering before an electrical review</h3><p class="mt-1 text-sm text-stone-700">A heater that fits the room can still conflict with the available supply, controls, listing, or local requirements.</p></div></li>
+      </ol>
+    </section>
 
-    <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm mb-6">
-      <h3 class="text-lg font-bold text-stone-900 mb-3">The Formula</h3>
-      <div class="bg-stone-50 rounded-lg p-4 text-center mb-4">
-        <p class="text-stone-500 text-sm">Length (ft) x Width (ft) x Height (ft) = Cubic Feet</p>
-      </div>
-      <div class="space-y-3 text-sm text-stone-600">
-        <div class="flex justify-between border-b border-stone-100 pb-2">
-          <span>Almost Heaven Pinnacle 4-person barrel</span>
-          <span class="font-semibold">~160 cu ft → 6 kW heater</span>
-        </div>
-        <div class="flex justify-between border-b border-stone-100 pb-2">
-          <span>Almost Heaven 6-person barrel</span>
-          <span class="font-semibold">~240 cu ft → 6-8 kW heater</span>
-        </div>
-        <div class="flex justify-between border-b border-stone-100 pb-2">
-          <span>5x7 foot cabin sauna, 7 ft ceiling</span>
-          <span class="font-semibold">245 cu ft → 6-8 kW heater</span>
-        </div>
-        <div class="flex justify-between pb-2">
-          <span>6x8 foot cabin sauna, 7 ft ceiling</span>
-          <span class="font-semibold">336 cu ft → 8-10 kW heater</span>
-        </div>
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Step 2: Adjust for Your Conditions</h2>
-
-    <div class="space-y-4 mb-8">
-      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-        <h3 class="text-base font-bold text-stone-900 mb-2">Outdoor Sauna in Cold Climate</h3>
-        <p class="text-stone-600 text-sm">Add 20-25% to your calculated cubic footage. Outdoor saunas lose heat faster than indoor ones, especially through the floor and roof. A sauna sized for 200 cu ft indoors needs a heater rated for 240-250 cu ft outdoors.</p>
-      </div>
-      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-        <h3 class="text-base font-bold text-stone-900 mb-2">Glass Walls or Doors</h3>
-        <p class="text-stone-600 text-sm">Glass transfers heat more efficiently than insulated wood. Add 15-20% to your cubic footage calculation for each large glass panel. A sauna with a full-glass door and panoramic window needs a noticeably larger heater.</p>
-      </div>
-      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-        <h3 class="text-base font-bold text-stone-900 mb-2">Tile or Concrete Surfaces</h3>
-        <p class="text-stone-600 text-sm">Tile and concrete absorb heat before releasing it. They take longer to reach temperature than wood. If your sauna has tiled floors or walls, add 10-15% to the cubic footage. This is more common in custom-built saunas than kit saunas.</p>
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Recommended Heaters by Size</h2>
-
-    <div class="space-y-5">
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <div class="flex items-start justify-between mb-3">
-          <div>
-            <h3 class="text-lg font-bold text-stone-900">Harvia KIP 60B 6 kW</h3>
-            <p class="text-stone-500 text-sm">Best for rooms up to 265 cu ft</p>
-          </div>
-          <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-100 text-amber-800">MOST POPULAR</span>
-        </div>
-        <p class="text-stone-600 text-sm mb-4">The standard choice for most 2-4 person barrel and cabin saunas. Made in Finland, reliable, and well-matched to the most common home sauna sizes.</p>
-        <AmazonButton asin="B0B7TRM95Y" price="~$579" />
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <div class="flex items-start justify-between mb-3">
-          <div>
-            <h3 class="text-lg font-bold text-stone-900">Finlandia FLB-60 6 kW</h3>
-            <p class="text-stone-500 text-sm">Best value for rooms up to 210 cu ft</p>
-          </div>
-          <span class="text-xs font-bold px-3 py-1 rounded-full bg-green-100 text-green-800">BEST VALUE</span>
-        </div>
-        <p class="text-stone-600 text-sm mb-4">Finlandia has been building heaters since 1964. This model is reliable, affordable, and well-suited to smaller sauna rooms. A solid choice if the Harvia is over budget.</p>
-        <AmazonButton asin="B000N4RSFO" price="~$499" />
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <div class="flex items-start justify-between mb-3">
-          <div>
-            <h3 class="text-lg font-bold text-stone-900">Vevor 9 kW</h3>
-            <p class="text-stone-500 text-sm">Best budget option for rooms up to 530 cu ft</p>
-          </div>
-          <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-100 text-blue-800">BUDGET PICK</span>
-        </div>
-        <p class="text-stone-600 text-sm mb-4">For larger rooms on a tighter budget. Not Finnish-made, but it gets the job done. Includes a digital controller and has solid reviews for the price point.</p>
-        <AmazonButton asin="B07WQHQ4BF" price="~$299" />
-      </div>
-
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Common Sizing Mistakes</h2>
-    <div class="space-y-3 mb-8">
-      {[
-        ["Sizing for square feet, not cubic feet", "A sauna with 8-foot ceilings needs a larger heater than one with 7-foot ceilings at the same floor area. Always use cubic footage."],
-        ["Trusting the kit's heater recommendation without checking", "Manufacturers sometimes recommend a minimum heater that works in ideal conditions. In a cold climate or a poorly insulated barrel, you may need to go up one size."],
-        ["Buying a heater that's too small to save money", "An undersized heater runs continuously, uses more electricity, and never gets the room properly hot. You end up replacing it. Buy the right size once."],
-        ["Not accounting for outdoor temps", "A heater that works perfectly in summer may struggle in January. If you're in a cold climate, size up."],
-      ].map(([mistake, fix]) => (
-        <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-          <h3 class="text-base font-bold text-red-700 mb-1">{mistake}</h3>
-          <p class="text-stone-600 text-sm">{fix}</p>
-        </div>
-      ))}
-    </div>
-
-    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h3 class="font-bold text-stone-900 mb-3">More heater guides</h3>
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="sources-heading">
+      <h2 id="sources-heading" class="mb-4 text-xl font-bold text-stone-900">Primary sources checked</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline font-medium">Best Electric Sauna Heaters (Full Roundup)</a></li>
-        <li><a href="/reviews/harvia-kip-60b-review/" class="text-amber-700 hover:underline font-medium">Harvia KIP 60B In-Depth Review</a></li>
-        <li><a href="/guides/best-wood-burning-sauna-heaters/" class="text-amber-700 hover:underline font-medium">Best Wood-Burning Sauna Heaters</a></li>
-        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline font-medium">Sauna Electrical Requirements</a></li>
+        <li><a href="https://www.harvia.com/en-US/sauna/saunas/sauna-calculator/" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Harvia U.S. sauna volume calculator</a></li>
+        <li><a href="https://www.harvia.com/en-US/products/JH60BU1UL/kip60b-6-kw-240vac-steel-ul" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Harvia KIP60B JH60BU1UL product page</a></li>
+        <li><a href="https://www.harvia.com/en-US/products/JH80B2401/kip80b-8-kw-240vac-1ph" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Harvia KIP80B JH80B2401 product page</a></li>
+        <li><a href="https://finlandiasauna.com/wp-content/uploads/FLB_manual.pdf" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Finlandia FLB owner's and operator's manual</a></li>
+        <li><a href="https://huumsauna.com/wp-content/uploads/2023/06/huum-steel-manual-us.pdf" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">HUUM STEEL U.S. manual</a></li>
       </ul>
-    </div>
+    </section>
 
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-2xl font-bold text-stone-900">Heater sizing questions</h2>
+      <div class="mt-4 divide-y divide-stone-200">
+        {faqs.map((faq) => (
+          <div class="py-5">
+            <h3 class="font-bold text-stone-900">{faq.question}</h3>
+            <p class="mt-2 text-sm text-stone-700">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="mt-10 bg-stone-900 p-6 text-white">
+      <h2 class="mb-3 text-xl font-bold">Continue the project check</h2>
+      <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <a href="/guides/sauna-electrical-requirements/" class="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-stone-900 hover:bg-stone-100">Review electrical planning</a>
+        <a href="/guides/best-electric-sauna-heaters/" class="inline-flex min-h-11 items-center justify-center rounded-md border border-stone-500 px-4 py-2 text-sm font-semibold text-white hover:border-stone-300">Compare current heater formats</a>
+        <a href="/tools/sauna-cost-calculator/?utm_source=heater_sizing&utm_medium=onsite&utm_campaign=project_budget" class="inline-flex min-h-11 items-center justify-center rounded-md border border-stone-500 px-4 py-2 text-sm font-semibold text-white hover:border-stone-300" data-track-event="calculator_cta_clicked" data-cta-position="heater_sizing_project_budget">Build the project budget</a>
+      </div>
+    </div>
   </article>
 </Base>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What size sauna heater do I need?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sauna heaters are sized by cubic footage. Calculate your sauna's cubic footage (length x width x ceiling height) and use this guide: up to 100 cu ft needs 3-4 kW, 100-200 cu ft needs 4.5-6 kW, 200-300 cu ft needs 6-8 kW, 300-450 cu ft needs 8-10 kW. Add 20-25% for outdoor saunas in cold climates or poorly insulated walls."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is a 6 kW sauna heater enough?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A 6 kW heater is appropriate for sauna rooms up to about 200-265 cubic feet, which covers most 2-4 person barrel and cabin saunas. The Harvia KIP 60B (6 kW) is rated for up to 265 cubic feet and is the most popular choice for home sauna installations."
-      }
-    }
-  ]
-}
-</script>
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+})} />

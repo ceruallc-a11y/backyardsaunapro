@@ -1,126 +1,191 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
-const picks = [
-  {
-    rank: 1,
-    asin: "B00A2F99F0",
-    name: "Dynamic Saunas Barcelona 1-2 Person Far Infrared",
-    
-    rating: "4.4/5",
-    type: "Infrared / Indoor",
-    tag: "BEST UNDER $1K",
-    tagColor: "bg-green-100 text-green-800",
-    summary: "A strong-value infrared option based on published specifications and buyer feedback. It uses a 120V plug-in design and Canadian hemlock construction; confirm current electrical and EMF documentation with the seller.",
-    pros: ["15-min heat-up", "Plugs into standard outlet", "Low EMF certified", "Easy assembly"],
-    cons: ["1-2 person only", "No steam option", "Indoor/covered use"]
-  },
-  {
-    rank: 2,
-    asin: "B084GY5CHB",
-    name: "SereneLife Portable Steam Sauna Tent",
-    
-    rating: "4.2/5",
-    type: "Portable Steam",
-    tag: "BEST ULTRA-BUDGET",
-    tagColor: "bg-blue-100 text-blue-800",
-    summary: "Not a real sauna experience but at $149, it's a legitimate way to try sauna before committing to a full kit. Sets up in minutes and packs away in a closet.",
-    pros: ["Under $150", "No installation", "Setup in 10 min", "Includes steamer"],
-    cons: ["Not a permanent sauna", "Plastic materials", "Limited session time"]
-  },
-  {
-    rank: 3,
-    asin: "B0B7TRM95Y",
-    name: "Harvia KIP-60W Sauna Heater (heater only)",
-    
-    rating: "4.6/5",
-    type: "Heater Component",
-    tag: "BEST HEATER UPGRADE",
-    tagColor: "bg-amber-100 text-amber-800",
-    summary: "If you already have or are building a sauna room, this Harvia heater is the best investment under $1K. Finnish-made, bulletproof reliability, heats up to 300 cu ft.",
-    pros: ["Finnish quality", "Digital Xenio controls included", "Sauna stones included", "Wet or dry use"],
-    cons: ["Heater only no sauna room", "Requires 240V/40A circuit"]
-  }
-];
+const reviewedAt = 'August 15, 2026';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I buy a complete home sauna for less than $2,000?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, but the realistic new-product choices are usually compact infrared cabins and portable steam enclosures. Confirm the current item total, freight or delivery, assembly, electrical requirements, accessories, tax, return terms, and warranty before deciding that a product fits the budget.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I buy a complete traditional outdoor sauna for less than $2,000?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'This guide did not identify a complete new traditional outdoor project under $2,000. A room, heater, controls, stones, freight, unloading, base, electrical or chimney work, permits, assembly, and tax can all affect the total. A heater or room shell by itself is not a complete sauna project.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is a portable steam tent the same as a traditional sauna?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. A portable steam tent uses a steam generator and fabric enclosure. A traditional sauna heats a purpose-built room and stones. Compare the experience, operating instructions, cleaning, storage, electrical requirements, and total cost as separate product categories.',
+      },
+    },
+  ],
+};
 ---
 <Base
-  title="Best Backyard Saunas Under $2,000 (2025) Real Value Picks"
-  description="The best outdoor saunas under $2,000 in 2025. Honest picks for every budget from portable options under $200 to full infrared saunas under $1,000."
+  title="Best Home Saunas Under $2,000: Two Current Paths"
+  description="Compare two current whole-product sauna paths under $2,000 without confusing a heater, shell, or old list price with a complete project."
   canonical="/guides/best-saunas-under-2000"
 >
-  <article class="max-w-3xl mx-auto">
-    <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Backyard Saunas Under $2,000 (2025)
-      </h1>
-      <p class="text-stone-500 text-sm">Updated January 2025 · 8 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        A quality sauna doesn't have to cost $5,000. Here's what you can actually get for under $2,000 and what to expect at each price point.
-      </p>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Budget sauna buying guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Home Saunas Under $2,000: Two Current Paths</h1>
+      <p class="text-stone-500 text-sm">Product routes reviewed {reviewedAt} · 8 min read</p>
+      <p class="text-lg text-stone-700 mt-4">A sub-$2,000 budget can buy a compact infrared cabin or a portable steam enclosure. It usually cannot buy every part of a new traditional outdoor project. Compare whole products with whole products, then add the costs checkout leaves out.</p>
     </header>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Barrel sauna in a field" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
 
+    <AdvertiserDisclosure />
 
-    <div class="bg-stone-100 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">What to Expect at Each Price Point</h2>
-      <div class="space-y-2 text-sm text-stone-700">
-        <p> <strong>Under $200:</strong> Portable steam tents. Not a real sauna, but a legitimate starter experience.</p>
-        <p> <strong>$500–$1,000:</strong> Solid 1-2 person infrared saunas. Real benefits, real heat, plug-in easy.</p>
-        <p> <strong>$1,000–$2,000:</strong> Better infrared options with more features, or heater components for DIY builds.</p>
-        <p> <strong>$2,000+:</strong> Where traditional barrel saunas and premium infrared begin. Our top picks overall.</p>
-      </div>
-    </div>
+    <figure class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/editorial/indoor-infrared-sauna-representative.webp" alt="Representative compact indoor infrared sauna cabin" class="w-full object-cover max-h-80" loading="eager" width="1536" height="1024" />
+      <figcaption class="text-xs text-stone-500 mt-2">Representative compact infrared cabin. It is not a photo of the exact model discussed below.</figcaption>
+    </figure>
 
-    <h2 class="text-2xl font-bold mb-6 text-stone-900">Our Top Picks Under $2,000</h2>
+    <aside class="border-y border-stone-200 py-6 mb-8">
+      <h2 class="text-2xl font-bold text-stone-900 mb-2">What “under $2,000” means here</h2>
+      <p class="text-stone-700 mb-3">The current product price must be below the threshold when you buy. The delivered and usable total may be higher after tax, delivery, unloading, assembly, floor protection, electrical work, cleaning supplies, or accessories.</p>
+      <p class="text-sm text-stone-600">We did not hands-on test these products. We checked manufacturer specifications and the exact Amazon routes listed below. Both Amazon product routes were checked available on {reviewedAt}; stock, seller, price, and terms can change.</p>
+    </aside>
 
-    <div class="space-y-8">
-      {picks.map(pick => (
-        <div class="bg-white border border-stone-200 rounded-xl shadow-sm p-6">
-          <div class="flex items-center gap-2 mb-3">
-            <span class={`text-xs font-bold px-2 py-1 rounded ${pick.tagColor}`}>#{pick.rank} {pick.tag}</span>
-            <span class="text-xs text-stone-400">{pick.type}</span>
+    <PlannerCTA
+      source="under_2000_above_fold"
+      heading="Check the budget against the room and setup"
+      description="Build a private project brief with your space, power, delivery path, heat preference, and full budget before buying the lowest sticker price."
+    />
+
+    <section class="mt-12" aria-labelledby="budget-options">
+      <h2 id="budget-options" class="text-3xl font-bold text-stone-900 mb-3">Two current whole-product options</h2>
+      <p class="text-stone-600 max-w-3xl mb-8">These are different experiences, not first- and second-place versions of the same sauna. Choose the format before comparing features.</p>
+
+      <section class="border-t border-stone-300 pt-7" aria-labelledby="barcelona-option">
+        <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">Compact infrared cabin</p>
+        <h3 id="barcelona-option" class="text-2xl font-bold text-stone-900 mb-3">Dynamic Saunas Barcelona DYN-6106-01</h3>
+        <p class="text-stone-700 mb-5">A finished indoor infrared cabin for a buyer who wants a permanent enclosure and has room for its published footprint. Dynamic lists it for one to two people, but the interior dimensions should decide whether two users will be comfortable.</p>
+
+        <div class="grid md:grid-cols-2 gap-7">
+          <div>
+            <h4 class="font-bold text-stone-900 mb-3">Documented details</h4>
+            <ul class="space-y-2 text-sm text-stone-700 list-disc pl-5">
+              <li>Published exterior size: 39 by 36 by 73 inches</li>
+              <li>Published electrical requirement: 120V, 15A</li>
+              <li>Canadian hemlock cabin with six carbon heating panels</li>
+              <li>Roof vent, interior controls, tempered glass, and audio are listed</li>
+            </ul>
           </div>
-          <h3 class="text-xl font-bold text-stone-900 mb-2">{pick.name}</h3>
-          <p class="text-stone-600 text-sm mb-4">{pick.summary}</p>
-          <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
-            <div>
-              <p class="font-bold text-green-700 text-xs uppercase mb-1">Pros</p>
-              {pick.pros.map(p => <p class="text-stone-600"> {p}</p>)}
-            </div>
-            <div>
-              <p class="font-bold text-red-600 text-xs uppercase mb-1">Cons</p>
-              {pick.cons.map(c => <p class="text-stone-600"> {c}</p>)}
-            </div>
+          <div>
+            <h4 class="font-bold text-stone-900 mb-3">Verify before checkout</h4>
+            <ul class="space-y-2 text-sm text-stone-700 list-disc pl-5">
+              <li>Current price, seller, stock, delivery, return, and warranty terms</li>
+              <li>Interior comfort, ceiling height, door swing, and assembly access</li>
+              <li>Required circuit, outlet location, plug, and extension-cord restrictions</li>
+              <li>Any “low EMF” test method, measurement distance, and numerical result</li>
+            </ul>
           </div>
-          <p class="text-xs text-stone-400 mb-2">Rating: {pick.rating}</p>
-          <AmazonButton asin={pick.asin} price={pick.price} />
         </div>
-      ))}
-    </div>
 
-    <section class="mt-12">
-      <h2 class="text-2xl font-bold mb-4 text-stone-900">Is a Sub-$2,000 Sauna Worth It?</h2>
-      <p class="text-stone-600 mb-4">
-        Honestly yes, with the right expectations. A $900 infrared sauna gives you real health benefits, real sweat sessions, and years of use. It's not the same experience as a $4,000 traditional cedar barrel sauna, but for most people trying sauna for the first time, it's the right starting point.
-      </p>
-      <p class="text-stone-600 mb-4">
-        The mistake people make is buying a cheap portable steam tent expecting it to replicate a Finnish sauna. It won't. If that's what you want, save up for the real thing. But if you want the core health benefits cardiovascular, muscle recovery, stress relief an infrared unit under $1,000 delivers them.
-      </p>
-      <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-900">
-        <strong>Our recommendation:</strong> If your budget is truly under $2,000 and you want a real sauna experience, the Dynamic Saunas Barcelona at ~$899 is the move. It's the lowest price point where you get a genuinely good sauna not a compromise.
+        <div class="mt-5 flex flex-wrap items-center gap-4">
+          <AmazonButton asin="B00A2F99F0" label="Check the current Barcelona listing" variant="primary" ctaPosition="under_2000_infrared" />
+          <a href="https://dynamicsaunasdirect.com/products/barcelona-1-2-person-low-emf-far-infrared-sauna" target="_blank" rel="noopener" class="text-sm font-semibold text-amber-700 hover:underline">Review manufacturer specifications</a>
+        </div>
+      </section>
+
+      <section class="border-t border-stone-300 pt-7 mt-10" aria-labelledby="serenelife-option">
+        <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">Portable steam enclosure</p>
+        <h3 id="serenelife-option" class="text-2xl font-bold text-stone-900 mb-3">SereneLife SLISAU35BK</h3>
+        <p class="text-stone-700 mb-5">A foldable steam tent for a buyer who prioritizes storage and a lower initial spend. It is not an infrared cabin or a traditional rock-and-steam room.</p>
+
+        <div class="grid md:grid-cols-2 gap-7">
+          <div>
+            <h4 class="font-bold text-stone-900 mb-3">Documented details</h4>
+            <ul class="space-y-2 text-sm text-stone-700 list-disc pl-5">
+              <li>Published enclosure size: 35.43 by 35.43 by 70.87 inches</li>
+              <li>Published 1600-watt steamer and 120V power</li>
+              <li>Nine heat settings, remote control, and folding chair are listed</li>
+              <li>Low-water shutoff and a model-specific manual are available</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-stone-900 mb-3">Verify before checkout</h4>
+            <ul class="space-y-2 text-sm text-stone-700 list-disc pl-5">
+              <li>Current seller, included parts, warranty, and return process</li>
+              <li>Outlet placement and the manual’s electrical instructions</li>
+              <li>Floor protection plus cleaning and drying space after each use</li>
+              <li>Replacement availability for the steamer, hose, liner, and chair</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-5 flex flex-wrap items-center gap-4">
+          <AmazonButton asin="B084GY5CHB" label="Check the current SereneLife listing" variant="primary" ctaPosition="under_2000_steam" />
+          <a href="https://serenelifehome.com/collections/new-arrivals/products/slisau35bk" target="_blank" rel="noopener" class="text-sm font-semibold text-amber-700 hover:underline">Review manufacturer specifications</a>
+        </div>
+      </section>
+    </section>
+
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="not-whole-sauna">
+      <h2 id="not-whole-sauna" class="text-3xl font-bold text-stone-900 mb-3">Do not count a component as a complete sauna</h2>
+      <p class="text-stone-700 mb-4">A heater, room shell, used cabin, or material package can appear below $2,000 while leaving major project costs unresolved. For a traditional build, identify the room, heater, controls, stones, guard, freight, unloading, base or floor, electrical or chimney work, ventilation, permits, assembly, and tax.</p>
+      <p class="text-stone-700">The previous version of this guide included a Harvia heater in a whole-sauna ranking. That was misleading. A heater can be a valid component purchase, but it is not a complete sauna.</p>
+    </section>
+
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="budget-checklist">
+      <h2 id="budget-checklist" class="text-3xl font-bold text-stone-900 mb-6">Compare the usable total</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[640px] text-sm">
+          <thead>
+            <tr class="border-b border-stone-300 text-left text-stone-600">
+              <th class="pb-3 pr-5">Cost or constraint</th>
+              <th class="pb-3 pr-5">Infrared cabin</th>
+              <th class="pb-3">Steam tent</th>
+            </tr>
+          </thead>
+          <tbody class="text-stone-700">
+            <tr class="border-b border-stone-200"><td class="py-3 pr-5 font-semibold">Delivery and access</td><td class="py-3 pr-5">Cabin shipment, doorway, stairs, assembly room</td><td class="py-3">Package handling and storage location</td></tr>
+            <tr class="border-b border-stone-200"><td class="py-3 pr-5 font-semibold">Power</td><td class="py-3 pr-5">Exact circuit and outlet from the manual</td><td class="py-3">Exact outlet and circuit from the manual</td></tr>
+            <tr class="border-b border-stone-200"><td class="py-3 pr-5 font-semibold">Ongoing care</td><td class="py-3 pr-5">Interior cleaning and component service</td><td class="py-3">Drain, wipe, dry, and store after use</td></tr>
+            <tr><td class="py-3 pr-5 font-semibold">Return risk</td><td class="py-3 pr-5">Large-item return freight and restocking terms</td><td class="py-3">Used moisture-product return conditions</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <a href="/tools/sauna-cost-calculator/?utm_source=under_2000&utm_medium=onsite&utm_campaign=project_budget" class="inline-block mt-6 bg-stone-900 hover:bg-stone-800 text-white font-semibold px-5 py-3 rounded-md" data-cta-position="under_2000_project_budget">Build the full project budget</a>
+    </section>
+
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="under-2000-faq">
+      <h2 id="under-2000-faq" class="text-3xl font-bold text-stone-900 mb-6">Frequently asked questions</h2>
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-2">Can I buy a complete home sauna for less than $2,000?</h3><p class="text-stone-700">Yes, mainly in compact infrared-cabin and portable steam-tent formats. Confirm the current product total and every setup cost before treating the budget as complete.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-2">Can I buy a complete traditional outdoor sauna for less than $2,000?</h3><p class="text-stone-700">This guide did not identify a verified complete new outdoor project at that threshold. Do not compare a heater or room shell with a finished cabin.</p></div>
+        <div class="py-5"><h3 class="font-bold text-stone-900 mb-2">Is a portable steam tent a traditional sauna?</h3><p class="text-stone-700">No. The enclosure, heat source, operating temperature, humidity, maintenance, and experience differ. Choose it because the steam-tent format fits, not because it is the cheapest item using the word sauna.</p></div>
       </div>
     </section>
 
-    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
-      <h3 class="text-xl font-bold mb-2">Ready to Go Premium?</h3>
-      <p class="text-stone-300 mb-4">See our best overall picks across all budgets including the saunas worth saving up for.</p>
-      <a href="/best-saunas/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-        See All Best Saunas →
-      </a>
-    </div>
+    <aside class="mt-12 border border-stone-200 rounded-lg p-6">
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Continue comparing</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline">Portable sauna format guide</a></li>
+        <li><a href="/reviews/dynamic-saunas-barcelona-review/" class="text-amber-700 hover:underline">Dynamic Barcelona buyer checklist</a></li>
+        <li><a href="/guides/best-1-person-sauna/" class="text-amber-700 hover:underline">Compact one-person sauna guide</a></li>
+        <li><a href="/guides/best-saunas-under-3000/" class="text-amber-700 hover:underline">Compare the next complete-cabin budget tier</a></li>
+        <li><a href="/best-saunas/" class="text-amber-700 hover:underline">Compare higher-budget sauna paths</a></li>
+      </ul>
+    </aside>
   </article>
 </Base>

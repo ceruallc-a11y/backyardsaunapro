@@ -1,119 +1,207 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How often should a home sauna be cleaned?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Follow the room and heater manuals. Harvia currently recommends basic cleaning of a family sauna one to three times a year, while use, spills, ventilation, and room type can require more frequent care.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How often should sauna stones be replaced?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Use and stone condition matter more than a universal calendar. Inspect and restack the stones at least annually or at the interval in the heater manual, remove debris, and replace stones that crumble, crack, or no longer meet the manufacturer guidance.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I stain or seal the inside of a sauna?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Do not apply ordinary paint, lacquer, stain, or sealer inside a hot room. Use only an interior treatment allowed by the sauna manufacturer for the exact wood and surface, such as a specified sauna-grade paraffin oil when approved.',
+      },
+    },
+  ],
+};
 ---
 <Base
-  title="Backyard Sauna Maintenance Guide Keep Your Sauna Lasting Decades"
-  description="Complete sauna maintenance guide for outdoor barrel and cabin saunas. Cleaning schedule, wood care, heater maintenance, and winter prep all in one place."
+  title="Sauna Maintenance Guide: Follow the Room and Heater Manuals"
+  description="Maintain an indoor or outdoor sauna with a manual-led schedule for drying, cleaning, wood, stones, heater, controls, roof, drainage, and seasonal inspection."
   canonical="/guides/sauna-maintenance-guide"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Maintenance Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Backyard Sauna Maintenance Guide
-      </h1>
-      <p class="text-stone-500 text-sm">Updated January 2025 · 10 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        A well-built sauna can last 40 years. Some last longer. The ones that don't? They were neglected wrong cleaner on the wood, standing water under the floor, door seals left to rot. None of it is hard to prevent. Takes maybe 30 minutes a month. Here's the whole system.
-      </p>
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Ownership guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-3">Sauna Maintenance: Build a Schedule From the Manuals</h1>
+      <p class="text-stone-500">Reviewed August 2026 &middot; Indoor and outdoor planning guide</p>
+      <p class="text-lg text-stone-700 mt-4">There is no honest promise that one routine will make every sauna last a set number of years. The room, wood, heater, controls, stones, roof, site, climate, and use pattern all matter. Start with the current manuals, then keep a short inspection record.</p>
     </header>
+
     <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-rocks-bucket.jpg" alt="Sauna heater stones and accessories" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+      <img src="/images/lifestyle/sauna-rocks-bucket.jpg" alt="Sauna stones and bucket that should be maintained under the room and heater instructions" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
     </div>
 
-
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3"> Maintenance at a Glance</h2>
-      <div class="grid md:grid-cols-3 gap-3 text-sm">
-        {[["After Every Use", "Air it out, wipe benches, leave door cracked"], ["Monthly", "Clean interior, inspect door seal, check rocks"], ["Annually", "Sand/treat benches, inspect exterior, replace rocks"]].map(([when, what]) => (
-          <div class="bg-white rounded-lg p-3 border border-amber-200 text-center">
-            <p class="font-bold text-amber-800 mb-1">{when}</p>
-            <p class="text-stone-600 text-xs">{what}</p>
+      <h2 class="font-bold text-stone-900 mb-2">First: make a one-page equipment record</h2>
+      <p class="text-sm text-stone-700 mb-3">Record the room model, heater item number, control model, stone type and size, installation date, installer, finish products, warranty terms, and links to the current manuals. Generic advice loses to the exact product instructions whenever they differ.</p>
+      <ul class="grid sm:grid-cols-2 gap-2 text-sm text-stone-700">
+        <li>[ ] Room and heater manuals</li>
+        <li>[ ] Model and serial numbers</li>
+        <li>[ ] Approved cleaners and treatments</li>
+        <li>[ ] Installer and service contacts</li>
+        <li>[ ] Inspection and permit records</li>
+        <li>[ ] Maintenance dates and findings</li>
+      </ul>
+    </div>
+
+    <section class="mb-10" aria-labelledby="after-use">
+      <h2 id="after-use" class="text-2xl font-bold text-stone-900 mb-4">After use: remove moisture the approved way</h2>
+      <div class="space-y-3">
+        {[
+          ['Protect the benches', 'Use a clean bench towel during bathing. This limits sweat and soil on unfinished wood.'],
+          ['Remove wet items', 'Take out bench covers, towels, and the water bucket. Wipe visible water from benches, floor, glass, and approved heater surfaces.'],
+          ['Follow the drying sequence', 'Harvia advises a short heater-assisted dry followed by ventilation. Another room manufacturer may specify a different duration or door position, so use the exact room and heater instructions.'],
+          ['Look before leaving', 'Check that the control state is correct, nothing rests on or near the heater, and drains, vents, doors, and guards are unobstructed.'],
+        ].map(([title, text]) => (
+          <div class="bg-white border border-stone-200 rounded-lg p-4">
+            <h3 class="font-semibold text-stone-900 mb-1">{title}</h3>
+            <p class="text-sm text-stone-700">{text}</p>
           </div>
         ))}
       </div>
-    </div>
+    </section>
 
-    <h2 class="text-2xl font-bold mt-8 mb-4 text-stone-900">After Every Session</h2>
-    <div class="space-y-3 mb-8">
-      {[
-        ["Leave the door cracked open", "For 30–60 minutes after your session. This lets moisture escape instead of soaking into the wood. The single most important habit for sauna longevity."],
-        ["Wipe down the benches", "A quick pass with a dry towel removes sweat before it soaks in. Cedar is naturally antimicrobial but it's not bulletproof."],
-        ["Empty the water bucket", "Don't leave water sitting in the bucket it breeds bacteria and leaves mineral deposits."],
-        ["Turn off the heater", "Obvious, but worth saying. Use a timer outlet if you're forgetful."],
-      ].map(([title, text]) => (
-        <div class="flex gap-3 bg-white border border-stone-200 rounded-lg p-4">
-          <span class="text-amber-500 text-lg"></span>
-          <div>
-            <p class="font-semibold text-stone-800 text-sm">{title}</p>
-            <p class="text-stone-600 text-sm">{text}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Monthly Maintenance</h2>
-    <div class="space-y-3 mb-8">
-      {[
-        ["Deep clean the interior", "Use a sauna-specific wood cleaner (not bleach or household cleaners they damage cedar). Scrub benches with a soft brush, rinse lightly, air dry with door open."],
-        ["Inspect the door seal", "Press around the door frame when the sauna is hot. If you feel heat escaping, the seal is failing. Replace weatherstripping before it causes heat loss and higher electricity bills."],
-        ["Check sauna stones", "Look for cracked or crumbling rocks. Degraded rocks don't hold heat and can become projectiles when water hits them. Replace any that look compromised."],
-        ["Inspect exterior wood", "Look for cracking, graying, or soft spots. Catch rot early it's cheap to treat a small spot, expensive to replace boards."],
-      ].map(([title, text]) => (
-        <div class="flex gap-3 bg-white border border-stone-200 rounded-lg p-4">
-          <span class="text-amber-500 text-lg"></span>
-          <div>
-            <p class="font-semibold text-stone-800 text-sm">{title}</p>
-            <p class="text-stone-600 text-sm">{text}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Annual Maintenance</h2>
-    <div class="space-y-3 mb-8">
-      {[
-        ["Sand and treat the benches", "Once a year, lightly sand the bench surfaces (120-grit) to remove gray patina and raised grain. Apply a food-safe sauna wood oil or leave untreated never use polyurethane or varnish on sauna interior wood."],
-        ["Replace sauna stones", "Every 2–3 years (sooner if they're crumbling). New stones hold heat better and are safer."],
-        ["Treat exterior wood", "Apply an exterior wood stain or penetrating oil to the outside of the sauna. This protects against UV, moisture, and rot. Do this every 1–3 years depending on your climate."],
-        ["Inspect electrical connections", "Have an electrician check connections at the heater terminal block every 2–3 years. Heat and humidity cause terminal oxidation that can create fire hazards."],
-        ["Check the foundation", "Walk the perimeter. Any shifting, settling, or water pooling under the sauna should be addressed before it worsens."],
-      ].map(([title, text]) => (
-        <div class="flex gap-3 bg-white border border-stone-200 rounded-lg p-4">
-          <span class="text-amber-500 text-lg"></span>
-          <div>
-            <p class="font-semibold text-stone-800 text-sm">{title}</p>
-            <p class="text-stone-600 text-sm">{text}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Winter Prep (Cold Climate)</h2>
-    <p class="text-stone-600 mb-4">Traditional cedar saunas don't need to be "winterized" they handle cold fine. But a few habits help:</p>
-    <ul class="list-disc pl-5 text-stone-600 text-sm space-y-2 mb-6">
-      <li>After the last fall session, do a thorough clean and leave to fully dry before it freezes</li>
-      <li>Inspect and replace door seals before winter cold air infiltration is worse with failing seals</li>
-      <li>For barrel saunas, clear snow off the top after heavy accumulation (though the barrel shape sheds most of it)</li>
-      <li>Don't leave the sauna unheated for months then blast it immediately heat it gradually the first time in spring</li>
-    </ul>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Recommended Maintenance Products</h2>
-    <div class="space-y-4">
-      <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-        <h3 class="font-semibold text-stone-900 mb-1">Sauna Wood Cleaner & Protector</h3>
-        <p class="text-stone-600 text-sm mb-3">pH-neutral, sauna-safe cleaner that cleans and conditions cedar benches without harsh chemicals. Use monthly.</p>
-        <AmazonButton asin="B07MJDFHKG" price="~$28" label="Check Price on Amazon" />
+    <section class="mb-10" aria-labelledby="cleaning">
+      <h2 id="cleaning" class="text-2xl font-bold text-stone-900 mb-4">Periodic cleaning: light water, approved cleaner, complete drying</h2>
+      <p class="text-stone-700 mb-4">Harvia currently recommends basic cleaning of a family sauna one to three times a year with a moderate amount of water and a suitable detergent. That is a reference point, not a universal schedule. Heavy use, spills, commercial traffic, poor drying, or the room manual can change the interval.</p>
+      <ol class="list-decimal pl-5 space-y-3 text-stone-700">
+        <li>Turn off and cool the heater. Follow any lockout or service directions in its manual.</li>
+        <li>Vacuum or sweep loose debris before adding moisture.</li>
+        <li>Use the wood-safe product and dilution allowed by the room manufacturer. Test any approved treatment in a hidden area first.</li>
+        <li>Brush benches along the wood grain. Avoid flooding joints, electrical equipment, wall cavities, and unsupported finishes.</li>
+        <li>Rinse only as directed, remove standing water, and dry the room using the manufacturer sequence.</li>
+      </ol>
+      <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-5 text-sm text-red-800">
+        <strong>Do not improvise with ordinary interior coatings.</strong> Harvia prohibits lacquer on sauna interiors. Finnleo states that paint and stain should not be used inside its hot rooms and identifies pure paraffin oil as the approved treatment for specific models. Check your own manual before applying anything.
       </div>
-    </div>
+    </section>
 
-    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
-      <h3 class="text-xl font-bold mb-2">Need Accessories Too?</h3>
-      <p class="text-stone-300 mb-4">See our guide to the best sauna accessories including cleaning supplies, buckets, and thermometers.</p>
-      <a href="/guides/best-sauna-accessories/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-        Best Sauna Accessories →
-      </a>
+    <section class="mb-10" aria-labelledby="stones">
+      <h2 id="stones" class="text-2xl font-bold text-stone-900 mb-4">Stones: inspect, clean, and restack by the heater manual</h2>
+      <p class="text-stone-700 mb-4">Harvia advises checking and restacking stones at least annually, more often in heavy use or when debris appears below the heater. The exact replacement interval depends on use and condition.</p>
+      <ul class="list-disc pl-5 space-y-2 text-stone-700">
+        <li>Make sure the heater is off and fully cool before handling stones.</li>
+        <li>Remove stone debris from the heater without damaging elements or sensors.</li>
+        <li>Discard stones that crumble, crack, or fail the manufacturer condition check.</li>
+        <li>Wash and dry reusable stones if the manual calls for it.</li>
+        <li>Reload the approved stone type, size, amount, and pattern. Do not pack stones tightly around electric elements.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10" aria-labelledby="equipment">
+      <h2 id="equipment" class="text-2xl font-bold text-stone-900 mb-4">Heater, controls, lights, and guards</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="border border-stone-200 rounded-lg bg-white p-5">
+          <h3 class="font-bold text-stone-900 mb-2">Owner checks</h3>
+          <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+            <li>Look for unusual noise, odor, discoloration, corrosion, loose guards, or error codes.</li>
+            <li>Keep air paths, sensors, controls, and the heater free of stored items.</li>
+            <li>Clean accessible exterior surfaces only as the equipment manual allows.</li>
+            <li>Record a problem and stop using the sauna when the manual says to discontinue operation.</li>
+          </ul>
+        </div>
+        <div class="border border-stone-200 rounded-lg bg-white p-5">
+          <h3 class="font-bold text-stone-900 mb-2">Qualified service</h3>
+          <ul class="list-disc pl-5 space-y-2 text-sm text-stone-700">
+            <li>Electrical terminals, internal wiring, high limits, gas components, and chimney systems are not generic DIY inspections.</li>
+            <li>Use the manufacturer troubleshooting path and the qualified trade required for the equipment.</li>
+            <li>Do not add a timer, smart plug, or remote control unless the exact heater package approves it.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="outdoor">
+      <h2 id="outdoor" class="text-2xl font-bold text-stone-900 mb-4">Outdoor rooms: inspect the building and site</h2>
+      <p class="text-stone-700 mb-4">Exterior care is model-specific. Finnleo requires an exterior finish for the warranty on its current Euro outdoor rooms, while other manufacturers describe exterior treatment as optional for certain woods. Do not copy one brand's finish schedule onto another sauna.</p>
+      <div class="overflow-x-auto border border-stone-200 rounded-lg">
+        <table class="w-full min-w-[680px] text-sm border-collapse">
+          <thead><tr class="bg-stone-900 text-white"><th class="text-left p-3">Inspect</th><th class="text-left p-3">Look for</th><th class="text-left p-3">Next action</th></tr></thead>
+          <tbody class="text-stone-700">
+            {[
+              ['Roof and flashing', 'Loose fasteners, failed seams, displaced roofing, blocked drainage, or water entry', 'Follow the room manual or contact the manufacturer or qualified roofer.'],
+              ['Exterior wood', 'Finish failure, checking, open joints, impact damage, or persistent wet areas', 'Use only the exterior product and preparation allowed for the wood and warranty.'],
+              ['Foundation and drainage', 'Settlement, rocking, erosion, pooling, or soil and mulch touching the room', 'Correct the site cause before cosmetic repair. Get structural help when movement is unclear.'],
+              ['Door, glass, and hardware', 'Binding, loose fasteners, damaged seals, cracked glass, or unsafe latch operation', 'Stop use for damaged glass or hardware and follow the manufacturer service path.'],
+              ['Vents and penetrations', 'Obstruction, insects, failed sealant, corrosion, or water tracks', 'Restore only to the approved assembly; do not block required airflow.'],
+            ].map(([item, look, action], index) => (
+              <tr class={index % 2 === 0 ? 'bg-white' : 'bg-stone-50'}><td class="p-3 font-semibold border-b border-stone-200">{item}</td><td class="p-3 border-b border-stone-200">{look}</td><td class="p-3 border-b border-stone-200">{action}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="maintenance-log">
+      <h2 id="maintenance-log" class="text-2xl font-bold text-stone-900 mb-4">A simple maintenance log</h2>
+      <p class="text-stone-700 mb-4">A short record is more useful than a rigid generic calendar. Note what changed, what the manual required, and who corrected it.</p>
+      <div class="bg-stone-50 border border-stone-200 rounded-lg p-5 text-sm text-stone-700 space-y-2">
+        <p><strong>Date:</strong> ____________________ &nbsp; <strong>Hours or use pattern:</strong> ____________________</p>
+        <p><strong>Room dried normally:</strong> Yes / No &nbsp; <strong>New stains, odor, or moisture:</strong> Yes / No</p>
+        <p><strong>Wood, door, glass, floor, vents, roof, and foundation findings:</strong> ____________________</p>
+        <p><strong>Heater, stones, controls, guard, and lighting findings:</strong> ____________________</p>
+        <p><strong>Action taken, manual section, parts, and service contact:</strong> ____________________</p>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="care-supplies">
+      <h2 id="care-supplies" class="text-2xl font-bold text-stone-900 mb-4">Shop only after checking the manual</h2>
+      <p class="text-stone-700 mb-4">The correct cleaner or oil depends on the room manufacturer, wood, existing finish, and permitted treatment. The button below opens a live Amazon search and uses our affiliate tag; it does not endorse every result.</p>
+      <AmazonButton search="sauna care set paraffin oil wood cleaner" label="Browse sauna care supplies on Amazon" ctaPosition="maintenance_supplies" />
+      <p class="text-xs text-stone-500 mt-3">As an Amazon Associate, we may earn from qualifying purchases. Verify the exact product against your sauna manual before use.</p>
+    </section>
+
+    <section class="mb-10" aria-labelledby="sources">
+      <h2 id="sources" class="text-2xl font-bold text-stone-900 mb-4">Primary sources used</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="https://support.harvia.com/hc/en-gb/articles/22158333579676-Maintaining-your-sauna" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Harvia: Maintaining your sauna</h3>
+          <p class="text-sm text-stone-700">Current guidance for bench protection, after-use drying, basic cleaning, detergent, sanding, and interior treatment.</p>
+        </a>
+        <a href="https://www.harvia.com/en-US/ideas-and-trends/products/the-easy-guide-to-looking-after-your-sauna-stones/" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Harvia: Looking after sauna stones</h3>
+          <p class="text-sm text-stone-700">Manufacturer guidance for inspection, cleaning, condition checks, replacement, and correct loading.</p>
+        </a>
+        <a href="https://www.finnleo.com/hubfs/FINNLEO/Finnleo%20Downloads/Installation%20Manuals/71-0156_Euro_Outdoor_Room_Rev_D_09-24-2025.pdf" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Finnleo Euro outdoor-room manual</h3>
+          <p class="text-sm text-stone-700">Current room inspection, heater, control, bench, roofing, exterior-finish, and safety requirements.</p>
+        </a>
+        <a href="https://almostheaven.com/pages/download-our-manuals-guides" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Almost Heaven manual library</h3>
+          <p class="text-sm text-stone-700">Current model-specific owner manuals and maintenance resources for indoor and outdoor rooms.</p>
+        </a>
+      </div>
+    </section>
+
+    <div class="bg-stone-800 text-white rounded-xl p-6 mt-12">
+      <h2 class="text-xl font-bold mb-2">Keep planning from the exact sauna</h2>
+      <p class="text-stone-300 mb-4">Use the room, heater, and site guidance together instead of treating maintenance as a cleaner-shopping list.</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="/guides/best-sauna-accessories/" class="inline-flex min-h-12 items-center justify-center rounded-md bg-amber-400 px-5 py-3 font-semibold text-stone-900 hover:bg-amber-500">Review useful accessories</a>
+        <a href="/guides/outdoor-sauna-winter/" class="inline-flex min-h-12 items-center justify-center rounded-md border border-stone-500 px-5 py-3 font-semibold text-white hover:border-stone-300">Plan outdoor seasonal checks</a>
+        <a href="/guides/best-outdoor-sauna-cover/" class="inline-flex min-h-12 items-center justify-center rounded-md border border-stone-500 px-5 py-3 font-semibold text-white hover:border-stone-300">Review outdoor sauna covers</a>
+      </div>
     </div>
   </article>
 </Base>

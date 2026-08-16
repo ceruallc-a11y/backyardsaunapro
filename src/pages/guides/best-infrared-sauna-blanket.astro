@@ -1,5 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -7,149 +9,168 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Do infrared sauna blankets actually work?",
+      "name": "How do I check an infrared sauna blanket for a recall?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Infrared sauna blankets do generate heat and cause sweating similar to a sauna session. The evidence for specific health claims varies — some benefits like relaxation, temporary muscle soreness relief, and sweating are real. The deep-tissue infrared penetration claims are less well-supported than manufacturers suggest. They work best as a convenient low-cost alternative to a full sauna, not as a medically superior device."
+        "text": "Find the exact brand, model number, controller description, and serial number on the product. Compare all of them with the current CPSC recall notice before buying or using the blanket. A brand name alone is not enough because recalls can apply to specific models or controllers."
       }
     },
     {
       "@type": "Question",
-      "name": "Are infrared sauna blankets safe?",
+      "name": "How long should I use an infrared sauna blanket?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Generally yes for healthy adults. The main precautions are the same as any sauna: stay hydrated, don't use while pregnant, avoid if you have certain cardiovascular conditions, and don't use while under the influence of alcohol. Wear natural fiber clothing inside the blanket (not synthetic), and follow manufacturer temperature limits."
+        "text": "Use the time, temperature, clothing, surface, and supervision instructions in the exact model's current manual. There is no responsible universal session length for every blanket and user."
       }
     },
     {
       "@type": "Question",
-      "name": "How long should you use an infrared sauna blanket?",
+      "name": "Is an infrared sauna blanket the same as a sauna room?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Start with 20 to 30 minutes and work up to 45 minutes as your heat tolerance builds. Drink water before and after. Most people find 30 to 45 minutes three to four times per week is effective for regular use."
+        "text": "No. A blanket is a close-contact heated product used while lying down. A sauna room heats a larger occupied space and has different electrical, ventilation, seating, and operating requirements. Compare the experience and instructions as separate product categories."
       }
     }
   ]
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Best Infrared Sauna Blankets (2025): What to Buy and What to Skip"
-  description="The best infrared sauna blankets ranked. What they do, which to buy, and what to look for in EMF levels, materials, and temperature range."
+  title="Best Infrared Sauna Blanket: Check Safety and Recalls First"
+  description="Compare current infrared sauna blankets by recall status, model-specific instructions, electrical requirements, controls, cleaning, warranty, and returns."
   canonical="/guides/best-infrared-sauna-blanket"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Infrared Sauna Blankets (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated March 2025 &mdash; Backyard Sauna Pro</p>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Modern wooden sauna interior" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
-
+    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Infrared Sauna Blanket: Check Safety and Recalls First</h1>
+    <p class="text-stone-500 mb-8">Reviewed August 2026 &mdash; Backyard Sauna Pro</p>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page contains affiliate links.
+      <strong>Affiliate disclosure:</strong> Some product links are affiliate links. If you buy through one, we may earn a commission at no extra cost to you. We have not physically tested these blankets. This guide compares current published specifications, instructions, and federal recall information.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">An infrared sauna blanket is the closest you can get to a sauna session without buying a sauna. You zip yourself in, the blanket heats up to 160°F, and you sweat through a 30 to 45 minute session lying on your bed or floor. No installation, no dedicated space, no electrical work.</p>
+    <p class="text-lg text-stone-700 mb-4">A sauna blanket is easy to store, but it is still a heated electrical product used in close contact with the body. Start with the exact model and controller. Then check recalls, the current manual, placement requirements, and the return policy.</p>
+    <p class="text-stone-700 mb-8">That order matters more than a “best overall” badge. Two recent federal recalls covered specific sauna blankets because of overheating, fire, and burn hazards.</p>
 
-    <p class="text-stone-700 mb-4">They're not a replacement for a real sauna. The experience is different, you can't add steam, and lying zipped in a blanket is less comfortable than sitting in a cedar room. But for under $300 in an apartment with no other options, they're genuinely useful.</p>
-
-    <p class="text-stone-700 mb-8">Here's what to look for and what's worth buying.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What to Look For</h2>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">EMF levels</h3>
-    <p class="text-stone-700 mb-4">Low-EMF is the most important spec to check. Budget blankets use basic heating elements that emit high electromagnetic fields. The better blankets use carbon fiber or multi-layer heating panels that keep EMF levels low. This matters if you're using the blanket regularly, extended close-contact EMF exposure is worth minimizing. Look for blankets that publish their EMF test results.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Materials</h3>
-    <p class="text-stone-700 mb-4">The inner lining touches your skin for 30 to 45 minutes at high heat. PU leather is common but hot and not breathable. Polyurethane and lower-quality synthetics can off-gas at elevated temperatures. Better blankets use natural materials or non-toxic coated fabrics for the inner layer. It matters more than it sounds.</p>
-
-    <h3 class="text-lg font-bold text-stone-800 mt-6 mb-2">Temperature range</h3>
-    <p class="text-stone-700 mb-6">Look for a range of 77 to 176°F. The lower end lets you warm up gradually; the upper end matches what a real sauna delivers. Blankets that top out at 140°F limit your options as your heat tolerance builds.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Picks</h2>
-
-    <div class="space-y-6 mb-10">
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="mb-2">
-          <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
-          <h3 class="text-xl font-bold text-stone-900 mt-1">HigherDOSE Infrared Sauna Blanket</h3>
-        </div>
-        <p class="text-stone-600 mb-3">The most popular infrared sauna blanket on the market. Low-EMF amethyst and tourmaline layers, charcoal inner layer, heats to 158°F. The construction quality is noticeably better than cheaper options and the company publishes its EMF test data. The price is steep at around $700 but it holds up to daily use. Most serious buyers land here or wish they had.</p>
-        <div class="text-sm text-stone-600 mb-4">
-          <span class="text-green-700 font-medium">Pros: published EMF data, premium materials, brand reputation</span>
-          <span class="mx-2">|</span>
-          <span class="text-red-700 font-medium">Cons: expensive for the category</span>
-        </div>
-        <p class="text-stone-500 text-sm italic">Available direct from HigherDOSE and major retailers</p>
+    <aside class="border border-red-200 bg-red-50 rounded-xl p-5 mb-10" aria-label="Current sauna blanket recall warning">
+      <p class="text-xs font-bold uppercase tracking-wide text-red-800 mb-2">Recall check required</p>
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Match the model, controller, and serial number</h2>
+      <ul class="list-disc pl-6 space-y-2 text-sm text-stone-700">
+        <li>The CPSC recalled specified <strong>LifePro BioRemedy</strong> blankets with listed model numbers and a gray-faced controller in October 2025. The notice says to stop using and unplug affected units.</li>
+        <li>The CPSC recalled the <strong>SLF model 30065TAR</strong> with serial number <strong>WF2236430065</strong> in May 2026. The notice says to stop using it and contact Tzumi for a replacement.</li>
+        <li>A used listing that hides the model or controller is not ready to buy. Ask for clear photos of every identification label first.</li>
+      </ul>
+      <div class="flex flex-col sm:flex-row gap-3 mt-4 text-sm font-semibold">
+        <a href="https://www.cpsc.gov/Recalls/2026/Lifepro-Fitness-Recalls-Bioremedy-Infrared-Sauna-Blankets-Due-to-Risk-of-Burn-Injuries" class="text-red-800 hover:underline" rel="noopener noreferrer">Read the LifePro BioRemedy recall</a>
+        <a href="https://www.cpsc.gov/Recalls/2026/Tzumi-Electronics-Recalls-SLF-Sauna-Blankets-Due-to-Fire-and-Burn-Hazards" class="text-red-800 hover:underline" rel="noopener noreferrer">Read the SLF recall</a>
       </div>
+    </aside>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="mb-2">
-          <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Value</span>
-          <h3 class="text-xl font-bold text-stone-900 mt-1">MiHIGH Infrared Sauna Blanket</h3>
-        </div>
-        <p class="text-stone-600 mb-3">Australian brand that's gained a strong following as a HigherDOSE alternative at about half the price. Low-EMF far infrared, heats to 158°F, vegan leather outer. The inner material is less premium than HigherDOSE but the heating performance is comparable. Good choice if the HigherDOSE price is the limiting factor.</p>
-        <div class="text-sm text-stone-600 mb-4">
-          <span class="text-green-700 font-medium">Pros: half the price of HigherDOSE, comparable heat output</span>
-          <span class="mx-2">|</span>
-          <span class="text-red-700 font-medium">Cons: inner material quality is lower</span>
-        </div>
-        <p class="text-stone-500 text-sm italic">Available on Amazon and direct</p>
-      </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How these options were selected</h2>
+    <p class="text-stone-700 mb-4">An option belongs here only when a current manufacturer page identifies the product and publishes enough detail to investigate it. We compare:</p>
+    <ul class="list-disc pl-6 space-y-2 text-stone-700 mb-6">
+      <li>exact product identity and whether it matches a current recall;</li>
+      <li>voltage, wattage, controller, heat levels, timer, and auto-shutoff information;</li>
+      <li>required surface, clothing or liner, setup, cooling, cleaning, and storage instructions;</li>
+      <li>published dimensions and fit;</li>
+      <li>warranty, returns, support, and a current purchase route.</li>
+    </ul>
+    <p class="text-sm text-stone-600 mb-8">Manufacturer wellness claims are not treated as independently proven facts. Read our <a href="/how-we-review/" class="text-amber-700 hover:underline">review methodology</a>.</p>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="mb-2">
-          <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Budget Pick</span>
-          <h3 class="text-xl font-bold text-stone-900 mt-1">SereneLife Portable Sauna Tent</h3>
-        </div>
-        <p class="text-stone-600 mb-3">Not technically a blanket but a full-body portable sauna tent you sit inside. Different experience from a blanket but your head stays out, which many people find more comfortable for longer sessions. Less claustrophobic, easier to use, and your face stays cool. The SereneLife is the most reviewed portable sauna in this price range.</p>
-        <div class="text-sm text-stone-600 mb-4">
-          <span class="text-green-700 font-medium">Pros: head stays out, less claustrophobic, very affordable</span>
-          <span class="mx-2">|</span>
-          <span class="text-red-700 font-medium">Cons: not a true infrared session, steam-based heat</span>
-        </div>
-        <AmazonButton asin="B084GY5CHB" variant="primary" />
-      </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-5">Current blankets to investigate</h2>
+    <div class="space-y-5 mb-10">
+      <section class="border border-stone-200 rounded-xl p-5 bg-white">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-1">Detailed published specifications</p>
+        <h3 class="text-xl font-bold text-stone-900 mb-2">HigherDOSE Infrared Sauna Blanket</h3>
+        <p class="text-stone-600 mb-3">The current U.S. manufacturer page lists one heat zone, nine levels, heating up to 175&deg;F, a one-hour timer, 100-120V operation, 350-420 watts, and a one-year limited warranty. It also directs users to place the blanket on a heat-safe surface and keep the body covered with clothing or the brand's insert.</p>
+        <p class="text-stone-600 mb-4"><strong>Verify before buying:</strong> the current manual, body-fit limits, surface requirements, controller and auto-shutoff behavior, cleaning method, warranty exclusions, and return conditions. Treat the brand's detox, recovery, and other wellness statements as marketing claims unless supported separately.</p>
+        <AmazonButton asin="B09M8YQ4KB" variant="primary" label="Check the current HigherDOSE listing" ctaPosition="infrared_blanket_higherdose" />
+        <p class="text-xs text-stone-500 mt-3"><a href="https://higherdose.com/products/infrared-sauna-blanket" class="text-amber-700 hover:underline" rel="noopener noreferrer">Review the manufacturer's specifications and instructions</a></p>
+      </section>
 
+      <section class="border border-stone-200 rounded-xl p-5 bg-white">
+        <p class="text-xs font-semibold text-stone-600 uppercase tracking-wide mb-1">Current model with a recall distinction</p>
+        <h3 class="text-xl font-bold text-stone-900 mb-2">LifePro RejuvaWrap</h3>
+        <p class="text-stone-600 mb-3">LifePro's current page identifies the RejuvaWrap separately from the recalled BioRemedy. It lists adult use, nine heat levels, a 5-60 minute timer, a wired controller that remains plugged in, and placement on a heat-resistant surface.</p>
+        <p class="text-stone-600 mb-4"><strong>Verify before buying:</strong> that the item is the RejuvaWrap shown on the current listing, not a recalled BioRemedy; the exact model label; the latest manual; fit; power requirements; cleaning; warranty; and return terms. Do not accept a seller's “new version” description without label photos.</p>
+        <AmazonButton asin="B0BX7HLCYQ" variant="primary" label="Check the current RejuvaWrap listing" ctaPosition="infrared_blanket_rejuvawrap" />
+        <p class="text-xs text-stone-500 mt-3"><a href="https://lifeprofitness.com/products/rejuvawrap" class="text-amber-700 hover:underline" rel="noopener noreferrer">Review the manufacturer's current RejuvaWrap page</a></p>
+      </section>
+
+      <section class="border border-stone-200 rounded-xl p-5 bg-white">
+        <p class="text-xs font-semibold text-stone-600 uppercase tracking-wide mb-1">Different category: portable steam tent</p>
+        <h3 class="text-xl font-bold text-stone-900 mb-2">SereneLife Portable Steam Sauna</h3>
+        <p class="text-stone-600 mb-3">This is not an infrared blanket. It uses a separate steam generator and an enclosed tent, so its burn, hose, steam-diffuser, setup, cleaning, and storage questions are different. Compare it only if you prefer seated steam heat over lying inside a heated wrap.</p>
+        <p class="text-stone-600 mb-4"><strong>Verify before buying:</strong> exact model and current manual, steam-hose routing, diffuser placement, chair limits, electrical requirements, cleaning, and recall status.</p>
+        <AmazonButton asin="B084GY5CHB" variant="primary" label="Check the current SereneLife listing" ctaPosition="infrared_blanket_steam_alternative" />
+      </section>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Sauna Blanket vs Real Sauna</h2>
-    <p class="text-stone-700 mb-4">A sauna blanket is better than nothing but noticeably different from a real sauna. In a proper sauna the heat surrounds you and the air itself is hot. You can adjust the intensity by moving up or down on the benches or adding steam. You can breathe hot air, which is part of the respiratory benefit. The ritual aspect, heating up a dedicated space, walking in, cooling down outside, is part of what makes regular sauna use sustainable.</p>
-    <p class="text-stone-700 mb-6">A blanket gives you sweating, some heat therapy, and convenience. It doesn't give you the full experience. If you can get a real sauna in your life, do that. The blanket is for people who genuinely can't.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Six checks before you buy</h2>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">How to Use a Sauna Blanket</h2>
-    <p class="text-stone-700 mb-4">Wear light natural-fiber clothes inside the blanket, not skin-tight synthetics. Drink 16 oz of water before getting in. Start at a lower temperature setting and work up. Lay down on a towel you can wash easily since you'll sweat through it. Most people get better results with 30 to 40 minutes than trying to push to an hour.</p>
-    <p class="text-stone-700 mb-6">After the session, cool down before showering. Don't jump straight into an ice cold shower from a hot blanket session, give your body 10 minutes to normalize first.</p>
+    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">1. Record the identification labels</h3>
+    <p class="text-stone-700 mb-4">Save photos of the product label, controller, model number, serial number, and receipt. Compare them with current CPSC notices before purchase and again if the manufacturer announces a remedy later.</p>
+
+    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">2. Read the exact manual before ordering</h3>
+    <p class="text-stone-700 mb-4">The manual should answer where the blanket can lie, what must cover the body, whether preheating is allowed, how the controller is positioned, who should not use the product, and how it cools and stores. A generic marketplace description is not a substitute.</p>
+
+    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">3. Check the electrical setup</h3>
+    <p class="text-stone-700 mb-4">Match the voltage and plug to the intended outlet. Follow the model's rules for extension cords, power strips, controller placement, moisture, folding, and supervision. Stop using a unit with damaged wiring, hot spots, unusual odor, controller faults, or material damage, and contact the manufacturer.</p>
+
+    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">4. Test fit without guessing</h3>
+    <p class="text-stone-700 mb-4">Compare your height and body position with the published dimensions. Check neck opening, zipper access, arm access, and whether you can exit without struggling. Do not treat “one size fits all” as a measurement.</p>
+
+    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">5. Ask what “low EMF” means</h3>
+    <p class="text-stone-700 mb-4">A useful report identifies the test method, instrument, units, measurement distance, heat setting, locations tested, laboratory, and date. A badge without those details is difficult to compare. EMF language should not replace the recall, wiring, surface, temperature-control, and exit checks above.</p>
+
+    <h3 class="text-lg font-bold text-stone-900 mt-6 mb-2">6. Price the exit path</h3>
+    <p class="text-stone-700 mb-8">Confirm the return window, return-shipping responsibility, restocking terms, warranty duration, covered parts, replacement process, and support contact. Keep the box until you have inspected the unit and confirmed it matches the order.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Use the model's instructions, not a universal routine</h2>
+    <p class="text-stone-700 mb-4">Session time, heat level, clothing, preheating, surface, hydration, supervision, cooling, and cleaning vary by model. Follow the current manual. If a health condition, medication, pregnancy, heat sensitivity, or mobility issue could affect heat exposure or exiting the blanket, discuss the product with an appropriate clinician before use.</p>
+    <p class="text-stone-700 mb-8">Stop immediately if the blanket overheats, smells unusual, discolors, damages the surface beneath it, produces a controller error, or becomes difficult to exit. Unplug it when the instructions say to do so and contact the manufacturer.</p>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Blanket or sauna room?</h2>
+    <p class="text-stone-700 mb-4">Choose a blanket when compact storage and a lower-complexity setup matter most. Choose a room when you want seated space, a different heat experience, shared use, and a permanent installation. A room requires more planning, but it also gives you model-specific bench, heater, ventilation, electrical, and site choices that a blanket does not.</p>
+
+    <PlannerCTA
+      source="infrared_blanket_after_scope"
+      heading="Considering a sauna room instead?"
+      description="Build a free project brief with your site, available space, heat preference, utilities, budget, timeline, delivery access, and installation needs."
+    />
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary and current product sources</h2>
+    <ul class="list-disc pl-6 space-y-2 text-sm text-stone-700 mb-8">
+      <li><a href="https://www.cpsc.gov/Recalls/2026/Lifepro-Fitness-Recalls-Bioremedy-Infrared-Sauna-Blankets-Due-to-Risk-of-Burn-Injuries" class="text-amber-700 hover:underline" rel="noopener noreferrer">CPSC: LifePro BioRemedy recall, October 23, 2025</a></li>
+      <li><a href="https://www.cpsc.gov/Recalls/2026/Tzumi-Electronics-Recalls-SLF-Sauna-Blankets-Due-to-Fire-and-Burn-Hazards" class="text-amber-700 hover:underline" rel="noopener noreferrer">CPSC: SLF sauna blanket recall, May 28, 2026</a></li>
+      <li><a href="https://higherdose.com/products/infrared-sauna-blanket" class="text-amber-700 hover:underline" rel="noopener noreferrer">HigherDOSE: current product specifications and instructions</a></li>
+      <li><a href="https://lifeprofitness.com/products/rejuvawrap" class="text-amber-700 hover:underline" rel="noopener noreferrer">LifePro: current RejuvaWrap specifications and instructions</a></li>
+    </ul>
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
     <div class="space-y-5">
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">Do infrared sauna blankets actually work?</h3>
-        <p class="text-stone-700">They generate real heat and cause real sweating. The specific health claims vary in evidence quality. As a sweating and relaxation tool they work. They're not a medical device.</p>
+        <h3 class="font-bold text-stone-900 mb-1">How do I check a blanket for a recall?</h3>
+        <p class="text-stone-700">Match the brand, model number, controller description, and serial number against the current CPSC notice. If a seller will not show the labels, skip the listing.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">Are infrared sauna blankets safe?</h3>
-        <p class="text-stone-700">Yes for healthy adults with normal sauna precautions: stay hydrated, avoid alcohol, don't use while pregnant or with certain heart conditions.</p>
+        <h3 class="font-bold text-stone-900 mb-1">How long should I use an infrared sauna blanket?</h3>
+        <p class="text-stone-700">Use the time and heat limits in the exact model's current manual. Do not copy a routine from another blanket or a sauna room.</p>
       </div>
       <div>
-        <h3 class="font-bold text-stone-900 mb-1">How long should you use an infrared sauna blanket?</h3>
-        <p class="text-stone-700">Start at 20 to 30 minutes, work up to 45 minutes. Three to four times per week is a good regular-use cadence.</p>
+        <h3 class="font-bold text-stone-900 mb-1">Is a blanket the same as a sauna room?</h3>
+        <p class="text-stone-700">No. A blanket is a close-contact heated product. A room heats an occupied space and has different controls, installation requirements, and ways to sit or move.</p>
       </div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+      <h3 class="text-lg font-bold text-stone-900 mb-2">Continue comparing</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline">Best Portable Saunas</a></li>
-        <li><a href="/guides/sauna-health-benefits/" class="text-amber-700 hover:underline">Sauna Health Benefits</a></li>
-        <li><a href="/guides/sauna-after-workout/" class="text-amber-700 hover:underline">Sauna After Workout</a></li>
-        <li><a href="/guides/best-indoor-sauna-kits/" class="text-amber-700 hover:underline">Best Indoor Sauna Kits</a></li>
+        <li><a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline">Portable Sauna Buying Guide</a></li>
+        <li><a href="/guides/best-indoor-sauna-kits/" class="text-amber-700 hover:underline">Indoor Sauna Kit Buying Guide</a></li>
+        <li><a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">Traditional vs. Infrared Sauna</a></li>
+        <li><a href="/guides/sauna-cost/" class="text-amber-700 hover:underline">Complete Sauna Project Budget</a></li>
       </ul>
     </div>
-
   </article>
 </Base>

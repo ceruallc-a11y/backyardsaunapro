@@ -1,157 +1,116 @@
 ---
 import Base from '../../layouts/Base.astro';
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How many calories do you burn in a sauna?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A typical 20-minute sauna session burns roughly 50-100 calories above your resting baseline, depending on your body weight and the sauna temperature. A 200 lb person sitting at rest burns about 1.3 calories per minute. In a sauna, elevated heart rate and thermoregulatory effort increase that to roughly 2-3 calories per minute. Over 20 minutes: 40-60 additional calories. This is a modest calorie burn — not a replacement for exercise."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does sitting in a sauna burn calories?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, but modestly. The calorie burn in a sauna comes from your body's effort to regulate its temperature — increased heart rate, sweating, and circulation. Research suggests the metabolic increase is equivalent to a light walk. Any weight lost immediately after a sauna session is water weight from sweating, not fat loss. It returns when you rehydrate."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does the sauna help with weight loss?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not directly as a fat loss tool. The calorie burn per session is too low to drive meaningful weight loss. However, saunas may support weight loss indirectly: improved sleep quality, reduced cortisol, and better recovery can support an active lifestyle. The post-workout sauna protocol (sauna after exercise) may also increase growth hormone secretion, which supports muscle retention."
-      }
-    }
-  ]
-};
-
-function calcCalories(weight: number, minutes: number): number {
-  const base = weight * 0.0078;
-  const sauna = base * 1.5;
-  return Math.round(sauna * minutes);
-}
+const faqs = [
+  {
+    question: 'How many calories do you burn in a sauna?',
+    answer: 'There is no dependable general number. Energy use varies with resting metabolism, body composition, room conditions, exposure, acclimation, and measurement method. A heart-rate reading or a before-and-after weight does not provide a valid calorie calculation.',
+  },
+  {
+    question: 'Does a sauna burn body fat?',
+    answer: 'An ordinary sauna session should not be treated as a body-fat intervention. The immediate scale change is mainly fluid lost through sweat and is restored with rehydration. Long-term fat loss requires sustained energy balance, not temporary dehydration.',
+  },
+  {
+    question: 'Is sauna equivalent to walking or exercise?',
+    answer: 'No. Heat can raise heart rate, but passive heat does not reproduce the muscle work, movement, and full physiological training stimulus of physical activity. Do not convert sauna heart rate into walking calories or count sauna time toward exercise guidance.',
+  },
+  {
+    question: 'Can a fitness tracker measure sauna calories?',
+    answer: 'Treat the number as an unvalidated estimate. Consumer trackers commonly infer calories from heart rate and profile data. Heat changes heart rate without the same muscular work as exercise, so an exercise-derived estimate can be misleading in a sauna.',
+  },
+];
 ---
 <Base
-  title="Calories Burned in a Sauna: Calculator and Real Numbers"
-  description="How many calories does a sauna session actually burn? Calculator, research breakdown, and what the science says about saunas and weight loss."
+  title="Calories Burned in a Sauna: Why There Is No Reliable Calculator"
+  description="There is no dependable sauna calorie number. Learn why heart-rate estimates fail, why post-sauna weight loss is fluid, and what studies do and do not show."
   canonical="/guides/calories-burned-in-sauna"
 >
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  })} />
 
   <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Calories Burned in a Sauna: Real Numbers</h1>
-    <p class="text-stone-500 mb-8">Updated January 2025 &mdash; Backyard Sauna Pro</p>
+    <header class="mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Calories and body weight</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">There is no reliable sauna calorie calculator</h1>
+      <p class="text-lg text-stone-700 mb-3">A sauna changes heart rate, sweating, blood flow, and scale weight. None of those readings alone tells you how many calories the session used, and the immediate weight change is mainly fluid rather than body fat.</p>
+      <p class="text-stone-500 text-sm">Evidence review &middot; August 16, 2026</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-interior-forest-view.jpg" alt="Person relaxing in sauna session" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
+      <strong>Do not use a post-sauna scale reading as fat-loss evidence.</strong> Replacing lost fluid is part of recovery, not reversing progress. Deliberate dehydration is not a safe weight-management method.
     </div>
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page may contain affiliate links.
+    <section class="bg-stone-900 text-white rounded-lg p-6 mb-10">
+      <p class="text-xs font-semibold uppercase tracking-wide text-amber-300 mb-2">Direct answer</p>
+      <h2 class="text-2xl font-bold mb-3">The honest number is unknown for an individual session.</h2>
+      <p class="text-stone-200">Published studies use specific participants, rooms, temperatures, intervals, and measurement methods. They cannot support a universal table that multiplies body weight by minutes. A precise-looking estimate would be more confident than the evidence.</p>
+    </section>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Why common calculators fail</h2>
+    <div class="overflow-x-auto border border-stone-200 rounded-lg mb-10">
+      <table class="w-full min-w-[720px] text-sm text-left">
+        <thead class="bg-stone-100 text-stone-900"><tr><th class="px-4 py-3">Input</th><th class="px-4 py-3">What it actually shows</th><th class="px-4 py-3">Why it does not prove calories</th></tr></thead>
+        <tbody class="divide-y divide-stone-200 text-stone-700">
+          <tr><th scope="row" class="px-4 py-3 text-stone-900">Heart rate</th><td class="px-4 py-3">Cardiovascular response to heat</td><td class="px-4 py-3">Exercise equations assume a relationship between heart rate, oxygen use, and muscular work that passive heat can change.</td></tr>
+          <tr><th scope="row" class="px-4 py-3 text-stone-900">Body weight</th><td class="px-4 py-3">One factor in resting energy use and sweat loss</td><td class="px-4 py-3">People with the same weight can differ in composition, metabolism, sweat rate, acclimation, health, and medication.</td></tr>
+          <tr><th scope="row" class="px-4 py-3 text-stone-900">Minutes</th><td class="px-4 py-3">Exposure duration</td><td class="px-4 py-3">Room temperature, humidity, bench height, ventilation, breaks, and individual heat response change the physiological load.</td></tr>
+          <tr><th scope="row" class="px-4 py-3 text-stone-900">Scale change</th><td class="px-4 py-3">Mostly acute fluid loss</td><td class="px-4 py-3">A lower number after sweating is not a measurement of fat oxidation or net energy balance.</td></tr>
+          <tr><th scope="row" class="px-4 py-3 text-stone-900">Tracker estimate</th><td class="px-4 py-3">An algorithmic output</td><td class="px-4 py-3">Unless validated for the exact passive-heat setting, the display is not a direct metabolic measurement.</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">The short answer: a 20-minute sauna session burns roughly 50-100 calories above your baseline. Enough to be real, not enough to be your primary weight loss strategy. Here is the full breakdown.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Sauna Calorie Calculator</h2>
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <div class="overflow-x-auto">
-        <table class="text-sm w-full">
-          <thead>
-            <tr class="text-left text-stone-500 border-b border-stone-200">
-              <th class="pb-2 pr-6">Body Weight</th>
-              <th class="pb-2 pr-6">15 min</th>
-              <th class="pb-2 pr-6">20 min</th>
-              <th class="pb-2 pr-6">30 min</th>
-              <th class="pb-2">45 min</th>
-            </tr>
-          </thead>
-          <tbody class="text-stone-700">
-            <tr class="border-b border-stone-100">
-              <td class="py-2 pr-6 font-semibold">130 lbs</td>
-              <td class="py-2 pr-6">~30</td>
-              <td class="py-2 pr-6">~40</td>
-              <td class="py-2 pr-6">~60</td>
-              <td class="py-2">~90</td>
-            </tr>
-            <tr class="border-b border-stone-100">
-              <td class="py-2 pr-6 font-semibold">160 lbs</td>
-              <td class="py-2 pr-6">~40</td>
-              <td class="py-2 pr-6">~50</td>
-              <td class="py-2 pr-6">~75</td>
-              <td class="py-2">~110</td>
-            </tr>
-            <tr class="border-b border-stone-100">
-              <td class="py-2 pr-6 font-semibold">200 lbs</td>
-              <td class="py-2 pr-6">~50</td>
-              <td class="py-2 pr-6">~65</td>
-              <td class="py-2 pr-6">~95</td>
-              <td class="py-2">~140</td>
-            </tr>
-            <tr>
-              <td class="py-2 pr-6 font-semibold">240 lbs</td>
-              <td class="py-2 pr-6">~60</td>
-              <td class="py-2 pr-6">~78</td>
-              <td class="py-2 pr-6">~115</td>
-              <td class="py-2">~170</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="text-xs text-stone-500 mt-3">Estimates based on approximately 1.5x resting metabolic rate during sauna use. Individual results vary with temperature and body composition.</p>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What the studies establish</h2>
+    <div class="space-y-5 mb-10">
+      <section class="border border-stone-200 rounded-lg p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-2">Acute heat changes measurable physiology</h3>
+        <p class="text-sm text-stone-700">A study of 45 young, sedentary, overweight men measured heart rate, blood pressure, energy expenditure, and body-mass loss during four 10-minute dry-sauna exposures separated by cooling breaks. Responses varied with anthropometric and body-composition measures. That narrow protocol does not justify a general consumer formula.</p>
+      </section>
+      <section class="border border-stone-200 rounded-lg p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-2">Post-session weight change tracks dehydration</h3>
+        <p class="text-sm text-stone-700">A separate study of 674 sedentary 19- and 20-year-olds examined body-mass loss after two 10-minute sauna exposures. The authors framed the equations as a way to estimate fluid replacement and dehydration risk, not body-fat loss.</p>
+      </section>
+      <section class="border border-stone-200 rounded-lg p-5 bg-white">
+        <h3 class="font-bold text-stone-900 mb-2">Weight management still depends on sustained behavior</h3>
+        <p class="text-sm text-stone-700">CDC identifies eating patterns and regular physical activity as the established basis for reaching and maintaining a healthy weight. Sauna does not replace either one.</p>
+      </section>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where the Calorie Burn Comes From</h2>
-    <p class="text-stone-700 mb-4">Your body works hard to regulate temperature in a 160-185°F environment. The thermoregulatory response involves:</p>
-    <ul class="space-y-2 text-stone-700 mb-6 ml-4 text-sm">
-      <li><span class="font-semibold">Increased heart rate:</span> Rises to 120-150 BPM in a hot sauna, similar to a moderate walk</li>
-      <li><span class="font-semibold">Sweating:</span> Evaporative cooling burns some calories, but most of the weight lost is water — not fat</li>
-      <li><span class="font-semibold">Elevated circulation:</span> Blood pumped to the skin surface for cooling requires cardiac effort</li>
-    </ul>
-    <p class="text-stone-700 mb-6">A 2019 study in the journal Temperature estimated that a 25-minute sauna session burns approximately 1.8x the calories of seated rest. For a 175 lb person, that translates to about 73 calories over 25 minutes.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">The Weight Loss Reality</h2>
-    <p class="text-stone-700 mb-4">What most people observe after a sauna session is a drop on the scale of 0.5-2 lbs. That is almost entirely water weight from sweating — not fat. It returns when you drink fluids. Rehydrating after a sauna session is not optional; it is necessary to prevent dehydration.</p>
-    <p class="text-stone-700 mb-6">For context: a pound of fat requires burning roughly 3,500 calories. At 65-100 calories per 20-minute session, you would need to sit in a sauna for 35-53 hours to burn a single pound of fat — with no food or drink. Sauna is not a weight loss tool in the direct sense.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Where Sauna Does Help Indirectly</h2>
-    <p class="text-stone-700 mb-4">The indirect effects are more compelling than the direct calorie math:</p>
-    <ul class="space-y-2 text-stone-700 mb-8 ml-4 text-sm">
-      <li><span class="font-semibold">Post-workout recovery:</span> Faster muscle recovery means more consistent training, which drives real fat loss. See our <a href="/guides/sauna-after-workout/" class="text-amber-700 hover:underline">sauna after workout guide</a>.</li>
-      <li><span class="font-semibold">Sleep quality:</span> Regular sauna use improves deep sleep, which regulates hunger hormones (ghrelin, leptin)</li>
-      <li><span class="font-semibold">Cortisol reduction:</span> Lower chronic stress correlates with reduced fat retention, especially abdominal fat</li>
-      <li><span class="font-semibold">Growth hormone:</span> Several studies show sauna sessions increase GH release, which supports muscle retention during weight loss</li>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">A better way to interpret the session</h2>
+    <ul class="list-disc pl-5 space-y-3 text-stone-700 mb-10">
+      <li>Count sauna time as passive heat exposure, not exercise minutes.</li>
+      <li>Ignore the “calories burned” display unless a device maker provides validation for that exact sauna use.</li>
+      <li>Replace lost fluid according to ordinary health guidance and individual clinical needs.</li>
+      <li>Do not eat more or exercise less because a sauna calculator claims a large calorie burn.</li>
+      <li>Use nutrition, regular physical activity, sleep, and appropriate clinical support for weight-management goals.</li>
     </ul>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How many calories do you burn in a sauna?</h3>
-        <p class="text-stone-700">Roughly 50-100 calories above baseline for a 20-minute session, depending on body weight. About 1.5x resting metabolic rate during sauna use.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Does sitting in a sauna burn calories?</h3>
-        <p class="text-stone-700">Yes, modestly — similar to a light walk. Any immediate weight loss is water, not fat.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">Does the sauna help with weight loss?</h3>
-        <p class="text-stone-700">Not as a primary tool. The calorie burn per session is too low. The better argument is indirect: improved sleep, recovery, and cortisol reduction support an active lifestyle that does drive weight loss.</p>
-      </div>
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Primary sources checked</h2>
+    <ul class="space-y-3 text-sm text-stone-700 mb-10">
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/30800676/" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Podstawski et al.: physiological responses and estimated energy expenditure in a narrow dry-sauna protocol</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/25614882/" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">Podstawski et al.: sauna-induced body-mass loss and fluid-replacement context</a></li>
+      <li><a href="https://www.cdc.gov/healthy-weight-growth/physical-activity/index.html" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">CDC: physical activity, eating patterns, calorie deficit, and healthy weight</a></li>
+      <li><a href="https://www.cdc.gov/healthy-weight-growth/losing-weight/index.html" target="_blank" rel="noopener" class="font-semibold text-amber-700 hover:underline">CDC: evidence-based weight-loss planning</a></li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Frequently asked questions</h2>
+    <div class="space-y-5 mb-10">
+      {faqs.map((faq) => <div><h3 class="font-bold text-stone-900 mb-1">{faq.question}</h3><p class="text-stone-700">{faq.answer}</p></div>)}
     </div>
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+    <div class="bg-stone-50 border border-stone-200 rounded-lg p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue with the evidence</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/sauna-for-weight-loss/" class="text-amber-700 hover:underline">Sauna for Weight Loss: What the Science Says</a></li>
-        <li><a href="/guides/sauna-after-workout/" class="text-amber-700 hover:underline">Sauna After Workout: Recovery Benefits</a></li>
-        <li><a href="/guides/how-long-to-stay-in-sauna/" class="text-amber-700 hover:underline">How Long to Stay in a Sauna</a></li>
-        <li><a href="/guides/sauna-health-benefits/" class="text-amber-700 hover:underline">Sauna Health Benefits</a></li>
+        <li><a href="/guides/sauna-for-weight-loss/" class="text-amber-700 hover:underline">Sauna, fluid loss, and body weight</a></li>
+        <li><a href="/guides/sauna-health-benefits/" class="text-amber-700 hover:underline">Sauna health evidence and limitations</a></li>
+        <li><a href="/guides/how-to-use-a-sauna/" class="text-amber-700 hover:underline">Beginner sauna safety guide</a></li>
       </ul>
     </div>
   </article>

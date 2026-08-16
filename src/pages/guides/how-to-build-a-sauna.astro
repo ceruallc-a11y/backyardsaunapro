@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -51,6 +52,12 @@ const faqSchema = {
     <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
       <strong>Scope:</strong> This guide explains project order and decision points. It intentionally does not give universal framing, wiring, chimney, clearance, insulation, vapor-control, or ventilation specifications. Those details must come from the approved plans, product manuals, local code, and qualified trades.
     </div>
+
+    <PlannerCTA
+      source="sauna_build_guide_after_scope"
+      heading="Organize the project before selecting parts"
+      description="Capture the location, heat source, dimensions, budget, timeline, and installation needs before turning general research into quotes."
+    />
 
     <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">1. Define the project before selecting parts</h2>
     <ul class="space-y-3 text-stone-700 mb-8">
@@ -124,6 +131,7 @@ const faqSchema = {
         <li><a href="/guides/outdoor-sauna-buying-checklist/" class="text-amber-700 hover:underline">Outdoor sauna buying checklist</a></li>
         <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Foundation planning guide</a></li>
         <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Electrical planning guide</a></li>
+        <li><a href="/guides/sauna-door-guide/" class="text-amber-700 hover:underline">Sauna door and egress planning</a></li>
         <li><a href="/guides/outdoor-sauna-permits/" class="text-amber-700 hover:underline">Permit planning guide</a></li>
         <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Heater sizing guide</a></li>
       </ul>

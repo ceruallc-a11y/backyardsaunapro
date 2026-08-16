@@ -1,133 +1,211 @@
 ---
 import Base from '../../layouts/Base.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is an electric or wood-burning sauna heater better?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Neither heat source is universally better. Compare the exact room, heater sizing range, electrical service, chimney path, local approvals, installation scope, controls, fuel handling, and maintenance before choosing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is a wood-burning sauna cheaper to run?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Not always. Wood cost, storage, handling, chimney service, and the value of tending the fire vary by property. Electric cost depends on heater power, run time, thermostat cycling, local utility rates, weather, and room construction.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can an electric sauna work off-grid?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Only if the power system can support the exact heater and other loads. A wood-burning heater can avoid the electric heating load, but the project may still use electricity for lights or controls and still needs an approved stove, chimney, clearances, and ventilation plan.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I convert an electric sauna to wood-burning later?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A conversion is a new equipment and building-scope decision, not a simple heater swap. The room may need a compatible stove, chimney, heat shielding, clearances, floor protection, combustion air, ventilation changes, permits, and insurer approval.',
+      },
+    },
+  ],
+};
 ---
 <Base
-  title="Electric vs Wood-Fired Sauna: Which Is Better for Your Backyard?"
-  description="Electric sauna heater vs wood-burning stove honest comparison of cost, heat quality, maintenance, convenience, and which is right for your situation."
+  title="Electric vs Wood Sauna Heater: Choose by Site Requirements"
+  description="Compare electric and wood-burning sauna heaters by electrical service, chimney path, clearances, controls, fuel handling, maintenance, and installed scope."
   canonical="/guides/electric-vs-wood-fired-sauna"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <article class="max-w-3xl mx-auto">
     <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Planning Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Electric vs Wood-Fired Sauna: Which Is Better?
-      </h1>
-      <p class="text-stone-500 text-sm">Updated October 2024 · 9 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        This is one of the most debated questions in the sauna world. Electric is convenient; wood-fired is authentic. But the right answer depends heavily on your situation, budget, and what you want out of the experience.
-      </p>
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Heater decision guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-3">Electric vs Wood Sauna Heater: Start With the Site</h1>
+      <p class="text-stone-500">Reviewed August 2026 &middot; Planning guide, not an installation manual</p>
+      <p class="text-lg text-stone-700 mt-4">The best heat source is the one your room and property can support safely. Before comparing atmosphere or controls, check power, chimney routing, clearances, approvals, ventilation, and the complete installed scope.</p>
     </header>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-wood-stove-interior.jpg" alt="Traditional sauna with wood-burning stove" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
 
+    <div class="rounded-xl overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-wood-stove-interior.jpg" alt="Sauna interior with a wood-burning heater whose chimney and clearances must be planned with the room" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
+    </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-2">Quick Verdict</h2>
-      <p class="text-sm text-stone-700">
-        <strong>Electric</strong> wins for convenience, control, and urban/suburban installs. <strong>Wood-fired</strong> wins for the authentic experience, off-grid capability, and that irreplaceable wood-smoke ambiance. Neither is objectively better it depends on you.
-      </p>
+      <h2 class="font-bold text-stone-900 mb-2">A useful first screen</h2>
+      <p class="text-sm text-stone-700"><strong>Electric usually fits better</strong> when the property can support the specified circuit and the owner values predictable controls. <strong>Wood may fit better</strong> when the exact room accepts a listed stove and there is a viable chimney, clearance, fuel-storage, and local-approval path. A preference is not a site assessment.</p>
     </div>
 
-    <h2 class="text-2xl font-bold mt-8 mb-6 text-stone-900">Side-by-Side Comparison</h2>
-
-    <div class="overflow-x-auto mb-8">
-      <table class="w-full text-sm border-collapse">
-        <thead>
-          <tr class="bg-stone-800 text-white">
-            <th class="text-left p-3">Factor</th>
-            <th class="text-left p-3">Electric</th>
-            <th class="text-left p-3">Wood-Fired</th>
-          </tr>
-        </thead>
-        <tbody>
-          {[
-            ["Heat-up Time", "30–45 min", "45–90 min"],
-            ["Temperature Control", "Precise digital control", "Manual takes practice"],
-            ["Installation", "Electrician needed for 240V", "Chimney/flue required"],
-            ["Operating Cost", "$1–2 per session (electricity)", "Cost of firewood (varies)"],
-            ["Maintenance", "Very low occasional rock replacement", "Regular ash cleanup, chimney inspection"],
-            ["Experience", "Consistent, reliable", "Ritualistic, unpredictable (in a good way)"],
-            ["Off-Grid Capable", "No", "Yes"],
-            ["Steam (löyly)", "Yes pour water on rocks", "Yes superior steam quality"],
-            ["Smell", "None", "Wood smoke aroma"],
-            ["HOA/Code Issues", "Rarely", "Sometimes (smoke/fire restrictions)"],
-            ["Upfront Cost", "$400–$1,500 (heater)", "$300–$2,000 (stove + flue)"],
-          ].map(([factor, elec, wood], i) => (
-            <tr class={i % 2 === 0 ? "bg-white" : "bg-stone-50"}>
-              <td class="p-3 font-medium text-stone-700 border-b border-stone-200">{factor}</td>
-              <td class="p-3 text-stone-600 border-b border-stone-200">{elec}</td>
-              <td class="p-3 text-stone-600 border-b border-stone-200">{wood}</td>
+    <section class="mb-10" aria-labelledby="heater-comparison">
+      <h2 id="heater-comparison" class="text-2xl font-bold text-stone-900 mb-4">Compare the requirements, not a generic winner</h2>
+      <div class="overflow-x-auto border border-stone-200 rounded-lg">
+        <table class="w-full min-w-[720px] text-sm border-collapse">
+          <thead>
+            <tr class="bg-stone-900 text-white">
+              <th class="text-left p-3">Decision</th>
+              <th class="text-left p-3">Electric heater</th>
+              <th class="text-left p-3">Wood-burning heater</th>
+              <th class="text-left p-3">Verify before purchase</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">The Case for Electric</h2>
-    <p class="text-stone-600 mb-4">Electric sauna heaters are the dominant choice for a reason. You set the temperature, walk away, and come back to a perfectly heated sauna. No fire-building ritual, no ash cleanup, no waiting for the wood to catch. For most suburban homeowners who want to sauna 3–4 times a week, electric is the pragmatic choice.</p>
-    <p class="text-stone-600 mb-4">Modern digital controls let you schedule your sauna via an app, set precise temperatures, and get alerts when it's ready. You can't do any of that with wood.</p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">The Case for Wood-Fired</h2>
-    <p class="text-stone-600 mb-4">Ask any Finnish sauna purist and they'll tell you: wood-fired is the real thing. Building the fire is part of the ritual. The smell of wood smoke, the crackling sound, the radiant heat from a wood stove it creates an experience that electric simply can't replicate.</p>
-    <p class="text-stone-600 mb-4">The steam quality is also noticeably different. Water poured on a wood-fired sauna stove produces a softer, silkier steam (called <em>löyly</em>) that many sauna enthusiasts swear is superior to electric-generated steam.</p>
-    <p class="text-stone-600 mb-4">And if you have a rural property with abundant firewood, your operating costs approach zero.</p>
-
-    <div class="grid md:grid-cols-2 gap-4 my-8">
-      <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
-        <h3 class="font-bold text-blue-900 mb-2">Choose Electric If…</h3>
-        <ul class="text-sm text-blue-800 space-y-1">
-          <li> You're in a suburban/urban area</li>
-          <li> You want maximum convenience</li>
-          <li> You sauna frequently (3+ times/week)</li>
-          <li> HOA or fire codes limit wood burning</li>
-          <li> You want to pre-schedule sessions</li>
-        </ul>
-      </div>
-      <div class="bg-orange-50 border border-orange-200 rounded-lg p-5">
-        <h3 class="font-bold text-orange-900 mb-2">Choose Wood-Fired If…</h3>
-        <ul class="text-sm text-orange-800 space-y-1">
-          <li> You want the authentic experience</li>
-          <li> You have rural property with firewood</li>
-          <li> You're off-grid or want to be</li>
-          <li> No 240V service available</li>
-          <li> The ritual matters to you</li>
-        </ul>
-      </div>
-    </div>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4 text-stone-900">Our Top Electric Heater Pick</h2>
-    <div class="bg-white border border-stone-200 rounded-xl p-5 shadow-sm mb-8">
-      <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded">BEST ELECTRIC</span>
-      <h3 class="font-semibold text-stone-900 mt-2 mb-1">Harvia KIP-60W with Xenio Digital Controls</h3>
-      <p class="text-stone-600 text-sm mb-3">Finnish-made, 6kW, handles up to 300 cubic feet. Includes sauna stones and digital wall controller. The most reliable electric heater we recommend.</p>
-      <AmazonButton asin="B0B7TRM95Y" price="~$579" />
-    </div>
-
-    <section class="mt-4">
-      <h2 class="text-2xl font-bold mb-4 text-stone-900">FAQs</h2>
-      <div class="space-y-4">
-        {[
-          ["Can I convert from electric to wood-fired later?", "Yes, but it's not trivial. You'll need to add a proper chimney/flue system and potentially enlarge the heater opening. Better to decide upfront."],
-          ["Is wood-fired sauna legal everywhere?", "No. Some municipalities, HOAs, and fire districts restrict wood-burning appliances especially during fire season or in dense neighborhoods. Check before you buy a wood stove."],
-          ["Which gets hotter?", "Both can reach 190°F+. Wood stoves often produce a more intense dry heat; electric is more consistent. In practice, temperature ceiling isn't a real differentiator."],
-          ["Is wood-fired more dangerous?", "Only if improperly installed. A correctly installed wood stove with proper clearances and a code-compliant chimney is very safe. Don't DIY the flue without understanding the requirements."],
-        ].map(([q, a]) => (
-          <div class="border-b border-stone-200 pb-4">
-            <h3 class="font-semibold text-stone-800 mb-1">{q}</h3>
-            <p class="text-stone-600 text-sm">{a}</p>
-          </div>
-        ))}
+          </thead>
+          <tbody class="text-stone-700">
+            {[
+              ['Energy path', 'A dedicated high-voltage circuit is common for installed home heaters.', 'The fire supplies heat, but lighting or accessories may still use power.', 'Exact heater manual, panel capacity, utility route, and other loads.'],
+              ['Installation path', 'Heater, controls, sensor, wiring, disconnect, and required electrical work.', 'Stove, chimney system, wall or roof penetration, shielding, floor protection, and combustion air.', 'Complete equipment list, qualified trades, permits, inspections, and insurer requirements.'],
+              ['Controls', 'Model-dependent built-in or separate controls; remote features are not universal.', 'Heat output is managed through fuel loading and combustion controls.', 'Control package, placement rules, operating instructions, and remote-use restrictions.'],
+              ['Room fit', 'Manufacturer room-volume range, glass correction, clearances, and sensor location.', 'Manufacturer room-volume range, clearances, chimney connection, guards, and ventilation.', 'The exact room dimensions and all non-insulated surfaces.'],
+              ['Routine work', 'Inspect stones and equipment and follow the maintenance schedule.', 'Store dry fuel, tend the fire, remove ash, and maintain the chimney as required.', 'Owner manual, chimney service plan, fuel source, and safe ash handling.'],
+              ['Operating cost', 'Power x estimated full-load hours x local electricity rate gives a planning ceiling.', 'Fuel price alone misses storage, handling, chimney service, and owner time.', 'Local rates, actual use pattern, weather, room performance, and maintenance.'],
+              ['Off-grid use', 'Requires a power system sized for the heater and coincident loads.', 'Can avoid the electric heating load where the room and stove are approved.', 'Whole-property power plan and every non-heating electrical load.'],
+            ].map(([decision, electric, wood, verify], index) => (
+              <tr class={index % 2 === 0 ? 'bg-white' : 'bg-stone-50'}>
+                <td class="p-3 font-semibold border-b border-stone-200">{decision}</td>
+                <td class="p-3 border-b border-stone-200">{electric}</td>
+                <td class="p-3 border-b border-stone-200">{wood}</td>
+                <td class="p-3 border-b border-stone-200">{verify}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <div class="bg-stone-800 text-white rounded-xl p-6 text-center mt-12">
-      <h3 class="text-xl font-bold mb-2">Ready to See Our Full Heater Rankings?</h3>
-      <p class="text-stone-300 mb-4">Compare electric sauna heaters by sizing, controls, installation requirements, warranty information, and price tier.</p>
-      <a href="/guides/best-electric-sauna-heaters/" class="inline-block bg-amber-400 hover:bg-amber-500 text-stone-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-        Best Electric Sauna Heaters →
-      </a>
+    <section class="mb-10" aria-labelledby="current-examples">
+      <h2 id="current-examples" class="text-2xl font-bold text-stone-900 mb-4">Why model-level details change the answer</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white border border-stone-200 rounded-lg p-5">
+          <p class="text-xs font-bold uppercase text-amber-700 mb-2">Current electric example</p>
+          <h3 class="font-bold text-stone-900 mb-2">Harvia KIP60W</h3>
+          <p class="text-sm text-stone-700">Harvia currently lists this 6 kW, 240 V model for 170 to 300 cubic feet and specifies a separate control unit. Those numbers apply to this item number, not every 6 kW heater or every 300-cubic-foot room.</p>
+        </div>
+        <div class="bg-white border border-stone-200 rounded-lg p-5">
+          <p class="text-xs font-bold uppercase text-amber-700 mb-2">Current wood example</p>
+          <h3 class="font-bold text-stone-900 mb-2">Harvia Pro 20</h3>
+          <p class="text-sm text-stone-700">Harvia currently publishes a room-volume range plus distinct front, rear, side, and ceiling clearances for this stove. The chimney opening and optional shields affect the layout, so the stove name alone is not enough.</p>
+        </div>
+      </div>
+      <p class="text-xs text-stone-500 mt-3">Examples are used to show why exact product data matters. They are not rankings or universal specifications. Confirm the current manual before ordering.</p>
+    </section>
+
+    <PlannerCTA
+      source="electric_vs_wood_after_site_comparison"
+      heading="Put the heater choice into a complete project brief"
+      description="Capture the room, site, electrical status, heat preference, budget, timeline, and installation needs before asking a dealer or installer to review the project."
+    />
+
+    <section class="mt-10 mb-10" aria-labelledby="electric-fit">
+      <h2 id="electric-fit" class="text-2xl font-bold text-stone-900 mb-4">Electric is the stronger candidate when...</h2>
+      <div class="bg-white border border-stone-200 rounded-lg p-5">
+        <ul class="space-y-2 text-stone-700">
+          <li>[ ] An electrician has confirmed a practical circuit and equipment route.</li>
+          <li>[ ] The selected heater and controls match the room and intended use.</li>
+          <li>[ ] Predictable controls matter more than tending a fire.</li>
+          <li>[ ] A chimney path is impractical or a solid-fuel appliance is not approved.</li>
+          <li>[ ] The owner understands the installation scope and estimated electricity use.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="wood-fit">
+      <h2 id="wood-fit" class="text-2xl font-bold text-stone-900 mb-4">Wood is the stronger candidate when...</h2>
+      <div class="bg-white border border-stone-200 rounded-lg p-5">
+        <ul class="space-y-2 text-stone-700">
+          <li>[ ] The exact sauna and stove combination allows wood-burning heat.</li>
+          <li>[ ] A qualified installer has identified a compliant chimney and clearance path.</li>
+          <li>[ ] Local authorities, the property insurer, and any HOA requirements have been checked.</li>
+          <li>[ ] Dry fuel can be stored and moved without creating a fire, moisture, or access problem.</li>
+          <li>[ ] The owner accepts fire tending, ash handling, and chimney maintenance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="decision-sequence">
+      <h2 id="decision-sequence" class="text-2xl font-bold text-stone-900 mb-4">A six-step decision sequence</h2>
+      <ol class="space-y-4 text-stone-700 list-decimal pl-5">
+        <li><strong>Measure the finished hot room.</strong> Record inside width, depth, height, glass, masonry, and other non-insulated surfaces.</li>
+        <li><strong>Shortlist compatible heaters.</strong> Use the manufacturer's current sizing method, room range, clearances, and approved accessories.</li>
+        <li><strong>Test both site paths.</strong> Price the electric service and controls. Separately assess the stove, chimney, penetrations, shielding, and floor protection.</li>
+        <li><strong>Check the local path.</strong> Ask the authority having jurisdiction, qualified trades, insurer, and HOA where applicable.</li>
+        <li><strong>Compare complete costs.</strong> Include equipment, freight, labor, permits, site work, maintenance, and energy or fuel. Do not compare heater prices alone.</li>
+        <li><strong>Keep the final documents together.</strong> Retain the approved plan, product manuals, permits, inspection records, photos, and maintenance schedule.</li>
+      </ol>
+    </section>
+
+    <section class="mb-10" aria-labelledby="cost-check">
+      <h2 id="cost-check" class="text-2xl font-bold text-stone-900 mb-4">Estimate cost without inventing a universal session price</h2>
+      <p class="text-stone-700 mb-4">For electric heat, multiply heater kilowatts by estimated full-power hours and your utility rate. A thermostat can cycle the elements after warm-up, so this is a planning ceiling rather than a guaranteed bill. Wood cost depends on species, moisture, local pricing, storage, firing practice, and the stove-room combination.</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="/tools/sauna-electricity-cost-calculator/" class="inline-flex min-h-12 items-center justify-center rounded-md bg-stone-900 px-5 py-3 font-semibold text-white hover:bg-stone-800">Estimate electricity cost</a>
+        <a href="/tools/sauna-cost-calculator/" class="inline-flex min-h-12 items-center justify-center rounded-md border border-stone-300 bg-white px-5 py-3 font-semibold text-stone-900 hover:border-stone-500">Compare the project scope</a>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="primary-sources">
+      <h2 id="primary-sources" class="text-2xl font-bold text-stone-900 mb-4">Primary sources used</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="https://www.harvia.com/en-US/products/JH60WU1UL/kip60w-60-kw-240v-steel" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Harvia KIP60W product data</h3>
+          <p class="text-sm text-stone-700">Current US product listing for room range, electrical supply, controls, dimensions, clearances, and certification.</p>
+        </a>
+        <a href="https://www.harvia.com/en-US/products/WKPR20M/pro-20-black" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400">
+          <h3 class="font-bold text-stone-900 mb-2">Harvia Pro 20 product data</h3>
+          <p class="text-sm text-stone-700">Current product listing for room range, chimney connections, dimensions, clearances, and accessories.</p>
+        </a>
+        <a href="https://www.finnleo.com/hubfs/FINNLEO/Finnleo%20Downloads/Installation%20Manuals/71-0156_Euro_Outdoor_Room_Rev_D_09-24-2025.pdf" target="_blank" rel="noopener" class="block border border-stone-200 rounded-lg p-5 hover:border-amber-400 md:col-span-2">
+          <h3 class="font-bold text-stone-900 mb-2">Finnleo Euro Outdoor Room manual</h3>
+          <p class="text-sm text-stone-700">Current room instructions covering licensed electrical work, heater-manual coordination, and specialized wood-burning installation.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-10" aria-labelledby="heater-faq">
+      <h2 id="heater-faq" class="text-2xl font-bold text-stone-900 mb-4">Frequently asked questions</h2>
+      <div class="space-y-5">
+        <div><h3 class="font-bold text-stone-900 mb-1">Which heater warms a sauna faster?</h3><p class="text-stone-700">Do not decide from fuel type alone. Room construction, outdoor temperature, glazing, ventilation, heater output, stone mass, controls, fuel, and operating practice all affect warm-up.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-1">Does wood always produce better steam?</h3><p class="text-stone-700">That is a preference claim, not a universal product fact. Stone quantity, stone temperature, room airflow, water application, and the exact heater all shape the experience.</p></div>
+        <div><h3 class="font-bold text-stone-900 mb-1">Can I convert later?</h3><p class="text-stone-700">Treat conversion as a new project. Recheck equipment approval, room sizing, clearances, chimney, shielding, floor protection, ventilation, permits, and insurance before changing the heat source.</p></div>
+      </div>
+    </section>
+
+    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
+      <h2 class="text-lg font-bold text-stone-900 mb-2">Continue the heater plan</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/best-sauna-heater/" class="text-amber-700 hover:underline">Open the heater planning hub</a></li>
+        <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Size a heater from the exact room</a></li>
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Plan the electrical path</a></li>
+        <li><a href="/guides/best-wood-burning-sauna-heaters/" class="text-amber-700 hover:underline">Compare wood-burning heater requirements</a></li>
+        <li><a href="/guides/propane-sauna-heater/" class="text-amber-700 hover:underline">Review propane as a separate fuel path</a></li>
+        <li><a href="/guides/sauna-ventilation/" class="text-amber-700 hover:underline">Coordinate ventilation with the heater</a></li>
+      </ul>
     </div>
   </article>
 </Base>

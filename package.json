@@ -11,6 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "audit:affiliates": "node scripts/audit-affiliate-links.mjs",
+    "audit:internal-links": "node scripts/audit-internal-links.mjs",
+    "audit:lead-api": "node scripts/lead-api-health.mjs",
     "audit:seo": "node scripts/seo-followup.mjs",
     "leads:queue": "node scripts/lead-queue-report.mjs"
   },

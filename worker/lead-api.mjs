@@ -50,8 +50,8 @@ export function validateLead(input) {
   for (const [field, allowed] of Object.entries(choices)) {
     if (!allowed.includes(lead[field])) errors[field] = `Choose a valid ${field}.`;
   }
-  if (!/^(?:\d{5}(?:-\d{4})?|[A-Za-z][A-Za-z .'-]{2,19})$/.test(lead.region)) {
-    errors.region = 'Enter a five-digit ZIP code or a short region.';
+  if (!/^\d{5}(?:-\d{4})?$/.test(lead.region)) {
+    errors.region = 'Enter a five-digit U.S. ZIP code or ZIP+4.';
   }
   if (!lead.contactConsent) errors.contactConsent = 'Consent is required so we can respond to your request.';
 
@@ -153,7 +153,10 @@ export default {
     const duplicate = await env.DB.prepare(
       "SELECT id FROM leads WHERE email_hash = ? AND zip_region = ? AND created_at >= datetime('now', '-24 hours') ORDER BY created_at DESC LIMIT 1"
     ).bind(emailHash, lead.region).first();
-    if (duplicate?.id) return json({ ok: true, receiptId: duplicate.id, duplicate: true }, 200, origin);
+    if (duplicate?.id) {
+      console.log(JSON.stringify({ event: 'lead_duplicate', receiptId: duplicate.id }));
+      return json({ ok: true, receiptId: duplicate.id, duplicate: true }, 200, origin);
+    }
 
     const id = crypto.randomUUID();
     const score = scoreLead(lead);
