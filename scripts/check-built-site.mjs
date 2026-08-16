@@ -19,6 +19,7 @@ const htmlFiles = files.filter((file) => file.endsWith('.html'));
 const relativeFiles = new Set(files.map((file) => `/${path.relative(dist, file).replaceAll('\\', '/')}`));
 const pages = new Set();
 const findings = [];
+const currentYear = new Date().getUTCFullYear();
 
 const pageSourceRoot = path.join(root, 'src', 'pages');
 const plannerCtaProps = new Set(['source', 'heading', 'description']);
@@ -673,6 +674,10 @@ for (const file of htmlFiles) {
   const redirectTarget = html.match(/<meta\s+http-equiv=["']refresh["'][^>]*content=["'][^"']*url=([^"']+)["']/i)?.[1]?.trim();
 
   if (!title) findings.push({ type: 'missing_title', route });
+  const titleYear = title?.match(/\b(20\d{2})\b/)?.[1];
+  if (titleYear && Number(titleYear) < currentYear) {
+    findings.push({ type: 'stale_title_year', route, value: titleYear });
+  }
   if (!canonical) findings.push({ type: 'missing_canonical', route });
   if (redirectTarget) {
     const pathname = new URL(redirectTarget, 'https://backyardsaunapro.com').pathname;
