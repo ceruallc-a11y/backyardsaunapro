@@ -1,209 +1,221 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
-const kenovaUrl = "https://selectsaunas.com/products/almost-heaven-kenova-4-6-person-barrel-sauna-6x7-ft";
+const reviewedAt = 'August 15, 2026';
+
+const options = [
+  {
+    label: 'Shorter Thermo-Spruce barrel',
+    name: 'SaunaLife E6 3-Person Barrel Sauna',
+    retailerHref: 'https://selectsaunas.com/products/saunalife-model-e6-sauna-barrel-ergo-series-sauna-barrel-59x81?sca_ref=10752576.S2huPg7gFg',
+    manufacturerHref: 'https://saunalife.com/saunas/ergo-series-model-e6/',
+    fit: 'A buyer who wants a shorter room length, contoured seating, a listed shingle kit, and a manufacturer-published installation system.',
+    facts: [
+      'Published capacity: up to three people',
+      'Manufacturer dimensions: 81-inch diameter by 59-inch length',
+      'Thermo-Spruce staves with Thermo-Aspen benches and backrests',
+      'Published bench depth: 17.8 inches',
+      'Manufacturer-listed shipment weight: 1,103 pounds',
+      'Dual floor drains, intake and exhaust vents, roof-shingle kit, and heater guard are listed with the room',
+    ],
+    questions: [
+      'Which heater, controls, stones, guard, power, and commissioning work are included in the selected configuration?',
+      'Can the delivery path, unloading equipment, base, and crew support the listed shipment and assembly sequence?',
+      'Does the complete exterior envelope fit after local setbacks, drainage, clearances, roof access, and door approach?',
+    ],
+  },
+  {
+    label: 'Longer Eastern White Cedar barrel',
+    name: 'Dundalk LeisureCraft Harmony CTC22W',
+    retailerHref: 'https://selectsaunas.com/products/canadian-timber-harmony-barrel-sauna?sca_ref=10752576.S2huPg7gFg',
+    manufacturerHref: 'https://leisurecraft.com/ct-barrel-sauna',
+    fit: 'A buyer who values two 71-inch benches, a 79-inch room length, and a Canadian-made Eastern White Cedar kit with multiple heater paths.',
+    facts: [
+      'Manufacturer model: CTC22W Harmony',
+      'Published capacity: two to four people',
+      'Official drawing shows a 79-inch room length and 86.25-inch outside diameter',
+      'Official drawing shows two benches measuring 71 inches long by 20 inches deep',
+      'Eastern White Cedar room with aluminum bands and stainless-steel tightening hardware',
+      'The product documentation lists heater selection as a required configuration choice',
+    ],
+    questions: [
+      'Which electric or wood-heater package is permitted for the site, and what components remain outside the room quote?',
+      'What freight access, appointment, unloading, crate handling, and damage-inspection duties belong to the buyer?',
+      'Which base, roof, drainage, finish, maintenance, and warranty requirements apply to the ordered configuration?',
+    ],
+  },
+];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "What is a barrel sauna kit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A barrel sauna kit is a pre-cut package of cedar or hemlock boards, staves, and hardware that assembles into a barrel-shaped sauna. Most kits include the barrel shell, door, benches, and ventilation components. The heater is usually sold separately. Kits are designed so two people with basic tools can assemble the structure in a weekend."
-      }
+      '@type': 'Question',
+      name: 'What does a barrel sauna kit include?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Contents vary by model and configuration. Confirm the room structure, benches, door, bands, fasteners, vents, roof system, drains, lighting, heater, controls, stones, guard, electrical or chimney components, freight, and installation scope in the written quote.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "How long does it take to assemble a barrel sauna kit?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most barrel sauna kits take one to two days for two people to assemble. The barrel itself typically takes 4-6 hours; the remaining time goes to foundation prep, bench installation, and running electrical. Almost Heaven estimates 8-12 hours total for their kits."
-      }
+      '@type': 'Question',
+      name: 'How long does a barrel sauna kit take to assemble?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Use the manufacturer estimate and installation manual for the exact model. Assembly time does not include every project task, such as delivery, unloading, base preparation, electrical or chimney work, permits, inspection, weather finishing, and commissioning.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "What size barrel sauna kit should I buy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For 1-2 people: a 4-foot diameter, 6-foot long barrel. For 2-4 people: a 6-foot diameter, 7-8 foot long barrel. If you plan to lie down during sessions, size up — most people underestimate how much bench length they want. The heater choice depends on the barrel's cubic footage, not just length."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'How should I size a barrel sauna heater?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Follow the room and heater manufacturers. Account for the actual interior volume, glass and other uninsulated surfaces, climate, power or chimney requirements, and the exact approved heater range. Do not size a heater from the advertised seating capacity alone.',
+      },
+    },
+  ],
 };
-import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Best Barrel Sauna Kits (2025): Top Picks Before You Buy"
-  description="The best barrel sauna kits for home installation. Covers Almost Heaven, Dundalk, and what to look for in a kit before you buy."
+  title="Best Barrel Sauna Kits: Two Current Formats"
+  description="Compare two current barrel sauna kits using exact dimensions, bench layout, materials, shipment details, and the project scope each buyer must confirm."
   canonical="/guides/best-barrel-sauna-kits"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Barrel Sauna Kits (2025)</h1>
-    <p class="text-stone-500 mb-8">Updated February 2025 &mdash; 10 min read &mdash; Backyard Sauna Pro</p>
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Barrel sauna buying guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best Barrel Sauna Kits</h1>
+      <p class="text-stone-500 text-sm">Manufacturer and retailer information reviewed {reviewedAt} · 10 min read</p>
+      <p class="text-lg text-stone-700 mt-4">A barrel kit is not one standardized package. Dimensions, bench depth, roof protection, drains, heater scope, freight, unloading, and required site work change by model. Compare the written bill of materials and complete project scope before comparing sticker prices.</p>
+    </header>
 
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Assembled barrel sauna kit outdoors" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
+    <AdvertiserDisclosure />
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm text-stone-700">
-      <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page also contains affiliate links to Select Saunas. We may earn a commission if you buy through our links, at no extra cost to you.
-    </div>
+    <figure class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/barrel-sauna-field.jpg" alt="Representative outdoor barrel sauna on a prepared site" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
+      <figcaption class="text-xs text-stone-500 mt-2">Representative barrel sauna setting. It is not a photo of either exact model compared below.</figcaption>
+    </figure>
 
-    <p class="text-lg text-stone-700 mb-4">A barrel sauna kit gives you the structure, door, benches, and hardware in a pre-cut package. You handle the foundation, assemble it over a weekend, run a 240V circuit, and you have a working sauna. No contractor required.</p>
+    <aside class="border-y border-stone-200 py-6 mb-8">
+      <h2 class="text-2xl font-bold text-stone-900 mb-2">Start with comfort and scope</h2>
+      <p class="text-stone-700 mb-3">Length affects usable bench room. Diameter affects headroom, door height, and seating geometry. The model with the larger capacity label is not automatically more comfortable, and the lower room price is not automatically the lower installed cost.</p>
+      <p class="text-sm text-stone-600">We have not personally tested these kits. Specifications are manufacturer-published. Confirm the exact configuration, current price, stock or lead time, warranty, freight, and installation requirements before ordering.</p>
+    </aside>
 
-    <p class="text-stone-700 mb-8">Here's what the best kits include, which brands consistently deliver, and what the sticker price actually covers.</p>
+    <PlannerCTA source="barrel_kits_above_fold" heading="Turn the kit into a real project scope" description="Build a free project brief with the site, delivery access, base, heater preference, utilities, budget, and timeline before requesting quotes." />
 
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-900 mb-2">What a Kit Includes vs What You Buy Separately</h2>
-      <div class="grid grid-cols-2 gap-4 text-sm">
+    <section class="mt-12" aria-labelledby="barrel-options">
+      <h2 id="barrel-options" class="text-3xl font-bold text-stone-900 mb-3">Two useful current formats</h2>
+      <p class="text-stone-600 max-w-3xl mb-8">These are comparison starting points, not arbitrary rankings. One prioritizes shorter length and a bundled roof system. The other prioritizes longer benches and a cedar-room format.</p>
+
+      <div class="space-y-10">
+        {options.map((option) => (
+          <section class="border-t border-stone-300 pt-7" aria-label={option.name}>
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">{option.label}</p>
+            <h3 class="text-2xl font-bold text-stone-900 mb-3">{option.name}</h3>
+            <p class="text-stone-700 mb-5"><strong>Who it may fit:</strong> {option.fit}</p>
+
+            <div class="grid md:grid-cols-2 gap-7">
+              <div>
+                <h4 class="font-bold text-stone-900 mb-3">Documented kit details</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {option.facts.map((fact) => <li class="flex items-start gap-2"><span class="text-emerald-700" aria-hidden="true">+</span><span>{fact}</span></li>)}
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-stone-900 mb-3">Resolve before buying</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {option.questions.map((question) => <li class="flex items-start gap-2"><span class="text-amber-700" aria-hidden="true">-</span><span>{question}</span></li>)}
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center gap-4">
+              <SelectSaunasButton href={option.retailerHref} label={`Check the current ${option.name.includes('E6') ? 'E6' : 'Harmony'} listing`} ctaPosition="barrel_kit_shortlist" />
+              <a href={option.manufacturerHref} target="_blank" rel="noopener" class="text-sm font-semibold text-amber-700 hover:underline">Review manufacturer information</a>
+            </div>
+          </section>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="quote-checklist">
+      <h2 id="quote-checklist" class="text-3xl font-bold text-stone-900 mb-6">What the written quote should answer</h2>
+      <div class="grid md:grid-cols-2 gap-x-8 gap-y-7 text-stone-700">
         <div>
-          <p class="font-semibold text-stone-700 mb-1">Usually included</p>
-          <ul class="text-stone-600 space-y-1">
-            <li>Pre-cut cedar staves (barrel shell)</li>
-            <li>Steel tension bands</li>
-            <li>Door (tempered glass or wood)</li>
-            <li>Interior benches</li>
-            <li>Vent plugs</li>
-            <li>Assembly hardware</li>
-          </ul>
+          <h3 class="font-bold text-stone-900 mb-2">Room and weather package</h3>
+          <p>Confirm every wall, stave, cradle, band, fastener, door, bench, backrest, floor grid, vent, drain, roof component, exterior finish, lighting part, and maintenance item.</p>
         </div>
         <div>
-          <p class="font-semibold text-stone-700 mb-1">Usually sold separately</p>
-          <ul class="text-stone-600 space-y-1">
-            <li>Sauna heater</li>
-            <li>Heater rocks</li>
-            <li>Sauna thermometer</li>
-            <li>Exterior roof covering</li>
-            <li>Foundation materials</li>
-            <li>Electrical work</li>
-          </ul>
+          <h3 class="font-bold text-stone-900 mb-2">Heater and controls</h3>
+          <p>Record the exact heater model, output, controls, stones, guard, sensor, power or chimney system, approved clearances, and who supplies and installs each piece.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-stone-900 mb-2">Freight and unloading</h3>
+          <p>Ask for crate dimensions and weight, carrier service level, delivery appointment, road and driveway limits, liftgate availability, unloading responsibility, inspection procedure, and damage deadline.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-stone-900 mb-2">Site and assembly</h3>
+          <p>Price the base, drainage, setbacks, access, permits, assembly crew, tools, electrical or chimney work, weather treatment, inspections, and startup. A room-only quote is not a project budget.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Top Barrel Sauna Kits</h2>
+    <section class="mt-12 border-t border-stone-300 pt-8">
+      <h2 class="text-3xl font-bold text-stone-900 mb-3">Choose the base from the manual and site</h2>
+      <p class="text-stone-700 mb-4">There is no universal gravel depth or foundation recipe for every barrel and property. The Dundalk Harmony instructions list crushed stone, patio stone or pavers, concrete, and a wood deck as possible solid-base categories, with drainage considered. The final design still depends on model loads, soil, frost, slope, water, deck capacity, anchoring, and local requirements.</p>
+      <p class="text-stone-700">Obtain the configured shipment and operating weights, the cradle footprint, and the exact installation manual. Then have the base confirmed for the property before delivery.</p>
+    </section>
 
-    <div class="space-y-6 mb-10">
+    <section class="mt-12 border-t border-stone-300 pt-8">
+      <h2 class="text-3xl font-bold text-stone-900 mb-3">Price the complete barrel project</h2>
+      <p class="text-stone-700 mb-5">Include the room, options, freight, unloading, base, heater and controls, electrical or chimney work, roof and exterior treatment, assembly, permits, tax, accessories, and maintenance. Keep allowances visible when a quote does not define them.</p>
+      <a href="/tools/sauna-cost-calculator/?utm_source=barrel_kits&utm_medium=onsite&utm_campaign=project_budget" class="inline-block bg-stone-900 hover:bg-stone-800 text-white font-semibold px-5 py-3 rounded-md" data-cta-position="barrel_kits_project_budget">Build the full project budget</a>
+    </section>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best Overall</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Pinnacle 4-Person</h3>
-          </div>
-          
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="barrel-faq">
+      <h2 id="barrel-faq" class="text-3xl font-bold text-stone-900 mb-6">Frequently asked questions</h2>
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        <div class="py-5">
+          <h3 class="font-bold text-stone-900 mb-2">What does a barrel sauna kit include?</h3>
+          <p class="text-stone-700">It depends on the model and options. Use the bill of materials and written quote. Do not assume the heater, controls, stones, roof, lighting, drains, delivery, unloading, base, electrical work, chimney, or assembly are included.</p>
         </div>
-        <p class="text-stone-600 mb-3">The most-sold barrel sauna kit in North America for a reason. Western red cedar, pre-cut panels, quality hardware, and a door that seals properly. Assembly is genuinely achievable in a day for two handy people. The 4-person is the right size for most backyard installations and heats well with a 6kW Harvia KIP. Heater sold separately.</p>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="text-xs bg-stone-100 text-stone-600 px-2 py-1 rounded">Western red cedar</span>
-          <span class="text-xs bg-stone-100 text-stone-600 px-2 py-1 rounded">Heater sold separately</span>
-          <span class="text-xs bg-stone-100 text-stone-600 px-2 py-1 rounded">Weekend assembly</span>
+        <div class="py-5">
+          <h3 class="font-bold text-stone-900 mb-2">Can two people assemble one in a day?</h3>
+          <p class="text-stone-700">Some manufacturers publish a one-day room-assembly estimate for specific models. That estimate does not replace the installation manual and usually does not include site preparation, unloading, electrical or chimney work, permitting, weather finishing, inspection, or commissioning.</p>
         </div>
-        <div class="flex flex-wrap gap-3">
-          <AmazonButton asin="B017WJV8SO" variant="primary" />
-          <SelectSaunasButton collection="barrel-saunas" label="Shop Almost Heaven on Select Saunas" />
-        </div>
-      </div>
-
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Best for Large Groups</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Almost Heaven Kenova 4-6 Person</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 mb-3">The current Kenova listing expands the barrel to a 6-by-7-foot room with two opposing benches and an 8kW heater. It is a larger-space comparison path, but the published 4-6 person capacity still needs to be checked against the intended users and bench dimensions.</p>
-        <div class="flex flex-wrap gap-3">
-          <SelectSaunasButton href={kenovaUrl} label="Check the current Kenova listing" ctaPosition="best_barrel_kits_kenova" />
+        <div class="py-5">
+          <h3 class="font-bold text-stone-900 mb-2">How many people will fit comfortably?</h3>
+          <p class="text-stone-700">Use the capacity label only as a starting point. Compare actual bench length and depth, door location, heater guard, backrests, interior height, intended posture, and the size and mobility of the people who will use it.</p>
         </div>
       </div>
+    </section>
 
-      <div class="border border-stone-200 rounded-xl p-5 bg-white">
-        <div class="flex items-start justify-between mb-2">
-          <div>
-            <span class="text-xs font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full uppercase tracking-wide">Premium Pick</span>
-            <h3 class="text-xl font-bold text-stone-900 mt-1">Dundalk LeisureCraft Outdoor Barrel</h3>
-          </div>
-          
-        </div>
-        <p class="text-stone-600 mb-3">Canadian-made, white cedar construction, and noticeably better fit-and-finish than most kit saunas. Dundalk uses thicker staves, has better hardware tolerances, and their door seals tighter out of the box. More expensive but the build quality shows. Good for buyers who want it done right once and not to think about it again. Read our <a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk full review</a>.</p>
-        <SelectSaunasButton collection="outdoor-saunas" label="Shop Dundalk on Select Saunas" />
-      </div>
+    <aside class="mt-12 border border-stone-200 rounded-lg p-6">
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Primary sources used</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="https://saunalife.com/saunas/ergo-series-model-e6/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">SaunaLife E6 product specifications</a></li>
+        <li><a href="https://saunalife.com/technical-information/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">SaunaLife installation and technical-information library</a></li>
+        <li><a href="https://leisurecraft.com/ct-barrel-sauna" target="_blank" rel="noopener" class="text-amber-700 hover:underline">LeisureCraft Canadian Timber barrel collection</a></li>
+        <li><a href="https://leisurecraft.com/wp-content/uploads/2022/01/CTC22W-Product-Drawing.pdf" target="_blank" rel="noopener" class="text-amber-700 hover:underline">LeisureCraft Harmony CTC22W product drawing</a></li>
+        <li><a href="https://dealers.leisurecraft.com/store/PDF?id=CTC22E&pdfnumber=3" target="_blank" rel="noopener" class="text-amber-700 hover:underline">LeisureCraft Harmony assembly instructions</a></li>
+      </ul>
+    </aside>
 
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Size Kit to Buy</h2>
-    <p class="text-stone-700 mb-4">The two numbers that matter are diameter and length. Diameter determines how much headroom and how upright you sit. Length determines bench space. Most standard kits are 6 feet in diameter; the 5-foot versions feel noticeably cramped for most adults.</p>
-    <div class="overflow-x-auto mb-6">
-      <table class="text-sm w-full">
-        <thead>
-          <tr class="text-left text-stone-500 border-b border-stone-200">
-            <th class="pb-2 pr-4">Size</th>
-            <th class="pb-2 pr-4">Good for</th>
-            <th class="pb-2">Heater needed</th>
-          </tr>
-        </thead>
-        <tbody class="text-stone-700">
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-4">4-person (6x7 ft)</td>
-            <td class="py-2 pr-4">1-2 people comfortably, 4 very tight</td>
-            <td class="py-2">6kW</td>
-          </tr>
-          <tr class="border-b border-stone-100">
-            <td class="py-2 pr-4">6-person (6x8 ft)</td>
-            <td class="py-2 pr-4">2-3 comfortably, can lie down</td>
-            <td class="py-2">8kW</td>
-          </tr>
-          <tr>
-            <td class="py-2 pr-4">8-person (6x9+ ft)</td>
-            <td class="py-2 pr-4">Families, entertaining</td>
-            <td class="py-2">9-12kW</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">What Heater to Pair With Your Kit</h2>
-    <p class="text-stone-700 mb-4">The <a href="/guides/best-electric-sauna-heaters/" class="text-amber-700 hover:underline">Harvia KIP 60B (6kW)</a> is the standard pairing for a 4-person barrel. It comes with the Almost Heaven kits for a reason. For a 6-person or larger, step up to the Harvia KIP 80B (8kW). Use our <a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">heater sizing guide</a> to calculate the right kW for your specific barrel's cubic footage.</p>
-    <AmazonButton asin="B0B7TRM95Y" variant="outline" label="View Harvia KIP 60B on Amazon" class="mb-8" />
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">Foundation Requirements</h2>
-    <p class="text-stone-700 mb-6">The barrel sits on two cradle rails or a flat platform. You need a level surface capable of supporting 800-1,200 lbs fully loaded. Compact gravel (4-6 inches of 3/4 crushed stone, well tamped) is the practical choice for most installations. Concrete pavers on gravel also work well. Read our full <a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">gravel pad guide</a> for dimensions and materials.</p>
-
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-4">FAQ</h2>
-    <div class="space-y-5">
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What is a barrel sauna kit?</h3>
-        <p class="text-stone-700">Pre-cut cedar staves, door, benches, and hardware that assemble into a barrel sauna. The heater is sold separately. You provide the foundation and electrical.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">How long does it take to assemble a barrel sauna kit?</h3>
-        <p class="text-stone-700">One to two days for two people. The barrel shell takes 4-6 hours; the rest goes to foundation work and bench installation.</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-stone-900 mb-1">What size kit should I buy?</h3>
-        <p class="text-stone-700">6-foot diameter, 7-8 foot length for 2-4 people. Size up if you want to lie down. Match the heater kW to the barrel's cubic footage, not just the advertised capacity.</p>
-      </div>
-    </div>
-
-    <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
-      <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>
+    <aside class="mt-8 border border-stone-200 rounded-lg p-6">
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Continue planning</h2>
       <ul class="space-y-2 text-sm">
         <li><a href="/guides/sauna-heater-sizing-guide/" class="text-amber-700 hover:underline">Sauna Heater Sizing Guide</a></li>
-        <li><a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">Gravel Pad for a Barrel Sauna</a></li>
-        <li><a href="/brands/almost-heaven-sauna-review/" class="text-amber-700 hover:underline">Almost Heaven Review</a></li>
-        <li><a href="/brands/dundalk-leisurecraft-review/" class="text-amber-700 hover:underline">Dundalk LeisureCraft Review</a></li>
-        <li><a href="/guides/outdoor-sauna-winter/" class="text-amber-700 hover:underline">Using a Barrel Sauna in Winter</a></li>
-        <li><a href="/guides/best-home-sauna/" class="text-amber-700 hover:underline">Best Home Sauna</a></li>
+        <li><a href="/guides/gravel-pad-for-barrel-sauna/" class="text-amber-700 hover:underline">Gravel Pad Planning Guide</a></li>
+        <li><a href="/guides/how-to-assemble-barrel-sauna/" class="text-amber-700 hover:underline">Barrel Sauna Assembly Guide</a></li>
+        <li><a href="/guides/outdoor-sauna-winter/" class="text-amber-700 hover:underline">Using a Sauna in Winter</a></li>
       </ul>
-    </div>
-
+    </aside>
   </article>
 </Base>
