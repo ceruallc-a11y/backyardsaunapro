@@ -10,11 +10,12 @@ const ref = "10752576.S2huPg7gFg";
 const base = "https://selectsaunas.com";
 const { href, label = "Shop on Select Saunas", collection, ctaPosition = "product_card" } = Astro.props;
 
-const url = href
-  ? `${href}${href.includes("?") ? "&" : "?"}sca_ref=${ref}`
-  : collection
-  ? `${base}/collections/${collection}?sca_ref=${ref}`
-  : `${base}?sca_ref=${ref}`;
+const target = new URL(
+  href || (collection ? `${base}/collections/${collection}` : base),
+  base,
+);
+if (!target.searchParams.has('sca_ref')) target.searchParams.set('sca_ref', ref);
+const url = target.toString();
 
 const productId = collection || (href
   ? new URL(href, base).pathname.split('/').filter(Boolean).pop()

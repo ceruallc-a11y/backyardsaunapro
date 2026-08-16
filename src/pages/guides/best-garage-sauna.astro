@@ -1,157 +1,222 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
 import AmazonButton from '../../components/AmazonButton.astro';
+import PlannerCTA from '../../components/PlannerCTA.astro';
+import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
-const picks = [
+const reviewedAt = 'August 15, 2026';
+
+const options = [
   {
-    rank: 1,
-    asin: "B00A2F99F0",
-    name: "Dynamic Saunas Barcelona Far Infrared",
-    
-    rating: "4.4/5",
-    tag: "BEST OVERALL",
-    tagColor: "bg-amber-100 text-amber-800",
-    type: "Infrared",
-    summary: "Plug into any 120V outlet, assemble in 30 minutes, and you're done. No electrician, no structural modifications, no permits for the sauna itself. For most garage setups, this is the fastest path to a working sauna. The low-EMF carbon panels deliver real heat therapy at 120-140°F.",
-    pros: ["Standard 120V outlet no electrician", "Assembles and disassembles easily", "No ventilation requirements", "Fits in a 4x4 foot garage corner"],
-    cons: ["No steam option", "Lower temps than traditional", "1-2 person capacity"]
+    label: 'Simpler electrical path',
+    name: 'Dynamic Barcelona 1-2 Person Infrared Sauna',
+    type: 'infrared',
+    fit: 'A buyer with a dry, protected garage location and a dedicated 120V, 15-amp circuit that meets the product manual and local electrical requirements.',
+    facts: [
+      'Manufacturer model: DYN-6106-01',
+      'Published capacity: one to two people',
+      'Published exterior dimensions: 39 inches wide by 36 inches deep by 73 inches high',
+      'Manufacturer documentation calls for a dedicated 120V, 15-amp circuit',
+      'The owner manual identifies the room as indoor-use only',
+    ],
+    questions: [
+      'Does the garage stay within the manufacturer\'s allowed storage and operating conditions?',
+      'Is the proposed receptacle dedicated, correctly rated, grounded, and approved for this location?',
+      'Is there enough room for assembly, door swing, ventilation openings, and service access?',
+    ],
   },
   {
-    rank: 2,
-    asin: "B017WJV8SO",
-    name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
-    
-    rating: "4.5/5",
-    tag: "BEST TRADITIONAL",
-    tagColor: "bg-stone-100 text-stone-800",
-    type: "Traditional Barrel",
-    summary: "If you want the real Finnish experience in your garage high heat, steam, the works the Pinnacle is the move. You need a 240V circuit (electrician required) and enough ceiling height for the barrel (roughly 7 feet). The garage actually protects the cedar from weather, which extends its life considerably.",
-    pros: ["Full traditional sauna experience", "Garage protects cedar from weather", "Cedar barrel heats evenly", "Strong resale value if you ever move"],
-    cons: ["Needs 240V/240A electrical", "Heater sold separately", "Requires ceiling clearance ~7 ft", "Higher total installed cost"]
-  }
+    label: 'Compact traditional room',
+    name: 'SaunaLife X2 2-Person Indoor Sauna Kit',
+    type: 'traditional',
+    fit: 'A buyer who wants a traditional indoor sauna room and can plan the heater, controls, electrical work, floor, ventilation, and garage conditions as one project.',
+    facts: [
+      'Published capacity: up to two people',
+      'Manufacturer exterior dimensions: 60 inches by 60 inches by 80 inches high',
+      'Nordic Spruce room with Aspen bench, backrest, and footrest',
+      'Prefabricated wall and ceiling panels with a full glass front',
+      'Manufacturer-listed room weight: 948 pounds',
+      'Heater and electrical scope must be confirmed for the selected package',
+    ],
+    questions: [
+      'Which heater, controls, stones, guard, lighting power supply, and electrical work are included?',
+      'Can the slab and finish support the configured room, heater, occupants, and concentrated loads?',
+      'What inlet, exhaust, moisture, fire-safety, and clearance requirements apply to the exact configuration?',
+    ],
+  },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I put a sauna in my garage?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Possibly, but the answer depends on the sauna manual, garage temperature and moisture conditions, electrical service, floor, ventilation, clearances, vehicle separation, and local building and fire requirements. Confirm the exact room and heater with the manufacturer and qualified local professionals before installation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does a garage sauna need a dedicated circuit?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Use the electrical requirements for the exact sauna and heater. The Dynamic Barcelona manual calls for a dedicated 120V, 15-amp circuit. Traditional electric heaters commonly require hardwired service sized to the selected heater, room, and applicable code.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a sauna sit directly on a garage slab?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Do not assume every slab or floor finish is suitable. Check the sauna installation manual, configured weight, flatness, drainage, moisture, anchoring, floor-covering limits, and local requirements before placing the room.',
+      },
+    },
+  ],
+};
 ---
 <Base
-  title="Best Garage Sauna (2025) Indoor Setup Guide and Top Picks"
-  description="The best saunas for garage installation. Setup requirements, electrical needs, ventilation, and the top picks for converting your garage space."
+  title="Best Garage Sauna: Two Current Indoor Options"
+  description="Compare a documented 120V infrared sauna with a compact traditional indoor room, then check the garage conditions that determine whether either option is suitable."
   canonical="/guides/best-garage-sauna"
 >
-  <article class="max-w-3xl mx-auto">
-    <header class="mb-8">
-      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Buying Guides</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
-        Best Garage Sauna (2025)
-      </h1>
-      <p class="text-stone-500 text-sm">Updated January 2025 · 8 min read</p>
-      <p class="text-lg text-stone-600 mt-4">
-        A garage is one of the best spots for a sauna. It's sheltered from weather, already has electrical access nearby, and gives you privacy. The setup is different from an outdoor install. Here's what to know.
-      </p>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <article class="max-w-4xl mx-auto">
+    <header class="max-w-3xl mb-8">
+      <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Garage sauna buying guide</p>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best Sauna for a Garage</h1>
+      <p class="text-stone-500 text-sm">Manufacturer and retailer information reviewed {reviewedAt} · 10 min read</p>
+      <p class="text-lg text-stone-700 mt-4">A garage can be a workable sauna location, but shelter alone does not make it ready. The product manual, ambient conditions, electrical service, slab, drainage, ventilation, clearances, and local rules all matter. Start with the room you can support, not the one that merely fits between parked cars.</p>
     </header>
-    <div class="rounded-xl overflow-hidden mb-8">
-      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Sauna interior with window" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
-    </div>
 
+    <AdvertiserDisclosure />
 
-    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-3">Garage vs Outdoor Sauna: Key Differences</h2>
-      <div class="grid grid-cols-2 gap-4 text-sm">
-        <div>
-          <p class="font-semibold text-amber-700 mb-2">Advantages of Garage Install</p>
-          <ul class="space-y-1 text-stone-600">
-            <li>+ Protects cedar from weather</li>
-            <li>+ Easier electrical access</li>
-            <li>+ No foundation needed</li>
-            <li>+ Year-round use in any weather</li>
-            <li>+ No zoning setback issues</li>
-            <li>+ Private, out of sight</li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-semibold text-red-600 mb-2">Extra Considerations</p>
-          <ul class="space-y-1 text-stone-600">
-            <li>- Ventilation is critical indoors</li>
-            <li>- Moisture management needed</li>
-            <li>- Ceiling height requirements</li>
-            <li>- Floor must handle water/moisture</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <figure class="rounded-lg overflow-hidden mb-8">
+      <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Representative sauna interior with benches and heater" class="w-full object-cover max-h-80" loading="eager" width="1200" height="800" />
+      <figcaption class="text-xs text-stone-500 mt-2">Representative sauna interior. It is not a photo of either exact model discussed below.</figcaption>
+    </figure>
 
-    <h2 class="text-2xl font-bold mt-10 mb-6 text-stone-900">Top Picks for Garage Saunas</h2>
+    <aside class="border-y border-stone-200 py-6 mb-8">
+      <h2 class="text-2xl font-bold text-stone-900 mb-2">The short answer</h2>
+      <p class="text-stone-700 mb-3">Choose an infrared cabin when a documented 120V path and compact footprint are the priorities. Choose a traditional room when steam-capable heat and a deeper project scope are worth the additional electrical, ventilation, and installation planning.</p>
+      <p class="text-sm text-stone-600">We have not personally tested these saunas. Specifications are manufacturer-published. Confirm the exact configuration, stock, current price, warranty, delivery, and installation requirements before ordering.</p>
+    </aside>
 
-    <div class="space-y-8">
-      {picks.map((pick) => (
-        <div class="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
-          <div class="bg-stone-50 border-b border-stone-200 px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <span class="text-stone-400 font-bold text-lg">#{pick.rank}</span>
-              <h3 class="text-lg font-bold text-stone-900">{pick.name}</h3>
-            </div>
-            <span class={`text-xs font-bold px-3 py-1 rounded-full ${pick.tagColor}`}>{pick.tag}</span>
-          </div>
-          <div class="p-6">
-            <div class="flex gap-6 mb-4 text-sm text-stone-500">
-              <span>Type: <strong class="text-stone-700">{pick.type}</strong></span>
-              <span>Rating: <strong class="text-stone-700">{pick.rating}</strong></span>
-            </div>
-            <p class="text-stone-600 mb-4">{pick.summary}</p>
-            <div class="grid grid-cols-2 gap-4 mb-5 text-sm">
+    <PlannerCTA source="garage_sauna_above_fold" heading="Check the garage before choosing the room" description="Build a project brief with the location, dimensions, electrical panel, budget, and timeline before requesting a quote." />
+
+    <section class="mt-12" aria-labelledby="garage-options">
+      <h2 id="garage-options" class="text-3xl font-bold text-stone-900 mb-3">Two current paths</h2>
+      <p class="text-stone-600 max-w-3xl mb-8">These products solve different problems. Neither is a universal winner, and neither should be installed from a generic garage checklist alone.</p>
+
+      <div class="space-y-10">
+        {options.map((option) => (
+          <section class="border-t border-stone-300 pt-7" aria-label={option.name}>
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-700 mb-2">{option.label}</p>
+            <h3 class="text-2xl font-bold text-stone-900 mb-3">{option.name}</h3>
+            <p class="text-stone-700 mb-5"><strong>Who it may fit:</strong> {option.fit}</p>
+
+            <div class="grid md:grid-cols-2 gap-7">
               <div>
-                <p class="font-semibold text-green-700 mb-2">Pros</p>
-                <ul class="space-y-1">
-                  {pick.pros.map(p => <li class="flex items-start gap-2 text-stone-600"><span class="text-green-500 mt-0.5">+</span>{p}</li>)}
+                <h4 class="font-bold text-stone-900 mb-3">Documented product details</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {option.facts.map((fact) => <li class="flex items-start gap-2"><span class="text-emerald-700" aria-hidden="true">+</span><span>{fact}</span></li>)}
                 </ul>
               </div>
               <div>
-                <p class="font-semibold text-red-600 mb-2">Cons</p>
-                <ul class="space-y-1">
-                  {pick.cons.map(c => <li class="flex items-start gap-2 text-stone-600"><span class="text-red-400 mt-0.5">-</span>{c}</li>)}
+                <h4 class="font-bold text-stone-900 mb-3">Resolve before buying</h4>
+                <ul class="space-y-2 text-sm text-stone-700">
+                  {option.questions.map((question) => <li class="flex items-start gap-2"><span class="text-amber-700" aria-hidden="true">-</span><span>{question}</span></li>)}
                 </ul>
               </div>
             </div>
-            <AmazonButton asin={pick.asin} price={pick.price} />
-          </div>
+
+            {option.type === 'infrared' ? (
+              <div class="mt-5 flex flex-wrap items-center gap-4">
+                <AmazonButton asin="B00A2F99F0" label="Check the current Barcelona listing" ctaPosition="garage_infrared_option" />
+                <a href="https://assets.wfcdn.com/dm/document/d462e39c-e4f9-46da-97ca-bfcb9fbbaf3f/owner%27s%20manual_dyn-6106_gdi6106_gdi6109.pdf" target="_blank" rel="noopener" class="text-sm font-semibold text-amber-700 hover:underline">Read the owner manual</a>
+              </div>
+            ) : (
+              <div class="mt-5 flex flex-wrap items-center gap-4">
+                <SelectSaunasButton href="https://selectsaunas.com/products/saunalife-x2-1-2-person-indoor-traditional-sauna?sca_ref=10752576.S2huPg7gFg" label="Check the current X2 listing" ctaPosition="garage_traditional_option" />
+                <a href="https://saunalife.com/saunas/xperience-series-model-x2/" target="_blank" rel="noopener" class="text-sm font-semibold text-amber-700 hover:underline">Review manufacturer specifications</a>
+              </div>
+            )}
+          </section>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="garage-readiness">
+      <h2 id="garage-readiness" class="text-3xl font-bold text-stone-900 mb-6">Five garage checks that come before checkout</h2>
+      <div class="grid md:grid-cols-2 gap-x-8 gap-y-7 text-stone-700">
+        <div>
+          <h3 class="font-bold text-stone-900 mb-2">1. Indoor-use conditions</h3>
+          <p>"Indoor use" does not automatically mean every garage. Ask the manufacturer about minimum and maximum ambient temperature, condensation, humidity, freeze exposure, dust, storage, and warranty limits for the exact model.</p>
         </div>
-      ))}
-    </div>
-
-    <h2 class="text-2xl font-bold mt-12 mb-6 text-stone-900">Garage Sauna Setup Requirements</h2>
-
-    <div class="space-y-5">
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Ventilation</h3>
-        <p class="text-stone-600 text-sm">A traditional sauna in a garage produces significant heat and moisture. The garage needs a way to vent steam and hot air. A fresh air intake near the floor and an exhaust vent near the ceiling is the standard setup. Without ventilation, moisture builds up and damages the garage structure over time.</p>
-        <p class="text-stone-600 text-sm mt-3">Infrared saunas produce far less humidity than traditional saunas. If ventilation is a concern, infrared significantly simplifies the requirements.</p>
+        <div>
+          <h3 class="font-bold text-stone-900 mb-2">2. Electrical scope</h3>
+          <p>Match the receptacle or hardwired circuit to the exact room and heater manual. A nearby outlet or panel does not prove capacity, circuit dedication, grounding, conductor size, disconnect requirements, or code compliance.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-stone-900 mb-2">3. Floor and water</h3>
+          <p>Verify flatness, load capacity, permitted floor finishes, moisture management, drainage, cleaning access, and any anchoring requirement. Do not add a mat, drain, or raised base unless the room instructions and site conditions support it.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-stone-900 mb-2">4. Airflow and clearances</h3>
+          <p>Keep every inlet and exhaust opening unobstructed. Use the room, heater, control, and chimney manuals for clearances. Do not copy a clearance number from a different sauna or heater.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-stone-900 mb-2">5. The garage still has to function</h3>
+          <p>Plan door swing, emergency exit, vehicle separation, combustibles, storage, charging equipment, overhead door travel, assembly access, and a safe route to the sauna. Confirm local building, electrical, mechanical, and fire requirements.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Ceiling Height</h3>
-        <p class="text-stone-600 text-sm">Most barrel saunas need about 7 feet of ceiling clearance. Check the specifications before buying. Most standard garages have 7-8 foot ceilings just enough. If your garage has lower ceilings, an infrared cabin sauna with a flat roof is a better fit.</p>
+    <section class="mt-12 border-t border-stone-300 pt-8">
+      <h2 class="text-3xl font-bold text-stone-900 mb-3">Price the whole garage project</h2>
+      <p class="text-stone-700 mb-5">The room price is only one line. Add delivery, unloading, assembly, heater and controls, electrical work, ventilation, floor preparation, moisture work, permits, tax, and any garage modifications before comparing options.</p>
+      <a href="/tools/sauna-cost-calculator/?utm_source=garage_sauna&utm_medium=onsite&utm_campaign=project_budget" class="inline-block bg-stone-900 hover:bg-stone-800 text-white font-semibold px-5 py-3 rounded-md" data-cta-position="garage_project_budget">Build the full project budget</a>
+    </section>
+
+    <section class="mt-12 border-t border-stone-300 pt-8" aria-labelledby="garage-faq">
+      <h2 id="garage-faq" class="text-3xl font-bold text-stone-900 mb-6">Frequently asked questions</h2>
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        <div class="py-5">
+          <h3 class="font-bold text-stone-900 mb-2">Does a garage sauna avoid permits?</h3>
+          <p class="text-stone-700">Do not assume that. Electrical work, structural changes, ventilation, plumbing, combustion equipment, change of use, and local building or fire rules may trigger permits or inspections. Ask the authority having jurisdiction about the actual project.</p>
+        </div>
+        <div class="py-5">
+          <h3 class="font-bold text-stone-900 mb-2">Is infrared automatically easier?</h3>
+          <p class="text-stone-700">It can reduce the electrical scope when the manual calls for a compatible 120V circuit, but placement, ambient conditions, clearances, ventilation openings, floor, and warranty rules still apply.</p>
+        </div>
+        <div class="py-5">
+          <h3 class="font-bold text-stone-900 mb-2">Can I use a wood-burning heater in a garage?</h3>
+          <p class="text-stone-700">Treat that as a separate, site-specific project. Combustion air, chimney routing, clearances, floor and wall protection, fuel storage, vehicle hazards, insurance, and local fire and building rules require qualified review. Do not adapt an outdoor wood-heater layout without written approval for the proposed indoor location.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Floor and Moisture</h3>
-        <p class="text-stone-600 text-sm">Traditional saunas create water on the floor from pouring water on the rocks and from sweat. Concrete garage floors handle this fine, but you want water to drain away from the sauna structure. A simple rubber mat or small gravel tray under the door threshold keeps water from pooling inside.</p>
-      </div>
-
-      <div class="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
-        <h3 class="text-lg font-bold text-stone-900 mb-3">Electrical Access</h3>
-        <p class="text-stone-600 text-sm">Garages often already have a sub-panel or accessible electrical runs, which makes adding a 240V/30A circuit cheaper than running it from the main house panel. Get quotes from two electricians. Garage sauna electrical work often runs $200-$400 compared to $400-$800 for a distant outdoor install.</p>
-      </div>
-
-    </div>
-
-    <div class="mt-10 bg-amber-50 border border-amber-200 rounded-xl p-6">
-      <h3 class="font-bold text-stone-900 mb-3">Related guides</h3>
+    <aside class="mt-12 border border-stone-200 rounded-lg p-6">
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Primary sources used</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline font-medium">Sauna Electrical Requirements</a></li>
-        <li><a href="/guides/best-sauna-for-small-backyard/" class="text-amber-700 hover:underline font-medium">Best Sauna for a Small Backyard</a></li>
-        <li><a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline font-medium">Infrared vs Traditional Sauna</a></li>
-        <li><a href="/guides/outdoor-sauna-cost/" class="text-amber-700 hover:underline font-medium">Full Outdoor Sauna Cost Breakdown</a></li>
+        <li><a href="https://assets.wfcdn.com/dm/document/d462e39c-e4f9-46da-97ca-bfcb9fbbaf3f/owner%27s%20manual_dyn-6106_gdi6106_gdi6109.pdf" target="_blank" rel="noopener" class="text-amber-700 hover:underline">Dynamic Barcelona owner manual</a></li>
+        <li><a href="https://saunalife.com/saunas/xperience-series-model-x2/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">SaunaLife X2 product specifications</a></li>
+        <li><a href="https://saunalife.com/technical-information/" target="_blank" rel="noopener" class="text-amber-700 hover:underline">SaunaLife installation and technical-information library</a></li>
       </ul>
-    </div>
+    </aside>
 
+    <aside class="mt-8 border border-stone-200 rounded-lg p-6">
+      <h2 class="text-xl font-bold text-stone-900 mb-3">Continue planning</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/guides/sauna-electrical-requirements/" class="text-amber-700 hover:underline">Sauna Electrical Requirements</a></li>
+        <li><a href="/guides/infrared-vs-traditional-sauna/" class="text-amber-700 hover:underline">Infrared vs Traditional Sauna</a></li>
+        <li><a href="/guides/sauna-ventilation/" class="text-amber-700 hover:underline">Sauna Ventilation Guide</a></li>
+        <li><a href="/guides/sauna-foundation-guide/" class="text-amber-700 hover:underline">Sauna Foundation Guide</a></li>
+      </ul>
+    </aside>
   </article>
 </Base>
