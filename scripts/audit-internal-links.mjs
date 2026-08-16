@@ -33,9 +33,11 @@ const pages = new Map(htmlFiles.map((file) => [routeFor(file), file]));
 const incoming = new Map([...pages.keys()].map((route) => [route, new Set()]));
 const outgoing = new Map([...pages.keys()].map((route) => [route, new Set()]));
 const missing = [];
+const redirects = new Set();
 
 for (const [sourceRoute, file] of pages) {
   const html = await readFile(file, 'utf8');
+  if (/<meta\s+http-equiv=["']refresh["']/i.test(html)) redirects.add(sourceRoute);
   for (const match of html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/gi)) {
     const targetRoute = normalizeTarget(match[1]);
     if (!targetRoute || targetRoute === sourceRoute) continue;
@@ -47,7 +49,7 @@ for (const [sourceRoute, file] of pages) {
 
 const isContentRoute = (route) => /^\/(?:best-saunas|brands\/[^/]+|guides\/[^/]+|reviews\/[^/]+)\/$/.test(route);
 const weakContent = [...incoming.entries()]
-  .filter(([route]) => isContentRoute(route))
+  .filter(([route]) => isContentRoute(route) && !redirects.has(route))
   .map(([route, sources]) => ({ route, inbound: sources.size, outbound: outgoing.get(route).size }))
   .filter((row) => row.inbound <= 2)
   .sort((a, b) => a.inbound - b.inbound || a.route.localeCompare(b.route));

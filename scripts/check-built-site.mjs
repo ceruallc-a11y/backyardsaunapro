@@ -670,10 +670,17 @@ for (const file of htmlFiles) {
   const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim();
   const description = html.match(/<meta\s+name=["']description["'][^>]*content=["']([^"']*)["']/i)?.[1]?.trim();
   const canonical = html.match(/<link\s+rel=["']canonical["'][^>]*href=["']([^"']*)["']/i)?.[1]?.trim();
+  const redirectTarget = html.match(/<meta\s+http-equiv=["']refresh["'][^>]*content=["'][^"']*url=([^"']+)["']/i)?.[1]?.trim();
 
   if (!title) findings.push({ type: 'missing_title', route });
-  if (!description) findings.push({ type: 'missing_description', route });
   if (!canonical) findings.push({ type: 'missing_canonical', route });
+  if (redirectTarget) {
+    const pathname = new URL(redirectTarget, 'https://backyardsaunapro.com').pathname;
+    const targetFile = path.join(dist, pathname.replace(/^\/+|\/+$/g, ''), 'index.html');
+    if (!fs.existsSync(targetFile)) findings.push({ type: 'missing_redirect_target', route, target: pathname });
+    continue;
+  }
+  if (!description) findings.push({ type: 'missing_description', route });
   if (/utm_content=undefined|data-cta-position=["']undefined["']/.test(html)) {
     findings.push({ type: 'broken_cta_attribution', route, value: 'undefined CTA source' });
   }

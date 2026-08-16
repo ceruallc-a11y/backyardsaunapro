@@ -6,6 +6,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://backyardsaunapro.com',
   trailingSlash: 'always',
+  redirects: {
+    '/guides/sauna-for-couples': '/guides/best-2-person-sauna'
+  },
   build: {
     assets: 'assets'
   },

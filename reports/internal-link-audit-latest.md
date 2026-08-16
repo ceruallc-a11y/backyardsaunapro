@@ -1,6 +1,6 @@
 # Internal Link Audit
 
-Generated: 2026-08-16T06:36:31.551Z
+Generated: 2026-08-16T06:43:13.877Z
 
 - HTML pages checked: 122
 - Internal links to missing page routes: 0
@@ -11,10 +11,10 @@ Generated: 2026-08-16T06:36:31.551Z
 | Route | Unique inbound pages | Unique outbound pages |
 | --- | ---: | ---: |
 | /brands/sun-home-saunas-review/ | 1 | 24 |
-| /guides/sauna-for-couples/ | 1 | 20 |
 | /guides/contacts-in-sauna/ | 2 | 20 |
 | /guides/gym-sauna-etiquette/ | 2 | 20 |
 | /guides/sauna-vs-hot-tub/ | 2 | 22 |
+| /reviews/almost-heaven-pinnacle-review/ | 2 | 21 |
 
 ## Missing Targets
 
