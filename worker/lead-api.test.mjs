@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { DatabaseSync } from 'node:sqlite';
-import worker, { scoreLead, validateLead } from './lead-api.mjs';
+import worker, { scoreLead, sendLeadAlert, validateLead } from './lead-api.mjs';
 
 const validInput = {
   firstName: 'Sam',
@@ -72,6 +72,27 @@ test('scores ready projects above early research projects', () => {
   }).lead);
   assert.ok(ready > early);
   assert.ok(ready <= 100);
+});
+
+test('sends a privacy-safe operational alert', async () => {
+  const sent = [];
+  await sendLeadAlert({
+    LEAD_ALERTS: {
+      async send(message) {
+        sent.push(message);
+      },
+    },
+  }, {
+    receiptId: 'receipt-123',
+    score: 65,
+    partnerConsent: false,
+  });
+
+  assert.equal(sent.length, 1);
+  assert.equal(sent[0].to, 'ceruallc@gmail.com');
+  assert.match(sent[0].text, /receipt-123/);
+  assert.match(sent[0].text, /Partner-sharing consent: no/);
+  assert.doesNotMatch(JSON.stringify(sent[0]), /sam@example\.com|02139|Gate is 42 inches wide|Sam/);
 });
 
 test('stores a consented lead before returning a receipt', async () => {

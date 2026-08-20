@@ -102,8 +102,27 @@ async function hash(value) {
   return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
 }
 
+export async function sendLeadAlert(env, { receiptId, score, partnerConsent }) {
+  if (!env.LEAD_ALERTS?.send) return;
+
+  await env.LEAD_ALERTS.send({
+    from: 'alerts@sproutfulminds.com',
+    to: 'ceruallc@gmail.com',
+    subject: 'New Backyard Sauna Pro planner request',
+    text: [
+      'A new Backyard Sauna Pro project brief is ready for manual review.',
+      '',
+      `Receipt: ${receiptId}`,
+      `Lead score: ${score}`,
+      `Partner-sharing consent: ${partnerConsent ? 'yes' : 'no'}`,
+      '',
+      'Open the private Cloudflare D1 lead queue to review it. Do not share the project unless partner-sharing consent is yes.',
+    ].join('\n'),
+  });
+}
+
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const origin = request.headers.get('Origin') || '';
 
@@ -180,6 +199,14 @@ export default {
     ).run();
 
     console.log(JSON.stringify({ event: 'lead_received', receiptId: id, score, partnerConsent: lead.partnerConsent }));
+    const alert = sendLeadAlert(env, { receiptId: id, score, partnerConsent: lead.partnerConsent })
+      .catch((error) => console.error(JSON.stringify({
+        event: 'lead_alert_failed',
+        receiptId: id,
+        message: error instanceof Error ? error.message : 'Unknown email alert error',
+      })));
+    if (ctx?.waitUntil) ctx.waitUntil(alert);
+    else await alert;
     return json({ ok: true, receiptId: id }, 201, origin);
   },
 };

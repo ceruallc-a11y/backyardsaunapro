@@ -7,6 +7,15 @@
     "enabled": true,
     "head_sampling_rate": 1
   },
+  "send_email": [
+    {
+      "name": "LEAD_ALERTS",
+      "destination_address": "ceruallc@gmail.com",
+      "allowed_sender_addresses": [
+        "alerts@sproutfulminds.com"
+      ]
+    }
+  ],
   "d1_databases": [
     {
       "binding": "DB",
