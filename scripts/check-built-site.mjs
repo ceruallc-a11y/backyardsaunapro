@@ -278,6 +278,21 @@ const requiredMarkers = [
     label: 'heater sizing HUUM internal offer attribution',
   },
   {
+    file: 'guides/best-sauna-for-deck/index.html',
+    pattern: /best-2-person-outdoor-sauna\/[^>]*data-track-event="internal_offer_click"[^>]*data-cta-position="deck_continue_two_person"/,
+    label: 'deck guide two-person offer attribution',
+  },
+  {
+    file: 'guides/outdoor-sauna-permits/index.html',
+    pattern: /best-2-person-outdoor-sauna\/[^>]*data-track-event="internal_offer_click"[^>]*data-cta-position="permits_bottom_two_person"/,
+    label: 'permit guide two-person offer attribution',
+  },
+  {
+    file: 'brands/redwood-outdoors-sauna-review/index.html',
+    pattern: /best-2-person-outdoor-sauna\/[^>]*data-track-event="internal_offer_click"[^>]*data-cta-position="redwood_continue_two_person"/,
+    label: 'Redwood review two-person offer attribution',
+  },
+  {
     file: 'guides/sauna-vs-hot-tub/index.html',
     pattern: /sauna_vs_hot_tub_after_intro/,
     label: 'sauna versus hot tub planner attribution',
