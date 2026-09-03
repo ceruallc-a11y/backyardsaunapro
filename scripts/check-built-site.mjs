@@ -253,6 +253,16 @@ const requiredMarkers = [
     label: 'protected Sun Home Luminar destination',
   },
   {
+    file: 'guides/best-2-person-outdoor-sauna/index.html',
+    pattern: /Current retailer price:[\s\S]{0,200}?\$4,265 at Select Saunas on September 2, 2026/,
+    label: 'current Salem retailer price',
+  },
+  {
+    file: 'guides/best-2-person-outdoor-sauna/index.html',
+    pattern: /Retailer and manufacturer dimensions conflict/,
+    label: 'Salem specification conflict disclosure',
+  },
+  {
     file: 'brands/huum-sauna-heater-review/index.html',
     pattern: /huum-hive-mini-series-9-0kw-sauna-heater-package\?sca_ref=10752576\.S2huPg7gFg/,
     label: 'HUUM HIVE Mini package affiliate attribution',

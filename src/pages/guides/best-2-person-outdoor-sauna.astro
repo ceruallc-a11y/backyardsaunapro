@@ -28,7 +28,7 @@ const picks = [
     asin: "B017WJV8SO",
     name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
     
-    rating: "Specs checked August 2026",
+    rating: "Specs and price checked September 2026",
     tag: "BEST TRADITIONAL BARREL",
     tagColor: "bg-amber-100 text-amber-800",
     type: "Traditional Barrel",
@@ -53,9 +53,10 @@ const picks = [
     image: "/images/lifestyle/barrel-sauna-chimney.jpg",
     imageAlt: "Representative compact outdoor barrel sauna with a chimney",
     imageCaption: "Representative compact barrel-sauna setting; not the exact Salem configuration.",
-    summary: "Almost Heaven lists the Salem as a compact 6-by-4-foot barrel with a 71-by-39-inch interior and two 39-inch benches. It is a genuine two-person outdoor format, but the shorter benches are for upright seating rather than stretching out.",
-    pros: ["True two-person outdoor format", "Compact 72-by-47-inch listed footprint", "6kW heater package listed", "Stones included in the current retailer package"],
-    cons: ["39-inch benches limit reclining", "240V/30A hardwire requirement listed", "LTL delivery and base must be planned", "Outdoor wood needs maintenance"]
+    currentPrice: "$4,265 at Select Saunas on September 2, 2026",
+    summary: "Almost Heaven currently lists the Salem at 78 by 47 inches assembled, with a 75.25-by-39.25-inch interior and 39.25-inch benches. Select Saunas currently lists a $4,265 base configuration and a 6-8 week lead time, but its visible dimensions differ from the manufacturer page. Confirm the selected revision and written specifications before ordering.",
+    pros: ["True two-person outdoor format", "Compact 78-by-47-inch current manufacturer footprint", "6kW heater package listed", "Stones included in the current retailer package"],
+    cons: ["39.25-inch benches limit reclining", "Retailer and manufacturer dimensions conflict", "240V/30A hardwire requirement listed", "LTL delivery and base must be planned", "Outdoor wood needs maintenance"]
   },
   {
     rank: 4,
@@ -113,7 +114,7 @@ const picks = [
 
     <div class="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
       <strong class="block text-stone-900 mb-2">How the non-sponsored picks were checked</strong>
-      We did not hands-on test them. Specifications were checked against the current <a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Pinnacle</a>, <a href="https://almostheaven.com/products/salem-2-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Salem</a>, and <a href="https://almostheaven.com/products/princeton-6-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Princeton</a> manufacturer pages in August 2026. Current configurations, prices, and lead times can change.
+      We did not hands-on test them. Specifications were checked against the current <a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Pinnacle</a>, <a href="https://almostheaven.com/products/salem-2-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Salem</a>, and <a href="https://almostheaven.com/products/princeton-6-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Princeton</a> manufacturer pages. The Salem specifications and Select Saunas price were rechecked in September 2026; the retailer still publishes different dimensions, so confirm the selected revision in writing. Current configurations, prices, and lead times can change.
     </div>
 
     <h2 class="text-2xl font-bold mb-6 text-stone-900">Compare Four Buyer Fits</h2>
@@ -156,12 +157,15 @@ const picks = [
             </div>
           </div>
           <p class="text-xs text-stone-500 mb-3">{pick.sponsor === 'sun-home' ? 'Rating' : 'Verification'}: {pick.rating}</p>
+          {'currentPrice' in pick && pick.currentPrice && (
+            <p class="text-sm font-semibold text-stone-900 mb-3">Current retailer price: {pick.currentPrice}</p>
+          )}
           {pick.sponsor === 'sun-home' ? (
             <SunHomeButton product={pick.sunHomeProduct} label="See Sun Home Luminar" />
           ) : 'asin' in pick && pick.asin ? (
             <AmazonButton asin={pick.asin} />
           ) : 'selectUrl' in pick && pick.selectUrl ? (
-            <SelectSaunasButton href={pick.selectUrl} label="View current Salem listing" ctaPosition="salem_product" />
+            <SelectSaunasButton href={pick.selectUrl} label="Check current Salem price" ctaPosition="salem_product" />
           ) : 'officialUrl' in pick && pick.officialUrl ? (
             <a href={pick.officialUrl} target="_blank" rel="noopener" class="inline-flex min-h-12 items-center justify-center border border-stone-300 text-stone-900 hover:bg-stone-50 font-semibold px-5 py-3 rounded-md">Verify current manufacturer specifications</a>
           ) : (
