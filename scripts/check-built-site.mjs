@@ -248,6 +248,16 @@ const requiredMarkers = [
     label: 'protected Sun Home Luminar destination',
   },
   {
+    file: 'brands/huum-sauna-heater-review/index.html',
+    pattern: /huum-hive-mini-series-9-0kw-sauna-heater-package\?sca_ref=10752576\.S2huPg7gFg/,
+    label: 'HUUM HIVE Mini package affiliate attribution',
+  },
+  {
+    file: 'brands/huum-sauna-heater-review/index.html',
+    pattern: /data-cta-position="above_fold_hive_package"/,
+    label: 'HUUM HIVE Mini package CTA attribution',
+  },
+  {
     file: 'guides/sauna-vs-hot-tub/index.html',
     pattern: /sauna_vs_hot_tub_after_intro/,
     label: 'sauna versus hot tub planner attribution',

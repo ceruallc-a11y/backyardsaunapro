@@ -5,6 +5,7 @@ import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 
 const drop6Url = 'https://selectsaunas.com/products/huum-drop-6kw';
 const hiveMini9Url = 'https://selectsaunas.com/products/huum-hive-mini-9-kw';
+const hiveMini9PackageUrl = 'https://selectsaunas.com/products/huum-hive-mini-series-9-0kw-sauna-heater-package';
 const retailerReviewed = 'September 2, 2026';
 
 const faqSchema = {
@@ -40,7 +41,7 @@ const faqSchema = {
       "name": "How much do the HUUM DROP 6 and HIVE Mini 9 cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "When checked on September 2, 2026, Select Saunas listed the DROP 6 heater at $1,506 and the HIVE Mini 9 heater at $2,657. Those were heater-only listing prices, not complete installed-project costs. Current pricing, stock, controller, stones, wiring, delivery, and labor must be verified before ordering."
+        "text": "When checked on September 2, 2026, Select Saunas listed the DROP 6 heater at $1,506 and the HIVE Mini 9 heater at $2,657. It also listed a HIVE Mini 9 package at $4,519 with a UKU control and 330 lb of stones. These are not complete installed-project costs. Current pricing, stock, exact components, wiring, delivery, and labor must be verified before ordering."
       }
     }
   ]
@@ -48,7 +49,7 @@ const faqSchema = {
 ---
 <Base
   title="HUUM Heater Review (2026): DROP 6 vs HIVE Mini 9"
-  description="Compare the HUUM DROP 6 and HIVE Mini 9 by room size, stone load, heater-only price, required components, and North American installation checks."
+  description="Compare the HUUM DROP 6 and HIVE Mini 9 by room size, stone load, heater and package pricing, required components, and North American installation checks."
   canonical="/brands/huum-sauna-heater-review"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -95,6 +96,11 @@ const faqSchema = {
           <p class="text-xs text-stone-400 mb-3">Listed in stock when checked {retailerReviewed}; price and availability can change.</p>
           <p class="text-sm text-stone-200">The listing includes the heater, adjustable legs, and air tunnel. A compatible UKU control, 330 lb of stones, heat-resistant cable, wiring, and installation remain separate.</p>
           <SelectSaunasButton href={hiveMini9Url} label="Check current HIVE Mini 9 price and stock" ctaPosition="above_fold_hive" />
+          <div class="border-t border-stone-700 mt-5 pt-5">
+            <p class="text-sm font-semibold text-amber-300 mb-1">Prefer the control and stones bundled?</p>
+            <p class="text-sm text-stone-200">Select Saunas also listed a $4,519 package with the HIVE Mini 9, UKU control, and 330 lb of stones. Wiring and professional installation remain separate.</p>
+            <SelectSaunasButton href={hiveMini9PackageUrl} label="Check the HIVE Mini 9 package" ctaPosition="above_fold_hive_package" />
+          </div>
         </div>
       </div>
       <p class="text-xs text-stone-400 mt-4">Retailer snapshot: Select Saunas, {retailerReviewed}. Verify the live listing and exact package before ordering.</p>
@@ -145,7 +151,7 @@ const faqSchema = {
       <div><h3 class="font-bold text-stone-900 mb-1">Is a HUUM sauna heater worth considering?</h3><p class="text-stone-700">Yes, when the design and controls fit your project and the exact installed system passes your sizing, electrical, clearance, documentation, and support checks.</p></div>
       <div><h3 class="font-bold text-stone-900 mb-1">What is the difference between DROP and HIVE?</h3><p class="text-stone-700">DROP is wall-mounted and aimed at smaller rooms. HIVE is floor-standing and uses a much larger rock load for larger rooms. Use HUUM's current model table rather than choosing by appearance.</p></div>
       <div><h3 class="font-bold text-stone-900 mb-1">Is HUUM better than Harvia?</h3><p class="text-stone-700">There is no universal winner. Compare the exact models on room fit, installed cost, controls, local documentation, service, clearances, and the heat experience you want.</p></div>
-      <div><h3 class="font-bold text-stone-900 mb-1">How much do the DROP 6 and HIVE Mini 9 cost?</h3><p class="text-stone-700">Select Saunas listed the DROP 6 heater at $1,506 and the HIVE Mini 9 heater at $2,657 when checked {retailerReviewed}. These are not complete installed-project prices. Verify current stock and price, then add the required controller, stones, electrical work, and installation.</p></div>
+      <div><h3 class="font-bold text-stone-900 mb-1">How much do the DROP 6 and HIVE Mini 9 cost?</h3><p class="text-stone-700">Select Saunas listed the DROP 6 heater at $1,506 and the HIVE Mini 9 heater at $2,657 when checked {retailerReviewed}. It also listed a $4,519 HIVE Mini 9 package with a UKU control and 330 lb of stones. These are not complete installed-project prices. Verify current stock, price, and exact components, then account for electrical work and installation.</p></div>
     </div>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
