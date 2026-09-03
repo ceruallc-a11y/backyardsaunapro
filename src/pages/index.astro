@@ -73,7 +73,7 @@ const researchGuides = [
 const reviewGuides = [
   ["/reviews/almost-heaven-pinnacle-review/", "Almost Heaven Pinnacle Review", "A buyer-focused look at the popular barrel sauna."],
   ["/reviews/harvia-kip-60b-review/", "Harvia KIP 60B Review", "Specifications, installation, and buyer-fit limits."],
-  ["/brands/huum-sauna-heater-review/", "HUUM DROP vs HIVE Mini", "Compare exact room ranges, heater-only pricing, and a control-and-stones package."]
+  ["/brands/huum-sauna-heater-review/?ref=homepage&campaign=huum_package&placement=homepage_reviews", "HUUM DROP vs HIVE Mini", "Compare exact room ranges, heater-only pricing, and a control-and-stones package.", "homepage_reviews_huum"]
 ];
 
 const featuredPick = featuredPicks[0];
@@ -228,8 +228,8 @@ const secondaryPicks = featuredPicks.slice(1);
       </div>
       <div>
         <h3 class="text-lg font-bold mb-2">Read the reviews</h3>
-        {reviewGuides.map(([href, title, desc]) => (
-          <a href={href} class="home-guide-link group">
+        {reviewGuides.map(([href, title, desc, ctaPosition]) => (
+          <a href={href} class="home-guide-link group" data-track-event={ctaPosition ? "internal_offer_click" : undefined} data-cta-position={ctaPosition}>
             <span class="font-semibold group-hover:underline">{title}</span>
             <span class="block text-xs text-[#5a6962] mt-1 leading-relaxed">{desc}</span>
           </a>

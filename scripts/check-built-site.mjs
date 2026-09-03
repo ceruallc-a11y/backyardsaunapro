@@ -263,6 +263,21 @@ const requiredMarkers = [
     label: 'HUUM HIVE Mini package CTA attribution',
   },
   {
+    file: 'index.html',
+    pattern: /placement=homepage_reviews[^>]*data-track-event="internal_offer_click"[^>]*data-cta-position="homepage_reviews_huum"/,
+    label: 'homepage HUUM internal offer attribution',
+  },
+  {
+    file: 'guides/best-sauna-heater/index.html',
+    pattern: /placement=heater_next_steps[^>]*data-track-event="internal_offer_click"[^>]*data-cta-position="heater_next_steps_huum"/,
+    label: 'heater guide HUUM internal offer attribution',
+  },
+  {
+    file: 'guides/sauna-heater-sizing-guide/index.html',
+    pattern: /placement=heater_sizing_continue[^>]*data-track-event="internal_offer_click"[^>]*data-cta-position="heater_sizing_continue_huum"/,
+    label: 'heater sizing HUUM internal offer attribution',
+  },
+  {
     file: 'guides/sauna-vs-hot-tub/index.html',
     pattern: /sauna_vs_hot_tub_after_intro/,
     label: 'sauna versus hot tub planner attribution',
