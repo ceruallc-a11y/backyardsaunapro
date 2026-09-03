@@ -239,6 +239,13 @@ import Base from '../layouts/Base.astro';
           const data = await response.json();
           if (!response.ok || !data.ok) throw new Error(data.error || 'We could not receive the request.');
 
+          if (data.stored === false) {
+            if (leadStatus) leadStatus.textContent = 'Received. We will review your request and email you if follow-up is needed.';
+            leadForm.reset();
+            return;
+          }
+          if (!data.receiptId) throw new Error('We could not confirm the request.');
+
           if (leadStatus) {
             const sharingStatus = payload.partnerConsent
               ? 'You allowed one relevant seller or installer to receive the project after our manual review.'

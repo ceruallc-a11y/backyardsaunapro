@@ -95,6 +95,37 @@ test('sends a privacy-safe operational alert', async () => {
   assert.doesNotMatch(JSON.stringify(sent[0]), /sam@example\.com|02139|Gate is 42 inches wide|Sam/);
 });
 
+test('marks a honeypot submission as not stored without touching D1 or email', async () => {
+  let databaseCalls = 0;
+  let alertCalls = 0;
+  const response = await worker.fetch(createLeadRequest({
+    ...validInput,
+    website: 'https://spam.example',
+  }), {
+    DB: {
+      prepare() {
+        databaseCalls += 1;
+        throw new Error('Honeypot submissions must not query D1.');
+      },
+    },
+    LEAD_ALERTS: {
+      async send() {
+        alertCalls += 1;
+      },
+    },
+    RATE_LIMIT_SALT: 'test-only',
+  });
+  const result = await response.json();
+
+  assert.equal(response.status, 202);
+  assert.equal(result.ok, true);
+  assert.equal(result.stored, false);
+  assert.equal(result.duplicate, true);
+  assert.equal(typeof result.receiptId, 'string');
+  assert.equal(databaseCalls, 0);
+  assert.equal(alertCalls, 0);
+});
+
 test('stores a consented lead before returning a receipt', async () => {
   const sqlite = new DatabaseSync(':memory:');
   sqlite.exec(fs.readFileSync(new URL('./schema.sql', import.meta.url), 'utf8'));
@@ -116,6 +147,7 @@ test('stores a consented lead before returning a receipt', async () => {
 
   assert.equal(response.status, 201);
   assert.equal(result.ok, true);
+  assert.equal(result.stored, true);
   assert.equal(stored.id, result.receiptId);
   assert.equal(stored.contact_consent, 1);
   assert.equal(stored.partner_consent, 0);
@@ -148,6 +180,7 @@ test('returns the existing receipt without storing another lead', async () => {
   assert.equal(firstResponse.status, 201);
   assert.equal(duplicateResponse.status, 200);
   assert.equal(duplicate.duplicate, true);
+  assert.equal(duplicate.stored, true);
   assert.equal(duplicate.receiptId, first.receiptId);
   assert.equal(storedCount, 1);
 });

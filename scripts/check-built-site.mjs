@@ -228,6 +228,11 @@ const requiredMarkers = [
     label: 'duplicate lead analytics guard',
   },
   {
+    file: null,
+    pattern: /\.stored===(!1|false)[\s\S]{0,500}?return}[\s\S]{0,1200}?lead_submitted/,
+    label: 'discarded honeypot analytics guard',
+  },
+  {
     file: 'index.html',
     pattern: /localStorage\.setItem\(["']bsp_newsletter_signup_pending["']/,
     label: 'pending newsletter signup state',

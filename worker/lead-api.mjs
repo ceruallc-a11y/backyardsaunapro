@@ -156,7 +156,14 @@ export default {
     }
 
     const { lead, errors, valid } = validateLead(input || {});
-    if (lead.website) return json({ ok: true, receiptId: crypto.randomUUID() }, 202, origin);
+    if (lead.website) {
+      return json({
+        ok: true,
+        receiptId: crypto.randomUUID(),
+        duplicate: true,
+        stored: false,
+      }, 202, origin);
+    }
     if (!valid) return json({ ok: false, error: 'Please review the highlighted fields.', fields: errors }, 422, origin);
 
     const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
@@ -174,7 +181,7 @@ export default {
     ).bind(emailHash, lead.region).first();
     if (duplicate?.id) {
       console.log(JSON.stringify({ event: 'lead_duplicate', receiptId: duplicate.id }));
-      return json({ ok: true, receiptId: duplicate.id, duplicate: true }, 200, origin);
+      return json({ ok: true, receiptId: duplicate.id, duplicate: true, stored: true }, 200, origin);
     }
 
     const id = crypto.randomUUID();
@@ -207,6 +214,6 @@ export default {
       })));
     if (ctx?.waitUntil) ctx.waitUntil(alert);
     else await alert;
-    return json({ ok: true, receiptId: id }, 201, origin);
+    return json({ ok: true, receiptId: id, stored: true }, 201, origin);
   },
 };
