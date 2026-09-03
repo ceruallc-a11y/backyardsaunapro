@@ -263,6 +263,26 @@ const requiredMarkers = [
     label: 'Salem specification conflict disclosure',
   },
   {
+    file: 'guides/best-2-person-outdoor-sauna/index.html',
+    pattern: /saunalife-cl3g-2-person-sauna-with-glass-front\?sca_ref=10752576\.S2huPg7gFg/,
+    label: 'trackable CL3G retailer destination',
+  },
+  {
+    file: 'guides/best-2-person-outdoor-sauna/index.html',
+    pattern: /sunray-burlington-hl200d\?sca_ref=10752576\.S2huPg7gFg/,
+    label: 'trackable Burlington retailer destination',
+  },
+  {
+    file: 'guides/best-2-person-outdoor-sauna/index.html',
+    pattern: /Heater and controls are not shown in the included-items lists/,
+    label: 'CL3G heater exclusion disclosure',
+  },
+  {
+    file: 'guides/best-2-person-outdoor-sauna/index.html',
+    pattern: /Retailer and manufacturer specifications conflict/,
+    label: 'Burlington specification conflict disclosure',
+  },
+  {
     file: 'brands/huum-sauna-heater-review/index.html',
     pattern: /huum-hive-mini-series-9-0kw-sauna-heater-package\?sca_ref=10752576\.S2huPg7gFg/,
     label: 'HUUM HIVE Mini package affiliate attribution',

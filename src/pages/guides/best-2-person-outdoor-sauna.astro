@@ -1,7 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
 import AdvertiserDisclosure from '../../components/AdvertiserDisclosure.astro';
-import AmazonButton from '../../components/AmazonButton.astro';
 import SunHomeButton from '../../components/SunHomeButton.astro';
 import LeadMagnetSignup from '../../components/LeadMagnetSignup.astro';
 import PlannerCTA from '../../components/PlannerCTA.astro';
@@ -25,27 +24,29 @@ const picks = [
   },
   {
     rank: 2,
-    asin: "B017WJV8SO",
-    name: "Almost Heaven Pinnacle 4-Person Barrel Sauna",
-    
+    selectUrl: "https://selectsaunas.com/products/saunalife-cl3g-2-person-sauna-with-glass-front",
+    name: "SaunaLife CL3G 2-Person Outdoor Sauna",
     rating: "Specs and price checked September 2026",
-    tag: "BEST TRADITIONAL BARREL",
+    tag: "BEST TRADITIONAL CUBE",
     tagColor: "bg-amber-100 text-amber-800",
-    type: "Traditional Barrel",
-    capacity: "Rated 4-person, ideal for 2",
-    image: "/images/editorial/outdoor-barrel-sauna-representative.webp",
-    imageAlt: "Representative outdoor barrel sauna on a prepared base",
-    imageCaption: "Representative barrel-sauna setup; not the exact Pinnacle configuration.",
-    summary: "Almost Heaven lists the Pinnacle as a 6-by-6-foot barrel with 63.25-inch benches. It is rated for four, but the bench dimensions make it a more realistic traditional-sauna comparison for two adults than a capacity label alone.",
-    pros: ["63.25-inch benches listed", "6kW heater configuration available", "Stainless bands and hardware", "Tempered-glass options"],
-    cons: ["240V/30A hardwire requirement listed", "Freight, unloading, and base must be planned", "Rated capacity does not guarantee comfort", "Outdoor wood needs maintenance"]
+    type: "Traditional Cube Kit",
+    capacity: "True 2-person",
+    image: "/images/lifestyle/sauna-in-snow.jpg",
+    imageAlt: "Representative compact outdoor cube sauna in a snowy setting",
+    imageCaption: "Representative compact cube-sauna setting; not confirmed as the exact CL3G configuration.",
+    currentPrice: "$3,990 at Select Saunas on September 2, 2026",
+    summary: "SaunaLife and Select Saunas both list the CL3G at 53.2 inches wide by 51.2 inches deep by 81.9 inches high, with a 49.6-by-43.2-inch interior. The current $3,990 retailer listing covers the room kit and lighting; a heater and controls do not appear in either published included-items list, so price the complete heating package before comparing totals.",
+    pros: ["True two-person outdoor room", "Compact 53.2-by-51.2-inch footprint", "Thermo-Spruce shell and Thermo-Aspen bench", "Shingled roof and Wi-Fi-controlled white LED lighting", "Retailer currently says in stock and ships in 4-7 days"],
+    cons: ["Heater and controls are not shown in the included-items lists", "990-pound listed shipping weight", "Foundation, assembly, and electrical work remain", "Full-glass front reduces privacy"],
+    selectLabel: "Check current CL3G price and configuration",
+    ctaPosition: "cl3g_product"
   },
   {
     rank: 3,
     selectUrl: "https://selectsaunas.com/products/almost-heaven-salem-2-person-barrel-sauna",
     name: "Almost Heaven Salem 2-Person Barrel Sauna",
     
-    rating: "Specs checked August 2026",
+    rating: "Specs and price checked September 2026",
     tag: "TRUE 2-PERSON BARREL",
     tagColor: "bg-green-100 text-green-800",
     type: "Traditional Barrel",
@@ -56,24 +57,25 @@ const picks = [
     currentPrice: "$4,265 at Select Saunas on September 2, 2026",
     summary: "Almost Heaven currently lists the Salem at 78 by 47 inches assembled, with a 75.25-by-39.25-inch interior and 39.25-inch benches. Select Saunas currently lists a $4,265 base configuration and a 6-8 week lead time, but its visible dimensions differ from the manufacturer page. Confirm the selected revision and written specifications before ordering.",
     pros: ["True two-person outdoor format", "Compact 78-by-47-inch current manufacturer footprint", "6kW heater package listed", "Stones included in the current retailer package"],
-    cons: ["39.25-inch benches limit reclining", "Retailer and manufacturer dimensions conflict", "240V/30A hardwire requirement listed", "LTL delivery and base must be planned", "Outdoor wood needs maintenance"]
+    cons: ["39.25-inch benches limit reclining", "Retailer and manufacturer dimensions conflict", "240V/30A hardwire requirement listed", "LTL delivery and base must be planned", "Outdoor wood needs maintenance"],
+    selectLabel: "Check current Salem price and configuration",
+    ctaPosition: "salem_product"
   },
   {
     rank: 4,
-    officialUrl: "https://almostheaven.com/products/princeton-6-person-barrel-sauna",
-    name: "Almost Heaven Princeton 6-Person Barrel Sauna",
-    
-    rating: "Specs checked August 2026",
-    tag: "ROOMIEST TRADITIONAL",
+    selectUrl: "https://selectsaunas.com/products/sunray-burlington-hl200d",
+    name: "SunRay Burlington 2-Person Outdoor Infrared Sauna",
+    rating: "Specs and price checked September 2026",
+    tag: "LOWEST PUBLISHED PRICE",
     tagColor: "bg-purple-100 text-purple-800",
-    type: "Traditional Barrel",
-    capacity: "Rated 6-person, spacious for 2",
-    image: "/images/lifestyle/barrel-sauna-field.jpg",
-    imageAlt: "Representative full-size outdoor barrel sauna in a grassy setting",
-    imageCaption: "Representative full-size barrel sauna; not the exact Princeton configuration.",
-    summary: "Almost Heaven lists the Princeton at 78 inches wide by 94 inches deep, with 86.375-inch benches and an 8kW heater configuration. That creates genuine length for two people, but it also turns a small-yard purchase into a larger site, freight, and electrical project.",
-    pros: ["86.375-inch benches listed", "More room for two people to stretch out", "8kW heater configuration available", "Tempered-glass options"],
-    cons: ["240V/40A hardwire requirement listed", "Flatbed freight preparation", "Much larger footprint", "Higher total project scope"]
+    type: "Outdoor Infrared",
+    capacity: "True 2-person",
+    currentPrice: "$3,790 at Select Saunas on September 2, 2026",
+    summary: "SunRay currently lists the Burlington at 47 by 45 by 87 inches, with a 43-by-41-by-68-inch interior, six infrared heaters, 1,900 watts, and a dedicated 110-120V/20A circuit. Select Saunas currently lists the same model at $3,790 but publishes different exterior dimensions and warranty terms, so confirm the delivered revision and written warranty before ordering.",
+    pros: ["True two-person outdoor infrared cabin", "Lowest currently published price among the three non-sponsored picks", "Dedicated 110-120V/20A service rather than a 240V sauna heater circuit", "301-pound listed shipping weight", "Severe-weather cover listed by the retailer"],
+    cons: ["Lower maximum temperature than a traditional sauna", "No steam or loyly", "Still needs a dedicated circuit", "Retailer and manufacturer specifications conflict"],
+    selectLabel: "Check current Burlington price and specifications",
+    ctaPosition: "burlington_product"
   }
 ];
 ---
@@ -88,9 +90,9 @@ const picks = [
       <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">
         Best 2-Person Outdoor Saunas: Four Different Buyer Fits
       </h1>
-      <p class="text-stone-500 text-sm">Reviewed August 2026 &middot; 8 min read</p>
+      <p class="text-stone-500 text-sm">Updated September 2, 2026 &middot; 8 min read</p>
       <p class="text-lg text-stone-600 mt-4">
-        A capacity label does not tell you whether two adults can sit comfortably, stretch out, or reach the site without a delivery problem. Compare interior dimensions, heat format, power, and installed scope first.
+        Every model below is currently sold as a two-person outdoor sauna. Compare interior dimensions, heat format, power, and complete installed scope before choosing between them.
       </p>
     </header>
 
@@ -106,15 +108,15 @@ const picks = [
 
 
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8">
-      <h2 class="font-bold text-stone-800 mb-2">Compare the Bench, Not Just the Capacity Label</h2>
-      <p class="text-sm text-stone-700">A larger stated capacity can provide more bench length for two people, but it also increases footprint, freight, heater, and site requirements. Check the current interior and bench dimensions before sizing up.</p>
+      <h2 class="font-bold text-stone-800 mb-2">Compare the Complete Installed Scope</h2>
+      <p class="text-sm text-stone-700">A room-kit price can exclude the heater and controls, while an infrared cabin can include its heating system but still require a dedicated circuit. Compare the delivered package, electrical work, base, unloading, and assembly—not just the checkout price.</p>
     </div>
 
     <PlannerCTA source="best_2_person_outdoor_above_fold" heading="Know your space and power before requesting quotes" />
 
     <div class="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-8 text-sm text-stone-700">
       <strong class="block text-stone-900 mb-2">How the non-sponsored picks were checked</strong>
-      We did not hands-on test them. Specifications were checked against the current <a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Pinnacle</a>, <a href="https://almostheaven.com/products/salem-2-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Salem</a>, and <a href="https://almostheaven.com/products/princeton-6-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Princeton</a> manufacturer pages. The Salem specifications and Select Saunas price were rechecked in September 2026; the retailer still publishes different dimensions, so confirm the selected revision in writing. Current configurations, prices, and lead times can change.
+      We did not hands-on test them. Specifications were checked against the current <a href="https://saunalife.com/saunas/cube-series-model-cl3g/" rel="noopener" target="_blank" class="text-amber-700 hover:underline">SaunaLife CL3G</a>, <a href="https://almostheaven.com/products/salem-2-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Almost Heaven Salem</a>, and <a href="https://www.sunraysaunas.com/products/2-person-outdoor-infrared-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">SunRay Burlington</a> manufacturer pages, then compared with the linked retailer listings on September 2, 2026. The Salem and Burlington retailer pages publish conflicting specifications, and the CL3G room-kit lists do not show a heater or controls. Confirm the selected revision, included equipment, and written warranty before ordering. Prices and availability can change.
     </div>
 
     <h2 class="text-2xl font-bold mb-6 text-stone-900">Compare Four Buyer Fits</h2>
@@ -162,10 +164,8 @@ const picks = [
           )}
           {pick.sponsor === 'sun-home' ? (
             <SunHomeButton product={pick.sunHomeProduct} label="See Sun Home Luminar" />
-          ) : 'asin' in pick && pick.asin ? (
-            <AmazonButton asin={pick.asin} />
           ) : 'selectUrl' in pick && pick.selectUrl ? (
-            <SelectSaunasButton href={pick.selectUrl} label="Check current Salem price" ctaPosition="salem_product" />
+            <SelectSaunasButton href={pick.selectUrl} label={pick.selectLabel} ctaPosition={pick.ctaPosition} />
           ) : 'officialUrl' in pick && pick.officialUrl ? (
             <a href={pick.officialUrl} target="_blank" rel="noopener" class="inline-flex min-h-12 items-center justify-center border border-stone-300 text-stone-900 hover:bg-stone-50 font-semibold px-5 py-3 rounded-md">Verify current manufacturer specifications</a>
           ) : (
@@ -215,7 +215,7 @@ const picks = [
       "name": "What is the best 2-person outdoor sauna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The best choice depends on heat format, usable bench dimensions, site access, and power. The Sun Home Luminar is the sponsored outdoor infrared option. The Almost Heaven Salem is a compact two-person barrel, while the Pinnacle offers longer benches for two adults."
+        "text": "The best choice depends on heat format, usable interior dimensions, site access, and complete installed cost. The Sun Home Luminar is the sponsored premium outdoor infrared option. The SaunaLife CL3G is a compact traditional room kit, the Almost Heaven Salem is a compact barrel, and the SunRay Burlington has the lowest currently published price among the three non-sponsored picks."
       }
     },
     {
