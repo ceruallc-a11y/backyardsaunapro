@@ -6,13 +6,14 @@ import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 import SunHomeButton from '../../components/SunHomeButton.astro';
 
 const reviewedAt = 'August 15, 2026';
+const priceCheckedAt = 'September 2, 2026';
 
 const picks = [
   {
     rank: 1,
     label: 'Compact barrel path',
     name: 'Almost Heaven Pinnacle 4-Person Barrel Sauna',
-    reviewedPrice: '$6,002',
+    reviewedPrice: '$5,303',
     href: 'https://selectsaunas.com/collections/traditional-saunas/products/almost-heaven-pinnacle-morgan-4-person-classic-barrel-sauna-6x6-ft',
     fit: 'A buyer who wants a familiar 6-by-6-foot barrel layout and can support the hardwired heater, freight, base, assembly, and outdoor weather details.',
     facts: ['Up to four people (published)', '72 x 72 x 77-inch assembled exterior', '71 x 64 x 71-inch interior', 'Two 64 x 18-inch opposing benches', '6kW heater; 240V / 30A hardwired service'],
@@ -22,7 +23,7 @@ const picks = [
     rank: 2,
     label: 'Lower-priced cabin path',
     name: 'SaunaLife G2 4-Person Outdoor Cabin Sauna',
-    reviewedPrice: '$5,940',
+    reviewedPrice: '$4,990',
     href: 'https://selectsaunas.com/products/saunalife-g2-4-person-outdoor-traditional-sauna',
     fit: 'A buyer who prefers a taller cabin room over a barrel and wants to choose the heater package after confirming room volume and local requirements.',
     facts: ['Four-person listing', '92 x 72 x 92-inch exterior envelope', '59 x 66 x 85-inch interior', 'Nordic Spruce room with knotless Aspen benches', 'Roofing felt and foundation beams listed with the room kit'],
@@ -32,7 +33,7 @@ const picks = [
     rank: 3,
     label: 'Full-glass cube path',
     name: 'SaunaLife CL5G 4-Person Outdoor Cube Sauna',
-    reviewedPrice: '$6,940',
+    reviewedPrice: '$5,990',
     href: 'https://selectsaunas.com/products/saunalife-model-cl5g-cube-series-outdoor-home-sauna-kit-up-to-4-persons',
     fit: 'A design-focused buyer who values a full-glass front, contoured seating, and a complete shingle kit enough to accept the added glass and heater-sizing considerations.',
     facts: ['Up to four people (published)', 'Thermo-Spruce exterior and Thermo-Aspen seating', '76-inch back-wall bench and 73.2-inch lower bench', 'Bronze-tempered-glass front', 'Shingle roof kit and Wi-Fi-capable white LED system listed'],
@@ -112,7 +113,7 @@ const faqSchema = {
     <aside class="border-y border-stone-200 py-6 mb-8">
       <h2 class="text-2xl font-bold text-stone-900 mb-2">Treat four people as a maximum until the bench proves otherwise</h2>
       <p class="text-stone-700 mb-3">Capacity labels do not tell you whether four adults can sit comfortably, whether anyone can recline, or whether the heater and doorway reduce usable space.</p>
-      <p class="text-sm text-stone-600">Prices below are retailer snapshots from {reviewedAt}. Confirm stock, configuration, freight, tax, lead time, and final price before ordering.</p>
+      <p class="text-sm text-stone-600">Prices below are retailer snapshots checked {priceCheckedAt}. Confirm stock, configuration, freight, tax, lead time, and final price before ordering.</p>
     </aside>
 
     <PlannerCTA source="best_4_person_outdoor_above_fold" heading="Turn the shortlist into a site-ready project brief" />
@@ -149,7 +150,7 @@ const faqSchema = {
               </div>
             </div>
 
-            <SelectSaunasButton href={pick.href} label="Check current listing" ctaPosition="best_4_person_outdoor_shortlist" />
+            <SelectSaunasButton href={pick.href} label="Check current price and availability" ctaPosition="best_4_person_outdoor_shortlist" />
           </section>
         ))}
       </div>
