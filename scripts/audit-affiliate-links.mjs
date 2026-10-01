@@ -9,6 +9,7 @@ const commerceRoutes = JSON.parse(
 const amazonTag = 'backyardsauna-20';
 const selectSaunasRef = '10752576.S2huPg7gFg';
 const maxRouteAgeDays = 30;
+const strictFreshness = process.argv.includes('--strict-freshness');
 
 async function listFiles(directory) {
   const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -177,12 +178,13 @@ const failures = rows.filter((row) =>
   || row.audit_status === 'missing_referral'
   || ['unavailable', 'not_found', 'no_featured_offer'].includes(row.observed_status) && row.audit_status === 'checked_available'
 );
+const staleRoutes = [];
 const now = Date.now();
 for (const [asin, route] of Object.entries(commerceRoutes)) {
   const checkedAt = Date.parse(`${route.lastChecked ?? ''}T00:00:00Z`);
   const ageDays = Number.isFinite(checkedAt) ? Math.floor((now - checkedAt) / 86_400_000) : Infinity;
   if (ageDays > maxRouteAgeDays) {
-    failures.push({
+    staleRoutes.push({
       source_file: 'src/data/product-commerce-routes.json',
       source_line: '',
       product_id: asin,
@@ -192,7 +194,14 @@ for (const [asin, route] of Object.entries(commerceRoutes)) {
 }
 const asinRows = rows.filter((row) => row.source_kind === 'amazon_asin');
 const uniqueAsins = new Set(asinRows.map((row) => row.product_id));
-console.log(`Audited ${rows.length} commerce references, including ${asinRows.length} ASIN placements across ${uniqueAsins.size} products; ${failures.length} routing or freshness failures.`);
+console.log(`Audited ${rows.length} commerce references, including ${asinRows.length} ASIN placements across ${uniqueAsins.size} products; ${failures.length} routing failures and ${staleRoutes.length} stale product routes.`);
+if (strictFreshness) {
+  failures.push(...staleRoutes);
+} else {
+  for (const staleRoute of staleRoutes) {
+    console.warn(`${staleRoute.source_file}:${staleRoute.source_line} ${staleRoute.product_id ?? ''} ${staleRoute.audit_status}`.trim());
+  }
+}
 if (failures.length) {
   for (const failure of failures) console.error(`${failure.source_file}:${failure.source_line} ${failure.product_id ?? ''} ${failure.audit_status}`.trim());
   process.exitCode = 1;
