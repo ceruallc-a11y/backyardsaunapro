@@ -5,7 +5,7 @@ import PlannerCTA from '../../components/PlannerCTA.astro';
 import SelectSaunasButton from '../../components/SelectSaunasButton.astro';
 import SunHomeButton from '../../components/SunHomeButton.astro';
 
-const reviewedAt = 'August 15, 2026';
+const reviewedAt = 'September 30, 2026';
 
 const picks = [
   {
@@ -16,6 +16,7 @@ const picks = [
     type: 'Indoor infrared',
     capacity: '3 people (published)',
     reviewedPrice: '$2,699',
+    availability: 'Retailer page accepting orders',
     selectSaunasHref: 'https://selectsaunas.com/products/dynamic-saunas-dyn-6336-02-lugano-3-person-low-emf-far-infrared-sauna',
     buyerFit: 'An indoor buyer who wants a published three-person cabin and can provide the required 120V / 20A electrical service.',
     documented: ['60 x 45 x 75-inch exterior', '57 x 41 x 69-inch interior', '120V / 20A electrical service', 'Nine carbon heating panels'],
@@ -28,7 +29,8 @@ const picks = [
     name: 'Almost Heaven Auburn 2-3 Person Indoor Sauna',
     type: 'Indoor traditional',
     capacity: '2-3 people (published)',
-    reviewedPrice: '$5,049',
+    reviewedPrice: '$4,260',
+    availability: 'Made to order; retailer lists a 6-8 week lead time',
     selectSaunasHref: 'https://selectsaunas.com/products/almost-heaven-auburn-2-3-person-indoor-sauna',
     buyerFit: 'A household that wants an indoor traditional room with rocks and water, plus a full-length upper bench.',
     documented: ['70 x 47 x 78-inch exterior', '65 x 42 x 77-inch interior', '65 x 22-inch upper bench', '6kW heater; 240V / 30A hardwired service'],
@@ -41,7 +43,8 @@ const picks = [
     name: 'SaunaLife E6 3-Person Barrel Sauna',
     type: 'Outdoor traditional barrel',
     capacity: '3 people (published)',
-    reviewedPrice: '$5,340',
+    reviewedPrice: '$4,390',
+    availability: 'In stock; retailer lists shipping within 4-7 days',
     selectSaunasHref: 'https://selectsaunas.com/products/saunalife-model-e6-sauna-barrel-ergo-series-sauna-barrel-59x81',
     buyerFit: 'An outdoor buyer who wants a current three-person barrel listing and is prepared to scope the heater, base, freight, electrical or chimney work, and assembly separately.',
     documented: ['59 x 81-inch listed format', '6-foot-5-inch published interior height', 'Thermo-Spruce shell and Thermo-Aspen seating', 'Shingle roof kit and dual floor drains listed'],
@@ -96,7 +99,7 @@ const faqSchema = {
 };
 ---
 <Base
-  title="Best 3-Person Saunas (2026): Current Buyer-Fit Shortlist"
+  title="Best 3-Person Saunas (2026): 3 True-Capacity Picks"
   description="Compare current 3-person indoor infrared, indoor traditional, and outdoor barrel saunas using published dimensions, electrical requirements, and exact retailer listings."
   canonical="/guides/best-3-person-sauna"
 >
@@ -105,7 +108,7 @@ const faqSchema = {
   <article class="max-w-4xl mx-auto">
     <header class="mb-8 max-w-3xl">
       <p class="text-sm text-amber-700 font-semibold uppercase tracking-wide mb-2">Capacity Buying Guide</p>
-      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best 3-Person Saunas</h1>
+      <h1 class="text-4xl font-bold text-stone-900 leading-tight mb-4">Best 3-person saunas: three true-capacity options</h1>
       <p class="text-stone-500 text-sm">Listings reviewed {reviewedAt} · 9 min read</p>
       <p class="text-lg text-stone-600 mt-4">Three-person saunas do exist. The useful question is whether the published interior and bench dimensions fit your three users, not whether a product card says “3 person.”</p>
     </header>
@@ -169,7 +172,10 @@ const faqSchema = {
                 <h3 class="text-2xl font-bold text-stone-900">{pick.name}</h3>
                 <p class="text-sm text-stone-500 mt-1">{pick.type} · {pick.capacity}</p>
               </div>
-              <p class="text-sm text-stone-600 mt-2 md:mt-1 shrink-0">Listed at review: <strong class="text-stone-900">{pick.reviewedPrice}</strong></p>
+              <div class="text-sm text-stone-600 mt-2 md:mt-1 md:text-right shrink-0">
+                <p>Listed at review: <strong class="text-stone-900">{pick.reviewedPrice}</strong></p>
+                <p class="mt-1 max-w-xs">{pick.availability}</p>
+              </div>
             </div>
 
             <p class="text-stone-700 mb-5"><strong>Who it may fit:</strong> {pick.buyerFit}</p>
