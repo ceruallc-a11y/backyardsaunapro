@@ -4,40 +4,40 @@
     "mode": "amazon_search",
     "query": "Finlandia FLB-60 6 kW sauna heater",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B002NM6LT2": {
     "productName": "Sauna thermometer and hygrometer",
     "mode": "amazon_search",
     "query": "sauna thermometer hygrometer wooden",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "wrong_product"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B000R2PTHG": {
     "productName": "Almost Heaven Allegheny barrel sauna",
     "mode": "amazon_search",
     "query": "Almost Heaven Allegheny barrel sauna",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B003YH9DXG": {
     "productName": "Dynamic Saunas Andora 1-person infrared sauna",
     "mode": "amazon_search",
     "query": "Dynamic Saunas Andora 1 person infrared sauna",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B003Z11AXM": {
     "productName": "Almost Heaven six-person barrel sauna",
     "mode": "amazon_search",
     "query": "Almost Heaven 6 person barrel sauna",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "unavailable"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B00A2F99F0": {
     "productName": "Dynamic Saunas Barcelona 1-2 person infrared sauna",
@@ -50,7 +50,7 @@
     "productName": "The Sauna Place 45 lb replacement olivine stones",
     "mode": "amazon_exact",
     "label": "Check Current Amazon Listing",
-    "lastChecked": "2026-08-15",
+    "lastChecked": "2026-10-01",
     "observedStatus": "available"
   },
   "B01N9SE8SZ": {
@@ -58,14 +58,14 @@
     "mode": "amazon_search",
     "query": "15 minute wooden sauna sand timer",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "wrong_product"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B01FY6PZYU": {
     "productName": "Harvia M3 wood-burning sauna heater",
     "mode": "amazon_exact",
     "label": "Check Current Amazon Listing",
-    "lastChecked": "2026-08-15",
+    "lastChecked": "2026-10-01",
     "observedStatus": "available"
   },
   "B01FY9T0B6": {
@@ -73,112 +73,112 @@
     "mode": "amazon_search",
     "query": "Harvia Legend 240SL wood burning sauna heater",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B017WJV8SO": {
     "productName": "Almost Heaven Pinnacle 4-person barrel sauna",
     "mode": "select_saunas",
     "url": "https://selectsaunas.com/products/almost-heaven-pinnacle-morgan-4-person-classic-barrel-sauna-6x6-ft",
     "label": "View Current Pinnacle Listing",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "amazon_unavailable_alternate_available"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "alternate_available"
   },
   "B07RLPBK5V": {
     "productName": "Dynamic Saunas Lugano 3-person infrared sauna",
     "mode": "amazon_search",
     "query": "Dynamic Saunas Lugano 3 person infrared sauna",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B07CZ4NN1P": {
     "productName": "Eucalyptus sauna scent concentrate",
     "mode": "amazon_search",
     "query": "eucalyptus sauna scent concentrate",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B07FKQB3LB": {
     "productName": "Wooden sauna bucket and ladle set",
     "mode": "amazon_search",
     "query": "wooden sauna bucket and ladle set",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B079N9NXBH": {
     "productName": "Sauna bench cushion set",
     "mode": "amazon_search",
     "query": "sauna bench cushion washable set",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B07MJDFHKG": {
     "productName": "Sauna wood cleaner and protector",
     "mode": "amazon_search",
     "query": "sauna wood cleaner cedar bench",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B07PXGQC9T": {
     "productName": "Finnish birch sauna whisk",
     "mode": "amazon_search",
     "query": "Finnish birch sauna whisk vihta",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B07WQHQ4BF": {
     "productName": "VEVOR 9 kW electric sauna heater",
     "mode": "amazon_search",
     "query": "VEVOR 9 kW electric sauna heater digital controller",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B07T9WBMSG": {
     "productName": "Portable infrared sauna cabin",
     "mode": "amazon_search",
     "query": "portable infrared sauna cabin",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B07YCQ4TCZ": {
     "productName": "Cedar sauna headrest set",
     "mode": "amazon_search",
     "query": "cedar sauna headrest set",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "wrong_product"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B08B3XHXSD": {
     "productName": "Heat-resistant sauna LED light",
     "mode": "amazon_search",
     "query": "heat resistant sauna LED light wet rated",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B08JHR3XBN": {
     "productName": "Cedar sauna backrest",
     "mode": "amazon_search",
     "query": "cedar sauna backrest",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B084FCQHBG": {
     "productName": "Radiant Saunas 2-person infrared sauna",
     "mode": "amazon_search",
     "query": "Radiant Saunas 2 person infrared sauna",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B084GY5CHB": {
     "productName": "SereneLife portable steam sauna",
@@ -192,28 +192,28 @@
     "mode": "select_saunas",
     "url": "https://selectsaunas.com/products/harvia-kip60b-6-0kw-electric-sauna-heater-w-built-in-controls",
     "label": "View Current KIP60B Listing",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "amazon_not_found_alternate_available"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "alternate_available"
   },
   "B0BC8QMSKG": {
     "productName": "Amocane 2-in-1 sauna thermometer and hygrometer",
     "mode": "amazon_exact",
     "label": "Check Current Amazon Listing",
-    "lastChecked": "2026-08-15",
+    "lastChecked": "2026-10-01",
     "observedStatus": "available"
   },
   "B09M8YQ4KB": {
     "productName": "HigherDOSE infrared sauna blanket",
     "mode": "amazon_exact",
     "label": "Check Current Amazon Listing",
-    "lastChecked": "2026-08-16",
+    "lastChecked": "2026-10-01",
     "observedStatus": "available"
   },
   "B0BX7HLCYQ": {
     "productName": "LifePro RejuvaWrap infrared sauna blanket",
     "mode": "amazon_exact",
     "label": "Check Current Amazon Listing",
-    "lastChecked": "2026-08-16",
+    "lastChecked": "2026-10-01",
     "observedStatus": "available"
   },
   "B0DKJVC1D3": {
@@ -221,14 +221,14 @@
     "mode": "amazon_search",
     "query": "sauna accessories bundle bucket ladle thermometer",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "not_found"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B0DWTCK8X9": {
     "productName": "Almost Heaven cedar sauna backrest",
     "mode": "amazon_exact",
     "label": "Check Current Amazon Listing",
-    "lastChecked": "2026-08-15",
+    "lastChecked": "2026-10-01",
     "observedStatus": "available"
   },
   "B0FB6SGKJL": {
@@ -236,15 +236,15 @@
     "mode": "amazon_search",
     "query": "olivine diabase sauna stones 40 lb",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "unavailable"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   },
   "B0DPG3R7PR": {
     "productName": "AURGOD outdoor barrel sauna with wood stove",
     "mode": "amazon_search",
     "query": "outdoor barrel sauna wood stove kit",
     "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-08-15",
-    "observedStatus": "no_featured_offer"
+    "lastChecked": "2026-10-01",
+    "observedStatus": "search_results_available"
   }
 }
