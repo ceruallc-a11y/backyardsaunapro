@@ -55,11 +55,11 @@
   },
   "B01N9SE8SZ": {
     "productName": "15-minute wooden sauna sand timer",
-    "mode": "amazon_search",
-    "query": "15 minute wooden sauna sand timer",
-    "label": "Compare Current Amazon Listings",
-    "lastChecked": "2026-10-01",
-    "observedStatus": "search_results_available"
+    "mode": "select_saunas",
+    "url": "https://selectsaunas.com/products/almost-heaven-sauna-sand-timer",
+    "label": "View Current Sand Timer Listing",
+    "lastChecked": "2026-10-06",
+    "observedStatus": "alternate_available"
   },
   "B01FY6PZYU": {
     "productName": "Harvia M3 wood-burning sauna heater",
