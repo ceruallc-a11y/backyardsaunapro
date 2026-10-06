@@ -234,12 +234,12 @@ const requiredMarkers = [
   },
   {
     file: 'index.html',
-    pattern: /localStorage\.setItem\(["']bsp_newsletter_signup_pending["']/,
+    pattern: /localStorage\.setItem\([`"']bsp_newsletter_signup_pending[`"']/,
     label: 'pending newsletter signup state',
   },
   {
     file: 'newsletter/confirmed/index.html',
-    pattern: /localStorage\.getItem\([^)]*\)[\s\S]*confirmation_method:["']pending_browser_signup["']/,
+    pattern: /localStorage\.getItem\([^)]*\)[\s\S]*confirmation_method:[`"']pending_browser_signup[`"']/,
     label: 'pending-state newsletter confirmation guard',
   },
   {
