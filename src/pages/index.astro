@@ -87,36 +87,42 @@ const secondaryPicks = featuredPicks.slice(1);
   mainClass="home-page"
 >
   <section class="home-hero">
-    <div class="max-w-7xl w-full mx-auto px-6 md:px-8 py-12 md:py-16 flex items-center">
-      <div class="max-w-2xl">
+    <div class="home-hero-shell max-w-7xl w-full mx-auto px-6 md:px-8 py-12 md:py-16 flex items-center">
+      <div class="home-hero-copy max-w-2xl">
         <AdvertiserDisclosure variant="hero" />
+        <p class="home-eyebrow">Independent home sauna guidance</p>
         <h1 class="display-type text-4xl md:text-6xl leading-[1.05] mb-5">
           Plan the right sauna for your home.
         </h1>
         <p class="text-lg md:text-xl text-white/80 max-w-[52ch] leading-relaxed mb-7">
-          Compare types, budget the full project, and prepare for installation before you buy.
+          Compare heat, space, power, freight, and the full installed cost before you buy.
         </p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="/sauna-planner/?ref=homepage&campaign=planner_first_10&placement=homepage_hero" class="home-action home-action-primary" data-track-event="planner_cta_clicked" data-cta-position="homepage_hero">Build your project brief</a>
+        <div class="home-hero-actions flex flex-col sm:flex-row gap-3">
+          <a href="/sauna-planner/?ref=homepage&campaign=planner_first_10&placement=homepage_hero" class="home-action home-action-primary" data-track-event="planner_cta_clicked" data-cta-position="homepage_hero">Plan my sauna</a>
           <a href="/best-saunas/" class="home-action home-action-secondary">Compare saunas</a>
         </div>
+        <ul class="home-trust-row" aria-label="How our guidance works">
+          <li>Specifications checked</li>
+          <li>Installation costs considered</li>
+          <li>Relationships disclosed</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="bg-[#f8faf8]" aria-label="Sauna planning path">
-    <div class="max-w-7xl mx-auto px-6 md:px-8 py-8 md:py-10 grid md:grid-cols-3 gap-7 md:gap-10">
-      <a href="/best-saunas/" class="home-step pt-4 group">
+  <section class="home-decision-wrap" aria-label="Sauna planning path">
+    <div class="home-decision-rail max-w-7xl mx-auto grid md:grid-cols-3">
+      <a href="/best-saunas/" class="home-step group">
         <span class="home-step-number text-sm font-bold">01</span>
         <h2 class="text-lg font-bold mt-2 mb-1 group-hover:text-[#1c4a39]">Compare the format</h2>
         <p class="text-sm text-[#5a6962] leading-relaxed">Indoor or outdoor. Traditional or infrared. Start with the decision that shapes every other cost.</p>
       </a>
-      <a href="/guides/outdoor-sauna-cost/" class="home-step pt-4 group">
+      <a href="/guides/outdoor-sauna-cost/" class="home-step group">
         <span class="home-step-number text-sm font-bold">02</span>
         <h2 class="text-lg font-bold mt-2 mb-1 group-hover:text-[#1c4a39]">Build the real budget</h2>
         <p class="text-sm text-[#5a6962] leading-relaxed">Include freight, foundation, electrical work, permits, assembly, and the sauna itself.</p>
       </a>
-      <a href="/sauna-planner/?ref=homepage&campaign=planner_first_10&placement=homepage_path" class="home-step pt-4 group" data-track-event="planner_cta_clicked" data-cta-position="homepage_path">
+      <a href="/sauna-planner/?ref=homepage&campaign=planner_first_10&placement=homepage_path" class="home-step group" data-track-event="planner_cta_clicked" data-cta-position="homepage_path">
         <span class="home-step-number text-sm font-bold">03</span>
         <h2 class="text-lg font-bold mt-2 mb-1 group-hover:text-[#1c4a39]">Prepare the project</h2>
         <p class="text-sm text-[#5a6962] leading-relaxed">Turn the shortlist into dimensions, site questions, and a brief you can take to installers.</p>
@@ -126,7 +132,7 @@ const secondaryPicks = featuredPicks.slice(1);
 
   <LeadMagnetSignup variant="home" />
 
-  <section class="max-w-7xl mx-auto px-6 md:px-8 py-14 md:py-20">
+  <section class="home-reveal max-w-7xl mx-auto px-6 md:px-8 py-14 md:py-20">
     <div class="max-w-2xl mb-8 md:mb-10">
       <h2 class="display-type text-3xl md:text-5xl leading-tight mb-3">Three practical starting points.</h2>
       <p class="text-[#5a6962] leading-relaxed">A premium plug-in cabin, a traditional outdoor barrel, and a lower-cost infrared option. Read the limits before you choose.</p>
@@ -166,7 +172,7 @@ const secondaryPicks = featuredPicks.slice(1);
     </div>
   </section>
 
-  <section class="border-y border-[#d4ddd7] bg-[#e8f0eb]">
+  <section class="home-reveal border-y border-[#d4ddd7] bg-[#e8f0eb]">
     <div class="max-w-7xl mx-auto px-6 md:px-8 py-14 md:py-18">
       <h2 class="display-type text-3xl md:text-4xl mb-8">New buyer guides for 2026.</h2>
       <div class="grid md:grid-cols-2 gap-6">
@@ -192,7 +198,7 @@ const secondaryPicks = featuredPicks.slice(1);
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto px-6 md:px-8 py-14 md:py-20">
+  <section class="home-reveal max-w-7xl mx-auto px-6 md:px-8 py-14 md:py-20">
     <div class="max-w-2xl mb-9">
       <h2 class="display-type text-3xl md:text-5xl leading-tight mb-3">Use the guide that matches the decision.</h2>
       <p class="text-[#5a6962] leading-relaxed">Skip the generic research loop. Start with the purchase, planning, or comparison question in front of you.</p>
@@ -239,7 +245,7 @@ const secondaryPicks = featuredPicks.slice(1);
     </div>
   </section>
 
-  <section class="bg-white border-y border-[#d4ddd7]">
+  <section class="home-reveal bg-white border-y border-[#d4ddd7]">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 items-stretch">
       <div class="min-h-[320px] lg:min-h-[460px]">
         <img src="/images/lifestyle/sauna-benches-stones.jpg" alt="Wood sauna benches and heater stones" class="w-full h-full object-cover" loading="lazy" width="1200" height="749" />
