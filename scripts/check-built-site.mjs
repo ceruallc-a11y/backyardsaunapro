@@ -88,6 +88,41 @@ const requiredMarkers = [
     label: 'best-portable planner campaign',
   },
   {
+    file: 'index.html',
+    pattern: /transport_type:["'`]beacon["'`]/,
+    label: 'commerce event beacon transport',
+  },
+  {
+    file: 'guides/best-home-sauna/index.html',
+    pattern: /pinnacle-morgan-4-person-classic-barrel-sauna-6x6-ft\?sca_ref=10752576\.S2huPg7gFg[^>]*data-cta-position="pinnacle_product"/,
+    label: 'exact Pinnacle retailer attribution',
+  },
+  {
+    file: 'guides/best-home-sauna/index.html',
+    pattern: /dynamic-saunas-dyn-6106-01-barcelona[^>]*data-cta-position="barcelona_product"/,
+    label: 'Barcelona retailer attribution',
+  },
+  {
+    file: 'guides/best-home-sauna/index.html',
+    pattern: /placement=best_home_sauna_bottom[^>]*data-track-event="planner_cta_clicked"/,
+    label: 'best-home bottom planner path',
+  },
+  {
+    file: 'guides/best-portable-sauna/index.html',
+    pattern: /placement=portable_above_fold_infrared[^>]*data-track-event="internal_offer_click"/,
+    label: 'portable infrared cabin comparison path',
+  },
+  {
+    file: 'guides/best-portable-sauna/index.html',
+    pattern: /placement=portable_infrared_blankets[^>]*data-track-event="internal_offer_click"/,
+    label: 'portable infrared blanket comparison path',
+  },
+  {
+    file: 'guides/best-portable-sauna/index.html',
+    pattern: /placement=best_portable_sauna_bottom[^>]*data-track-event="planner_cta_clicked"/,
+    label: 'best-portable bottom planner path',
+  },
+  {
     file: 'guides/best-indoor-sauna-kits/index.html',
     pattern: /placement=indoor_sauna_kits_above_fold/,
     label: 'indoor-sauna-kits planner attribution',
@@ -254,8 +289,13 @@ const requiredMarkers = [
   },
   {
     file: 'guides/best-2-person-outdoor-sauna/index.html',
-    pattern: /Current retailer price:[\s\S]{0,200}?\$4,265 at Select Saunas on September 2, 2026/,
+    pattern: /Current retailer price:[\s\S]{0,200}?\$4,176 at Select Saunas on October 6, 2026/,
     label: 'current Salem retailer price',
+  },
+  {
+    file: 'guides/best-2-person-outdoor-sauna/index.html',
+    pattern: /placement=best_2_person_outdoor_bottom[^>]*data-track-event="planner_cta_clicked"/,
+    label: 'best-2-person bottom planner path',
   },
   {
     file: 'guides/best-2-person-outdoor-sauna/index.html',

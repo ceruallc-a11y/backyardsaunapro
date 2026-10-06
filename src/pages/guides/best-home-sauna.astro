@@ -7,6 +7,7 @@ import LeadMagnetSignup from '../../components/LeadMagnetSignup.astro';
 import PlannerCTA from '../../components/PlannerCTA.astro';
 
 const dynamicBarcelonaUrl = 'https://selectsaunas.com/products/dynamic-saunas-dyn-6106-01-barcelona-1-2-person-low-emf-far-infrared-sauna';
+const pinnacleUrl = 'https://selectsaunas.com/products/almost-heaven-pinnacle-morgan-4-person-classic-barrel-sauna-6x6-ft';
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -179,11 +180,9 @@ import AmazonButton from '../../components/AmazonButton.astro';
           </div>
           
         </div>
-        <p class="text-stone-600 mb-4">Almost Heaven lists the Pinnacle as a four-person, 6-by-6-foot barrel with 63.25-inch benches and a 6kW, 240V hardwired heater configuration. That bench length is more useful for two adults than the capacity label alone. Confirm the selected lumber, door, heater, freight method, site preparation, and current lead time in writing.</p>
-        <div class="flex flex-wrap gap-3">
-          <AmazonButton asin="B017WJV8SO" variant="primary" />
-          <SelectSaunasButton collection="barrel-saunas" label="Shop on Select Saunas" />
-        </div>
+        <p class="text-stone-600 mb-3">Almost Heaven lists the Pinnacle as a four-person, 6-by-6-foot barrel with 63.25-inch benches and a 6kW, 240V hardwired heater configuration. That bench length is more useful for two adults than the capacity label alone. Confirm the selected lumber, door, heater, freight method, site preparation, and current lead time in writing.</p>
+        <p class="text-sm font-semibold text-stone-900 mb-4">Retailer listing checked October 6, 2026: $5,303 base configuration with a stated 6-8 week lead time. Price and options can change.</p>
+        <SelectSaunasButton href={pinnacleUrl} label="Check the current Pinnacle listing" ctaPosition="pinnacle_product" />
       </div>
 
     </div>
@@ -204,10 +203,12 @@ import AmazonButton from '../../components/AmazonButton.astro';
           </div>
           
         </div>
-        <p class="text-stone-600 mb-4">Dynamic currently lists model DYN-6106-01 as a 1-to-2-person hemlock infrared cabin measuring 39 by 36 by 73 inches, with a 120V/15A electrical requirement. Its 36-by-32-inch interior will be tight for two larger adults, so compare the interior dimensions before treating the capacity label as a comfort promise. It is not a traditional rock-and-steam sauna. Select Saunas currently shows an Add to Cart option and says supplier availability is confirmed after an order, so check the listing before buying.</p>
+        <p class="text-stone-600 mb-3">Dynamic currently lists model DYN-6106-01 as a 1-to-2-person hemlock infrared cabin measuring 39 by 36 by 73 inches, with a 120V/15A electrical requirement. Its 36-by-32-inch interior will be tight for two larger adults, so compare the interior dimensions before treating the capacity label as a comfort promise. It is not a traditional rock-and-steam sauna.</p>
+        <p class="text-sm font-semibold text-stone-900 mb-4">Retailer listing checked October 6, 2026: $1,999 with an active Add to Cart option. Price and supplier availability can change.</p>
         <SelectSaunasButton
           href={dynamicBarcelonaUrl}
           label="Check the current Barcelona listing"
+          ctaPosition="barcelona_product"
         />
       </div>
 
@@ -227,7 +228,7 @@ import AmazonButton from '../../components/AmazonButton.astro';
         
       </div>
       <p class="text-stone-600 mb-4">This is a full-height steam tent, not an infrared cabin or traditional sauna room. SereneLife lists a 4-liter steamer, 120V power, nine heat levels, and a 35.43-by-35.43-by-70.87-inch enclosure. It solves a storage and upfront-cost problem, but it also needs a deliberate cleaning and drying routine. See our <a href="/guides/best-portable-sauna/" class="text-amber-700 hover:underline">portable sauna guide</a> for the format tradeoffs.</p>
-      <AmazonButton asin="B084GY5CHB" variant="primary" />
+      <AmazonButton asin="B084GY5CHB" label="Check current SereneLife listing" variant="primary" ctaPosition="serenelife_product" />
     </div>
 
     <LeadMagnetSignup />
@@ -303,6 +304,12 @@ import AmazonButton from '../../components/AmazonButton.astro';
       <strong class="block text-stone-900 mb-2">Specification sources checked August 2026</strong>
       Non-sponsored product details were checked against the current <a href="https://almostheaven.com/products/pinnacle-4-person-barrel-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Almost Heaven Pinnacle page</a>, <a href="https://dynamicsaunasdirect.com/products/barcelona-1-2-person-low-emf-far-infrared-sauna" rel="noopener" target="_blank" class="text-amber-700 hover:underline">Dynamic Barcelona page</a>, and <a href="https://serenelifehome.com/collections/new-arrivals/products/slisau35bk" rel="noopener" target="_blank" class="text-amber-700 hover:underline">SereneLife model page</a>. We did not hands-on test these products. Verify the current configuration and seller before ordering.
     </div>
+
+    <PlannerCTA
+      source="best_home_sauna_bottom"
+      heading="Turn the shortlist into a quote-ready plan"
+      description="Compare the room, power, delivery path, and complete installed budget before contacting a retailer or installer."
+    />
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-6 mt-10">
       <h3 class="text-lg font-bold text-stone-900 mb-2">Related</h3>

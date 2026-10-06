@@ -39,6 +39,9 @@ Verified October 6, 2026. Dashboard figures are point-in-time snapshots, not for
 - Finnish Sauna Builders links now emit `dealer_outbound_click`; the source contains no referral parameter.
 - Unverified Redwood Outdoors $250-off claims were removed from buyer-facing pages.
 - Every commerce event now includes a stable `page_type` in addition to partner, URL, CTA position, and product ID.
+- Commerce events now request beacon transport and include `link_domain`, reducing avoidable loss during outbound navigation while preserving Amazon and retailer reports as the revenue source of truth.
+- The best-home-sauna guide now sends Pinnacle buyers to one exact current product page instead of offering both an exact route and a generic barrel-sauna collection.
+- Generic portable-infrared Amazon searches were replaced with focused on-site comparisons. The exact SereneLife Amazon listing remains because Amazon produced confirmed orders and the product route was recently verified.
 
 ## Revenue priorities
 
@@ -48,6 +51,8 @@ Verified October 6, 2026. Dashboard figures are point-in-time snapshots, not for
 4. Reapply to or confirm Redwood Outdoors before restoring affiliate or coupon language.
 5. Treat Finnish Sauna Builders as a partnership or dealer-lead prospect until written terms exist.
 6. Review earnings by page and subtag monthly; do not rank products by commission alone.
+
+The first post-change comparison is scheduled for October 20, 2026. See `operations/revenue-sprint-2026-10-06.md` for the baseline and decision rules.
 
 ## Owner-review checkpoints
 

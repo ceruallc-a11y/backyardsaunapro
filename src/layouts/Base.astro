@@ -163,6 +163,8 @@ const isCurrent = (href: string) => href === "/" ? currentPath === "/" : current
         cta_position: ctaPosition,
         product_id: productId,
         product: productId,
+        link_domain: destination.hostname,
+        transport_type: 'beacon',
       });
     });
 
