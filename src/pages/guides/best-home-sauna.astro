@@ -6,6 +6,8 @@ import SunHomeButton from '../../components/SunHomeButton.astro';
 import LeadMagnetSignup from '../../components/LeadMagnetSignup.astro';
 import PlannerCTA from '../../components/PlannerCTA.astro';
 
+const dynamicBarcelonaUrl = 'https://selectsaunas.com/products/dynamic-saunas-dyn-6106-01-barcelona-1-2-person-low-emf-far-infrared-sauna';
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -47,8 +49,8 @@ const faqSchema = {
 import AmazonButton from '../../components/AmazonButton.astro';
 ---
 <Base
-  title="Best Home Saunas of 2026: 4 Picks by Space and Heat Type"
-  description="Compare the best home saunas of 2026, including indoor, outdoor, infrared, and traditional picks for apartments, basements, and backyards."
+  title="Best Home Saunas of 2026: 4 Picks by Space & Power"
+  description="Compare 4 home saunas by room size, electrical needs, heat type, installed scope, and budget. See who each pick fits and what to verify before buying."
   canonical="/guides/best-home-sauna"
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -57,7 +59,7 @@ import AmazonButton from '../../components/AmazonButton.astro';
     <h1 class="text-4xl font-bold text-stone-900 mb-3">Best Home Saunas of 2026</h1>
 
     <AdvertiserDisclosure />
-    <p class="text-stone-500 mb-8">Reviewed August 2026 &mdash; 12 min read &mdash; Backyard Sauna Pro</p>
+    <p class="text-stone-500 mb-8">Reviewed October 2026 &mdash; 12 min read &mdash; Backyard Sauna Pro</p>
 
     <div class="rounded-xl overflow-hidden mb-8">
       <img src="/images/lifestyle/sauna-interior-window.jpg" alt="Home sauna interior with bench and heater" class="w-full object-cover max-h-80" loading="lazy" width="1200" height="800" />
@@ -67,12 +69,12 @@ import AmazonButton from '../../components/AmazonButton.astro';
       <strong>Affiliate disclosure:</strong> As an Amazon Associate I earn from qualifying purchases. This page also contains affiliate links to Select Saunas. We may earn a commission if you buy through our links, at no extra cost to you.
     </div>
 
-    <p class="text-lg text-stone-700 mb-4">Start with the room, power, heat style, and installed budget. Those constraints usually eliminate more options than a product ranking does.</p>
+    <p class="text-lg text-stone-700 mb-4">The best home sauna starts with a practical choice: a compact 120V indoor cabin, a premium infrared setup, a 240V traditional outdoor sauna, or a portable steam tent. Your room, electrical service, heat preference, and installed budget usually eliminate more options than a product ranking does.</p>
 
     <p class="text-stone-700 mb-8">This guide compares four practical paths. It separates manufacturer specifications from our editorial judgment and calls out where a buyer still needs a current manual, written quote, or qualified trade review.</p>
 
     <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 mb-8">
-      <h2 class="text-lg font-bold text-stone-900 mb-3">Quick Picks</h2>
+      <h2 class="text-lg font-bold text-stone-900 mb-3">Quick picks by buyer situation</h2>
       <ul class="space-y-2 text-stone-700 text-sm">
         <li><span class="font-semibold">Best Overall:</span> Sun Home Equinox</li>
         <li><span class="font-semibold">Best traditional barrel sauna:</span> Almost Heaven Pinnacle 4-Person</li>
@@ -83,6 +85,40 @@ import AmazonButton from '../../components/AmazonButton.astro';
         <SunHomeButton product="equinox" label="See best overall" showCode={false} ctaPosition="above_fold" />
         <SelectSaunasButton collection="barrel-saunas" label="Compare traditional saunas" ctaPosition="above_fold" />
       </div>
+    </div>
+
+    <div class="overflow-x-auto mb-8">
+      <table class="text-sm w-full">
+        <thead>
+          <tr class="text-left text-stone-500 border-b border-stone-200">
+            <th class="pb-2 pr-5">If you need</th>
+            <th class="pb-2 pr-5">Start with</th>
+            <th class="pb-2">Verify before buying</th>
+          </tr>
+        </thead>
+        <tbody class="text-stone-700">
+          <tr class="border-b border-stone-100">
+            <td class="py-3 pr-5">Premium indoor infrared</td>
+            <td class="py-3 pr-5"><a href="#best-overall-home-sauna" class="text-amber-700 hover:underline">Sun Home Equinox</a></td>
+            <td class="py-3">Room clearance, delivery path, outlet, and current order terms</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-3 pr-5">Traditional outdoor heat</td>
+            <td class="py-3 pr-5"><a href="#best-outdoor-barrel-saunas" class="text-amber-700 hover:underline">Almost Heaven Pinnacle</a></td>
+            <td class="py-3">Foundation, 240V circuit, freight, weather protection, and permits</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-3 pr-5">Compact 120V indoor cabin</td>
+            <td class="py-3 pr-5"><a href="#best-indoor-home-saunas" class="text-amber-700 hover:underline">Dynamic Barcelona</a></td>
+            <td class="py-3">Interior fit, dedicated-outlet guidance, delivery, and retailer stock</td>
+          </tr>
+          <tr class="border-b border-stone-100">
+            <td class="py-3 pr-5">Lowest upfront cost and easy storage</td>
+            <td class="py-3 pr-5"><a href="#best-portable-home-sauna" class="text-amber-700 hover:underline">SereneLife steam tent</a></td>
+            <td class="py-3">Seller availability, return terms, drying space, and cleaning routine</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <PlannerCTA source="best_home_sauna_above_fold" />
@@ -105,7 +141,7 @@ import AmazonButton from '../../components/AmazonButton.astro';
       </div>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Overall Home Sauna</h2>
+    <h2 id="best-overall-home-sauna" class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Overall Home Sauna</h2>
 
     <div class="space-y-5 mb-10">
       <div class="border border-stone-300 rounded-xl p-5 bg-stone-50">
@@ -127,7 +163,7 @@ import AmazonButton from '../../components/AmazonButton.astro';
       </div>
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Outdoor Barrel Saunas</h2>
+    <h2 id="best-outdoor-barrel-saunas" class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Outdoor Barrel Saunas</h2>
 
     <div class="space-y-5 mb-10">
 
@@ -152,7 +188,7 @@ import AmazonButton from '../../components/AmazonButton.astro';
 
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Indoor Home Saunas</h2>
+    <h2 id="best-indoor-home-saunas" class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Indoor Home Saunas</h2>
 
     <div class="space-y-5 mb-10">
 
@@ -168,13 +204,16 @@ import AmazonButton from '../../components/AmazonButton.astro';
           </div>
           
         </div>
-        <p class="text-stone-600 mb-4">Dynamic currently lists model DYN-6106-01 as a 1-to-2-person hemlock infrared cabin measuring 39 by 36 by 73 inches, with a 120V/15A electrical requirement. Its 36-by-32-inch interior will be tight for two larger adults, so compare the interior dimensions before treating the capacity label as a comfort promise. It is not a traditional rock-and-steam sauna.</p>
-        <AmazonButton asin="B00A2F99F0" variant="primary" />
+        <p class="text-stone-600 mb-4">Dynamic currently lists model DYN-6106-01 as a 1-to-2-person hemlock infrared cabin measuring 39 by 36 by 73 inches, with a 120V/15A electrical requirement. Its 36-by-32-inch interior will be tight for two larger adults, so compare the interior dimensions before treating the capacity label as a comfort promise. It is not a traditional rock-and-steam sauna. Select Saunas currently shows an Add to Cart option and says supplier availability is confirmed after an order, so check the listing before buying.</p>
+        <SelectSaunasButton
+          href={dynamicBarcelonaUrl}
+          label="Check the current Barcelona listing"
+        />
       </div>
 
     </div>
 
-    <h2 class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Portable Home Sauna</h2>
+    <h2 id="best-portable-home-sauna" class="text-2xl font-bold text-stone-900 mt-10 mb-6">Best Portable Home Sauna</h2>
 
     <div class="border border-stone-200 rounded-xl p-5 bg-white mb-10">
       <div class="rounded-lg overflow-hidden mb-4 bg-stone-50">
