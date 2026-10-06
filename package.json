@@ -22,5 +22,9 @@
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.6",
     "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@emnapi/core": "^1.11.3",
+    "@emnapi/runtime": "^1.11.3"
   }
 }
