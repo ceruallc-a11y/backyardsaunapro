@@ -28,6 +28,7 @@ function classify(url) {
   const host = new URL(url).hostname.replace(/^www\./, '');
   if (host === 'amazon.com') return url.includes(`tag=${amazonTag}`) ? ['affiliate', 'amazon', 'verified_parameter'] : ['affiliate', 'amazon', 'missing_tag'];
   if (host === 'selectsaunas.com') return url.includes('sca_ref=') ? ['affiliate', 'select_saunas', 'verified_parameter'] : ['affiliate', 'select_saunas', 'missing_referral'];
+  if (host === 'topture.com') return url.includes('ref=') ? ['affiliate', 'topture', 'verified_parameter'] : ['affiliate', 'topture', 'missing_referral'];
   if (host === 'sunhomesaunas.com') return ['affiliate_protected', 'sun_home', 'do_not_change'];
   if (host === 'redwoodoutdoors.com') return ['commerce_outbound', 'redwood_outdoors', 'relationship_unverified'];
   if (host === 'finnishsaunabuilders.com') return ['dealer_outbound', 'finnish_sauna_builders', 'relationship_unverified'];
