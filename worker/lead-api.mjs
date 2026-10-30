@@ -87,6 +87,8 @@ const corsHeaders = (origin) => ({
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Max-Age': '86400',
   'Cache-Control': 'no-store',
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'no-referrer',
   'Content-Type': 'application/json; charset=utf-8',
   'Vary': 'Origin',
 });
@@ -143,15 +145,35 @@ export default {
       return json({ ok: false, error: 'Use JSON.' }, 415, origin);
     }
 
-    const bodyText = await request.text();
-    if (new TextEncoder().encode(bodyText).byteLength > MAX_BODY_BYTES) {
+    if (Number(request.headers.get('Content-Length')) > MAX_BODY_BYTES) {
       return json({ ok: false, error: 'Submission is too large.' }, 413, origin);
     }
+    const reader = request.body?.getReader();
+    if (!reader) return json({ ok: false, error: 'Invalid submission.' }, 400, origin);
+    const chunks = [];
+    let size = 0;
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      if (size > MAX_BODY_BYTES) {
+        await reader.cancel();
+        return json({ ok: false, error: 'Submission is too large.' }, 413, origin);
+      }
+      chunks.push(value);
+    }
+    const bytes = new Uint8Array(size);
+    let offset = 0;
+    for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
+    const bodyText = new TextDecoder().decode(bytes);
 
     let input;
     try {
       input = JSON.parse(bodyText);
     } catch {
+      return json({ ok: false, error: 'Invalid submission.' }, 400, origin);
+    }
+    if (!input || typeof input !== 'object' || Array.isArray(input)) {
       return json({ ok: false, error: 'Invalid submission.' }, 400, origin);
     }
 
