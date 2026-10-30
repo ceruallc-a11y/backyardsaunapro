@@ -37,7 +37,9 @@ Use snake_case. Every site-owned event also receives `site_name=backyard_sauna_p
 
 ## Property isolation
 
-The Backyard Sauna Pro source uses measurement ID `G-0F814NTT5J`. GA data previously showed a Sproutful Minds path in this property, but no Sproutful route exists in this repository. The most likely cause is that another site deployed the same measurement ID. This code now adds `site_name` and `site_hostname` to site-owned events, while standard GA page views already include hostname. The actual cross-site contamination must be fixed in the other site's deployed tag or by separating data streams; changing Backyard Sauna Pro's correct ID would not remove the source of the contamination.
+Verified October 30, 2026: property `526994683` contains the sauna stream and a legacy Sproutful stream `15211481273` (`G-JY61YYFS5M`). Sproutful's old Google tag `GT-MBNDT3PP` routed to this legacy stream, so checking only for the sauna's main ID `G-0F814NTT5J` missed the cross-site leak. The October 21 report's conclusion that this was only historical/cached traffic was incorrect.
+
+Sproutful now uses independent stream `15420179622` (`G-D63FLY1LCV`) in Sproutful property `545021914`. Both sites initialize GA only on their exact production HTTPS hostnames. Local, preview and copied pages do not load Google Analytics. Sproutful also keeps its access-token-page guard. Existing historical data and streams are retained; filter older reports by hostname and stream rather than deleting data. Custom event site labels supplement, but do not replace, correct destination routing.
 
 ## KPI dashboard specification
 
@@ -45,7 +47,7 @@ Weekly views should cover traffic, audience, affiliate, lead, and sponsorship KP
 
 ## QA
 
-Use GA DebugView and browser network inspection on staging or local preview. Test one event per CTA type, confirm parameter names, ensure no PII, verify mobile behavior, then compare daily event counts with outbound click logs and affiliate dashboards. The build regression check must also confirm that `window.gtag` is present in generated HTML and that all three pilot guides contain the `planner_first_10` campaign marker.
+Local and staging previews must make no production GA requests. Test initialization with mocked production hosts and inspect production requests separately, with any controlled visits documented as QA. Do not submit real forms or click affiliate offers merely to inflate verification counts. Confirm parameter names, ensure no PII, verify mobile behavior, then compare daily event counts with affiliate dashboards. Automated tests enforce hostname isolation; built-site checks confirm tracking and planner campaign markers remain present.
 
 ## GA4 key-event configuration
 
